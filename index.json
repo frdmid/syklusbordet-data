@@ -1,5 +1,5 @@
 {
- "oppdatert": "2026-09-21 08:48:11",
+ "oppdatert": "2026-09-21 08:53:29",
  "segmenter": [
   "brent",
   "wti",
@@ -16,7 +16,15 @@
   "ttf",
   "urea",
   "kalium",
-  "fiskemel"
+  "fiskemel",
+  "kakao",
+  "kaffe_arabica",
+  "kaffe_robusta",
+  "palmeolje",
+  "gummi_rss3",
+  "gummi_tsr20",
+  "kokosolje",
+  "te"
  ],
  "logg": [
   {
@@ -105,14 +113,49 @@
    "detalj": "A=22.0  siste 2026-08"
   },
   {
-   "kilde": "Pink Sheet Tremasse",
-   "status": "FEIL",
-   "detalj": "ingen kolonne som ligner 'Woodpulp'"
-  },
-  {
    "kilde": "segment fiskemel",
    "status": "OK",
    "detalj": "A=1.9  siste 2026-08"
+  },
+  {
+   "kilde": "segment kakao",
+   "status": "OK",
+   "detalj": "A=29.5  siste 2026-08"
+  },
+  {
+   "kilde": "segment kaffe_arabica",
+   "status": "OK",
+   "detalj": "A=46.4  siste 2026-08"
+  },
+  {
+   "kilde": "segment kaffe_robusta",
+   "status": "OK",
+   "detalj": "A=51.1  siste 2026-08"
+  },
+  {
+   "kilde": "segment palmeolje",
+   "status": "OK",
+   "detalj": "A=59.9  siste 2026-08"
+  },
+  {
+   "kilde": "segment gummi_rss3",
+   "status": "OK",
+   "detalj": "A=56.1  siste 2026-08"
+  },
+  {
+   "kilde": "segment gummi_tsr20",
+   "status": "OK",
+   "detalj": "A=35.8  siste 2026-08"
+  },
+  {
+   "kilde": "segment kokosolje",
+   "status": "OK",
+   "detalj": "A=46.9  siste 2026-08"
+  },
+  {
+   "kilde": "segment te",
+   "status": "OK",
+   "detalj": "A=93.6  siste 2026-08"
   },
   {
    "kilde": "NVE magasinstatistikk",
