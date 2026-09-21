@@ -1,5 +1,5 @@
 {
- "oppdatert": "2026-09-21 08:53:29",
+ "oppdatert": "2026-09-21 12:58:57",
  "segmenter": [
   "brent",
   "wti",
@@ -35,22 +35,22 @@
   {
    "kilde": "segment brent",
    "status": "OK",
-   "detalj": "A=13.1  siste 2026-09"
+   "detalj": "A=13.1 detr=30.7 rull=1.7   siste 2026-09"
   },
   {
    "kilde": "segment wti",
    "status": "OK",
-   "detalj": "A=20.0  siste 2026-09"
+   "detalj": "A=20.0 detr=39.9 rull=5.8   siste 2026-09"
   },
   {
    "kilde": "segment henryhub",
    "status": "OK",
-   "detalj": "A=87.6  siste 2026-09"
+   "detalj": "A=87.6 detr=56.2 rull=69.2 FLAGG 1/3  siste 2026-09"
   },
   {
    "kilde": "segment gold",
    "status": "OK",
-   "detalj": "A=0.4  siste 2026-08"
+   "detalj": "A=0.4 detr=1.0 rull=5.0   siste 2026-08"
   },
   {
    "kilde": "Verdensbanken Pink Sheet",
@@ -60,102 +60,102 @@
   {
    "kilde": "segment kobber",
    "status": "OK",
-   "detalj": "A=4.5  siste 2026-08"
+   "detalj": "A=4.5 detr=2.9 rull=0.0   siste 2026-08"
   },
   {
    "kilde": "segment nikkel",
    "status": "OK",
-   "detalj": "A=71.2  siste 2026-08"
+   "detalj": "A=71.2 detr=70.2 rull=63.3   siste 2026-08"
   },
   {
    "kilde": "segment aluminium",
    "status": "OK",
-   "detalj": "A=58.4  siste 2026-08"
+   "detalj": "A=58.4 detr=9.8 rull=8.3   siste 2026-08"
   },
   {
    "kilde": "segment sink",
    "status": "OK",
-   "detalj": "A=13.6  siste 2026-08"
+   "detalj": "A=13.6 detr=13.6 rull=18.3   siste 2026-08"
   },
   {
    "kilde": "segment bly",
    "status": "OK",
-   "detalj": "A=65.3  siste 2026-08"
+   "detalj": "A=65.3 detr=62.0 rull=98.3   siste 2026-08"
   },
   {
    "kilde": "segment tinn",
    "status": "OK",
-   "detalj": "A=6.9  siste 2026-08"
+   "detalj": "A=6.9 detr=0.0 rull=0.0   siste 2026-08"
   },
   {
    "kilde": "segment jernmalm",
    "status": "OK",
-   "detalj": "A=51.2  siste 2026-08"
+   "detalj": "A=51.2 detr=66.1 rull=85.0   siste 2026-08"
   },
   {
    "kilde": "segment kull",
    "status": "OK",
-   "detalj": "A=29.1  siste 2026-08"
+   "detalj": "A=29.1 detr=31.3 rull=45.8   siste 2026-08"
   },
   {
    "kilde": "segment ttf",
    "status": "OK",
-   "detalj": "A=3.0  siste 2026-08"
+   "detalj": "A=3.0 detr=17.4 rull=14.2   siste 2026-08"
   },
   {
    "kilde": "segment urea",
    "status": "OK",
-   "detalj": "A=47.8  siste 2026-08"
+   "detalj": "A=47.8 detr=37.0 rull=41.7   siste 2026-08"
   },
   {
    "kilde": "segment kalium",
    "status": "OK",
-   "detalj": "A=22.0  siste 2026-08"
+   "detalj": "A=22.0 detr=41.6 rull=26.7   siste 2026-08"
   },
   {
    "kilde": "segment fiskemel",
    "status": "OK",
-   "detalj": "A=1.9  siste 2026-08"
+   "detalj": "A=1.9 detr=19.1 rull=0.0   siste 2026-08"
   },
   {
    "kilde": "segment kakao",
    "status": "OK",
-   "detalj": "A=29.5  siste 2026-08"
+   "detalj": "A=29.5 detr=8.1 rull=18.3   siste 2026-08"
   },
   {
    "kilde": "segment kaffe_arabica",
    "status": "OK",
-   "detalj": "A=46.4  siste 2026-08"
+   "detalj": "A=46.4 detr=6.8 rull=10.8   siste 2026-08"
   },
   {
    "kilde": "segment kaffe_robusta",
    "status": "OK",
-   "detalj": "A=51.1  siste 2026-08"
+   "detalj": "A=51.1 detr=9.9 rull=19.2   siste 2026-08"
   },
   {
    "kilde": "segment palmeolje",
    "status": "OK",
-   "detalj": "A=59.9  siste 2026-08"
+   "detalj": "A=59.9 detr=16.4 rull=25.8   siste 2026-08"
   },
   {
    "kilde": "segment gummi_rss3",
    "status": "OK",
-   "detalj": "A=56.1  siste 2026-08"
+   "detalj": "A=56.1 detr=19.4 rull=14.2   siste 2026-08"
   },
   {
    "kilde": "segment gummi_tsr20",
    "status": "OK",
-   "detalj": "A=35.8  siste 2026-08"
+   "detalj": "A=35.8 detr=37.3 rull=5.8   siste 2026-08"
   },
   {
    "kilde": "segment kokosolje",
    "status": "OK",
-   "detalj": "A=46.9  siste 2026-08"
+   "detalj": "A=46.9 detr=12.3 rull=45.0   siste 2026-08"
   },
   {
    "kilde": "segment te",
    "status": "OK",
-   "detalj": "A=93.6  siste 2026-08"
+   "detalj": "A=93.6 detr=39.4 rull=90.8 FLAGG 2/3  siste 2026-08"
   },
   {
    "kilde": "NVE magasinstatistikk",
