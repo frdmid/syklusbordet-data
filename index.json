@@ -1,0 +1,133 @@
+{
+ "oppdatert": "2026-09-21 08:33:55",
+ "segmenter": [
+  "brent",
+  "wti",
+  "henryhub",
+  "gold",
+  "kobber",
+  "nikkel",
+  "aluminium",
+  "sink",
+  "bly",
+  "tinn",
+  "jernmalm",
+  "kull",
+  "ttf",
+  "urea",
+  "kalium",
+  "fiskemel"
+ ],
+ "logg": [
+  {
+   "kilde": "GitHub-speil cpi-us",
+   "status": "OK",
+   "detalj": "siste 2026-07"
+  },
+  {
+   "kilde": "segment brent",
+   "status": "OK",
+   "detalj": "A=13.1  siste 2026-09"
+  },
+  {
+   "kilde": "segment wti",
+   "status": "OK",
+   "detalj": "A=20.0  siste 2026-09"
+  },
+  {
+   "kilde": "segment henryhub",
+   "status": "OK",
+   "detalj": "A=87.6  siste 2026-09"
+  },
+  {
+   "kilde": "segment gold",
+   "status": "OK",
+   "detalj": "A=0.4  siste 2026-08"
+  },
+  {
+   "kilde": "Verdensbanken Pink Sheet",
+   "status": "OK",
+   "detalj": "72 kolonner, 800 måneder, skiprows=4"
+  },
+  {
+   "kilde": "segment kobber",
+   "status": "OK",
+   "detalj": "A=4.5  siste 2026-08"
+  },
+  {
+   "kilde": "segment nikkel",
+   "status": "OK",
+   "detalj": "A=71.2  siste 2026-08"
+  },
+  {
+   "kilde": "segment aluminium",
+   "status": "OK",
+   "detalj": "A=58.4  siste 2026-08"
+  },
+  {
+   "kilde": "segment sink",
+   "status": "OK",
+   "detalj": "A=13.6  siste 2026-08"
+  },
+  {
+   "kilde": "segment bly",
+   "status": "OK",
+   "detalj": "A=65.3  siste 2026-08"
+  },
+  {
+   "kilde": "segment tinn",
+   "status": "OK",
+   "detalj": "A=6.9  siste 2026-08"
+  },
+  {
+   "kilde": "segment jernmalm",
+   "status": "OK",
+   "detalj": "A=51.2  siste 2026-08"
+  },
+  {
+   "kilde": "segment kull",
+   "status": "OK",
+   "detalj": "A=29.1  siste 2026-08"
+  },
+  {
+   "kilde": "segment ttf",
+   "status": "OK",
+   "detalj": "A=3.0  siste 2026-08"
+  },
+  {
+   "kilde": "segment urea",
+   "status": "OK",
+   "detalj": "A=47.8  siste 2026-08"
+  },
+  {
+   "kilde": "segment kalium",
+   "status": "OK",
+   "detalj": "A=22.0  siste 2026-08"
+  },
+  {
+   "kilde": "Pink Sheet Tremasse",
+   "status": "FEIL",
+   "detalj": "ingen kolonne som ligner 'Woodpulp'"
+  },
+  {
+   "kilde": "segment fiskemel",
+   "status": "OK",
+   "detalj": "A=1.9  siste 2026-08"
+  },
+  {
+   "kilde": "NVE magasinstatistikk",
+   "status": "OK",
+   "detalj": "5 prisområder"
+  },
+  {
+   "kilde": "Yahoo, symbol uten treff",
+   "status": "FEIL",
+   "detalj": "BELCO.OL, GOGL.OL, AGAS.OL"
+  },
+  {
+   "kilde": "Yahoo totalt",
+   "status": "OK",
+   "detalj": "22 av 25 symbol, 11 segment dekket"
+  }
+ ]
+}
