@@ -1,12 +1,3 @@
-# Sondene. Kjorer bare naar du trykker paa knappen, aldri paa timeplan.
-#
-# De skriver ingenting til dashbordet. De maaler hva som finnes av data og
-# legger hele utskriften i mappen sonder/ i dette repoet, slik at Claude kan
-# lese resultatet selv uten at du maa kopiere noe.
-#
-# Diagnosen skriver i tillegg bdi_hist.json og etterspørsel.json, som er
-# ferdige data og ikke sondering.
-
 name: Sonder
 
 on:
@@ -35,19 +26,19 @@ jobs:
       - run: pip install -r requirements.txt
       - run: mkdir -p sonder
 
-      - name: Diagnose 2.5 (aldersvekting, BDI, OWID)
+      - name: Diagnose 2.5
         if: inputs.hvilken == 'alle' || inputs.hvilken == 'diagnose'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python scripts/sonde_diagnose.py 2>&1 | tee sonder/diagnose.txt
+        run: python sonde_diagnose.py 2>&1 | tee sonder/diagnose.txt
 
       - name: Sonde C og D
         if: inputs.hvilken == 'alle' || inputs.hvilken == 'C og D'
-        run: python scripts/sonde_cd.py 2>&1 | tee sonder/c_og_d.txt
+        run: python sonde_cd.py 2>&1 | tee sonder/c_og_d.txt
 
       - name: Korrelasjon instrument mot raavare
         if: inputs.hvilken == 'alle' || inputs.hvilken == 'korrelasjon'
-        run: python scripts/sonde_korrelasjon.py 2>&1 | tee sonder/korrelasjon.txt
+        run: python sonde_korrelasjon.py 2>&1 | tee sonder/korrelasjon.txt
 
       - name: Legg utskriften i repoet
         if: always()
