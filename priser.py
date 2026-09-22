@@ -555,6 +555,28 @@ except Exception as e:
     note("OWID etterspoersel", False, f"{type(e).__name__}: {str(e)[:70]}")
 
 try:
+    kap = get(f"https://raw.githubusercontent.com/{REPO}/{BRANCH}/d_kapitulasjon.json"
+              f"?cb={int(time.time())}").json()
+    segd = kap.get("segmenter", {})
+    papir = kap.get("papirer", {})
+    n = 0
+    for s in SEGMENTS:
+        g = segd.get(s["id"])
+        if not g or g.get("D") is None:
+            continue
+        s["scores"]["D"] = g["D"]
+        s["d_detalj"] = {k: g.get(k) for k in ("D_aksjer", "tema", "tema_D", "spredning", "n")}
+        for i in s.get("instrumenter", []):
+            d = papir.get(i["ticker"])
+            if d:
+                i["D"] = d["D"]
+                i["fall_pst"] = d["fall_pst"]
+        n += 1
+    note("kapitulasjon D", True, f"{n} segment")
+except Exception as e:
+    note("kapitulasjon D", False, f"{type(e).__name__}: {str(e)[:70]}")
+
+try:
     c = get(f"https://raw.githubusercontent.com/{REPO}/{BRANCH}/c_overlevelse.json"
             f"?cb={int(time.time())}").json()
     segporter = c.get("segmenter", {})
