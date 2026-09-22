@@ -1,0 +1,218 @@
+0. Henter deflator og priser
+   CPI til 2026-07
+   Pink Sheet: 20 av 20 funnet
+   24 segmenter med minst 10 aars historikk
+
+==============================================================================
+0b. ER DET EN MARKEDSPRIS? ANDEL MAANEDER UTEN ENDRING
+==============================================================================
+    En forhandlet kontraktspris eller en forsvart kurs staar stille mellom
+    revisjonene. Ligger en slik periode i fordelingen, opptar den de
+    billigste persentilene permanent. Det var feilen i gull: 206 av 206
+    flaggmaaneder laa foer 1971, og bunnen i 1999 leste A=53.
+    Maalt paa NOMINELL pris: en fast kurs beveger seg i realserien fordi
+    deflatoren beveger seg, saa realserien underoppdager problemet.
+    Over ca. 40 % i et tiaar betyr at perioden boer vurderes avkortet.
+
+    segment            60-tallet  70-tallet  80-tallet  90-tallet  00-tallet  10-tallet  20-tallet
+    aluminium               91 %!       24 %         3 %         1 %         1 %         1 %         1 % 
+    bly                      3 %         3 %         3 %         3 %         1 %         0 %         0 % 
+    brent                                          0 %         0 %         0 %         0 %         0 % 
+    fiskemel                                       3 %         3 %         1 %         0 %         4 % 
+    gold                    66 %!       12 %         3 %         8 %         5 %         2 %         1 % 
+    gummi_rss3              18 %        13 %        11 %        13 %         7 %         3 %         0 % 
+    gummi_tsr20                                                          8 %         7 %         3 % 
+    henryhub                                                  6 %         0 %         2 %         1 % 
+    jernmalm                93 %!       94 %!       93 %!       92 %!       57 %!        1 %         0 % 
+    kaffe_arabica           25 %         2 %         3 %         3 %         0 %         4 %         1 % 
+    kaffe_robusta           30 %        14 %         4 %         7 %         9 %         4 %         6 % 
+    kakao                   12 %        55 %!        5 %         8 %         7 %         4 %         1 % 
+    kalium                  94 %!       60 %!       66 %!       89 %!       84 %!       71 %!        0 % 
+    kobber                  18 %         1 %         0 %         1 %         0 %         1 %         0 % 
+    kokosolje                7 %         6 %         0 %         3 %         1 %         0 %         0 % 
+    kull                               89 %!       77 %!       57 %!       11 %         0 %         0 % 
+    nikkel                  81 %!       80 %!        1 %         0 %         0 %         0 %         0 % 
+    palmeolje               23 %         3 %         1 %         1 %         1 %         2 %         0 % 
+    sink                     8 %         3 %         1 %         0 %         1 %         0 %         0 % 
+    te                      91 %!       14 %         6 %         4 %         5 %         3 %         1 % 
+    tinn                     5 %         0 %         1 %         2 %         0 %         0 %         0 % 
+    ttf                     95 %!       92 %!       93 %!       26 %         1 %         2 %         0 % 
+    urea                    95 %!       66 %!       41 %!       31 %         2 %         7 %         4 % 
+    wti                                            0 %         0 %         0 %         0 %         0 % 
+
+==============================================================================
+1. ALDERSVEKTING I DETRENDINGEN
+==============================================================================
+
+1a. Hvor mye veier hvert tiaar allerede i dagens likevektede regresjon
+    (innflytelsen paa stigningstallet er proporsjonal med avstanden fra midten,
+     saa endepunktene dominerer allerede. Midten teller nesten ingenting.)
+      1910-1919    11.6 % av vekten
+      1920-1929    13.9 % av vekten
+      1930-1939    10.8 % av vekten
+      1940-1949     7.7 % av vekten
+      1950-1959     4.6 % av vekten
+      1960-1969     1.5 % av vekten
+      1970-1979     1.6 % av vekten
+      1980-1989     4.7 % av vekten
+      1990-1999     7.8 % av vekten
+      2000-2009    10.9 % av vekten
+      2010-2019    14.0 % av vekten
+      2020-2026    11.0 % av vekten
+
+1b. Dagens Ad mot vektede varianter, per segment
+    segment              n      fra     likevekt  HL 30 aar  HL 20 aar  HL 15 aar  HL 10 aar   HL 5 aar
+    gold              1364  1913-01          1.0        4.9       13.8       24.7       41.9       72.2
+    kobber             800  1960-01          2.9       10.3       14.6       21.6       36.0       45.6
+    nikkel             800  1960-01         70.2       71.0       71.1       71.0       69.8       47.4
+    aluminium          800  1960-01          9.8       10.6       10.8       11.1       13.9       46.5
+    sink               800  1960-01         13.6       16.5       18.5       21.0       29.4       42.8
+    bly                800  1960-01         62.0       70.2       73.6       76.1       80.1       69.5
+    tinn               800  1960-01          0.0        5.1        8.1       14.1       39.1       47.5
+    jernmalm           800  1960-01         66.1       74.8       76.6       77.6       78.5       68.9
+    ttf                800  1960-01         17.4       16.2       16.2       17.1       19.6       27.7
+    urea               800  1960-01         37.0       47.8       50.9       55.9       61.5       71.4
+    kalium             800  1960-01         41.6       48.9       53.1       56.4       63.0       47.6
+    kakao              800  1960-01          8.1        9.8       10.9       14.1       27.2       56.9
+    kaffe_arabica      800  1960-01          6.8        8.0        9.1       10.6       27.9       57.8
+    kaffe_robusta      800  1960-01          9.9       10.8       13.4       18.5       38.6       65.5
+    palmeolje          800  1960-01         16.4       22.9       36.5       41.1       49.9       58.1
+    gummi_rss3         800  1960-01         19.4       30.1       33.5       35.1       37.6       23.8
+    kokosolje          800  1960-01         12.3       23.5       35.8       41.5       48.6       71.4
+    te                 800  1960-01         39.4       51.4       57.5       64.5       71.5       72.9
+    kull               680  1970-01         31.3       38.1       45.4       53.5       62.4       75.0
+    fiskemel           572  1979-01         19.1       23.3       25.2       25.7       25.5       14.5
+    wti                489  1986-01         39.9       32.7       30.5       28.2       26.0       19.4
+    brent              473  1987-05         30.7       28.5       26.8       25.6       23.5       13.5
+    henryhub           356  1997-01         56.2       52.0       50.3       49.2       46.6       44.7
+    gummi_tsr20        332  1999-01         37.3       32.5       30.4       28.6       26.5       21.1
+
+1c. Betinget realavkastning. Terskelen er satt per variant slik at alle
+    flagger like ofte (topp 20 % av egne verdier). Uten det maaler man
+    bare at faerre flagg gir hoyere snitt.
+
+    12 maaneder fram
+    variant       terskel      n     snitt    median   traff>0  5% verst
+    likevekt         87.7   3278     10.4%      1.7%       54%    -31.2%
+    HL 30 aar        84.7   3278     10.4%      1.7%       54%    -31.4%
+    HL 20 aar        83.4   3280     10.2%      1.7%       53%    -31.3%
+    HL 15 aar        82.3   3282      9.7%      1.5%       53%    -31.3%
+    HL 10 aar        80.4   3282      9.3%      1.4%       53%    -31.1%
+    HL 5 aar         78.6   3276      7.9%      1.0%       52%    -31.4%
+    ubetinget              17578      4.8%     -1.3%       46%    -37.3%
+
+    24 maaneder fram
+    variant       terskel      n     snitt    median   traff>0  5% verst
+    likevekt         87.7   3257     25.2%      6.3%       58%    -41.7%
+    HL 30 aar        84.7   3256     25.4%      6.2%       59%    -41.6%
+    HL 20 aar        83.4   3261     25.3%      6.2%       58%    -41.2%
+    HL 15 aar        82.3   3266     24.6%      5.7%       58%    -41.6%
+    HL 10 aar        80.4   3264     24.4%      5.2%       57%    -41.6%Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+Could not get FontBBox from font descriptor because None cannot be parsed as 4 floats
+
+    HL 5 aar         78.6   3254     19.1%      5.0%       57%    -40.7%
+    ubetinget              17290      9.4%     -2.6%       46%    -46.3%
+
+    36 maaneder fram
+    variant       terskel      n     snitt    median   traff>0  5% verst
+    likevekt         87.7   3251     26.6%      5.2%       57%    -45.2%
+    HL 30 aar        84.7   3250     25.7%      5.4%       57%    -45.5%
+    HL 20 aar        83.4   3253     25.6%      5.4%       57%    -45.7%
+    HL 15 aar        82.3   3256     24.3%      5.2%       57%    -46.4%
+    HL 10 aar        80.4   3246     23.5%      5.0%       56%    -47.2%
+    HL 5 aar         78.6   3194     17.3%      4.0%       56%    -45.0%
+    ubetinget              17002     10.7%     -2.9%       46%    -50.0%
+
+1d. Hvor mye flytter vektingen Ad i dag, per segment
+    segment            likevekt      HL 15     diff
+    aluminium               9.8       11.1     +1.4
+    bly                    62.0       76.1    +14.1
+    brent                  30.7       25.6     -5.1
+    fiskemel               19.1       25.7     +6.6
+    gold                    1.0       24.7    +23.7
+    gummi_rss3             19.4       35.1    +15.7
+    gummi_tsr20            37.3       28.6     -8.7
+    henryhub               56.2       49.2     -7.0
+    jernmalm               66.1       77.6    +11.5
+    kaffe_arabica           6.8       10.6     +3.9
+    kaffe_robusta           9.9       18.5     +8.6
+    kakao                   8.1       14.1     +6.0
+    kalium                 41.6       56.4    +14.8
+    kobber                  2.9       21.6    +18.8
+    kokosolje              12.3       41.5    +29.2
+    kull                   31.3       53.5    +22.2
+    nikkel                 70.2       71.0     +0.8
+    palmeolje              16.4       41.1    +24.8
+    sink                   13.6       21.0     +7.4
+    te                     39.4       64.5    +25.1
+    tinn                    0.0       14.1    +14.1
+    ttf                    17.4       17.1     -0.2
+    urea                   37.0       55.9    +18.9
+    wti                    39.9       28.2    -11.7
+    median absolutt endring: 11.6 poeng
+
+==============================================================================
+2. BDI OG BALTIC PER SEGMENT: HVA SVARER
+==============================================================================
+
+2a. Headline BDI, hullet 2013-2026
+   OK    innebygd historikk: 342 maaneder, 1985-01 til 2013-06 (lastet ned og verifisert paa forhaand)
+   OK    stooq ^bdi: svarte, men ikke CSV: '<!DOCTYPE html><html><head><meta charset="utf-8"><meta name='
+   OK    stooq bdi: svarte, men ikke CSV: '<!DOCTYPE html><html><head><meta charset="utf-8"><meta name='
+   OK    stooq ^badi: svarte, men ikke CSV: '<!DOCTYPE html><html><head><meta charset="utf-8"><meta name='
+   feil  yahoo ^BDIY: HTTPError 404 Client Error: Not Found for url: https://query1.finance.yahoo.com/
+   OK    yahoo BDRY: 445 mnd, 2018-03-19 til 2026-09-21
+   feil  yahoo BDI: HTTPError 404 Client Error: Not Found for url: https://query1.finance.yahoo.com/
+   OK    tradingeconomics /commodity/baltic: 419,177 tegn, 0 datopunkter, 1 verditagger ingen serie i siden
+   feil  investing.com BADI: HTTPError 403 Client Error: Forbidden for url: https://www.investing.com/indices
+   feil  macromicro serie 760: HTTPError 403 Client Error: Forbidden for url: https://en.macromicro.me/charts/d
+
+2b. Baltic per skipssegment
+   OK    stooq Capesize BCI: svarte, men ikke CSV: '<!DOCTYPE html><html><head><meta charset="utf-8"><meta name='
+   OK    stooq Panamax BPI: svarte, men ikke CSV: '<!DOCTYPE html><html><head><meta charset="utf-8"><meta name='
+   OK    stooq Supramax BSI: svarte, men ikke CSV: '<!DOCTYPE html><html><head><meta charset="utf-8"><meta name='
+   OK    stooq Handysize BHSI: svarte, men ikke CSV: '<!DOCTYPE html><html><head><meta charset="utf-8"><meta name='
+   OK    tradingeconomics Capesize: 380,933 tegn, 0 datopunkter, 0 verditagger ingen serie i siden
+   OK    tradingeconomics Panamax: 380,916 tegn, 0 datopunkter, 0 verditagger ingen serie i siden
+   OK    tradingeconomics Supramax: 380,936 tegn, 0 datopunkter, 0 verditagger ingen serie i siden
+   OK    tradingeconomics Handysize: 380,953 tegn, 0 datopunkter, 0 verditagger ingen serie i siden
+   OK    tradingeconomics Dirty tanker BDTI: 381,015 tegn, 0 datopunkter, 0 verditagger ingen serie i siden
+   OK    tradingeconomics Clean tanker BCTI: 381,015 tegn, 0 datopunkter, 0 verditagger ingen serie i siden
+
+2c. Staar BDI i Fearnleys-rapportene vi allerede henter
+    (fyller i saa fall 2019-2026 fra en kilde som er bevist)
+    196 PDF-er funnet, sjekker de 6 nyeste
+      2026-09-16  1 treff
+         Baltic Dry Index (BDI)
+      2026-09-09  1 treff
+         Baltic Dry Index (BDI)
+      2026-09-02  1 treff
+         Baltic Dry Index (BDI)
+      2026-08-26  1 treff
+         Baltic Dry Index (BDI)
+      2026-08-20  1 treff
+         Baltic Dry Index (BDI)
+      2026-08-12  1 treff
+         Baltic Dry Index (BDI)
+
+==============================================================================
+3. BANKER DET SOM ER SIKKERT
+==============================================================================
+   bdi_hist: 342 maaneder, 1985-01 til 2013-06, realt snitt 3,926, realt siste 1,153
+      lavest realt: 2012-09 1,027, 2012-02 1,036, 2013-02 1,072
+      hoyest realt: 2007-11 16,750, 2008-05 16,669, 2007-10 16,661
+
+   etterspørsel: 4 baerere, siste aar 2024
+      Olje          10aar  +0.50 %   30aar  +1.06 %   topp 2024, naa +0.0 % mot topp
+      Gass          10aar  +1.82 %   30aar  +2.45 %   topp 2024, naa +0.0 % mot topp
+      Kull          10aar  +0.64 %   30aar  +2.23 %   topp 2024, naa +0.0 % mot topp
+      Kjernekraft   10aar  +0.38 %   30aar  -0.20 %   topp 2006, naa -8.3 % mot topp
+   publisert bdi_hist.json
+   publisert etterspørsel.json
+
+==============================================================================
+Send hele utskriften tilbake. 1c avgjor vektingen, 2 avgjor BDI.

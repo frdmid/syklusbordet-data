@@ -1,0 +1,261 @@
+1. Henter raavareseriene fra repoet
+   31 segmenter
+
+2. Henter kurser for instrumentene
+   HAL.SI         FEIL HTTPError 404 Client Error: Not Found for url: htt
+   JDEP.AS        FEIL HTTPError 404 Client Error: Not Found for url: htt
+   LEAD.L         FEIL HTTPError 404 Client Error: Not Found for url: htt
+   MICP.PA        FEIL HTTPError 404 Client Error: Not Found for url: htt
+   68 av 72 instrumenter
+
+3. Samsvar mellom instrument og segment
+   R2 er andelen av instrumentets bevegelse som raavaren forklarer.
+   beta opp og ned viser om papiret tar oppsiden eller bare nedsiden.
+   forsk. er hvilken forskyvning som gir hoyest korrelasjon. Alt annet
+   enn 0 betyr at noe er feil justert, eller at prisen er et snitt.
+
+   instrument   segment                bors    n   korr    R2   beta    opp    ned  vol i/r  forsk.
+   AA           aluminium              NYSE  178   0.46  0.21   1.57   1.50   1.16     3.39      +0
+   ALUM.L       aluminium            London  178   0.63  0.40   0.81   1.01   0.66     1.28      +0
+   NHY.OL       aluminium              Oslo  178   0.49  0.24   0.96   1.12   0.64     1.97      +0
+   BOL.ST       bly               Stockholm  178   0.34  0.12   0.78   0.83   0.83     2.29      +0
+   TECK-B.TO    bly                 Toronto  178   0.32  0.10   0.98   1.30   0.59     3.04      +0
+   AKRBP.OL     brent                  Oslo  179   0.58  0.33   0.41   0.26   0.39     0.71      +0
+   BRNT.L       brent                London  174   0.90  0.81   0.59   0.49   0.52     0.66      +0
+   VAR.OL       brent                  Oslo   54   0.60  0.36   0.42   0.41   0.09     0.70      +0
+   AUSS.OL      fiskemel               Oslo  178   0.05  0.00   0.10   0.14   0.34     1.97      +1
+   MOWI.OL      fiskemel               Oslo  178   0.01  0.00   0.02   0.12  -0.13     1.80      +1
+   SALM.OL      fiskemel               Oslo  178   0.12  0.01   0.27   0.27   0.63     2.25      +0
+   AEM          gold                   NYSE  176   0.54  0.29   1.79   1.65   2.08     3.34      +0
+   NEM          gold                   NYSE  178   0.55  0.30   1.65   1.42   1.39     3.02      +0
+   SGLN.L       gold                 London  178   0.58  0.34   0.78   0.82   0.91     1.34      +0
+   GT           gummi_rss3           Nasdaq  178  -0.00  0.00  -0.00  -0.43  -0.55     1.78      +2
+   GT           gummi_tsr20          Nasdaq  178   0.07  0.00   0.14   0.13   0.13     2.09      +0
+   AR           henryhub               NYSE  154   0.21  0.04   0.21   0.29   0.21     0.99      +0
+   EQT          henryhub               NYSE  179   0.31  0.09   0.21   0.31   0.21     0.67      +0
+   NGAS.L       henryhub             London  179   0.12  0.02   0.37   0.44   0.38     3.02      +0
+   FXPO.L       jernmalm             London  178   0.10  0.01   0.56   1.73   1.42     5.73      +1
+   RIO.L        jernmalm             London  178   0.39  0.16   0.32   0.25   0.28     0.82      +1
+   VALE         jernmalm               NYSE  178   0.40  0.16   0.53   0.50   0.44     1.32      +1
+   COFF.L       kaffe_arabica        London  178   0.16  0.03   0.71  -0.28   1.56     4.34      +0
+   SBUX         kaffe_arabica        Nasdaq  178  -0.09  0.01  -0.10  -0.06  -0.32     1.12      -1
+   COFF.L       kaffe_robusta        London  178   0.09  0.01   0.48   0.46   0.76     5.11      +1
+   NESN.SW      kaffe_robusta        Zürich  178   0.06  0.00   0.04  -0.17   0.25     0.78      -1
+   SBUX         kaffe_robusta        Nasdaq  178  -0.10  0.01  -0.13  -0.14  -0.56     1.32      +2
+   BARN.SW      kakao                Zürich  178  -0.15  0.02  -0.13   0.05  -0.25     0.89      -1
+   COCO.L       kakao                London  178   0.61  0.38   0.77   0.76   0.83     1.25      +1
+   HSY          kakao                  NYSE  178  -0.22  0.05  -0.15  -0.08  -0.21     0.69      +2
+   MOS          kalium                 NYSE  178   0.03  0.00   0.04  -0.05  -0.18     1.16      +2
+   NTR          kalium                 NYSE  102   0.21  0.04   0.25  -0.01   0.22     1.20      +1
+   YAR.OL       kalium                 Oslo  178  -0.04  0.00  -0.03  -0.05  -0.13     0.72      +2
+   ANTO.L       kobber               London  178   0.42  0.18   0.92   1.03   0.66     2.17      +1
+   COPA.L       kobber               London  178   0.63  0.40   0.81   0.84   0.64     1.29      +0
+   FCX          kobber                 NYSE  178   0.49  0.24   1.62   1.61   1.43     3.29      +0
+   ADM          kokosolje              NYSE  178   0.12  0.01   0.11   0.24  -0.04     0.90      +0
+   BG           kokosolje              NYSE  178   0.14  0.02   0.14   0.30   0.02     1.00      +1
+   MPE.L        kokosolje            London  178   0.15  0.02   0.14   0.06  -0.00     0.94      -1
+   BTU          kull                   NYSE  111   0.28  0.08   0.53   1.21   0.03     1.88      +1
+   HCC          kull                   NYSE  111   0.22  0.05   0.26   0.40  -0.12     1.19      +0
+   TGA.L        kull                 London   61   0.42  0.18   0.64   0.90   0.30     1.51      +1
+   GLEN.L       nikkel               London  178   0.34  0.12   0.57   0.12   0.80     1.65      +0
+   NICK.L       nikkel               London  178   0.65  0.42   0.77   0.87   0.66     1.19      +0
+   VALE         nikkel                 NYSE  178   0.29  0.08   0.50   0.37   0.15     1.74      +1
+   ADM          palmeolje              NYSE  178   0.22  0.05   0.24   0.57   0.09     1.09      +0
+   MPE.L        palmeolje            London  178   0.34  0.11   0.38   0.21   0.33     1.14      +0
+   RE.L         palmeolje            London  178   0.29  0.09   0.55   0.58   0.42     1.87      +0
+   HAFNI.OL     ship_aframax           Oslo   41   0.03  0.00   0.10  -0.68    nan     2.93      +1
+   TNK          ship_aframax           NYSE   41  -0.11  0.01  -0.39  -1.32    nan     3.54      +2
+   TRMD-A.CO    ship_aframax      København   41  -0.09  0.01  -0.29  -1.53    nan     3.29      +2
+   2020.OL      ship_capesize          Oslo   41  -0.00  0.00  -0.07   3.92    nan    15.15      +1
+   HSHP.OL      ship_capesize          Oslo   41  -0.09  0.01  -0.26  -1.04    nan     2.89      +2
+   SBLK         ship_capesize        Nasdaq   41  -0.11  0.01  -0.24  -0.73    nan     2.28      +2
+   GNK          ship_handysize         NYSE   35   for kort
+   PANL         ship_handysize       Nasdaq   35   for kort
+   TMIP.L       ship_handysize       London   35   for kort
+   GNK          ship_kamsarmax         NYSE   41   0.07  0.00   0.16    nan    nan     2.34      +2
+   PANL         ship_kamsarmax       Nasdaq   41  -0.27  0.08  -0.89    nan    nan     3.25      +2
+   SBLK         ship_kamsarmax       Nasdaq   41   0.06  0.00   0.14    nan    nan     2.35      +2
+   FRO.OL       ship_suezmax           Oslo   41   0.15  0.02   0.67    nan    nan     4.53      +1
+   NAT          ship_suezmax           NYSE   41   0.33  0.11   1.33    nan    nan     4.07      +0
+   OET.OL       ship_suezmax           Oslo   41   0.17  0.03   0.78    nan    nan     4.48      +1
+   GNK          ship_ultramax          NYSE   41  -0.22  0.05  -0.56    nan    nan     2.55      +2
+   PANL         ship_ultramax        Nasdaq   41  -0.20  0.04  -0.71    nan    nan     3.55      -1
+   SBLK         ship_ultramax        Nasdaq   41  -0.22  0.05  -0.57    nan    nan     2.56      +2
+   DHT          ship_vlcc              NYSE   41  -0.14  0.02  -0.41  -0.36    nan     3.02      +1
+   FRO.OL       ship_vlcc              Oslo   41   0.15  0.02   0.53   0.08    nan     3.52      +1
+   OET.OL       ship_vlcc              Oslo   41   0.09  0.01   0.31   0.14    nan     3.48      +1
+   BOL.ST       sink              Stockholm  178   0.43  0.18   0.76   0.73   0.79     1.78      +0
+   NEXA         sink                   NYSE  105   0.36  0.13   1.03   0.59   0.55     2.86      +0
+   ZINC.L       sink                 London  178   0.61  0.37   0.73   0.73   0.69     1.20      +0
+   MPE.L        te                   London  178   0.12  0.01   0.17  -0.14   0.04     1.44      +1
+   TATACONSUM.NS te                   Mumbai  178   0.22  0.05   0.37   0.20   0.84     1.69      +0
+   UNA.AS       te                Amsterdam   67   0.26  0.07   0.26   0.29   0.05     0.99      +0
+   AFM.V        tinn             TSX Venture  178   0.22  0.05   0.60   0.85   0.62     2.75      +0
+   GLEN.L       tinn                 London  178   0.35  0.13   0.67   0.89   0.37     1.89      +0
+   TINM.L       tinn                 London    0   for kort
+   CNA.L        ttf                  London  178   0.09  0.01   0.05   0.06   0.07     0.57      +1
+   EQNR.OL      ttf                    Oslo  178   0.36  0.13   0.18   0.26   0.11     0.49      +0
+   SHEL.L       ttf                  London  178   0.16  0.02   0.07   0.10   0.02     0.43      +0
+   CF           urea                   NYSE  178   0.09  0.01   0.07   0.25  -0.01     0.83      +1
+   NTR          urea                   NYSE  102   0.07  0.01   0.05   0.07   0.05     0.68      +1
+   YAR.OL       urea                   Oslo  178   0.16  0.03   0.09   0.12   0.06     0.57      +1
+   CRUD.L       wti                  London  179   0.95  0.89   0.86   0.68   0.94     0.91      +0
+   DVN          wti                    NYSE  179   0.55  0.31   0.65   0.26   0.83     1.18      +0
+   FANG         wti                  Nasdaq  166   0.58  0.34   0.60   0.22   0.88     1.03      +0
+
+4. Sammendrag over 83 par
+   median korrelasjon 0.17, median R2 0.05
+   52 par under 0,30 i korrelasjon. De uttrykker i praksis
+   noe annet enn segmentet sitt:
+      PANL         ship_kamsarmax   korr -0.27  R2 0.08
+      SBLK         ship_ultramax    korr -0.22  R2 0.05
+      GNK          ship_ultramax    korr -0.22  R2 0.05
+      HSY          kakao            korr -0.22  R2 0.05
+      PANL         ship_ultramax    korr -0.20  R2 0.04
+      BARN.SW      kakao            korr -0.15  R2 0.02
+      DHT          ship_vlcc        korr -0.14  R2 0.02
+      TNK          ship_aframax     korr -0.11  R2 0.01
+      SBLK         ship_capesize    korr -0.11  R2 0.01
+      SBUX         kaffe_robusta    korr -0.10  R2 0.01
+      SBUX         kaffe_arabica    korr -0.09  R2 0.01
+      HSHP.OL      ship_capesize    korr -0.09  R2 0.01
+      TRMD-A.CO    ship_aframax     korr -0.09  R2 0.01
+      YAR.OL       kalium           korr -0.04  R2 0.00
+      2020.OL      ship_capesize    korr -0.00  R2 0.00
+      GT           gummi_rss3       korr -0.00  R2 0.00
+      MOWI.OL      fiskemel         korr  0.01  R2 0.00
+      HAFNI.OL     ship_aframax     korr  0.03  R2 0.00
+      MOS          kalium           korr  0.03  R2 0.00
+      AUSS.OL      fiskemel         korr  0.05  R2 0.00
+      NESN.SW      kaffe_robusta    korr  0.06  R2 0.00
+      SBLK         ship_kamsarmax   korr  0.06  R2 0.00
+      GT           gummi_tsr20      korr  0.07  R2 0.00
+      GNK          ship_kamsarmax   korr  0.07  R2 0.00
+      NTR          urea             korr  0.07  R2 0.01
+      CF           urea             korr  0.09  R2 0.01
+      OET.OL       ship_vlcc        korr  0.09  R2 0.01
+      COFF.L       kaffe_robusta    korr  0.09  R2 0.01
+      CNA.L        ttf              korr  0.09  R2 0.01
+      FXPO.L       jernmalm         korr  0.10  R2 0.01
+      ADM          kokosolje        korr  0.12  R2 0.01
+      SALM.OL      fiskemel         korr  0.12  R2 0.01
+      MPE.L        te               korr  0.12  R2 0.01
+      NGAS.L       henryhub         korr  0.12  R2 0.02
+      BG           kokosolje        korr  0.14  R2 0.02
+      MPE.L        kokosolje        korr  0.15  R2 0.02
+      FRO.OL       ship_suezmax     korr  0.15  R2 0.02
+      FRO.OL       ship_vlcc        korr  0.15  R2 0.02
+      SHEL.L       ttf              korr  0.16  R2 0.02
+      YAR.OL       urea             korr  0.16  R2 0.03
+      COFF.L       kaffe_arabica    korr  0.16  R2 0.03
+      OET.OL       ship_suezmax     korr  0.17  R2 0.03
+      NTR          kalium           korr  0.21  R2 0.04
+      AR           henryhub         korr  0.21  R2 0.04
+      HCC          kull             korr  0.22  R2 0.05
+      AFM.V        tinn             korr  0.22  R2 0.05
+      TATACONSUM.NS te               korr  0.22  R2 0.05
+      ADM          palmeolje        korr  0.22  R2 0.05
+      UNA.AS       te               korr  0.26  R2 0.07
+      BTU          kull             korr  0.28  R2 0.08
+      VALE         nikkel           korr  0.29  R2 0.08
+      RE.L         palmeolje        korr  0.29  R2 0.09
+
+   22 par tar mer av nedsiden enn av oppsiden:
+      COFF.L       kaffe_arabica    opp -0.28  ned  1.56
+      NESN.SW      kaffe_robusta    opp -0.17  ned  0.25
+      MPE.L        te               opp -0.14  ned  0.04
+      NTR          kalium           opp -0.01  ned  0.22
+      CNA.L        ttf              opp  0.06  ned  0.07
+      GLEN.L       nikkel           opp  0.12  ned  0.80
+      AUSS.OL      fiskemel         opp  0.14  ned  0.34
+      TATACONSUM.NS te               opp  0.20  ned  0.84
+      MPE.L        palmeolje        opp  0.21  ned  0.33
+      FANG         wti              opp  0.22  ned  0.88
+      RIO.L        jernmalm         opp  0.25  ned  0.28
+      DVN          wti              opp  0.26  ned  0.83
+
+   44 par har hoyest korrelasjon ved en forskyvning:
+      AUSS.OL      fiskemel         forskyvning +1
+      MOWI.OL      fiskemel         forskyvning +1
+      GT           gummi_rss3       forskyvning +2
+      FXPO.L       jernmalm         forskyvning +1
+      RIO.L        jernmalm         forskyvning +1
+      VALE         jernmalm         forskyvning +1
+      SBUX         kaffe_arabica    forskyvning -1
+      COFF.L       kaffe_robusta    forskyvning +1
+      NESN.SW      kaffe_robusta    forskyvning -1
+      SBUX         kaffe_robusta    forskyvning +2
+      BARN.SW      kakao            forskyvning -1
+      COCO.L       kakao            forskyvning +1
+      HSY          kakao            forskyvning +2
+      MOS          kalium           forskyvning +2
+      NTR          kalium           forskyvning +1
+      YAR.OL       kalium           forskyvning +2
+      ANTO.L       kobber           forskyvning +1
+      BG           kokosolje        forskyvning +1
+      MPE.L        kokosolje        forskyvning -1
+      BTU          kull             forskyvning +1
+      TGA.L        kull             forskyvning +1
+      VALE         nikkel           forskyvning +1
+      HAFNI.OL     ship_aframax     forskyvning +1
+      TNK          ship_aframax     forskyvning +2
+      TRMD-A.CO    ship_aframax     forskyvning +2
+      2020.OL      ship_capesize    forskyvning +1
+      HSHP.OL      ship_capesize    forskyvning +2
+      SBLK         ship_capesize    forskyvning +2
+      GNK          ship_kamsarmax   forskyvning +2
+      PANL         ship_kamsarmax   forskyvning +2
+      SBLK         ship_kamsarmax   forskyvning +2
+      FRO.OL       ship_suezmax     forskyvning +1
+      OET.OL       ship_suezmax     forskyvning +1
+      GNK          ship_ultramax    forskyvning +2
+      PANL         ship_ultramax    forskyvning -1
+      SBLK         ship_ultramax    forskyvning +2
+      DHT          ship_vlcc        forskyvning +1
+      FRO.OL       ship_vlcc        forskyvning +1
+      OET.OL       ship_vlcc        forskyvning +1
+      MPE.L        te               forskyvning +1
+      CNA.L        ttf              forskyvning +1
+      CF           urea             forskyvning +1
+      NTR          urea             forskyvning +1
+      YAR.OL       urea             forskyvning +1
+
+   Beste og verste:
+      CRUD.L       wti              korr  0.95  beta  0.86
+      BRNT.L       brent            korr  0.90  beta  0.59
+      NICK.L       nikkel           korr  0.65  beta  0.77
+      ALUM.L       aluminium        korr  0.63  beta  0.81
+      COPA.L       kobber           korr  0.63  beta  0.81
+      ...
+      PANL         ship_kamsarmax   korr -0.27  beta -0.89
+      SBLK         ship_ultramax    korr -0.22  beta -0.57
+      GNK          ship_ultramax    korr -0.22  beta -0.56
+      HSY          kakao            korr -0.22  beta -0.15
+      PANL         ship_ultramax    korr -0.20  beta -0.71
+
+5. Ledetid, maalt paa dagsdata
+   Maanedsdata kan ikke svare paa dette: leder aksjen med to til seks uker,
+   ser det ut som samtidighet i en maanedsserie. Her korreleres daglige
+   endringer ved forskyvninger fra -20 til +20 borsdager. Negativ topp
+   betyr at aksjen beveger seg FOR raavaren.
+
+   instrument   segment        n  r ved 0  beste lag   r der                tolkning
+   AKRBP.OL     brent       2444     0.52         +0    0.52                samtidig
+   VAR.OL       brent       1123     0.52         +0    0.52                samtidig
+   BRNT.L       brent       2467     0.81         +0    0.81                samtidig
+   FANG         wti         2510     0.56         +0    0.56                samtidig
+   DVN          wti         2510     0.56         +0    0.56                samtidig
+   CRUD.L       wti         2466     0.75         +0    0.75                samtidig
+   EQT          henryhub    2510     0.34         +0    0.34                samtidig
+   AR           henryhub    2510     0.31         +0    0.31                samtidig
+   NGAS.L       henryhub    2467     0.49         +0    0.49                samtidig
+   SGLN.L       gold        2466     0.77         +0    0.77                samtidig
+   AEM          gold        2509     0.66         +0    0.66                samtidig
+   NEM          gold        2509     0.62         +0    0.62                samtidig
+   ANTO.L       kobber      2466     0.58         +0    0.58                samtidig
+   FCX          kobber      2509     0.55         +0    0.55                samtidig
+   COPA.L       kobber      2466     0.80         +0    0.80                samtidig
+
+==============================================================================
+Et instrument med korrelasjon under 0,30 uttrykker ikke segmentet.
+Et med hoyere beta ned enn opp gir deg nedsiden uten oppsiden.

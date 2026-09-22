@@ -1,0 +1,239 @@
+==============================================================================
+1. KURSHISTORIKK. D trenger fem aar for fall-fra-topp og 200-dagers
+==============================================================================
+
+ticker              n          fra          til   aar   fall fra 5-aarstopp   % uker <200d
+2020.OL          1808   2019-07-12   2026-09-22   7.2                -96.6 %            51 %
+AA               2512   2016-09-22   2026-09-21  10.0                -53.0 %            54 %
+ADM              2512   2016-09-22   2026-09-21  10.0                -15.1 %            49 %
+AEM              2512   2016-09-22   2026-09-21  10.0                -21.7 %            36 %
+AFM.V            2509   2016-09-21   2026-09-21  10.0                -15.7 %            31 %
+AKRBP.OL         2510   2016-09-22   2026-09-22  10.0                -15.5 %            42 %
+ANTO.L           2525   2016-09-22   2026-09-22  10.0                -14.7 %            39 %
+AR               2512   2016-09-22   2026-09-21  10.0                -29.7 %            38 %
+AUSS.OL          2510   2016-09-22   2026-09-22  10.0                -45.4 %            57 %
+BARN.SW          2511   2016-09-22   2026-09-22  10.0                -51.0 %            69 %
+BG               2512   2016-09-22   2026-09-21  10.0                -14.3 %            45 %
+BOL.ST           2513   2016-09-22   2026-09-22  10.0                -25.6 %            47 %
+BTU              2380   2017-04-03   2026-09-21   9.5                -36.5 %            44 %
+CF               2512   2016-09-22   2026-09-21  10.0                -11.5 %            33 %
+CNA.L            2525   2016-09-22   2026-09-22  10.0                -30.9 %            25 %
+DHT              2512   2016-09-22   2026-09-21  10.0                 -3.5 %            27 %
+DVN              2512   2016-09-22   2026-09-21  10.0                -39.0 %            51 %
+EQNR.OL          2510   2016-09-22   2026-09-22  10.0                 -3.5 %            51 %
+EQT              2512   2016-09-22   2026-09-21  10.0                -26.2 %            33 %
+FANG             2512   2016-09-22   2026-09-21  10.0                -11.4 %            33 %
+FCX              2512   2016-09-22   2026-09-21  10.0                 -9.7 %            36 %
+FRO.OL           2510   2016-09-22   2026-09-22  10.0                 -6.9 %            22 %
+FXPO.L           2525   2016-09-22   2026-09-22  10.0                -91.4 %            80 %
+GLEN.L           2522   2016-09-22   2026-09-22  10.0                -13.7 %            43 %
+GNK              2512   2016-09-22   2026-09-21  10.0                 -1.0 %            49 %
+GT               2512   2016-09-22   2026-09-21  10.0                -79.2 %            68 %
+HAFNI.OL         1723   2019-11-08   2026-09-22   6.9                 -2.9 %            25 %
+HAL.SI           FEIL  HTTPError 404 Client Error: Not Found for url: https://que
+HCC              2372   2017-04-13   2026-09-21   9.4                -19.8 %            24 %
+HSHP.OL          1141   2022-03-04   2026-09-22   4.6                 -2.7 %            26 %
+HSY              2512   2016-09-22   2026-09-21  10.0                -39.2 %            43 %
+JDEP.AS          FEIL  HTTPError 404 Client Error: Not Found for url: https://que
+MICP.PA          FEIL  HTTPError 404 Client Error: Not Found for url: https://que
+MOS              2512   2016-09-22   2026-09-21  10.0                -69.2 %            70 %
+MOWI.OL          2510   2016-09-22   2026-09-22  10.0                -27.2 %            48 %
+MPE.L            2525   2016-09-22   2026-09-22  10.0                 -0.9 %            29 %
+NAT              2512   2016-09-22   2026-09-21  10.0                 -3.0 %            39 %
+NEM              2512   2016-09-22   2026-09-21  10.0                 -8.9 %            48 %
+NESN.SW          2511   2016-09-22   2026-09-22  10.0                -40.7 %            68 %
+NEXA             2235   2017-10-27   2026-09-21   8.9                -23.1 %            48 %
+NHY.OL           2510   2016-09-22   2026-09-22  10.0                -28.4 %            41 %
+NTR              2191   2018-01-02   2026-09-21   8.7                -34.9 %            50 %
+OET.OL           2062   2018-07-04   2026-09-22   8.2                 -4.1 %            21 %
+PANL             2512   2016-09-22   2026-09-21  10.0                -10.5 %            42 %
+RE.L             2524   2016-09-22   2026-09-18  10.0                -35.2 %            52 %
+RIO.L            2524   2016-09-22   2026-09-22  10.0                -13.0 %            53 %
+SALM.OL          2510   2016-09-22   2026-09-22  10.0                -32.0 %            44 %
+SBLK             2512   2016-09-22   2026-09-21  10.0                 -5.6 %            43 %
+SBUX             2512   2016-09-22   2026-09-21  10.0                -18.9 %            55 %
+SHEL.L           2525   2016-09-22   2026-09-22  10.0                 -3.7 %            21 %
+TATACONSUM.NS    2474   2016-09-22   2026-09-22  10.0                -22.1 %            35 %
+TECK-B.TO        2508   2016-09-21   2026-09-18  10.0                 -7.6 %            30 %
+TGA.L            1337   2021-06-07   2026-09-22   5.3                -70.0 %            54 %
+TMIP.L           1342   2021-05-27   2026-09-18   5.3                -62.0 %            62 %
+TNK              2512   2016-09-22   2026-09-21  10.0                 -2.1 %            22 %
+TRMD-A.CO        2499   2016-09-22   2026-09-22  10.0                -12.8 %            36 %
+UNA.AS           1484   2020-12-04   2026-09-22   5.8                -13.2 %            51 %
+VALE             2512   2016-09-22   2026-09-21  10.0                -33.3 %            61 %
+VAR.OL           1153   2022-02-16   2026-09-22   4.6                 -5.2 %            33 %
+YAR.OL           2510   2016-09-22   2026-09-22  10.0                -24.3 %            51 %
+
+   57 av 60 med brukbar kurshistorikk
+   mangler: HAL.SI, JDEP.AS, MICP.PA
+
+   Proever stooq for dem som feilet:
+   OK    stooq hal.sg           ikke CSV: '<!DOCTYPE html><html><head><meta charset'
+   OK    stooq jdep.nl          ikke CSV: '<!DOCTYPE html><html><head><meta charset'
+   OK    stooq micp.fr          ikke CSV: '<!DOCTYPE html><html><head><meta charset'
+
+==============================================================================
+2. TEMA-ETF-ER. Kapital som forlater temaet er Ds tredje brukbare ledd
+==============================================================================
+   Testes paa to maater: kurs fra Yahoo (alltid), og utstederens egen
+   daglige fil med forvaltningskapital (varierer).
+
+   OK    uran (URA)             191 dager fra 2010-12-01, fall fra 5-aarstopp -24 %
+   OK    kobber (COPX)          198 dager fra 2010-05-01, fall fra 5-aarstopp -9 %
+   OK    gull (GDX)             245 dager fra 2006-06-01, fall fra 5-aarstopp -18 %
+   OK    metall bredt (XME)     244 dager fra 2006-07-01, fall fra 5-aarstopp -13 %
+   OK    torrlast (BDRY)        445 dager fra 2018-03-19, fall fra 5-aarstopp -59 %
+   OK    oljeservice (OIH)      308 dager fra 2001-03-01, fall fra 5-aarstopp -12 %
+   OK    olje og gass (XOP)     244 dager fra 2006-07-01, fall fra 5-aarstopp -3 %
+   OK    litium (LIT)           195 dager fra 2010-08-01, fall fra 5-aarstopp -24 %
+   OK    stal (SLX)             240 dager fra 2006-11-01, fall fra 5-aarstopp -4 %
+   OK    jordbruk (MOO)         229 dager fra 2007-10-01, fall fra 5-aarstopp -20 %
+
+   Utstedernes egne filer med forvaltningskapital:
+   OK    Global X URA           200, 310,032 b, ingen kapitaltall i teksten
+   OK    Global X COPX          200, 298,734 b, ingen kapitaltall i teksten
+   OK    VanEck GDX             200, 286,818 b, ingen kapitaltall i teksten
+   OK    SSGA XME               200, 20,158 b, ingen kapitaltall i teksten
+   feil  Breakwave BDRY         ConnectTimeout HTTPSConnectionPool(host='etfmanagers.com', port=443): Max r
+
+==============================================================================
+3. C FRA REGNSKAPET. Hvilke selskaper har SEC-tall, og hva heter feltene
+==============================================================================
+   Ingen begreper gjettes. Skriptet scanner hva hvert selskap faktisk
+   bruker, i baade us-gaap og ifrs-full, og rapporterer antall aarstall.
+
+   SECs tickerliste: 10459 selskaper
+
+   ticker           i SEC      kontanter        gjeld  drift_konta  egenkapital        rente  driftskostn
+   2020.OL            nei
+   AA                  ja             14           12           13           10           13            4
+   ADM                 ja             20           18           19            -           19            -
+   AEM                 ja             11           10           10           11           10            -
+   AFM.V              nei
+   AKRBP.OL           nei
+   ANTO.L             nei
+   AR                  ja             12           13           16           17           12           14
+   AUSS.OL            nei
+   BARN.SW            nei
+   BG                  ja              7            5            6            5            6            -
+   BOL.ST             nei
+   BTU                 ja             21           19           20           19           20           16
+   CF                  ja             17           17           18           19           20           17
+   CNA.L               ja             19           17           18           17           18            -
+   DHT                 ja             12           10            9           10           11            -
+   DVN                 ja             21           19           18           19           19           11
+   EQNR.OL             ja             12           10           11           12           11            -
+   EQT                 ja             21           19           20           19           20           20
+   FANG                ja             18           15           10           15           17           13
+   FCX                 ja             21           19           20           19           18           20
+   FRO.OL              ja             16           14           15           14           14           15
+   FXPO.L             nei
+   GLEN.L             nei
+   GNK                 ja             20           15           16           18           17           19
+   GT                  ja             20           18           19           18           18            -
+   HAFNI.OL           nei
+   HAL.SI              ja             21           17           20           19           20           20
+   HCC                 ja             11           11           11           11           10           11
+   HSHP.OL             ja              6            5            6            5            6            6
+   HSY                 ja             14           19           20           18           20           10
+   JDEP.AS            nei
+   MICP.PA            nei
+   MOS                 ja             19           17           17           17           18            9
+   MOWI.OL            nei
+   MPE.L              nei
+   NAT                 ja             18           16           16           18           17           17
+   NEM                 ja             21           19           20           19           18           20
+   NESN.SW            nei
+   NEXA                ja             12           11           11           12           11            -
+   NHY.OL             nei
+   NTR                 ja             10            9            9           10            9            -
+   OET.OL             nei
+   PANL                ja             15           13           10           14           14           14
+   RE.L               nei
+   RIO.L               ja             11            9           10           11           10            -
+   SALM.OL            nei
+   SBLK                ja             18            5           17           18           17           17
+   SBUX                ja             17           19           20           21           20           20
+   SHEL.L              ja             12           10           11           12           11            -
+   TATACONSUM.NS      nei
+   TECK-B.TO           ja              -            -            -            -            -            -
+   TGA.L              nei
+   TMIP.L             nei
+   TNK                 ja             18           13           16           16           17            9
+   TRMD-A.CO           ja             12           11           11           12           11            -
+   UNA.AS             nei
+   VALE                ja             12            7            6           12           11            6
+   VAR.OL             nei
+   YAR.OL             nei
+
+   35 av 60 finnes hos SEC, 34 har minst fire av seks ledd. 25 staar utenfor: 2020.OL, AFM.V, AKRBP.OL, ANTO.L, AUSS.OL, BARN.SW, BOL.ST, FXPO.L, GLEN.L, HAFNI.OL, JDEP.AS, MICP.PA, MOWI.OL, MPE.L, NESN.SW, NHY.OL, OET.OL, RE.L, SALM.OL, TATACONSUM.NS, TGA.L, TMIP.L, UNA.AS, VAR.OL, YAR.OL
+
+   Begrepene som ble valgt, for de fem forste:
+      AA
+         kontanter            CashAndCashEquivalentsAtCarryingValue
+         gjeld                LongTermDebtAndCapitalLeaseObligations
+         drift_kontantstrom   NetCashProvidedByUsedInOperatingActivities
+         egenkapital          StockholdersEquity
+         rente                InterestExpense
+         driftskostnad        CostsAndExpenses
+      ADM
+         kontanter            CashAndCashEquivalentsAtCarryingValue
+         gjeld                LongTermDebtCurrent
+         drift_kontantstrom   NetCashProvidedByUsedInOperatingActivities
+         rente                InterestExpense
+      AEM
+         kontanter            CashAndCashEquivalents
+         gjeld                LongtermBorrowings
+         drift_kontantstrom   CashFlowsFromUsedInOperatingActivities
+         egenkapital          Equity
+         rente                FinanceCosts
+      AR
+         kontanter            CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalent
+         gjeld                LongTermDebtNoncurrent
+         drift_kontantstrom   NetCashProvidedByUsedInOperatingActivities
+         egenkapital          StockholdersEquity
+         rente                InterestPaidNet
+         driftskostnad        CostsAndExpenses
+      BG
+         kontanter            CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalent
+         gjeld                LongTermDebt
+         drift_kontantstrom   NetCashProvidedByUsedInOperatingActivities
+         egenkapital          StockholdersEquity
+         rente                InterestExpense
+
+==============================================================================
+4. DE NORDISKE. 13 Oslo, 1 Stockholm, 1 København filer ikke hos SEC
+==============================================================================
+   15 av 60 aksjer. Uten dem er C blind paa nettopp de
+   instrumentene du helst vil eie.
+
+   OK    2020.OL / balanceSheetHistory 401, tomt svar: '{"finance":{"result":null,"error":{"code":"Unauthorized","description"'
+   OK    2020.OL / financialData 401, tomt svar: '{"finance":{"result":null,"error":{"code":"Unauthorized","description"'
+   OK    2020.OL / defaultKeyStatistics 401, tomt svar: '{"finance":{"result":null,"error":{"code":"Unauthorized","description"'
+   OK    AKRBP.OL / balanceSheetHistory 401, tomt svar: '{"finance":{"result":null,"error":{"code":"Unauthorized","description"'
+   OK    AKRBP.OL / financialData 401, tomt svar: '{"finance":{"result":null,"error":{"code":"Unauthorized","description"'
+   OK    AKRBP.OL / defaultKeyStatistics 401, tomt svar: '{"finance":{"result":null,"error":{"code":"Unauthorized","description"'
+   OK    AUSS.OL / balanceSheetHistory 401, tomt svar: '{"finance":{"result":null,"error":{"code":"Unauthorized","description"'
+   OK    AUSS.OL / financialData 401, tomt svar: '{"finance":{"result":null,"error":{"code":"Unauthorized","description"'
+   OK    AUSS.OL / defaultKeyStatistics 401, tomt svar: '{"finance":{"result":null,"error":{"code":"Unauthorized","description"'
+   OK    BOL.ST / balanceSheetHistory 401, tomt svar: '{"finance":{"result":null,"error":{"code":"Unauthorized","description"'
+   OK    BOL.ST / financialData 401, tomt svar: '{"finance":{"result":null,"error":{"code":"Unauthorized","description"'
+   OK    BOL.ST / defaultKeyStatistics 401, tomt svar: '{"finance":{"result":null,"error":{"code":"Unauthorized","description"'
+   OK    EQNR.OL / balanceSheetHistory 401, tomt svar: '{"finance":{"result":null,"error":{"code":"Unauthorized","description"'
+   OK    EQNR.OL / financialData 401, tomt svar: '{"finance":{"result":null,"error":{"code":"Unauthorized","description"'
+   OK    EQNR.OL / defaultKeyStatistics 401, tomt svar: '{"finance":{"result":null,"error":{"code":"Unauthorized","description"'
+   OK    FRO.OL / balanceSheetHistory 401, tomt svar: '{"finance":{"result":null,"error":{"code":"Unauthorized","description"'
+   OK    FRO.OL / financialData 401, tomt svar: '{"finance":{"result":null,"error":{"code":"Unauthorized","description"'
+   OK    FRO.OL / defaultKeyStatistics 401, tomt svar: '{"finance":{"result":null,"error":{"code":"Unauthorized","description"'
+
+   Andre veier til nordiske regnskapstall:
+   OK    Euronext Oslo instrument 200, 255,736 b
+   OK    Oslo Bors nyhetsweb    200, 3,715 b
+   OK    Equinor IR XBRL        200, 325,743 b
+   OK    Frontline IR           404, 56,402 b
+   OK    Borsdata API (krever nokkel) 403, 5,485 b
+
+==============================================================================
+1 avgjor om D kan bygges og for hvor mange. 3 avgjor det samme for C.
+4 avgjor om C i det hele tatt kan dekke de norske instrumentene.
+Send hele utskriften tilbake.
