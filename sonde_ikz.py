@@ -123,7 +123,7 @@ def pink_sheet():
 AVKORT = {"gold": "1971-08", "aluminium": "1980-01", "nikkel": "1980-01",
           "te": "1980-01", "kakao": "1980-01", "urea": "2000-01",
           "ttf": "2000-01", "kull": "2000-01", "jernmalm": "2010-01"}
-UTEN_A = {"kalium"}
+UTEN_A = set()
 
 SPEIL = [("brent", "oil-prices/main/data/brent-daily.csv", False),
          ("wti", "oil-prices/main/data/wti-daily.csv", False),
@@ -134,7 +134,7 @@ PINK = [("kobber", "Copper"), ("nikkel", "Nickel"), ("aluminium", "Aluminum"),
         ("sink", "Zinc"), ("bly", "Lead"), ("tinn", "Tin"),
         ("jernmalm", "Iron ore"), ("kull", "Coal, Australian"),
         ("ttf", "Natural gas, Europe"), ("urea", "Urea"),
-        ("kalium", "Potassium chloride"), ("fiskemel", "Fish meal"),
+        ("fiskemel", "Fish meal"),
         ("kakao", "Cocoa"), ("kaffe_arabica", "Coffee, Arabica"),
         ("kaffe_robusta", "Coffee, Robusta"), ("palmeolje", "Palm oil"),
         ("gummi_rss3", "Rubber, RSS3"), ("gummi_tsr20", "Rubber, TSR20"),
@@ -191,7 +191,7 @@ for navn, url, mnd in [
         note(f"uran ({navn})", False, str(e)[:60])
 
 for sid in UTEN_A:
-    RAAVARE.pop(sid, None)     # kalium er administrert pris, ikke et marked
+    RAAVARE.pop(sid, None)     # administrert pris, ikke et marked
 note("raavareserier", True, f"{len(RAAVARE)} segment, "
      f"korteste {min(len(v) for v in RAAVARE.values())} mnd")
 
@@ -221,7 +221,7 @@ KANDIDATER = [
     F("IESU.L", "iShares S&P 500 Energy Sector", ["wti", "henryhub"], "IE00B42NKQ00"),
     F("MNCG.L", "iShares MSCI Global Metals & Mining Producers", ["kobber", "jernmalm", "nikkel", "sink"], "IE00B6R52036"),
     F("GDIG.L", "VanEck Global Mining", ["kobber", "jernmalm", "nikkel", "aluminium"], "IE00BDFBTQ78"),
-    F("ISAG.L", "iShares Agribusiness", ["urea", "kalium", "palmeolje"], "IE00B6R52143"),
+    F("ISAG.L", "iShares Agribusiness", ["palmeolje"], "IE00B6R52143"),
     # ---- UCITS-ETF, gull og gruve
     F("GDX.L", "VanEck Gold Miners UCITS", ["gold"], "IE00BQQP9F84"),
     F("GJGB.L", "VanEck Junior Gold Miners UCITS", ["gold"], "IE00BQQP9G91"),
@@ -264,7 +264,7 @@ KANDIDATER = [
     E("CVE.TO", "Cenovus", ["wti"]), E("TOU.TO", "Tourmaline Oil", ["henryhub"]),
     E("ARX.TO", "ARC Resources", ["henryhub"]), E("BIR.TO", "Birchcliff Energy", ["henryhub"]),
     E("PEY.TO", "Peyto", ["henryhub"]), E("WCP.TO", "Whitecap Resources", ["wti"]),
-    E("VET.TO", "Vermilion Energy", ["wti", "ttf"]), E("MEG.TO", "MEG Energy", ["wti"], alt=["CVE.TO"]),
+    E("VET.TO", "Vermilion Energy", ["wti", "ttf"]), E("MEG.TO", "MEG Energy", ["wti"]),
 
     # ---- gull
     E("NEM", "Newmont", ["gold"]), E("AEM", "Agnico Eagle", ["gold"]),
@@ -310,11 +310,11 @@ KANDIDATER = [
     E("NC", "NACCO Industries", ["kull"]),
 
     # ---- gjodsel
-    E("YAR.OL", "Yara International", ["urea", "kalium", "ttf"]),
-    E("CF", "CF Industries", ["urea", "henryhub"]), E("NTR", "Nutrien", ["urea", "kalium"]),
-    E("MOS", "Mosaic", ["kalium"]), E("ICL", "ICL Group", ["kalium"]),
-    E("SDF.DE", "K+S", ["kalium"]), E("OCI.AS", "OCI NV", ["urea"]),
-    E("IPI", "Intrepid Potash", ["kalium"]), E("LXU", "LSB Industries", ["urea"]),
+    E("YAR.OL", "Yara International", ["ttf"]),
+    E("CF", "CF Industries", ["urea", "henryhub"]), E("NTR", "Nutrien", []),
+    E("MOS", "Mosaic", []), E("ICL", "ICL Group", []),
+    E("SDF.DE", "K+S", []), E("OCI.AS", "OCI NV", ["urea"]),
+    E("IPI", "Intrepid Potash", []), E("LXU", "LSB Industries", ["urea"]),
 
     # ---- fiskemel og sjomat
     E("AUSS.OL", "Austevoll Seafood", ["fiskemel"]), E("MOWI.OL", "Mowi", ["fiskemel"]),
@@ -442,7 +442,7 @@ print(f"\n2. Kandidatunivers: {len(KANDIDATER)} papirer")
 FX = {"USD": None, "EUR": ("EURUSD=X", False), "GBP": ("GBPUSD=X", False),
       "GBp": ("GBPUSD=X", False), "NOK": ("NOK=X", True), "SEK": ("SEK=X", True),
       "DKK": ("DKK=X", True), "CHF": ("CHF=X", True), "CAD": ("CAD=X", True),
-      "ILS": ("ILS=X", True)}
+      "ILS": ("ILS=X", True), "AUD": ("AUDUSD=X", False)}
 _fx_cache = {}
 
 def fx_serie(sym, invert):

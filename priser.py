@@ -353,10 +353,13 @@ AVKORT = {
     "jernmalm":  "2010-01",   # 93/94/93/92/57 %, forhandlet referansepris til 2010
 }
 
-# Kalium er et eget tilfelle. Den staar 71 % stille selv paa 2010-tallet, og
-# bare 2020-tallet er en markedspris. Seks aar er ikke en fordeling, saa A
-# beregnes ikke i det hele tatt. Segmentet staar synlig med pris og graf.
-UTEN_A = {"kalium"}
+# Mekanisme for serier som er for administrerte til at A betyr noe, men som
+# likevel skal staa synlig med pris og graf. Settet er tomt naa. Kalium sto her
+# fram til 2026-09-22: den sto 71 % stille selv paa 2010-tallet, bare
+# 2020-tallet var en markedspris, og seks aar er ikke en fordeling. Da den
+# heller ikke hadde et maalt instrument i IKZ-universet, ble hele segmentet
+# tatt ut i stedet for aa staa som en pris uten skaar og uten papir.
+UTEN_A = set()
 
 M = ("Serien er avkortet fordi prisen foer dette var forhandlet eller fastsatt "
      "og ikke satt i et marked. En fast pris opptar de billigste persentilene "
@@ -373,9 +376,6 @@ AVKORT_MERKNAD = {
     "ttf":       M + " Europeisk gass var oljeindeksert kontrakt fram til 1990-tallet.",
     "kull":      M + " Australsk kull hadde årlige kontraktspriser.",
     "jernmalm":  M + " Jernmalm hadde årlig forhandlet referansepris fram til 2010.",
-    "kalium":    ("Prisnivåskåren er ikke beregnet. Kalium var kontraktspris i hele "
-                  "historikken og står 71 % stille selv på 2010-tallet. Bare 2020-tallet "
-                  "er en markedspris, og seks år er ikke nok til en fordeling."),
 }
 
 for sid, navn, grp, enhet, sti, mnd in MIRRORS:
@@ -400,6 +400,15 @@ FLERAARIG_MERKNAD = (
     "produktivitetstrend nedover, så persentilen overdriver hvor billig den er."
 )
 
+# Ni segmenter er tatt ut 2026-09-22: urea, fiskemel, kaffe arabica, kaffe
+# robusta, gummi RSS3, gummi TSR20, kokosolje, te og kalium. De aatte forste
+# fordi ingen av dem hadde et instrument i IKZ-universet med maanedskorrelasjon
+# over 0,30 mot sin egen raavare. Oppdretterne laa paa 0,07 mot fiskemel og
+# Nutrien paa 0,05 mot urea. Kalium i tillegg fordi prisen er administrert i
+# hele historikken og segmentet derfor aldri fikk noen prisnivaaskaar.
+# Et segment uten et papir som folger det er en pris paa en skjerm, ikke en
+# beslutning. Seriene finnes fortsatt i Pink Sheet og kan hentes inn igjen ved
+# aa legge linjen tilbake.
 PINK = [
     ("kobber", "Kobber", "Metall", "USD/tonn", "Copper"),
     ("nikkel", "Nikkel", "Metall", "USD/tonn", "Nickel"),
@@ -410,20 +419,11 @@ PINK = [
     ("jernmalm", "Jernmalm 62% Fe", "Metall", "USD/tonn", "Iron ore"),
     ("kull", "Termisk kull (Australia)", "Metall", "USD/tonn", "Coal, Australian"),
     ("ttf", "Naturgass Europa", "Energi", "USD/mmbtu", "Natural gas, Europe"),
-    ("urea", "Urea", "Nordisk", "USD/tonn", "Urea"),
-    ("kalium", "Kalium", "Nordisk", "USD/tonn", "Potassium chloride"),
-    ("fiskemel", "Fiskemel", "Nordisk", "USD/tonn", "Fish meal"),
     # Tremasse er tatt ut: Verdensbanken har fjernet woodpulp fra Pink Sheet.
     # Flerårige vekster. Tre til sju år fra planting til full bæring, så
     # tilbudssiden er et kapitalapparat og ikke en årlig såing.
     ("kakao", "Kakao", "Flerårige", "USD/kg", "Cocoa"),
-    ("kaffe_arabica", "Kaffe arabica", "Flerårige", "USD/kg", "Coffee, Arabica"),
-    ("kaffe_robusta", "Kaffe robusta", "Flerårige", "USD/kg", "Coffee, Robusta"),
     ("palmeolje", "Palmeolje", "Flerårige", "USD/tonn", "Palm oil"),
-    ("gummi_rss3", "Gummi (RSS3)", "Flerårige", "USD/kg", "Rubber, RSS3"),
-    ("gummi_tsr20", "Gummi (TSR20)", "Flerårige", "USD/kg", "Rubber, TSR20"),
-    ("kokosolje", "Kokosolje", "Flerårige", "USD/tonn", "Coconut oil"),
-    ("te", "Te", "Flerårige", "USD/kg", "Tea, avg 3 auctions"),
 ]
 try:
     ps = pink_sheet()
@@ -514,8 +514,9 @@ try:
             {"ticker": tk, "bors": bors, "navn": navn, "type": typ,
              "kommentar": kom.lstrip("-").strip(),
              "omvendt": kom.strip().startswith("-"),
-             "handlbar": bors in {"Oslo", "Stockholm", "København", "London",
-                                  "NYSE", "Nasdaq", "Toronto", "TSX Venture"}}
+             "handlbar": bors in {"Oslo", "Stockholm", "København", "Helsinki",
+                                  "London", "Xetra", "Amsterdam", "Paris",
+                                  "Zurich", "NYSE", "Nasdaq", "Toronto"}}
             for tk, bors, navn, typ, kom in rader]
         n += 1
     note("instrumenter", True, f"{n} av {len(SEGMENTS)} segment fikk instrumentliste")
