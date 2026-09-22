@@ -1,5 +1,5 @@
 {
- "oppdatert": "2026-09-22 08:36:13",
+ "oppdatert": "2026-09-22 08:51:14",
  "segmenter": [
   "brent",
   "wti",
@@ -224,8 +224,8 @@
   },
   {
    "kilde": "kapitulasjon D",
-   "status": "FEIL",
-   "detalj": "HTTPError: 404 Client Error: Not Found for url: https://raw.githubusercontent.com"
+   "status": "OK",
+   "detalj": "24 segment"
   },
   {
    "kilde": "overlevelsesport C",
