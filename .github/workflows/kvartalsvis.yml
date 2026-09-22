@@ -1,11 +1,8 @@
-# Tilbudsskaaren B bygger paa aarsregnskaper hos SEC og endrer seg noen faa
-# ganger i aaret. Kvartalsvis er rikelig.
-
-name: Kvartalsvis tilbudsskaar
+name: Kvartalsvis tilbudsskår
 
 on:
   schedule:
-    - cron: "0 7 5 2,5,8,11 *"  # 5. februar, mai, august og november
+    - cron: "0 7 5 2,5,8,11 *"
   workflow_dispatch:
 
 permissions:
@@ -25,4 +22,4 @@ jobs:
       - name: Capex mot avskrivninger
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python scripts/tilbud_b.py
+        run: python tilbud_b.py
