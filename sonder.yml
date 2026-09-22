@@ -1,0 +1,61 @@
+# Sondene. Kjorer bare naar du trykker paa knappen, aldri paa timeplan.
+#
+# De skriver ingenting til dashbordet. De maaler hva som finnes av data og
+# legger hele utskriften i mappen sonder/ i dette repoet, slik at Claude kan
+# lese resultatet selv uten at du maa kopiere noe.
+#
+# Diagnosen skriver i tillegg bdi_hist.json og etterspørsel.json, som er
+# ferdige data og ikke sondering.
+
+name: Sonder
+
+on:
+  workflow_dispatch:
+    inputs:
+      hvilken:
+        description: "Hvilken sonde"
+        required: true
+        default: "alle"
+        type: choice
+        options: [alle, diagnose, "C og D", korrelasjon]
+
+permissions:
+  contents: write
+
+jobs:
+  sonde:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - run: mkdir -p sonder
+
+      - name: Diagnose 2.5 (aldersvekting, BDI, OWID)
+        if: inputs.hvilken == 'alle' || inputs.hvilken == 'diagnose'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python scripts/sonde_diagnose.py 2>&1 | tee sonder/diagnose.txt
+
+      - name: Sonde C og D
+        if: inputs.hvilken == 'alle' || inputs.hvilken == 'C og D'
+        run: python scripts/sonde_cd.py 2>&1 | tee sonder/c_og_d.txt
+
+      - name: Korrelasjon instrument mot raavare
+        if: inputs.hvilken == 'alle' || inputs.hvilken == 'korrelasjon'
+        run: python scripts/sonde_korrelasjon.py 2>&1 | tee sonder/korrelasjon.txt
+
+      - name: Legg utskriften i repoet
+        if: always()
+        run: |
+          git config user.name "syklusbordet"
+          git config user.email "actions@github.com"
+          git pull --rebase --autostash || true
+          git add -A sonder/
+          git diff --cached --quiet && echo "ingen ny utskrift" && exit 0
+          git commit -m "sonderesultat $(date -u +%Y-%m-%dT%H:%M)"
+          git push
