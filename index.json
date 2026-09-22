@@ -1,5 +1,5 @@
 {
- "oppdatert": "2026-09-22 07:28:15",
+ "oppdatert": "2026-09-22 08:36:13",
  "segmenter": [
   "brent",
   "wti",
@@ -68,14 +68,24 @@
    "detalj": "A=4.5 detr=2.9 rull=0.0   siste 2026-08"
   },
   {
+   "kilde": "avkorting nikkel",
+   "status": "OK",
+   "detalj": "800 -> 560 mnd, starter 1980-01"
+  },
+  {
    "kilde": "segment nikkel",
    "status": "OK",
-   "detalj": "A=71.2 detr=70.2 rull=63.3   siste 2026-08"
+   "detalj": "A=58.9 detr=70.5 rull=63.3   siste 2026-08"
+  },
+  {
+   "kilde": "avkorting aluminium",
+   "status": "OK",
+   "detalj": "800 -> 560 mnd, starter 1980-01"
   },
   {
    "kilde": "segment aluminium",
    "status": "OK",
-   "detalj": "A=58.4 detr=9.8 rull=8.3   siste 2026-08"
+   "detalj": "A=40.5 detr=10.5 rull=8.3   siste 2026-08"
   },
   {
    "kilde": "segment sink",
@@ -93,29 +103,49 @@
    "detalj": "A=6.9 detr=0.0 rull=0.0   siste 2026-08"
   },
   {
+   "kilde": "avkorting jernmalm",
+   "status": "OK",
+   "detalj": "800 -> 200 mnd, starter 2010-01"
+  },
+  {
    "kilde": "segment jernmalm",
    "status": "OK",
-   "detalj": "A=51.2 detr=66.1 rull=85.0   siste 2026-08"
+   "detalj": "A=81.5 detr=65.0 rull=85.0 oppsikt  siste 2026-08"
+  },
+  {
+   "kilde": "avkorting kull",
+   "status": "OK",
+   "detalj": "680 -> 320 mnd, starter 2000-01"
   },
   {
    "kilde": "segment kull",
    "status": "OK",
-   "detalj": "A=29.1 detr=31.3 rull=45.8   siste 2026-08"
+   "detalj": "A=30.3 detr=72.2 rull=45.8   siste 2026-08"
+  },
+  {
+   "kilde": "avkorting ttf",
+   "status": "OK",
+   "detalj": "800 -> 320 mnd, starter 2000-01"
   },
   {
    "kilde": "segment ttf",
    "status": "OK",
-   "detalj": "A=3.0 detr=17.4 rull=14.2   siste 2026-08"
+   "detalj": "A=7.5 detr=13.4 rull=14.2   siste 2026-08"
+  },
+  {
+   "kilde": "avkorting urea",
+   "status": "OK",
+   "detalj": "800 -> 320 mnd, starter 2000-01"
   },
   {
    "kilde": "segment urea",
    "status": "OK",
-   "detalj": "A=47.8 detr=37.0 rull=41.7   siste 2026-08"
+   "detalj": "A=45.0 detr=68.8 rull=41.7   siste 2026-08"
   },
   {
    "kilde": "segment kalium",
    "status": "OK",
-   "detalj": "A=22.0 detr=41.6 rull=26.7   siste 2026-08"
+   "detalj": "A=None detr=None rull=None   siste 2026-08"
   },
   {
    "kilde": "segment fiskemel",
@@ -123,9 +153,14 @@
    "detalj": "A=1.9 detr=19.1 rull=0.0   siste 2026-08"
   },
   {
+   "kilde": "avkorting kakao",
+   "status": "OK",
+   "detalj": "800 -> 560 mnd, starter 1980-01"
+  },
+  {
    "kilde": "segment kakao",
    "status": "OK",
-   "detalj": "A=29.5 detr=8.1 rull=18.3   siste 2026-08"
+   "detalj": "A=18.0 detr=5.9 rull=18.3   siste 2026-08"
   },
   {
    "kilde": "segment kaffe_arabica",
@@ -158,9 +193,14 @@
    "detalj": "A=46.9 detr=12.3 rull=45.0   siste 2026-08"
   },
   {
+   "kilde": "avkorting te",
+   "status": "OK",
+   "detalj": "800 -> 560 mnd, starter 1980-01"
+  },
+  {
    "kilde": "segment te",
    "status": "OK",
-   "detalj": "A=93.6 detr=39.4 rull=90.8 oppsikt  siste 2026-08"
+   "detalj": "A=90.9 detr=57.3 rull=90.8 oppsikt  siste 2026-08"
   },
   {
    "kilde": "NVE magasinstatistikk",
@@ -181,6 +221,16 @@
    "kilde": "OWID etterspoersel",
    "status": "OK",
    "detalj": "5 segment, siste aar 2024"
+  },
+  {
+   "kilde": "kapitulasjon D",
+   "status": "FEIL",
+   "detalj": "HTTPError: 404 Client Error: Not Found for url: https://raw.githubusercontent.com"
+  },
+  {
+   "kilde": "overlevelsesport C",
+   "status": "OK",
+   "detalj": "24 segment, 19 aapne"
   },
   {
    "kilde": "tilbudsskaar B",
