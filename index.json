@@ -1,5 +1,5 @@
 {
- "oppdatert": "2026-09-22 08:51:14",
+ "oppdatert": "2026-09-22 12:50:26",
  "segmenter": [
   "brent",
   "wti",
@@ -14,17 +14,8 @@
   "jernmalm",
   "kull",
   "ttf",
-  "urea",
-  "kalium",
-  "fiskemel",
   "kakao",
-  "kaffe_arabica",
-  "kaffe_robusta",
-  "palmeolje",
-  "gummi_rss3",
-  "gummi_tsr20",
-  "kokosolje",
-  "te"
+  "palmeolje"
  ],
  "logg": [
   {
@@ -133,26 +124,6 @@
    "detalj": "A=7.5 detr=13.4 rull=14.2   siste 2026-08"
   },
   {
-   "kilde": "avkorting urea",
-   "status": "OK",
-   "detalj": "800 -> 320 mnd, starter 2000-01"
-  },
-  {
-   "kilde": "segment urea",
-   "status": "OK",
-   "detalj": "A=45.0 detr=68.8 rull=41.7   siste 2026-08"
-  },
-  {
-   "kilde": "segment kalium",
-   "status": "OK",
-   "detalj": "A=None detr=None rull=None   siste 2026-08"
-  },
-  {
-   "kilde": "segment fiskemel",
-   "status": "OK",
-   "detalj": "A=1.9 detr=19.1 rull=0.0   siste 2026-08"
-  },
-  {
    "kilde": "avkorting kakao",
    "status": "OK",
    "detalj": "800 -> 560 mnd, starter 1980-01"
@@ -163,44 +134,9 @@
    "detalj": "A=18.0 detr=5.9 rull=18.3   siste 2026-08"
   },
   {
-   "kilde": "segment kaffe_arabica",
-   "status": "OK",
-   "detalj": "A=46.4 detr=6.8 rull=10.8   siste 2026-08"
-  },
-  {
-   "kilde": "segment kaffe_robusta",
-   "status": "OK",
-   "detalj": "A=51.1 detr=9.9 rull=19.2   siste 2026-08"
-  },
-  {
    "kilde": "segment palmeolje",
    "status": "OK",
    "detalj": "A=59.9 detr=16.4 rull=25.8   siste 2026-08"
-  },
-  {
-   "kilde": "segment gummi_rss3",
-   "status": "OK",
-   "detalj": "A=56.1 detr=19.4 rull=14.2   siste 2026-08"
-  },
-  {
-   "kilde": "segment gummi_tsr20",
-   "status": "OK",
-   "detalj": "A=35.8 detr=37.3 rull=5.8   siste 2026-08"
-  },
-  {
-   "kilde": "segment kokosolje",
-   "status": "OK",
-   "detalj": "A=46.9 detr=12.3 rull=45.0   siste 2026-08"
-  },
-  {
-   "kilde": "avkorting te",
-   "status": "OK",
-   "detalj": "800 -> 560 mnd, starter 1980-01"
-  },
-  {
-   "kilde": "segment te",
-   "status": "OK",
-   "detalj": "A=90.9 detr=57.3 rull=90.8 oppsikt  siste 2026-08"
   },
   {
    "kilde": "NVE magasinstatistikk",
@@ -215,7 +151,7 @@
   {
    "kilde": "instrumenter",
    "status": "OK",
-   "detalj": "24 av 24 segment fikk instrumentliste"
+   "detalj": "15 av 15 segment fikk instrumentliste"
   },
   {
    "kilde": "OWID etterspoersel",
@@ -225,12 +161,12 @@
   {
    "kilde": "kapitulasjon D",
    "status": "OK",
-   "detalj": "24 segment"
+   "detalj": "15 segment"
   },
   {
    "kilde": "overlevelsesport C",
    "status": "OK",
-   "detalj": "24 segment, 19 aapne"
+   "detalj": "15 segment, 19 aapne"
   },
   {
    "kilde": "tilbudsskaar B",
