@@ -326,12 +326,85 @@ KANDIDATER = [
     E("TYRES.HE", "Nokian Renkaat", ["gummi_rss3", "gummi_tsr20"]),
     E("TREL-B.ST", "Trelleborg", ["gummi_tsr20"]),
 
+    # ---- forbrukersiden. Papirer der raavaren er en kostnad og ikke en
+    #      inntekt. Ventet negativt fortegn: dyr raavare klemmer marginen,
+    #      fallende raavare utvider den. Kjeden er lengre enn paa
+    #      produsentsiden (raavare faller, innkjopspris faller med
+    #      etterslep, margin utvider seg, kursen folger etter), saa forvent
+    #      lavere R2 og et tregere signal.
+    E("IAG.L", "IAG (British Airways)", ["brent"]),
+    E("LHA.DE", "Lufthansa", ["brent"]), E("AF.PA", "Air France-KLM", ["brent"]),
+    E("RYAAY", "Ryanair", ["brent"]), E("NAS.OL", "Norwegian Air Shuttle", ["brent"]),
+    E("CCL.L", "Carnival", ["brent"]), E("RCL", "Royal Caribbean", ["brent"]),
+    E("DSV.CO", "DSV", ["brent"]), E("KNIN.SW", "Kuehne+Nagel", ["brent"]),
+    E("DHL.DE", "DHL Group", ["brent"]), E("MAERSK-B.CO", "A.P. Moller-Maersk", ["brent"]),
+    E("BAS.DE", "BASF", ["ttf", "urea"]), E("1COV.DE", "Covestro", ["ttf"]),
+    E("AI.PA", "Air Liquide", ["ttf"]), E("LIN", "Linde", ["ttf"]),
+    E("HEI.DE", "Heidelberg Materials", ["ttf", "kull"]),
+    E("HOLN.SW", "Holcim", ["ttf", "kull"]), E("SGO.PA", "Saint-Gobain", ["ttf"]),
+    E("VOW3.DE", "Volkswagen", ["aluminium", "jernmalm"]),
+    E("BMW.DE", "BMW", ["aluminium", "jernmalm"]),
+    E("MBG.DE", "Mercedes-Benz", ["aluminium"]), E("RNO.PA", "Renault", ["aluminium"]),
+    E("ABBN.SW", "ABB", ["kobber"]), E("SU.PA", "Schneider Electric", ["kobber"]),
+    E("LR.PA", "Legrand", ["kobber"]), E("NEX.PA", "Nexans", ["kobber", "aluminium"]),
+    E("NKT.CO", "NKT", ["kobber", "aluminium"]),
+    E("ENR.DE", "Siemens Energy", ["kobber", "aluminium"]),
+    E("ALFA.ST", "Alfa Laval", ["jernmalm"]), E("SAND.ST", "Sandvik", ["jernmalm"]),
+    E("VOLV-B.ST", "Volvo", ["jernmalm", "aluminium"]),
+    E("ATCO-A.ST", "Atlas Copco", ["kobber"]),
+    E("BALL", "Ball Corporation", ["aluminium"]), E("CCK", "Crown Holdings", ["aluminium"]),
+    E("AMCR", "Amcor", ["aluminium"]),
+
     # ---- tvilsom tilgang, tas med for aa se om de i det hele tatt er verdt en
     #      forespørsel til Nordnet
     E("AFM.V", "Alphamin Resources", ["tinn"], "T"),
     E("SIP.BR", "Sipef", ["palmeolje"], "T"),
     E("LOTB.BR", "Lotus Bakeries", ["kakao"], "T"),
 ]
+
+# Hvilke par som er ventet NEGATIVE. Raavaren er en kostnad for papiret, ikke
+# en inntekt. Uten dette kartet leses et negativt fortegn som en feil, og det
+# er det ikke: et sterkt negativt par er like handlbart som et positivt, bare
+# fra motsatt ende av syklusen.
+#
+# To rettinger av det som laa inne fra for:
+#   Yara mot TTF. Gass er 70 til 80 prosent av kostnaden i ammoniakk. Yara er
+#   ventet positiv mot urea og NEGATIV mot gass. Sto som positiv i begge.
+#   Oppdrettsselskapene mot fiskemel. Fiskemel er for, altsaa kostnad. Bare
+#   Austevoll er delvis produsent gjennom Pelagia, og staar derfor som blandet.
+FORBRUKER = {
+    "YAR.OL": {"ttf"}, "CF": {"henryhub"}, "LXU": {"henryhub"},
+    "MOWI.OL": {"fiskemel"}, "SALM.OL": {"fiskemel"}, "LSG.OL": {"fiskemel"},
+    "GSF.OL": {"fiskemel"}, "BAKKA.OL": {"fiskemel"}, "NRS.OL": {"fiskemel"},
+    "NESTE.HE": {"palmeolje"},
+    "BARN.SW": {"kakao"}, "NESN.SW": {"kakao", "kaffe_arabica", "kaffe_robusta"},
+    "LISN.SW": {"kakao"}, "MDLZ": {"kakao"}, "HSY": {"kakao"}, "TR": {"kakao"},
+    "CLA-B.ST": {"kakao"}, "ORK.OL": {"kakao", "kaffe_arabica"},
+    "SBUX": {"kaffe_arabica"}, "KDP": {"kaffe_arabica"},
+    "JDEP.AS": {"kaffe_arabica", "kaffe_robusta", "te"},
+    "UNA.AS": {"te", "palmeolje"}, "ULVR.L": {"te", "palmeolje"},
+    "AAK.ST": {"palmeolje", "kokosolje"}, "CRDA.L": {"kokosolje"},
+    "MICP.PA": {"gummi_rss3", "gummi_tsr20"}, "CON.DE": {"gummi_rss3", "gummi_tsr20"},
+    "GT": {"gummi_rss3", "gummi_tsr20"}, "TYRES.HE": {"gummi_rss3", "gummi_tsr20"},
+    "TREL-B.ST": {"gummi_tsr20"},
+    "IAG.L": {"brent"}, "LHA.DE": {"brent"}, "AF.PA": {"brent"}, "RYAAY": {"brent"},
+    "NAS.OL": {"brent"}, "CCL.L": {"brent"}, "RCL": {"brent"}, "DSV.CO": {"brent"},
+    "KNIN.SW": {"brent"}, "DHL.DE": {"brent"}, "MAERSK-B.CO": {"brent"},
+    "BAS.DE": {"ttf", "urea"}, "1COV.DE": {"ttf"}, "AI.PA": {"ttf"}, "LIN": {"ttf"},
+    "HEI.DE": {"ttf", "kull"}, "HOLN.SW": {"ttf", "kull"}, "SGO.PA": {"ttf"},
+    "VOW3.DE": {"aluminium", "jernmalm"}, "BMW.DE": {"aluminium", "jernmalm"},
+    "MBG.DE": {"aluminium"}, "RNO.PA": {"aluminium"},
+    "ABBN.SW": {"kobber"}, "SU.PA": {"kobber"}, "LR.PA": {"kobber"},
+    "NEX.PA": {"kobber", "aluminium"}, "NKT.CO": {"kobber", "aluminium"},
+    "ENR.DE": {"kobber", "aluminium"}, "ALFA.ST": {"jernmalm"}, "SAND.ST": {"jernmalm"},
+    "VOLV-B.ST": {"jernmalm", "aluminium"}, "ATCO-A.ST": {"kobber"},
+    "BALL": {"aluminium"}, "CCK": {"aluminium"}, "AMCR": {"aluminium"},
+    "MT.AS": {"jernmalm"}, "SSAB-B.ST": {"jernmalm"}, "X": {"jernmalm"},
+    "NUE": {"jernmalm"}, "CLF": {"jernmalm"},   # staalverk: malm er innsats
+    "NDA.DE": {"kobber"},                        # Aurubis smelter, tjener paa margin
+    "AUSS.OL": set(),                            # blandet, eier Pelagia
+}
+BLANDET = {"AUSS.OL": {"fiskemel"}, "NHY.OL": {"aluminium"}, "GLEN.L": {"kull"}}
 
 KONTROLL = "IWDA.L"
 print(f"\n2. Kandidatunivers: {len(KANDIDATER)} papirer")
@@ -480,12 +553,13 @@ def _boot_ix(n, L, b):
     return _ix_cache[(n, L, b)]
 
 
-def bunner(real):
-    """Maaneder som er laveste realpris i et vindu paa +/- BUNNVINDU maaneder."""
+def vendepunkt(real, topp=False):
+    """Maaneder som er laveste (eller hoyeste) realpris i +/- BUNNVINDU mnd."""
     v = real.values
     ut = []
     for i in range(BUNNVINDU, len(v) - BUNNVINDU):
-        if v[i] == v[i - BUNNVINDU: i + BUNNVINDU + 1].min():
+        vindu = v[i - BUNNVINDU: i + BUNNVINDU + 1]
+        if v[i] == (vindu.max() if topp else vindu.min()):
             ut.append(i)
     # slaa sammen naboer som tilhorer samme bunn
     grupper, siste = [], -99
@@ -494,6 +568,10 @@ def bunner(real):
             grupper.append(i)
         siste = i
     return [real.index[i] for i in grupper]
+
+
+bunner = lambda real: vendepunkt(real, topp=False)
+topper = lambda real: vendepunkt(real, topp=True)
 
 
 _le = {}
@@ -509,12 +587,14 @@ for sid, real in sorted(RAAVARE.items()):
     r1_c = logendring(real, 1)
     r12_c = logendring(real, HORISONT)
     r24_c = logendring(real, HORISONT_2)
-    bnr = bunner(real)
+    bnr, tpp = bunner(real), topper(real)
     for tick, kurs in KURS.items():
         if tick == KONTROLL:
             continue
         m = META[tick]
         a_priori = sid in m["segmenter"]
+        vent = ("f" if sid in FORBRUKER.get(tick, set())
+                else ("b" if sid in BLANDET.get(tick, set()) else "p"))
         i1 = r1_c.index.intersection(le(tick, 1).index)
         if len(i1) < MIN_N:
             continue
@@ -571,28 +651,30 @@ for sid, real in sorted(RAAVARE.items()):
         b_opp = float(np.polyfit(x1[opp], y1[opp], 1)[0]) if opp.sum() >= 24 else None
         b_ned = float(np.polyfit(x1[~opp], y1[~opp], 1)[0]) if (~opp).sum() >= 24 else None
 
-        # fangstgrad fra daterte bunner
-        fang, par = None, []
-        for b in bnr:
-            try:
+        # Fangstgrad fra daterte vendepunkt. Maales fra begge ender.
+        # Et papir med negativt fortegn skal ikke maales fra raavarens bunn:
+        # der er det forbrukeren har det vondest. Toppen er inngangen.
+        def fangst(punkter):
+            par = []
+            for b in punkter:
                 if b not in kurs.index:
                     continue
                 bt = b + HORISONT
                 if bt not in real.index or bt not in kurs.index:
                     continue
-                rc = float(np.log(real[bt] / real[b]))
-                ri = float(np.log(kurs[bt] / kurs[b]))
-                par.append((str(b), round(rc, 3), round(ri, 3)))
-            except Exception:
-                pass
-        if len(par) >= 2:
-            sc = sum(p[1] for p in par)
-            if abs(sc) > 0.05:
-                fang = round(sum(p[2] for p in par) / sc, 2)
+                par.append((str(b), round(float(np.log(real[bt] / real[b])), 3),
+                            round(float(np.log(kurs[bt] / kurs[b])), 3)))
+            if len(par) < 2:
+                return None, par
+            sc = sum(x[1] for x in par)
+            return (round(sum(x[2] for x in par) / sc, 2) if abs(sc) > 0.05 else None), par
+        fang, par = fangst(bnr)
+        fang_t, par_t = fangst(tpp)
 
         resultat.append({
             "segment": sid, "ticker": tick, "symbol": m["symbol"], "navn": m["navn"],
             "type": m["type"], "bors": m["b"], "a_priori": a_priori,
+            "vent": vent,
             "n1": int(len(i1)), "n12": int(len(i12)), "fra": m["fra"],
             "r1": round(r1, 3), "beta1": round(beta1, 2),
             "r12": None if r12 is None else round(r12, 3),
@@ -605,7 +687,10 @@ for sid, real in sorted(RAAVARE.items()):
             "r_partiell": None if rp is None else round(rp, 3),
             "beta_opp": None if b_opp is None else round(b_opp, 2),
             "beta_ned": None if b_ned is None else round(b_ned, 2),
-            "fangst": fang, "bunner": par})
+            "fangst": fang, "bunner": par,
+            "fangst_topp": fang_t, "topper": par_t,
+            "som_ventet": None if not a_priori or vent == "b" else
+                          bool((r1 > 0) == (vent == "p"))})
     print(f"   {sid:16} {sum(1 for r in resultat if r['segment']==sid):4} par")
 
 # Benjamini-Hochberg over de eksplorative parene. De a priori-ventede parene
@@ -640,11 +725,18 @@ def push(path, text):
     requests.put(api, headers=h, json=body, timeout=60).raise_for_status()
 
 
+NF_TRYGG = 72     # maaneder i det faste vinduet for at rangeringen er til aa stole paa
+
 def sorter(r):
+    """Rangerer paa tallverdi, men legger korte serier bakerst.
+
+    Et par maalt paa fem aar kan naa hoye korrelasjoner ved flaks alene, og
+    uten dette skillet fyller nynoterte papirer toppen av hver liste.
+    """
     for k in ("rf12", "rf1", "r12", "r1"):
         if r.get(k) is not None:
-            return -abs(r[k])
-    return 0.0
+            return (0 if r.get("nf", 0) >= NF_TRYGG else 1, -abs(r[k]))
+    return (2, 0.0)
 
 L = ["# Sonde: instrumenter i IKZ-universet", "",
      f"Kjort {time.strftime('%Y-%m-%d %H:%M')} UTC. "
@@ -654,27 +746,67 @@ L = ["# Sonde: instrumenter i IKZ-universet", "",
      "overlappende 12-manedersendringer, p fra blokkbootstrap. rp = partiell "
      "korrelasjon i r1 etter at verdensindeksen er tatt ut. beta12 = hvor mye "
      "papiret beveger seg per enhet ravare over 12 maneder. opp/ned = beta maalt "
-     "bare i maneder der ravaren steg, mot bare der den falt. fangst = papirets "
-     "samlede 12-manedersavkastning fra daterte bunner, delt pa ravarens. "
+     "bare i maneder der ravaren steg, mot bare der den falt. fangstB og fangstT "
+     "= papirets samlede 12-manedersavkastning fra daterte bunner og fra daterte "
+     "topper, delt pa ravarens. "
+     "vent = hvilket fortegn papiret var ventet a ha: p = produsent, ravaren er "
+     "inntekt, ventet positiv. f = forbruker, ravaren er kostnad, ventet negativ. "
+     "b = blandet. ok = fortegnet kom ut som ventet. "
      f"rf1 og rf12 er de samme maalt i det faste vinduet fra {FIKS}, som er "
      "det eneste som er sammenlignbart pa tvers av papirer med ulik alder. "
-     "nf = antall maneder i det faste vinduet. ap = papiret var ventet a folge "
+     f"nf = antall maneder i det faste vinduet; par med nf under {NF_TRYGG} er "
+     "sortert bakerst fordi en kort serie nar hoye tall ved flaks alene. "
+     "ap = papiret var ventet a folge "
      "denne ravaren; tomt felt betyr at treffet er funnet ved leting.", ""]
 for sid in sorted(RAAVARE):
     rad = [r for r in resultat if r["segment"] == sid]
     if not rad:
         continue
     rad.sort(key=sorter)
-    L += [f"## {sid}   ({len(bunner(RAAVARE[sid]))} daterte bunner)", "",
-          "| papir | navn | type | n | nf | rf1 | rf12 | r1 | r12 | p12 | rp | beta12 | opp | ned | fangst | ap |",
-          "|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|"]
-    for r in rad[:12]:
-        g = lambda k: "" if r[k] is None else r[k]
-        L.append(f"| {r['symbol']} | {r['navn'][:26]} | {r['type']} | {r['n1']} | "
-                 f"{r['nf']} | {g('rf1')} | {g('rf12')} | {r['r1']} | {g('r12')} | "
-                 f"{g('p12')} | {g('r_partiell')} | {g('beta12')} | {g('beta_opp')} | "
-                 f"{g('beta_ned')} | {g('fangst')} | {'x' if r['a_priori'] else ''} |")
+    nb, nt = len(bunner(RAAVARE[sid])), len(topper(RAAVARE[sid]))
+    L += [f"## {sid}   ({nb} daterte bunner, {nt} daterte topper)", ""]
+    hode = ("| papir | navn | type | n | nf | rf1 | rf12 | r1 | r12 | p12 | q12 | "
+            "rp | beta12 | opp | ned | fangstB | fangstT | vent | ok | ap |")
+    strek = "|" + "---|" * 20
+    # To tabeller: papirer som folger raavaren, og papirer som gaar motsatt.
+    # Et sterkt negativt par er handlbart fra motsatt ende av syklusen, saa det
+    # skal ikke druknes nederst i en felles liste sortert paa tallverdi.
+    def nivaa(r):
+        for k in ("rf12", "rf1", "r12", "r1"):
+            if r.get(k) is not None:
+                return r[k]
+        return 0.0
+    for tittel, utvalg in (("Folger raavaren", [r for r in rad if nivaa(r) > 0]),
+                           ("Gaar motsatt", [r for r in rad if nivaa(r) < 0])):
+        if not utvalg:
+            continue
+        L += [f"### {tittel}", "", hode, strek]
+        for r in utvalg[:10]:
+            g = lambda k: "" if r.get(k) is None else r[k]
+            L.append(f"| {r['symbol']} | {r['navn'][:26]} | {r['type']} | {r['n1']} | "
+                     f"{r['nf']} | {g('rf1')} | {g('rf12')} | {r['r1']} | {g('r12')} | "
+                     f"{g('p12')} | {g('q12')} | {g('r_partiell')} | {g('beta12')} | "
+                     f"{g('beta_opp')} | {g('beta_ned')} | {g('fangst')} | "
+                     f"{g('fangst_topp')} | {r['vent']} | "
+                     f"{'' if r['som_ventet'] is None else ('ja' if r['som_ventet'] else 'NEI')} | "
+                     f"{'x' if r['a_priori'] else ''} |")
+        L.append("")
+ap = [r for r in resultat if r["som_ventet"] is not None]
+feil = [r for r in ap if not r["som_ventet"]]
+L += ["## Fortegn mot forventning", "",
+      f"{len(feil)} av {len(ap)} par med forhandsantatt retning fikk motsatt "
+      "fortegn av det antagelsen tilsa. Et feil fortegn er ikke et daarlig "
+      "papir: det betyr at antagelsen om hvem som tjener og hvem som betaler "
+      "var feil, og det er i seg selv verdt a vite.", ""]
+if feil:
+    feil.sort(key=sorter)
+    L += ["| segment | papir | vent | r1 | rf1 | rf12 |", "|" + "---|" * 6]
+    for r in feil[:30]:
+        g = lambda k: "" if r.get(k) is None else r[k]
+        L.append(f"| {r['segment']} | {r['symbol']} | {r['vent']} | {r['r1']} | "
+                 f"{g('rf1')} | {g('rf12')} |")
     L.append("")
+
 L += ["## Papirer som ikke lot seg hente", ""]
 L += [f"- {l['kilde']}: {l['detalj']}" for l in LOGG if l["status"] == "FEIL"] or ["- ingen"]
 
@@ -748,6 +880,28 @@ except Exception as e:
 #   klynger paa hele panelet, altsaa for faa hendelser per segment. Fangstgrad
 #   er papirets samlede tolvmaanedersavkastning fra disse bunnene delt paa
 #   raavarens. Faa observasjoner, saa tallet er beskrivende og ikke en test.
+#
+# Negativt fortegn.
+#   Et sterkt negativt par er like handlbart som et positivt, bare fra motsatt
+#   ende av syklusen. Papiret er da en forbruker: raavaren er kostnad og ikke
+#   inntekt. Dyr raavare klemmer marginen, fallende raavare utvider den. Derfor
+#   maales fangstgraden fra daterte topper i tillegg til daterte bunner, og
+#   derfor rangeres tabellene paa tallverdi og ikke paa fortegn, med produsenter
+#   og forbrukere i hver sin tabell.
+#
+#   Tre forbehold som er reelle og ikke formaliteter. For det forste er kjeden
+#   lengre: raavaren faller, innkjopsprisen folger med etterslep fordi
+#   kontraktene loper, marginen utvider seg, og forst da beveger kursen seg.
+#   Forvent lavere R2 og et tregere signal enn paa produsentsiden. For det andre
+#   avhenger gevinsten av om selskapet faar beholde besparelsen eller maa gi den
+#   videre i pris, og det er en bransjestruktur og ikke en raavarepris. For det
+#   tredje har forbrukerne hoyere markedsbeta enn produsentene, saa den
+#   partielle korrelasjonen mot verdensindeksen er viktigere her: et papir som
+#   bare folger markedet er ubrukelig uansett fortegn.
+#
+#   Modellen flagger i dag bare bunner, altsaa A hoy. Speilbildet, A lav og
+#   raavaren dyr, er inngangen for forbrukersiden. Det er en egen hypotese som
+#   ikke er testet, og den skal testes for den bygges inn.
 #
 # Multippel testing.
 #   Rundt 4000 par maales. Det hoyeste tallet i en slik bunke er hoyt av seg
