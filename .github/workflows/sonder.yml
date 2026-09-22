@@ -1,3 +1,12 @@
+# Sondene. Kjorer bare naar du trykker paa knappen, aldri paa timeplan.
+#
+# De skriver ingenting til dashbordet. De maaler hva som finnes av data og
+# legger hele utskriften i mappen sonder/ i dette repoet, slik at Claude kan
+# lese resultatet selv uten at du maa kopiere noe.
+#
+# Diagnosen skriver i tillegg bdi_hist.json og etterspørsel.json, som er
+# ferdige data og ikke sondering.
+
 name: Sonder
 
 on:
@@ -18,15 +27,15 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-python@v6
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
       - run: mkdir -p sonder
 
-      - name: Diagnose 2.5
+      - name: Diagnose 2.5 (aldersvekting, BDI, OWID)
         if: inputs.hvilken == 'alle' || inputs.hvilken == 'diagnose'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

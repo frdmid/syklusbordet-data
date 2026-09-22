@@ -1,8 +1,11 @@
-name: Kvartalsvis tilbudsskår
+# Tilbudsskaaren B bygger paa aarsregnskaper hos SEC og endrer seg noen faa
+# ganger i aaret. Kvartalsvis er rikelig.
+
+name: Kvartalsvis tilbudsskaar
 
 on:
   schedule:
-    - cron: "0 7 5 2,5,8,11 *"
+    - cron: "0 7 5 2,5,8,11 *"  # 5. februar, mai, august og november
   workflow_dispatch:
 
 permissions:
@@ -11,10 +14,10 @@ permissions:
 jobs:
   tilbud:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
     steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-python@v6
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: pip
@@ -23,3 +26,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python tilbud_b.py
+      - name: Overlevelsesport C
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python overlevelse_c.py

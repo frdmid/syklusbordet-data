@@ -1,20 +1,29 @@
+# Ukentlig innhenting til Syklusbordet.
+#
+# Kjorer paa GitHub sine egne maskiner, ikke i Colab. Gratis for offentlige
+# repoer. Skriver tilbake til dette repoet med den innebygde token-en, saa
+# ingen hemmelighet maa settes opp manuelt.
+#
+# Onsdag er valgt fordi Fearnleys publiserer tidlig i uka og Verdensbankens
+# Pink Sheet kommer de forste virkedagene i maaneden.
+
 name: Ukentlig innhenting
 
 on:
   schedule:
-    - cron: "0 6 * * 3"
-  workflow_dispatch:
+    - cron: "0 6 * * 3"        # onsdag 06:00 UTC = 07:00 norsk vintertid
+  workflow_dispatch:            # og naar du trykker paa knappen selv
 
 permissions:
-  contents: write
+  contents: write               # lar jobben skrive JSON-filene tilbake
 
 jobs:
   priser:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-python@v6
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: pip
@@ -27,10 +36,10 @@ jobs:
   shipping:
     runs-on: ubuntu-latest
     timeout-minutes: 60
-    needs: priser
+    needs: priser               # unngaar at de to skriver til repoet samtidig
     steps:
-      - uses: actions/checkout@v5
-      - uses: actions/setup-python@v6
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: pip
