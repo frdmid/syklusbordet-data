@@ -52,3 +52,19 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python bygg_shipping.py
+
+  kapitulasjon:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    needs: shipping          # tredje i koen, slik at ingen to skriver samtidig
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Kapitulasjon D
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python kapitulasjon_d.py
