@@ -175,6 +175,21 @@ try:
 except Exception as e:
     note("Pink Sheet", False, str(e)[:80])
 
+# Uran. Ikke i Pink Sheet. IMF sin serie via FRED, med en kopi i repoet som
+# reserve dersom FRED ikke svarer fra Actions-maskinen.
+# Stillstandstesten: 15 % paa 90-tallet, 4 % paa 2000-tallet, 0 % etter. Godt
+# under terskelen paa rundt 40 % som utloste avkorting for de ni andre, saa
+# serien brukes hel fra 1992.
+for navn, url, mnd in [
+        ("FRED PURANUSDM", "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PURANUSDM", False),
+        ("repokopi uran", f"https://raw.githubusercontent.com/{REPO}/{BRANCH}/uran_reserve.csv", True)]:
+    try:
+        RAAVARE["uran"] = deflater(csv_series(url, monthly=mnd))
+        note(f"uran ({navn})", True, f"{len(RAAVARE['uran'])} mnd fra {RAAVARE['uran'].index[0]}")
+        break
+    except Exception as e:
+        note(f"uran ({navn})", False, str(e)[:60])
+
 for sid in UTEN_A:
     RAAVARE.pop(sid, None)     # kalium er administrert pris, ikke et marked
 note("raavareserier", True, f"{len(RAAVARE)} segment, "
@@ -186,9 +201,11 @@ note("raavareserier", True, f"{len(RAAVARE)} segment, "
 # ogsaa, men merkes som eksplorativt og faar strengere krav.
 # b = bors. "" = USA, T = tvilsom tilgang paa Nordnet, maa verifiseres.
 
-E = lambda t, n, segs, b="": {"t": t, "navn": n, "segmenter": segs, "type": "aksje", "b": b}
-F = lambda t, n, segs, isin=None: {"t": t, "navn": n, "segmenter": segs,
-                                   "type": "ETF", "isin": isin, "b": ""}
+E = lambda t, n, segs, b="", alt=None: {"t": t, "navn": n, "segmenter": segs,
+                                        "type": "aksje", "b": b, "alt": alt or []}
+F = lambda t, n, segs, isin=None, alt=None: {"t": t, "navn": n, "segmenter": segs,
+                                             "type": "ETF", "isin": isin, "b": "",
+                                             "alt": alt or []}
 
 KANDIDATER = [
     # ---- UCITS-ETF, sektor Europa. Eldst i universet, fra 2006 og 2007.
@@ -213,8 +230,8 @@ KANDIDATER = [
     # ---- UCITS-ETF, nyere nisjer. Ventet for korte, tas med for aa se n.
     F("COPX.L", "Global X Copper Miners UCITS", ["kobber"], "IE000M7V94E1"),
     F("COPM.L", "iShares Copper and Metals Mining UCITS", ["kobber"], "IE000RSSEWJ1"),
-    F("URNU.L", "Global X Uranium UCITS", [], "IE000NDWFGA5"),
-    F("U3O8.L", "Sprott Uranium Miners UCITS", [], "IE0005YK6564"),
+    F("URNU.L", "Global X Uranium UCITS", ["uran"], "IE000NDWFGA5"),
+    F("U3O8.L", "Sprott Uranium Miners UCITS", ["uran"], "IE0005YK6564"),
     # ---- UCITS-ETF, bredt raavarebytte. Fond, ikke ETC, og dermed lovlige.
     F("EXXY.DE", "iShares Diversified Commodity Swap", ["kobber", "brent", "aluminium"], "DE000A0H0728"),
     F("XDBC.DE", "Xtrackers Optimum Yield Diversified Commodity Swap", ["kobber", "brent"], "LU0292106167"),
@@ -227,7 +244,7 @@ KANDIDATER = [
     E("EQNR.OL", "Equinor", ["brent", "ttf"]), E("AKRBP.OL", "Aker BP", ["brent"]),
     E("VAR.OL", "Vår Energi", ["brent"]), E("DNO.OL", "DNO", ["brent"]),
     E("SUBC.OL", "Subsea 7", ["brent"]), E("TGS.OL", "TGS", ["brent"]),
-    E("BORR.OL", "Borr Drilling", ["brent"]), E("SDRL.OL", "Seadrill", ["brent"]),
+    E("BORR.OL", "Borr Drilling", ["brent"]), E("SDRL", "Seadrill", ["brent"], alt=["SDRL.OL"]),
     E("SHEL.L", "Shell", ["brent", "ttf"]), E("BP.L", "BP", ["brent", "ttf"]),
     E("TTE.PA", "TotalEnergies", ["brent", "ttf"]), E("NESTE.HE", "Neste", ["brent", "palmeolje"]),
     E("CNA.L", "Centrica", ["ttf"]), E("ENGI.PA", "Engie", ["ttf"]),
@@ -238,7 +255,7 @@ KANDIDATER = [
     E("COP", "ConocoPhillips", ["wti"]), E("FANG", "Diamondback Energy", ["wti"]),
     E("DVN", "Devon Energy", ["wti"]), E("EOG", "EOG Resources", ["wti"]),
     E("OXY", "Occidental", ["wti"]), E("APA", "APA Corp", ["wti"]),
-    E("CTRA", "Coterra Energy", ["wti", "henryhub"]), E("EQT", "EQT Corporation", ["henryhub"]),
+    E("CTRA", "Coterra Energy", ["wti", "henryhub"], alt=["COG", "CXO"]), E("EQT", "EQT Corporation", ["henryhub"]),
     E("AR", "Antero Resources", ["henryhub"]), E("RRC", "Range Resources", ["henryhub"]),
     E("CNX", "CNX Resources", ["henryhub"]), E("EXE", "Expand Energy", ["henryhub"]),
     E("GPOR", "Gulfport Energy", ["henryhub"]), E("LNG", "Cheniere Energy", ["henryhub", "ttf"]),
@@ -247,7 +264,7 @@ KANDIDATER = [
     E("CVE.TO", "Cenovus", ["wti"]), E("TOU.TO", "Tourmaline Oil", ["henryhub"]),
     E("ARX.TO", "ARC Resources", ["henryhub"]), E("BIR.TO", "Birchcliff Energy", ["henryhub"]),
     E("PEY.TO", "Peyto", ["henryhub"]), E("WCP.TO", "Whitecap Resources", ["wti"]),
-    E("VET.TO", "Vermilion Energy", ["wti", "ttf"]), E("MEG.TO", "MEG Energy", ["wti"]),
+    E("VET.TO", "Vermilion Energy", ["wti", "ttf"]), E("MEG.TO", "MEG Energy", ["wti"], alt=["CVE.TO"]),
 
     # ---- gull
     E("NEM", "Newmont", ["gold"]), E("AEM", "Agnico Eagle", ["gold"]),
@@ -257,7 +274,7 @@ KANDIDATER = [
     E("WPM", "Wheaton Precious Metals", ["gold"]), E("RGLD", "Royal Gold", ["gold"]),
     E("PAAS", "Pan American Silver", ["gold"]), E("SSRM", "SSR Mining", ["gold"]),
     E("IAG", "IAMGOLD", ["gold"]), E("BTG", "B2Gold", ["gold"]),
-    E("NGD", "New Gold", ["gold"]), E("EDV.TO", "Endeavour Mining", ["gold"]),
+    E("NGD", "New Gold", ["gold"], alt=["NGD.TO"]), E("EDV.TO", "Endeavour Mining", ["gold"]),
     E("K.TO", "Kinross (Toronto)", ["gold"]), E("ELD.TO", "Eldorado Gold", ["gold"]),
     E("EQX.TO", "Equinox Gold", ["gold"]), E("LUG.TO", "Lundin Gold", ["gold"]),
     E("FRES.L", "Fresnillo", ["gold"]), E("HOC.L", "Hochschild Mining", ["gold"]),
@@ -282,14 +299,14 @@ KANDIDATER = [
     E("VALE", "Vale", ["jernmalm", "nikkel"]), E("ERA.PA", "Eramet", ["nikkel"]),
     E("OUT1V.HE", "Outokumpu", ["nikkel"]), E("SBSW", "Sibanye-Stillwater", ["nikkel", "gold"]),
     E("FXPO.L", "Ferrexpo", ["jernmalm"]), E("MT.AS", "ArcelorMittal", ["jernmalm", "kull"]),
-    E("SSAB-B.ST", "SSAB", ["jernmalm", "kull"]), E("X", "United States Steel", ["jernmalm"]),
+    E("SSAB-B.ST", "SSAB", ["jernmalm", "kull"]), E("STLD", "Steel Dynamics", ["jernmalm"], alt=["X"]),
     E("NUE", "Nucor", ["jernmalm"]), E("CLF", "Cleveland-Cliffs", ["jernmalm"]),
     E("CIA.TO", "Champion Iron", ["jernmalm"]), E("LIF.TO", "Labrador Iron Ore", ["jernmalm"]),
 
     # ---- kull
     E("TGA.L", "Thungela Resources", ["kull"]), E("BTU", "Peabody Energy", ["kull"]),
     E("HCC", "Warrior Met Coal", ["kull"]), E("AMR", "Alpha Metallurgical", ["kull"]),
-    E("CEIX", "Core Natural Resources", ["kull"]), E("ARLP", "Alliance Resource", ["kull"]),
+    E("CNR", "Core Natural Resources", ["kull"], alt=["CEIX", "ARCH"]), E("ARLP", "Alliance Resource", ["kull"]),
     E("NC", "NACCO Industries", ["kull"]),
 
     # ---- gjodsel
@@ -303,14 +320,14 @@ KANDIDATER = [
     E("AUSS.OL", "Austevoll Seafood", ["fiskemel"]), E("MOWI.OL", "Mowi", ["fiskemel"]),
     E("SALM.OL", "SalMar", ["fiskemel"]), E("LSG.OL", "Lerøy Seafood", ["fiskemel"]),
     E("GSF.OL", "Grieg Seafood", ["fiskemel"]), E("BAKKA.OL", "Bakkafrost", ["fiskemel"]),
-    E("NRS.OL", "Norway Royal Salmon", ["fiskemel"]),
+    E("BAKKA.CO", "Bakkafrost (Kobenhavn)", ["fiskemel"], alt=["NRS.OL"]),
 
     # ---- kakao, kaffe, te
     E("BARN.SW", "Barry Callebaut", ["kakao"]), E("NESN.SW", "Nestlé", ["kakao", "kaffe_arabica", "kaffe_robusta"]),
     E("LISN.SW", "Lindt & Sprüngli", ["kakao"]), E("MDLZ", "Mondelez", ["kakao"]),
     E("HSY", "Hershey", ["kakao"]), E("TR", "Tootsie Roll", ["kakao"]),
     E("CLA-B.ST", "Cloetta", ["kakao"]), E("ORK.OL", "Orkla", ["kakao", "kaffe_arabica"]),
-    E("SBUX", "Starbucks", ["kaffe_arabica"]), E("JDEP.AS", "JDE Peet's", ["kaffe_arabica", "kaffe_robusta", "te"]),
+    E("SBUX", "Starbucks", ["kaffe_arabica"]), E("JDEP.AS", "JDE Peet's", ["kaffe_arabica", "kaffe_robusta", "te"], alt=["JDEP.F"]),
     E("KDP", "Keurig Dr Pepper", ["kaffe_arabica"]),
     E("UNA.AS", "Unilever", ["te", "palmeolje"]), E("ULVR.L", "Unilever (London)", ["te", "palmeolje"]),
 
@@ -320,11 +337,21 @@ KANDIDATER = [
     E("BG", "Bunge Global", ["palmeolje", "kokosolje"]), E("CRDA.L", "Croda International", ["kokosolje"]),
 
     # ---- gummi
-    E("MICP.PA", "Michelin", ["gummi_rss3", "gummi_tsr20"]),
+    E("ML.PA", "Michelin", ["gummi_rss3", "gummi_tsr20"], alt=["MICP.PA"]),
     E("CON.DE", "Continental", ["gummi_rss3", "gummi_tsr20"]),
     E("GT", "Goodyear", ["gummi_rss3", "gummi_tsr20"]),
     E("TYRES.HE", "Nokian Renkaat", ["gummi_rss3", "gummi_tsr20"]),
     E("TREL-B.ST", "Trelleborg", ["gummi_tsr20"]),
+
+    # ---- uran. Nytt segment. B er allerede maalt for uran i b_capex.json og
+    #      har ligget ubrukt fordi segmentet ikke fantes.
+    E("CCJ", "Cameco", ["uran"]), E("CCO.TO", "Cameco (Toronto)", ["uran"]),
+    E("KAP.L", "Kazatomprom GDR", ["uran"]), E("NXE", "NexGen Energy", ["uran"]),
+    E("UEC", "Uranium Energy", ["uran"]), E("DNN", "Denison Mines", ["uran"]),
+    E("UUUU", "Energy Fuels", ["uran"]), E("URG", "Ur-Energy", ["uran"]),
+    E("PDN.AX", "Paladin Energy", ["uran"], "T"),
+    E("U-UN.TO", "Sprott Physical Uranium Trust", ["uran"], "T", alt=["U-U.TO", "SRUUF"]),
+    E("BWXT", "BWX Technologies", ["uran"]), E("LEU", "Centrus Energy", ["uran"]),
 
     # ---- forbrukersiden. Papirer der raavaren er en kostnad og ikke en
     #      inntekt. Ventet negativt fortegn: dyr raavare klemmer marginen,
@@ -335,10 +362,10 @@ KANDIDATER = [
     E("IAG.L", "IAG (British Airways)", ["brent"]),
     E("LHA.DE", "Lufthansa", ["brent"]), E("AF.PA", "Air France-KLM", ["brent"]),
     E("RYAAY", "Ryanair", ["brent"]), E("NAS.OL", "Norwegian Air Shuttle", ["brent"]),
-    E("CCL.L", "Carnival", ["brent"]), E("RCL", "Royal Caribbean", ["brent"]),
+    E("CCL", "Carnival", ["brent"], alt=["CCL.L", "CUK"]), E("RCL", "Royal Caribbean", ["brent"]),
     E("DSV.CO", "DSV", ["brent"]), E("KNIN.SW", "Kuehne+Nagel", ["brent"]),
     E("DHL.DE", "DHL Group", ["brent"]), E("MAERSK-B.CO", "A.P. Moller-Maersk", ["brent"]),
-    E("BAS.DE", "BASF", ["ttf", "urea"]), E("1COV.DE", "Covestro", ["ttf"]),
+    E("BAS.DE", "BASF", ["ttf", "urea"]), E("1COV.DE", "Covestro", ["ttf"], alt=["COV.DE"]),
     E("AI.PA", "Air Liquide", ["ttf"]), E("LIN", "Linde", ["ttf"]),
     E("HEI.DE", "Heidelberg Materials", ["ttf", "kull"]),
     E("HOLN.SW", "Holcim", ["ttf", "kull"]), E("SGO.PA", "Saint-Gobain", ["ttf"]),
@@ -448,6 +475,7 @@ def yahoo_maaned(symbol, justert=True):
     if v is None:
         v = res["indicators"]["quote"][0]["close"]
     s = pd.Series(v, index=idx).dropna()
+    s = s[s > 0]        # en nullkurs gir log(0) = -inf, som dropna ikke fjerner
     s.index = s.index.to_period("M")
     s = s[~s.index.duplicated(keep="last")]
     s.attrs["valuta"] = meta.get("currency") or "USD"
@@ -474,11 +502,14 @@ print("\n3. Kurser")
 KURS, META = {}, {}
 for k in KANDIDATER:
     sym, s = k["t"], None
-    for forsok in (k["t"],):
+    for forsok in [k["t"]] + list(k.get("alt") or []):
         try:
             s = yahoo_maaned(forsok)
             if len(s) < 24:
                 s = None
+            else:
+                sym = forsok
+                break
         except Exception:
             s = None
     if s is None and k.get("isin"):
@@ -519,7 +550,8 @@ note("kurser", True, f"{len(KURS)} av {len(KANDIDATER)} hentet")
 
 def logendring(s, h):
     x = np.log(s.astype(float))
-    return (x - x.shift(h)).dropna()
+    d = (x - x.shift(h))
+    return d[np.isfinite(d)]
 
 
 def blokkbootstrap(x, y, b=BOOT, L=BLOKK):
