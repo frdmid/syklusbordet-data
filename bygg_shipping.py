@@ -183,13 +183,20 @@ for sid, nokkel in SKIP.items():
             nom = float(row["sh5_musd"])
             ank = row.get("nybygg_musd")
             ank = None if ank is None or (isinstance(ank, float) and np.isnan(ank)) else float(ank)
-            serie.append({"t": str(p), "nom": round(nom, 4), "real": defl(nom, p),
+            tc = row.get("tc1y_usd_dag")
+            tc = None if tc is None or (isinstance(tc, float) and np.isnan(tc)) else round(float(tc), 0)
+            serie.append({"t": str(p), "tc1y": tc,
+                          "nom": round(nom, 4), "real": defl(nom, p),
                           "p10": None, "p25": None, "p50": None, "p75": None,
                           "p90": None, "A": None,
                           "anchor": None if ank is None else round(ank, 4),
                           "anchor_real": defl(ank, p)})
         sis = next((x for x in reversed(serie) if x["anchor"]), None)
         tc = g["tc1y_usd_dag"].dropna() if "tc1y_usd_dag" in g else pd.Series(dtype=float)
+        # Ratene er den variabelen aksjene faktisk folger. Annenhaandsverdien er
+        # en treg meglertaksasjon og henger etter ratene med maaneder: maalt mot
+        # verdien korrelerer redere negativt med sitt eget segment (DHT -0,13,
+        # INSW -0,00), maalt mot raten blir de positive (0,24 og 0,20).
         d = dict(META[sid])
         d.update({
             "id": sid, "series": serie,

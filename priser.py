@@ -231,6 +231,10 @@ def build_segment(seg_id, name, group, unit, nom, cpi, note_txt, source, url):
     #
     # Oppsikt: raa over 80 mens detrendet ikke er. Lavt mot egen historie, men
     # forklart av trenden. Holdes synlig, men er ikke et flagg.
+    if seg_id in UTEN_A:
+        A = np.full(len(A), np.nan); Ad = np.full(len(Ad), np.nan)
+        Ar = np.full(len(Ar), np.nan)
+        for q in bands: bands[q][:] = np.nan
     over = lambda v, i: (not np.isnan(v[i])) and v[i] >= 80
     flagg = np.array([over(A, i) and over(Ad, i) for i in range(len(A))])
     oppsikt = np.array([over(A, i) and not flagg[i] for i in range(len(A))])
@@ -334,10 +338,45 @@ MIRRORS = [
 # maaneder foer 1968. Med den perioden inne opptar den de billigste persentilene
 # permanent: 206 av 206 flaggmaaneder laa foer 1971, og bunnen i 1999 til 2001
 # leste A=53. Avkortet leser den 97.
-AVKORT = {"gold": "1971-08"}
-AVKORT_MERKNAD = {"gold": ("Serien starter i august 1971, da gullvinduet ble lukket. Før det "
-                           "var dollaren konvertibel til en forsvart kurs, og prisen står "
-                           "uendret i ni av ti måneder. Det er ikke en markedspris.")}
+# Maalt paa andelen maaneder der den NOMINELLE prisen staar helt stille, per
+# tiaar. Over ca. 40 % betyr forhandlet kontraktspris eller forsvart kurs, ikke
+# en notering. Tallene i parentes er den maalte andelen i tiaaret foer starten.
+AVKORT = {
+    "gold":      "1971-08",   # 66 % paa 60-tallet, konvertibel dollar til aug 1971
+    "aluminium": "1980-01",   # 91 % / 24 %, LME-kontrakt fra 1978
+    "nikkel":    "1980-01",   # 81 % / 80 %, LME-kontrakt fra 1979
+    "te":        "1980-01",   # 91 % paa 60-tallet
+    "kakao":     "1980-01",   # 55 % paa 70-tallet, den internasjonale kakaoavtalen
+    "urea":      "2000-01",   # 95/66/41/31 %, kontraktspris til rundt 2000
+    "ttf":       "2000-01",   # 95/92/93/26 %, oljeindeksert kontrakt
+    "kull":      "2000-01",   # 89/77/57 %, aarlige kontraktspriser
+    "jernmalm":  "2010-01",   # 93/94/93/92/57 %, forhandlet referansepris til 2010
+}
+
+# Kalium er et eget tilfelle. Den staar 71 % stille selv paa 2010-tallet, og
+# bare 2020-tallet er en markedspris. Seks aar er ikke en fordeling, saa A
+# beregnes ikke i det hele tatt. Segmentet staar synlig med pris og graf.
+UTEN_A = {"kalium"}
+
+M = ("Serien er avkortet fordi prisen foer dette var forhandlet eller fastsatt "
+     "og ikke satt i et marked. En fast pris opptar de billigste persentilene "
+     "permanent, og da kan ingenting etterpaa lese billig.")
+AVKORT_MERKNAD = {
+    "gold": ("Serien starter i august 1971, da gullvinduet ble lukket. Før det "
+             "var dollaren konvertibel til en forsvart kurs, og prisen står "
+             "uendret i ni av ti måneder. Det er ikke en markedspris."),
+    "aluminium": M + " Aluminium fikk LME-kontrakt i 1978.",
+    "nikkel":    M + " Nikkel fikk LME-kontrakt i 1979.",
+    "te":        M + " Te sto 91 % stille på 1960-tallet.",
+    "kakao":     M + " Den internasjonale kakaoavtalen styrte prisen på 1970-tallet.",
+    "urea":      M + " Urea var kontraktspris fram til rundt 2000.",
+    "ttf":       M + " Europeisk gass var oljeindeksert kontrakt fram til 1990-tallet.",
+    "kull":      M + " Australsk kull hadde årlige kontraktspriser.",
+    "jernmalm":  M + " Jernmalm hadde årlig forhandlet referansepris fram til 2010.",
+    "kalium":    ("Prisnivåskåren er ikke beregnet. Kalium var kontraktspris i hele "
+                  "historikken og står 71 % stille selv på 2010-tallet. Bare 2020-tallet "
+                  "er en markedspris, og seks år er ikke nok til en fordeling."),
+}
 
 for sid, navn, grp, enhet, sti, mnd in MIRRORS:
     try:
@@ -404,10 +443,18 @@ try:
         if not eksakt and len(delvis) > 1:
             note(f"Pink Sheet {navn}", False,
                  f"tvetydig: '{nokkel}' passer på {delvis}, valgte '{delvis[0]}'")
-        legg_til(sid, navn, grp, enhet, ps[treff[0]].dropna(), cpi,
+        serie = ps[treff[0]].dropna()
+        if sid in AVKORT:
+            foer = len(serie)
+            serie = serie.loc[AVKORT[sid]:]
+            assert len(serie) >= MIN_HIST, f"{sid}: bare {len(serie)} mnd etter avkorting"
+            note(f"avkorting {sid}", True,
+                 f"{foer} -> {len(serie)} mnd, starter {AVKORT[sid]}")
+        legg_til(sid, navn, grp, enhet, serie, cpi,
                  f"Verdensbanken Pink Sheet: {treff[0]}",
                  "https://www.worldbank.org/en/research/commodity-markets",
-                 merknad=FLERAARIG_MERKNAD if grp == "Flerårige" else None)
+                 merknad=AVKORT_MERKNAD.get(sid,
+                         FLERAARIG_MERKNAD if grp == "Flerårige" else None))
 except Exception as e:
     note("Verdensbanken Pink Sheet", False, f"{type(e).__name__}: {str(e)[:90]}")
 

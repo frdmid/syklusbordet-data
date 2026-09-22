@@ -50,7 +50,14 @@ for sid in idx["segmenter"] + [f"ship_{x}" for x in
     try:
         d = requests.get(f"{RAW}/segments/{sid}.json?cb={int(time.time())}",
                          headers={**UA, "Cache-Control": "no-cache"}, timeout=30).json()
-        s = pd.Series({pd.Period(r["t"], "M"): r["nom"] for r in d["series"]}).sort_index()
+        # For shipping er raten variabelen aksjene folger, ikke annenhaandsverdien.
+        # Verdien er en treg meglertaksasjon som henger etter raten med maaneder,
+        # og maalt mot den korrelerer redere negativt med sitt eget segment:
+        # DHT -0,13 og INSW -0,00 mot verdien, +0,24 og +0,20 mot raten.
+        felt = "tc1y" if (sid.startswith("ship_") and
+                          sum(1 for r in d["series"] if r.get("tc1y")) >= 24) else "nom"
+        s = pd.Series({pd.Period(r["t"], "M"): r[felt] for r in d["series"]
+                       if r.get(felt) is not None}).sort_index()
         A = pd.Series({pd.Period(r["t"], "M"): r.get("A") for r in d["series"]}).sort_index()
         SEG[sid] = (s, A)
     except Exception as e:
