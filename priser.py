@@ -555,6 +555,34 @@ except Exception as e:
     note("OWID etterspoersel", False, f"{type(e).__name__}: {str(e)[:70]}")
 
 try:
+    c = get(f"https://raw.githubusercontent.com/{REPO}/{BRANCH}/c_overlevelse.json"
+            f"?cb={int(time.time())}").json()
+    segporter = c.get("segmenter", {})
+    selskap = c.get("selskaper", {})
+    n = 0
+    for s in SEGMENTS:
+        g = segporter.get(s["id"])
+        if not g:
+            continue
+        s["scores"]["gate"] = g["gate"]
+        s["gate_detalj"] = {"aapne": g["aapne"], "malte": g["malte"]}
+        # port per instrument, slik at raden viser hvem som baerer den
+        port = {i["ticker"]: i for i in g.get("instrumenter", [])}
+        for i in s.get("instrumenter", []):
+            d = port.get(i["ticker"])
+            if d:
+                i["port"] = d["port"]
+                i["kvartaler"] = d.get("kvartaler")
+                sk = selskap.get(i["ticker"], {})
+                i["bunnaar"] = sk.get("bunnaar")
+                i["aar_historikk"] = sk.get("aar_historikk")
+        n += 1
+    note("overlevelsesport C", True,
+         f"{n} segment, {sum(1 for x in segporter.values() if x['gate']=='aapen')} aapne")
+except Exception as e:
+    note("overlevelsesport C", False, f"{type(e).__name__}: {str(e)[:70]}")
+
+try:
     b = get(f"https://raw.githubusercontent.com/{REPO}/{BRANCH}/b_capex.json"
             f"?cb={int(time.time())}").json()
     # b_capex.json bruker metallnavn, segmentene bruker id. De er ikke alltid
