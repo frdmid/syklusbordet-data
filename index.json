@@ -1,10 +1,11 @@
 {
- "oppdatert": "2026-09-24 06:40:57",
+ "oppdatert": "2026-09-24 12:47:04",
  "segmenter": [
   "brent",
   "wti",
   "henryhub",
   "gold",
+  "uran",
   "kobber",
   "nikkel",
   "aluminium",
@@ -47,6 +48,11 @@
    "kilde": "segment gold",
    "status": "OK",
    "detalj": "A=0.9 detr=3.2 rull=5.0   siste 2026-08"
+  },
+  {
+   "kilde": "segment uran",
+   "status": "OK",
+   "detalj": "A=18.8 detr=38.1 rull=11.7   siste 2026-07"
   },
   {
    "kilde": "Verdensbanken Pink Sheet",
@@ -151,12 +157,12 @@
   {
    "kilde": "instrumenter",
    "status": "OK",
-   "detalj": "15 av 15 segment fikk instrumentliste"
+   "detalj": "15 av 16 segment fikk instrumentliste"
   },
   {
    "kilde": "OWID etterspoersel",
    "status": "OK",
-   "detalj": "5 segment, siste aar 2024"
+   "detalj": "6 segment, siste aar 2024"
   },
   {
    "kilde": "kapitulasjon D",
@@ -166,17 +172,52 @@
   {
    "kilde": "overlevelsesport C",
    "status": "OK",
-   "detalj": "15 segment, 6 aapne"
-  },
-  {
-   "kilde": "tilbudsskaar B",
-   "status": "FEIL",
-   "detalj": "maalt for uran, men de finnes ikke som segment"
+   "detalj": "16 segment, 7 aapne"
   },
   {
    "kilde": "tilbudsskaar B",
    "status": "OK",
-   "detalj": "4 segment fra b_capex.json"
+   "detalj": "5 segment fra b_capex.json"
+  },
+  {
+   "kilde": "trendbekreftelse",
+   "status": "OK",
+   "detalj": "16 segment"
+  },
+  {
+   "kilde": "COT brent",
+   "status": "OK",
+   "detalj": "2026-09-15, forvaltere +3.0 % av OI, persentil 36.5 (3 aar) / 70.6 (fra 2011), 768 uker"
+  },
+  {
+   "kilde": "COT wti",
+   "status": "OK",
+   "detalj": "2026-09-15, forvaltere +5.4 % av OI, persentil 48.7 (3 aar) / 23.1 (fra 2006), 1058 uker"
+  },
+  {
+   "kilde": "COT henryhub",
+   "status": "OK",
+   "detalj": "2026-09-15, forvaltere -5.5 % av OI, persentil 28.2 (3 aar) / 41.6 (fra 2006), 1058 uker"
+  },
+  {
+   "kilde": "COT gold",
+   "status": "OK",
+   "detalj": "2026-09-15, forvaltere +32.5 % av OI, persentil 67.3 (3 aar) / 75.4 (fra 2006), 1058 uker"
+  },
+  {
+   "kilde": "COT kobber",
+   "status": "OK",
+   "detalj": "2026-09-15, forvaltere +22.5 % av OI, persentil 76.3 (3 aar) / 88.1 (fra 2006), 1058 uker"
+  },
+  {
+   "kilde": "COT kakao",
+   "status": "OK",
+   "detalj": "2026-09-15, forvaltere -5.2 % av OI, persentil 15.4 (3 aar) / 14.7 (fra 2006), 1058 uker"
+  },
+  {
+   "kilde": "COT totalt",
+   "status": "OK",
+   "detalj": "6 av 6 kontrakter"
   }
  ]
 }
