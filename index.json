@@ -1,5 +1,5 @@
 {
- "oppdatert": "2026-09-23 06:24:14",
+ "oppdatert": "2026-09-24 06:40:57",
  "segmenter": [
   "brent",
   "wti",
@@ -26,17 +26,17 @@
   {
    "kilde": "segment brent",
    "status": "OK",
-   "detalj": "A=13.1 detr=30.7 rull=1.7   siste 2026-09"
+   "detalj": "A=18.0 detr=42.1 rull=6.7   siste 2026-09"
   },
   {
    "kilde": "segment wti",
    "status": "OK",
-   "detalj": "A=20.0 detr=39.9 rull=5.8   siste 2026-09"
+   "detalj": "A=24.9 detr=50.7 rull=12.5   siste 2026-09"
   },
   {
    "kilde": "segment henryhub",
    "status": "OK",
-   "detalj": "A=87.6 detr=56.2 rull=69.2 oppsikt  siste 2026-09"
+   "detalj": "A=90.2 detr=58.4 rull=74.2 oppsikt  siste 2026-09"
   },
   {
    "kilde": "avkorting gold",
@@ -166,7 +166,7 @@
   {
    "kilde": "overlevelsesport C",
    "status": "OK",
-   "detalj": "15 segment, 19 aapne"
+   "detalj": "15 segment, 6 aapne"
   },
   {
    "kilde": "tilbudsskaar B",
