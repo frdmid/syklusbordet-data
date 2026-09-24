@@ -1,26 +1,69 @@
-Oppstarter: 1 sonde(r) funnet
+Oppstarter: 2 sonde(r) funnet
+
+=== sonde_kjor_macrotrends ===
+1. Henter MacroTrends sin tickerliste
+
+   ticker_search_list.php         HTTP 403  5 kB
+   stock-screener                 HTTP 403  5 kB
+
+
+2. Driftskontantstrom per aar
+
+   nei   DNO.OL     DNO                    ikke i MacroTrends' liste
+   nei   AKRBP.OL   Aker BP                ikke i MacroTrends' liste
+   nei   CS.TO      Capstone Copper        ikke i MacroTrends' liste
+   nei   ATYM.L     Atalaya Mining         ikke i MacroTrends' liste
+   nei   ERA.PA     Eramet                 ikke i MacroTrends' liste
+   nei   GLEN.L     Glencore               ikke i MacroTrends' liste
+   nei   MPE.L      M.P. Evans             ikke i MacroTrends' liste
+   nei   RE.L       REA Holdings           ikke i MacroTrends' liste
+   nei   NHY.OL     Norsk Hydro            ikke i MacroTrends' liste
+   nei   BOL.ST     Boliden                ikke i MacroTrends' liste
+   nei   NESN.SW    Nestle                 ikke i MacroTrends' liste
+   nei   BARN.SW    Barry Callebaut        ikke i MacroTrends' liste
+   nei   HAFNI.OL   Hafnia                 ikke i MacroTrends' liste
+   nei   OET.OL     Okeanis Eco Tankers    ikke i MacroTrends' liste
+   nei   2020.OL    2020 Bulkers           ikke i MacroTrends' liste
+   nei   TMIP.L     Taylor Maritime        ikke i MacroTrends' liste
+   nei   TOU.TO     Tourmaline Oil         ikke i MacroTrends' liste
+   nei   WCP.TO     Whitecap Resources     ikke i MacroTrends' liste
+   nei   BIR.TO     Birchcliff Energy      ikke i MacroTrends' liste
+
+
+==============================================================
+0 av 19 selskaper fikk tall. 19 bommet: DNO.OL, AKRBP.OL, CS.TO, ATYM.L, ERA.PA, GLEN.L, MPE.L, RE.L, NHY.OL, BOL.ST, NESN.SW, BARN.SW, HAFNI.OL, OET.OL, 2020.OL, TMIP.L, TOU.TO, WCP.TO, BIR.TO
+0 har ti aar eller mer, altsaa nok til at det verste aaret kan stoles paa.
+
+Enheten maa sjekkes for hvert selskap. MacroTrends oppgir normalt
+millioner i selskapets rapporteringsvaluta, men det staar ikke i
+originalData, saa det maa leses av sida eller avstemmes mot SEC der
+begge finnes.
+
+Send hele utskriften tilbake.
+
+--- skrevet til sonder/sonde_kjor_macrotrends.txt (0 s, kode 0)
 
 === sonde_kjor_stockanalysis ===
 1. stockanalysis.com: hva ligger faktisk paa sida
 
    AKRBP.osl   (brent)
-      HTML, kontantstrom         HTTP 200    217 kB  type=text/html
+      HTML, kontantstrom         HTTP 200    218 kB  type=text/html
          markorer: operatingCashFlow=False, ocf-felt=False, __sveltekit=True, json-script=False, tabellrad <tr>=50
          aarstall i sida: 7  [2020, 2021, 2022]..[2024, 2025, 2026]
       __data.json                HTTP 200     17 kB  type=application/json
          markorer: operatingCashFlow=False, ocf-felt=False, __sveltekit=False, json-script=False, tabellrad <tr>=0
          aarstall i sida: 7  [2020, 2021, 2022]..[2024, 2025, 2026]
-      HTML + range=10Y           HTTP 200    217 kB  type=text/html
+      HTML + range=10Y           HTTP 200    218 kB  type=text/html
          markorer: operatingCashFlow=False, ocf-felt=False, __sveltekit=True, json-script=False, tabellrad <tr>=50
          aarstall i sida: 7  [2020, 2021, 2022]..[2024, 2025, 2026]
          script-blokker: 6, av dem med kontantstromord: 1
-         storste slik blokk: 15118 tegn. Utdrag:
+         storste slik blokk: 15119 tegn. Utdrag:
           				{ 					__sveltekit_16rp02m = { 						base: "" 					};  					const element = document.currentScript.parentElement;  					Promise.all([ 						import("/_app/immutable/entry/start.zy84ZPeO.js"), 						import("/_app/immutable/entry/app.DNLIoqWV.js") 					]).then(([kit, app]) => { 						kit.start(app
-         'Operating Cash Flow' funnet ved tegn 70327. Kontekst:
+         'Operating Cash Flow' funnet ved tegn 71497. Kontekst:
          Operating Cash Flow Growth" aria-label="Hide Operating Cash Flow Growth" aria-expanded="true"><span class="block transition-transform duration-200 motion-reduce:transition-none svelte-eiy3hb"><!--[0--><!----><svg class="h-4 w-4" viewBox="0 0 20 20" fill="curre
 
    GLEN.lon   (nikkel og tinn)
-      HTML, kontantstrom         HTTP 200    236 kB  type=text/html
+      HTML, kontantstrom         HTTP 200    234 kB  type=text/html
          markorer: operatingCashFlow=False, ocf-felt=False, __sveltekit=True, json-script=False, tabellrad <tr>=57
          aarstall i sida: 7  [2020, 2021, 2022]..[2024, 2025, 2026]
       __data.json                HTTP 200     19 kB  type=application/json
@@ -32,27 +75,27 @@ Oppstarter: 1 sonde(r) funnet
          script-blokker: 6, av dem med kontantstromord: 1
          storste slik blokk: 16419 tegn. Utdrag:
           				{ 					__sveltekit_16rp02m = { 						base: "" 					};  					const element = document.currentScript.parentElement;  					Promise.all([ 						import("/_app/immutable/entry/start.zy84ZPeO.js"), 						import("/_app/immutable/entry/app.DNLIoqWV.js") 					]).then(([kit, app]) => { 						kit.start(app
-         'Operating Cash Flow' funnet ved tegn 81405. Kontekst:
+         'Operating Cash Flow' funnet ved tegn 79845. Kontekst:
          Operating Cash Flow Growth" aria-label="Hide Operating Cash Flow Growth" aria-expanded="true"><span class="block transition-transform duration-200 motion-reduce:transition-none svelte-eiy3hb"><!--[0--><!----><svg class="h-4 w-4" viewBox="0 0 20 20" fill="curre
 
    CS.tsx   (kobber)
-      HTML, kontantstrom         HTTP 200    225 kB  type=text/html
+      HTML, kontantstrom         HTTP 200    224 kB  type=text/html
          markorer: operatingCashFlow=False, ocf-felt=False, __sveltekit=True, json-script=False, tabellrad <tr>=53
          aarstall i sida: 7  [2020, 2021, 2022]..[2024, 2025, 2026]
       __data.json                HTTP 200     18 kB  type=application/json
          markorer: operatingCashFlow=False, ocf-felt=False, __sveltekit=False, json-script=False, tabellrad <tr>=0
          aarstall i sida: 7  [2020, 2021, 2022]..[2024, 2025, 2026]
-      HTML + range=10Y           HTTP 200    224 kB  type=text/html
+      HTML + range=10Y           HTTP 200    225 kB  type=text/html
          markorer: operatingCashFlow=False, ocf-felt=False, __sveltekit=True, json-script=False, tabellrad <tr>=53
          aarstall i sida: 7  [2020, 2021, 2022]..[2024, 2025, 2026]
          script-blokker: 6, av dem med kontantstromord: 1
          storste slik blokk: 15310 tegn. Utdrag:
           				{ 					__sveltekit_16rp02m = { 						base: "" 					};  					const element = document.currentScript.parentElement;  					Promise.all([ 						import("/_app/immutable/entry/start.zy84ZPeO.js"), 						import("/_app/immutable/entry/app.DNLIoqWV.js") 					]).then(([kit, app]) => { 						kit.start(app
-         'Operating Cash Flow' funnet ved tegn 78907. Kontekst:
+         'Operating Cash Flow' funnet ved tegn 77347. Kontekst:
          Operating Cash Flow Growth" aria-label="Hide Operating Cash Flow Growth" aria-expanded="true"><span class="block transition-transform duration-200 motion-reduce:transition-none svelte-eiy3hb"><!--[0--><!----><svg class="h-4 w-4" viewBox="0 0 20 20" fill="curre
 
    ERA.epa   (nikkel)
-      HTML, kontantstrom         HTTP 200    233 kB  type=text/html
+      HTML, kontantstrom         HTTP 200    234 kB  type=text/html
          markorer: operatingCashFlow=False, ocf-felt=False, __sveltekit=True, json-script=False, tabellrad <tr>=57
          aarstall i sida: 7  [2020, 2021, 2022]..[2024, 2025, 2026]
       __data.json                HTTP 200     17 kB  type=application/json
@@ -64,7 +107,7 @@ Oppstarter: 1 sonde(r) funnet
          script-blokker: 6, av dem med kontantstromord: 1
          storste slik blokk: 15742 tegn. Utdrag:
           				{ 					__sveltekit_16rp02m = { 						base: "" 					};  					const element = document.currentScript.parentElement;  					Promise.all([ 						import("/_app/immutable/entry/start.zy84ZPeO.js"), 						import("/_app/immutable/entry/app.DNLIoqWV.js") 					]).then(([kit, app]) => { 						kit.start(app
-         'Operating Cash Flow' funnet ved tegn 77247. Kontekst:
+         'Operating Cash Flow' funnet ved tegn 78417. Kontekst:
          Operating Cash Flow Growth" aria-label="Hide Operating Cash Flow Growth" aria-expanded="true"><span class="block transition-transform duration-200 motion-reduce:transition-none svelte-eiy3hb"><!--[0--><!----><svg class="h-4 w-4" viewBox="0 0 20 20" fill="curre
 
 
@@ -84,8 +127,9 @@ HVA JEG SER ETTER
 
 Send hele utskriften tilbake.
 
---- skrevet til sonder/sonde_kjor_stockanalysis.txt (11 s, kode 0)
+--- skrevet til sonder/sonde_kjor_stockanalysis.txt (10 s, kode 0)
 
 
 OPPSUMMERING
-   OK    sonde_kjor_stockanalysis                    11 s  -> sonder/sonde_kjor_stockanalysis.txt
+   OK    sonde_kjor_macrotrends                       0 s  -> sonder/sonde_kjor_macrotrends.txt
+   OK    sonde_kjor_stockanalysis                    10 s  -> sonder/sonde_kjor_stockanalysis.txt
