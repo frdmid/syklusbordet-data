@@ -1,6 +1,9 @@
-Oppstarter: 1 sonde(r) funnet
-
-=== sonde_kjor_stockanalysis ===
+sonde:   sonde_kjor_stockanalysis
+kjort:   2026-09-24 12:10:26 UTC
+commit:  662d77e
+status:  OK
+brukte:  11 sekunder
+--------------------------------------------------------------
 1. stockanalysis.com: hva ligger faktisk paa sida
 
    AKRBP.osl   (brent)
@@ -83,9 +86,3 @@ HVA JEG SER ETTER
    noekkeltallsoversikter i staden. Aatte oppslag, en gang, med kilde per linje.
 
 Send hele utskriften tilbake.
-
---- skrevet til sonder/sonde_kjor_stockanalysis.txt (11 s, kode 0)
-
-
-OPPSUMMERING
-   OK    sonde_kjor_stockanalysis                    11 s  -> sonder/sonde_kjor_stockanalysis.txt
