@@ -22,7 +22,7 @@
     gold                    66 %!       12 %         3 %         8 %         5 %         2 %         1 % 
     gummi_rss3              18 %        13 %        11 %        13 %         7 %         3 %         0 % 
     gummi_tsr20                                                          8 %         7 %         3 % 
-    henryhub                                                  6 %         0 %         2 %         1 % 
+    henryhub                                                  6 %         0 %         2 %         2 % 
     jernmalm                93 %!       94 %!       93 %!       92 %!       57 %!        1 %         0 % 
     kaffe_arabica           25 %         2 %         3 %         3 %         0 %         4 %         1 % 
     kaffe_robusta           30 %        14 %         4 %         7 %         9 %         4 %         6 % 
@@ -82,9 +82,9 @@
     te                 800  1960-01         39.4       51.4       57.5       64.5       71.5       72.9
     kull               680  1970-01         31.3       38.1       45.4       53.5       62.4       75.0
     fiskemel           572  1979-01         19.1       23.3       25.2       25.7       25.5       14.5
-    wti                489  1986-01         39.9       32.7       30.5       28.2       26.0       19.4
-    brent              473  1987-05         30.7       28.5       26.8       25.6       23.5       13.5
-    henryhub           356  1997-01         56.2       52.0       50.3       49.2       46.6       44.7
+    wti                489  1986-01         50.7       44.6       39.3       35.4       29.7       24.1
+    brent              473  1987-05         42.1       35.7       32.3       30.9       28.3       19.7
+    henryhub           356  1997-01         58.4       54.2       53.4       52.8       50.0       46.9
     gummi_tsr20        332  1999-01         37.3       32.5       30.4       28.6       26.5       21.1
 
 1c. Betinget realavkastning. Terskelen er satt per variant slik at alle
@@ -131,12 +131,12 @@ Could not get FontBBox from font descriptor because None cannot be parsed as 4 f
     segment            likevekt      HL 15     diff
     aluminium               9.8       11.1     +1.4
     bly                    62.0       76.1    +14.1
-    brent                  30.7       25.6     -5.1
+    brent                  42.1       30.9    -11.2
     fiskemel               19.1       25.7     +6.6
     gold                    1.0       24.7    +23.7
     gummi_rss3             19.4       35.1    +15.7
     gummi_tsr20            37.3       28.6     -8.7
-    henryhub               56.2       49.2     -7.0
+    henryhub               58.4       52.8     -5.6
     jernmalm               66.1       77.6    +11.5
     kaffe_arabica           6.8       10.6     +3.9
     kaffe_robusta           9.9       18.5     +8.6
@@ -152,8 +152,8 @@ Could not get FontBBox from font descriptor because None cannot be parsed as 4 f
     tinn                    0.0       14.1    +14.1
     ttf                    17.4       17.1     -0.2
     urea                   37.0       55.9    +18.9
-    wti                    39.9       28.2    -11.7
-    median absolutt endring: 11.6 poeng
+    wti                    50.7       35.4    -15.3
+    median absolutt endring: 12.8 poeng
 
 ==============================================================================
 2. BDI OG BALTIC PER SEGMENT: HVA SVARER
@@ -165,9 +165,9 @@ Could not get FontBBox from font descriptor because None cannot be parsed as 4 f
    OK    stooq bdi: svarte, men ikke CSV: '<!DOCTYPE html><html><head><meta charset="utf-8"><meta name='
    OK    stooq ^badi: svarte, men ikke CSV: '<!DOCTYPE html><html><head><meta charset="utf-8"><meta name='
    feil  yahoo ^BDIY: HTTPError 404 Client Error: Not Found for url: https://query1.finance.yahoo.com/
-   OK    yahoo BDRY: 445 mnd, 2018-03-19 til 2026-09-21
+   OK    yahoo BDRY: 446 mnd, 2018-03-19 til 2026-09-23
    feil  yahoo BDI: HTTPError 404 Client Error: Not Found for url: https://query1.finance.yahoo.com/
-   OK    tradingeconomics /commodity/baltic: 419,177 tegn, 0 datopunkter, 1 verditagger ingen serie i siden
+   OK    tradingeconomics /commodity/baltic: 420,222 tegn, 0 datopunkter, 1 verditagger ingen serie i siden
    feil  investing.com BADI: HTTPError 403 Client Error: Forbidden for url: https://www.investing.com/indices
    feil  macromicro serie 760: HTTPError 403 Client Error: Forbidden for url: https://en.macromicro.me/charts/d
 
@@ -176,16 +176,18 @@ Could not get FontBBox from font descriptor because None cannot be parsed as 4 f
    OK    stooq Panamax BPI: svarte, men ikke CSV: '<!DOCTYPE html><html><head><meta charset="utf-8"><meta name='
    OK    stooq Supramax BSI: svarte, men ikke CSV: '<!DOCTYPE html><html><head><meta charset="utf-8"><meta name='
    OK    stooq Handysize BHSI: svarte, men ikke CSV: '<!DOCTYPE html><html><head><meta charset="utf-8"><meta name='
-   OK    tradingeconomics Capesize: 380,933 tegn, 0 datopunkter, 0 verditagger ingen serie i siden
-   OK    tradingeconomics Panamax: 380,916 tegn, 0 datopunkter, 0 verditagger ingen serie i siden
-   OK    tradingeconomics Supramax: 380,936 tegn, 0 datopunkter, 0 verditagger ingen serie i siden
-   OK    tradingeconomics Handysize: 380,953 tegn, 0 datopunkter, 0 verditagger ingen serie i siden
-   OK    tradingeconomics Dirty tanker BDTI: 381,015 tegn, 0 datopunkter, 0 verditagger ingen serie i siden
-   OK    tradingeconomics Clean tanker BCTI: 381,015 tegn, 0 datopunkter, 0 verditagger ingen serie i siden
+   OK    tradingeconomics Capesize: 382,116 tegn, 0 datopunkter, 0 verditagger ingen serie i siden
+   OK    tradingeconomics Panamax: 382,094 tegn, 0 datopunkter, 0 verditagger ingen serie i siden
+   OK    tradingeconomics Supramax: 382,120 tegn, 0 datopunkter, 0 verditagger ingen serie i siden
+   OK    tradingeconomics Handysize: 382,137 tegn, 0 datopunkter, 0 verditagger ingen serie i siden
+   OK    tradingeconomics Dirty tanker BDTI: 382,199 tegn, 0 datopunkter, 0 verditagger ingen serie i siden
+   OK    tradingeconomics Clean tanker BCTI: 382,198 tegn, 0 datopunkter, 0 verditagger ingen serie i siden
 
 2c. Staar BDI i Fearnleys-rapportene vi allerede henter
     (fyller i saa fall 2019-2026 fra en kilde som er bevist)
     196 PDF-er funnet, sjekker de 6 nyeste
+      2026-09-24  1 treff
+         Baltic Dry Index (BDI)
       2026-09-16  1 treff
          Baltic Dry Index (BDI)
       2026-09-09  1 treff
@@ -195,8 +197,6 @@ Could not get FontBBox from font descriptor because None cannot be parsed as 4 f
       2026-08-26  1 treff
          Baltic Dry Index (BDI)
       2026-08-20  1 treff
-         Baltic Dry Index (BDI)
-      2026-08-12  1 treff
          Baltic Dry Index (BDI)
 
 ==============================================================================
