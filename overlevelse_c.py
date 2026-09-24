@@ -74,16 +74,34 @@ def hent(url, headers=None, timeout=90):
     return r
 
 
-def aarsserie(fakta, kandidater, slag):
+def aarsserie(fakta, kandidater, slag, valuta=None):
     """Velger foerste begrep med nok aarstall. Deduper paa aar: samme
     regnskapsaar rapporteres i flere innleveringer, og uten deduplisering
-    telles ett aar flere ganger. Siste innlevering vinner."""
+    telles ett aar flere ganger. Siste innlevering vinner.
+
+    VALUTA: fram til 24. september sto det "if not enh.startswith('USD')".
+    Det kastet hvert eneste tall fra alle utenlandske filere som rapporterer
+    i egen valuta. Cenovus filer 40-F med ni aar driftskontantstrom fra 2017,
+    inkludert bunnaaret 2020, men rapporterer i kanadiske dollar, og havnet
+    derfor i "utenfor SEC" sammen med selskaper som aldri har filet noe.
+    Sonderingen etter ESEF, Bronnoysund og Yahoo lette etter data som laa der
+    hele tiden.
+    Valuta trengs ikke i C. Skaaren er kontanter delt paa brennrate, altsaa et
+    forhold mellom to belop i samme valuta, og forholdet er det samme i CAD som
+    i USD. Kravet er bare at ALLE ledd for ett selskap leses i SAMME valuta,
+    og det sikres av valuta-argumentet: forste ledd som treffer bestemmer, og
+    resten maa folge.
+    """
     for begrep in kandidater:
         d = fakta.get(begrep)
         if not d:
             continue
-        for enh, pkt in d.get("units", {}).items():
-            if not enh.startswith("USD"):
+        enheter = sorted(d.get("units", {}), key=lambda e: (e != (valuta or "USD"), e))
+        for enh in enheter:
+            pkt = d["units"][enh]
+            if not re.match(r"^[A-Z]{3}$", enh):
+                continue
+            if valuta and enh != valuta:
                 continue
             if slag == "strom":
                 aar = [p for p in pkt if p.get("form") in FORMER and p.get("fp") == "FY"
@@ -100,8 +118,8 @@ def aarsserie(fakta, kandidater, slag):
                     best[k] = p
             s = pd.Series({int(k): float(v["val"]) for k, v in best.items()}).sort_index()
             if len(s) >= MIN_AAR:
-                return begrep, s
-    return None, None
+                return begrep, s, enh
+    return None, None, None
 
 
 print("1. SECs tickerliste")
@@ -146,11 +164,29 @@ for tk in sorted(AKSJER):
     fakta = {}
     for tak in ("us-gaap", "ifrs-full"):
         fakta.update(cf.get("facts", {}).get(tak, {}))
-    valgt, serier = {}, {}
-    for ledd, (kand, slag) in LEDD.items():
-        b, s = aarsserie(fakta, kand, slag)
-        if b is not None:
-            valgt[ledd], serier[ledd] = b, s
+    # Driften bestemmer valutaen, og alle andre ledd maa leses i SAMME valuta
+    # for at forholdstallene skal bety noe. Noen filere oppgir driften i to
+    # valutaer men kontantbeholdningen i bare en, saa vi prover valutaene i
+    # tur og velger den forste der begge de nodvendige leddene finnes.
+    kandidatvaluta = []
+    for begrep in LEDD["drift"][0]:
+        for enh in (fakta.get(begrep, {}).get("units") or {}):
+            if re.match(r"^[A-Z]{3}$", enh) and enh not in kandidatvaluta:
+                kandidatvaluta.append(enh)
+    kandidatvaluta.sort(key=lambda e: e != "USD")
+
+    valgt, serier, val = {}, {}, None
+    for prov in (kandidatvaluta or [None]):
+        v, se = {}, {}
+        for ledd, (kand, slag) in LEDD.items():
+            b, sr, enh = aarsserie(fakta, kand, slag, valuta=prov)
+            if b is not None:
+                v[ledd], se[ledd] = b, sr
+        if "kontanter" in se and "drift" in se:
+            valgt, serier, val = v, se, prov
+            break
+        if not valgt:
+            valgt, serier, val = v, se, prov
     if "kontanter" not in serier or "drift" not in serier:
         print(f"   {tk:12s} mangler {'kontanter' if 'kontanter' not in serier else 'driftskontantstrom'}")
         utenfor.append(tk)
