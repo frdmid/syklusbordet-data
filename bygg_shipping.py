@@ -187,6 +187,47 @@ def defl(v, p):
     return round(float(v) * BASE / k, 4)
 
 
+def pctl(verdier, x):
+    v = [a for a in verdier if a is not None]
+    return None if not v else round(100.0 * sum(1 for a in v if a <= x) / len(v), 1)
+
+
+# Raten over grafen. For torrlast er det BDI, som er felles for alle fire
+# storrelsene, med persentil av realverdien mot hele historikken fra 1985.
+# BDI ble 24. september 2026 testet som eget A-segment og forkastet (27 % av
+# maanedene flagget, p=0,087), men som ratevariabel for torrlastaksjene holdt
+# den (SBLK fra -0,06 til +0,42 i korrelasjon). Derfor staar den her som
+# kontekst og ikke som skaar. Tank har bare TC 1 aar fra Fearnleys, med
+# historikk fra 2023, som er for kort til en persentil.
+BDI_FELT = None
+if BDI:
+    try:
+        tt = sorted(BDI)
+        rl = [defl(BDI[t], pd.Period(t, freq="M")) for t in tt]
+        sis = tt[-1]
+        i12 = tt.index(sis) - 12
+        BDI_FELT = {
+            "navn": "Baltic Dry Index", "t": sis, "verdi": round(BDI[sis], 0),
+            "enhet": "indekspoeng",
+            "endr12_pst": None if i12 < 0 else round(100 * (rl[-1] / rl[i12] - 1), 1),
+            "pctl_alle": pctl(rl, rl[-1]), "pctl_10aar": pctl(rl[-120:], rl[-1]),
+            "fra": tt[0], "basis": "realverdi, maanedssnitt",
+            "kilde": "Baltic Exchange, skjoetet serie i bdi.json"}
+        print(f"   BDI {sis}: {BDI[sis]:.0f}, persentil {BDI_FELT['pctl_alle']} "
+              f"(fra {tt[0]}) / {BDI_FELT['pctl_10aar']} (10 aar)")
+        alder = (pd.Period(pd.Timestamp.now(), freq="M") - pd.Period(sis, freq="M")).n
+        if alder > 2:
+            print(f"   ADVARSEL: BDI er {alder} maaneder gammel. bdi.json maa forlenges.")
+    except Exception as e:
+        print(f"   BDI-feltet feilet: {type(e).__name__} {str(e)[:60]}")
+
+try:
+    from signaler import trend
+except Exception as e:
+    trend = lambda s: None
+    print(f"   signaler.py ikke lest: {type(e).__name__}")
+
+
 print("\n2. Bygger segmentene")
 ut, feil = 0, 0
 for sid, nokkel in SKIP.items():
@@ -229,11 +270,21 @@ for sid, nokkel in SKIP.items():
             "tc1y_siste": None if tc.empty else round(float(tc.iloc[-1]), 1),
             "rate_navn": "Baltic Dry Index" if sid in TORRLAST else "TC 1 år",
             "bdi_siste": next((x["bdi"] for x in reversed(serie) if x["bdi"]), None),
+            "rate": BDI_FELT if sid in TORRLAST else (None if tc.empty else {
+                "navn": "TC 1 år", "t": str(tc.index[-1]), "verdi": round(float(tc.iloc[-1]), 0),
+                "enhet": "USD/dag",
+                "endr12_pst": None if (tc.index[-1] - 12) not in tc.index else round(100 * (tc.iloc[-1] / tc[tc.index[-1] - 12] - 1), 1),
+                "pctl_alle": None, "pctl_10aar": None, "fra": str(tc.index[0]),
+                "basis": "nominell, maanedssnitt",
+                "kilde": "Fearnleys ukerapport"}),
             "scores": {"A": None, "Ad": None, "Ar": None, "flagg": False,
                        "flagg_styrke": 0,
                        "A2": None if not sis else round(sis["nom"] / sis["anchor"], 3),
                        "B": None, "D": None, "S": None,
                        "gate": "ukjent", "months_in_zone": 0}})
+        t = trend(serie)
+        if t:
+            d["trend"] = t
         rr = INSTR_KILDE.get(sid)
         if rr:
             d["instrumenter"] = [

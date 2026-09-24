@@ -192,6 +192,17 @@ for navn, url, mnd in [
 
 for sid in UTEN_A:
     RAAVARE.pop(sid, None)     # administrert pris, ikke et marked
+
+# IKZ_KUN=<segment> maaler bare mot den ene raavaren, men mot HELE
+# kandidatuniverset, slik at et papir som ikke var ventet aa folge den ogsaa
+# kan dukke opp. Brukes naar et nytt segment kommer til, som uran 24.09.2026,
+# uten aa skrive over forrige fulle kjoring i sonde_ikz.json.
+KUN = os.environ.get("IKZ_KUN", "").strip()
+if KUN:
+    RAAVARE = {k: v for k, v in RAAVARE.items() if k == KUN}
+    if not RAAVARE:
+        raise SystemExit(f"IKZ_KUN={KUN}: raavaren kom ikke inn, se loggen over")
+    print(f"   IKZ_KUN={KUN}: maaler bare mot denne")
 note("raavareserier", True, f"{len(RAAVARE)} segment, "
      f"korteste {min(len(v) for v in RAAVARE.values())} mnd")
 
@@ -841,6 +852,17 @@ if feil:
 
 L += ["## Papirer som ikke lot seg hente", ""]
 L += [f"- {l['kilde']}: {l['detalj']}" for l in LOGG if l["status"] == "FEIL"] or ["- ingen"]
+
+if KUN:
+    # Skrives til sonder/, som arbeidsflyten legger i repoet etter kjoringen.
+    # Den fulle kjoringen i sonde_ikz.json roeres ikke.
+    os.makedirs("sonder", exist_ok=True)
+    with open(f"sonder/ikz_{KUN}.json", "w", encoding="utf-8") as f:
+        json.dump({"kjort": time.strftime("%Y-%m-%d %H:%M:%S"), "kun": KUN, "logg": LOGG,
+                   "meta": META, "par": resultat}, f, ensure_ascii=False, indent=1)
+    print("\n".join(L))
+    print(f"\n   skrevet sonder/ikz_{KUN}.json ({len(resultat)} par)")
+    raise SystemExit(0)
 
 try:
     push("sonde_ikz.json", json.dumps(
