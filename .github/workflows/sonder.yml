@@ -17,7 +17,7 @@ on:
         required: true
         default: "alle"
         type: choice
-        options: [alle, diagnose, "C og D", korrelasjon]
+        options: [alle, diagnose, "C og D", korrelasjon, esef, "ad hoc"]
 
 permissions:
   contents: write
@@ -48,6 +48,27 @@ jobs:
       - name: Korrelasjon instrument mot raavare
         if: inputs.hvilken == 'alle' || inputs.hvilken == 'korrelasjon'
         run: python sonde_korrelasjon.py 2>&1 | tee sonder/korrelasjon.txt
+
+      - name: Hvor finnes regnskap for de 20 uten SEC
+        if: inputs.hvilken == 'alle' || inputs.hvilken == 'esef'
+        run: python sonde_esef.py 2>&1 | tee sonder/esef.txt
+
+      # Fritt steg. Kjorer sonde_ad_hoc.py hvis den finnes.
+      #
+      # Arbeidsflytfiler er beskyttet mot fjernskriving, saa hver gang en ny
+      # sonde trengte et eget steg, maatte Frode legge inn en ny yml manuelt.
+      # Det gikk galt 24. september: skriptet laa i repoet, steget gjorde ikke,
+      # og kjoringen saa vellykket ut mens den hoppet over hele sonden.
+      # Med dette steget skriver Claude bare sonde_ad_hoc.py, og denne filen
+      # trenger aldri roeres igjen.
+      - name: Ad hoc
+        if: inputs.hvilken == 'alle' || inputs.hvilken == 'ad hoc'
+        run: |
+          if [ -f sonde_ad_hoc.py ]; then
+            python sonde_ad_hoc.py 2>&1 | tee sonder/ad_hoc.txt
+          else
+            echo "ingen sonde_ad_hoc.py i repoet, hopper over"
+          fi
 
       - name: Legg utskriften i repoet
         if: always()

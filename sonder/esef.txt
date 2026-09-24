@@ -1,89 +1,60 @@
-1. ESEF-registeret (filings.xbrl.org)
-   Henter indeksen per land og ser hvem vi finner igjen.
+1. ESEF: finner enhetene paa nytt, med rettet navnematch
 
-   FR: 292 enheter i registeret
-   GB: 804 enheter i registeret
-   NO: 299 enheter i registeret
-   SE: 417 enheter i registeret
+   FR: 292 enheter
+   GB: 804 enheter
+   NO: 299 enheter
+   SE: 417 enheter
 
-   ok    esef         AKRBP.OL     AKER ASA
-   ok    esef         DNO.OL       DNO ASA
-   ok    esef         NHY.OL       Norsk Hydro ASA
-   ok    esef         HAFNI.OL     Hafnia Limited
-   ok    esef         OET.OL       OKEANIS ECO TANKERS CORP.
-   nei   esef         2020.OL      ingen match i NO
-   ok    esef         GLEN.L       (주)하나투어
-   ok    esef         ATYM.L       (주)하나투어
-   ok    esef         MPE.L        (주)하나투어
-   ok    esef         RE.L         (주)하나투어
-   ok    esef         TMIP.L       (주)하나투어
-   nei   esef         CVE.TO       ingen match i CA
-   nei   esef         WCP.TO       ingen match i CA
-   nei   esef         TOU.TO       ingen match i CA
-   nei   esef         BIR.TO       ingen match i CA
-   nei   esef         CS.TO        ingen match i CA
-   nei   esef         BARN.SW      ingen match i CH
-   nei   esef         NESN.SW      ingen match i CH
-   ok    esef         BOL.ST       BOLIDEN AB
-   ok    esef         ERA.PA       ERAMET
+   ok    AKRBP.OL   -> AKER BP ASA
+   ok    DNO.OL     -> DNO ASA
+   ok    NHY.OL     -> Norsk Hydro ASA
+   ok    HAFNI.OL   -> Hafnia Limited
+   ok    OET.OL     -> OKEANIS ECO TANKERS CORP.
+   nei   2020.OL    ingen match i NO. Naermeste: DLTX ASA, MEDISTIM ASA, ELKEM ASA
+   ok    GLEN.L     -> GLENCORE PLC
+   ok    ATYM.L     -> ATALAYA MINING PLC
+   nei   MPE.L      ingen match i GB. Naermeste: KAINOS GROUP PLC, JUPITER FUND MANAGEMENT PLC, INTEGRATED DIAGNOSTICS HOLDINGS PLC
+   ok    RE.L       -> R.E.A. HOLDINGS PLC
+   nei   TMIP.L     ingen match i GB. Naermeste: TAYLOR WIMPEY PLC, TAYLOR MARITIME LIMITED, KAINOS GROUP PLC
+   ok    BOL.ST     -> BOLIDEN AB
+   ok    ERA.PA     -> ERAMET
 
-2. Bronnoysund regnskapsregisteret (bare norske)
-   ok    brreg        AKRBP.OL     orgnr 989795848, 1 aar (2025..2025), kontantstrom i data: NEI
-   ok    brreg        DNO.OL       orgnr 921526121, 1 aar (2025..2025), kontantstrom i data: NEI
-   ok    brreg        NHY.OL       orgnr 914778271, 1 aar (2025..2025), kontantstrom i data: NEI
-   nei   brreg        HAFNI.OL     orgnr 932573881, regnskap HTTP 404
-   nei   brreg        OET.OL       orgnr 831804742, regnskap HTTP 404
-   nei   brreg        2020.OL      orgnr 930263672, regnskap HTTP 404
+2. Aar per enhet, og om driftskontantstrom finnes i rapporten
+   Dette er spoersmaalet som avgjor alt. C maaler mot verste aar i
+   HELE historikken, og et femaarsvindu uten syklusbunn var nettopp
+   feilen som ble rettet i september.
 
-3. Yahoo quoteSummary (alle borser, men faa aar)
-   nei   yahoo        AKRBP.OL     HTTP 401
-   nei   yahoo        DNO.OL       HTTP 401
-   nei   yahoo        NHY.OL       HTTP 401
-   nei   yahoo        HAFNI.OL     HTTP 401
-   nei   yahoo        OET.OL       HTTP 401
-   nei   yahoo        2020.OL      HTTP 401
-   nei   yahoo        GLEN.L       HTTP 401
-   nei   yahoo        ATYM.L       HTTP 401
-   nei   yahoo        MPE.L        HTTP 401
-   nei   yahoo        RE.L         HTTP 401
-   nei   yahoo        TMIP.L       HTTP 401
-   nei   yahoo        CVE.TO       HTTP 401
-   nei   yahoo        WCP.TO       HTTP 401
-   nei   yahoo        TOU.TO       HTTP 401
-   nei   yahoo        BIR.TO       HTTP 401
-   nei   yahoo        CS.TO        HTTP 401
-   nei   yahoo        BARN.SW      HTTP 401
-   nei   yahoo        NESN.SW      HTTP 401
-   nei   yahoo        BOL.ST       HTTP 401
-   nei   yahoo        ERA.PA       HTTP 401
+   (feltene en filing har: ['country', 'date_added', 'error_count', 'fxo_id', 'inconsistency_count', 'json_url', 'package_url', 'period_end', 'processed', 'report_url', 'sha256', 'viewer_url', 'warning_count'])
 
+   AKRBP.OL    4 rapporter, aar 2021..2024  (2021, 2022, 2023, 2024)
+              rapportfil 1482 kB, kontantstromtag: CashFlowsFromUsedInOperatingActivities, 0 ulike datoer i filen
+   DNO.OL      4 rapporter, aar 2021..2024  (2021, 2022, 2023, 2024)
+              rapportfil 2572 kB, kontantstromtag: CashFlowsFromUsedInOperatingActivities, 0 ulike datoer i filen
+   NHY.OL      4 rapporter, aar 2021..2024  (2021, 2022, 2023, 2024)
+              rapportfil 1253 kB, kontantstromtag: CashFlowsFromUsedInOperatingActivities, 0 ulike datoer i filen
+   HAFNI.OL    4 rapporter, aar 2021..2024  (2021, 2022, 2023, 2024)
+              rapportfil 933 kB, kontantstromtag: CashFlowsFromUsedInOperatingActivities, 0 ulike datoer i filen
+   OET.OL      4 rapporter, aar 2021..2025  (2021, 2022, 2023, 2025)
+              rapportfil 753 kB, kontantstromtag: CashFlowsFromUsedInOperatingActivities, 0 ulike datoer i filen
+   GLEN.L      5 rapporter, aar 2021..2025  (2021, 2022, 2023, 2024, 2025)
+              rapportfil 7335 kB, kontantstromtag: CashFlowsFromUsedInOperatingActivities, 0 ulike datoer i filen
+   ATYM.L      2 rapporter, aar 2024..2025  (2024, 2025)
+              rapportfil 2460 kB, kontantstromtag: CashFlowsFromUsedInOperatingActivities, 0 ulike datoer i filen
+   RE.L        5 rapporter, aar 2021..2025  (2021, 2022, 2023, 2024, 2025)
+              rapportfil 1290 kB, kontantstromtag: CashFlowsFromUsedInOperatingActivities, 1 ulike datoer i filen
+   BOL.ST      6 rapporter, aar 2021..2024  (2021, 2022, 2023, 2024)
+              rapportfil 4450 kB, kontantstromtag: CashFlowsFromUsedInOperatingActivities, 0 ulike datoer i filen
+   ERA.PA      6 rapporter, aar 2020..2025  (2020, 2021, 2022, 2023, 2024, 2025)
+              rapportfil 7238 kB, kontantstromtag: CashFlowsFromUsedInOperatingActivities, 0 ulike datoer i filen
 
-==============================================================
-OPPSUMMERING: hvor mange av de 20 gir hver rute treff paa
-   esef     12 av 20
-   brreg     3 av  6
-   yahoo     0 av 20
-
-Per aksje:
-   AKRBP.OL     Oslo       esef=ja   brreg=ja   yahoo=nei
-   DNO.OL       Oslo       esef=ja   brreg=ja   yahoo=nei
-   NHY.OL       Oslo       esef=ja   brreg=ja   yahoo=nei
-   HAFNI.OL     Oslo       esef=ja   brreg=nei  yahoo=nei
-   OET.OL       Oslo       esef=ja   brreg=nei  yahoo=nei
-   2020.OL      Oslo       esef=nei  brreg=nei  yahoo=nei
-   GLEN.L       London     esef=ja   brreg=  -  yahoo=nei
-   ATYM.L       London     esef=ja   brreg=  -  yahoo=nei
-   MPE.L        London     esef=ja   brreg=  -  yahoo=nei
-   RE.L         London     esef=ja   brreg=  -  yahoo=nei
-   TMIP.L       London     esef=ja   brreg=  -  yahoo=nei
-   CVE.TO       Toronto    esef=nei  brreg=  -  yahoo=nei
-   WCP.TO       Toronto    esef=nei  brreg=  -  yahoo=nei
-   TOU.TO       Toronto    esef=nei  brreg=  -  yahoo=nei
-   BIR.TO       Toronto    esef=nei  brreg=  -  yahoo=nei
-   CS.TO        Toronto    esef=nei  brreg=  -  yahoo=nei
-   BARN.SW      Zurich     esef=nei  brreg=  -  yahoo=nei
-   NESN.SW      Zurich     esef=nei  brreg=  -  yahoo=nei
-   BOL.ST       Stockholm  esef=ja   brreg=  -  yahoo=nei
-   ERA.PA       Paris      esef=ja   brreg=  -  yahoo=nei
+3. SEC under amerikansk ticker (Toronto og Zurich)
+   SEC-kartet har 10461 tickere
+   ok    CVE.TO     CVE -> CIK 0001475260, 867 fakta, kontantstromtag: CashFlowsFromUsedInOperatingActivities
+   nei   WCP.TO     WCPRF -> CIK 0001472879, companyfacts HTTP 404
+   nei   TOU.TO     TRMLF -> CIK 0002071881, companyfacts HTTP 404
+   nei   BIR.TO     BIREF -> CIK 0002073268, companyfacts HTTP 404
+   nei   CS.TO      CSCCF -> CIK 0002075918, companyfacts HTTP 404
+   nei   BARN.SW    ingen av ['BYCBF'] i SEC-kartet
+   nei   NESN.SW    ingen av ['NSRGY', 'NSRGF'] i SEC-kartet
 
 Send hele utskriften tilbake.
