@@ -1,24 +1,9 @@
-1. Yahoo fundamentals-timeseries
-   ok    NHY.OL     4 aar  2022..2025   (Norsk Hydro, gruve, bunn 2015-2016)
-   ok    GLEN.L     4 aar  2022..2025   (Glencore, gruve, bunn 2015-2016)
-   ok    TOU.TO     4 aar  2022..2025   (Tourmaline, gass, bunn 2016 og 2020)
-   ok    NESN.SW    4 aar  2022..2025   (Nestle, utenfor ESEF og SEC)
-   ok    AA         4 aar  2022..2025   (Alcoa, fasit: SEC gir 12 aar)
+Denne filen er utgaatt og skal ikke leses.
 
-2. stockanalysis.com
-   ok    NHY.OL      18 kB,  7 aarstall 2020..2026, kontantstromfelt: ja
-   ok    GLEN.L      19 kB,  7 aarstall 2020..2026, kontantstromfelt: ja
-   ok    TOU.TO      17 kB,  7 aarstall 2020..2026, kontantstromfelt: ja
-   ok    NESN.SW     18 kB,  7 aarstall 2020..2026, kontantstromfelt: ja
-   ok    AA          17 kB,  8 aarstall 2016..2026, kontantstromfelt: ja
+Den inneholdt utskriften fra den sonden som tilfeldigvis kjorte sist, uten
+navn og uten tidspunkt. Det gikk galt to ganger 24. september: gammel utskrift
+laa igjen under samme navn og saa ut som et ferskt svar.
 
-3. SEC: hvor mange aar gir en 40-F-filer egentlig
-   ok    CVE        9 aar  2017..2025
-   ok    AA        10 aar  2016..2025
-
-
-KONKLUSJON aa lete etter: gir noen rute ti aar eller mer utenfor USA.
-Gjor den ikke det, er ESEF det beste som finnes, og da maa C endres
-til aa si fra naar porten er maalt paa et for kort vindu.
-
-Send hele utskriften tilbake.
+Sondene heter nu sonde_kjor_<hva_den_maaler>.py og skriver til
+sonder/sonde_kjor_<hva_den_maaler>.txt, med navn, tidspunkt, commit og
+avslutningskode oeverst i filen.

@@ -1,143 +1,71 @@
 # ---------------------------------------------------------------------------
-# Sonde 4: knekk stockanalysis.com, eller slaa fast at den ikke lar seg knekke
+# Fast oppstarter for sondene. Denne filen endres aldri.
 #
-# Utgangspunktet er en innsikt som endrer problemet. C trenger ikke femten aar
-# med tall. Den trenger selskapets VERSTE driftskontantstrom noensinne, og det
-# er ett tall og ett aarstall per selskap som aldri endrer seg. Cenovus sitt er
-# 273 millioner fra 2020, og det staar fast uansett hva som skjer framover.
-# Resten av skaaren, kontanter og renter, er ferske tall som ESEF og Yahoos
-# fireaarsvindu gir uten problemer.
+# Arbeidsflytfiler er beskyttet mot fjernskriving, saa hver gang en ny sonde
+# trengte et eget steg maatte Frode legge inn en ny yml manuelt. Losningen var
+# et fritt steg som kjorer sonde_ad_hoc.py. Men da ble ALLE sonder hetende det
+# samme, og utskriften havnet alltid i sonder/ad_hoc.txt.
 #
-# Saa oppgaven er ikke en loepende innhenting. Den er aa banke ett tall per
-# selskap, en gang, med kilde. Samme monster som bdi_hist.json og
-# uran_reserve.csv, som begge loste like fastlaaste problemer.
+# Det gikk galt to ganger 24. september: gammel utskrift laa igjen under samme
+# navn, saa den saa ut som et ferskt svar. Forste gang tolket jeg sonde 1 sine
+# tall som sonde 2 sine. Andre gang leste jeg sonde 3 som om den var sonde 4.
 #
-# Og listen er kortere enn jeg trodde. Bare fem segmenter mangler port, og de
-# henger paa aatte selskaper:
-#   brent      DNO.OL, AKRBP.OL
-#   kobber     CS.TO, ATYM.L
-#   nikkel     ERA.PA, GLEN.L
-#   tinn       GLEN.L
-#   palmeolje  MPE.L, RE.L
+# Derfor denne: oppstarteren finner alle filer som heter sonde_kjor_*.py,
+# kjorer hver av dem i egen prosess, og legger utskriften i sonder/<navn>.txt
+# med navn, tidspunkt og commit oeverst. Da kan gammel utskrift aldri leses som
+# ny, og en ny sonde krever bare en ny fil.
 #
-# Sonde 3 provde stockanalysis.com med gjettede URL-er og fikk 18 kB tilbake.
-# Det var ikke et svar, det var en daarlig test. Nettstedet viser ti aar med
-# kontantstrom for Oslo, London og Toronto i nettleseren, gratis. Finnes tallene
-# i et endepunkt vi kan lese, loser det alle nitten selskapene og ikke bare de
-# aatte.
-#
-# Denne sonden gjetter ikke. Den henter den vanlige HTML-siden, skriver ut hva
-# den faktisk inneholder, og lar meg se strukturen. Deretter kan jeg skrive
-# uttrekket mot noe som finnes.
-#
-# Kjores via valget "ad hoc" i Sonder. Skriver ingenting.
+# Slik legges en sonde til:  skriv sonde_kjor_<hva_den_maaler>.py
+# Slik leses svaret:         sonder/sonde_kjor_<hva_den_maaler>.txt
 # ---------------------------------------------------------------------------
 
-import json, re, time
-import requests
+import glob, os, subprocess, sys, time
 
-TIMEOUT = 35
-UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                    "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
-      "Accept": "text/html,application/xhtml+xml,application/json;q=0.9,*/*;q=0.8",
-      "Accept-Language": "en-US,en;q=0.9"}
+SONDER = sorted(glob.glob("sonde_kjor_*.py"))
+os.makedirs("sonder", exist_ok=True)
 
-# ticker hos stockanalysis, borskode, hvorfor vi trenger den
-MAAL = [("AKRBP", "osl", "brent"),
-        ("GLEN",  "lon", "nikkel og tinn"),
-        ("CS",    "tsx", "kobber"),
-        ("ERA",   "epa", "nikkel")]
+if not SONDER:
+    print("Ingen filer som heter sonde_kjor_*.py i repoet. Ingenting aa kjore.")
+    print("En sonde legges til ved aa skrive en slik fil. Arbeidsflyten")
+    print("trenger ingen endring.")
+    sys.exit(0)
 
+try:
+    sha = subprocess.run(["git", "rev-parse", "--short", "HEAD"],
+                         capture_output=True, text=True, timeout=20).stdout.strip() or "ukjent"
+except Exception:
+    sha = "ukjent"
 
-def get(url, **kw):
-    for i in range(3):
-        try:
-            r = requests.get(url, headers=UA, timeout=TIMEOUT, **kw)
-            if r.status_code in (429, 502, 503):
-                time.sleep(4 * (i + 1)); continue
-            return r
-        except requests.RequestException as e:
-            if i == 2:
-                raise
-            time.sleep(2 * (i + 1))
-    raise RuntimeError("ga opp")
-
-
-def kikk(navn, url):
-    """Henter og skriver ut nok til at strukturen kan leses, ikke bare ok/nei."""
+print(f"Oppstarter: {len(SONDER)} sonde(r) funnet\n")
+resultat = []
+for sti in SONDER:
+    navn = os.path.splitext(os.path.basename(sti))[0]
+    ut = f"sonder/{navn}.txt"
+    start = time.time()
+    print(f"=== {navn} ===", flush=True)
     try:
-        r = get(url)
+        p = subprocess.run([sys.executable, sti], capture_output=True, text=True, timeout=3600)
+        tekst = (p.stdout or "") + (("\n[stderr]\n" + p.stderr) if p.stderr.strip() else "")
+        kode = p.returncode
+    except subprocess.TimeoutExpired:
+        tekst, kode = "AVBRUTT: sonden brukte mer enn en time.", 124
     except Exception as e:
-        print(f"      {navn:26} {type(e).__name__} {str(e)[:50]}")
-        return None
-    t = r.text if r.status_code == 200 else ""
-    aar = sorted({int(x) for x in re.findall(r"\b(20[01]\d|202\d)\b", t)} & set(range(2005, 2027)))
-    print(f"      {navn:26} HTTP {r.status_code}  {len(r.content)//1024:5} kB  "
-          f"type={r.headers.get('content-type','?')[:24]}")
-    if not t:
-        return None
-    markorer = {
-        "operatingCashFlow": "operatingCashFlow" in t,
-        "ocf-felt":          bool(re.search(r'"(ocf|operating_cash_flow|cashFlowOps)"', t)),
-        "__sveltekit":       "__sveltekit" in t or "sveltekit" in t.lower(),
-        "json-script":       'type="application/json"' in t,
-        "tabellrad <tr>":    t.count("<tr") ,
-    }
-    print(f"         markorer: " + ", ".join(
-        f"{k}={v}" for k, v in markorer.items()))
-    print(f"         aarstall i sida: {len(aar)}  {aar[:3]}..{aar[-3:] if len(aar)>3 else ''}")
-    return t
+        tekst, kode = f"AVBRUTT: {type(e).__name__}: {e}", 1
+    brukt = time.time() - start
 
+    # Hodet er det som gjor at gammel utskrift ikke kan leses som ny.
+    hode = (f"sonde:   {navn}\n"
+            f"kjort:   {time.strftime('%Y-%m-%d %H:%M:%S')} UTC\n"
+            f"commit:  {sha}\n"
+            f"status:  {'OK' if kode == 0 else f'FEIL, avslutningskode {kode}'}\n"
+            f"brukte:  {brukt:.0f} sekunder\n"
+            + "-" * 62 + "\n")
+    with open(ut, "w", encoding="utf-8") as f:
+        f.write(hode + tekst)
+    print(tekst)
+    print(f"--- skrevet til {ut} ({brukt:.0f} s, kode {kode})\n", flush=True)
+    resultat.append((navn, kode, brukt))
 
-print("1. stockanalysis.com: hva ligger faktisk paa sida\n")
-for tk, bors, hvorfor in MAAL:
-    print(f"   {tk}.{bors}   ({hvorfor})")
-    base = f"https://stockanalysis.com/quote/{bors}/{tk}"
-    html = kikk("HTML, kontantstrom", f"{base}/financials/cash-flow-statement/")
-    kikk("__data.json", f"{base}/financials/cash-flow-statement/__data.json")
-    kikk("HTML + range=10Y", f"{base}/financials/cash-flow-statement/?p=annual&range=10Y")
-
-    # Er tallene i sida, saa finn dem. Vi leter etter aarsrader med tall.
-    if html:
-        # stockanalysis legger ofte dataene i et script-tag som JSON
-        blokker = re.findall(r'<script[^>]*>(.{200,}?)</script>', html, re.S)
-        med_tall = [b for b in blokker if "ash" in b and re.search(r"\d{4}-\d{2}-\d{2}|20\d\d", b)]
-        print(f"         script-blokker: {len(blokker)}, av dem med kontantstromord: {len(med_tall)}")
-        if med_tall:
-            b = max(med_tall, key=len)
-            print(f"         storste slik blokk: {len(b)} tegn. Utdrag:")
-            print("         " + b[:300].replace("\n", " "))
-        # og let etter selve begrepet i klartekst
-        for nokkel in ("Operating Cash Flow", "Cash from Operations", "operatingCashFlow"):
-            i = html.find(nokkel)
-            if i >= 0:
-                print(f"         '{nokkel}' funnet ved tegn {i}. Kontekst:")
-                print("         " + html[i:i + 260].replace("\n", " "))
-                break
-    print()
-    time.sleep(1.2)
-
-
-# ------------------------------------------------------------------ reserveruter
-print("\n2. To andre generelle kilder, kort test")
-for navn, url in [
-    ("stockanalysis API v2",
-     "https://stockanalysis.com/api/screener/s/f?m=marketCap&s=desc&c=no,s,n&cn=10&f=exchange-is-osl"),
-    ("wisesheets/simfin-stil",
-     "https://backend.simfin.com/api/v3/companies/general/compact?ticker=AKRBP"),
-]:
-    print(f"   {navn}")
-    kikk("", url)
-    time.sleep(1)
-
-
-print("""
-
-HVA JEG SER ETTER
-   Ligger aarstallene og kontantstrommen i sida eller i et endepunkt, kan jeg
-   skrive uttrekket og lose alle nitten selskapene.
-   Gjor de ikke det, er svaret at ingen gratis generell kilde dekker disse
-   borsene, og da henter jeg de aatte tallene fra selskapenes egne
-   noekkeltallsoversikter i staden. Aatte oppslag, en gang, med kilde per linje.
-
-Send hele utskriften tilbake.""")
+print("\nOPPSUMMERING")
+for navn, kode, brukt in resultat:
+    print(f"   {'OK  ' if kode == 0 else 'FEIL'}  {navn:40} {brukt:5.0f} s  -> sonder/{navn}.txt")
