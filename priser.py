@@ -598,7 +598,13 @@ try:
         egne = [maalt[i["ticker"]] for i in s.get("instrumenter", [])
                 if i["ticker"] in maalt]
         if not egne:
-            gate = "ukjent"
+            # Skill mellom "vi mangler tall" og "det finnes ingen tall aa ha".
+            # Gull har tre UCITS-fond som instrumenter, og et fond har ingen
+            # balanse. Porten der er ikke ukjent, den er uaktuell, og "ukjent"
+            # antyder feilaktig at den kan fylles en dag.
+            maalbare = [i for i in s.get("instrumenter", [])
+                        if not str(i.get("type", "")).lower().startswith(("etf", "etc", "etn", "fond"))]
+            gate = "ukjent" if maalbare else "uaktuell"
             if g.get("gate") not in (None, "ukjent"):
                 stale += 1
         elif any(x["port"] == "aapen" for x in egne): gate = "aapen"
