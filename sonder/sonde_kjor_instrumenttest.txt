@@ -1,0 +1,78 @@
+sonde:   sonde_kjor_instrumenttest
+kjort:   2026-09-24 13:49:31 UTC
+commit:  b04c2ed
+status:  OK
+brukte:  183 sekunder
+--------------------------------------------------------------
+1. Univers
+
+   172 papirer, 52 av dem paa tavlen
+
+2. Data
+
+   raavareflagg: 16 segmenter, 126 flaggmaaneder i vinduet
+   kurser: 155 av 172 papirer med minst 72 maaneder. Bom: MNCG.L, COPX.L, COPM.L, URNU.L, U3O8.L, VAR.OL, SDRL, CTRA, EXE, GPOR, MEG.TO, NGD, TGA.L, AMR, KAP.L, HSHP.OL, TMIP.L
+
+   SEC, bokfoert egenkapital for amerikanske papirer i dollar
+   36 papirer med bokfoert egenkapital per aksje
+
+3. Signaler
+   a    139 papirer, 1409 signalmaaneder i vinduet
+   b    155 papirer, 2455 signalmaaneder i vinduet
+   a+b  139 papirer, 384 signalmaaneder i vinduet
+   c     34 papirer, 599 signalmaaneder i vinduet
+
+4. Resultater
+
+   mer/aar = kalenderportefoljen mot snittet av hele universet samme maaned,
+             annualisert log-avkastning i prosent. p: andelen av 1000 trekk med
+             tilfeldige papirer paa de samme datoene som gjorde det minst like godt
+   ep      = episoder (innslag med hoyst seks maaneder mellom) og hvor mange
+             av dem med positiv median realavkastning over 24 maaneder
+   r24     = median realavkastning 24 maaneder etter innslag, absolutt
+
+   TAVLE  (50 papirer)
+
+   variant papirer innslag  ep pos | 24 mnd: mer/aar    p    | 12 mnd: mer/aar   p    |    r24   treff | videre fall  >30 %
+   a         20     37     6   5 |    +17.7 %  0.003 |    +22.0 %  0.009 |  +63.3 %   76 % |   -16.9 %    43 %
+   b         33     60     7   6 |     +7.9 %  0.040 |     +0.4 %  0.481 |  +24.8 %   68 % |   -22.2 %    40 %
+   a+b       14     18     3   3 |    +14.7 %  0.066 |    +24.6 %  0.046 | +187.1 %   83 % |   -10.6 %    44 %
+   c          7     12     7   4 |     +1.0 %  0.482 |     -2.9 %  0.620 |  +39.2 %   58 % |   -12.5 %    17 %
+
+   UTVIDET  (155 papirer)
+
+   variant papirer innslag  ep pos | 24 mnd: mer/aar    p    | 12 mnd: mer/aar   p    |    r24   treff | videre fall  >30 %
+   a         81    136     6   5 |    +10.1 %  0.006 |     +6.5 %  0.114 |  +48.0 %   79 % |   -12.8 %    29 %
+   b        101    172     4   3 |     +3.1 %  0.127 |     -0.8 %  0.584 |  +28.7 %   66 % |   -21.1 %    38 %
+   a+b       48     59     2   2 |     -4.6 %  0.724 |    -12.1 %  0.903 |  +96.0 %   85 % |   -15.6 %    37 %
+   c         27     40     6   4 |     -1.9 %  0.660 |     -6.2 %  0.813 |  +29.1 %   62 % |   -21.0 %    40 %
+
+   Episodene, UTVIDET (fra, til, innslag, median realavkastning 24 mnd):
+   a
+      2011-12 til 2011-12  n= 10  r24    26.5 %
+      2014-12 til 2014-12  n= 21  r24   -14.2 %
+      2015-10 til 2016-06  n= 24  r24    43.4 %
+      2019-03 til 2019-06  n= 25  r24    30.0 %
+      2020-03 til 2020-08  n= 44  r24   144.2 %
+      2023-03 til 2023-03  n= 12  r24    43.3 %
+   b
+      2011-09 til 2013-09  n= 36  r24   -19.7 %
+      2014-09 til 2016-08  n= 53  r24    16.2 %
+      2017-06 til 2020-10  n= 59  r24    99.6 %
+      2021-07 til 2024-02  n= 24  r24    66.7 %
+   a+b
+      2014-12 til 2016-05  n= 25  r24    29.4 %
+      2019-03 til 2020-09  n= 34  r24   128.4 %
+   c
+      2014-05 til 2015-10  n= 13  r24    -8.8 %
+      2016-05 til 2016-10  n=  2  r24    13.8 %
+      2017-08 til 2017-08  n=  1  r24   -61.3 %
+      2018-08 til 2020-03  n= 15  r24    76.0 %
+      2021-02 til 2021-02  n=  1  r24    48.5 %
+      2021-12 til 2024-08  n=  8  r24    30.5 %
+
+   Overlapp: av 1409 maaneder med raavareflagg sto papiret selv i bunnsone i 384 (27 %).
+
+   lagret sonder/instrumenttest.json
+
+Send hele utskriften tilbake.
