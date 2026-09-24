@@ -150,6 +150,29 @@ c = c.reindex(full).ffill()
 BASE = float(c.iloc[-1])
 print(f"   KPI til {c.index[-1]}, base {BASE:.3f}, {hull} hull fylt ut")
 
+# Baltic Dry Index. Fearnleys publiserer bare tankrater, saa de fire
+# torrlastsegmentene sto uten ratevariabel og maatte maales mot
+# annenhaandsverdien alene. Den er en meglertaksasjon som beveger seg tregt,
+# og maalt mot den korrelerer redere med sitt eget segment paa -0,06 (Star
+# Bulk mot Capesize), -0,16 (mot Ultramax) og -0,14 (CMB.TECH mot Capesize).
+# Maalt mot BDI over samme 41 maaneder: +0,42, +0,42 og +0,22. Fem av seks par
+# ble bedre, og forbedringen er den samme som tank fikk av TC-ratene
+# (DHT -0,18 mot verdien, +0,48 mot raten).
+#
+# BDI faar ingen egen A-skaar og staar ikke som eget segment. Testet som det:
+# flagget ville staatt 27 % av alle maaneder og 60 % av 2010-tallet, altsaa en
+# tilstand og ikke et signal, og 17 klynger ga median +22,9 % over tolv maaneder
+# med p = 0,087. Det er bedre enn en tilfeldig kjopsdato (+0,5 %), men naar ikke
+# terskelen raavareflagget satte (p = 0,014, sju av sju klynger positive).
+TORRLAST = {"ship_capesize", "ship_kamsarmax", "ship_ultramax", "ship_handysize"}
+BDI = {}
+try:
+    b = api_les("bdi.json")
+    BDI = dict(zip(b["t"], b["nom"]))
+    print(f"   BDI: {len(BDI)} maaneder, {b['hist_start']} til {b['siste_obs']}")
+except Exception as e:
+    print(f"   BDI utilgjengelig: {type(e).__name__} {str(e)[:60]}")
+
 rader = api_les("shipping.json")["rader"]
 rader = [dict(x, skip="Aframax" if x["skip"] == "Aframax / LR2" else x["skip"])
          for x in rader]
@@ -186,6 +209,7 @@ for sid, nokkel in SKIP.items():
             tc = row.get("tc1y_usd_dag")
             tc = None if tc is None or (isinstance(tc, float) and np.isnan(tc)) else round(float(tc), 0)
             serie.append({"t": str(p), "tc1y": tc,
+                          "bdi": BDI.get(str(p)) if sid in TORRLAST else None,
                           "nom": round(nom, 4), "real": defl(nom, p),
                           "p10": None, "p25": None, "p50": None, "p75": None,
                           "p90": None, "A": None,
@@ -203,6 +227,8 @@ for sid, nokkel in SKIP.items():
             "hist_start": serie[0]["t"], "last_obs": serie[-1]["t"],
             "last_nom": serie[-1]["nom"], "last_real": serie[-1]["real"],
             "tc1y_siste": None if tc.empty else round(float(tc.iloc[-1]), 1),
+            "rate_navn": "Baltic Dry Index" if sid in TORRLAST else "TC 1 år",
+            "bdi_siste": next((x["bdi"] for x in reversed(serie) if x["bdi"]), None),
             "scores": {"A": None, "Ad": None, "Ar": None, "flagg": False,
                        "flagg_styrke": 0,
                        "A2": None if not sis else round(sis["nom"] / sis["anchor"], 3),
