@@ -1,6 +1,6 @@
 sonde:   sonde_kjor_macrotrends
-kjort:   2026-09-24 12:39:19 UTC
-commit:  6aca3f1
+kjort:   2026-09-24 13:02:38 UTC
+commit:  14dcda6
 status:  OK
 brukte:  0 sekunder
 --------------------------------------------------------------

@@ -1,17 +1,17 @@
 sonde:   sonde_kjor_uran
-kjort:   2026-09-24 12:44:09 UTC
-commit:  6aca3f1
+kjort:   2026-09-24 13:06:07 UTC
+commit:  14dcda6
 status:  OK
-brukte:  290 sekunder
+brukte:  209 sekunder
 --------------------------------------------------------------
 DEL 1. IKZ-maaling mot uran
 
 1. Deflator og raavarepriser
   ok    deflator   siste 2026-07
-  FEIL  uran (FRED PURANUSDM)   HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): R
-  ok    uran (repokopi uran)   415 mnd fra 1992-01
+  ok    uran, kontroll av Cameco   mot IMF 1992-2021: median avvik 1.8 % over 357 mnd, mot futures fra 2022: 1.6 % over 49 mnd
+  ok    uran   Cameco, maanedsslutt spot (UxC og TradeTech), 1988-01 til 2026-08, 464 mnd
    IKZ_KUN=uran: maaler bare mot denne
-  ok    raavareserier   1 segment, korteste 415 mnd
+  ok    raavareserier   1 segment, korteste 464 mnd
 
 2. Kandidatunivers: 227 papirer
 
@@ -31,41 +31,41 @@ DEL 1. IKZ-maaling mot uran
   ok    par maalt   213 totalt, 11 a priori
 # Sonde: instrumenter i IKZ-universet
 
-Kjort 2026-09-24 12:43 UTC. 219 papirer hentet av 227 forsokt. 213 par maalt mot 1 raavarer.
+Kjort 2026-09-24 13:06 UTC. 219 papirer hentet av 227 forsokt. 213 par maalt mot 1 raavarer.
 
 Kolonner: r1 = korrelasjon i manedlige realendringer. r12 = samme over overlappende 12-manedersendringer, p fra blokkbootstrap. rp = partiell korrelasjon i r1 etter at verdensindeksen er tatt ut. beta12 = hvor mye papiret beveger seg per enhet ravare over 12 maneder. opp/ned = beta maalt bare i maneder der ravaren steg, mot bare der den falt. fangstB og fangstT = papirets samlede 12-manedersavkastning fra daterte bunner og fra daterte topper, delt pa ravarens. vent = hvilket fortegn papiret var ventet a ha: p = produsent, ravaren er inntekt, ventet positiv. f = forbruker, ravaren er kostnad, ventet negativ. b = blandet. ok = fortegnet kom ut som ventet. rf1 og rf12 er de samme maalt i det faste vinduet fra 2016-01, som er det eneste som er sammenlignbart pa tvers av papirer med ulik alder. nf = antall maneder i det faste vinduet; par med nf under 72 er sortert bakerst fordi en kort serie nar hoye tall ved flaks alene. ap = papiret var ventet a folge denne ravaren; tomt felt betyr at treffet er funnet ved leting.
 
-## uran   (6 daterte bunner, 4 daterte topper)
+## uran   (6 daterte bunner, 5 daterte topper)
 
 ### Folger raavaren
 
 | papir | navn | type | n | nf | rf1 | rf12 | r1 | r12 | p12 | q12 | rp | beta12 | opp | ned | fangstB | fangstT | vent | ok | ap |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| U-UN.TO | Sprott Physical Uranium Tr | aksje | 242 | 127 | 0.383 | 0.641 | 0.242 | 0.656 | 0.001 |  | 0.344 | 0.76 | 0.39 | -0.15 | 0.7 | 0.78 | p | ja | x |
-| CCO.TO | Cameco (Toronto) | aksje | 273 | 127 | 0.294 | 0.564 | 0.205 | 0.54 | 0.002 |  | 0.29 | 0.64 | 0.32 | 0.06 | 0.62 | 0.42 | p | ja | x |
-| CCJ | Cameco | aksje | 364 | 127 | 0.293 | 0.562 | 0.211 | 0.562 | 0.001 |  | 0.286 | 0.72 | 0.3 | -0.01 | 0.81 | 0.45 | p | ja | x |
-| PDN.AX | Paladin Energy | aksje | 241 | 127 | 0.26 | 0.536 | 0.216 | 0.514 | 0.003 |  | 0.254 | 1.29 | 0.99 | 0.0 | 0.91 | 1.14 | p | ja | x |
-| HCC | Warrior Met Coal | aksje | 111 | 111 | 0.23 | 0.471 | 0.23 | 0.471 | 0.026 | 0.132 | 0.213 | 0.85 | 0.67 | 0.5 |  |  | p |  |  |
-| URG | Ur-Energy | aksje | 216 | 127 | 0.316 | 0.404 | 0.265 | 0.36 | 0.034 |  | 0.275 | 0.7 | 1.1 | 0.41 | 1.94 | 2.11 | p | ja | x |
-| UEC | Uranium Energy | aksje | 231 | 127 | 0.277 | 0.374 | 0.164 | 0.435 | 0.005 |  | 0.189 | 1.12 | 1.36 | -0.1 | 2.32 | 0.61 | p | ja | x |
-| UUUU | Energy Fuels | aksje | 232 | 127 | 0.267 | 0.374 | 0.208 | 0.559 | 0.001 |  | 0.232 | 1.58 | 0.39 | 0.42 | 2.73 | 1.73 | p | ja | x |
-| DNN | Denison Mines | aksje | 257 | 127 | 0.279 | 0.365 | 0.18 | 0.53 | 0.001 |  | 0.252 | 1.02 | 0.55 | 0.32 | 1.33 | 0.8 | p | ja | x |
-| CF | CF Industries | aksje | 251 | 127 | 0.205 | 0.287 | 0.117 | 0.365 | 0.037 | 0.132 | 0.119 | 0.51 | 0.64 | -0.13 | 1.95 | -0.73 | p |  |  |
+| U-UN.TO | Sprott Physical Uranium Tr | aksje | 243 | 128 | 0.554 | 0.742 | 0.496 | 0.75 | 0.001 |  | 0.545 | 0.85 | 0.8 | 0.81 | 0.31 | 0.75 | p | ja | x |
+| CCO.TO | Cameco (Toronto) | aksje | 274 | 128 | 0.478 | 0.603 | 0.37 | 0.582 | 0.001 |  | 0.449 | 0.67 | 0.47 | 0.55 | -0.21 | 0.48 | p | ja | x |
+| CCJ | Cameco | aksje | 365 | 128 | 0.479 | 0.602 | 0.354 | 0.607 | 0.001 |  | 0.447 | 0.77 | 0.49 | 0.45 | 0.19 | 0.49 | p | ja | x |
+| PDN.AX | Paladin Energy | aksje | 242 | 128 | 0.355 | 0.558 | 0.314 | 0.562 | 0.002 |  | 0.317 | 1.38 | 1.27 | 1.1 | -1.14 | 0.96 | p | ja | x |
+| HCC | Warrior Met Coal | aksje | 112 | 112 | 0.245 | 0.466 | 0.245 | 0.466 | 0.028 | 0.1411 | 0.231 | 0.8 | 0.6 | 0.65 |  |  | p |  |  |
+| URG | Ur-Energy | aksje | 217 | 128 | 0.453 | 0.407 | 0.414 | 0.386 | 0.021 |  | 0.419 | 0.71 | 1.39 | 1.1 | 0.61 | 1.94 | p | ja | x |
+| UUUU | Energy Fuels | aksje | 233 | 128 | 0.436 | 0.403 | 0.316 | 0.588 | 0.001 |  | 0.397 | 1.58 | 0.96 | 1.17 | 0.96 | 1.68 | p | ja | x |
+| UEC | Uranium Energy | aksje | 232 | 128 | 0.451 | 0.394 | 0.253 | 0.463 | 0.002 |  | 0.307 | 1.13 | 1.35 | 0.62 | 0.74 | 0.52 | p | ja | x |
+| DNN | Denison Mines | aksje | 258 | 128 | 0.427 | 0.376 | 0.306 | 0.556 | 0.001 |  | 0.399 | 1.04 | 0.7 | 1.15 | 0.11 | 0.79 | p | ja | x |
+| CF | CF Industries | aksje | 252 | 128 | 0.175 | 0.363 | 0.155 | 0.358 | 0.038 | 0.1556 | 0.133 | 0.49 | 0.4 | 0.33 | 1.74 | -0.81 | p |  |  |
 
 ### Gaar motsatt
 
 | papir | navn | type | n | nf | rf1 | rf12 | r1 | r12 | p12 | q12 | rp | beta12 | opp | ned | fangstB | fangstT | vent | ok | ap |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| EDV.TO | Endeavour Mining | aksje | 273 | 127 | 0.009 | -0.471 | 0.057 | 0.269 | 0.1359 | 0.2271 | -0.013 | 0.49 | -0.03 | 0.58 | -0.11 | 0.16 | p |  |  |
-| TR | Tootsie Roll | aksje | 414 | 127 | 0.05 | -0.428 | 0.049 | -0.223 | 0.0909 | 0.1846 | 0.036 | -0.14 | -0.01 | 0.06 | 0.18 | 0.06 | p |  |  |
-| SSRM | SSR Mining | aksje | 359 | 127 | 0.003 | -0.4 | 0.084 | 0.269 | 0.0589 | 0.162 | -0.009 | 0.5 | 0.11 | 0.39 | 0.12 | -0.06 | p |  |  |
-| GSF.OL | Grieg Seafood | aksje | 229 | 127 | -0.008 | -0.397 | 0.063 | -0.01 |  |  | -0.046 | -0.02 | 0.12 | 0.66 | -0.77 | 1.31 | p |  |  |
-| BTG | B2Gold | aksje | 217 | 127 | 0.04 | -0.396 | 0.046 | -0.156 | 0.4106 | 0.4201 | -0.02 | -0.3 | 0.66 | 0.43 | 0.27 | -0.8 | p |  |  |
-| AMCR | Amcor | aksje | 170 | 127 | -0.092 | -0.385 | -0.062 | -0.379 | 0.029 | 0.1418 | -0.117 | -0.21 | 0.01 | -0.26 | 0.52 |  | p |  |  |
-| FNV | Franco-Nevada | aksje | 223 | 127 | 0.03 | -0.369 | 0.013 | -0.229 | 0.1868 | 0.2651 | -0.042 | -0.21 | 0.17 | 0.3 | 0.38 | -0.78 | p |  |  |
-| FXPO.L | Ferrexpo | aksje | 229 | 127 | 0.006 | -0.364 | 0.011 | -0.124 |  |  | -0.014 | -0.47 | 0.42 | 0.12 | 2.03 | -0.25 | p |  |  |
-| RGLD | Royal Gold | aksje | 414 | 127 | 0.02 | -0.354 | 0.012 | 0.095 |  |  | -0.017 | 0.19 | -0.17 | -0.03 | 0.77 | -0.22 | p |  |  |
-| EQX.TO | Equinox Gold | aksje | 144 | 127 | -0.16 | -0.348 | -0.188 | -0.336 | 0.1548 | 0.2376 | -0.205 | -0.96 | 0.23 | -1.43 | -1.52 |  | p |  |  |
+| EDV.TO | Endeavour Mining | aksje | 274 | 128 | 0.044 | -0.479 | 0.038 | 0.264 | 0.1399 | 0.2444 | 0.028 | 0.47 | -0.19 | 0.27 | -0.41 | 0.11 | p |  |  |
+| AMCR | Amcor | aksje | 171 | 128 | -0.129 | -0.433 | -0.125 | -0.424 | 0.014 | 0.1667 | -0.171 | -0.23 | 0.01 | -0.29 | 0.17 |  | p |  |  |
+| TR | Tootsie Roll | aksje | 463 | 128 | 0.061 | -0.424 | 0.089 | -0.211 | 0.0979 | 0.2036 | 0.056 | -0.14 | 0.06 | -0.08 | 0.3 | 0.07 | p |  |  |
+| ULVR.L | Unilever (London) | aksje | 272 | 128 | -0.084 | -0.424 | 0.044 | 0.111 |  |  | -0.129 | 0.05 | 0.02 | 0.15 | 0.52 | -0.02 | p |  |  |
+| BTG | B2Gold | aksje | 218 | 128 | 0.036 | -0.415 | -0.017 | -0.163 | 0.3916 | 0.4039 | -0.051 | -0.29 | 0.7 | -0.3 | 0.16 | -0.47 | p |  |  |
+| AEM | Agnico Eagle | aksje | 462 | 127 | 0.039 | -0.401 | 0.027 | 0.245 | 0.0519 | 0.1789 | -0.03 | 0.34 | 0.1 | 0.25 | 0.0 | -0.62 | p |  |  |
+| ORK.OL | Orkla | aksje | 300 | 128 | 0.015 | -0.396 | 0.152 | 0.433 | 0.004 | 0.262 | -0.032 | 0.36 | 0.01 | 0.44 | 0.53 | 0.09 | p |  |  |
+| EQX.TO | Equinox Gold | aksje | 145 | 128 | -0.213 | -0.37 | -0.22 | -0.347 | 0.1419 | 0.2383 | -0.233 | -0.93 | 0.51 | -3.28 |  |  | p |  |  |
+| FNV | Franco-Nevada | aksje | 224 | 128 | 0.08 | -0.369 | -0.041 | -0.233 | 0.1908 | 0.2659 | -0.031 | -0.2 | 0.22 | 0.05 | 0.54 | -0.88 | p |  |  |
+| FXPO.L | Ferrexpo | aksje | 230 | 128 | 0.036 | -0.369 | 0.043 | -0.118 |  |  | 0.018 | -0.43 | -0.17 | -0.05 | 0.74 | -0.39 | p |  |  |
 
 ## Fortegn mot forventning
 
@@ -73,7 +73,6 @@ Kolonner: r1 = korrelasjon i manedlige realendringer. r12 = samme over overlappe
 
 ## Papirer som ikke lot seg hente
 
-- uran (FRED PURANUSDM): HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): R
 - kurs COPM.L: ingen serie
 - kurs CTRA: ingen serie
 - kurs MEG.TO: ingen serie
@@ -86,37 +85,55 @@ Kolonner: r1 = korrelasjon i manedlige realendringer. r12 = samme over overlappe
    skrevet sonder/ikz_uran.json (213 par)
 
 
-(del 1 brukte 259 s, kode 0)
+(del 1 brukte 208 s, kode 0)
 
 
-DEL 2. Levende kilder for uranprisen
+DEL 2. Cameco mot IMF og futures, aar for aar
 
-   kopien: 1992-01 til 2026-07, siste 69.23
+   Cameco: 464 mnd, 1988-01 til 2026-08, siste 89.68
+   Kontrollen: BESTAATT. mot IMF 1992-2021: median avvik 1.8 % over 357 mnd, mot futures fra 2022: 1.6 % over 49 mnd
 
-   IMF api.imf.org  mx/2.1/data/IMF.RES,PCPS/W00.PURAN.USD.M HTTP 200 1 kB
-      kolonner: ['DATAFLOW', 'COUNTRY', 'INDICATOR', 'DATA_TRANSFORMATION', 'FREQUENCY', 'TIME_PERIOD', 'OBS_VALUE', 'SCALE', 'PRECISION', 'DECIMAL_DISPLAYED', 'CURRENCY', 'COMMODITY_CF']
-   IMF ny                             IndexError: index 0 is out of bounds for axis 0 with size 0
-   IMF gammel                         ConnectionError: HTTPConnectionPool(host='dataservices.imf.org', port=80): Max retries exceeded with url: /
-   FRED                               ReadTimeout: HTTPSConnectionPool(host='fred.stlouisfed.org', port=443): Read timed out. (read timeout=2
-   Cameco uranium-price               HTTP 200 320 kB
-      3 tabeller. Forste: ['Unnamed: 0', 'Uranium Spot Price', 'Long-term Uranium Price']
-         Unnamed: 0  Uranium Spot Price  Long-term Uranium Price
-      0  1988/01/01               16.40                      NaN
-      1  1988/02/01               16.20                      NaN
-      2  1988/03/01               15.95                      NaN
-      3  1988/04/01               15.88                      NaN
-        Unnamed: 0   2022   2023    2024   2025   2026
-      0        Jan  43.08  50.63  100.25  69.28  94.28
-      1        Feb  48.75  50.93   95.00  65.03  86.95
-      2        Mar  58.20  50.48   87.75  64.23  84.25
-      3        Apr  53.00  52.93   89.00  67.73  86.35
-   Yahoo UX=F (UX=F)                  13 mnd 2015-06..2026-09, siste 89.75  overlapp 12 mnd, median avvik 4.6 %, korr 0.9053
-   Yahoo UXA=F                        HTTP 404, ingen serie
-   Yahoo UX1!                         HTTP 404, ingen serie
-   Yahoo URA=F                        HTTP 404, ingen serie
+   aar    Cameco   IMF    futures   Cam/IMF-1   Cam/fut-1
+   1988    14.63      nan      nan                        
+   1989     9.99      nan      nan                        
+   1990     9.77      nan      nan                        
+   1991     8.72      nan      nan                        
+   1992     8.55     8.56      nan      +1.0 %            
+   1993    10.05    10.08      nan      -0.1 %            
+   1994     9.34     9.42      nan      +0.2 %            
+   1995    11.46    11.66      nan      -0.8 %            
+   1996    15.59    15.60      nan      -0.2 %            
+   1997    12.03    12.10      nan      -1.5 %            
+   1998    10.27    10.39      nan      -1.1 %            
+   1999    10.23    10.02      nan      -0.3 %            
+   2000     8.18     8.28      nan      -1.1 %            
+   2001     8.82     8.62      nan      +1.8 %            
+   2002     9.88     9.83      nan      +0.1 %            
+   2003    11.55    11.24      nan      +0.7 %            
+   2004    18.60    18.05      nan      +3.1 %            
+   2005    28.67    27.93      nan      +2.6 %            
+   2006    49.61    47.68      nan      +2.9 %            
+   2007    99.33    99.24   116.43      +1.7 %      -8.1 %
+   2008    61.71    64.18    64.73      -3.5 %      -5.0 %
+   2009    46.06    46.67    48.23      -1.3 %      -1.5 %
+   2010    46.84    45.96    46.46      +1.7 %      +0.5 %
+   2011    56.37    56.24    56.66      -1.4 %      -1.0 %
+   2012    48.40    48.90    48.54      -0.5 %      -0.3 %
+   2013    38.17    38.57    38.36      -0.6 %      -0.2 %
+   2014    33.21    33.49    33.55      -0.2 %      -0.8 %
+   2015    36.55    36.82    36.83      -0.9 %      -1.0 %
+   2016    25.64    26.49    26.17      -2.5 %      -1.9 %
+   2017    21.66    22.09    22.19      -1.1 %      -1.9 %
+   2018    24.59    24.54    24.69      +0.7 %      +0.1 %
+   2019    25.64    25.91    25.82      -0.9 %      -0.7 %
+   2020    29.96    29.43    29.63      +0.4 %      +0.3 %
+   2021    35.28    32.86    32.51      +2.1 %      -1.0 %
+   2022    49.81    40.77    50.91     +22.2 %      -1.0 %
+   2023    62.51    48.99    68.20     +26.6 %      +2.2 %
+   2024    85.14    69.69    86.46     +22.2 %      -1.5 %
+   2025    73.54    58.77    73.07     +25.0 %      +0.7 %
+   2026    87.13    69.51    86.71     +23.0 %      -0.4 %
 
-En kilde kan brukes hvis den har overlapp med kopien, median avvik under
-et par prosent og korrelasjon over 0,99. Futures og maanedsslutt vil ligge
-litt fra IMF sitt maanedssnitt, men skal folge den tett.
+   lagret sonder/uran_cameco.csv
 
 Send hele utskriften tilbake.
