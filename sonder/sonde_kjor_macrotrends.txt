@@ -1,0 +1,45 @@
+sonde:   sonde_kjor_macrotrends
+kjort:   2026-09-24 12:17:26 UTC
+commit:  9ae0920
+status:  OK
+brukte:  0 sekunder
+--------------------------------------------------------------
+1. Henter MacroTrends sin tickerliste
+
+   ticker_search_list.php         HTTP 403  5 kB
+   stock-screener                 HTTP 403  5 kB
+
+
+2. Driftskontantstrom per aar
+
+   nei   DNO.OL     DNO                    ikke i MacroTrends' liste
+   nei   AKRBP.OL   Aker BP                ikke i MacroTrends' liste
+   nei   CS.TO      Capstone Copper        ikke i MacroTrends' liste
+   nei   ATYM.L     Atalaya Mining         ikke i MacroTrends' liste
+   nei   ERA.PA     Eramet                 ikke i MacroTrends' liste
+   nei   GLEN.L     Glencore               ikke i MacroTrends' liste
+   nei   MPE.L      M.P. Evans             ikke i MacroTrends' liste
+   nei   RE.L       REA Holdings           ikke i MacroTrends' liste
+   nei   NHY.OL     Norsk Hydro            ikke i MacroTrends' liste
+   nei   BOL.ST     Boliden                ikke i MacroTrends' liste
+   nei   NESN.SW    Nestle                 ikke i MacroTrends' liste
+   nei   BARN.SW    Barry Callebaut        ikke i MacroTrends' liste
+   nei   HAFNI.OL   Hafnia                 ikke i MacroTrends' liste
+   nei   OET.OL     Okeanis Eco Tankers    ikke i MacroTrends' liste
+   nei   2020.OL    2020 Bulkers           ikke i MacroTrends' liste
+   nei   TMIP.L     Taylor Maritime        ikke i MacroTrends' liste
+   nei   TOU.TO     Tourmaline Oil         ikke i MacroTrends' liste
+   nei   WCP.TO     Whitecap Resources     ikke i MacroTrends' liste
+   nei   BIR.TO     Birchcliff Energy      ikke i MacroTrends' liste
+
+
+==============================================================
+0 av 19 selskaper fikk tall. 19 bommet: DNO.OL, AKRBP.OL, CS.TO, ATYM.L, ERA.PA, GLEN.L, MPE.L, RE.L, NHY.OL, BOL.ST, NESN.SW, BARN.SW, HAFNI.OL, OET.OL, 2020.OL, TMIP.L, TOU.TO, WCP.TO, BIR.TO
+0 har ti aar eller mer, altsaa nok til at det verste aaret kan stoles paa.
+
+Enheten maa sjekkes for hvert selskap. MacroTrends oppgir normalt
+millioner i selskapets rapporteringsvaluta, men det staar ikke i
+originalData, saa det maa leses av sida eller avstemmes mot SEC der
+begge finnes.
+
+Send hele utskriften tilbake.
