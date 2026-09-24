@@ -1,5 +1,5 @@
 {
- "oppdatert": "2026-09-24 13:08:43",
+ "oppdatert": "2026-09-24 13:56:47",
  "segmenter": [
   "brent",
   "wti",
@@ -162,7 +162,7 @@
   {
    "kilde": "instrumenter",
    "status": "OK",
-   "detalj": "15 av 16 segment fikk instrumentliste"
+   "detalj": "16 av 16 segment fikk instrumentliste"
   },
   {
    "kilde": "OWID etterspoersel",
@@ -172,7 +172,7 @@
   {
    "kilde": "kapitulasjon D",
    "status": "OK",
-   "detalj": "15 segment"
+   "detalj": "16 segment"
   },
   {
    "kilde": "overlevelsesport C",
