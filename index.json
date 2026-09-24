@@ -1,5 +1,5 @@
 {
- "oppdatert": "2026-09-24 12:47:04",
+ "oppdatert": "2026-09-24 13:08:43",
  "segmenter": [
   "brent",
   "wti",
@@ -50,9 +50,14 @@
    "detalj": "A=0.9 detr=3.2 rull=5.0   siste 2026-08"
   },
   {
+   "kilde": "uran, kontroll av Cameco",
+   "status": "OK",
+   "detalj": "mot IMF 1992-2021: median avvik 1.8 % over 357 mnd, mot futures fra 2022: 1.6 % over 49 mnd"
+  },
+  {
    "kilde": "segment uran",
    "status": "OK",
-   "detalj": "A=18.8 detr=38.1 rull=11.7   siste 2026-07"
+   "detalj": "A=7.8 detr=26.7 rull=5.8   siste 2026-08"
   },
   {
    "kilde": "Verdensbanken Pink Sheet",
