@@ -394,35 +394,36 @@ for sid, navn, grp, enhet, sti, mnd in MIRRORS:
         note(f"speil {sid}", False, f"{type(e).__name__}: {str(e)[:70]}")
 
 print("\n2b. Uran")
-# IMF sin uranpris (PURANUSDM): maanedssnitt av spot, USD per pund U3O8. Den
-# finnes ikke i Pink Sheet, og FRED svarer ikke fra Actions-maskinene
-# (tidsavbrudd hver gang, ogsaa for KPI-reserven). Kilden er derfor en kopi i
-# repoet, uran_reserve.csv, lagt inn 24. september 2026 fra FRED-uttrekket
-# Frode lastet ned. Den forlenges ikke av seg selv: siste observasjon staar
-# under grafen, og en levende kilde testes i sonde_kjor_uran.py.
+# Kilden er Camecos maanedsslutt spot fra 1988, kontrollert mot to uavhengige
+# kopier hver uke. IMF-serien i uran_reserve.csv har et brudd fra oktober 2021
+# og ligger rundt 19 % for lavt etter det, saa den brukes bare som kontroll.
+# Se uran_kilde.py for tallene.
 #
 # Ingen avkorting. Stillstandstesten ga 15 % paa 1990-tallet, 4 % paa
 # 2000-tallet og 0 % etter, godt under terskelen paa rundt 40 % som utloste
 # avkorting for de ni seriene i AVKORT.
-#
-# Segmentet fantes ikke foer. Tilbudsskaaren B var likevel maalt for uran i
-# b_capex.json (Cameco, UEC, Energy Fuels), og loggen har meldt det som en
-# feil hver uke. Den meldingen forsvinner naa av seg selv.
-URAN_URL = f"https://raw.githubusercontent.com/{REPO}/{BRANCH}/uran_reserve.csv"
 URAN_MERKNAD = (
-    "Spotpris i USD per pund U3O8, månedssnitt fra IMF, historikk fra 1992. "
-    "Det meste av uranet selges på langsiktige kontrakter, så spot er et tynt "
-    "marked som forsterker syklusen i begge retninger. Serien ligger som kopi "
-    "i datarepoet og oppdateres ikke automatisk ennå: sjekk siste observasjon.")
+    "Spotpris i USD per pund U3O8, månedsslutt, snittet av UxC og TradeTech slik "
+    "Cameco publiserer det, historikk fra 1988. Det meste av uranet selges på "
+    "langsiktige kontrakter, så spot er et tynt marked som forsterker syklusen i "
+    "begge retninger.")
 try:
-    serie = csv_series(URAN_URL + f"?cb={int(time.time())}", monthly=True)
-    legg_til("uran", "Uran", "Energi", "USD/lb", serie, cpi,
-             "IMF via FRED (PURANUSDM), kopi i repoet", URAN_URL,
-             merknad=URAN_MERKNAD)
-    alder = (pd.Period(pd.Timestamp.now(), freq="M") - serie.index[-1]).n
-    if alder > 3:
-        note("uran, alder", False, f"siste obs {serie.index[-1]}, {alder} mnd gammel. "
-             "uran_reserve.csv maa forlenges")
+    from uran_kilde import hent_uran, CAMECO
+    serie, kilde = hent_uran(f"https://raw.githubusercontent.com/{REPO}/{BRANCH}/", note)
+    if serie is None:
+        note("uran", False, kilde + ". Segmentet er utelatt denne uken")
+    else:
+        legg_til("uran", "Uran", "Energi", "USD/lb", serie, cpi,
+                 "Cameco (UxC og TradeTech), månedsslutt", CAMECO, merknad=URAN_MERKNAD)
+        if GITHUB_TOKEN:
+            try:
+                push("uran_cameco.csv", "dato,spot\n" + "\n".join(
+                    f"{p}-01,{v}" for p, v in serie.items()) + "\n")
+            except Exception as e:
+                note("push uran_cameco.csv", False, str(e)[:60])
+        alder = (pd.Period(pd.Timestamp.now(), freq="M") - serie.index[-1]).n
+        if alder > 2:
+            note("uran, alder", False, f"siste obs {serie.index[-1]}, {alder} mnd gammel")
 except Exception as e:
     note("uran", False, f"{type(e).__name__}: {str(e)[:70]}")
 

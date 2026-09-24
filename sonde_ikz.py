@@ -175,20 +175,20 @@ try:
 except Exception as e:
     note("Pink Sheet", False, str(e)[:80])
 
-# Uran. Ikke i Pink Sheet. IMF sin serie via FRED, med en kopi i repoet som
-# reserve dersom FRED ikke svarer fra Actions-maskinen.
-# Stillstandstesten: 15 % paa 90-tallet, 4 % paa 2000-tallet, 0 % etter. Godt
-# under terskelen paa rundt 40 % som utloste avkorting for de ni andre, saa
-# serien brukes hel fra 1992.
-for navn, url, mnd in [
-        ("FRED PURANUSDM", "https://fred.stlouisfed.org/graph/fredgraph.csv?id=PURANUSDM", False),
-        ("repokopi uran", f"https://raw.githubusercontent.com/{REPO}/{BRANCH}/uran_reserve.csv", True)]:
-    try:
-        RAAVARE["uran"] = deflater(csv_series(url, monthly=mnd))
-        note(f"uran ({navn})", True, f"{len(RAAVARE['uran'])} mnd fra {RAAVARE['uran'].index[0]}")
-        break
-    except Exception as e:
-        note(f"uran ({navn})", False, str(e)[:60])
+# Uran. Ikke i Pink Sheet. Camecos maanedsslutt spot, kontrollert mot
+# IMF-kopien og futures-kopien i uran_kilde.py. IMF-serien alene ble brukt
+# 24.09.2026 og har et brudd fra oktober 2021 (rundt 19 % for lavt), saa den
+# maalingen av uranpapirene er erstattet av denne.
+try:
+    from uran_kilde import hent_uran
+    s, kilde = hent_uran(f"https://raw.githubusercontent.com/{REPO}/{BRANCH}/", note)
+    if s is None:
+        note("uran", False, kilde)
+    else:
+        RAAVARE["uran"] = deflater(s)
+        note("uran", True, f"{kilde}, {len(RAAVARE['uran'])} mnd")
+except Exception as e:
+    note("uran", False, f"{type(e).__name__}: {str(e)[:60]}")
 
 for sid in UTEN_A:
     RAAVARE.pop(sid, None)     # administrert pris, ikke et marked
