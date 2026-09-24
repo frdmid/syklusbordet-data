@@ -137,6 +137,19 @@ INSTR = {
   ("ISAG.L","London","iShares Agribusiness UCITS","ETF",
    "r 0,31  rm 0,23  b 0,26  f 0,01. Fondsalternativ, men fanget ingenting fra daterte bunner. Bredt landbruk, ikke palme.")],
 
+# Uran, lagt inn 2026-09-24. Maalt mot Camecos maanedsslutt spot fra 1988
+# (sonde_kjor_uran, IKZ_KUN=uran), ikke mot IMF-serien, som ligger 22 til 27 %
+# for lavt fra 2022. Maalt mot IMF-serien laa Cameco paa 0,29. Mot riktig
+# serie ligger den paa 0,48, og uran er blant de sterkeste segmentene paa
+# bordet. De to UCITS-fondene (URNU.L, U3O8.L) har under 72 maaneder
+# historikk og er ikke med. Paladin (PDN.AX) er 0,36 men handles i Sydney.
+"uran": [
+  ("CCJ","NYSE","Cameco","aksje",
+   "r 0,48  rm 0,45  b 0,77  f 0,19. Stoerst noterte produsent og lengst historikk (fra 1996). Fanget lite av oppgangen fra bunn, fordi mye av salget gaar paa langsiktige kontrakter."),
+  ("UUUU","NYSE","Energy Fuels","aksje",
+   "r 0,44  rm 0,40  b 1,58  f 0,96. Hoyest utslag og nesten hele oppgangen fra bunn. Merk at selskapet ogsaa driver med sjeldne jordarter og vanadium."),
+  ("U-UN.TO","Toronto","Sprott Physical Uranium Trust","fond",
+   "r 0,55  rm 0,55  b 0,85  f 0,31. Sterkeste par: fysisk uran i et lukket fond. Kanadisk fond uten EOS-noekkelinformasjon, saa tilgang paa IKZ hos Nordnet maa sjekkes foer den regnes som kjoepbar.")],
 "ship_vlcc": [
   ("FRO.OL","Oslo","Frontline","aksje","Storste norske VLCC-flate. Hoyeste beta mot raten."),
   ("OET.OL","Oslo","Okeanis Eco Tankers","aksje","Ung flate, VLCC og Suezmax. Lav kontantkostnad."),
