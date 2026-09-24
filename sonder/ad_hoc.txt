@@ -1,9 +1,82 @@
-Denne filen er utgaatt og skal ikke leses.
+1. stockanalysis.com: hva ligger faktisk paa sida
 
-Den inneholdt utskriften fra den sonden som tilfeldigvis kjorte sist, uten
-navn og uten tidspunkt. Det gikk galt to ganger 24. september: gammel utskrift
-laa igjen under samme navn og saa ut som et ferskt svar.
+   AKRBP.osl   (brent)
+      HTML, kontantstrom         HTTP 200    217 kB  type=text/html
+         markorer: operatingCashFlow=False, ocf-felt=False, __sveltekit=True, json-script=False, tabellrad <tr>=50
+         aarstall i sida: 7  [2020, 2021, 2022]..[2024, 2025, 2026]
+      __data.json                HTTP 200     17 kB  type=application/json
+         markorer: operatingCashFlow=False, ocf-felt=False, __sveltekit=False, json-script=False, tabellrad <tr>=0
+         aarstall i sida: 7  [2020, 2021, 2022]..[2024, 2025, 2026]
+      HTML + range=10Y           HTTP 200    218 kB  type=text/html
+         markorer: operatingCashFlow=False, ocf-felt=False, __sveltekit=True, json-script=False, tabellrad <tr>=50
+         aarstall i sida: 7  [2020, 2021, 2022]..[2024, 2025, 2026]
+         script-blokker: 6, av dem med kontantstromord: 1
+         storste slik blokk: 15116 tegn. Utdrag:
+          					{ 					__sveltekit_16rp02m = { 						base: "" 					};  					const element = document.currentScript.parentElement;  					Promise.all([ 						import("/_app/immutable/entry/start.zy84ZPeO.js"), 						import("/_app/immutable/entry/app.DNLIoqWV.js") 					]).then(([kit, app]) => { 						kit.start(app
+         'Operating Cash Flow' funnet ved tegn 70327. Kontekst:
+         Operating Cash Flow Growth" aria-label="Hide Operating Cash Flow Growth" aria-expanded="true"><span class="block transition-transform duration-200 motion-reduce:transition-none svelte-eiy3hb"><!--[0--><!----><svg class="h-4 w-4" viewBox="0 0 20 20" fill="curre
 
-Sondene heter nu sonde_kjor_<hva_den_maaler>.py og skriver til
-sonder/sonde_kjor_<hva_den_maaler>.txt, med navn, tidspunkt, commit og
-avslutningskode oeverst i filen.
+   GLEN.lon   (nikkel og tinn)
+      HTML, kontantstrom         HTTP 200    234 kB  type=text/html
+         markorer: operatingCashFlow=False, ocf-felt=False, __sveltekit=True, json-script=False, tabellrad <tr>=57
+         aarstall i sida: 7  [2020, 2021, 2022]..[2024, 2025, 2026]
+      __data.json                HTTP 200     19 kB  type=application/json
+         markorer: operatingCashFlow=False, ocf-felt=False, __sveltekit=False, json-script=False, tabellrad <tr>=0
+         aarstall i sida: 7  [2020, 2021, 2022]..[2024, 2025, 2026]
+      HTML + range=10Y           HTTP 200    236 kB  type=text/html
+         markorer: operatingCashFlow=False, ocf-felt=False, __sveltekit=True, json-script=False, tabellrad <tr>=57
+         aarstall i sida: 7  [2020, 2021, 2022]..[2024, 2025, 2026]
+         script-blokker: 6, av dem med kontantstromord: 1
+         storste slik blokk: 16419 tegn. Utdrag:
+          					{ 					__sveltekit_16rp02m = { 						base: "" 					};  					const element = document.currentScript.parentElement;  					Promise.all([ 						import("/_app/immutable/entry/start.zy84ZPeO.js"), 						import("/_app/immutable/entry/app.DNLIoqWV.js") 					]).then(([kit, app]) => { 						kit.start(app
+         'Operating Cash Flow' funnet ved tegn 79845. Kontekst:
+         Operating Cash Flow Growth" aria-label="Hide Operating Cash Flow Growth" aria-expanded="true"><span class="block transition-transform duration-200 motion-reduce:transition-none svelte-eiy3hb"><!--[0--><!----><svg class="h-4 w-4" viewBox="0 0 20 20" fill="curre
+
+   CS.tsx   (kobber)
+      HTML, kontantstrom         HTTP 200    225 kB  type=text/html
+         markorer: operatingCashFlow=False, ocf-felt=False, __sveltekit=True, json-script=False, tabellrad <tr>=53
+         aarstall i sida: 7  [2020, 2021, 2022]..[2024, 2025, 2026]
+      __data.json                HTTP 200     18 kB  type=application/json
+         markorer: operatingCashFlow=False, ocf-felt=False, __sveltekit=False, json-script=False, tabellrad <tr>=0
+         aarstall i sida: 7  [2020, 2021, 2022]..[2024, 2025, 2026]
+      HTML + range=10Y           HTTP 200    225 kB  type=text/html
+         markorer: operatingCashFlow=False, ocf-felt=False, __sveltekit=True, json-script=False, tabellrad <tr>=53
+         aarstall i sida: 7  [2020, 2021, 2022]..[2024, 2025, 2026]
+         script-blokker: 6, av dem med kontantstromord: 1
+         storste slik blokk: 15310 tegn. Utdrag:
+          					{ 					__sveltekit_16rp02m = { 						base: "" 					};  					const element = document.currentScript.parentElement;  					Promise.all([ 						import("/_app/immutable/entry/start.zy84ZPeO.js"), 						import("/_app/immutable/entry/app.DNLIoqWV.js") 					]).then(([kit, app]) => { 						kit.start(app
+         'Operating Cash Flow' funnet ved tegn 78907. Kontekst:
+         Operating Cash Flow Growth" aria-label="Hide Operating Cash Flow Growth" aria-expanded="true"><span class="block transition-transform duration-200 motion-reduce:transition-none svelte-eiy3hb"><!--[0--><!----><svg class="h-4 w-4" viewBox="0 0 20 20" fill="curre
+
+   ERA.epa   (nikkel)
+      HTML, kontantstrom         HTTP 200    233 kB  type=text/html
+         markorer: operatingCashFlow=False, ocf-felt=False, __sveltekit=True, json-script=False, tabellrad <tr>=57
+         aarstall i sida: 7  [2020, 2021, 2022]..[2024, 2025, 2026]
+      __data.json                HTTP 200     17 kB  type=application/json
+         markorer: operatingCashFlow=False, ocf-felt=False, __sveltekit=False, json-script=False, tabellrad <tr>=0
+         aarstall i sida: 7  [2020, 2021, 2022]..[2024, 2025, 2026]
+      HTML + range=10Y           HTTP 200    233 kB  type=text/html
+         markorer: operatingCashFlow=False, ocf-felt=False, __sveltekit=True, json-script=False, tabellrad <tr>=57
+         aarstall i sida: 7  [2020, 2021, 2022]..[2024, 2025, 2026]
+         script-blokker: 6, av dem med kontantstromord: 1
+         storste slik blokk: 15742 tegn. Utdrag:
+          					{ 					__sveltekit_16rp02m = { 						base: "" 					};  					const element = document.currentScript.parentElement;  					Promise.all([ 						import("/_app/immutable/entry/start.zy84ZPeO.js"), 						import("/_app/immutable/entry/app.DNLIoqWV.js") 					]).then(([kit, app]) => { 						kit.start(app
+         'Operating Cash Flow' funnet ved tegn 77247. Kontekst:
+         Operating Cash Flow Growth" aria-label="Hide Operating Cash Flow Growth" aria-expanded="true"><span class="block transition-transform duration-200 motion-reduce:transition-none svelte-eiy3hb"><!--[0--><!----><svg class="h-4 w-4" viewBox="0 0 20 20" fill="curre
+
+
+2. To andre generelle kilder, kort test
+   stockanalysis API v2
+                                 HTTP 404      0 kB  type=application/json
+   wisesheets/simfin-stil
+                                 HTTP 401      0 kB  type=application/json
+
+
+HVA JEG SER ETTER
+   Ligger aarstallene og kontantstrommen i sida eller i et endepunkt, kan jeg
+   skrive uttrekket og lose alle nitten selskapene.
+   Gjor de ikke det, er svaret at ingen gratis generell kilde dekker disse
+   borsene, og da henter jeg de aatte tallene fra selskapenes egne
+   noekkeltallsoversikter i staden. Aatte oppslag, en gang, med kilde per linje.
+
+Send hele utskriften tilbake.
