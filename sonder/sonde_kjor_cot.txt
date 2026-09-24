@@ -1,0 +1,117 @@
+sonde:   sonde_kjor_cot
+kjort:   2026-09-24 12:39:19 UTC
+commit:  6aca3f1
+status:  OK
+brukte:  64 sekunder
+--------------------------------------------------------------
+1. Svarer CFTC, og hvilke felt har en rad
+
+   ok    gull   1058 uker, 2006-06-13 til 2026-09-15
+
+   feltene i en rad:
+      cftc_contract_market_code                088691
+      change_in_m_money_long_all               -3410
+      change_in_m_money_short_all              -1554
+      change_in_m_money_spread                 3535
+      change_in_open_interest_all              -1328
+      change_in_prod_merc_long                 -192
+      change_in_prod_merc_short                -3092
+      m_money_positions_long_all               142394
+      m_money_positions_long_old               142394
+      m_money_positions_long_other             0
+      m_money_positions_short_all              9278
+      m_money_positions_short_old              9278
+      m_money_positions_short_other            0
+      m_money_positions_spread                 32997
+      m_money_positions_spread_1               32997
+      m_money_positions_spread_2               0
+      market_and_exchange_names                GOLD - COMMODITY EXCHANGE INC.
+      open_interest_all                        409899
+      pct_of_oi_m_money_long_all               34.7
+      pct_of_oi_m_money_long_old               34.7
+      pct_of_oi_m_money_long_other             0.0
+      pct_of_oi_m_money_short_all              2.3
+      pct_of_oi_m_money_short_old              2.3
+      pct_of_oi_m_money_short_other            0.0
+      pct_of_oi_m_money_spread                 8.1
+      pct_of_oi_m_money_spread_1               8.1
+      pct_of_oi_m_money_spread_2               0.0
+      pct_of_oi_prod_merc_long                 4.0
+      pct_of_oi_prod_merc_long_1               4.0
+      pct_of_oi_prod_merc_long_2               0.0
+      pct_of_oi_prod_merc_short                10.8
+      pct_of_oi_prod_merc_short_1              10.8
+      pct_of_oi_prod_merc_short_2              0.0
+      pct_of_open_interest_all                 100.0
+      prod_merc_positions_long                 16396
+      prod_merc_positions_long_1               16396
+      prod_merc_positions_long_2               0
+      prod_merc_positions_short                44457
+      prod_merc_positions_short_1              44457
+      prod_merc_positions_short_2              0
+      report_date_as_yyyy_mm_dd                2026-09-15T00:00:00.000
+      traders_m_money_long_all                 93
+      traders_m_money_long_old                 93
+      traders_m_money_long_other               0
+      traders_m_money_short_all                11
+      traders_m_money_short_old                11
+      traders_m_money_short_other              0
+      traders_m_money_spread_all               39
+      traders_m_money_spread_old               39
+      traders_m_money_spread_other             0
+      traders_prod_merc_long_all               18
+      traders_prod_merc_long_old               18
+      traders_prod_merc_long_other             0
+      traders_prod_merc_short_all              13
+      traders_prod_merc_short_old              13
+      traders_prod_merc_short_other            0
+
+   kontroll mot dashbordet, rapporten 2026-09-08:
+      oi 411227 (skal vaere 411227), mm_net 134972 (134972), mm_pct 32.82 (32.82), prod_pct -7.53 (-7.53)
+
+
+2. Alle seks, slik den ukentlige kjoringen vil regne dem
+
+   ok    brent   2026-09-15  BRENT LAST DAY - NEW YORK MERCANTILE E forvaltere   +3.0 % pctl  36.5 (3 aar)  70.6 (fra 2011)   produsent  -12.5 % pctl  25.0
+   ok    wti   2026-09-15  WTI-PHYSICAL - NEW YORK MERCANTILE EXC forvaltere   +5.4 % pctl  48.7 (3 aar)  23.1 (fra 2006)   produsent  +15.7 % pctl  85.9
+   ok    henryhub   2026-09-15  NAT GAS NYME - NEW YORK MERCANTILE EXC forvaltere   -5.5 % pctl  28.2 (3 aar)  41.6 (fra 2006)   produsent   -0.9 % pctl  75.0
+   ok    gold   2026-09-15  GOLD - COMMODITY EXCHANGE INC.         forvaltere  +32.5 % pctl  67.3 (3 aar)  75.4 (fra 2006)   produsent   -6.8 % pctl  76.9
+   ok    kobber   2026-09-15  COPPER- #1 - COMMODITY EXCHANGE INC.   forvaltere  +22.5 % pctl  76.3 (3 aar)  88.1 (fra 2006)   produsent  -33.9 % pctl  17.9
+   ok    kakao   2026-09-15  COCOA - ICE FUTURES U.S.               forvaltere   -5.2 % pctl  15.4 (3 aar)  14.7 (fra 2006)   produsent  -13.0 % pctl  76.9
+
+
+3. Finnes det kontrakter for resten av bordet
+
+   URANIUM    ingen
+   ALUMINUM   191693   ALUMINUM MWP - COMMODITY EXCHANGE INC.                     siste 2026-09-15  241 uker
+   ALUMINUM   191691   ALUMINUM - COMMODITY EXCHANGE INC.                         siste 2026-06-09  143 uker
+   ALUMINUM   191693   ALUMINUM MW US TR PLATTS - COMMODITY EXCHANGE INC.         siste 2022-02-01  163 uker
+   ALUMINUM   191693   ALUMINUM MW US TR PLATTS SWAP - COMMODITY EXCHANGE INC.    siste 2018-12-18  163 uker
+   ALUMINIUM  191696   ALUMINIUM EURO PREM DUTY-PAID - COMMODITY EXCHANGE INC.    siste 2026-09-15  281 uker
+   ALUMINIUM  191694   ALUMINIUM EURO PREM DUTYUNPAID - COMMODITY EXCHANGE INC.   siste 2021-12-28  45 uker
+   NICKEL     ingen
+   ZINC       ingen
+   LEAD       ingen
+   TIN        ingen
+   IRON ORE   195651   IRON ORE 62% FE-CFR CHINA TSI - NEW YORK MERCANTILE EXCHAN siste 2018-09-25  43 uker
+   IRON ORE   195651   IRON ORE 62% FE, CFR CHINA TSI - NEW YORK MERCANTILE EXCHA siste 2017-09-26  178 uker
+   COAL       024656   COAL (API 2) CIF ARA - NEW YORK MERCANTILE EXCHANGE        siste 2022-03-22  160 uker
+   COAL       024656   COAL (API 2) CIF ARA SWAP FUT - NEW YORK MERCANTILE EXCHAN siste 2018-12-18  337 uker
+   COAL       024658   COAL (API 4) FOB  RICH BAY FUT - NEW YORK MERCANTILE EXCHA siste 2018-10-23  315 uker
+   COAL       024652   CSX COAL SWAP - NEW YORK MERCANTILE EXCHANGE               siste 2013-11-26  26 uker
+   COAL       024651   CENTRAL APPALACHIAN COAL - NEW YORK MERCANTILE EXCHANGE    siste 2013-09-17  108 uker
+   COAL       024653   POWDER RIVER BASIN COAL SWAP - NEW YORK MERCANTILE EXCHANG siste 2013-08-13  9 uker
+   PALM       037021   USD Malaysian Crude Palm Oil C - CHICAGO MERCANTILE EXCHAN siste 2026-09-15  226 uker
+   PALM       037021   USD MALAYSIAN CRUDE PALM OIL - CHICAGO MERCANTILE EXCHANGE siste 2022-03-15  17 uker
+   PALM       037642   MALAYSIAN PALM OIL CALENDAR SW - CHICAGO MERCANTILE EXCHAN siste 2019-06-18  76 uker
+   TTF        023B98   DUTCH TTF NAT GAS CAL MONTH - NEW YORK MERCANTILE EXCHANGE siste 2021-08-24  8 uker
+   DUTCH      023B98   DUTCH TTF NAT GAS CAL MONTH - NEW YORK MERCANTILE EXCHANGE siste 2021-08-24  8 uker
+   FREIGHT    ingen
+   COCOA      073732   COCOA - ICE FUTURES U.S.                                   siste 2026-09-15  994 uker
+   COCOA      073732   COCOA - NEW YORK BOARD OF TRADE                            siste 2007-08-28  64 uker
+
+En kontrakt er brukbar hvis den fortsatt rapporteres (siste i september
+2026) og har flere hundre uker. Aapen balanse maa sjekkes foer den tas inn:
+en kontrakt med noen faa tusen kontrakter sier lite om posisjonering.
+
+Send hele utskriften tilbake.
