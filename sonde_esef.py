@@ -45,7 +45,7 @@ MANGLER = [
     ("ATYM.L",    "Atalaya Mining",    "London",    "GB"),
     ("MPE.L",     "M.P. Evans",        "London",    "GB"),   # reg.navn kan vaere "MP Evans"
     ("RE.L",      "REA Holdings",      "London",    "GB"),
-    ("TMIP.L",    "Taylor Maritime Investments", "London", "GB"),
+    ("TMIP.L",    "Taylor Maritime",   "London",    "GB"),  # registeret: TAYLOR MARITIME LIMITED
     ("BOL.ST",    "Boliden",           "Stockholm", "SE"),
     ("ERA.PA",    "Eramet",            "Paris",     "FR"),
 ]
