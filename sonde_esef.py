@@ -1,69 +1,59 @@
 # ---------------------------------------------------------------------------
-# Sonde: hvor finnes regnskapstall for de 20 aksjene SEC ikke dekker
+# Sonde 2: kan ESEF gi nok AAR til overlevelsesporten C
 #
-# Overlevelsesporten C leser SEC XBRL. Etter instrumentbyttet 22. september er
-# 23 av 43 aksjer dekket. De 20 andre ligger paa Oslo, London, Toronto, Zurich,
-# Stockholm og Paris, og sju segmenter staar derfor helt uten port: brent, wti,
-# gull, kobber, nikkel, tinn og palmeolje.
+# Runde 1 (24. september) svarte "12 av 20 treff i ESEF". Det tallet var feil,
+# og feilen var min egen. Navnematchen strippet alt som ikke var a-z0-9, og et
+# koreansk selskapsnavn ble da den tomme strengen. "glencore".startswith("")
+# er sant, saa alle fem London-papirene matchet samme koreanske reisebyraa.
+# Aker BP matchet "AKER ASA", som er morselskapet og et annet regnskap.
+# Ekte treff i runde 1 var seks: DNO, Norsk Hydro, Hafnia, Okeanis, Boliden
+# og Eramet.
 #
-# Denne sonden bygger ingenting. Den svarer paa ett spoersmaal per rute: hvor
-# mange av de 20 gir den treff, og hvor mange AAR med driftskontantstrom faar
-# vi ut. Aarstallet er det som avgjoer. C maaler mot selskapets verste aar i
-# HELE historikken, og det var nettopp den feilen som ble rettet i september:
-# med et femaarsvindu laa ingen syklusbunn inne, og 30 av 32 selskaper leste
-# "aapen". Fire aar er derfor ikke en halv losning, det er ingen losning.
+# Runde 1 avklarte likevel to ting for godt:
+#   Bronnoysund er en blindvei. Tre av seks norske ga treff, men bare ETT aar
+#   (2025) og ingen kontantstromoppstilling i dataene. C trenger driftskontant-
+#   strom aar for aar. Ruten er lukket, ikke delvis aapen.
+#   Yahoo quoteSummary svarer 401 paa alt. Endepunktet krever nu cookie og
+#   crumb. Merk at chart-endepunktet som priser.py bruker fortsatt virker; det
+#   er bare regnskapsmodulene som er stengt.
 #
-# Ruter som testes:
-#   1. filings.xbrl.org   ESEF-registeret. Borsnoterte i EOS har vaert paalagt
-#                         aa rapportere i ESEF siden 2020, i samme ifrs-full-
-#                         taksonomi som overlevelse_c.py allerede leser. Dekker
-#                         i prinsippet Oslo, Stockholm og Paris. Zurich er ikke
-#                         EOS og faller utenfor.
-#   2. Bronnoysund        Regnskapsregisteret. Bare norske. Dokumentasjonen
-#                         lover ti aar, repoets egne notater sier siste aar.
-#                         Det maa avklares, ikke antas.
-#   3. Yahoo              quoteSummary gir fire aar for alle borser. Tas med
-#                         som gulv, slik at vi vet hva den daarligste ruten gir.
+# Denne runden svarer paa det som faktisk avgjoer: hvor mange AAR med
+# driftskontantstrom ligger i ESEF. Mandatet gjelder regnskapsaar fra 2020, og
+# hver aarsrapport har med fjoraaret som sammenligning, saa taket er trolig
+# 2019 og framover. Er det taket, dekker ESEF 2020-krakket men ikke bunnen i
+# 2015 og 2016, og da er porten aapen for oljeselskapene og blind for gruve.
+# Det maa maales, ikke antas.
 #
-# Kjores manuelt fra Actions-fanen. Skriver ingenting, printer alt.
+# Kjores manuelt fra Actions-fanen, valget "esef". Skriver ingenting.
 # ---------------------------------------------------------------------------
 
 import json, re, time
 import requests
 
-TIMEOUT = 30
+TIMEOUT = 40
 UA = {"User-Agent": "Syklusbordet frode@h-k.no"}
-UAB = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-                     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"}
+API = "https://filings.xbrl.org/api"
 
-# ticker, selskapsnavn slik det staar i regnskapene, bors, landkode
 MANGLER = [
-    ("AKRBP.OL",  "Aker BP ASA",                 "Oslo",      "NO"),
-    ("DNO.OL",    "DNO ASA",                     "Oslo",      "NO"),
-    ("NHY.OL",    "Norsk Hydro ASA",             "Oslo",      "NO"),
-    ("HAFNI.OL",  "Hafnia Limited",              "Oslo",      "NO"),
-    ("OET.OL",    "Okeanis Eco Tankers Corp",    "Oslo",      "NO"),
-    ("2020.OL",   "2020 Bulkers Ltd",            "Oslo",      "NO"),
-    ("GLEN.L",    "Glencore plc",                "London",    "GB"),
-    ("ATYM.L",    "Atalaya Mining",              "London",    "GB"),
-    ("MPE.L",     "M.P. Evans Group PLC",        "London",    "GB"),
-    ("RE.L",      "REA Holdings plc",            "London",    "GB"),
-    ("TMIP.L",    "Taylor Maritime Investments", "London",    "GB"),
-    ("CVE.TO",    "Cenovus Energy Inc",          "Toronto",   "CA"),
-    ("WCP.TO",    "Whitecap Resources Inc",      "Toronto",   "CA"),
-    ("TOU.TO",    "Tourmaline Oil Corp",         "Toronto",   "CA"),
-    ("BIR.TO",    "Birchcliff Energy Ltd",       "Toronto",   "CA"),
-    ("CS.TO",     "Capstone Copper Corp",        "Toronto",   "CA"),
-    ("BARN.SW",   "Barry Callebaut AG",          "Zurich",    "CH"),
-    ("NESN.SW",   "Nestle SA",                   "Zurich",    "CH"),
-    ("BOL.ST",    "Boliden AB",                  "Stockholm", "SE"),
-    ("ERA.PA",    "Eramet",                      "Paris",     "FR"),
+    ("AKRBP.OL",  "Aker BP",           "Oslo",      "NO"),
+    ("DNO.OL",    "DNO",               "Oslo",      "NO"),
+    ("NHY.OL",    "Norsk Hydro",       "Oslo",      "NO"),
+    ("HAFNI.OL",  "Hafnia",            "Oslo",      "NO"),
+    ("OET.OL",    "Okeanis Eco Tankers","Oslo",     "NO"),
+    ("2020.OL",   "2020 Bulkers",      "Oslo",      "NO"),
+    ("GLEN.L",    "Glencore",          "London",    "GB"),
+    ("ATYM.L",    "Atalaya Mining",    "London",    "GB"),
+    ("MPE.L",     "M.P. Evans",        "London",    "GB"),   # reg.navn kan vaere "MP Evans"
+    ("RE.L",      "REA Holdings",      "London",    "GB"),
+    ("TMIP.L",    "Taylor Maritime Investments", "London", "GB"),
+    ("BOL.ST",    "Boliden",           "Stockholm", "SE"),
+    ("ERA.PA",    "Eramet",            "Paris",     "FR"),
 ]
-
-LOGG = []
-def note(rute, tk, ok, d=""):
-    LOGG.append({"rute": rute, "ticker": tk, "ok": ok, "detalj": d})
-    print(f"   {'ok   ' if ok else 'nei  '} {rute:12} {tk:12} {d}")
+# Kanadierne og sveitserne staar utenfor ESEF. For dem testes en annen ide:
+# noen av dem er notert i USA under en annen ticker og filer 20-F eller 40-F.
+SEC_ALT = {"CVE.TO": ["CVE"], "WCP.TO": ["WCPRF"], "TOU.TO": ["TRMLF"],
+           "BIR.TO": ["BIREF"], "CS.TO": ["CSCCF"],
+           "BARN.SW": ["BYCBF"], "NESN.SW": ["NSRGY", "NSRGF"]}
 
 
 def get(url, **kw):
@@ -74,122 +64,151 @@ def get(url, **kw):
             if r.status_code in (429, 502, 503):
                 time.sleep(3 * (i + 1)); continue
             return r
-        except requests.RequestException as e:
+        except requests.RequestException:
             if i == 2:
                 raise
             time.sleep(2 * (i + 1))
     raise RuntimeError("ga opp")
 
 
-norm = lambda s: re.sub(r"[^a-z0-9]", "", str(s).lower())
-def likner(a, b):
-    """Navnematch som taaler ASA, plc, Inc og mellomrom."""
-    a, b = norm(a), norm(b)
-    for hale in ("asa", "plc", "ab", "sa", "ag", "inc", "corp", "ltd", "limited", "group"):
-        a = a[:-len(hale)] if a.endswith(hale) else a
-        b = b[:-len(hale)] if b.endswith(hale) else b
-    return a.startswith(b[:8]) or b.startswith(a[:8])
+def norm(s):
+    """Beholder bokstaver fra alle alfabeter, ikke bare a-z."""
+    return re.sub(r"[^\w]", "", str(s).lower(), flags=re.UNICODE)
+
+HALER = ("asa", "plc", "ab", "sa", "ag", "inc", "corp", "ltd", "limited",
+         "group", "publ", "nv", "se", "oyj")
+def kjerne(s):
+    """Strippet navn: selskapsledd fjernet, gjentatt til ingenting mer gaar."""
+    s = norm(s)
+    endret = True
+    while endret:
+        endret = False
+        for h in HALER:
+            if s.endswith(h) and len(s) - len(h) >= 2:
+                s, endret = s[:-len(h)], True
+    return s
+
+def likner(kandidat, sokt):
+    """Likhet, ikke prefiks. Prefiks var det som gikk galt i runde 1.
+
+    "aker" er et prefiks av "akerbp", men Aker ASA er morselskapet og et helt
+    annet regnskap. "boliden" er et prefiks av "bolidenmineral", som er
+    datterselskapet. Begge ville sluppet gjennom en prefiksregel, og begge
+    ville gitt C feil tall uten aa si fra. Derfor kreves likhet etter at
+    selskapsleddene er strippet. Bommer den, skriver sonden ut de naermeste
+    kandidatene, og da retter jeg navnet i listen i stedet for aa lose opp
+    regelen.
+    """
+    a, b = kjerne(kandidat), kjerne(sokt)
+    return len(b) >= 3 and a == b
 
 
-# ============================================================ 1. filings.xbrl.org
-print("1. ESEF-registeret (filings.xbrl.org)")
-print("   Henter indeksen per land og ser hvem vi finner igjen.\n")
-
-ESEF = {}
-for land in sorted({l for *_, l in MANGLER if l in ("NO", "SE", "FR", "GB")}):
-    treff, side, nav = [], 0, None
+# =================================================== 1. finn enhetene i ESEF
+print("1. ESEF: finner enhetene paa nytt, med rettet navnematch\n")
+ENH = {}
+for land in sorted({l for *_, l in MANGLER}):
+    enh, url, side = {}, (f"{API}/filings?include=entity&filter[country]={land}"
+                          f"&page[size]=500"), 0
     try:
-        url = (f"https://filings.xbrl.org/api/filings?include=entity"
-               f"&filter[country]={land}&page[size]=500")
         while url and side < 12:
             r = get(url)
             if r.status_code != 200:
-                note("esef", land, False, f"HTTP {r.status_code}")
-                break
+                print(f"   {land}: HTTP {r.status_code}"); break
             j = r.json()
             for e in j.get("included", []):
                 if e.get("type") == "entity":
-                    treff.append(e.get("attributes", {}).get("name", ""))
-            for d in j.get("data", []):
-                a = d.get("attributes", {})
-                nav = nav or a.get("period_end")
-            url = (j.get("links") or {}).get("next")
-            side += 1
+                    enh[e.get("id")] = (e.get("attributes") or {}).get("name", "")
+            url = (j.get("links") or {}).get("next"); side += 1
             time.sleep(0.4)
-        navn = sorted(set(x for x in treff if x))
-        print(f"   {land}: {len(navn)} enheter i registeret")
-        ESEF[land] = navn
+        print(f"   {land}: {len(enh)} enheter")
+        ENH[land] = enh
     except Exception as e:
-        note("esef", land, False, f"{type(e).__name__}: {str(e)[:60]}")
-        ESEF[land] = []
+        print(f"   {land}: {type(e).__name__} {str(e)[:60]}")
+        ENH[land] = {}
 
 print()
+FUNNET = {}
 for tk, navn, bors, land in MANGLER:
-    kand = [n for n in ESEF.get(land, []) if likner(n, navn)]
-    note("esef", tk, bool(kand), (kand[0] if kand else f"ingen match i {land}")[:60])
+    traff = [(i, n) for i, n in ENH.get(land, {}).items() if likner(n, navn)]
+    if len(traff) == 1:
+        FUNNET[tk] = traff[0]
+        print(f"   ok    {tk:10} -> {traff[0][1]}")
+    elif traff:
+        FUNNET[tk] = traff[0]
+        print(f"   FLERE {tk:10} -> {', '.join(n for _, n in traff[:4])}  (valgte forste)")
+    else:
+        nær = sorted(ENH.get(land, {}).values(),
+                     key=lambda n: 0 if kjerne(navn)[:4] in kjerne(n) else 1)[:3]
+        print(f"   nei   {tk:10} ingen match i {land}. Naermeste: {', '.join(nær)}")
 
 
-# ============================================================ 2. Bronnoysund
-print("\n2. Bronnoysund regnskapsregisteret (bare norske)")
-for tk, navn, bors, land in MANGLER:
-    if land != "NO":
-        continue
+# ================================== 2. hvor mange aar, og finnes kontantstrom
+print("\n2. Aar per enhet, og om driftskontantstrom finnes i rapporten")
+print("   Dette er spoersmaalet som avgjor alt. C maaler mot verste aar i")
+print("   HELE historikken, og et femaarsvindu uten syklusbunn var nettopp")
+print("   feilen som ble rettet i september.\n")
+
+KONTANT = ("CashFlowsFromUsedInOperatingActivities",
+           "NetCashFlowsFromUsedInOperatingActivities",
+           "CashFlowsFromUsedInOperatingActivitiesContinuingOperations")
+
+for tk, (eid, navn) in FUNNET.items():
     try:
-        r = get("https://data.brreg.no/enhetsregisteret/api/enheter"
-                f"?navn={requests.utils.quote(navn)}&size=5")
-        enh = (r.json().get("_embedded") or {}).get("enheter", [])
-        if not enh:
-            note("brreg", tk, False, "ikke i enhetsregisteret"); continue
-        org = enh[0]["organisasjonsnummer"]
-        rr = get(f"https://data.brreg.no/regnskapsregisteret/regnskap/{org}",
-                 headers={**UA, "Accept": "application/json"})
-        if rr.status_code != 200:
-            note("brreg", tk, False, f"orgnr {org}, regnskap HTTP {rr.status_code}"); continue
-        d = rr.json()
-        d = d if isinstance(d, list) else [d]
-        aar = sorted({str(x.get("regnskapsperiode", {}).get("tilDato", ""))[:4] for x in d} - {""})
-        # finnes driftskontantstrom i det hele tatt
-        tekst = json.dumps(d).lower()
-        kontant = any(k in tekst for k in ("kontantstrom", "kontantstrøm", "likvide"))
-        note("brreg", tk, bool(aar),
-             f"orgnr {org}, {len(aar)} aar ({aar[0] if aar else '-'}..{aar[-1] if aar else '-'})"
-             f", kontantstrom i data: {'ja' if kontant else 'NEI'}")
-    except Exception as e:
-        note("brreg", tk, False, f"{type(e).__name__}: {str(e)[:60]}")
-    time.sleep(0.4)
-
-
-# ============================================================ 3. Yahoo som gulv
-print("\n3. Yahoo quoteSummary (alle borser, men faa aar)")
-for tk, navn, bors, land in MANGLER:
-    try:
-        r = get(f"https://query2.finance.yahoo.com/v10/finance/quoteSummary/{tk}"
-                "?modules=cashflowStatementHistory,balanceSheetHistory", headers=UAB)
+        r = get(f"{API}/filings?filter[entity.id]={requests.utils.quote(str(eid))}&page[size]=100")
         if r.status_code != 200:
-            note("yahoo", tk, False, f"HTTP {r.status_code}"); continue
-        res = (r.json().get("quoteSummary") or {}).get("result") or []
-        if not res:
-            note("yahoo", tk, False, "tomt svar"); continue
-        cf = (res[0].get("cashflowStatementHistory") or {}).get("cashflowStatements") or []
-        ocf = [x for x in cf if (x.get("totalCashFromOperatingActivities") or {}).get("raw") is not None]
-        aar = sorted(str(x.get("endDate", {}).get("fmt", ""))[:4] for x in ocf)
-        note("yahoo", tk, bool(ocf),
-             f"{len(ocf)} aar med driftskontantstrom ({aar[0] if aar else '-'}..{aar[-1] if aar else '-'})")
+            print(f"   {tk:10} filings HTTP {r.status_code}"); continue
+        data = r.json().get("data", [])
+        if not data:
+            print(f"   {tk:10} ingen filings"); continue
+        attr = [d.get("attributes", {}) for d in data]
+        if tk == list(FUNNET)[0]:
+            print(f"   (feltene en filing har: {sorted(attr[0])})\n")
+        aar = sorted({str(a.get("period_end", ""))[:4] for a in attr} - {"", "None"})
+        jsonurl = next((a.get("json_url") for a in attr if a.get("json_url")), None)
+        print(f"   {tk:10} {len(data):2} rapporter, aar {aar[0] if aar else '-'}..{aar[-1] if aar else '-'}"
+              f"  ({', '.join(aar)})")
+        # prov aa hente fakta fra den nyeste og se om kontantstrommen ligger der
+        if jsonurl:
+            u = jsonurl if jsonurl.startswith("http") else f"https://filings.xbrl.org{jsonurl}"
+            rr = get(u, timeout=90)
+            if rr.status_code == 200:
+                t = rr.text
+                traff = [k for k in KONTANT if k in t]
+                per = len(set(re.findall(r'"(\d{4}-\d{2}-\d{2})"', t)))
+                print(f"              rapportfil {len(rr.content)//1024} kB, "
+                      f"kontantstromtag: {traff[0] if traff else 'IKKE FUNNET'}, "
+                      f"{per} ulike datoer i filen")
+            else:
+                print(f"              rapportfil HTTP {rr.status_code}")
+        else:
+            print(f"              ingen json_url i metadataene")
     except Exception as e:
-        note("yahoo", tk, False, f"{type(e).__name__}: {str(e)[:60]}")
-    time.sleep(0.5)
+        print(f"   {tk:10} {type(e).__name__} {str(e)[:60]}")
+    time.sleep(0.6)
 
 
-# ================================================================ oppsummering
-print("\n\n" + "=" * 62)
-print("OPPSUMMERING: hvor mange av de 20 gir hver rute treff paa")
-for rute in ("esef", "brreg", "yahoo"):
-    r = [l for l in LOGG if l["rute"] == rute and l["ticker"] not in ("NO","SE","FR","GB")]
-    print(f"   {rute:8} {sum(1 for x in r if x['ok']):2} av {len(r):2}")
-print("\nPer aksje:")
-for tk, navn, bors, land in MANGLER:
-    s = {l["rute"]: l["ok"] for l in LOGG if l["ticker"] == tk}
-    print(f"   {tk:12} {bors:10} esef={'ja ' if s.get('esef') else 'nei'}  "
-          f"brreg={'ja ' if s.get('brreg') else ('nei' if land=='NO' else '  -')}  "
-          f"yahoo={'ja' if s.get('yahoo') else 'nei'}")
+# ============================ 3. finnes kanadierne og sveitserne hos SEC likevel
+print("\n3. SEC under amerikansk ticker (Toronto og Zurich)")
+try:
+    kart = get("https://www.sec.gov/files/company_tickers.json").json()
+    tick = {str(v["ticker"]).upper(): str(v["cik_str"]).zfill(10) for v in kart.values()}
+    print(f"   SEC-kartet har {len(tick)} tickere")
+    for tk, alts in SEC_ALT.items():
+        funn = [(a, tick[a]) for a in alts if a in tick]
+        if not funn:
+            print(f"   nei   {tk:10} ingen av {alts} i SEC-kartet"); continue
+        a, cik = funn[0]
+        rr = get(f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik}.json", timeout=90)
+        if rr.status_code != 200:
+            print(f"   nei   {tk:10} {a} -> CIK {cik}, companyfacts HTTP {rr.status_code}"); continue
+        f = rr.json().get("facts", {})
+        n = sum(len(v) for tak in ("us-gaap", "ifrs-full") for v in f.get(tak, {}).values())
+        har = [k for tak in ("us-gaap", "ifrs-full") for k in f.get(tak, {})
+               if "OperatingActivities" in k]
+        print(f"   ok    {tk:10} {a} -> CIK {cik}, {n} fakta, "
+              f"kontantstromtag: {har[0] if har else 'IKKE FUNNET'}")
+        time.sleep(0.4)
+except Exception as e:
+    print(f"   SEC-kartet feilet: {type(e).__name__} {str(e)[:70]}")
+
 print("\nSend hele utskriften tilbake.")
