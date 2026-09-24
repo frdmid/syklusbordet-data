@@ -123,7 +123,10 @@ def secnavn(tk):
 AKSJER = {}
 for sid, rader in INSTR.items():
     for tk, bors, navn, typ, kom in rader:
-        if typ.lower().startswith("etc"):
+        # Fond har ingen balanse aa maale. ETC-ene er ute av universet, men
+        # UCITS-fondene er inne, og uten dette leter C etter Agnico-tall for
+        # GDX.L.
+        if typ.lower().startswith(("etc", "etf", "etn", "fond")):
             continue
         AKSJER.setdefault(tk, {"navn": navn, "bors": bors, "segmenter": []})["segmenter"].append(sid)
 

@@ -583,25 +583,46 @@ try:
     segporter = c.get("segmenter", {})
     selskap = c.get("selskaper", {})
     n = 0
+    # Porten regnes ut paa nytt av de instrumentene som staar paa bordet NAA,
+    # ikke av det c_overlevelse.json en gang maalte.
+    #
+    # Dette er ikke pirk. 22. september ble instrumentlisten byttet ut etter
+    # sonden, mens C stammet fra forrige kvartalskjoring. Ni av femten
+    # segmenter viste da en port som beskrev selskaper som ikke lenger sto
+    # oppfoert: gull leste "aapen" av Agnico og Newmont mens bordet viste tre
+    # gruve-ETF-er. En port som beskriver noen andre er verre enn ingen port.
+    stale = 0
     for s in SEGMENTS:
-        g = segporter.get(s["id"])
-        if not g:
-            continue
-        s["scores"]["gate"] = g["gate"]
-        s["gate_detalj"] = {"aapne": g["aapne"], "malte": g["malte"]}
-        # port per instrument, slik at raden viser hvem som baerer den
-        port = {i["ticker"]: i for i in g.get("instrumenter", [])}
+        g = segporter.get(s["id"]) or {}
+        maalt = {i["ticker"]: i for i in g.get("instrumenter", [])}
+        egne = [maalt[i["ticker"]] for i in s.get("instrumenter", [])
+                if i["ticker"] in maalt]
+        if not egne:
+            gate = "ukjent"
+            if g.get("gate") not in (None, "ukjent"):
+                stale += 1
+        elif any(x["port"] == "aapen" for x in egne): gate = "aapen"
+        elif any(x["port"] == "trang" for x in egne): gate = "trang"
+        else:                                         gate = "stengt"
+        s["scores"]["gate"] = gate
+        s["gate_detalj"] = {"aapne": sum(1 for x in egne if x["port"] == "aapen"),
+                            "malte": len(egne)}
         for i in s.get("instrumenter", []):
-            d = port.get(i["ticker"])
+            d = maalt.get(i["ticker"])
             if d:
                 i["port"] = d["port"]
                 i["kvartaler"] = d.get("kvartaler")
                 sk = selskap.get(i["ticker"], {})
                 i["bunnaar"] = sk.get("bunnaar")
                 i["aar_historikk"] = sk.get("aar_historikk")
+            else:
+                for k in ("port", "kvartaler", "bunnaar", "aar_historikk"):
+                    i.pop(k, None)
         n += 1
-    note("overlevelsesport C", True,
-         f"{n} segment, {sum(1 for x in segporter.values() if x['gate']=='aapen')} aapne")
+    aapne = sum(1 for s in SEGMENTS if s["scores"]["gate"] == "aapen")
+    note("overlevelsesport C", True, f"{n} segment, {aapne} aapne"
+         + (f", {stale} mistet porten fordi C ikke er kjort for dagens papirer"
+            if stale else ""))
 except Exception as e:
     note("overlevelsesport C", False, f"{type(e).__name__}: {str(e)[:70]}")
 
