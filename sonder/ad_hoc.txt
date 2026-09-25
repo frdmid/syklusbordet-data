@@ -120,8 +120,8 @@ Oppstarter: 1 sonde(r) funnet
 
 Send hele utskriften tilbake.
 
---- skrevet til sonder/sonde_kjor_bdi.txt (144 s, kode 0)
+--- skrevet til sonder/sonde_kjor_bdi.txt (137 s, kode 0)
 
 
 OPPSUMMERING
-   OK    sonde_kjor_bdi                             144 s  -> sonder/sonde_kjor_bdi.txt
+   OK    sonde_kjor_bdi                             137 s  -> sonder/sonde_kjor_bdi.txt
