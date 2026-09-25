@@ -113,7 +113,7 @@ en kontrakt med noen faa tusen kontrakter sier lite om posisjonering.
 
 Send hele utskriften tilbake.
 
---- skrevet til sonder/sonde_kjor_cot.txt (53 s, kode 0)
+--- skrevet til sonder/sonde_kjor_cot.txt (56 s, kode 0)
 
 === sonde_kjor_instrumenttest ===
 1. Univers
@@ -153,32 +153,32 @@ Send hele utskriften tilbake.
    TAVLE  (50 papirer)
 
    variant papirer innslag  ep pos | 24 mnd: mer/aar    p    | 12 mnd: mer/aar   p    |    r24   treff | videre fall  >30 %
-   a         20     37     6   5 |    +17.7 %  0.004 |    +22.0 %  0.004 |  +63.3 %   76 % |   -16.9 %    43 %
-   b         33     60     7   6 |     +7.9 %  0.046 |     +0.4 %  0.485 |  +24.8 %   68 % |   -22.2 %    40 %
-   a+b       14     18     3   3 |    +14.7 %  0.051 |    +24.6 %  0.043 | +187.1 %   83 % |   -10.6 %    44 %
-   c          7     12     7   4 |     +1.0 %  0.492 |     -2.9 %  0.585 |  +39.2 %   58 % |   -12.5 %    17 %
-   a60       29     56     9   5 |     +5.4 %  0.126 |     -6.3 %  0.852 |  +16.9 %   61 % |   -16.2 %    39 %
-   a65       22     43     6   4 |     +9.2 %  0.026 |     -7.5 %  0.834 |  +21.2 %   63 % |   -20.8 %    40 %
-   a70       22     37     6   5 |     +9.5 %  0.037 |     +0.5 %  0.490 |  +35.8 %   76 % |   -18.9 %    38 %
-   a75       20     37     6   4 |    +11.9 %  0.012 |     +8.3 %  0.204 |  +39.8 %   70 % |   -31.5 %    51 %
-   a85       18     35     6   4 |    +13.5 %  0.015 |     +5.5 %  0.304 |  +80.1 %   77 % |   -16.7 %    43 %
-   a90       15     28     6   4 |    +12.8 %  0.016 |    +16.8 %  0.062 |  +48.0 %   71 % |   -14.1 %    46 %
-   a95       13     26     6   5 |     +9.9 %  0.111 |     +7.9 %  0.282 |  +45.4 %   69 % |    -9.2 %    38 %
+   a         20     37     6   5 |    +17.7 %  0.001 |    +22.0 %  0.005 |  +63.3 %   76 % |   -16.9 %    43 %
+   b         33     60     7   6 |     +7.9 %  0.034 |     +0.4 %  0.479 |  +24.8 %   68 % |   -22.2 %    40 %
+   a+b       14     18     3   3 |    +14.7 %  0.054 |    +24.6 %  0.036 | +187.1 %   83 % |   -10.6 %    44 %
+   c          7     12     7   4 |     +1.0 %  0.455 |     -2.9 %  0.576 |  +39.2 %   58 % |   -12.5 %    17 %
+   a60       29     56     9   5 |     +5.4 %  0.129 |     -6.3 %  0.872 |  +16.9 %   61 % |   -16.2 %    39 %
+   a65       22     43     6   4 |     +9.2 %  0.032 |     -7.5 %  0.836 |  +21.2 %   63 % |   -20.8 %    40 %
+   a70       22     37     6   5 |     +9.5 %  0.037 |     +0.5 %  0.462 |  +35.8 %   76 % |   -18.9 %    38 %
+   a75       20     37     6   4 |    +11.9 %  0.010 |     +8.3 %  0.188 |  +39.8 %   70 % |   -31.5 %    51 %
+   a85       18     35     6   4 |    +13.5 %  0.016 |     +5.5 %  0.283 |  +80.1 %   77 % |   -16.7 %    43 %
+   a90       15     28     6   4 |    +12.8 %  0.022 |    +16.8 %  0.068 |  +48.0 %   71 % |   -14.1 %    46 %
+   a95       13     26     6   5 |     +9.9 %  0.123 |     +7.9 %  0.295 |  +45.4 %   69 % |    -9.2 %    38 %
 
    UTVIDET  (155 papirer)
 
    variant papirer innslag  ep pos | 24 mnd: mer/aar    p    | 12 mnd: mer/aar   p    |    r24   treff | videre fall  >30 %
-   a         81    136     6   5 |    +10.1 %  0.004 |     +6.5 %  0.102 |  +48.0 %   79 % |   -12.8 %    29 %
-   b        101    172     4   3 |     +3.1 %  0.123 |     -0.8 %  0.543 |  +28.7 %   66 % |   -21.1 %    38 %
-   a+b       48     59     2   2 |     -4.6 %  0.767 |    -12.1 %  0.904 |  +96.0 %   85 % |   -15.6 %    37 %
-   c         27     40     6   4 |     -1.9 %  0.666 |     -6.2 %  0.819 |  +29.1 %   62 % |   -21.0 %    40 %
-   a60      103    205     8   7 |     +3.9 %  0.042 |     -3.6 %  0.869 |  +28.8 %   71 % |   -11.5 %    25 %
-   a65       85    164     6   5 |     +6.2 %  0.045 |     +1.8 %  0.365 |  +35.3 %   72 % |   -12.0 %    27 %
-   a70       85    144     7   4 |     +5.8 %  0.078 |     +3.4 %  0.292 |  +47.5 %   81 % |   -10.4 %    21 %
-   a75       81    136     7   6 |     +6.4 %  0.026 |     +2.0 %  0.349 |  +37.2 %   75 % |   -15.7 %    35 %
-   a85       73    128     6   4 |     +6.3 %  0.018 |     +0.4 %  0.489 |  +43.6 %   78 % |   -14.2 %    31 %
-   a90       67    114     6   5 |     +2.7 %  0.210 |     +3.4 %  0.237 |  +42.5 %   76 % |   -12.9 %    32 %
-   a95       63    110     6   5 |     +2.8 %  0.215 |     +3.5 %  0.243 |  +44.7 %   75 % |    -7.0 %    25 %
+   a         81    136     6   5 |    +10.1 %  0.006 |     +6.5 %  0.106 |  +48.0 %   79 % |   -12.8 %    29 %
+   b        101    172     4   3 |     +3.1 %  0.144 |     -0.8 %  0.585 |  +28.7 %   66 % |   -21.1 %    38 %
+   a+b       48     59     2   2 |     -4.6 %  0.754 |    -12.1 %  0.890 |  +96.0 %   85 % |   -15.6 %    37 %
+   c         27     40     6   4 |     -1.9 %  0.636 |     -6.2 %  0.809 |  +29.1 %   62 % |   -21.0 %    40 %
+   a60      103    205     8   7 |     +4.0 %  0.039 |     -3.6 %  0.844 |  +29.1 %   71 % |   -11.5 %    25 %
+   a65       85    164     6   5 |     +6.2 %  0.045 |     +1.8 %  0.377 |  +35.3 %   72 % |   -12.0 %    27 %
+   a70       85    144     7   4 |     +5.8 %  0.083 |     +3.4 %  0.286 |  +47.5 %   81 % |   -10.4 %    21 %
+   a75       81    136     7   6 |     +6.4 %  0.025 |     +2.0 %  0.348 |  +37.2 %   75 % |   -15.7 %    35 %
+   a85       73    128     6   4 |     +6.3 %  0.031 |     +0.4 %  0.458 |  +43.6 %   78 % |   -14.2 %    31 %
+   a90       67    114     6   5 |     +2.7 %  0.207 |     +3.4 %  0.266 |  +42.5 %   76 % |   -12.9 %    32 %
+   a95       63    110     6   5 |     +2.8 %  0.216 |     +3.5 %  0.251 |  +44.7 %   75 % |    -7.0 %    25 %
 
    Episodene, UTVIDET (fra, til, innslag, median realavkastning 24 mnd):
    a
@@ -211,16 +211,16 @@ Send hele utskriften tilbake.
 
 Send hele utskriften tilbake.
 
---- skrevet til sonder/sonde_kjor_instrumenttest.txt (186 s, kode 0)
+--- skrevet til sonder/sonde_kjor_instrumenttest.txt (198 s, kode 0)
 
 === sonde_kjor_kurve ===
 A. Yahoo, enkeltkontrakter
 
-   wti        CL.NYM   24 kontrakter 2026-10..2028-09  front 94.59  6 mnd -14.56 %  12 mnd -20.58 %
-   brent      BZ.NYM   17 kontrakter 2026-11..2028-06  front 105.59  6 mnd -16.83 %  12 mnd -23.59 %
-   henryhub   NG.NYM   24 kontrakter 2026-10..2028-09  front 3.168  6 mnd -13.32 %  12 mnd 3.6 %
-   gold       GC.CMX   23 kontrakter 2026-10..2028-08  front 4277.5  6 mnd 2.42 %  12 mnd 4.89 %
-   kobber     HG.CMX   23 kontrakter 2026-10..2028-09  front 6.724  6 mnd 3.03 %  12 mnd 5.96 %
+   wti        CL.NYM   24 kontrakter 2026-10..2028-09  front 94.59  6 mnd -14.16 %  12 mnd -20.58 %
+   brent      BZ.NYM   17 kontrakter 2026-11..2028-06  front 106.09  6 mnd -17.22 %  12 mnd -23.95 %
+   henryhub   NG.NYM   24 kontrakter 2026-10..2028-09  front 3.188  6 mnd -13.83 %  12 mnd 3.01 %
+   gold       GC.CMX   23 kontrakter 2026-10..2028-08  front 4283.2002  6 mnd 2.37 %  12 mnd 4.75 %
+   kobber     HG.CMX   23 kontrakter 2026-10..2028-09  front 6.6935  6 mnd 3.5 %  12 mnd 6.44 %
    kakao      CC.NYB    9 kontrakter 2026-12..2028-07  front 5590.0  6 mnd 4.63 %  12 mnd 3.27 %
    ttf        front 75.10600280761719: ingen enkeltkontrakter svarte
    uran       UX.CMX    1 kontrakter 2026-12..2026-12  front 89.75  6 mnd - %  12 mnd - %
@@ -238,14 +238,14 @@ A. Yahoo, enkeltkontrakter
 
 D. Tolvmaanedershelning bakover, fra utloepte kontrakter
 
-   wti         29 kontrakter,  94 maaneder 2018-11..2026-09. Siste -20.55 %, persentil 2.1 (alle) / 5.6 (3 aar). Spenn -21.3 til +4.8 %. Hull: 1 mnd
-   brent       19 kontrakter,  15 maaneder 2025-07..2026-09. Siste -23.62 %, persentil 6.7 (alle) / 6.7 (3 aar). Spenn -23.6 til +1.9 %. Hull: 0 mnd
-   henryhub    27 kontrakter, 107 maaneder 2016-06..2026-09. Siste +3.70 %, persentil 85.0 (alle) / 88.9 (3 aar). Spenn -15.6 til +18.0 %. Hull: 17 mnd
-   gold        26 kontrakter,  70 maaneder 2020-12..2026-09. Siste +4.83 %, persentil 100.0 (alle) / 100.0 (3 aar). Spenn +0.9 til +4.8 %. Hull: 0 mnd
-   kobber      27 kontrakter,  61 maaneder 2021-09..2026-09. Siste +6.33 %, persentil 100.0 (alle) / 100.0 (3 aar). Spenn -0.1 til +6.3 %. Hull: 0 mnd
+   wti         27 kontrakter,  95 maaneder 2018-11..2026-09. Siste -20.55 %, persentil 2.1 (alle) / 5.6 (3 aar). Spenn -21.3 til +4.8 %. Hull: 0 mnd
+   brent       19 kontrakter,  15 maaneder 2025-07..2026-09. Siste -23.97 %, persentil 6.7 (alle) / 6.7 (3 aar). Spenn -24.0 til +1.9 %. Hull: 0 mnd
+   henryhub    27 kontrakter, 107 maaneder 2016-06..2026-09. Siste +3.14 %, persentil 80.4 (alle) / 88.9 (3 aar). Spenn -15.6 til +18.0 %. Hull: 17 mnd
+   gold        27 kontrakter,  70 maaneder 2020-12..2026-09. Siste +4.69 %, persentil 97.1 (alle) / 94.4 (3 aar). Spenn +0.9 til +4.8 %. Hull: 0 mnd
+   kobber      27 kontrakter,  61 maaneder 2021-09..2026-09. Siste +6.44 %, persentil 100.0 (alle) / 100.0 (3 aar). Spenn -0.3 til +6.4 %. Hull: 0 mnd
    kakao      9 kontrakter med historikk, 9 maaneder med helning. For lite.
    uran       2 kontrakter med historikk, 0 maaneder med helning. For lite.
-   aluminium   11 kontrakter,  38 maaneder 2022-10..2025-11. Siste +3.55 %, persentil 81.6 (alle) / 83.3 (3 aar). Spenn -0.0 til +3.9 %. Hull: 0 mnd
+   aluminium   12 kontrakter,  38 maaneder 2022-10..2025-11. Siste +3.55 %, persentil 81.6 (alle) / 83.3 (3 aar). Spenn +0.1 til +3.9 %. Hull: 0 mnd
 
    13 ukers statspapir (^IRX): 4.067999839782715
 
@@ -297,7 +297,7 @@ Send hele utskriften tilbake.
 /home/runner/work/syklusbordet-data/syklusbordet-data/sonde_kjor_kurve.py:224: Pandas4Warning: Sorting by default when concatenating all DatetimeIndex is deprecated.  In the future, pandas will respect the default of `sort=False`. Specify `sort=True` or `sort=False` to silence this message. If you see this warnings when not directly calling concat, report a bug to pandas.
   d = pd.concat([ser[1], ser[4]], axis=1).dropna()
 
---- skrevet til sonder/sonde_kjor_kurve.txt (358 s, kode 0)
+--- skrevet til sonder/sonde_kjor_kurve.txt (410 s, kode 0)
 
 === sonde_kjor_laks ===
 K1. Prisserien fra SSB
@@ -364,7 +364,7 @@ Andel maaneder med raa A minst 80: 9 %, detrendet: 21 %
 
 K3. Papirene
    papir      navn                     nf      r     rm  | uten sep/okt 2022 | kroner mot kroner | status
-   MOWI.OL    Mowi                    128  0.364  0.374  |  0.348  0.364   |  0.332   0.33    | BESTAAR
+   MOWI.OL    Mowi                    128  0.364  0.374  |  0.348  0.364   |  0.333   0.33    | BESTAAR
    SALM.OL    SalMar                  128  0.347  0.340  |  0.345  0.344   |    0.3  0.298    | BESTAAR
    LSG.OL     Leroy                   128  0.316  0.308  |  0.292   0.29   |  0.262   0.26    | BESTAAR  (resultatet snur uten 2022)
    GSF.OL     Grieg                   128  0.281  0.267  |  0.258  0.252   |  0.223  0.221    | nei
@@ -376,7 +376,7 @@ K3. Papirene
 Terskeltesten for marginen
    kalibrering paa 200 simuleringer uten sammenheng, andel p under 0,05: kurv 5.0 %, prisens egen framtid 3.0 %
    trinn 1, kurv24: rho 0.322, p 0.118, n 166
-   trinn 1, kurv12: rho 0.321, p 0.11, n 178
+   trinn 1, kurv12: rho 0.321, p 0.108, n 178
    trinn 1, pris24_nok: rho 0.639, p 0.112, n 166
    trinn 1, pris12_nok: rho 0.395, p 0.301, n 178
    trinn 1 paa primaerutfallet (kurv24): ingen informasjon, laks faar ikke flagg
@@ -411,7 +411,7 @@ Lagret sonder/laks.csv og sonder/laks.json
 
 Send hele utskriften tilbake.
 
---- skrevet til sonder/sonde_kjor_laks.txt (330 s, kode 0)
+--- skrevet til sonder/sonde_kjor_laks.txt (353 s, kode 0)
 
 === sonde_kjor_macrotrends ===
 Lukket 24.09.2026: MacroTrends svarer 403 fra Actions. Se kommentaren i filen.
@@ -421,7 +421,7 @@ Lukket 24.09.2026: MacroTrends svarer 403 fra Actions. Se kommentaren i filen.
 === sonde_kjor_salg ===
 1. Data
 
-   kurser fra instrumenttesten 2026-09-25 06:34:09: 155 papirer
+   kurser fra instrumenttesten 2026-09-25 08:23:17: 155 papirer
 1. Deflator
   ok    GitHub-speil cpi-us   siste 2026-07
 
@@ -539,7 +539,7 @@ Lukket 24.09.2026: MacroTrends svarer 403 fra Actions. Se kommentaren i filen.
 
 Send hele utskriften tilbake.
 
---- skrevet til sonder/sonde_kjor_salg.txt (7 s, kode 0)
+--- skrevet til sonder/sonde_kjor_salg.txt (8 s, kode 0)
 
 === sonde_kjor_stockanalysis ===
 Lukket 24.09.2026: stockanalysis gir bare 2020-2026. Se kommentaren i filen.
@@ -590,7 +590,7 @@ Lukket 24.09.2026: stockanalysis gir bare 2020-2026. Se kommentaren i filen.
 
 2. Hele utvalget (trinn 1 og grunnlaget for plataatesten)
 
-   (500 trekk i nullen, 29 s)
+   (500 trekk i nullen, 28 s)
 
    nivaa mnd flagget innslag episoder  pos |  S 24 mnd median ep      p |  S 12 mnd
       60       25.9%      67       25   15 |  +15.9 %   +8.7 %  0.048 |   +5.6 %
@@ -654,7 +654,7 @@ Lukket 24.09.2026: stockanalysis gir bare 2020-2026. Se kommentaren i filen.
 4. Papirene (fra instrumenttesten i samme kjoering)
 
    TAVLE    meravkastning per aar over 24 mnd: 60: 5.4, 65: 9.2, 70: 9.5, 75: 11.9, 80: 17.7, 85: 13.5, 90: 12.8, 95: 9.9
-   UTVIDET  meravkastning per aar over 24 mnd: 60: 3.9, 65: 6.2, 70: 5.8, 75: 6.4, 80: 10.1, 85: 6.3, 90: 2.7, 95: 2.8
+   UTVIDET  meravkastning per aar over 24 mnd: 60: 4.0, 65: 6.2, 70: 5.8, 75: 6.4, 80: 10.1, 85: 6.3, 90: 2.7, 95: 2.8
 
 5. Beslutning etter regelen satt foer kjoering
 
@@ -677,7 +677,7 @@ Send hele utskriften tilbake.
 === sonde_kjor_timing ===
 1. Data
 
-   kurser fra instrumenttesten 2026-09-25 06:34:09 (0 dager gamle): 155 papirer
+   kurser fra instrumenttesten 2026-09-25 08:23:17 (0 dager gamle): 155 papirer
 1. Deflator
   ok    GitHub-speil cpi-us   siste 2026-07
 
@@ -796,151 +796,3 @@ Send hele utskriften tilbake.
 --- skrevet til sonder/sonde_kjor_timing.txt (5 s, kode 0)
 
 === sonde_kjor_uran ===
-DEL 1. IKZ-maaling mot uran
-
-1. Deflator og raavarepriser
-  ok    deflator   siste 2026-07
-  ok    uran, kontroll av Cameco   mot IMF 1992-2021: median avvik 1.8 % over 357 mnd, mot futures fra 2022: 1.6 % over 49 mnd
-  ok    uran   Cameco, maanedsslutt spot (UxC og TradeTech), 1988-01 til 2026-08, 464 mnd
-   IKZ_KUN=uran: maaler bare mot denne
-  ok    raavareserier   1 segment, korteste 464 mnd
-
-2. Kandidatunivers: 227 papirer
-
-3. Kurser
-  FEIL  kurs COPM.L   ingen serie
-  FEIL  kurs CTRA   ingen serie
-  FEIL  kurs MEG.TO   ingen serie
-  FEIL  kurs NGD   ingen serie
-  FEIL  kurs BAKKA.CO   ingen serie
-  FEIL  kurs JDEP.AS   ingen serie
-  FEIL  kurs KAP.L   ingen serie
-  FEIL  kurs 1COV.DE   ingen serie
-  ok    kurser   219 av 227 hentet
-
-4. Maaling
-   uran              213 par
-  ok    par maalt   213 totalt, 11 a priori
-# Sonde: instrumenter i IKZ-universet
-
-Kjort 2026-09-25 06:49 UTC. 219 papirer hentet av 227 forsokt. 213 par maalt mot 1 raavarer.
-
-Kolonner: r1 = korrelasjon i manedlige realendringer. r12 = samme over overlappende 12-manedersendringer, p fra blokkbootstrap. rp = partiell korrelasjon i r1 etter at verdensindeksen er tatt ut. beta12 = hvor mye papiret beveger seg per enhet ravare over 12 maneder. opp/ned = beta maalt bare i maneder der ravaren steg, mot bare der den falt. fangstB og fangstT = papirets samlede 12-manedersavkastning fra daterte bunner og fra daterte topper, delt pa ravarens. vent = hvilket fortegn papiret var ventet a ha: p = produsent, ravaren er inntekt, ventet positiv. f = forbruker, ravaren er kostnad, ventet negativ. b = blandet. ok = fortegnet kom ut som ventet. rf1 og rf12 er de samme maalt i det faste vinduet fra 2016-01, som er det eneste som er sammenlignbart pa tvers av papirer med ulik alder. nf = antall maneder i det faste vinduet; par med nf under 72 er sortert bakerst fordi en kort serie nar hoye tall ved flaks alene. ap = papiret var ventet a folge denne ravaren; tomt felt betyr at treffet er funnet ved leting.
-
-## uran   (6 daterte bunner, 5 daterte topper)
-
-### Folger raavaren
-
-| papir | navn | type | n | nf | rf1 | rf12 | r1 | r12 | p12 | q12 | rp | beta12 | opp | ned | fangstB | fangstT | vent | ok | ap |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| U-UN.TO | Sprott Physical Uranium Tr | aksje | 243 | 128 | 0.554 | 0.742 | 0.496 | 0.75 | 0.001 |  | 0.545 | 0.85 | 0.8 | 0.81 | 0.31 | 0.75 | p | ja | x |
-| CCO.TO | Cameco (Toronto) | aksje | 274 | 128 | 0.478 | 0.603 | 0.37 | 0.582 | 0.001 |  | 0.449 | 0.67 | 0.47 | 0.55 | -0.21 | 0.48 | p | ja | x |
-| CCJ | Cameco | aksje | 365 | 128 | 0.479 | 0.602 | 0.354 | 0.607 | 0.001 |  | 0.447 | 0.77 | 0.49 | 0.45 | 0.19 | 0.49 | p | ja | x |
-| PDN.AX | Paladin Energy | aksje | 242 | 128 | 0.355 | 0.558 | 0.314 | 0.562 | 0.002 |  | 0.317 | 1.38 | 1.27 | 1.1 | -1.14 | 0.96 | p | ja | x |
-| HCC | Warrior Met Coal | aksje | 112 | 112 | 0.245 | 0.466 | 0.245 | 0.466 | 0.028 | 0.1411 | 0.231 | 0.8 | 0.6 | 0.65 |  |  | p |  |  |
-| URG | Ur-Energy | aksje | 217 | 128 | 0.453 | 0.407 | 0.414 | 0.386 | 0.021 |  | 0.419 | 0.71 | 1.39 | 1.1 | 0.61 | 1.94 | p | ja | x |
-| UUUU | Energy Fuels | aksje | 233 | 128 | 0.436 | 0.403 | 0.316 | 0.588 | 0.001 |  | 0.397 | 1.58 | 0.96 | 1.17 | 0.96 | 1.68 | p | ja | x |
-| UEC | Uranium Energy | aksje | 232 | 128 | 0.451 | 0.394 | 0.253 | 0.463 | 0.002 |  | 0.307 | 1.13 | 1.35 | 0.62 | 0.74 | 0.52 | p | ja | x |
-| DNN | Denison Mines | aksje | 258 | 128 | 0.427 | 0.376 | 0.306 | 0.556 | 0.001 |  | 0.399 | 1.04 | 0.7 | 1.15 | 0.11 | 0.79 | p | ja | x |
-| CF | CF Industries | aksje | 252 | 128 | 0.175 | 0.363 | 0.155 | 0.358 | 0.038 | 0.1556 | 0.133 | 0.49 | 0.4 | 0.33 | 1.74 | -0.81 | p |  |  |
-
-### Gaar motsatt
-
-| papir | navn | type | n | nf | rf1 | rf12 | r1 | r12 | p12 | q12 | rp | beta12 | opp | ned | fangstB | fangstT | vent | ok | ap |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| EDV.TO | Endeavour Mining | aksje | 274 | 128 | 0.044 | -0.479 | 0.038 | 0.264 | 0.1399 | 0.2444 | 0.028 | 0.47 | -0.19 | 0.27 | -0.41 | 0.11 | p |  |  |
-| AMCR | Amcor | aksje | 171 | 128 | -0.129 | -0.433 | -0.125 | -0.424 | 0.014 | 0.1667 | -0.171 | -0.23 | 0.01 | -0.29 | 0.17 |  | p |  |  |
-| TR | Tootsie Roll | aksje | 463 | 128 | 0.061 | -0.424 | 0.089 | -0.211 | 0.0979 | 0.2036 | 0.056 | -0.14 | 0.06 | -0.08 | 0.3 | 0.07 | p |  |  |
-| ULVR.L | Unilever (London) | aksje | 272 | 128 | -0.084 | -0.424 | 0.044 | 0.111 |  |  | -0.129 | 0.05 | 0.02 | 0.15 | 0.52 | -0.02 | p |  |  |
-| BTG | B2Gold | aksje | 218 | 128 | 0.036 | -0.415 | -0.017 | -0.163 | 0.3916 | 0.4039 | -0.051 | -0.29 | 0.7 | -0.3 | 0.16 | -0.47 | p |  |  |
-| AEM | Agnico Eagle | aksje | 462 | 127 | 0.039 | -0.401 | 0.027 | 0.245 | 0.0519 | 0.1789 | -0.03 | 0.34 | 0.1 | 0.25 | 0.0 | -0.62 | p |  |  |
-| ORK.OL | Orkla | aksje | 300 | 128 | 0.015 | -0.396 | 0.152 | 0.433 | 0.004 | 0.262 | -0.032 | 0.36 | 0.01 | 0.44 | 0.53 | 0.09 | p |  |  |
-| EQX.TO | Equinox Gold | aksje | 145 | 128 | -0.213 | -0.37 | -0.22 | -0.347 | 0.1419 | 0.2383 | -0.233 | -0.93 | 0.51 | -3.28 |  |  | p |  |  |
-| FNV | Franco-Nevada | aksje | 224 | 128 | 0.08 | -0.369 | -0.041 | -0.233 | 0.1908 | 0.2659 | -0.031 | -0.2 | 0.22 | 0.05 | 0.54 | -0.88 | p |  |  |
-| FXPO.L | Ferrexpo | aksje | 230 | 128 | 0.036 | -0.369 | 0.043 | -0.118 |  |  | 0.018 | -0.43 | -0.17 | -0.05 | 0.74 | -0.39 | p |  |  |
-
-## Fortegn mot forventning
-
-0 av 11 par med forhandsantatt retning fikk motsatt fortegn av det antagelsen tilsa. Et feil fortegn er ikke et daarlig papir: det betyr at antagelsen om hvem som tjener og hvem som betaler var feil, og det er i seg selv verdt a vite.
-
-## Papirer som ikke lot seg hente
-
-- kurs COPM.L: ingen serie
-- kurs CTRA: ingen serie
-- kurs MEG.TO: ingen serie
-- kurs NGD: ingen serie
-- kurs BAKKA.CO: ingen serie
-- kurs JDEP.AS: ingen serie
-- kurs KAP.L: ingen serie
-- kurs 1COV.DE: ingen serie
-
-   skrevet sonder/ikz_uran.json (213 par)
-
-
-(del 1 brukte 164 s, kode 0)
-
-
-DEL 2. Cameco mot IMF og futures, aar for aar
-
-   Cameco: 464 mnd, 1988-01 til 2026-08, siste 89.68
-   Kontrollen: BESTAATT. mot IMF 1992-2021: median avvik 1.8 % over 357 mnd, mot futures fra 2022: 1.6 % over 49 mnd
-
-   aar    Cameco   IMF    futures   Cam/IMF-1   Cam/fut-1
-   1988    14.63      nan      nan                        
-   1989     9.99      nan      nan                        
-   1990     9.77      nan      nan                        
-   1991     8.72      nan      nan                        
-   1992     8.55     8.56      nan      +1.0 %            
-   1993    10.05    10.08      nan      -0.1 %            
-   1994     9.34     9.42      nan      +0.2 %            
-   1995    11.46    11.66      nan      -0.8 %            
-   1996    15.59    15.60      nan      -0.2 %            
-   1997    12.03    12.10      nan      -1.5 %            
-   1998    10.27    10.39      nan      -1.1 %            
-   1999    10.23    10.02      nan      -0.3 %            
-   2000     8.18     8.28      nan      -1.1 %            
-   2001     8.82     8.62      nan      +1.8 %            
-   2002     9.88     9.83      nan      +0.1 %            
-   2003    11.55    11.24      nan      +0.7 %            
-   2004    18.60    18.05      nan      +3.1 %            
-   2005    28.67    27.93      nan      +2.6 %            
-   2006    49.61    47.68      nan      +2.9 %            
-   2007    99.33    99.24   116.43      +1.7 %      -8.1 %
-   2008    61.71    64.18    64.73      -3.5 %      -5.0 %
-   2009    46.06    46.67    48.23      -1.3 %      -1.5 %
-   2010    46.84    45.96    46.46      +1.7 %      +0.5 %
-   2011    56.37    56.24    56.66      -1.4 %      -1.0 %
-   2012    48.40    48.90    48.54      -0.5 %      -0.3 %
-   2013    38.17    38.57    38.36      -0.6 %      -0.2 %
-   2014    33.21    33.49    33.55      -0.2 %      -0.8 %
-   2015    36.55    36.82    36.83      -0.9 %      -1.0 %
-   2016    25.64    26.49    26.17      -2.5 %      -1.9 %
-   2017    21.66    22.09    22.19      -1.1 %      -1.9 %
-   2018    24.59    24.54    24.69      +0.7 %      +0.1 %
-   2019    25.64    25.91    25.82      -0.9 %      -0.7 %
-   2020    29.96    29.43    29.63      +0.4 %      +0.3 %
-   2021    35.28    32.86    32.51      +2.1 %      -1.0 %
-   2022    49.81    40.77    50.91     +22.2 %      -1.0 %
-   2023    62.51    48.99    68.20     +26.6 %      +2.2 %
-   2024    85.14    69.69    86.46     +22.2 %      -1.5 %
-   2025    73.54    58.77    73.07     +25.0 %      +0.7 %
-   2026    87.13    69.51    86.71     +23.0 %      -0.4 %
-
-   lagret sonder/uran_cameco.csv
-
-Send hele utskriften tilbake.
-
---- skrevet til sonder/sonde_kjor_uran.txt (165 s, kode 0)
-
-
-OPPSUMMERING
-   OK    sonde_kjor_cot                              53 s  -> sonder/sonde_kjor_cot.txt
-   OK    sonde_kjor_instrumenttest                  186 s  -> sonder/sonde_kjor_instrumenttest.txt
-   OK    sonde_kjor_kurve                           358 s  -> sonder/sonde_kjor_kurve.txt
-   OK    sonde_kjor_laks                            330 s  -> sonder/sonde_kjor_laks.txt
-   OK    sonde_kjor_macrotrends                       0 s  -> sonder/sonde_kjor_macrotrends.txt
-   OK    sonde_kjor_salg                              7 s  -> sonder/sonde_kjor_salg.txt
-   OK    sonde_kjor_stockanalysis                     0 s  -> sonder/sonde_kjor_stockanalysis.txt
-   OK    sonde_kjor_terskel                          32 s  -> sonder/sonde_kjor_terskel.txt
-   OK    sonde_kjor_timing                            5 s  -> sonder/sonde_kjor_timing.txt
-   OK    sonde_kjor_uran                            165 s  -> sonder/sonde_kjor_uran.txt

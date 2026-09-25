@@ -1,6 +1,6 @@
 sonde:   sonde_kjor_terskel
-kjort:   2026-09-25 06:46:17 UTC
-commit:  a9987eb
+kjort:   2026-09-25 08:36:39 UTC
+commit:  03c3577
 status:  OK
 brukte:  32 sekunder
 --------------------------------------------------------------
@@ -47,7 +47,7 @@ brukte:  32 sekunder
 
 2. Hele utvalget (trinn 1 og grunnlaget for plataatesten)
 
-   (500 trekk i nullen, 29 s)
+   (500 trekk i nullen, 28 s)
 
    nivaa mnd flagget innslag episoder  pos |  S 24 mnd median ep      p |  S 12 mnd
       60       25.9%      67       25   15 |  +15.9 %   +8.7 %  0.048 |   +5.6 %
@@ -111,7 +111,7 @@ brukte:  32 sekunder
 4. Papirene (fra instrumenttesten i samme kjoering)
 
    TAVLE    meravkastning per aar over 24 mnd: 60: 5.4, 65: 9.2, 70: 9.5, 75: 11.9, 80: 17.7, 85: 13.5, 90: 12.8, 95: 9.9
-   UTVIDET  meravkastning per aar over 24 mnd: 60: 3.9, 65: 6.2, 70: 5.8, 75: 6.4, 80: 10.1, 85: 6.3, 90: 2.7, 95: 2.8
+   UTVIDET  meravkastning per aar over 24 mnd: 60: 4.0, 65: 6.2, 70: 5.8, 75: 6.4, 80: 10.1, 85: 6.3, 90: 2.7, 95: 2.8
 
 5. Beslutning etter regelen satt foer kjoering
 

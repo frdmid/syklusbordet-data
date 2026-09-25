@@ -1,8 +1,8 @@
 sonde:   sonde_kjor_laks
-kjort:   2026-09-25 06:45:38 UTC
-commit:  a9987eb
+kjort:   2026-09-25 08:36:00 UTC
+commit:  03c3577
 status:  OK
-brukte:  330 sekunder
+brukte:  353 sekunder
 --------------------------------------------------------------
 K1. Prisserien fra SSB
 
@@ -68,7 +68,7 @@ Andel maaneder med raa A minst 80: 9 %, detrendet: 21 %
 
 K3. Papirene
    papir      navn                     nf      r     rm  | uten sep/okt 2022 | kroner mot kroner | status
-   MOWI.OL    Mowi                    128  0.364  0.374  |  0.348  0.364   |  0.332   0.33    | BESTAAR
+   MOWI.OL    Mowi                    128  0.364  0.374  |  0.348  0.364   |  0.333   0.33    | BESTAAR
    SALM.OL    SalMar                  128  0.347  0.340  |  0.345  0.344   |    0.3  0.298    | BESTAAR
    LSG.OL     Leroy                   128  0.316  0.308  |  0.292   0.29   |  0.262   0.26    | BESTAAR  (resultatet snur uten 2022)
    GSF.OL     Grieg                   128  0.281  0.267  |  0.258  0.252   |  0.223  0.221    | nei
@@ -80,7 +80,7 @@ K3. Papirene
 Terskeltesten for marginen
    kalibrering paa 200 simuleringer uten sammenheng, andel p under 0,05: kurv 5.0 %, prisens egen framtid 3.0 %
    trinn 1, kurv24: rho 0.322, p 0.118, n 166
-   trinn 1, kurv12: rho 0.321, p 0.11, n 178
+   trinn 1, kurv12: rho 0.321, p 0.108, n 178
    trinn 1, pris24_nok: rho 0.639, p 0.112, n 166
    trinn 1, pris12_nok: rho 0.395, p 0.301, n 178
    trinn 1 paa primaerutfallet (kurv24): ingen informasjon, laks faar ikke flagg
