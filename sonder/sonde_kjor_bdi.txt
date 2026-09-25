@@ -1,8 +1,9 @@
-Hopper over 11 ferdige sonder (sonder_ferdige.txt): sonde_kjor_cot, sonde_kjor_indikator, sonde_kjor_instrumenttest, sonde_kjor_kurve, sonde_kjor_laks, sonde_kjor_macrotrends, sonde_kjor_salg, sonde_kjor_stockanalysis, sonde_kjor_terskel, sonde_kjor_timing, sonde_kjor_uran
-
-Oppstarter: 1 sonde(r) funnet
-
-=== sonde_kjor_bdi ===
+sonde:   sonde_kjor_bdi
+kjort:   2026-09-25 09:41:59 UTC
+commit:  774d8b9
+status:  OK
+brukte:  144 sekunder
+--------------------------------------------------------------
 1. Katalog
    358 rapporter, 2019-03-06 til 2026-09-24
    sjekker 67: de 8 nyeste og hver sjette eldre
@@ -119,9 +120,3 @@ Oppstarter: 1 sonde(r) funnet
    Krav: minst 80 % tall og minst 90 % innenfor 10 %. IKKE OPPFYLT med foerste tall etter etiketten. Er det ikke oppfylt, viser linjene over hvor tallet faktisk staar.
 
 Send hele utskriften tilbake.
-
---- skrevet til sonder/sonde_kjor_bdi.txt (144 s, kode 0)
-
-
-OPPSUMMERING
-   OK    sonde_kjor_bdi                             144 s  -> sonder/sonde_kjor_bdi.txt
