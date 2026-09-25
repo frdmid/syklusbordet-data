@@ -1,5 +1,5 @@
 {
- "oppdatert": "2026-09-25 09:45:21",
+ "oppdatert": "2026-09-25 10:38:17",
  "segmenter": [
   "brent",
   "wti",
@@ -227,7 +227,7 @@
   {
    "kilde": "VIX",
    "status": "OK",
-   "detalj": "15.38 per 2026-09-25, persentil 33.4 (fra 1990-01) / 35.0 (10 aar)"
+   "detalj": "15.33 per 2026-09-25, persentil 33.2 (fra 1990-01) / 34.2 (10 aar)"
   },
   {
    "kilde": "flagglogg",
