@@ -1,8 +1,8 @@
 sonde:   sonde_kjor_bdi
-kjort:   2026-09-25 09:41:59 UTC
-commit:  774d8b9
+kjort:   2026-09-25 10:31:45 UTC
+commit:  0fbc0a8
 status:  OK
-brukte:  144 sekunder
+brukte:  137 sekunder
 --------------------------------------------------------------
 1. Katalog
    358 rapporter, 2019-03-06 til 2026-09-24
