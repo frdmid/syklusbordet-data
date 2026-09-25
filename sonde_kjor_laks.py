@@ -352,8 +352,31 @@ for u in sorted(lenker):
 for fil, ark, et, v in funn:
     aar = sorted(v)
     print(f"   funnet: {fil[:40]} / {ark}: '{et}' {len(v)} aar {aar[0]}..{aar[-1]}, siste {v[aar[-1]]:.2f}")
+# Kostnadsserien skjoetes av to deler for hele landet: den gamle (1986 til
+# 2008) og den nye (fra 2008). Foerste kjoering 25.09.2026 valgte bare den
+# lengste enkeltserien, som sluttet i 2008, og bar 2008-kostnaden flatt fram
+# til 2026. Kostnaden var da 18 kr/kg mot rundt 60 i virkeligheten, marginen
+# ble 4,5 i stedet for rundt 1,2, og hele terskeltesten var ugyldig.
+# Naa: nyeste serie for hele landet, lenket til den eldste i overlappende aar.
+# I tillegg kreves at serien er fersk (siste aar tidligst i fjor minus to).
 if funn:
-    KOST = pd.Series(max(funn, key=lambda x: len(x[3]))[3]).sort_index()
+    hele = [f for f in funn if "hele landet" in f[1].lower()] or funn
+    ny = max(hele, key=lambda x: (max(x[3]), len(x[3])))
+    gml = min(hele, key=lambda x: (min(x[3]), -len(x[3])))
+    nyv, gmlv = dict(ny[3]), dict(gml[3])
+    felles = sorted(set(nyv) & set(gmlv))
+    if gml is not ny and felles:
+        faktor = float(np.mean([nyv[a] / gmlv[a] for a in felles]))
+        k = {a: v * faktor for a, v in gmlv.items() if a < min(nyv)}
+        k.update(nyv)
+        print(f"   skjoetet: {gml[0][:30]} / {gml[1]} ({min(gmlv)}..{max(gmlv)}) og {ny[0][:30]} / {ny[1]} "
+              f"({min(nyv)}..{max(nyv)}), overlapp {felles}, faktor {faktor:.3f}"
+              + ("" if abs(faktor - 1) < 0.10 else "  OBS: definisjonene avviker mer enn 10 % i overlappen"))
+        RES["kost_skjoet"] = {"gammel": [gml[0], gml[1]], "ny": [ny[0], ny[1]], "overlapp": felles, "faktor": faktor}
+    else:
+        k = nyv
+        print(f"   ingen skjoeting mulig, bruker {ny[0][:30]} / {ny[1]}")
+    KOST = pd.Series(k).sort_index()
     print("   kostnad per aar (kr/kg):", ", ".join(f"{a}:{v:.2f}" for a, v in KOST.items()))
 
 k4 = False
@@ -361,7 +384,9 @@ if KOST is not None and len(KOST) >= 15:
     endr = (KOST / KOST.shift(1) - 1).dropna() * 100
     brudd = endr[endr.abs() > 30]
     print(f"   aarsendringer over 30 %: {', '.join(f'{a}: {v:+.0f} %' for a, v in brudd.items()) or 'ingen'}")
-    k4 = brudd.empty
+    fersk = int(KOST.index[-1]) >= pd.Timestamp.now().year - 3
+    print(f"   siste kostnadsaar {int(KOST.index[-1])}: {'fersk' if fersk else 'FOR GAMMEL, marginen kan ikke brukes'}")
+    k4 = brudd.empty and fersk
     RES["kost"] = {"aar": [int(a) for a in KOST.index], "brudd": {int(a): round(float(v), 1) for a, v in brudd.items()}}
 else:
     print("   ingen brukbar kostnadsserie med minst 15 aar")
