@@ -1,0 +1,49 @@
+sonde:   sonde_kjor_rigg
+kjort:   2026-09-25 13:53:33 UTC
+commit:  6fd9856
+status:  OK
+brukte:  41 sekunder
+--------------------------------------------------------------
+1. EIA, riggtall fra Baker Hughes (maanedlig)
+   US oljerigger (E_ERTRRO_XR0_NUS_C): HTTP 200, 23712 byte
+   US oljerigger: 1987-08 til 2026-02, 463 mnd, siste 409, 7 mnd gammel -> nei
+      siste seks: 2025-09:418, 2025-10:418, 2025-11:414, 2025-12:411, 2026-01:410, 2026-02:409
+   US gassrigger (E_ERTRRG_XR0_NUS_C): HTTP 200, 23729 byte
+   US gassrigger: 1987-08 til 2026-02, 463 mnd, siste 133, 7 mnd gammel -> nei
+      siste seks: 2025-09:118, 2025-10:121, 2025-11:128, 2025-12:127, 2026-01:123, 2026-02:133
+   US totalt (E_ERTRR0_XR0_NUS_C): HTTP 200, 24543 byte
+   US totalt: 1973-01 til 2026-02, 638 mnd, siste 551, 7 mnd gammel -> nei
+      siste seks: 2025-09:542, 2025-10:548, 2025-11:549, 2025-12:546, 2026-01:544, 2026-02:551
+
+2. Baker Hughes direkte (internasjonalt riggtall)
+   https://rigcount.bakerhughes.com/intl-rig-count: HTTP 403
+   https://rigcount.bakerhughes.com/rig-count-overview: HTTP 403
+   https://rigcount.bakerhughes.com/na-rig-count: HTTP 403
+
+3. EIA DUC-regnearket
+   HTTP 200, 35141 byte
+   ark 'Data': (129, 32)
+      Wells drilled, c | nan | nan | nan | nan | nan | nan | nan | nan | nan
+      nan | nan | nan | nan | nan | nan | nan | nan | nan | nan
+        | Anadarko | nan | nan | nan | Appalachia | nan | nan | nan |  Bakken
+        | Drilled | Completed | DUC | nan | Drilled | Completed | DUC | nan | Drilled
+      2013-12-01 00:00 | -- | -- | 373 | nan | -- | -- | 1261 | nan | --
+      datoer 2013-12-01 til 2024-04-01
+   ark 'webSummary': (10, 4)
+      nan | nan | nan | nan
+      nan | 2024-03-01 00:00 | 2024-04-01 00:00 | change
+      Anadarko | 697 | 701 | 4
+      Appalachia | 819 | 824 | 5
+      Bakken | 322 | 328 | 6
+
+4. Oppsummering
+   US oljerigger    1987-08 til 2026-02 (463 mnd, 7 mnd gammel)  nei  [EIA E_ERTRRO_XR0_NUS_C]
+   US gassrigger    1987-08 til 2026-02 (463 mnd, 7 mnd gammel)  nei  [EIA E_ERTRRG_XR0_NUS_C]
+   US totalt        1973-01 til 2026-02 (638 mnd, 7 mnd gammel)  nei  [EIA E_ERTRR0_XR0_NUS_C]
+   Internasjonalt riggtall er ikke lest som serie her. Se utskriften under punkt 2.
+
+[stderr]
+/home/runner/work/syklusbordet-data/syklusbordet-data/sonde_kjor_rigg.py:113: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  datoer = pd.to_datetime(df.iloc[:, 0], errors="coerce").dropna()
+/home/runner/work/syklusbordet-data/syklusbordet-data/sonde_kjor_rigg.py:113: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  datoer = pd.to_datetime(df.iloc[:, 0], errors="coerce").dropna()
