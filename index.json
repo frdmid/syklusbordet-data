@@ -1,5 +1,5 @@
 {
- "oppdatert": "2026-09-25 13:22:19",
+ "oppdatert": "2026-09-25 13:57:02",
  "segmenter": [
   "brent",
   "wti",
@@ -32,8 +32,8 @@
   },
   {
    "kilde": "deflator, kontroll mot BLS",
-   "status": "FEIL",
-   "detalj": "BLS svarte ikke: ValueError: could not convert string to float: '-'"
+   "status": "OK",
+   "detalj": "24 mnd, stoerste avvik 0.000 %"
   },
   {
    "kilde": "segment brent",
@@ -248,12 +248,12 @@
   {
    "kilde": "kurveform",
    "status": "OK",
-   "detalj": "6 segmenter, rente 4.067999839782715, historikk brent 1 mnd, wti 1 mnd, henryhub 1 mnd, gold 1 mnd, kobber 1 mnd, kakao 1 mnd"
+   "detalj": "6 segmenter, rente 4.074999809265137, historikk brent 1 mnd, wti 1 mnd, henryhub 1 mnd, gold 1 mnd, kobber 1 mnd, kakao 1 mnd"
   },
   {
    "kilde": "VIX",
    "status": "OK",
-   "detalj": "15.2 per 2026-09-25, persentil 31.8 (fra 1990-01) / 33.3 (10 aar)"
+   "detalj": "15.12 per 2026-09-25, persentil 31.6 (fra 1990-01) / 33.3 (10 aar)"
   },
   {
    "kilde": "flagglogg",
