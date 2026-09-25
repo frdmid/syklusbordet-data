@@ -1,11 +1,12 @@
 {
- "oppdatert": "2026-09-25 10:38:17",
+ "oppdatert": "2026-09-25 12:58:55",
  "segmenter": [
   "brent",
   "wti",
   "henryhub",
   "gold",
   "uran",
+  "laks",
   "kobber",
   "nikkel",
   "aluminium",
@@ -58,6 +59,16 @@
    "kilde": "segment uran",
    "status": "OK",
    "detalj": "A=7.8 detr=26.7 rull=5.8   siste 2026-08"
+  },
+  {
+   "kilde": "segment laks",
+   "status": "OK",
+   "detalj": "A=50.8 detr=65.7 rull=65.0   siste 2026-08"
+  },
+  {
+   "kilde": "laks",
+   "status": "OK",
+   "detalj": "margin 1.37 (A 91.2), kostnad 2024 59.97 kr/kg, uke 2026-09-17 71.41 kr/kg"
   },
   {
    "kilde": "Verdensbanken Pink Sheet",
@@ -162,7 +173,7 @@
   {
    "kilde": "instrumenter",
    "status": "OK",
-   "detalj": "16 av 16 segment fikk instrumentliste"
+   "detalj": "17 av 17 segment fikk instrumentliste"
   },
   {
    "kilde": "OWID etterspoersel",
@@ -172,12 +183,12 @@
   {
    "kilde": "kapitulasjon D",
    "status": "OK",
-   "detalj": "16 segment"
+   "detalj": "17 segment"
   },
   {
    "kilde": "overlevelsesport C",
    "status": "OK",
-   "detalj": "16 segment, 8 aapne"
+   "detalj": "17 segment, 8 aapne"
   },
   {
    "kilde": "tilbudsskaar B",
@@ -187,7 +198,7 @@
   {
    "kilde": "trendbekreftelse",
    "status": "OK",
-   "detalj": "16 segment"
+   "detalj": "17 segment"
   },
   {
    "kilde": "COT brent",
@@ -225,14 +236,19 @@
    "detalj": "6 av 6 kontrakter"
   },
   {
+   "kilde": "kurveform",
+   "status": "OK",
+   "detalj": "6 segmenter, rente 4.067999839782715, historikk brent 1 mnd, wti 1 mnd, henryhub 1 mnd, gold 1 mnd, kobber 1 mnd, kakao 1 mnd"
+  },
+  {
    "kilde": "VIX",
    "status": "OK",
-   "detalj": "15.33 per 2026-09-25, persentil 33.2 (fra 1990-01) / 34.2 (10 aar)"
+   "detalj": "15.19 per 2026-09-25, persentil 31.8 (fra 1990-01) / 33.3 (10 aar)"
   },
   {
    "kilde": "flagglogg",
    "status": "OK",
-   "detalj": "uke 2026-W39: 16 segmenter, 39 kurser, 2 hendelser"
+   "detalj": "uke 2026-W39: 17 segmenter, 43 kurser, 2 hendelser"
   }
  ]
 }
