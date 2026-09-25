@@ -352,7 +352,12 @@ def bls_cpi():
     for linje in t.text.splitlines()[1:]:
         f = [x.strip() for x in linje.split("\t")]
         if len(f) >= 4 and f[0] == "CUUR0000SA0" and f[2].startswith("M") and f[2] != "M13":
-            rader[pd.Period(f"{f[1]}-{f[2][1:]}", "M")] = float(f[3])
+            # BLS skriver "-" der tallet mangler. Oktober 2025 ble aldri
+            # publisert (stengt forvaltning), og speilet har heller ingen rad.
+            try:
+                rader[pd.Period(f"{f[1]}-{f[2][1:]}", "M")] = float(f[3])
+            except ValueError:
+                continue
     if len(rader) < 600:
         raise ValueError(f"bare {len(rader)} maaneder")
     return pd.Series(rader).sort_index()

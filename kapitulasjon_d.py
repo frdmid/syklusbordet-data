@@ -55,15 +55,31 @@ TEMA = {"kobber": "COPX", "gold": "GDX",
         "ship_ultramax": "BDRY", "ship_handysize": "BDRY"}
 
 
+UTBYTTEJUSTERT = {}   # ticker -> True hvis utbyttejustert kurs ble brukt
+
+
 def dagskurs(sym):
+    """Daglig kurs, utbyttejustert (Yahoo adjclose), fra 25.09.2026.
+
+    Foer dette brukte D "close", som er justert for splitt, men ikke for
+    utbytte. Et papir som betaler ut det meste av overskuddet faller da med
+    hver utbetaling uten at noen har gitt opp, og D ble for hoey. Sonden
+    sonde_kjor_dadj.py maalte forskjellen paa 60 papirer: median endring 0,
+    men Leroey 94,7 til 41,3, Nestle 98,9 til 48,2, Champion Iron 99,2 til
+    49,6, og kakao som segment 95,9 til 48,2. D skal maale om markedet har
+    gitt opp, og da er totalavkastningen riktig maal. Byttet godkjent av Frode
+    25.09.2026. Mangler adjclose, brukes close, og det logges."""
     r = requests.get(f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}",
-                     params={"range": "max", "interval": "1d"}, headers=UA, timeout=30)
+                     params={"range": "max", "interval": "1d", "events": "div,split"},
+                     headers=UA, timeout=30)
     r.raise_for_status()
     res = r.json()["chart"]["result"][0]
     tz = (res.get("meta") or {}).get("exchangeTimezoneName") or "UTC"
     idx = pd.to_datetime(res["timestamp"], unit="s", utc=True).tz_convert(tz)
     idx = idx.normalize().tz_localize(None)
-    s = pd.Series(res["indicators"]["quote"][0]["close"], index=idx).dropna()
+    adj = ((res["indicators"].get("adjclose") or [{}])[0] or {}).get("adjclose")
+    UTBYTTEJUSTERT[sym] = bool(adj)
+    s = pd.Series(adj if adj else res["indicators"]["quote"][0]["close"], index=idx, dtype=float).dropna()
     return s[~s.index.duplicated(keep="last")]
 
 
@@ -117,7 +133,10 @@ for tk in alle:
     except Exception as e:
         print(f"   {tk:12s} FEIL {type(e).__name__} {str(e)[:40]}")
     time.sleep(0.2)
-print(f"   {len(KURS)} av {len(alle)} hentet")
+print(f"   {len(KURS)} av {len(alle)} hentet, utbyttejustert: "
+      f"{sum(UTBYTTEJUSTERT.get(t, False) for t in KURS)}"
+      + (f", uten adjclose: {', '.join(t for t in KURS if not UTBYTTEJUSTERT.get(t))}"
+         if any(not UTBYTTEJUSTERT.get(t) for t in KURS) else ""))
 
 print("\n2. D per papir")
 D = {}
@@ -208,7 +227,9 @@ if GITHUB_TOKEN and D:
             "content": base64.b64encode(json.dumps(
                 {"oppdatert": str(pd.Timestamp.utcnow())[:19],
                  "papirer": D, "segmenter": SEG, "tema": TEMA_D,
-                 "merknad": ("D1 er fall fra rullende femaarstopp, D2 andelen av siste 52 "
+                 "kurs": "utbyttejustert (Yahoo adjclose) fra 25.09.2026",
+                 "uten_utbyttejustering": sorted(t for t in KURS if not UTBYTTEJUSTERT.get(t)),
+                 "merknad": ("Kursen er utbyttejustert. D1 er fall fra rullende femaarstopp, D2 andelen av siste 52 "
                              "uker under 200-dagers snitt. Begge er persentiler mot papirets "
                              "EGEN historikk, punkt-i-tid, slik A er. Segmentets D er "
                              "medianen av aksjene, siden spoersmaalet er om alle har gitt opp "
