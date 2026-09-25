@@ -710,6 +710,37 @@ try:
 except Exception as e:
     note("signaler", False, f"{type(e).__name__}: {str(e)[:70]}")
 
+# VIX, uroen i det amerikanske aksjemarkedet. Ett felt oeverst paa bordet,
+# felles for alle segmenter, som kontekst. Ikke testet som signal.
+# Persentilen er dagens siste dagskurs mot alle maanedsslutter siden 1990,
+# og mot siste ti aar. Skrives til marked.json, som onsdagsoppgaven kopierer
+# til dashbordets database (samlingen "marked", dokument "vix").
+MARKED = None
+try:
+    r = get(f"https://query1.finance.yahoo.com/v8/finance/chart/%5EVIX?period1=0"
+            f"&period2={int(time.time())}&interval=1mo", timeout=40).json()["chart"]["result"][0]
+    idx = pd.to_datetime(r["timestamp"], unit="s", utc=True).tz_convert("America/New_York").to_period("M")
+    mnd = pd.Series(r["indicators"]["quote"][0]["close"], index=idx).dropna()
+    mnd = mnd[~mnd.index.duplicated(keep="last")]
+    d = get("https://query1.finance.yahoo.com/v8/finance/chart/%5EVIX?range=10d&interval=1d",
+            timeout=30).json()["chart"]["result"][0]
+    par = [(t, v) for t, v in zip(d["timestamp"], d["indicators"]["quote"][0]["close"]) if v is not None]
+    t_siste, v_siste = par[-1]
+    dato = pd.Timestamp(t_siste, unit="s", tz="UTC").tz_convert("America/New_York").strftime("%Y-%m-%d")
+    hist = mnd[mnd.index < pd.Period(dato[:7], "M")]          # hele maaneder foer i dag
+    ti = hist[hist.index >= hist.index[-1] - 119]
+    pct = lambda s, x: round(float(100 * (s <= x).mean()), 1)
+    MARKED = {"id": "vix", "navn": "VIX", "t": dato, "verdi": round(float(v_siste), 2),
+              "pctl_alle": pct(hist, v_siste), "pctl_10aar": pct(ti, v_siste),
+              "fra": str(hist.index[0]), "median": round(float(hist.median()), 2),
+              "maks": round(float(hist.max()), 2), "maks_t": str(hist.idxmax()),
+              "serie": [[str(p), round(float(v), 2)] for p, v in mnd.iloc[-180:].items()],
+              "kilde": "Cboe VIX via Yahoo (^VIX)", "merknad": "Kontekst, ikke testet som signal."}
+    note("VIX", True, f"{MARKED['verdi']} per {dato}, persentil {MARKED['pctl_alle']} "
+                      f"(fra {MARKED['fra']}) / {MARKED['pctl_10aar']} (10 aar)")
+except Exception as e:
+    note("VIX", False, f"{type(e).__name__}: {str(e)[:70]}")
+
 print("\n" + "=" * 70)
 print(f"{len(SEGMENTS)} segment bygget, {len(indicators)} indikatorer, "
       f"{len(vehicle_px)} kursserier")
@@ -726,6 +757,11 @@ if GITHUB_TOKEN and SEGMENTS:
         except Exception as e:
             feil += 1
             note(f"push {s['id']}", False, str(e)[:70])
+    if MARKED:
+        try:
+            push("marked.json", json.dumps(MARKED, ensure_ascii=False))
+        except Exception as e:
+            note("push marked.json", False, str(e)[:70])
     for navn, obj in [("indicators.json", indicators), ("vehicles.json", vehicle_px)]:
         try:
             push(navn, json.dumps(obj, ensure_ascii=False))

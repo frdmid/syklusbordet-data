@@ -1,0 +1,13 @@
+# Sonder som er kjoert og lest. De hoppes over av sonde_ad_hoc.py.
+# Fjern et navn for aa kjoere sonden igjen.
+sonde_kjor_cot
+sonde_kjor_instrumenttest
+sonde_kjor_kurve
+sonde_kjor_laks
+sonde_kjor_macrotrends
+sonde_kjor_stockanalysis
+sonde_kjor_uran
+sonde_kjor_terskel
+sonde_kjor_timing
+sonde_kjor_salg
+sonde_kjor_indikator

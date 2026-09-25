@@ -1,5 +1,5 @@
 # ---------------------------------------------------------------------------
-# Fast oppstarter for sondene. Denne filen endres aldri.
+# Fast oppstarter for sondene. Endret 25.09.2026: hopper over ferdige sonder.
 #
 # Arbeidsflytfiler er beskyttet mot fjernskriving, saa hver gang en ny sonde
 # trengte et eget steg maatte Frode legge inn en ny yml manuelt. Losningen var
@@ -22,6 +22,21 @@
 import glob, os, subprocess, sys, time
 
 SONDER = sorted(glob.glob("sonde_kjor_*.py"))
+
+# Ferdige sonder staar i sonder_ferdige.txt, ett navn per linje (uten .py).
+# De hoppes over, saa en kjoering bare tar de nye. Lagt til 25.09.2026, da
+# alle sondene kjoerte hver gang og en runde tok en halvtime. Skal en ferdig
+# sonde kjoeres igjen, fjernes navnet fra fila.
+try:
+    FERDIGE = {l.strip() for l in open("sonder_ferdige.txt", encoding="utf-8")
+               if l.strip() and not l.strip().startswith("#")}
+except FileNotFoundError:
+    FERDIGE = set()
+hoppet = [s for s in SONDER if os.path.splitext(os.path.basename(s))[0] in FERDIGE]
+SONDER = [s for s in SONDER if s not in hoppet]
+if hoppet:
+    print(f"Hopper over {len(hoppet)} ferdige sonder (sonder_ferdige.txt): "
+          + ", ".join(os.path.splitext(os.path.basename(s))[0] for s in hoppet) + "\n")
 os.makedirs("sonder", exist_ok=True)
 
 if not SONDER:
