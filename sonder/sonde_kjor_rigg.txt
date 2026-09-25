@@ -1,6 +1,6 @@
 sonde:   sonde_kjor_rigg
-kjort:   2026-09-25 13:53:33 UTC
-commit:  6fd9856
+kjort:   2026-09-25 14:20:39 UTC
+commit:  442b686
 status:  OK
 brukte:  41 sekunder
 --------------------------------------------------------------

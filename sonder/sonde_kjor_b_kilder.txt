@@ -1,0 +1,122 @@
+sonde:   sonde_kjor_b_kilder
+kjort:   2026-09-25 14:08:52 UTC
+commit:  442b686
+status:  OK
+brukte:  30 sekunder
+--------------------------------------------------------------
+1. USGS, historisk global statistikk
+   s-information-center/historical-global-statistics-mineral-and-material: HTTP 200
+   ls-information-center/historical-statistics-mineral-commodities-united: HTTP 200
+   100 lenker til filer eller filsider
+
+   --- jernmalm: 1 lenker
+      XLSX                                                         https://www.usgs.gov/media/files/iron-ore-historical-statistics-data-series-140
+      fil https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/files/ds140-iron_ore-
+      ark 'Iron ore' (130, 10), kolonner: Year | Production | Shipments | Imports | Exports | Stocks | Apparent consumption | Unit value ($/t) | Unit value (98$/t) | World production
+   jernmalm (World production): 1904 til 2021, 118 aar -> nei
+      siste fem: 2017:2,440,000,000, 2018:2,460,000,000, 2019:2,450,000,000, 2020:2,470,000,000, 2021:2,680,000,000
+
+   --- nikkel: 1 lenker
+      XLSX                                                         https://www.usgs.gov/media/files/nickel-historical-statistics-data-series-140
+      fil https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/files/ds140-nickel-20
+      ark 'Nickel' (129, 10), kolonner: Year | Primary production | Secondary production | Imports | Exports | Stocks | Apparent consumption | Unit value  ($/t) | Unit value (98$/t) | World production
+   nikkel (World production): 1900 til 2019, 120 aar -> nei
+      siste fem: 2015:2,110,000, 2016:2,000,000, 2017:2,190,000, 2018:2,380,000, 2019:2,510,000
+      ark 'World plant production' (57, 2), kolonner: Year | World plant production
+   nikkel (World plant production): 1970 til 2019, 50 aar -> nei
+      siste fem: 2015:2,030,000, 2016:2,020,000, 2017:2,000,000, 2018:2,060,000, 2019:2,240,000
+      ark 'Primary production' (128, 9), kolonner: Year | Smelter production from late | Refinery production from mat | Byproduct of lead or cobalt  | Byproduct of copper producti | Byproduct of talc production | Byproduct of palladium and p | USGS reported primary produc | Adjusted primary production
+      ark 'Consumption' (128, 5), kolonner: Year | Apparent primary | Industry reported primary | Industry reported secondary | Apparent consumption
+
+   --- sink: 1 lenker
+      XLSX                                                         https://www.usgs.gov/media/files/zinc-historical-statistics-data-series-140
+      fil https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/files/ds140-zinc-2022
+      ark 'Zinc' (131, 11), kolonner: Year | Primary production | Secondary production | Imports | Exports | Stocks | Apparent consumption | Unit value ($/t) | Unit value (98$/t) | World production | nan
+   sink (World production): 1900 til 2022, 123 aar -> nei
+      siste fem: 2018:13,100,000, 2019:13,600,000, 2020:13,800,000, 2021:13,300,000, 2022:12,900,000
+
+   --- bly: 2 lenker
+      ds896-lead.xlsx                                              https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fd9-wret.s3.us-west-2.amazonaws.com%2Fassets%2Fpalladium%
+      XLSX                                                         https://www.usgs.gov/media/files/lead-historical-statistics-data-series-140
+      ingen xlsx bak https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fd9-wret.s3.us-west-2.amazo
+      fil https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/files/ds140-lead-2021
+      ark 'Lead' (130, 11), kolonner: Year | Primary production | Secondary production | Imports | Exports | Government shipments | Stocks | Apparent consumption | Unit value ($/t) | Unit value (98$/t) | World production
+   bly (World production): 1900 til 2021, 105 aar -> nei
+      siste fem: 2017:4,570,000, 2018:4,520,000, 2019:4,650,000, 2020:4,430,000, 2021:4,550,000
+
+   --- tinn: 1 lenker
+      XLSX                                                         https://www.usgs.gov/media/files/tin-historical-statistics-data-series-140
+      fil https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/files/ds140-tin-2021.
+      ark 'Tin' (130, 12), kolonner: Year | Primary production | Secondary production | Imports | Exports | Government shipments | Government stocks | Industry stocks | Apparent consumption | Unit value ($/t) | Unit value (98$/t) | World production
+   tinn (World production): 1905 til 2021, 117 aar -> nei
+      siste fem: 2017:341,000, 2018:327,000, 2019:294,000, 2020:276,000, 2021:305,000
+
+   --- kobber: 2 lenker
+      ds896-copper.xlsx                                            https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fd9-wret.s3.us-west-2.amazonaws.com%2Fassets%2Fpalladium%
+      XLSX                                                         https://www.usgs.gov/media/files/copper-historical-statistics-data-series-140
+      ingen xlsx bak https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fd9-wret.s3.us-west-2.amazo
+      fil https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/files/ds140-copper-20
+      ark 'Copper' (129, 13), kolonner: Year | Primary production | Secondary production | New scrap | Refinery scrap | Imports | Exports | Stocks | Consumption | Apparent consumption | Unit value ($/t) | Unit value (98$/t) | World production
+   kobber (World production): 1900 til 2020, 121 aar -> nei
+      siste fem: 2016:20,500,000, 2017:20,100,000, 2018:20,600,000, 2019:20,400,000, 2020:20,600,000
+
+   --- aluminium: 3 lenker
+      ds896-aluminum.xlsx                                          https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fd9-wret.s3.us-west-2.amazonaws.com%2Fassets%2Fpalladium%
+      XLSX                                                         https://www.usgs.gov/media/files/aluminum-historical-statistics-data-series-140
+      XLSX                                                         https://www.usgs.gov/media/files/bauxite-and-alumina-historical-statistics-data-series-140
+      ingen xlsx bak https://view.officeapps.live.com/op/view.aspx?src=https%3A%2F%2Fd9-wret.s3.us-west-2.amazo
+      fil https://d9-wret.s3.us-west-2.amazonaws.com/assets/palladium/production/s3fs-public/media/files/ds140-aluminum-
+      ark 'Aluminum' (130, 18), kolonner: Year | Primary production | Secondary production old scr | Secondary production new scr | Secondary production | Shipments | Imports | Exports | Industry stocks | LME stocks | Government stocks | Total stocks | Apparent consumption | Unit value ($/t)
+   aluminium (World production): 1900 til 2021, 122 aar -> nei
+      siste fem: 2017:59,400,000, 2018:63,300,000, 2019:62,600,000, 2020:65,000,000, 2021:67,500,000
+
+2. USDA PSD, palmeolje
+   HTTP 200, 3842357 byte
+   psd_oilseeds.csv: (801669, 12), kolonner ['Commodity_Code', 'Commodity_Description', 'Country_Code', 'Country_Name', 'Market_Year', 'Calendar_Year', 'Month', 'Attribute_ID', 'Attribute_Description', 'Unit_ID', 'Unit_Description', 'Value']
+   varer: ['Meal, Palm Kernel', 'Oil, Palm', 'Oil, Palm Kernel', 'Oilseed, Palm Kernel']
+   attributter: ['Area Harvested', 'Beginning Stocks', 'Domestic Consumption', 'Ending Stocks', 'Exports', 'Feed Waste Dom. Cons.', 'Food Use Dom. Cons.', 'Imports', 'Industrial Dom. Cons.', 'Production', 'Total Distribution', 'Total Supply', 'Yield']
+   palmeolje, verden, Production: 1964 til 2026, 63 aar -> KANDIDAT
+      siste fem: 2022:76,781, 2023:76,204, 2024:78,944, 2025:81,442, 2026:81,121
+   palmeolje, verden, Ending Stocks: 1964 til 2026, 63 aar -> KANDIDAT
+      siste fem: 2022:16,990, 2023:15,964, 2024:15,018, 2025:14,948, 2026:14,472
+   palmeolje, verden, Domestic Consumption: 1964 til 2026, 63 aar -> KANDIDAT
+      siste fem: 2022:73,881, 2023:75,184, 2024:76,252, 2025:77,226, 2026:79,269
+   palmeolje, lager mot forbruk (%): 1964 til 2026, 63 aar -> KANDIDAT
+      siste fem: 2022:23, 2023:21, 2024:20, 2025:19, 2026:18
+
+3. FAOSTAT, kakaobonner
+   https://bulks-faostat.fao.org/production/Production_Crops_Livestock_E_All_Data_(Normalized).zip
+   HTTP 200, 33.9 MB
+   varer: ['Cocoa beans'], elementer: ['Area harvested', 'Production', 'Yield']
+   kakao, verden, Area harvested: 1961 til 2024, 64 aar -> KANDIDAT
+      siste fem: 2020:11,684,060, 2021:11,943,200, 2022:11,718,621, 2023:10,763,237, 2024:11,009,545
+   kakao, verden, Production: 1961 til 2024, 64 aar -> KANDIDAT
+      siste fem: 2020:5,683,749, 2021:5,771,233, 2022:5,622,906, 2023:5,123,486, 2024:5,233,245
+   kakao, Elfenbenskysten, Area harvested: 1961 til 2024, 64 aar -> KANDIDAT
+      siste fem: 2020:4,265,886, 2021:4,375,967, 2022:4,686,392, 2023:3,648,872, 2024:3,814,984
+   kakao, Elfenbenskysten, Production: 1961 til 2024, 64 aar -> KANDIDAT
+      siste fem: 2020:2,200,000, 2021:2,228,459, 2022:2,358,991, 2023:1,822,441, 2024:1,890,442
+   kakao, Ghana, Area harvested: 1961 til 2024, 64 aar -> KANDIDAT
+      siste fem: 2020:1,486,060, 2021:1,904,331, 2022:1,218,838, 2023:1,150,057, 2024:919,824
+   kakao, Ghana, Production: 1961 til 2024, 64 aar -> KANDIDAT
+      siste fem: 2020:800,000, 2021:1,047,385, 2022:683,300, 2023:653,700, 2024:530,000
+
+4. Oppsummering
+   jernmalm (World production)                          1904-2021 (118 aar)  nei  [ds140-iron_ore-2021.xlsx]
+   nikkel (World production)                            1900-2019 (120 aar)  nei  [ds140-nickel-2019.xlsx]
+   nikkel (World plant production)                      1970-2019 (50 aar)  nei  [ds140-nickel-2019.xlsx]
+   sink (World production)                              1900-2022 (123 aar)  nei  [ds140-zinc-2022.xlsx]
+   bly (World production)                               1900-2021 (105 aar)  nei  [ds140-lead-2021.xlsx]
+   tinn (World production)                              1905-2021 (117 aar)  nei  [ds140-tin-2021.xlsx]
+   kobber (World production)                            1900-2020 (121 aar)  nei  [ds140-copper-2020.xlsx]
+   aluminium (World production)                         1900-2021 (122 aar)  nei  [ds140-aluminum-2021.xlsx]
+   palmeolje, verden, Production                        1964-2026 (63 aar)  KANDIDAT  [USDA PSD oilseeds]
+   palmeolje, verden, Ending Stocks                     1964-2026 (63 aar)  KANDIDAT  [USDA PSD oilseeds]
+   palmeolje, verden, Domestic Consumption              1964-2026 (63 aar)  KANDIDAT  [USDA PSD oilseeds]
+   palmeolje, lager mot forbruk (%)                     1964-2026 (63 aar)  KANDIDAT  [USDA PSD oilseeds]
+   kakao, verden, Area harvested                        1961-2024 (64 aar)  KANDIDAT  [FAOSTAT QCL]
+   kakao, verden, Production                            1961-2024 (64 aar)  KANDIDAT  [FAOSTAT QCL]
+   kakao, Elfenbenskysten, Area harvested               1961-2024 (64 aar)  KANDIDAT  [FAOSTAT QCL]
+   kakao, Elfenbenskysten, Production                   1961-2024 (64 aar)  KANDIDAT  [FAOSTAT QCL]
+   kakao, Ghana, Area harvested                         1961-2024 (64 aar)  KANDIDAT  [FAOSTAT QCL]
+   kakao, Ghana, Production                             1961-2024 (64 aar)  KANDIDAT  [FAOSTAT QCL]

@@ -1,8 +1,8 @@
 sonde:   sonde_kjor_c_manuell
-kjort:   2026-09-25 13:52:13 UTC
-commit:  6fd9856
+kjort:   2026-09-25 14:19:23 UTC
+commit:  442b686
 status:  OK
-brukte:  678 sekunder
+brukte:  631 sekunder
 --------------------------------------------------------------
 
 ==================== DNO

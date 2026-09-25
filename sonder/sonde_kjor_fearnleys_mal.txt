@@ -1,8 +1,8 @@
 sonde:   sonde_kjor_fearnleys_mal
-kjort:   2026-09-25 13:52:51 UTC
-commit:  6fd9856
+kjort:   2026-09-25 14:19:58 UTC
+commit:  442b686
 status:  OK
-brukte:  39 sekunder
+brukte:  36 sekunder
 --------------------------------------------------------------
 1. Hvilke rapporter er tomme
    358 i arkivet, 200 datoer med tall, 158 uten
