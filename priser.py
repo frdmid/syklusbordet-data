@@ -731,6 +731,24 @@ if GITHUB_TOKEN and SEGMENTS:
             push(navn, json.dumps(obj, ensure_ascii=False))
         except Exception as e:
             note(f"push {navn}", False, str(e)[:70])
+    # Loggen over flagg og tenkte handler framover. Se flagglogg.py.
+    # Leses via API-et og ikke raw.githubusercontent, som kan servere en
+    # mellomlagret eldre kopi, og da ville forrige ukes linjer blitt skrevet
+    # over. Svarer API-et med noe annet enn 200 eller 404, skrives ingenting.
+    try:
+        import flagglogg
+        def _les_logg(sti):
+            r = requests.get(f"https://api.github.com/repos/{REPO}/contents/{sti}",
+                             params={"ref": BRANCH}, timeout=30,
+                             headers={"Authorization": f"Bearer {GITHUB_TOKEN}",
+                                      "Accept": "application/vnd.github.raw"})
+            if r.status_code == 404:
+                return None
+            r.raise_for_status()
+            return r.text
+        flagglogg.oppdater(SEGMENTS, _les_logg, push, note)
+    except Exception as e:
+        note("flagglogg", False, f"{type(e).__name__}: {str(e)[:70]}")
     try:
         push("index.json", json.dumps(
             {"oppdatert": str(pd.Timestamp.utcnow())[:19],

@@ -17,6 +17,9 @@
 #        dette ligner mye paa D, som allerede maaler fall paa papiret.
 #   a+b  BEGGE I SAMME MAANED. Raavaren i bunnsone og papiret selv like lavt.
 #        Naermest det bordet egentlig ber om naar A og D leses sammen.
+#   a60 til a95  RAAVAREFLAGGET VED ANDRE NIVAAER (lagt til 25.09.2026 for
+#        terskeltesten): raa A >= k og detrendet A >= k, regnet fra A-verdiene i
+#        segmentfilene. Leses av sonde_kjor_terskel.py, som kjoerer etter denne.
 #   c    VERDSETTELSE. Persentil av pris mot bokfoert egenkapital per aksje,
 #        mot papirets egen historikk, >= 80 (billigste femtedel). Bare
 #        amerikanske papirer som rapporterer i dollar til SEC, fordi det er de
@@ -191,6 +194,17 @@ for sid in AKTIVE:
         RFLAGG[sid] = pd.Series({pd.Period(r["t"], "M"): bool(r.get("flagg")) for r in d["series"]})
     except Exception as e:
         print(f"   FEIL segment {sid}: {e}")
+NIVAAER = (60, 65, 70, 75, 85, 90, 95)
+RFLAGG_K = {k: {} for k in NIVAAER}
+for sid in AKTIVE:
+    try:
+        d = json.load(open(f"segments/{sid}.json", encoding="utf-8"))
+        for k in NIVAAER:
+            RFLAGG_K[k][sid] = pd.Series({pd.Period(r["t"], "M"): (r.get("A") is not None and r.get("Ad") is not None
+                                                                   and r["A"] >= k and r["Ad"] >= k)
+                                          for r in d["series"]})
+    except Exception:
+        pass
 print(f"   raavareflagg: {len(RFLAGG)} segmenter, "
       f"{sum(int(s[(s.index >= FRA) & (s.index <= TIL)].sum()) for s in RFLAGG.values())} flaggmaaneder i vinduet")
 
@@ -320,7 +334,7 @@ def pb_serie(tk):
 
 # =========================================================== 3. signaler
 print("\n3. Signaler")
-SIG = {"a": {}, "b": {}, "a+b": {}, "c": {}}
+SIG = {"a": {}, "b": {}, "a+b": {}, "c": {}, **{f"a{k}": {} for k in NIVAAER}}
 for tk, s in KURS.items():
     u = UNIV[tk]
     fb = flagg_paa(s)
@@ -334,6 +348,14 @@ for tk, s in KURS.items():
         if fa is not None:
             SIG["a"][tk] = fa
             SIG["a+b"][tk] = fa & fb
+        for k in NIVAAER:
+            fk = None
+            for sid in u["segs"]:
+                if sid in RFLAGG_K[k]:
+                    x = RFLAGG_K[k][sid].reindex(s.index).fillna(False).astype(bool)
+                    fk = x if fk is None else (fk | x)
+            if fk is not None:
+                SIG[f"a{k}"][tk] = fk
     if tk in BPS:
         pb = pb_serie(tk)
         if len(pb) >= 72:
@@ -499,7 +521,7 @@ for navn, papirer in [("TAVLE", TAV), ("UTVIDET", UTVIDET)]:
     print(f"   {navn}  ({len(papirer)} papirer)\n")
     print("   variant papirer innslag  ep pos | 24 mnd: mer/aar    p    | 12 mnd: mer/aar   p    |"
           "    r24   treff | videre fall  >30 %")
-    for v in ("a", "b", "a+b", "c"):
+    for v in ("a", "b", "a+b", "c") + tuple(f"a{k}" for k in NIVAAER):
         r = evaluer(v, papirer)
         UT.setdefault(navn, {})[v] = r
         if not r:
@@ -535,4 +557,14 @@ with open("sonder/instrumenttest.json", "w", encoding="utf-8") as f:
                "resultat": UT, "papirer": sorted(KURS), "tavle": sorted(TAV),
                "bps": sorted(BPS)}, f, ensure_ascii=False, indent=1, default=str)
 print("\n   lagret sonder/instrumenttest.json")
+
+# Kursene og universet til timingtesten (sonde_kjor_timing.py), som kjoerer
+# etter denne og slipper aa hente 200 kurser paa nytt.
+pd.DataFrame({tk: s for tk, s in KURS.items()}).rename(index=str).to_csv(
+    "sonder/instrument_kurser.csv", float_format="%.6g")
+json.dump({"kjort": time.strftime("%Y-%m-%d %H:%M:%S"),
+           "univers": {tk: {"navn": u["navn"], "segs": sorted(u["segs"]), "tavle": tk in TAV}
+                       for tk, u in UNIV.items() if tk in KURS}},
+          open("sonder/instrument_univers.json", "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+print("   lagret sonder/instrument_kurser.csv og sonder/instrument_univers.json")
 print("\nSend hele utskriften tilbake.")

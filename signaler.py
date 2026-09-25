@@ -185,3 +185,74 @@ def cot_for_segmenter(note=print, pause=1.5):
             note(f"COT {sid}", False, f"{type(e).__name__}: {str(e)[:70]}")
         time.sleep(pause)
     return ut
+
+
+# ================================================================ kurveform
+#
+# Terminkurven 12 maaneder fram, slik Frode ba om 24.09.2026: selve kurven som
+# graf, en fast betegnelse, og persentil av helningen mot egen historikk.
+# Betegnelsen settes etter faste regler, slik at samme kurve alltid faar samme
+# ord. Grensene (1 % flat, 10 % bratt, 5 % pukkel) er beskrivende og ikke
+# testet som signal. Feltet inngaar ikke i noen skaar.
+
+FLAT_PST, BRATT_PST, PUKKEL_PST = 1.0, 10.0, 5.0
+SESONG = {"henryhub", "ttf"}
+
+
+def _naermest(pkt, mnd):
+    k = min(pkt, key=lambda q: abs(q["mnd"] - mnd))
+    return k if abs(k["mnd"] - mnd) <= 1 else None
+
+
+def kurveform(kontrakter, seg_id="", rente_pst=None):
+    """kontrakter: liste av (maaned 'YYYY-MM', maaneder fram fra front, pris),
+    sortert, der foerste er fronten. Returnerer feltene panelet viser."""
+    if not kontrakter or len(kontrakter) < 3:
+        return None
+    p0 = float(kontrakter[0][2])
+    pkt = [{"t": t, "mnd": int(m), "pst": round(100 * (float(p) / p0 - 1), 2)}
+           for t, m, p in kontrakter if p and m <= 13]
+    p12, p3 = _naermest(pkt, 12), _naermest(pkt, 3)
+    if not p12:
+        return None
+    h12 = p12["pst"]
+    h3 = p3["pst"] if p3 else None
+    hb = None if h3 is None else round(100 * ((1 + h12 / 100) / (1 + h3 / 100) - 1), 2)
+
+    if abs(h12) < FLAT_PST:
+        form = "Flat"
+    else:
+        form = ("Contango" if h12 > 0 else "Backwardation")
+        if abs(h12) >= BRATT_PST:
+            form = "Bratt " + form.lower()
+    besk = []
+    pukkel = False
+    if seg_id in SESONG and len(pkt) > 2:
+        indre = max(q["pst"] for q in pkt[1:-1])
+        pukkel = indre - max(0, h12) >= PUKKEL_PST
+    if not pukkel and h3 is not None and abs(h3) >= FLAT_PST and abs(hb) >= FLAT_PST and (h3 > 0) != (hb > 0):
+        form = "Backwardation foran, contango bak" if h3 < 0 else "Contango foran, backwardation bak"
+        besk.append("Stramheten ser ut til å være kortvarig." if h3 < 0 else
+                    "Markedet venter at det strammer seg til lenger ut.")
+    if pukkel:
+        besk.append("Vintertopp i kurven: formen foran sier mer om sesong enn om lager, "
+                    "så bare helningen over tolv måneder er sammenlignbar.")
+    if rente_pst is not None and h12 > 0:
+        if h12 < rente_pst:
+            besk.append(f"Contangoen er lavere enn renten ({rente_pst:.1f} %), så lagerholdet "
+                        "betales ikke fullt. Markedet er strammere enn formen tilsier.")
+        elif h12 > rente_pst + 5:
+            besk.append(f"Contangoen er godt over renten ({rente_pst:.1f} %): markedet betaler "
+                        "for å lagre, som er et tegn på overskudd.")
+    return {"punkter": pkt, "helning12": h12, "helning3": h3, "form": form,
+            "beskrivelse": besk, "rente_pst": rente_pst}
+
+
+def kurvepersentil(historikk, siste):
+    """historikk: liste av helning12 per maaned, eldste foerst, inkludert siste."""
+    h = [x for x in historikk if x is not None]
+    if len(h) < 36:
+        return None, None
+    tre = h[-36:]
+    return (round(100 * sum(1 for x in tre if x <= siste) / len(tre), 1),
+            round(100 * sum(1 for x in h if x <= siste) / len(h), 1))

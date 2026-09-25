@@ -149,7 +149,7 @@ INSTR = {
   ("UUUU","NYSE","Energy Fuels","aksje",
    "r 0,44  rm 0,40  b 1,58  f 0,96. Hoyest utslag og nesten hele oppgangen fra bunn. Merk at selskapet ogsaa driver med sjeldne jordarter og vanadium."),
   ("U-UN.TO","Toronto","Sprott Physical Uranium Trust","fond",
-   "r 0,55  rm 0,55  b 0,85  f 0,31. Sterkeste par: fysisk uran i et lukket fond. Kanadisk fond uten EOS-noekkelinformasjon, saa tilgang paa IKZ hos Nordnet maa sjekkes foer den regnes som kjoepbar.")],
+   "r 0,55  rm 0,55  b 0,85  f 0,31. Sterkeste par: fysisk uran i et lukket fond. Nordnet Norge foerer den som aksje paa Toronto med kjoep og salg aapent (sjekket 24.09.2026), saa den er trolig kjoepbar paa IKZ. Endelig svar gir foerst en ordre. Staar som fond her fordi den ikke har drift, og da gir porten C ingen mening.")],
 "ship_vlcc": [
   ("FRO.OL","Oslo","Frontline","aksje","Storste norske VLCC-flate. Hoyeste beta mot raten."),
   ("OET.OL","Oslo","Okeanis Eco Tankers","aksje","Ung flate, VLCC og Suezmax. Lav kontantkostnad."),
