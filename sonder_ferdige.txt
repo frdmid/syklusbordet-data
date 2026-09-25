@@ -11,3 +11,5 @@ sonde_kjor_terskel
 sonde_kjor_timing
 sonde_kjor_salg
 sonde_kjor_indikator
+sonde_kjor_bdi
+sonde_kjor_dadj
