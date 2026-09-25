@@ -427,6 +427,43 @@ try:
 except Exception as e:
     note("uran", False, f"{type(e).__name__}: {str(e)[:70]}")
 
+print("\n2c. Laks")
+# Observasjonspanel uten flagg. Se laks_innhent.py for kilder og regnestykke,
+# som er det samme som i laksesonden 25.09.2026. Marginen mot produksjons-
+# kostnaden ga ingen informasjon om papirene (rho 0,108, p 0,353), saa laks
+# har ikke bunnsone og ikke oppsikt, bare tallene.
+LAKS = None
+LAKS_MERKNAD = (
+    "Observasjon, ikke flagg. Eksportpris for fersk oppalen laks fra SSB, uke for uke, "
+    "snittet per måned og sesongjustert, omregnet til dollar. Sesongen er stor (rundt 27 % "
+    "fra topp til bunn), så rå pris ville gitt falske bunner hver høst. Marginen er "
+    "sesongjustert kilopris i kroner delt på Fiskeridirektoratets produksjonskostnad per kilo. "
+    "Laksesonden fant at verken marginen eller prisnivået sa noe om papirene 24 måneder fram.")
+try:
+    import laks_innhent
+    def _les_raw(sti):
+        r = requests.get(f"https://raw.githubusercontent.com/{REPO}/{BRANCH}/{sti}",
+                         params={"cb": int(time.time())}, headers=UA, timeout=30)
+        return r.text if r.status_code == 200 else None
+    LAKS = laks_innhent.hent(get, yahoo_monthly, les=_les_raw, note=note)
+    legg_til("laks", "Laks (sesongjustert)", "Sjømat", "USD/kg", LAKS["usd_just"], cpi,
+             "SSB tabell 03024, Norges Bank, Fiskeridirektoratet",
+             "https://www.ssb.no/statbank/table/03024", merknad=LAKS_MERKNAD)
+    if SEGMENTS and SEGMENTS[-1]["id"] == "laks":
+        laks_innhent.berik(SEGMENTS[-1], LAKS, expanding_pct)
+        lk = SEGMENTS[-1]["laks"]
+        note("laks", True, f"margin {lk['margin']} (A {lk['A_margin']}), kostnad {lk['kost_siste_aar']} "
+                           f"{lk['kost_siste']} kr/kg{'' if lk['kost_fersk'] else ' GAMMEL'}, uke {lk['uke']} "
+                           f"{lk['uke_nok_kg']} kr/kg")
+        if GITHUB_TOKEN and not str(LAKS["kost_kilde"]).startswith("forrige"):
+            try:
+                push("laks_kost.json", json.dumps({"hentet": str(pd.Timestamp.utcnow())[:10],
+                     "kilde": LAKS["kost_kilde"], "ny": {str(a): v for a, v in LAKS["kost_ny"].items()}}))
+            except Exception as e:
+                note("push laks_kost.json", False, str(e)[:60])
+except Exception as e:
+    note("laks", False, f"{type(e).__name__}: {str(e)[:70]}")
+
 print("\n3. Metall, innsatsfaktorer og flerårige fra Pink Sheet")
 FLERAARIG_MERKNAD = (
     "Flerårig vekst. Tre til sju år fra planting til full bæring, så tilbudet "
@@ -709,6 +746,28 @@ try:
     note("COT totalt", len(cot) > 0, f"{len(cot)} av 6 kontrakter")
 except Exception as e:
     note("signaler", False, f"{type(e).__name__}: {str(e)[:70]}")
+
+# Terminkurven tolv maaneder fram, med historikk som bygges uke for uke.
+# Se kurve_innhent.py. Historikken leses via API-et (ikke en mellomlagret
+# kopi), og skrives bare naar innhentingen har tilgang til repoet.
+try:
+    import kurve_innhent
+    def _les_api(sti):
+        if not GITHUB_TOKEN:
+            return None
+        r = requests.get(f"https://api.github.com/repos/{REPO}/contents/{sti}",
+                         params={"ref": BRANCH}, timeout=30,
+                         headers={"Authorization": f"Bearer {GITHUB_TOKEN}",
+                                  "Accept": "application/vnd.github.raw"})
+        if r.status_code == 404:
+            return None
+        r.raise_for_status()
+        return r.text
+    kurve_innhent.oppdater(SEGMENTS, _les_api,
+                           (lambda sti, tekst: push(sti, tekst)) if GITHUB_TOKEN else (lambda sti, tekst: None),
+                           note)
+except Exception as e:
+    note("kurveform", False, f"{type(e).__name__}: {str(e)[:70]}")
 
 # VIX, uroen i det amerikanske aksjemarkedet. Ett felt oeverst paa bordet,
 # felles for alle segmenter, som kontekst. Ikke testet som signal.

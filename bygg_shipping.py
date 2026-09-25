@@ -228,6 +228,48 @@ except Exception as e:
     print(f"   signaler.py ikke lest: {type(e).__name__}")
 
 
+# Kapitulasjon D og overlevelsesport C. Begge regnes allerede for
+# skipssegmentene (d_kapitulasjon.json og c_overlevelse.json), men fram til
+# 25.09.2026 ble de ikke lest her, saa skipssegmentene sto uten D og med
+# porten "ukjent". Samme regler som i priser.py.
+KAP, COV = {}, {}
+try:
+    KAP = api_les("d_kapitulasjon.json")
+except Exception as e:
+    print(f"   d_kapitulasjon.json ikke lest: {type(e).__name__}")
+try:
+    COV = api_les("c_overlevelse.json")
+except Exception as e:
+    print(f"   c_overlevelse.json ikke lest: {type(e).__name__}")
+
+
+def berik_c_d(sid, d):
+    g = (KAP.get("segmenter") or {}).get(sid)
+    if g and g.get("D") is not None:
+        d["scores"]["D"] = g["D"]
+        d["d_detalj"] = {k: g.get(k) for k in ("D_aksjer", "tema", "tema_D", "spredning", "n")}
+        for i in d.get("instrumenter", []):
+            pp = (KAP.get("papirer") or {}).get(i["ticker"])
+            if pp:
+                i["D"], i["fall_pst"] = pp.get("D"), pp.get("fall_pst")
+    cg = (COV.get("segmenter") or {}).get(sid) or {}
+    selskap = COV.get("selskaper") or {}
+    maalt = {i["ticker"]: i for i in cg.get("instrumenter", [])}
+    egne = [maalt[i["ticker"]] for i in d.get("instrumenter", []) if i["ticker"] in maalt]
+    if egne:
+        if any(x["port"] == "aapen" for x in egne):   gate = "aapen"
+        elif any(x["port"] == "trang" for x in egne): gate = "trang"
+        else:                                         gate = "stengt"
+        d["scores"]["gate"] = gate
+        d["gate_detalj"] = {"aapne": sum(1 for x in egne if x["port"] == "aapen"), "malte": len(egne)}
+        for i in d.get("instrumenter", []):
+            x = maalt.get(i["ticker"])
+            if x:
+                i["port"], i["kvartaler"] = x["port"], x.get("kvartaler")
+                sk = selskap.get(i["ticker"], {})
+                i["bunnaar"], i["aar_historikk"] = sk.get("bunnaar"), sk.get("aar_historikk")
+
+
 print("\n2. Bygger segmentene")
 ut, feil = 0, 0
 for sid, nokkel in SKIP.items():
@@ -293,12 +335,13 @@ for sid, nokkel in SKIP.items():
                  "omvendt": km.strip().startswith("-"),
                  "handlbar": b in HANDLBAR}
                 for tk, b, nv, ty, km in rr]
+        berik_c_d(sid, d)
         if GITHUB_TOKEN:
             push(f"segments/{sid}.json", json.dumps(d, ensure_ascii=False))
         a, bx = serie[0], serie[-1]
         print(f"   {sid:16s} {len(serie):>3} mnd  {a['t']} nom {a['nom']:>7} "
               f"real {a['real']:>9}   {bx['t']} nom {bx['nom']:>7} real {bx['real']:>9}   "
-              f"A2={d['scores']['A2']}")
+              f"A2={d['scores']['A2']} D={d['scores']['D']} C={d['scores']['gate']}")
         ut += 1
     except Exception as e:
         feil += 1

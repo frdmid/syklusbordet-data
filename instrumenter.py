@@ -178,4 +178,17 @@ INSTR = {
   ("TMIP.L","London","Taylor Maritime","aksje","Handysize og Supramax, naermeste rene uttrykk."),
   ("GNK","NYSE","Genco Shipping","aksje","Handysize-andel ved siden av storre skip."),
   ("PANL","Nasdaq","Pangaea Logistics","aksje","Mindre skip i nisjefart.")],
+# Laks kom inn 25.09.2026 som observasjonspanel uten flagg. Papirene er de fire
+# som besto K3 i laksesonden: korrelasjon i maanedsendringer mot sesongjustert
+# realpris i dollar fra 2016, raa og etter verdensindeksen, begge over 0,30.
+# Grieg (0,28), Masoval (for kort historikk) og Austevoll (blandet) besto ikke.
+"laks": [
+  ("MOWI.OL","Oslo","Mowi","aksje",
+   "r 0,36  rm 0,37. Storst i verden, oppdrett i seks land. Kroner mot kroner 0,33."),
+  ("SALM.OL","Oslo","SalMar","aksje",
+   "r 0,35  rm 0,34. Rent norsk, pluss havbruk til havs. Kroner mot kroner 0,30."),
+  ("LSG.OL","Oslo","Lerøy Seafood","aksje",
+   "r 0,32  rm 0,31. Oppdrett, villfisk og videreforedling. Svakeste av de fire: uten september og oktober 2022 faller den til 0,29."),
+  ("BAKKA.OL","Oslo","Bakkafrost","aksje",
+   "r 0,39  rm 0,38. Færøyene og Skottland. Sterkeste paret, også kroner mot kroner (0,36).")],
 }

@@ -239,10 +239,10 @@ def kurveform(kontrakter, seg_id="", rente_pst=None):
                     "så bare helningen over tolv måneder er sammenlignbar.")
     if rente_pst is not None and h12 > 0:
         if h12 < rente_pst:
-            besk.append(f"Contangoen er lavere enn renten ({rente_pst:.1f} %), så lagerholdet "
+            besk.append(f"Contangoen er lavere enn renten ({str(round(rente_pst, 1)).replace('.', ',')} %), så lagerholdet "
                         "betales ikke fullt. Markedet er strammere enn formen tilsier.")
         elif h12 > rente_pst + 5:
-            besk.append(f"Contangoen er godt over renten ({rente_pst:.1f} %): markedet betaler "
+            besk.append(f"Contangoen er godt over renten ({str(round(rente_pst, 1)).replace('.', ',')} %): markedet betaler "
                         "for å lagre, som er et tegn på overskudd.")
     return {"punkter": pkt, "helning12": h12, "helning3": h3, "form": form,
             "beskrivelse": besk, "rente_pst": rente_pst}
