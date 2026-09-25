@@ -1,5 +1,5 @@
 {
- "oppdatert": "2026-09-25 12:58:55",
+ "oppdatert": "2026-09-25 13:22:19",
  "segmenter": [
   "brent",
   "wti",
@@ -24,6 +24,16 @@
    "kilde": "GitHub-speil cpi-us",
    "status": "OK",
    "detalj": "siste 2026-07"
+  },
+  {
+   "kilde": "deflator, alder",
+   "status": "OK",
+   "detalj": "GitHub-speil cpi-us, siste 2026-07, 2 mnd gammel"
+  },
+  {
+   "kilde": "deflator, kontroll mot BLS",
+   "status": "FEIL",
+   "detalj": "BLS svarte ikke: ValueError: could not convert string to float: '-'"
   },
   {
    "kilde": "segment brent",
@@ -243,7 +253,7 @@
   {
    "kilde": "VIX",
    "status": "OK",
-   "detalj": "15.19 per 2026-09-25, persentil 31.8 (fra 1990-01) / 33.3 (10 aar)"
+   "detalj": "15.2 per 2026-09-25, persentil 31.8 (fra 1990-01) / 33.3 (10 aar)"
   },
   {
    "kilde": "flagglogg",
