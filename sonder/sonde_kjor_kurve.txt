@@ -1,15 +1,15 @@
 sonde:   sonde_kjor_kurve
-kjort:   2026-09-25 08:30:07 UTC
-commit:  03c3577
+kjort:   2026-09-25 08:50:57 UTC
+commit:  912f343
 status:  OK
-brukte:  410 sekunder
+brukte:  429 sekunder
 --------------------------------------------------------------
 A. Yahoo, enkeltkontrakter
 
-   wti        CL.NYM   24 kontrakter 2026-10..2028-09  front 94.59  6 mnd -14.16 %  12 mnd -20.58 %
-   brent      BZ.NYM   17 kontrakter 2026-11..2028-06  front 106.09  6 mnd -17.22 %  12 mnd -23.95 %
-   henryhub   NG.NYM   24 kontrakter 2026-10..2028-09  front 3.188  6 mnd -13.83 %  12 mnd 3.01 %
-   gold       GC.CMX   23 kontrakter 2026-10..2028-08  front 4283.2002  6 mnd 2.37 %  12 mnd 4.75 %
+   wti        CL.NYM   24 kontrakter 2026-10..2028-09  front 94.59  6 mnd -14.18 %  12 mnd -20.58 %
+   brent      BZ.NYM   17 kontrakter 2026-11..2028-06  front 105.44  6 mnd -16.71 %  12 mnd -23.48 %
+   henryhub   NG.NYM   24 kontrakter 2026-10..2028-09  front 3.174  6 mnd -13.55 %  12 mnd 3.47 %
+   gold       GC.CMX   23 kontrakter 2026-10..2028-08  front 4291.0  6 mnd 2.19 %  12 mnd 4.56 %
    kobber     HG.CMX   23 kontrakter 2026-10..2028-09  front 6.6935  6 mnd 3.5 %  12 mnd 6.44 %
    kakao      CC.NYB    9 kontrakter 2026-12..2028-07  front 5590.0  6 mnd 4.63 %  12 mnd 3.27 %
    ttf        front 75.10600280761719: ingen enkeltkontrakter svarte
@@ -28,14 +28,14 @@ A. Yahoo, enkeltkontrakter
 
 D. Tolvmaanedershelning bakover, fra utloepte kontrakter
 
-   wti         27 kontrakter,  95 maaneder 2018-11..2026-09. Siste -20.55 %, persentil 2.1 (alle) / 5.6 (3 aar). Spenn -21.3 til +4.8 %. Hull: 0 mnd
-   brent       19 kontrakter,  15 maaneder 2025-07..2026-09. Siste -23.97 %, persentil 6.7 (alle) / 6.7 (3 aar). Spenn -24.0 til +1.9 %. Hull: 0 mnd
-   henryhub    27 kontrakter, 107 maaneder 2016-06..2026-09. Siste +3.14 %, persentil 80.4 (alle) / 88.9 (3 aar). Spenn -15.6 til +18.0 %. Hull: 17 mnd
-   gold        27 kontrakter,  70 maaneder 2020-12..2026-09. Siste +4.69 %, persentil 97.1 (alle) / 94.4 (3 aar). Spenn +0.9 til +4.8 %. Hull: 0 mnd
-   kobber      27 kontrakter,  61 maaneder 2021-09..2026-09. Siste +6.44 %, persentil 100.0 (alle) / 100.0 (3 aar). Spenn -0.3 til +6.4 %. Hull: 0 mnd
+   wti         29 kontrakter,  94 maaneder 2018-11..2026-09. Siste -20.55 %, persentil 2.1 (alle) / 5.6 (3 aar). Spenn -21.3 til +4.8 %. Hull: 1 mnd
+   brent       19 kontrakter,  15 maaneder 2025-07..2026-09. Siste -23.50 %, persentil 6.7 (alle) / 6.7 (3 aar). Spenn -23.5 til +1.9 %. Hull: 0 mnd
+   henryhub    27 kontrakter, 107 maaneder 2016-06..2026-09. Siste +3.47 %, persentil 82.2 (alle) / 88.9 (3 aar). Spenn -15.6 til +18.0 %. Hull: 17 mnd
+   gold        26 kontrakter,  70 maaneder 2020-12..2026-09. Siste +4.61 %, persentil 95.7 (alle) / 91.7 (3 aar). Spenn +0.9 til +4.8 %. Hull: 0 mnd
+   kobber      27 kontrakter,  61 maaneder 2021-09..2026-09. Siste +6.44 %, persentil 100.0 (alle) / 100.0 (3 aar). Spenn -0.1 til +6.4 %. Hull: 0 mnd
    kakao      9 kontrakter med historikk, 9 maaneder med helning. For lite.
    uran       2 kontrakter med historikk, 0 maaneder med helning. For lite.
-   aluminium   12 kontrakter,  38 maaneder 2022-10..2025-11. Siste +3.55 %, persentil 81.6 (alle) / 83.3 (3 aar). Spenn +0.1 til +3.9 %. Hull: 0 mnd
+   aluminium   11 kontrakter,  38 maaneder 2022-10..2025-11. Siste +3.55 %, persentil 81.6 (alle) / 83.3 (3 aar). Spenn -0.0 til +3.9 %. Hull: 0 mnd
 
    13 ukers statspapir (^IRX): 4.067999839782715
 

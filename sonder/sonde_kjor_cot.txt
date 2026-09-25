@@ -1,8 +1,8 @@
 sonde:   sonde_kjor_cot
-kjort:   2026-09-25 08:19:59 UTC
-commit:  03c3577
+kjort:   2026-09-25 08:39:51 UTC
+commit:  912f343
 status:  OK
-brukte:  56 sekunder
+brukte:  52 sekunder
 --------------------------------------------------------------
 1. Svarer CFTC, og hvilke felt har en rad
 

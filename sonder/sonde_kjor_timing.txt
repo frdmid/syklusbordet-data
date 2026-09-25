@@ -1,12 +1,12 @@
 sonde:   sonde_kjor_timing
-kjort:   2026-09-25 08:36:44 UTC
-commit:  03c3577
+kjort:   2026-09-25 08:54:26 UTC
+commit:  912f343
 status:  OK
-brukte:  5 sekunder
+brukte:  3 sekunder
 --------------------------------------------------------------
 1. Data
 
-   kurser fra instrumenttesten 2026-09-25 08:23:17 (0 dager gamle): 155 papirer
+   kurser fra instrumenttesten 2026-09-25 08:43:48 (0 dager gamle): 155 papirer
 1. Deflator
   ok    GitHub-speil cpi-us   siste 2026-07
 

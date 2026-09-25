@@ -1,0 +1,74 @@
+sonde:   sonde_kjor_indikator
+kjort:   2026-09-25 08:40:43 UTC
+commit:  912f343
+status:  OK
+brukte:  52 sekunder
+--------------------------------------------------------------
+1. Data
+
+1. Deflator
+  ok    GitHub-speil cpi-us   siste 2026-07
+
+2. Energi og gull fra GitHub-speil
+  ok    avkorting gold   2324 -> 661 mnd, starter 1971-08
+
+2b. Uran
+  ok    uran, kontroll av Cameco   mot IMF 1992-2021: median avvik 1.8 % over 357 mnd, mot futures fra 2022: 1.6 % over 49 mnd
+
+3. Metall, innsatsfaktorer og flerårige fra Pink Sheet
+  ok    Verdensbanken Pink Sheet   72 kolonner, 800 måneder, skiprows=4
+   kolonner i arket: Aluminum, Banana, Europe, Banana, US, Barley, Beef **, Chicken **, Coal, Australian, Coal, South African **, Cocoa, Coconut oil, Coffee, Arabica, Coffee, Robusta, Copper, Cotton, A Index, Crude oil, Brent, Crude oil, Dubai, Crude oil, WTI, Crude oil, average, DAP, Fish meal, Gold, Groundnut oil **, Groundnuts, Iron ore, cfr spot, Lamb **, Lead, Liquefied natural gas, Japan, Logs, Cameroon, Logs, Malaysian, Maize, Natural gas index, Natural gas, Europe, Natural gas, US, Nickel, Orange, Palm kernel oil, Palm oil, Phosphate rock, Platinum, Plywood, Potassium chloride **, Rapeseed oil, Rice, Thai 25%, Rice, Thai 5%, Rice, Thai A.1, Rice, Viet Namese 5%, Rubber, RSS3, Rubber, TSR20 **, Sawnwood, Cameroon, Sawnwood, Malaysian, Shrimps, Mexican, Silver, Sorghum, Soybean meal, Soybean oil, Soybeans, Sugar, EU, Sugar, US, Sugar, world, Sunflower oil, TSP, Tea, Colombo, Tea, Kolkata, Tea, Mombasa, Tea, avg 3 auctions, Tin, Tobacco, US import u.v., Urea, Wheat, US HRW, Wheat, US SRW, Zinc
+  ok    avkorting nikkel   800 -> 560 mnd, starter 1980-01
+  ok    avkorting aluminium   800 -> 560 mnd, starter 1980-01
+  ok    avkorting jernmalm   800 -> 200 mnd, starter 2010-01
+  ok    avkorting kull   680 -> 320 mnd, starter 2000-01
+  ok    avkorting ttf   800 -> 320 mnd, starter 2000-01
+  ok    avkorting kakao   800 -> 560 mnd, starter 1980-01
+   kontroll av de raske persentilfunksjonene mot priser.py: like paa alle 16 serier
+   16 raavaresegmenter
+   COT brent     142 maaneder fra 2014-12
+   COT wti       208 maaneder fra 2009-06
+   COT henryhub  208 maaneder fra 2009-06
+   COT gold      207 maaneder fra 2009-06
+   COT kobber    207 maaneder fra 2009-06
+   COT kakao     207 maaneder fra 2009-06
+
+2. Lag 1: nivaa og trend, raavarene fra 1965
+
+   2059 maaneder i sonen, 16 segmenter (22 s)
+   rangkorrelasjon mot 24 mnd fram:  nivaa alene +0.065 (p 0.275),  nivaa og trend +0.038 (p 0.425)
+   trendens bidrag -0.028, p 0.663
+   12 mnd fram (beskrivende): nivaa +0.044, nivaa og trend +0.145
+   trend er ikke med (krav: bedrer med p <= 0,05)
+
+3. Lag 2: COT fra 2009 (seks segmenter)
+
+   122 maaneder i sonen med COT
+   rangkorrelasjon uten COT +0.511, med COT +0.361, bidrag -0.150, p 0.216
+   Beskrivende. Testen var for villig i kalibreringen, saa COT er ikke med og blir
+   staaende som kontekstfelt, uansett tallene over.
+
+4. Lag 3: kurve
+   Kjoeres ikke. Den rekonstruerte kurvehistorikken er gal foer 2023 (se toppen).
+   Kurven blir staaende som kontekstfelt.
+
+5. Papirene 2011 til 2024 (beskrivende)
+
+   3158 papirmaaneder i sonen, 135 kalendermaaneder, median indikator 86
+   oevre halvdel: meravkastning 24 mnd mot universet, median +2.3 %, snitt +7.9 %
+   nedre halvdel: median +0.5 %, snitt -0.8 %
+   rangkorrelasjon -0.036 (beskrivende, maanedene overlapper)
+
+6. Beslutning etter regelen satt foer kjoering
+
+   komponenter: nivaa
+   lag 1 p = 0.275: indikatoren kommer ikke paa dashbordet. Feltene blir staaende som kontekst.
+   Med bare nivaa er indikatoren det samme som A-skaarene bordet allerede viser.
+
+   Dagens verdi der segmentet staar i sonen:
+      henryhub   nivaa  74.5  trend     0  COT  71.8
+      jernmalm   nivaa  73.2  trend     0
+
+   lagret sonder/indikator.json
+
+Send hele utskriften tilbake.

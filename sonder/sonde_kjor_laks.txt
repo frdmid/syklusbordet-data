@@ -1,8 +1,8 @@
 sonde:   sonde_kjor_laks
-kjort:   2026-09-25 08:36:00 UTC
-commit:  03c3577
+kjort:   2026-09-25 08:53:54 UTC
+commit:  912f343
 status:  OK
-brukte:  353 sekunder
+brukte:  177 sekunder
 --------------------------------------------------------------
 K1. Prisserien fra SSB
 
@@ -58,12 +58,14 @@ K4. Produksjonskostnad fra Fiskeridirektoratet
    funnet: lon-mat11-kostnad-pr-kg.xlsx / Størrelsesgrupper 2008-: 'produksjonskostnader pr. kg kr' 17 aar 2008..2024, siste 60.16
    funnet: lon-mat04-finnm-troms-avsluttet.xls / Finnmark_Troms 1986-2004: 'produksjonskostnad per kilo kr' 19 aar 1986..2004, siste 16.06
    funnet: lon-mat15-pr-tillatelse.xlsx / Resultat pr tillatelse 2013-: 'produksjonskostnad pr. kg kr' 12 aar 2013..2024, siste 59.97
-   kostnad per aar (kr/kg): 1986:36.94, 1987:34.45, 1988:30.77, 1989:29.49, 1990:29.55, 1991:30.91, 1992:28.19, 1993:23.48, 1994:20.36, 1995:18.69, 1996:16.91, 1997:16.19, 1998:16.37, 1999:16.04, 2000:15.10, 2001:14.91, 2002:16.37, 2003:16.02, 2004:15.15, 2005:13.80, 2006:14.74, 2007:15.91, 2008:18.17
-   aarsendringer over 30 %: ingen
-   K4 (kostnadsserie uten uforklart brudd): HOLDER
-   margin 2006-01 til 2026-09, siste 4.52, min 1.35 (2011-10), maks 6.08
+   skjoetet: lon-mat02-helelandet-avsluttet / Hele landet (1986..2008) og lon-mat11-kostnad-pr-kg.xlsx / Hele landet 2008- (2008..2024), overlapp [2008], faktor 1.024
+   kostnad per aar (kr/kg): 1986:37.83, 1987:35.28, 1988:31.52, 1989:30.20, 1990:30.27, 1991:31.66, 1992:28.87, 1993:24.05, 1994:20.86, 1995:19.15, 1996:17.32, 1997:16.58, 1998:16.76, 1999:16.42, 2000:15.46, 2001:15.27, 2002:16.76, 2003:16.41, 2004:15.52, 2005:14.14, 2006:15.09, 2007:16.30, 2008:18.61, 2009:17.73, 2010:20.03, 2011:19.66, 2012:19.31, 2013:22.69, 2014:23.38, 2016:30.60, 2017:30.74, 2018:30.09, 2019:34.54, 2020:36.11, 2021:37.07, 2022:44.45, 2023:60.23, 2024:59.97
+   aarsendringer over 30 %: 2016: +31 %, 2023: +35 %
+   siste kostnadsaar 2024: fersk
+   K4 (kostnadsserie uten uforklart brudd): HOLDER IKKE, eller maa forklares manuelt
+   margin 2006-01 til 2026-09, siste 1.37, min 1.09 (2025-07), maks 3.04
 
-A siste maaned 2026-08: raa 50.8, detrendet 65.7, margin-A 14.1, margin 4.52
+A siste maaned 2026-08: raa 50.8, detrendet 65.7, margin-A 91.2, margin 1.37
 Andel maaneder med raa A minst 80: 9 %, detrendet: 21 %
 
 K3. Papirene
@@ -74,43 +76,43 @@ K3. Papirene
    GSF.OL     Grieg                   128  0.281  0.267  |  0.258  0.252   |  0.223  0.221    | nei
    BAKKA.OL   Bakkafrost              128  0.387  0.384  |  0.367  0.368   |  0.362   0.36    | BESTAAR
    MAS.OL     Masoval                  62  0.342  0.365  |  0.299  0.326   |  0.333  0.335    | nei  (resultatet snur uten 2022)
-   AUSS.OL    Austevoll (blandet)     128  0.345  0.341  |  0.326  0.328   |  0.291  0.289    | nei
+   AUSS.OL    Austevoll (blandet)     128  0.345  0.341  |  0.326  0.328   |  0.292  0.289    | nei
    K3 (minst ett papir): HOLDER. Bestaar: MOWI.OL, SALM.OL, LSG.OL, BAKKA.OL
 
 Terskeltesten for marginen
    kalibrering paa 200 simuleringer uten sammenheng, andel p under 0,05: kurv 5.0 %, prisens egen framtid 3.0 %
-   trinn 1, kurv24: rho 0.322, p 0.118, n 166
-   trinn 1, kurv12: rho 0.321, p 0.108, n 178
-   trinn 1, pris24_nok: rho 0.639, p 0.112, n 166
-   trinn 1, pris12_nok: rho 0.395, p 0.301, n 178
+   trinn 1, kurv24: rho 0.108, p 0.353, n 166
+   trinn 1, kurv12: rho 0.205, p 0.198, n 178
+   trinn 1, pris24_nok: rho 0.65, p 0.094, n 166
+   trinn 1, pris12_nok: rho 0.45, p 0.194, n 178
    trinn 1 paa primaerutfallet (kurv24): ingen informasjon, laks faar ikke flagg
 
    Hele utvalget (beskrivende og plataatest)
    terskel  andel mnd episoder |  kurv 24  kurv 12  pris 24  pris 12
-   pct60           8%        1 |   +19.6%   -29.7%   +13.3%   -26.8%   2011-06
-   pct70           8%        1 |   +19.6%   -29.7%   +13.3%   -26.8%   2011-06
-   pct75           7%        1 |   +19.6%   -29.7%   +13.3%   -26.8%   2011-06
-   pct80           7%        1 |   +19.6%   -29.7%   +13.3%   -26.8%   2011-06
-   pct85           7%        1 |   +19.6%   -29.7%   +13.3%   -26.8%   2011-06
-   pct90           7%        1 |   +19.6%   -29.7%   +13.3%   -26.8%   2011-06
-   pct95           3%        1 |   +47.9%    +4.9%   +26.9%   -11.4%   2011-08
+   pct60          30%        3 |   +19.6%    -4.1%   +13.3%   -10.2%   2011-06, 2017-12, 2024-06
+   pct70          25%        5 |   +57.4%   +37.6%   +15.2%    +4.7%   2011-06, 2015-03, 2017-12, 2020-04, 2024-07
+   pct75          22%        5 |   +58.8%   +37.6%   +32.9%    +8.4%   2011-07, 2015-04, 2017-12, 2020-04, 2024-12
+   pct80          20%        4 |   +39.9%   +12.2%   +23.9%   +12.4%   2011-07, 2015-04, 2020-11, 2024-12
+   pct85          18%        4 |   +39.9%    +8.8%   +26.5%   +16.3%   2011-07, 2015-05, 2020-12, 2024-12
+   pct90          15%        3 |    -0.2%    -1.0%   +25.2%    +8.4%   2011-07, 2020-12, 2024-12
+   pct95           9%        3 |    +2.6%    +4.9%   +26.7%   +12.1%   2011-08, 2020-12, 2025-03
    abs1.0          0%        0 | - - - -   
-   abs1.1          0%        0 | - - - -   
-   abs1.2          0%        0 | - - - -   
-   abs1.3          0%        0 | - - - -   
+   abs1.1          0%        1 | -   +18.5% -    +9.2%   2025-07
+   abs1.2          3%        1 | -   +22.0% -   +10.7%   2025-05
+   abs1.3          4%        2 |  +173.5%   +42.9%   +28.3%   +26.9%   2012-06, 2025-04
 
    Trinn 2: terskel valgt hvert aarsskifte med data kjent da
-   valgt terskel per aar: 2012:None, 2013:None, 2014:None, 2015:None, 2016:None, 2017:None, 2018:None, 2019:None, 2020:None, 2021:None, 2022:None, 2023:None, 2024:None, 2025:None, 2026:None
-   beste persentilterskel per aar: 2012:None, 2013:None, 2014:None, 2015:None, 2016:None, 2017:None, 2018:None, 2019:None, 2020:None, 2021:None, 2022:None, 2023:None, 2024:None, 2025:None, 2026:None
-   valgt        0 innslag utenfor utvalget, 0 med fasit: kurv 24 mnd -, pris 24 mnd -   
-   pct80        0 innslag utenfor utvalget, 0 med fasit: kurv 24 mnd -, pris 24 mnd -   
+   valgt terskel per aar: 2012:None, 2013:None, 2014:None, 2015:None, 2016:None, 2017:None, 2018:None, 2019:None, 2020:pct70, 2021:pct70, 2022:pct70, 2023:pct70, 2024:pct70, 2025:pct70, 2026:pct70
+   beste persentilterskel per aar: 2012:None, 2013:None, 2014:None, 2015:None, 2016:None, 2017:None, 2018:None, 2019:None, 2020:pct70, 2021:pct70, 2022:pct70, 2023:pct70, 2024:pct70, 2025:pct70, 2026:pct70
+   valgt        2 innslag utenfor utvalget, 2 med fasit: kurv 24 mnd +29.1 %, pris 24 mnd +30.3 %   2020-04, 2024-07
+   pct80        3 innslag utenfor utvalget, 2 med fasit: kurv 24 mnd +5.1 %, pris 24 mnd +29.1 %   2015-04, 2020-11, 2024-12
    abs1.0       0 innslag utenfor utvalget, 0 med fasit: kurv 24 mnd -, pris 24 mnd -   
-   valgt+det    0 innslag utenfor utvalget, 0 med fasit: kurv 24 mnd -, pris 24 mnd -   
+   valgt+det    2 innslag utenfor utvalget, 2 med fasit: kurv 24 mnd +29.1 %, pris 24 mnd +30.3 %   2020-04, 2024-07
 
    Valget
    Trinn 1 viste ingen informasjon. Laks faar ikke flagg.
 
-Oppsummering av kriteriene: K1: True, K2: True, K4: True, K3: True
+Oppsummering av kriteriene: K1: True, K2: True, K4: False, K3: True
 Lagret sonder/laks.csv og sonder/laks.json
 
 Send hele utskriften tilbake.

@@ -1,0 +1,72 @@
+{
+ "kjort": "2026-09-25 08:39:52",
+ "kalibrering": {
+  "lag1_paneler": 58,
+  "p_trend": {
+   "0.05": 0.034,
+   "0.10": 0.138
+  },
+  "p_indikator": {
+   "0.03": 0.017,
+   "0.05": 0.086
+  },
+  "p_niva_0.05": 0.017,
+  "lag2_paneler": 185,
+  "p_cot": {
+   "0.01": 0.059,
+   "0.05": 0.114,
+   "0.10": 0.135
+  },
+  "grenser": {
+   "trend": 0.05,
+   "indikator": 0.03,
+   "cot": "beskrivende"
+  }
+ },
+ "lag1": {
+  "rho_indikator": 0.037527091358018135,
+  "rho_niva": 0.0650799599999208,
+  "delta_trend": -0.02755286864190267,
+  "maaneder": 2059,
+  "segmenter": 16,
+  "p_indikator": 0.4251497005988024,
+  "p_niva": 0.2754491017964072,
+  "p_trend": 0.6626746506986028,
+  "trekk": 500,
+  "12mnd": {
+   "rho_indikator": 0.1450963338489329,
+   "rho_niva": 0.04436363800770023,
+   "delta_trend": 0.10073269584123265,
+   "maaneder": 2072,
+   "segmenter": 16
+  },
+  "med_trend": false,
+  "p_lag1": 0.2754491017964072
+ },
+ "lag2": {
+  "maaneder": 122,
+  "segmenter": 4,
+  "rho_uten": 0.510970854539833,
+  "rho_med": 0.36063921538822485,
+  "delta_cot": -0.1503316391516082,
+  "p_cot": 0.21578421578421578,
+  "trekk": 1000,
+  "med_cot": false
+ },
+ "lag3": {
+  "kjort": false,
+  "grunn": "rekonstruert historikk gal foer 2023"
+ },
+ "papirer": {
+  "n": 3158,
+  "median_ind": 86.01398601398601,
+  "hoy_median": 0.022346255318508895,
+  "lav_median": 0.00475684892783336
+ },
+ "beslutning": {
+  "komponenter": [
+   "nivaa"
+  ],
+  "paa_dashbordet": false
+ }
+}
