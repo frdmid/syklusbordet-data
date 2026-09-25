@@ -1,8 +1,8 @@
 sonde:   sonde_kjor_uran
-kjort:   2026-09-24 13:52:48 UTC
-commit:  b04c2ed
+kjort:   2026-09-25 06:49:07 UTC
+commit:  a9987eb
 status:  OK
-brukte:  197 sekunder
+brukte:  165 sekunder
 --------------------------------------------------------------
 DEL 1. IKZ-maaling mot uran
 
@@ -31,7 +31,7 @@ DEL 1. IKZ-maaling mot uran
   ok    par maalt   213 totalt, 11 a priori
 # Sonde: instrumenter i IKZ-universet
 
-Kjort 2026-09-24 13:52 UTC. 219 papirer hentet av 227 forsokt. 213 par maalt mot 1 raavarer.
+Kjort 2026-09-25 06:49 UTC. 219 papirer hentet av 227 forsokt. 213 par maalt mot 1 raavarer.
 
 Kolonner: r1 = korrelasjon i manedlige realendringer. r12 = samme over overlappende 12-manedersendringer, p fra blokkbootstrap. rp = partiell korrelasjon i r1 etter at verdensindeksen er tatt ut. beta12 = hvor mye papiret beveger seg per enhet ravare over 12 maneder. opp/ned = beta maalt bare i maneder der ravaren steg, mot bare der den falt. fangstB og fangstT = papirets samlede 12-manedersavkastning fra daterte bunner og fra daterte topper, delt pa ravarens. vent = hvilket fortegn papiret var ventet a ha: p = produsent, ravaren er inntekt, ventet positiv. f = forbruker, ravaren er kostnad, ventet negativ. b = blandet. ok = fortegnet kom ut som ventet. rf1 og rf12 er de samme maalt i det faste vinduet fra 2016-01, som er det eneste som er sammenlignbart pa tvers av papirer med ulik alder. nf = antall maneder i det faste vinduet; par med nf under 72 er sortert bakerst fordi en kort serie nar hoye tall ved flaks alene. ap = papiret var ventet a folge denne ravaren; tomt felt betyr at treffet er funnet ved leting.
 
@@ -85,7 +85,7 @@ Kolonner: r1 = korrelasjon i manedlige realendringer. r12 = samme over overlappe
    skrevet sonder/ikz_uran.json (213 par)
 
 
-(del 1 brukte 196 s, kode 0)
+(del 1 brukte 164 s, kode 0)
 
 
 DEL 2. Cameco mot IMF og futures, aar for aar

@@ -1,0 +1,116 @@
+sonde:   sonde_kjor_laks
+kjort:   2026-09-25 06:45:38 UTC
+commit:  a9987eb
+status:  OK
+brukte:  330 sekunder
+--------------------------------------------------------------
+K1. Prisserien fra SSB
+
+   tabell 03024: 03024: Eksport av oppalen laks, etter varegruppe, statistikkvariabel og uke
+      VareGrupper2       2 verdier  Fersk oppalen laks, Frosen oppalen laks
+      ContentsCode       2 verdier  Vekt (tonn), Kilopris (kr)
+      Tid             1394 verdier  2000U01, 2000U02, 2000U03, 2000U04 ...
+   valgt VareGrupper2: ['Fersk oppalen laks']
+   1394 uker, 2000-01-06 til 2026-09-17, siste 71.41 kr/kg
+   maanedsserie 2000-01 til 2026-09. K1 (start senest 2001): HOLDER
+
+   IMF-kontroll (PSALM)
+      HTTP 200 1974 byte
+      ingen data. Kontrollen kjoeres ikke, SSB staar alene.
+
+Valuta og deflator
+   Norges Bank USD/NOK maanedssnitt: 1995-01 til 2026-08
+
+K2. Sesongjustering
+   faktorer siste aar (log, i prosent): 1:+6.9, 2:+5.3, 3:+10.5, 4:+11.4, 5:+11.2, 6:+5.2, 7:-0.8, 8:-11.0, 9:-15.4, 10:-12.1, 11:-10.8, 12:-0.5
+   foerste faktoraar 2006. Amplitude 26.8 % i 2026, 11.2 % i 2006
+   F-test for maanedseffekt i maanedsendringer: foer justering F=8.03 p=0.0000, etter F=0.84 p=0.5991 (248 mnd)
+   K2 (p over 0,10 etter justering): HOLDER
+
+K4. Produksjonskostnad fra Fiskeridirektoratet
+   aks-og-regnbueoerret/Matfiskproduksjon-laks-og-regnbueoerret HTTP 404
+   -analyse/Loennsomhetsundersoekelse-for-laks-og-regnbueoerret HTTP 200
+   vakultur/loennsomhetsundersoekelse-for-laks-og-regnbueoerret HTTP 404
+   42 regnearklenker
+   funnet: lon-mat14-flerefylker.xlsx / Flere fylker 2008-: 'produksjonskostnad pr. kg kr' 13 aar 2008..2020, siste 34.13
+   funnet: lon-mat05-nordland-avsluttet.xls / Nordland 1986-2004: 'produksjonskostnad per kilo kr' 19 aar 1986..2004, siste 15.61
+   funnet: lon-mat06-tr%C3%B8ndelag-avsluttet.xls / Trøndelag 1986-2004: 'produksjonskostnad per kilo kr' 19 aar 1986..2004, siste 13.19
+   funnet: lon-mat02-helelandet-avsluttet.xls / Hele landet: 'produksjonskostnad per kilo kr' 23 aar 1986..2008, siste 18.17
+   funnet: lon-mat11-kostnad-per-kg-avsluttet.xls / Hele landet: 'produksjonskostnad per kilo kr' 23 aar 1986..2008, siste 18.17
+   funnet: lon-mat11-kostnad-per-kg-avsluttet.xls / Finnmark_Troms: 'produksjonskostnad per kilo kr' 23 aar 1986..2008, siste 18.03
+   funnet: lon-mat11-kostnad-per-kg-avsluttet.xls / Nordland: 'produksjonskostnad per kilo kr' 23 aar 1986..2008, siste 18.13
+   funnet: lon-mat11-kostnad-per-kg-avsluttet.xls / Trøndelag: 'produksjonskostnad per kilo kr' 23 aar 1986..2008, siste 15.40
+   funnet: lon-mat11-kostnad-per-kg-avsluttet.xls / Møre_Romsdal: 'produksjonskostnad per kilo kr' 23 aar 1986..2008, siste 19.81
+   funnet: lon-mat11-kostnad-per-kg-avsluttet.xls / Sogn og Fjordane: 'produksjonskostnad per kilo kr' 23 aar 1986..2008, siste 16.47
+   funnet: lon-mat11-kostnad-per-kg-avsluttet.xls / Hordaland: 'produksjonskostnad per kilo kr' 23 aar 1986..2008, siste 19.43
+   funnet: lon-mat11-kostnad-per-kg-avsluttet.xls / Rogaland: 'produksjonskostnad per kilo kr' 23 aar 1986..2008, siste 20.68
+   funnet: lon-mat08-sogn-fjordane-avsluttet.xls / Sogn_Fjordane 1986-2004: 'produksjonskostnad per kilo kr' 19 aar 1986..2004, siste 14.59
+   funnet: lon-mat07-more-romsdal-avsluttet.xls / Møre_Romsdal 1986-2004: 'produksjonskostnad per kilo kr' 19 aar 1986..2004, siste 15.34
+   funnet: lon-mat02-helelandet.xlsx / Hele landet 2008-: 'produksjonskostnad pr. kg kr' 10 aar 2008..2017, siste 30.74
+   funnet: lon-mat03-storrelsesgr.xlsx / Gruppe 1_2008-: 'produksjonskostnad pr. kg kr' 17 aar 2008..2024, siste 58.29
+   funnet: lon-mat03-storrelsesgr.xlsx / Gruppe 2_2008-: 'produksjonskostnad pr. kg kr' 17 aar 2008..2024, siste 60.62
+   funnet: lon-mat03-storrelsesgr.xlsx / Gruppe 3_2008-: 'produksjonskostnad pr. kg kr' 17 aar 2008..2024, siste 60.16
+   funnet: lon-mat10-rogaland-avsluttet.xls / Rogaland_Agder 1986-2004: 'produksjonskostnad per kilo kr' 19 aar 1986..2004, siste 16.50
+   funnet: lon-mat09-hordaland-avsluttet.xls / Hordaland 1986-2004: 'produksjonskostnad per kilo kr' 19 aar 1986..2004, siste 15.65
+   funnet: lon-mat11-kostnad-pr-kg.xlsx / Hele landet 2008-: 'produksjonskostnader pr. kg kr' 16 aar 2008..2024, siste 59.97
+   funnet: lon-mat11-kostnad-pr-kg.xlsx / Størrelsesgrupper 2008-: 'produksjonskostnader pr. kg kr' 17 aar 2008..2024, siste 58.29
+   funnet: lon-mat11-kostnad-pr-kg.xlsx / Størrelsesgrupper 2008-: 'produksjonskostnader pr. kg kr' 17 aar 2008..2024, siste 60.62
+   funnet: lon-mat11-kostnad-pr-kg.xlsx / Størrelsesgrupper 2008-: 'produksjonskostnader pr. kg kr' 17 aar 2008..2024, siste 60.16
+   funnet: lon-mat04-finnm-troms-avsluttet.xls / Finnmark_Troms 1986-2004: 'produksjonskostnad per kilo kr' 19 aar 1986..2004, siste 16.06
+   funnet: lon-mat15-pr-tillatelse.xlsx / Resultat pr tillatelse 2013-: 'produksjonskostnad pr. kg kr' 12 aar 2013..2024, siste 59.97
+   kostnad per aar (kr/kg): 1986:36.94, 1987:34.45, 1988:30.77, 1989:29.49, 1990:29.55, 1991:30.91, 1992:28.19, 1993:23.48, 1994:20.36, 1995:18.69, 1996:16.91, 1997:16.19, 1998:16.37, 1999:16.04, 2000:15.10, 2001:14.91, 2002:16.37, 2003:16.02, 2004:15.15, 2005:13.80, 2006:14.74, 2007:15.91, 2008:18.17
+   aarsendringer over 30 %: ingen
+   K4 (kostnadsserie uten uforklart brudd): HOLDER
+   margin 2006-01 til 2026-09, siste 4.52, min 1.35 (2011-10), maks 6.08
+
+A siste maaned 2026-08: raa 50.8, detrendet 65.7, margin-A 14.1, margin 4.52
+Andel maaneder med raa A minst 80: 9 %, detrendet: 21 %
+
+K3. Papirene
+   papir      navn                     nf      r     rm  | uten sep/okt 2022 | kroner mot kroner | status
+   MOWI.OL    Mowi                    128  0.364  0.374  |  0.348  0.364   |  0.332   0.33    | BESTAAR
+   SALM.OL    SalMar                  128  0.347  0.340  |  0.345  0.344   |    0.3  0.298    | BESTAAR
+   LSG.OL     Leroy                   128  0.316  0.308  |  0.292   0.29   |  0.262   0.26    | BESTAAR  (resultatet snur uten 2022)
+   GSF.OL     Grieg                   128  0.281  0.267  |  0.258  0.252   |  0.223  0.221    | nei
+   BAKKA.OL   Bakkafrost              128  0.387  0.384  |  0.367  0.368   |  0.362   0.36    | BESTAAR
+   MAS.OL     Masoval                  62  0.342  0.365  |  0.299  0.326   |  0.333  0.335    | nei  (resultatet snur uten 2022)
+   AUSS.OL    Austevoll (blandet)     128  0.345  0.341  |  0.326  0.328   |  0.291  0.289    | nei
+   K3 (minst ett papir): HOLDER. Bestaar: MOWI.OL, SALM.OL, LSG.OL, BAKKA.OL
+
+Terskeltesten for marginen
+   kalibrering paa 200 simuleringer uten sammenheng, andel p under 0,05: kurv 5.0 %, prisens egen framtid 3.0 %
+   trinn 1, kurv24: rho 0.322, p 0.118, n 166
+   trinn 1, kurv12: rho 0.321, p 0.11, n 178
+   trinn 1, pris24_nok: rho 0.639, p 0.112, n 166
+   trinn 1, pris12_nok: rho 0.395, p 0.301, n 178
+   trinn 1 paa primaerutfallet (kurv24): ingen informasjon, laks faar ikke flagg
+
+   Hele utvalget (beskrivende og plataatest)
+   terskel  andel mnd episoder |  kurv 24  kurv 12  pris 24  pris 12
+   pct60           8%        1 |   +19.6%   -29.7%   +13.3%   -26.8%   2011-06
+   pct70           8%        1 |   +19.6%   -29.7%   +13.3%   -26.8%   2011-06
+   pct75           7%        1 |   +19.6%   -29.7%   +13.3%   -26.8%   2011-06
+   pct80           7%        1 |   +19.6%   -29.7%   +13.3%   -26.8%   2011-06
+   pct85           7%        1 |   +19.6%   -29.7%   +13.3%   -26.8%   2011-06
+   pct90           7%        1 |   +19.6%   -29.7%   +13.3%   -26.8%   2011-06
+   pct95           3%        1 |   +47.9%    +4.9%   +26.9%   -11.4%   2011-08
+   abs1.0          0%        0 | - - - -   
+   abs1.1          0%        0 | - - - -   
+   abs1.2          0%        0 | - - - -   
+   abs1.3          0%        0 | - - - -   
+
+   Trinn 2: terskel valgt hvert aarsskifte med data kjent da
+   valgt terskel per aar: 2012:None, 2013:None, 2014:None, 2015:None, 2016:None, 2017:None, 2018:None, 2019:None, 2020:None, 2021:None, 2022:None, 2023:None, 2024:None, 2025:None, 2026:None
+   beste persentilterskel per aar: 2012:None, 2013:None, 2014:None, 2015:None, 2016:None, 2017:None, 2018:None, 2019:None, 2020:None, 2021:None, 2022:None, 2023:None, 2024:None, 2025:None, 2026:None
+   valgt        0 innslag utenfor utvalget, 0 med fasit: kurv 24 mnd -, pris 24 mnd -   
+   pct80        0 innslag utenfor utvalget, 0 med fasit: kurv 24 mnd -, pris 24 mnd -   
+   abs1.0       0 innslag utenfor utvalget, 0 med fasit: kurv 24 mnd -, pris 24 mnd -   
+   valgt+det    0 innslag utenfor utvalget, 0 med fasit: kurv 24 mnd -, pris 24 mnd -   
+
+   Valget
+   Trinn 1 viste ingen informasjon. Laks faar ikke flagg.
+
+Oppsummering av kriteriene: K1: True, K2: True, K4: True, K3: True
+Lagret sonder/laks.csv og sonder/laks.json
+
+Send hele utskriften tilbake.

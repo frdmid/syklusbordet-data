@@ -1,0 +1,1106 @@
+{
+ "kjort": "2026-09-25 06:34:09",
+ "univers": {
+  "EXH1.DE": {
+   "navn": "iShares STOXX Europe 600 Oil & Gas",
+   "segs": [
+    "brent",
+    "henryhub",
+    "ttf",
+    "wti"
+   ],
+   "tavle": false
+  },
+  "EXV6.DE": {
+   "navn": "iShares STOXX Europe 600 Basic Resources",
+   "segs": [
+    "aluminium",
+    "bly",
+    "jernmalm",
+    "kobber",
+    "kull",
+    "nikkel",
+    "sink"
+   ],
+   "tavle": true
+  },
+  "EXV7.DE": {
+   "navn": "iShares STOXX Europe 600 Chemicals",
+   "segs": [
+    "ttf"
+   ],
+   "tavle": false
+  },
+  "EXH3.DE": {
+   "navn": "iShares STOXX Europe 600 Food & Beverage",
+   "segs": [
+    "kakao"
+   ],
+   "tavle": false
+  },
+  "EXH9.DE": {
+   "navn": "iShares STOXX Europe 600 Utilities",
+   "segs": [
+    "ttf"
+   ],
+   "tavle": false
+  },
+  "IOGP.L": {
+   "navn": "iShares Oil & Gas Exploration & Production",
+   "segs": [
+    "brent",
+    "henryhub",
+    "wti"
+   ],
+   "tavle": true
+  },
+  "WNRG.L": {
+   "navn": "SPDR MSCI World Energy",
+   "segs": [
+    "brent",
+    "wti"
+   ],
+   "tavle": false
+  },
+  "XDW0.DE": {
+   "navn": "Xtrackers MSCI World Energy",
+   "segs": [
+    "brent",
+    "wti"
+   ],
+   "tavle": false
+  },
+  "IESU.L": {
+   "navn": "iShares S&P 500 Energy Sector",
+   "segs": [
+    "henryhub",
+    "wti"
+   ],
+   "tavle": false
+  },
+  "GDIG.L": {
+   "navn": "VanEck Global Mining",
+   "segs": [
+    "aluminium",
+    "jernmalm",
+    "kobber",
+    "nikkel"
+   ],
+   "tavle": false
+  },
+  "ISAG.L": {
+   "navn": "iShares Agribusiness",
+   "segs": [
+    "palmeolje"
+   ],
+   "tavle": true
+  },
+  "GDX.L": {
+   "navn": "VanEck Gold Miners UCITS",
+   "segs": [
+    "gold"
+   ],
+   "tavle": true
+  },
+  "GJGB.L": {
+   "navn": "VanEck Junior Gold Miners UCITS",
+   "segs": [
+    "gold"
+   ],
+   "tavle": true
+  },
+  "SPGP.L": {
+   "navn": "iShares Gold Producers",
+   "segs": [
+    "gold"
+   ],
+   "tavle": true
+  },
+  "IAUP.L": {
+   "navn": "iShares Gold Producers (USD acc)",
+   "segs": [
+    "gold"
+   ],
+   "tavle": false
+  },
+  "EXXY.DE": {
+   "navn": "iShares Diversified Commodity Swap",
+   "segs": [
+    "aluminium",
+    "brent",
+    "kobber"
+   ],
+   "tavle": false
+  },
+  "XDBC.DE": {
+   "navn": "Xtrackers Optimum Yield Diversified Commodity Swap",
+   "segs": [
+    "brent",
+    "kobber"
+   ],
+   "tavle": false
+  },
+  "CMFP.L": {
+   "navn": "L&G Longer Dated All Commodities",
+   "segs": [
+    "brent",
+    "kobber"
+   ],
+   "tavle": false
+  },
+  "CMOD.L": {
+   "navn": "Invesco Bloomberg Commodity",
+   "segs": [
+    "brent",
+    "kobber"
+   ],
+   "tavle": false
+  },
+  "EQNR.OL": {
+   "navn": "Equinor",
+   "segs": [
+    "brent",
+    "ttf"
+   ],
+   "tavle": true
+  },
+  "AKRBP.OL": {
+   "navn": "Aker BP",
+   "segs": [
+    "brent"
+   ],
+   "tavle": true
+  },
+  "DNO.OL": {
+   "navn": "DNO",
+   "segs": [
+    "brent"
+   ],
+   "tavle": true
+  },
+  "SUBC.OL": {
+   "navn": "Subsea 7",
+   "segs": [
+    "brent"
+   ],
+   "tavle": false
+  },
+  "TGS.OL": {
+   "navn": "TGS",
+   "segs": [
+    "brent"
+   ],
+   "tavle": false
+  },
+  "BORR.OL": {
+   "navn": "Borr Drilling",
+   "segs": [
+    "brent"
+   ],
+   "tavle": false
+  },
+  "SHEL.L": {
+   "navn": "Shell",
+   "segs": [
+    "brent",
+    "ttf"
+   ],
+   "tavle": false
+  },
+  "BP.L": {
+   "navn": "BP",
+   "segs": [
+    "brent",
+    "ttf"
+   ],
+   "tavle": false
+  },
+  "TTE.PA": {
+   "navn": "TotalEnergies",
+   "segs": [
+    "brent",
+    "ttf"
+   ],
+   "tavle": false
+  },
+  "NESTE.HE": {
+   "navn": "Neste",
+   "segs": [
+    "brent"
+   ],
+   "tavle": false
+  },
+  "CNA.L": {
+   "navn": "Centrica",
+   "segs": [
+    "ttf"
+   ],
+   "tavle": false
+  },
+  "ENGI.PA": {
+   "navn": "Engie",
+   "segs": [
+    "ttf"
+   ],
+   "tavle": false
+  },
+  "RWE.DE": {
+   "navn": "RWE",
+   "segs": [
+    "kull",
+    "ttf"
+   ],
+   "tavle": false
+  },
+  "EOAN.DE": {
+   "navn": "E.ON",
+   "segs": [
+    "ttf"
+   ],
+   "tavle": false
+  },
+  "FORTUM.HE": {
+   "navn": "Fortum",
+   "segs": [
+    "ttf"
+   ],
+   "tavle": false
+  },
+  "ORSTED.CO": {
+   "navn": "Ørsted",
+   "segs": [
+    "ttf"
+   ],
+   "tavle": false
+  },
+  "XOM": {
+   "navn": "ExxonMobil",
+   "segs": [
+    "brent",
+    "wti"
+   ],
+   "tavle": false
+  },
+  "CVX": {
+   "navn": "Chevron",
+   "segs": [
+    "brent",
+    "wti"
+   ],
+   "tavle": false
+  },
+  "COP": {
+   "navn": "ConocoPhillips",
+   "segs": [
+    "wti"
+   ],
+   "tavle": false
+  },
+  "FANG": {
+   "navn": "Diamondback Energy",
+   "segs": [
+    "wti"
+   ],
+   "tavle": false
+  },
+  "DVN": {
+   "navn": "Devon Energy",
+   "segs": [
+    "wti"
+   ],
+   "tavle": false
+  },
+  "EOG": {
+   "navn": "EOG Resources",
+   "segs": [
+    "wti"
+   ],
+   "tavle": false
+  },
+  "OXY": {
+   "navn": "Occidental",
+   "segs": [
+    "wti"
+   ],
+   "tavle": false
+  },
+  "APA": {
+   "navn": "APA Corp",
+   "segs": [
+    "wti"
+   ],
+   "tavle": false
+  },
+  "EQT": {
+   "navn": "EQT Corporation",
+   "segs": [
+    "henryhub"
+   ],
+   "tavle": true
+  },
+  "AR": {
+   "navn": "Antero Resources",
+   "segs": [
+    "henryhub"
+   ],
+   "tavle": false
+  },
+  "RRC": {
+   "navn": "Range Resources",
+   "segs": [
+    "henryhub"
+   ],
+   "tavle": false
+  },
+  "CNX": {
+   "navn": "CNX Resources",
+   "segs": [
+    "henryhub"
+   ],
+   "tavle": false
+  },
+  "LNG": {
+   "navn": "Cheniere Energy",
+   "segs": [
+    "henryhub",
+    "ttf"
+   ],
+   "tavle": false
+  },
+  "SLB": {
+   "navn": "SLB",
+   "segs": [
+    "brent"
+   ],
+   "tavle": false
+  },
+  "HAL": {
+   "navn": "Halliburton",
+   "segs": [
+    "wti"
+   ],
+   "tavle": false
+  },
+  "BKR": {
+   "navn": "Baker Hughes",
+   "segs": [
+    "brent"
+   ],
+   "tavle": false
+  },
+  "CNQ.TO": {
+   "navn": "Canadian Natural",
+   "segs": [
+    "wti"
+   ],
+   "tavle": false
+  },
+  "SU.TO": {
+   "navn": "Suncor",
+   "segs": [
+    "wti"
+   ],
+   "tavle": false
+  },
+  "CVE.TO": {
+   "navn": "Cenovus",
+   "segs": [
+    "wti"
+   ],
+   "tavle": true
+  },
+  "TOU.TO": {
+   "navn": "Tourmaline Oil",
+   "segs": [
+    "henryhub"
+   ],
+   "tavle": true
+  },
+  "ARX.TO": {
+   "navn": "ARC Resources",
+   "segs": [
+    "henryhub"
+   ],
+   "tavle": false
+  },
+  "BIR.TO": {
+   "navn": "Birchcliff Energy",
+   "segs": [
+    "henryhub"
+   ],
+   "tavle": true
+  },
+  "PEY.TO": {
+   "navn": "Peyto",
+   "segs": [
+    "henryhub"
+   ],
+   "tavle": false
+  },
+  "WCP.TO": {
+   "navn": "Whitecap Resources",
+   "segs": [
+    "wti"
+   ],
+   "tavle": true
+  },
+  "VET.TO": {
+   "navn": "Vermilion Energy",
+   "segs": [
+    "ttf",
+    "wti"
+   ],
+   "tavle": false
+  },
+  "NEM": {
+   "navn": "Newmont",
+   "segs": [
+    "gold"
+   ],
+   "tavle": false
+  },
+  "AEM": {
+   "navn": "Agnico Eagle",
+   "segs": [
+    "gold"
+   ],
+   "tavle": false
+  },
+  "B": {
+   "navn": "Barrick Mining",
+   "segs": [
+    "gold"
+   ],
+   "tavle": false
+  },
+  "GFI": {
+   "navn": "Gold Fields",
+   "segs": [
+    "gold"
+   ],
+   "tavle": false
+  },
+  "AU": {
+   "navn": "AngloGold Ashanti",
+   "segs": [
+    "gold"
+   ],
+   "tavle": false
+  },
+  "KGC": {
+   "navn": "Kinross Gold",
+   "segs": [
+    "gold"
+   ],
+   "tavle": false
+  },
+  "HMY": {
+   "navn": "Harmony Gold",
+   "segs": [
+    "gold"
+   ],
+   "tavle": false
+  },
+  "FNV": {
+   "navn": "Franco-Nevada",
+   "segs": [
+    "gold"
+   ],
+   "tavle": false
+  },
+  "WPM": {
+   "navn": "Wheaton Precious Metals",
+   "segs": [
+    "gold"
+   ],
+   "tavle": false
+  },
+  "RGLD": {
+   "navn": "Royal Gold",
+   "segs": [
+    "gold"
+   ],
+   "tavle": false
+  },
+  "PAAS": {
+   "navn": "Pan American Silver",
+   "segs": [
+    "gold"
+   ],
+   "tavle": false
+  },
+  "SSRM": {
+   "navn": "SSR Mining",
+   "segs": [
+    "gold"
+   ],
+   "tavle": false
+  },
+  "IAG": {
+   "navn": "IAMGOLD",
+   "segs": [
+    "gold"
+   ],
+   "tavle": false
+  },
+  "BTG": {
+   "navn": "B2Gold",
+   "segs": [
+    "gold"
+   ],
+   "tavle": false
+  },
+  "EDV.TO": {
+   "navn": "Endeavour Mining",
+   "segs": [
+    "gold"
+   ],
+   "tavle": false
+  },
+  "K.TO": {
+   "navn": "Kinross (Toronto)",
+   "segs": [
+    "gold"
+   ],
+   "tavle": false
+  },
+  "ELD.TO": {
+   "navn": "Eldorado Gold",
+   "segs": [
+    "gold"
+   ],
+   "tavle": false
+  },
+  "EQX.TO": {
+   "navn": "Equinox Gold",
+   "segs": [
+    "gold"
+   ],
+   "tavle": false
+  },
+  "LUG.TO": {
+   "navn": "Lundin Gold",
+   "segs": [
+    "gold"
+   ],
+   "tavle": false
+  },
+  "FRES.L": {
+   "navn": "Fresnillo",
+   "segs": [
+    "gold"
+   ],
+   "tavle": false
+  },
+  "HOC.L": {
+   "navn": "Hochschild Mining",
+   "segs": [
+    "gold"
+   ],
+   "tavle": false
+  },
+  "ANTO.L": {
+   "navn": "Antofagasta",
+   "segs": [
+    "kobber"
+   ],
+   "tavle": false
+  },
+  "GLEN.L": {
+   "navn": "Glencore",
+   "segs": [
+    "kobber",
+    "nikkel",
+    "sink",
+    "tinn"
+   ],
+   "tavle": true
+  },
+  "RIO.L": {
+   "navn": "Rio Tinto",
+   "segs": [
+    "aluminium",
+    "jernmalm",
+    "kobber"
+   ],
+   "tavle": false
+  },
+  "AAL.L": {
+   "navn": "Anglo American",
+   "segs": [
+    "jernmalm",
+    "kobber"
+   ],
+   "tavle": false
+  },
+  "BHP.L": {
+   "navn": "BHP Group",
+   "segs": [
+    "jernmalm",
+    "kobber"
+   ],
+   "tavle": false
+  },
+  "FCX": {
+   "navn": "Freeport-McMoRan",
+   "segs": [
+    "kobber"
+   ],
+   "tavle": false
+  },
+  "SCCO": {
+   "navn": "Southern Copper",
+   "segs": [
+    "kobber"
+   ],
+   "tavle": false
+  },
+  "TECK-B.TO": {
+   "navn": "Teck Resources",
+   "segs": [
+    "kobber",
+    "kull",
+    "sink"
+   ],
+   "tavle": false
+  },
+  "FM.TO": {
+   "navn": "First Quantum",
+   "segs": [
+    "kobber"
+   ],
+   "tavle": false
+  },
+  "HBM.TO": {
+   "navn": "Hudbay Minerals",
+   "segs": [
+    "kobber",
+    "sink"
+   ],
+   "tavle": true
+  },
+  "LUN.TO": {
+   "navn": "Lundin Mining",
+   "segs": [
+    "kobber",
+    "sink"
+   ],
+   "tavle": false
+  },
+  "IVN.TO": {
+   "navn": "Ivanhoe Mines",
+   "segs": [
+    "kobber"
+   ],
+   "tavle": false
+  },
+  "ERO.TO": {
+   "navn": "Ero Copper",
+   "segs": [
+    "kobber"
+   ],
+   "tavle": false
+  },
+  "CS.TO": {
+   "navn": "Capstone Copper",
+   "segs": [
+    "kobber"
+   ],
+   "tavle": true
+  },
+  "NEXA": {
+   "navn": "Nexa Resources",
+   "segs": [
+    "bly",
+    "sink"
+   ],
+   "tavle": true
+  },
+  "BOL.ST": {
+   "navn": "Boliden",
+   "segs": [
+    "bly",
+    "kobber",
+    "sink"
+   ],
+   "tavle": true
+  },
+  "ATYM.L": {
+   "navn": "Atalaya Mining",
+   "segs": [
+    "kobber"
+   ],
+   "tavle": true
+  },
+  "CAML.L": {
+   "navn": "Central Asia Metals",
+   "segs": [
+    "kobber",
+    "sink"
+   ],
+   "tavle": false
+  },
+  "AA": {
+   "navn": "Alcoa",
+   "segs": [
+    "aluminium"
+   ],
+   "tavle": true
+  },
+  "CENX": {
+   "navn": "Century Aluminum",
+   "segs": [
+    "aluminium"
+   ],
+   "tavle": true
+  },
+  "KALU": {
+   "navn": "Kaiser Aluminum",
+   "segs": [
+    "aluminium"
+   ],
+   "tavle": false
+  },
+  "CSTM": {
+   "navn": "Constellium",
+   "segs": [
+    "aluminium"
+   ],
+   "tavle": false
+  },
+  "VALE": {
+   "navn": "Vale",
+   "segs": [
+    "jernmalm",
+    "nikkel"
+   ],
+   "tavle": false
+  },
+  "ERA.PA": {
+   "navn": "Eramet",
+   "segs": [
+    "nikkel"
+   ],
+   "tavle": true
+  },
+  "OUT1V.HE": {
+   "navn": "Outokumpu",
+   "segs": [
+    "nikkel"
+   ],
+   "tavle": false
+  },
+  "SBSW": {
+   "navn": "Sibanye-Stillwater",
+   "segs": [
+    "gold",
+    "nikkel"
+   ],
+   "tavle": false
+  },
+  "FXPO.L": {
+   "navn": "Ferrexpo",
+   "segs": [
+    "jernmalm"
+   ],
+   "tavle": false
+  },
+  "MT.AS": {
+   "navn": "ArcelorMittal",
+   "segs": [
+    "kull"
+   ],
+   "tavle": false
+  },
+  "SSAB-B.ST": {
+   "navn": "SSAB",
+   "segs": [
+    "kull"
+   ],
+   "tavle": false
+  },
+  "STLD": {
+   "navn": "Steel Dynamics",
+   "segs": [
+    "jernmalm"
+   ],
+   "tavle": false
+  },
+  "CIA.TO": {
+   "navn": "Champion Iron",
+   "segs": [
+    "jernmalm"
+   ],
+   "tavle": true
+  },
+  "LIF.TO": {
+   "navn": "Labrador Iron Ore",
+   "segs": [
+    "jernmalm"
+   ],
+   "tavle": true
+  },
+  "BTU": {
+   "navn": "Peabody Energy",
+   "segs": [
+    "kull"
+   ],
+   "tavle": true
+  },
+  "HCC": {
+   "navn": "Warrior Met Coal",
+   "segs": [
+    "kull"
+   ],
+   "tavle": false
+  },
+  "CNR": {
+   "navn": "Core Natural Resources",
+   "segs": [
+    "kull"
+   ],
+   "tavle": false
+  },
+  "ARLP": {
+   "navn": "Alliance Resource",
+   "segs": [
+    "kull"
+   ],
+   "tavle": true
+  },
+  "NC": {
+   "navn": "NACCO Industries",
+   "segs": [
+    "kull"
+   ],
+   "tavle": false
+  },
+  "MPE.L": {
+   "navn": "M.P. Evans Group",
+   "segs": [
+    "palmeolje"
+   ],
+   "tavle": true
+  },
+  "RE.L": {
+   "navn": "REA Holdings",
+   "segs": [
+    "palmeolje"
+   ],
+   "tavle": true
+  },
+  "ADM": {
+   "navn": "Archer-Daniels-Midland",
+   "segs": [
+    "palmeolje"
+   ],
+   "tavle": false
+  },
+  "BG": {
+   "navn": "Bunge Global",
+   "segs": [
+    "palmeolje"
+   ],
+   "tavle": false
+  },
+  "CCJ": {
+   "navn": "Cameco",
+   "segs": [
+    "uran"
+   ],
+   "tavle": true
+  },
+  "CCO.TO": {
+   "navn": "Cameco (Toronto)",
+   "segs": [
+    "uran"
+   ],
+   "tavle": false
+  },
+  "NXE": {
+   "navn": "NexGen Energy",
+   "segs": [
+    "uran"
+   ],
+   "tavle": false
+  },
+  "UEC": {
+   "navn": "Uranium Energy",
+   "segs": [
+    "uran"
+   ],
+   "tavle": false
+  },
+  "DNN": {
+   "navn": "Denison Mines",
+   "segs": [
+    "uran"
+   ],
+   "tavle": false
+  },
+  "UUUU": {
+   "navn": "Energy Fuels",
+   "segs": [
+    "uran"
+   ],
+   "tavle": true
+  },
+  "URG": {
+   "navn": "Ur-Energy",
+   "segs": [
+    "uran"
+   ],
+   "tavle": false
+  },
+  "PDN.AX": {
+   "navn": "Paladin Energy",
+   "segs": [
+    "uran"
+   ],
+   "tavle": false
+  },
+  "U-UN.TO": {
+   "navn": "Sprott Physical Uranium Trust",
+   "segs": [
+    "uran"
+   ],
+   "tavle": true
+  },
+  "BWXT": {
+   "navn": "BWX Technologies",
+   "segs": [
+    "uran"
+   ],
+   "tavle": false
+  },
+  "LEU": {
+   "navn": "Centrus Energy",
+   "segs": [
+    "uran"
+   ],
+   "tavle": false
+  },
+  "CCL": {
+   "navn": "Carnival",
+   "segs": [
+    "brent"
+   ],
+   "tavle": false
+  },
+  "AFM.V": {
+   "navn": "Alphamin Resources",
+   "segs": [
+    "tinn"
+   ],
+   "tavle": false
+  },
+  "SIP.BR": {
+   "navn": "Sipef",
+   "segs": [
+    "palmeolje"
+   ],
+   "tavle": false
+  },
+  "LOTB.BR": {
+   "navn": "Lotus Bakeries",
+   "segs": [
+    "kakao"
+   ],
+   "tavle": false
+  },
+  "AI.PA": {
+   "navn": "Air Liquide",
+   "segs": [],
+   "tavle": true
+  },
+  "HEI.DE": {
+   "navn": "Heidelberg Materials",
+   "segs": [],
+   "tavle": true
+  },
+  "NHY.OL": {
+   "navn": "Norsk Hydro",
+   "segs": [
+    "aluminium"
+   ],
+   "tavle": true
+  },
+  "CLF": {
+   "navn": "Cleveland-Cliffs",
+   "segs": [
+    "jernmalm"
+   ],
+   "tavle": true
+  },
+  "HSY": {
+   "navn": "Hershey",
+   "segs": [],
+   "tavle": true
+  },
+  "BARN.SW": {
+   "navn": "Barry Callebaut",
+   "segs": [],
+   "tavle": true
+  },
+  "NESN.SW": {
+   "navn": "Nestlé",
+   "segs": [],
+   "tavle": true
+  },
+  "FRO.OL": {
+   "navn": "Frontline",
+   "segs": [],
+   "tavle": true
+  },
+  "OET.OL": {
+   "navn": "Okeanis Eco Tankers",
+   "segs": [],
+   "tavle": true
+  },
+  "DHT": {
+   "navn": "DHT Holdings",
+   "segs": [],
+   "tavle": true
+  },
+  "NAT": {
+   "navn": "Nordic American Tankers",
+   "segs": [],
+   "tavle": true
+  },
+  "HAFNI.OL": {
+   "navn": "Hafnia",
+   "segs": [],
+   "tavle": true
+  },
+  "TRMD-A.CO": {
+   "navn": "TORM",
+   "segs": [],
+   "tavle": true
+  },
+  "TNK": {
+   "navn": "Teekay Tankers",
+   "segs": [],
+   "tavle": true
+  },
+  "SBLK": {
+   "navn": "Star Bulk Carriers",
+   "segs": [],
+   "tavle": true
+  },
+  "GNK": {
+   "navn": "Genco Shipping",
+   "segs": [],
+   "tavle": true
+  },
+  "PANL": {
+   "navn": "Pangaea Logistics",
+   "segs": [],
+   "tavle": true
+  },
+  "2020.OL": {
+   "navn": "2020 Bulkers",
+   "segs": [],
+   "tavle": true
+  }
+ }
+}

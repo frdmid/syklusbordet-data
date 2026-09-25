@@ -1,0 +1,88 @@
+sonde:   sonde_kjor_kurve
+kjort:   2026-09-25 06:40:08 UTC
+commit:  a9987eb
+status:  OK
+brukte:  358 sekunder
+--------------------------------------------------------------
+A. Yahoo, enkeltkontrakter
+
+   wti        CL.NYM   24 kontrakter 2026-10..2028-09  front 94.59  6 mnd -14.56 %  12 mnd -20.58 %
+   brent      BZ.NYM   17 kontrakter 2026-11..2028-06  front 105.59  6 mnd -16.83 %  12 mnd -23.59 %
+   henryhub   NG.NYM   24 kontrakter 2026-10..2028-09  front 3.168  6 mnd -13.32 %  12 mnd 3.6 %
+   gold       GC.CMX   23 kontrakter 2026-10..2028-08  front 4277.5  6 mnd 2.42 %  12 mnd 4.89 %
+   kobber     HG.CMX   23 kontrakter 2026-10..2028-09  front 6.724  6 mnd 3.03 %  12 mnd 5.96 %
+   kakao      CC.NYB    9 kontrakter 2026-12..2028-07  front 5590.0  6 mnd 4.63 %  12 mnd 3.27 %
+   ttf        front 75.10600280761719: ingen enkeltkontrakter svarte
+   uran       UX.CMX    1 kontrakter 2026-12..2026-12  front 89.75  6 mnd - %  12 mnd - %
+   aluminium  ALI.CMX   9 kontrakter 2026-10..2027-06  front 3427.0  6 mnd 0.53 %  12 mnd - %
+
+   Utloepte kontrakter (historikk bakover):
+      CLZ20.NYM  HTTP 404, ingen serie
+      CLZ15.NYM  HTTP 404, ingen serie
+      CLZ10.NYM  HTTP 404, ingen serie
+      NGZ20.NYM  HTTP 404, ingen serie
+      GCZ20.CMX  HTTP 404, ingen serie
+      HGZ20.CMX  HTTP 404, ingen serie
+      CCZ20.NYB  HTTP 404, ingen serie
+      BZZ20.NYM  HTTP 404, ingen serie
+
+D. Tolvmaanedershelning bakover, fra utloepte kontrakter
+
+   wti         29 kontrakter,  94 maaneder 2018-11..2026-09. Siste -20.55 %, persentil 2.1 (alle) / 5.6 (3 aar). Spenn -21.3 til +4.8 %. Hull: 1 mnd
+   brent       19 kontrakter,  15 maaneder 2025-07..2026-09. Siste -23.62 %, persentil 6.7 (alle) / 6.7 (3 aar). Spenn -23.6 til +1.9 %. Hull: 0 mnd
+   henryhub    27 kontrakter, 107 maaneder 2016-06..2026-09. Siste +3.70 %, persentil 85.0 (alle) / 88.9 (3 aar). Spenn -15.6 til +18.0 %. Hull: 17 mnd
+   gold        26 kontrakter,  70 maaneder 2020-12..2026-09. Siste +4.83 %, persentil 100.0 (alle) / 100.0 (3 aar). Spenn +0.9 til +4.8 %. Hull: 0 mnd
+   kobber      27 kontrakter,  61 maaneder 2021-09..2026-09. Siste +6.33 %, persentil 100.0 (alle) / 100.0 (3 aar). Spenn -0.1 til +6.3 %. Hull: 0 mnd
+   kakao      9 kontrakter med historikk, 9 maaneder med helning. For lite.
+   uran       2 kontrakter med historikk, 0 maaneder med helning. For lite.
+   aluminium   11 kontrakter,  38 maaneder 2022-10..2025-11. Siste +3.55 %, persentil 81.6 (alle) / 83.3 (3 aar). Spenn -0.0 til +3.9 %. Hull: 0 mnd
+
+   13 ukers statspapir (^IRX): 4.067999839782715
+
+B. EIA, NYMEX kontrakt 1 til 4
+
+   wti        kontrakt 1: 10183 dager, 1983-04-04 til 2024-04-05, siste 86.91
+   wti        kontrakt 2: 9594 dager, 1985-01-02 til 2024-04-05, siste 86.1
+   wti        kontrakt 3: 10219 dager, 1983-03-30 til 2024-04-05, siste 85.2
+   wti        kontrakt 4: 9551 dager, 1985-01-02 til 2024-04-05, siste 84.24
+      helning kontrakt 1 til 4, maanedsslutt: 472 mnd fra 1985-01-31. Siste -3.07 %, persentil 23.5 mot hele historikken, 38.9 mot tre aar. Andel maaneder i backwardation: 54 %
+   henryhub   kontrakt 1: 7496 dager, 1994-01-13 til 2024-04-05, siste 1.785
+   henryhub   kontrakt 2: 7500 dager, 1994-01-12 til 2024-04-05, siste 2.01
+   henryhub   kontrakt 3: 7452 dager, 1994-01-19 til 2024-04-05, siste 2.339
+   henryhub   kontrakt 4: 7453 dager, 1993-12-20 til 2024-04-05, siste 2.437
+      helning kontrakt 1 til 4, maanedsslutt: 364 mnd fra 1994-01-31. Siste +36.53 %, persentil 97.5 mot hele historikken, 94.4 mot tre aar. Andel maaneder i backwardation: 23 %
+
+C. CME oppgjoerspriser
+   www.cme.com/CmeWS/mvc/Settlements/Futures/ HTTP 403 602 byte
+   www.cmegroup.com/CmeWS/mvc/Settlements/Fut HTTP 403 602 byte
+
+Lagret sonder/kurve.json
+
+Hva som avgjoer videre: raavarer der del D gir minst tre aar med helning kan
+faa persentil straks. Ellers bygges historikken framover, uke for uke, og
+persentilen kommer naar den er lang nok. EIA gir kort kurve med lang
+historikk for WTI og Henry Hub, som kontroll.
+
+Send hele utskriften tilbake.
+
+[stderr]
+/home/runner/work/syklusbordet-data/syklusbordet-data/sonde_kjor_kurve.py:215: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df = df[pd.to_datetime(df.iloc[:, 0], errors="coerce").notna()]
+/home/runner/work/syklusbordet-data/syklusbordet-data/sonde_kjor_kurve.py:215: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df = df[pd.to_datetime(df.iloc[:, 0], errors="coerce").notna()]
+/home/runner/work/syklusbordet-data/syklusbordet-data/sonde_kjor_kurve.py:215: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df = df[pd.to_datetime(df.iloc[:, 0], errors="coerce").notna()]
+/home/runner/work/syklusbordet-data/syklusbordet-data/sonde_kjor_kurve.py:215: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df = df[pd.to_datetime(df.iloc[:, 0], errors="coerce").notna()]
+/home/runner/work/syklusbordet-data/syklusbordet-data/sonde_kjor_kurve.py:224: Pandas4Warning: Sorting by default when concatenating all DatetimeIndex is deprecated.  In the future, pandas will respect the default of `sort=False`. Specify `sort=True` or `sort=False` to silence this message. If you see this warnings when not directly calling concat, report a bug to pandas.
+  d = pd.concat([ser[1], ser[4]], axis=1).dropna()
+/home/runner/work/syklusbordet-data/syklusbordet-data/sonde_kjor_kurve.py:215: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df = df[pd.to_datetime(df.iloc[:, 0], errors="coerce").notna()]
+/home/runner/work/syklusbordet-data/syklusbordet-data/sonde_kjor_kurve.py:215: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df = df[pd.to_datetime(df.iloc[:, 0], errors="coerce").notna()]
+/home/runner/work/syklusbordet-data/syklusbordet-data/sonde_kjor_kurve.py:215: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df = df[pd.to_datetime(df.iloc[:, 0], errors="coerce").notna()]
+/home/runner/work/syklusbordet-data/syklusbordet-data/sonde_kjor_kurve.py:215: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df = df[pd.to_datetime(df.iloc[:, 0], errors="coerce").notna()]
+/home/runner/work/syklusbordet-data/syklusbordet-data/sonde_kjor_kurve.py:224: Pandas4Warning: Sorting by default when concatenating all DatetimeIndex is deprecated.  In the future, pandas will respect the default of `sort=False`. Specify `sort=True` or `sort=False` to silence this message. If you see this warnings when not directly calling concat, report a bug to pandas.
+  d = pd.concat([ser[1], ser[4]], axis=1).dropna()

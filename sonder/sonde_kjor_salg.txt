@@ -1,0 +1,125 @@
+sonde:   sonde_kjor_salg
+kjort:   2026-09-25 06:45:45 UTC
+commit:  a9987eb
+status:  OK
+brukte:  7 sekunder
+--------------------------------------------------------------
+1. Data
+
+   kurser fra instrumenttesten 2026-09-25 06:34:09: 155 papirer
+1. Deflator
+  ok    GitHub-speil cpi-us   siste 2026-07
+
+2. Energi og gull fra GitHub-speil
+  ok    avkorting gold   2324 -> 661 mnd, starter 1971-08
+
+2b. Uran
+  ok    uran, kontroll av Cameco   mot IMF 1992-2021: median avvik 1.8 % over 357 mnd, mot futures fra 2022: 1.6 % over 49 mnd
+
+3. Metall, innsatsfaktorer og flerårige fra Pink Sheet
+  ok    Verdensbanken Pink Sheet   72 kolonner, 800 måneder, skiprows=4
+   kolonner i arket: Aluminum, Banana, Europe, Banana, US, Barley, Beef **, Chicken **, Coal, Australian, Coal, South African **, Cocoa, Coconut oil, Coffee, Arabica, Coffee, Robusta, Copper, Cotton, A Index, Crude oil, Brent, Crude oil, Dubai, Crude oil, WTI, Crude oil, average, DAP, Fish meal, Gold, Groundnut oil **, Groundnuts, Iron ore, cfr spot, Lamb **, Lead, Liquefied natural gas, Japan, Logs, Cameroon, Logs, Malaysian, Maize, Natural gas index, Natural gas, Europe, Natural gas, US, Nickel, Orange, Palm kernel oil, Palm oil, Phosphate rock, Platinum, Plywood, Potassium chloride **, Rapeseed oil, Rice, Thai 25%, Rice, Thai 5%, Rice, Thai A.1, Rice, Viet Namese 5%, Rubber, RSS3, Rubber, TSR20 **, Sawnwood, Cameroon, Sawnwood, Malaysian, Shrimps, Mexican, Silver, Sorghum, Soybean meal, Soybean oil, Soybeans, Sugar, EU, Sugar, US, Sugar, world, Sunflower oil, TSP, Tea, Colombo, Tea, Kolkata, Tea, Mombasa, Tea, avg 3 auctions, Tin, Tobacco, US import u.v., Urea, Wheat, US HRW, Wheat, US SRW, Zinc
+  ok    avkorting nikkel   800 -> 560 mnd, starter 1980-01
+  ok    avkorting aluminium   800 -> 560 mnd, starter 1980-01
+  ok    avkorting jernmalm   800 -> 200 mnd, starter 2010-01
+  ok    avkorting kull   680 -> 320 mnd, starter 2000-01
+  ok    avkorting ttf   800 -> 320 mnd, starter 2000-01
+  ok    avkorting kakao   800 -> 560 mnd, starter 1980-01
+   kontroll av de raske persentilfunksjonene mot priser.py: like paa alle 16 serier
+   kalender 1960-01 til 2026-09, innslag med 60 mnd fasit til 2021-09
+
+   p: andelen av 1000 trekk med tilfeldig holdetid (fra regelens egne holdetider) som gjorde
+   det minst like godt mot S0. Lav p betyr at regelen treffer tidspunktet, ikke bare lengden.
+
+2. Raavaren selv over hele historikken (primaert)
+
+   RAAVARE: 56 innslag, 26 episoder, 16 raavarer
+
+                                   S mot S0  pos ep      p |   formue   holdt  aldri
+                                     pp/aar                |   median  median utloest
+   S0 fast 24 mnd                                          |   +11.3%   24 mnd       
+   S1 normalisering, A <= 50           +0.2  15/26   0.293 |   +27.9%   33 mnd    32 %
+   S2 toppsone, A og Ad <= 20          +0.3  11/26   0.335 |   +20.0%   60 mnd    66 %
+   S3 trendbrudd raavaren              +1.6  12/26   0.149 |    +5.7%   32 mnd     2 %
+   S5 armert A <= 50, selg Nei         +2.1  14/26   0.038 |   +17.4%   46 mnd    39 %
+
+   Per episode (fra, innslag, median forskjell mot S0 over 60 mnd, prosentpoeng log):
+      1966-04  n=  1   S1  +35.3   S2  +35.3   S3  +35.3   S5  +35.3
+      1971-02  n=  1   S1  -28.3   S2  -10.5   S3  +77.0   S5  +77.0
+      1971-09  n=  2   S1  -56.8   S2  -36.3   S3   +2.9   S5   +2.9
+      1975-10  n=  2   S1   -1.2   S2  +27.3   S3   +4.1   S5   +4.1
+      1977-07  n=  1   S1   +6.9   S2  -23.0   S3  +24.0   S5  +24.0
+      1980-08  n=  1   S1  +79.3   S2  +79.3   S3  +41.6   S5  +35.0
+      1981-05  n=  1   S1  -32.0   S2  -32.0   S3  -20.8   S5  -32.0
+      1982-02  n=  2   S1   +0.1   S2  -12.3   S3   -6.5   S5   -6.9
+      1984-08  n=  1   S1  +25.3   S2  +25.3   S3  +59.3   S5  +25.3
+      1985-06  n=  2   S1  -17.5   S2   -1.8   S3   -6.4   S5   +0.4
+      1987-01  n=  1   S1 -105.3   S2  -76.5   S3  -17.1   S5  -17.1
+      1988-02  n=  1   S1  -18.3   S2  -18.3   S3   +2.9   S5  -18.3
+      1991-04  n=  6   S1  +41.4   S2  +22.2   S3  +20.3   S5  +26.3
+      1992-10  n=  5   S1  +18.5   S2  -13.7   S3   +0.0   S5   +5.2
+      1996-07  n=  1   S1  -23.6   S2  -23.6   S3  -12.9   S5  -23.6
+      1997-12  n=  7   S1   -3.6   S2   +4.4   S3   -6.1   S5  -12.8
+      1999-07  n=  1   S1  +28.0   S2  +28.0   S3  +25.4   S5  +28.0
+      2000-02  n=  3   S1  +23.3   S2  +35.8   S3   -0.6   S5  +62.7
+      2001-07  n=  2   S1  +34.1   S2  +72.2   S3  +10.7   S5  +88.8
+      2008-11  n=  2   S1  -15.7   S2  -15.5   S3  -10.6   S5  -10.6
+      2009-08  n=  1   S1  +38.4   S2   +1.6   S3  -16.6   S5  -16.6
+      2011-12  n=  1   S1  +15.6   S2  -15.4   S3  -31.7   S5  -31.7
+      2014-12  n=  2   S1  +18.8   S2  -26.2   S3  -22.6   S5  -10.3
+      2015-10  n=  3   S1  +12.4   S2  -21.0   S3  -19.6   S5  -19.6
+      2019-03  n=  2   S1  +38.0   S2  +75.7   S3 +100.9   S5 +100.9
+      2020-03  n=  4   S1  -83.0   S2  -46.2   S3  -25.7   S5  -46.7
+
+3. Papirene (kontroll av fortegn, beskrivende)
+
+   UTVIDET: 123 innslag, 5 episoder, 80 papirer
+
+                                   S mot S0  pos ep      p |   formue   holdt  aldri
+                                     pp/aar                |   median  median utloest
+   S0 fast 24 mnd                                          |   +50.9%   24 mnd       
+   S1 normalisering, A <= 50           -2.7   2/5    0.573 |   +23.4%   26 mnd     5 %
+   S2 toppsone, A og Ad <= 20          -3.2   1/5    0.925 |   +41.5%   60 mnd    73 %
+   S3 trendbrudd raavaren              -0.0   1/5    0.632 |   +54.3%   34 mnd     0 %
+   S4 trendbrudd papiret               -1.7   1/5    0.560 |   +33.0%   31 mnd     2 %
+   S5 armert A <= 50, selg Nei         -0.7   1/5    0.474 |   +25.8%   38 mnd    13 %
+
+   Per episode (fra, innslag, median forskjell mot S0 over 60 mnd, prosentpoeng log):
+      2011-12  n= 10   S1   -0.7   S2  -33.4   S3  -18.8   S4  -11.4   S5  -18.8
+      2014-12  n= 21   S1   +0.6   S2   -1.9   S3   -1.2   S4   +0.9   S5   -1.9
+      2015-10  n= 24   S1   -3.7   S2  -35.2   S3   -6.5   S4  -15.2   S5  -12.7
+      2019-03  n= 25   S1   +7.4   S2   +9.7   S3  +38.7   S4   -6.9   S5  +38.7
+      2020-03  n= 43   S1  -70.1   S2  -19.4   S3  -13.2   S4   -9.6   S5  -23.6
+
+   TAVLE: 33 innslag, 5 episoder, 20 papirer
+
+                                   S mot S0  pos ep      p |   formue   holdt  aldri
+                                     pp/aar                |   median  median utloest
+   S0 fast 24 mnd                                          |  +103.1%   24 mnd       
+   S1 normalisering, A <= 50           -4.5   2/5    0.474 |   +51.7%   27 mnd     9 %
+   S2 toppsone, A og Ad <= 20          -3.5   1/5    0.317 |   +54.9%   60 mnd    79 %
+   S3 trendbrudd raavaren              -0.4   1/5    0.556 |   +67.5%   34 mnd     0 %
+   S4 trendbrudd papiret               -1.1   1/5    0.454 |   +81.3%   32 mnd     0 %
+   S5 armert A <= 50, selg Nei         -2.0   1/5    0.410 |   +63.2%   38 mnd    21 %
+
+   Per episode (fra, innslag, median forskjell mot S0 over 60 mnd, prosentpoeng log):
+      2011-12  n=  4   S1   +1.9   S2  -33.7   S3  -20.0   S4  -11.7   S5  -20.0
+      2014-12  n=  8   S1   -9.2   S2  -13.6   S3  -16.8   S4  -10.9   S5  -10.5
+      2015-10  n=  6   S1  -31.9   S2  -82.4   S3  -15.6   S4  -14.9   S5  -51.2
+      2019-03  n=  5   S1   +9.9   S2  +76.6   S3  +63.1   S4  +34.8   S5  +63.1
+      2020-03  n= 10   S1  -82.5   S2  -34.4   S3  -21.8   S4  -23.8   S5  -30.7
+
+4. Beslutning etter regelen satt foer kjoering
+
+   S1: raavaren S > 0 ja, raavaren p <= 0,0125 mot tilfeldig salg nei, papirene S >= 0 nei
+   S2: raavaren S > 0 ja, raavaren p <= 0,0125 mot tilfeldig salg nei, papirene S >= 0 nei
+   S3: raavaren S > 0 ja, raavaren p <= 0,0125 mot tilfeldig salg nei, papirene S >= 0 nei
+   S5: raavaren S > 0 ja, raavaren p <= 0,0125 mot tilfeldig salg nei, papirene S >= 0 nei
+
+   Salgsregel etter testen: S0  (fast holdetid 24 maaneder staar)
+   Risikoregel uten test: selg hvis overlevelsesporten C stenger for papiret.
+   Beslutningsregelen er godkjent av Frode 24.09.2026. Regelen over gjelder fra naa.
+
+   lagret sonder/salg.json
+
+Send hele utskriften tilbake.

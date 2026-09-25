@@ -1,8 +1,8 @@
 sonde:   sonde_kjor_instrumenttest
-kjort:   2026-09-24 13:49:31 UTC
-commit:  b04c2ed
+kjort:   2026-09-25 06:34:09 UTC
+commit:  a9987eb
 status:  OK
-brukte:  183 sekunder
+brukte:  186 sekunder
 --------------------------------------------------------------
 1. Univers
 
@@ -21,6 +21,13 @@ brukte:  183 sekunder
    b    155 papirer, 2455 signalmaaneder i vinduet
    a+b  139 papirer, 384 signalmaaneder i vinduet
    c     34 papirer, 599 signalmaaneder i vinduet
+   a60  139 papirer, 3175 signalmaaneder i vinduet
+   a65  139 papirer, 2739 signalmaaneder i vinduet
+   a70  139 papirer, 2308 signalmaaneder i vinduet
+   a75  139 papirer, 1737 signalmaaneder i vinduet
+   a85  139 papirer, 1217 signalmaaneder i vinduet
+   a90  139 papirer, 889 signalmaaneder i vinduet
+   a95  139 papirer, 571 signalmaaneder i vinduet
 
 4. Resultater
 
@@ -34,18 +41,32 @@ brukte:  183 sekunder
    TAVLE  (50 papirer)
 
    variant papirer innslag  ep pos | 24 mnd: mer/aar    p    | 12 mnd: mer/aar   p    |    r24   treff | videre fall  >30 %
-   a         20     37     6   5 |    +17.7 %  0.003 |    +22.0 %  0.009 |  +63.3 %   76 % |   -16.9 %    43 %
-   b         33     60     7   6 |     +7.9 %  0.040 |     +0.4 %  0.481 |  +24.8 %   68 % |   -22.2 %    40 %
-   a+b       14     18     3   3 |    +14.7 %  0.066 |    +24.6 %  0.046 | +187.1 %   83 % |   -10.6 %    44 %
-   c          7     12     7   4 |     +1.0 %  0.482 |     -2.9 %  0.620 |  +39.2 %   58 % |   -12.5 %    17 %
+   a         20     37     6   5 |    +17.7 %  0.004 |    +22.0 %  0.004 |  +63.3 %   76 % |   -16.9 %    43 %
+   b         33     60     7   6 |     +7.9 %  0.046 |     +0.4 %  0.485 |  +24.8 %   68 % |   -22.2 %    40 %
+   a+b       14     18     3   3 |    +14.7 %  0.051 |    +24.6 %  0.043 | +187.1 %   83 % |   -10.6 %    44 %
+   c          7     12     7   4 |     +1.0 %  0.492 |     -2.9 %  0.585 |  +39.2 %   58 % |   -12.5 %    17 %
+   a60       29     56     9   5 |     +5.4 %  0.126 |     -6.3 %  0.852 |  +16.9 %   61 % |   -16.2 %    39 %
+   a65       22     43     6   4 |     +9.2 %  0.026 |     -7.5 %  0.834 |  +21.2 %   63 % |   -20.8 %    40 %
+   a70       22     37     6   5 |     +9.5 %  0.037 |     +0.5 %  0.490 |  +35.8 %   76 % |   -18.9 %    38 %
+   a75       20     37     6   4 |    +11.9 %  0.012 |     +8.3 %  0.204 |  +39.8 %   70 % |   -31.5 %    51 %
+   a85       18     35     6   4 |    +13.5 %  0.015 |     +5.5 %  0.304 |  +80.1 %   77 % |   -16.7 %    43 %
+   a90       15     28     6   4 |    +12.8 %  0.016 |    +16.8 %  0.062 |  +48.0 %   71 % |   -14.1 %    46 %
+   a95       13     26     6   5 |     +9.9 %  0.111 |     +7.9 %  0.282 |  +45.4 %   69 % |    -9.2 %    38 %
 
    UTVIDET  (155 papirer)
 
    variant papirer innslag  ep pos | 24 mnd: mer/aar    p    | 12 mnd: mer/aar   p    |    r24   treff | videre fall  >30 %
-   a         81    136     6   5 |    +10.1 %  0.006 |     +6.5 %  0.114 |  +48.0 %   79 % |   -12.8 %    29 %
-   b        101    172     4   3 |     +3.1 %  0.127 |     -0.8 %  0.584 |  +28.7 %   66 % |   -21.1 %    38 %
-   a+b       48     59     2   2 |     -4.6 %  0.724 |    -12.1 %  0.903 |  +96.0 %   85 % |   -15.6 %    37 %
-   c         27     40     6   4 |     -1.9 %  0.660 |     -6.2 %  0.813 |  +29.1 %   62 % |   -21.0 %    40 %
+   a         81    136     6   5 |    +10.1 %  0.004 |     +6.5 %  0.102 |  +48.0 %   79 % |   -12.8 %    29 %
+   b        101    172     4   3 |     +3.1 %  0.123 |     -0.8 %  0.543 |  +28.7 %   66 % |   -21.1 %    38 %
+   a+b       48     59     2   2 |     -4.6 %  0.767 |    -12.1 %  0.904 |  +96.0 %   85 % |   -15.6 %    37 %
+   c         27     40     6   4 |     -1.9 %  0.666 |     -6.2 %  0.819 |  +29.1 %   62 % |   -21.0 %    40 %
+   a60      103    205     8   7 |     +3.9 %  0.042 |     -3.6 %  0.869 |  +28.8 %   71 % |   -11.5 %    25 %
+   a65       85    164     6   5 |     +6.2 %  0.045 |     +1.8 %  0.365 |  +35.3 %   72 % |   -12.0 %    27 %
+   a70       85    144     7   4 |     +5.8 %  0.078 |     +3.4 %  0.292 |  +47.5 %   81 % |   -10.4 %    21 %
+   a75       81    136     7   6 |     +6.4 %  0.026 |     +2.0 %  0.349 |  +37.2 %   75 % |   -15.7 %    35 %
+   a85       73    128     6   4 |     +6.3 %  0.018 |     +0.4 %  0.489 |  +43.6 %   78 % |   -14.2 %    31 %
+   a90       67    114     6   5 |     +2.7 %  0.210 |     +3.4 %  0.237 |  +42.5 %   76 % |   -12.9 %    32 %
+   a95       63    110     6   5 |     +2.8 %  0.215 |     +3.5 %  0.243 |  +44.7 %   75 % |    -7.0 %    25 %
 
    Episodene, UTVIDET (fra, til, innslag, median realavkastning 24 mnd):
    a
@@ -74,5 +95,6 @@ brukte:  183 sekunder
    Overlapp: av 1409 maaneder med raavareflagg sto papiret selv i bunnsone i 384 (27 %).
 
    lagret sonder/instrumenttest.json
+   lagret sonder/instrument_kurser.csv og sonder/instrument_univers.json
 
 Send hele utskriften tilbake.
