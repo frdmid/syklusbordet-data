@@ -1,71 +1,9 @@
-Hopper over 11 ferdige sonder (sonder_ferdige.txt): sonde_kjor_cot, sonde_kjor_indikator, sonde_kjor_instrumenttest, sonde_kjor_kurve, sonde_kjor_laks, sonde_kjor_macrotrends, sonde_kjor_salg, sonde_kjor_stockanalysis, sonde_kjor_terskel, sonde_kjor_timing, sonde_kjor_uran
-
-Oppstarter: 2 sonde(r) funnet
-
-=== sonde_kjor_bdi ===
-1. Katalog
-   358 rapporter, 2019-03-06 til 2026-09-24
-   leser alle 358
-
-2. Hvor tallet staar (de tre nyeste, linjene rundt etiketten)
-
-   2026-09-24: 1 treff
-        $16,000
-        $500
-      > Baltic Dry Index (BDI)
-        $3,430
-        -$2
-        1 Year T/C Dry Bulk
-        03
-        Gas
-        Chartering
-
-   2026-09-16: 1 treff
-        $15,500
-        -$500
-      > Baltic Dry Index (BDI)
-        $3,327
-        -$33
-        1 Year T/C Dry Bulk
-        03
-        yaD
-        rep
-
-   2026-09-09: 1 treff
-        $16,000
-        $1,500
-      > Baltic Dry Index (BDI)
-        $3,620
-        $36
-        1 Year T/C Dry Bulk
-        03
-        Gas
-        Chartering
-
-3. Maanedssnitt av ukene mot bdi.json
-   tall funnet i 308 av 358 rapporter (86 %)
-   uten tall: 2026-07-23, 2026-07-15, 2026-07-08, 2026-06-17, 2026-05-27, 2026-05-06, 2026-04-22, 2026-04-02, 2026-03-26, 2026-03-18, 2026-01-21, 2026-01-14, 2026-01-05, 2025-10-15, 2025-10-08, 2025-09-03, 2025-08-27, 2025-08-06, 2025-07-16, 2025-05-07, 2025-04-30, 2025-03-05, 2025-01-23, 2024-12-09, 2024-11-13, 2024-10-09, 2024-10-02, 2024-08-28, 2024-06-19, 2024-06-13 ...
-   83 maaneder med minst to uker og bdi.json: 69 innenfor 10 % (83 %), median avvik 4.0 %
-   stoerste avvik:
-      2020-06  Fearnleys    1077 (4 uker)  bdi.json    1523   -29.3 %
-      2023-11  Fearnleys    1594 (4 uker)  bdi.json    2179   -26.9 %
-      2025-12  Fearnleys    2465 (3 uker)  bdi.json    1988   +24.0 %
-      2023-02  Fearnleys     622 (4 uker)  bdi.json     805   -22.8 %
-      2021-10  Fearnleys    4853 (4 uker)  bdi.json    4186   +15.9 %
-      2024-03  Fearnleys    2381 (2 uker)  bdi.json    2062   +15.4 %
-      2023-01  Fearnleys     949 (4 uker)  bdi.json     823   +15.3 %
-      2020-09  Fearnleys    1362 (4 uker)  bdi.json    1555   -12.4 %
-      2022-08  Fearnleys    1375 (4 uker)  bdi.json    1225   +12.2 %
-      2025-07  Fearnleys    1745 (4 uker)  bdi.json    1988   -12.2 %
-
-   Krav: tall i minst 80 % (ja), minst 90 % av maanedene innenfor 10 % (nei). IKKE OPPFYLT
-   Siste uker: 2026-08-20: 2776, 2026-08-26: 3056, 2026-09-02: 3331, 2026-09-09: 3620, 2026-09-16: 3327, 2026-09-24: 3430
-
-Send hele utskriften tilbake.
-
---- skrevet til sonder/sonde_kjor_bdi.txt (570 s, kode 0)
-
-=== sonde_kjor_dadj ===
+sonde:   sonde_kjor_dadj
+kjort:   2026-09-25 13:17:09 UTC
+commit:  50d7095
+status:  OK
+brukte:  23 sekunder
+--------------------------------------------------------------
 1. Papirer: D med ujustert kurs (i dag) og utbyttejustert
    ticker        utb    fall      D | fall adj  D adj  endring
    2020.OL        73  -96.4%   95.4 |   -95.9%   95.4     +0.0
@@ -406,10 +344,3 @@ Send hele utskriften tilbake.
   d = np.nanmean(np.vstack([exp_pct(fall.values), exp_pct(-u200.values)]), axis=0)
 /home/runner/work/syklusbordet-data/syklusbordet-data/sonde_kjor_dadj.py:81: RuntimeWarning: Mean of empty slice
   d = np.nanmean(np.vstack([exp_pct(fall.values), exp_pct(-u200.values)]), axis=0)
-
---- skrevet til sonder/sonde_kjor_dadj.txt (23 s, kode 0)
-
-
-OPPSUMMERING
-   OK    sonde_kjor_bdi                             570 s  -> sonder/sonde_kjor_bdi.txt
-   OK    sonde_kjor_dadj                             23 s  -> sonder/sonde_kjor_dadj.txt
