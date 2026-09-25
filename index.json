@@ -1,5 +1,5 @@
 {
- "oppdatert": "2026-09-24 13:56:47",
+ "oppdatert": "2026-09-25 09:18:54",
  "segmenter": [
   "brent",
   "wti",
@@ -223,6 +223,11 @@
    "kilde": "COT totalt",
    "status": "OK",
    "detalj": "6 av 6 kontrakter"
+  },
+  {
+   "kilde": "flagglogg",
+   "status": "OK",
+   "detalj": "uke 2026-W39: 16 segmenter, 39 kurser, 2 hendelser"
   }
  ]
 }
