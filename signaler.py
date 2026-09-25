@@ -244,8 +244,14 @@ def kurveform(kontrakter, seg_id="", rente_pst=None):
         elif h12 > rente_pst + 5:
             besk.append(f"Contangoen er godt over renten ({str(round(rente_pst, 1)).replace('.', ',')} %): markedet betaler "
                         "for å lagre, som er et tegn på overskudd.")
+    # Kortenden: fronten mot neste kontrakt i stigen (25.09.2026). Det mest
+    # direkte tegnet paa stramt eller slapt fysisk marked akkurat naa. Avstanden
+    # i maaneder staar ved siden av, fordi gull og kobber ikke har likvide
+    # kontrakter hver maaned og neste kontrakt kan ligge to maaneder ut.
+    fn = pkt[1] if len(pkt) > 1 else None
     return {"punkter": pkt, "helning12": h12, "helning3": h3, "form": form,
-            "beskrivelse": besk, "rente_pst": rente_pst}
+            "beskrivelse": besk, "rente_pst": rente_pst,
+            "front_neste": fn["pst"] if fn else None, "front_neste_mnd": fn["mnd"] if fn else None}
 
 
 def kurvepersentil(historikk, siste):

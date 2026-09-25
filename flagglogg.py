@@ -15,7 +15,9 @@
 #                   Gjoer det mulig aa regne ut enhver inngang og salgsregel
 #                   senere paa data som ble logget foer utfallet var kjent
 #   hendelser.csv   naar et segment gaar inn i eller ut av bunnsone eller
-#                   oppsikt. Inngang i bunnsone gir en tenkt kjoepslinje per
+#                   oppsikt, eller (Brent, fra 25.09.2026) inn i eller ut av det
+#                   parallelle signalet detrendet A >= 95 ("detrendet_ekstrem",
+#                   med tenkte kjoep merket "tenkt_kjoep_d95"). Inngang i bunnsone gir en tenkt kjoepslinje per
 #                   papir paa tavlen (ikke de omvendte), til siste kurs.
 #                   Salgslinjer kommer naar salgsregelen er vedtatt.
 #
@@ -32,7 +34,7 @@ UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"}
 
 F_UKE = ["uke", "dato", "segment", "siste_obs", "A", "Ad", "D", "port", "trend",
-         "cot_pctl_3aar", "bunnsone", "oppsikt"]
+         "cot_pctl_3aar", "bunnsone", "oppsikt", "d95"]
 F_KURS = ["uke", "dato", "ticker", "segmenter", "kurs", "valuta", "kursdato"]
 F_HEND = ["uke", "dato", "segment", "hendelse", "ticker", "kurs", "valuta", "kursdato",
           "A", "Ad", "D", "port", "trend", "merknad"]
@@ -104,7 +106,8 @@ def oppdater(segmenter, les, skriv, note=print, idag=None, kursfunk=siste_kurs):
                "A": sc.get("A"), "Ad": sc.get("Ad"), "D": sc.get("D"), "port": sc.get("gate"),
                "trend": (s.get("trend") or {}).get("signal"),
                "cot_pctl_3aar": (s.get("cot") or {}).get("mm_pctl_3aar"),
-               "bunnsone": bool(sc.get("flagg")), "oppsikt": bool(sc.get("oppsikt"))}
+               "bunnsone": bool(sc.get("flagg")), "oppsikt": bool(sc.get("oppsikt")),
+               "d95": "" if "flagg_d95" not in sc else bool(sc.get("flagg_d95"))}
         nye_uke.append(rad)
         tilstand[s["id"]] = rad
 
@@ -127,9 +130,11 @@ def oppdater(segmenter, les, skriv, note=print, idag=None, kursfunk=siste_kurs):
     forste = not forrige
     for sid, r in tilstand.items():
         f = forrige.get(sid)
-        for felt, navn in (("bunnsone", "bunnsone"), ("oppsikt", "oppsikt")):
-            naa = r[felt]
-            foer = _b(f[felt]) if f else None
+        for felt, navn in (("bunnsone", "bunnsone"), ("oppsikt", "oppsikt"), ("d95", "detrendet_ekstrem")):
+            if r[felt] == "":
+                continue
+            naa = bool(r[felt])
+            foer = _b(f.get(felt, "")) if f else None
             if forste or f is None:
                 if naa:
                     hend, merk = f"{navn}_aktiv_ved_loggstart", "sto allerede i sonen da loggen startet, ikke et rent innslag"
@@ -144,15 +149,18 @@ def oppdater(segmenter, les, skriv, note=print, idag=None, kursfunk=siste_kurs):
             base = {"uke": uke, "dato": dato, "segment": sid, "hendelse": hend, "A": r["A"],
                     "Ad": r["Ad"], "D": r["D"], "port": r["port"], "trend": r["trend"], "merknad": merk}
             nye_hend.append({**base, "ticker": "", "kurs": "", "valuta": "", "kursdato": ""})
-            if navn == "bunnsone" and hend != "bunnsone_slutt":
+            if navn in ("bunnsone", "detrendet_ekstrem") and not hend.endswith("_slutt"):
+                parallell = navn == "detrendet_ekstrem"
                 seg = next(s for s in segmenter if s["id"] == sid)
                 for i in seg.get("instrumenter") or []:
                     if i.get("omvendt"):
                         continue
                     k = kurs.get(i["ticker"], (None, None, None))
-                    nye_hend.append({**base, "hendelse": "tenkt_kjoep", "ticker": i["ticker"],
+                    nye_hend.append({**base, "hendelse": "tenkt_kjoep_d95" if parallell else "tenkt_kjoep",
+                                     "ticker": i["ticker"],
                                      "kurs": k[0], "valuta": k[1], "kursdato": k[2],
-                                     "merknad": ("inngang ved flagget (T0)" if not merk else merk)
+                                     "merknad": ("parallelt signal, detrendet A >= 95, ikke testet; " if parallell else "")
+                                                + ("inngang ved flagget (T0)" if not merk else merk)
                                                 + ("" if k[0] is not None else "; kurs manglet")})
 
     skriv("logg/flagg_uke.csv", skriv_csv(gml_uke + nye_uke, F_UKE))

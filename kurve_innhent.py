@@ -87,6 +87,8 @@ def oppdater(segmenter, les, skriv, note=print, idag=None):
                 continue
             h = hist.setdefault(s["id"], {})
             h[mnd] = k["helning12"]
+            if k.get("front_neste") is not None:
+                hist.setdefault("_front_neste", {}).setdefault(s["id"], {})[mnd] = k["front_neste"]
             serie = [h[t] for t in sorted(h)]
             p3, pa = kurvepersentil(serie, k["helning12"])
             k.update({"pctl_3aar": p3, "pctl_alle": pa, "fra": min(h)[:4], "mnd_historikk": len(h),
@@ -97,5 +99,5 @@ def oppdater(segmenter, les, skriv, note=print, idag=None):
             note(f"kurve {s['id']}", False, f"{type(e).__name__}: {str(e)[:60]}")
     skriv("kurve_hist.json", json.dumps(hist, ensure_ascii=False, indent=0))
     note("kurveform", n > 0, f"{n} segmenter, rente {rente}, historikk " +
-         ", ".join(f"{k} {len(v)} mnd" for k, v in hist.items()))
+         ", ".join(f"{k} {len(v)} mnd" for k, v in hist.items() if not k.startswith("_")))
     return n

@@ -199,6 +199,9 @@ def expanding_bands(x, qs=(10, 25, 50, 75, 90)):
     return res
 
 
+D95_SEGMENTER, D95_NIVAA = {"brent"}, 95
+
+
 def build_segment(seg_id, name, group, unit, nom, cpi, note_txt, source, url):
     nom = nom.dropna().sort_index()
     real = (nom * (cpi.dropna().iloc[-1] / cpi.reindex(nom.index).ffill())).dropna()
@@ -238,6 +241,16 @@ def build_segment(seg_id, name, group, unit, nom, cpi, note_txt, source, url):
     over = lambda v, i: (not np.isnan(v[i])) and v[i] >= 80
     flagg = np.array([over(A, i) and over(Ad, i) for i in range(len(A))])
     oppsikt = np.array([over(A, i) and not flagg[i] for i in range(len(A))])
+    # Parallelt signal, innfoert etter Frodes beslutning 25.09.2026: detrendet
+    # A paa 95 eller mer, uavhengig av raa A. Bare for Brent. IKKE testet som
+    # regel: ideen kom etter aa ha sett episoden fra desember 2025, og Brent
+    # alene har fem innslag siden 1987 (1993-10, 1998-02, 2015-01, 2020-02,
+    # 2025-12). Det vises og logges separat fra bunnsonen, slik at det kan
+    # vurderes framover uten aa blandes med den testede regelen.
+    if seg_id in D95_SEGMENTER:
+        d95 = np.array([(not np.isnan(Ad[i])) and Ad[i] >= D95_NIVAA for i in range(len(Ad))])
+    else:
+        d95 = np.zeros(len(Ad), dtype=bool)
     enig = flagg
     miz = 0
     for i in range(len(idx) - 1, -1, -1):
@@ -256,7 +269,8 @@ def build_segment(seg_id, name, group, unit, nom, cpi, note_txt, source, url):
                      "A": None if np.isnan(A[i]) else round(float(A[i]), 1),
                      "Ad": None if np.isnan(Ad[i]) else round(float(Ad[i]), 1),
                      "Ar": None if np.isnan(Ar[i]) else round(float(Ar[i]), 1),
-                     "flagg": bool(flagg[i]), "oppsikt": bool(oppsikt[i])})
+                     "flagg": bool(flagg[i]), "oppsikt": bool(oppsikt[i]),
+                     **({"flagg_d95": bool(d95[i])} if seg_id in D95_SEGMENTER else {})})
 
     last, li = keep[-1], pos[keep[-1]]
     return {"id": seg_id, "name": name, "group": group, "unit": unit, "status": "live",
@@ -269,6 +283,9 @@ def build_segment(seg_id, name, group, unit, nom, cpi, note_txt, source, url):
                        "Ar": None if np.isnan(Ar[li]) else round(float(Ar[li]), 1),
                        "flagg": bool(flagg[li]),
                        "oppsikt": bool(oppsikt[li]),
+                       **({"flagg_d95": bool(d95[li]),
+                           "d95_regel": f"detrendet A >= {D95_NIVAA}, parallelt signal, ikke testet"}
+                          if seg_id in D95_SEGMENTER else {}),
                        "A2": None, "B": None, "D": None, "S": None,
                        "gate": "ukjent", "months_in_zone": miz},
             "series": rows}
@@ -313,11 +330,59 @@ def push(path, text):
 # --------------------------------------------------------------------- kjøring
 
 print("1. Deflator")
-cpi = None
+# Reservekjede, innfoert 25.09.2026. KPI-speilet var eneste deflator, og faller
+# det bort, stopper alt. Alle leddene er samme serie: amerikansk KPI for alle
+# varer, ikke sesongjustert (BLS CUUR0000SA0). Den revideres ikke, saa det
+# trengs ingen versjonshaandtering, bare et flagg naar tallet er gammelt.
+# Realprisen regnes som nom * KPI(siste) / KPI(t), som ikke avhenger av
+# basisaaret, saa OECD sin indeks (2015 = 100) gir samme realpris.
+#   1 GitHub-speilet (datasets/cpi-us)
+#   2 BLS flatfil (krever en User-Agent som sier hvem som spoer)
+#   3 OECD SDMX
+#   4 FRED
+#   5 forrige ukes kopi i repoet (cpi_kopi.csv), merket som gammel
+# Naar speilet virker, hentes BLS ogsaa som kontroll av de siste 24 maanedene.
+BLS_UA = {"User-Agent": "Syklusbordet frode@h-k.no"}   # samme form som SEC_UA i overlevelse_c.py
+
+def bls_cpi():
+    t = requests.get("https://download.bls.gov/pub/time.series/cu/cu.data.1.AllItems",
+                     headers=BLS_UA, timeout=40)
+    t.raise_for_status()
+    rader = {}
+    for linje in t.text.splitlines()[1:]:
+        f = [x.strip() for x in linje.split("\t")]
+        if len(f) >= 4 and f[0] == "CUUR0000SA0" and f[2].startswith("M") and f[2] != "M13":
+            rader[pd.Period(f"{f[1]}-{f[2][1:]}", "M")] = float(f[3])
+    if len(rader) < 600:
+        raise ValueError(f"bare {len(rader)} maaneder")
+    return pd.Series(rader).sort_index()
+
+def oecd_cpi():
+    url = ("https://sdmx.oecd.org/public/rest/data/OECD.SDD.TPS,DSD_PRICES@DF_PRICES_ALL,1.0/"
+           "USA.M.N.CPI.IX._T.N._Z?startPeriod=1950-01&format=csvfilewithlabels")
+    d = pd.read_csv(io.StringIO(get(url, timeout=60).text))
+    s = pd.Series(pd.to_numeric(d["OBS_VALUE"], errors="coerce").values,
+                  index=pd.PeriodIndex(d["TIME_PERIOD"].astype(str), freq="M")).dropna().sort_index()
+    if len(s) < 600:
+        raise ValueError(f"bare {len(s)} maaneder")
+    return s
+
+def kopi_cpi():
+    t = requests.get(f"https://raw.githubusercontent.com/{REPO}/{BRANCH}/cpi_kopi.csv",
+                     params={"cb": int(time.time())}, headers=UA, timeout=30)
+    t.raise_for_status()
+    d = pd.read_csv(io.StringIO(t.text))
+    return pd.Series(d["kpi"].values, index=pd.PeriodIndex(d["mnd"].astype(str), freq="M"))
+
+cpi, cpi_kilde = None, None
 for navn, fn in [("GitHub-speil cpi-us", lambda: csv_series(MIRROR + "cpi-us/main/data/cpiai.csv")),
-                 ("FRED CPIAUCSL", lambda: fred("CPIAUCSL"))]:
+                 ("BLS flatfil CUUR0000SA0", bls_cpi),
+                 ("OECD SDMX KPI USA", oecd_cpi),
+                 ("FRED CPIAUCSL", lambda: fred("CPIAUCSL")),
+                 ("forrige ukes kopi (cpi_kopi.csv)", kopi_cpi)]:
     try:
         cpi = fn()
+        cpi_kilde = navn
         note(navn, True, f"siste {cpi.index[-1]}")
         break
     except Exception as e:
@@ -325,6 +390,18 @@ for navn, fn in [("GitHub-speil cpi-us", lambda: csv_series(MIRROR + "cpi-us/mai
 if cpi is None:
     raise SystemExit("Ingen deflator tilgjengelig. Alt annet er meningsløst uten. "
                      "Send loggen over til Claude.")
+alder = (pd.Period(pd.Timestamp.now(), freq="M") - cpi.index[-1]).n
+note("deflator, alder", alder <= 3 and not cpi_kilde.startswith("forrige"),
+     f"{cpi_kilde}, siste {cpi.index[-1]}, {alder} mnd gammel"
+     + (". GAMMEL: realprisene regnes mot en KPI som ikke er oppdatert" if alder > 3 else ""))
+if cpi_kilde.startswith("GitHub"):
+    try:
+        kontroll = bls_cpi()
+        f = cpi.index.intersection(kontroll.index)[-24:]
+        avvik = float((cpi[f] / kontroll[f] - 1).abs().max() * 100)
+        note("deflator, kontroll mot BLS", avvik < 0.05, f"{len(f)} mnd, stoerste avvik {avvik:.3f} %")
+    except Exception as e:
+        note("deflator, kontroll mot BLS", False, f"BLS svarte ikke: {type(e).__name__}: {str(e)[:50]}")
 
 print("\n2. Energi og gull fra GitHub-speil")
 MIRRORS = [
@@ -816,6 +893,11 @@ if GITHUB_TOKEN and SEGMENTS:
         except Exception as e:
             feil += 1
             note(f"push {s['id']}", False, str(e)[:70])
+    if cpi_kilde and not cpi_kilde.startswith("forrige"):
+        try:
+            push("cpi_kopi.csv", "mnd,kpi\n" + "\n".join(f"{p},{v}" for p, v in cpi.items()) + "\n")
+        except Exception as e:
+            note("push cpi_kopi.csv", False, str(e)[:60])
     if MARKED:
         try:
             push("marked.json", json.dumps(MARKED, ensure_ascii=False))
