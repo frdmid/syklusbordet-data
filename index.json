@@ -1,5 +1,5 @@
 {
- "oppdatert": "2026-09-25 09:18:54",
+ "oppdatert": "2026-09-25 09:45:21",
  "segmenter": [
   "brent",
   "wti",
@@ -177,7 +177,7 @@
   {
    "kilde": "overlevelsesport C",
    "status": "OK",
-   "detalj": "16 segment, 7 aapne"
+   "detalj": "16 segment, 8 aapne"
   },
   {
    "kilde": "tilbudsskaar B",
@@ -223,6 +223,11 @@
    "kilde": "COT totalt",
    "status": "OK",
    "detalj": "6 av 6 kontrakter"
+  },
+  {
+   "kilde": "VIX",
+   "status": "OK",
+   "detalj": "15.38 per 2026-09-25, persentil 33.4 (fra 1990-01) / 35.0 (10 aar)"
   },
   {
    "kilde": "flagglogg",
