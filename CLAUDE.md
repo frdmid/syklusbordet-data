@@ -1,8 +1,9 @@
 # Syklusbordet-data
 
-- Før hver endring du gjør i repoet i `notater/LOGG.md`, nyeste øverst, i samme
-  commit som endringen. Dato, økt, hva, hvorfor og commit. Automatiske commits
-  fra GitHub Actions føres ikke.
-- Les `notater/LOGG.md` og de nyeste notatene i `notater/` før du begynner,
-  så du vet hva andre økter har gjort.
+- `notater/LOGG.md` er felles logg for Cowork-økten og Claude Code-økten. Les den
+  før du begynner.
+- Før hver vesentlige endring der, nyeste øverst, i samme commit som endringen:
+  dato og klokkeslett (norsk tid), hvilken økt, hva som ble gjort, hvilke filer,
+  og hva den andre økten må vite. Et eget notat i `notater/` skal også ha en
+  linje i loggen. Automatiske commits fra GitHub Actions føres ikke.
 - Skriv på norsk. Ingen tankestrek i tekst.
