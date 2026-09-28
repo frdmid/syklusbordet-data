@@ -244,6 +244,19 @@ for tk in sorted(AKSJER):
           f"{len(drift)} aar, netto gjeld/EK {str(ngek):>6}")
     time.sleep(0.3)
 
+print("\n2b. Manuelt leste aarsrapporter (c_manuell.json, fra 28.09.2026)")
+# Papirer uten SEC-tall kan maales fra aarsrapportene, lest for haand. Samme
+# regnestykke og samme port, se c_manuell.py. Feiler noe her, staar papirene
+# som "ukjent" som foer, og resten av C paavirkes ikke.
+try:
+    import c_manuell
+    for tk, v in c_manuell.maal({t: a for t, a in AKSJER.items() if t not in SELSKAP}).items():
+        SELSKAP[tk] = v
+        if tk in utenfor:
+            utenfor.remove(tk)
+except Exception as e:
+    print(f"   FEIL {type(e).__name__}: {str(e)[:100]}")
+
 print(f"\n   {len(SELSKAP)} maalt, {len(utenfor)} uten SEC-tall: {', '.join(utenfor)}")
 
 print("\n3. Port per segment")
@@ -282,8 +295,9 @@ if GITHUB_TOKEN and SELSKAP:
                              "driftskontantstrommen blir like daarlig som sitt verste aar "
                              "i hele historikken, etter renter. kvartaler_naa er det samme "
                              "ved siste aars drift. Under aatte kvartaler regnes "
-                             "porten som stengt. Selskaper uten SEC-tall staar som ukjent, "
-                             "ikke som stengt.")},
+                             "porten som stengt. Selskaper uten SEC-tall maales fra "
+                             "aarsrapportene i c_manuell.json der de er lest (feltet kilde), "
+                             "ellers staar de som ukjent, ikke som stengt.")},
                 ensure_ascii=False).encode()).decode()}
     if sha:
         body["sha"] = sha

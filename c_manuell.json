@@ -1,0 +1,92 @@
+{
+ "_merknad": "Overlevelsesport C for papirer uten SEC-tall, lest for haand fra aarsrapportene. Beloep i millioner i rapportvalutaen. drift = kontantstroem fra driften (konsern). siste = balansen og betalte renter for siste regnskapsaar. Brukes av c_manuell.py fra overlevelse_c.py.",
+ "AKRBP.OL": {
+  "kilde": "Aker BP, Det norske og Pertra (forgjengerne), aarsrapporter 2006 til 2025 fra akerbp.com, lest av sonde_kjor_c_manuell 25.09.2026 og kontrollert paa overlappende aar i to rapporter. 2019 mangler (2020-rapporten ga ingen lesbar oppstilling). Siste aar fra kvartalsrapporten Q4 2025: kontanter 2 344,1, betalte renter 394,8, drift 6 958,2 (lik aarsrapporten); balansen fra aarsrapporten 2025 s. 140: langsiktige obligasjoner 8 358,6, egenkapital 11 226,2. Finansielle investeringer 300,0 er ikke regnet som kontanter.",
+  "drift": {
+   "2006": {
+    "drift": -84.763,
+    "valuta": "NOK"
+   },
+   "2007": {
+    "drift": 304.607,
+    "valuta": "NOK"
+   },
+   "2008": {
+    "drift": 228.909,
+    "valuta": "NOK"
+   },
+   "2009": {
+    "drift": 568.534,
+    "valuta": "NOK"
+   },
+   "2010": {
+    "drift": 1531.771,
+    "valuta": "NOK"
+   },
+   "2011": {
+    "drift": 1452.652,
+    "valuta": "NOK"
+   },
+   "2012": {
+    "drift": 1419.021,
+    "valuta": "NOK"
+   },
+   "2013": {
+    "drift": 915.707,
+    "valuta": "NOK"
+   },
+   "2014": {
+    "drift": 262.791,
+    "valuta": "USD"
+   },
+   "2015": {
+    "drift": 686.467,
+    "valuta": "USD"
+   },
+   "2016": {
+    "drift": 895.652,
+    "valuta": "USD"
+   },
+   "2017": {
+    "drift": 2155.491,
+    "valuta": "USD"
+   },
+   "2018": {
+    "drift": 3799.57,
+    "valuta": "USD"
+   },
+   "2020": {
+    "drift": 2011.353,
+    "valuta": "USD"
+   },
+   "2021": {
+    "drift": 4282.157,
+    "valuta": "USD"
+   },
+   "2022": {
+    "drift": 5729.472,
+    "valuta": "USD"
+   },
+   "2023": {
+    "drift": 5407.1,
+    "valuta": "USD"
+   },
+   "2024": {
+    "drift": 6422.6,
+    "valuta": "USD"
+   },
+   "2025": {
+    "drift": 6958.2,
+    "valuta": "USD"
+   }
+  },
+  "siste": {
+   "aar": 2025,
+   "valuta": "USD",
+   "kontanter": 2344.1,
+   "gjeld": 8358.6,
+   "egenkapital": 11226.2,
+   "rente": 394.8
+  }
+ }
+}
