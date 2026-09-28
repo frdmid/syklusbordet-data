@@ -1,5 +1,5 @@
 {
- "oppdatert": "2026-09-28 06:35:25",
+ "oppdatert": "2026-09-28 11:23:36",
  "segmenter": [
   "brent",
   "wti",
@@ -246,9 +246,9 @@
    "detalj": "6 av 6 kontrakter"
   },
   {
-   "kilde": "kurve jernmalm",
-   "status": "FEIL",
-   "detalj": "for kort kurve, ingen tolvmaanederspunkt"
+   "kilde": "fersk pris jernmalm",
+   "status": "OK",
+   "detalj": "97.06 per 2026-09-25"
   },
   {
    "kilde": "kurveform",
@@ -258,12 +258,12 @@
   {
    "kilde": "VIX",
    "status": "OK",
-   "detalj": "14.87 per 2026-09-25, persentil 30.0 (fra 1990-01) / 30.0 (10 aar)"
+   "detalj": "16.36 per 2026-09-28, persentil 42.3 (fra 1990-01) / 45.8 (10 aar)"
   },
   {
    "kilde": "DXY",
    "status": "OK",
-   "detalj": "101.173 per 2026-09-28, persentil 78.6 (fra 1985-01), 12 mnd 3.5 %"
+   "detalj": "101.167 per 2026-09-28, persentil 78.4 (fra 1985-01), 12 mnd 3.5 %"
   },
   {
    "kilde": "USD/NOK",
