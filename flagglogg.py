@@ -21,6 +21,9 @@
 #                   papir paa tavlen (ikke de omvendte), til siste kurs.
 #                   Salgslinjer kommer naar salgsregelen er vedtatt.
 #
+#   hypotese_3mnd.csv  (fra 28.09.2026) regnes paa nytt hver uke fra de to
+#                   over. Se HYPOTESE under.
+#
 # Uken er noekkelen. Kjoeres innhentingen to ganger samme uke, erstattes ukens
 # linjer, saa loggen faar aldri dobbeltlinjer. Tidligere uker roeres aldri.
 # Feiler noe her, stopper ikke resten av innhentingen.
@@ -81,6 +84,89 @@ def _b(x):
     return str(x).lower() in ("true", "1", "ja")
 
 
+# ---------------------------------------------------------------------------
+# HYPOTESE, skrevet ned 28.09.2026 foer noe utfall er kjent
+#
+# Backtestene 28.09 (notater/2026-09-28_backtest.md) fant at bunnflagget ikke
+# holdt paa 12 og 24 maaneder utenfor perioden det ble valgt paa, men at
+# den foerste maaneden etter flagget var svak og at kjoep en maaned senere ga
+# bedre tall etter tre maaneder. Det er en ide funnet i de samme dataene, ikke
+# et resultat. Den kan bare testes framover, og det er det denne fila gjoer.
+#
+#   Regel:     kjoep en maaned etter at bunnsonen slaar inn, selg tre maaneder
+#              etter kjoepet. Alle papirer paa tavlen for segmentet, likt vektet.
+#   Inngang:   foerste loggede ukekurs med kursdato minst 28 dager etter
+#              flaggdatoen.
+#   Utgang:    foerste loggede ukekurs med kursdato minst 91 dager etter inngang.
+#   Maal:      papirets avkastning minus ACWI (verdensindeksen, logget som
+#              referanse) i samme vindu. Papiret i egen valuta, ACWI i dollar,
+#              saa valutautslag inngaar. Kurser er siste omsetning, ikke
+#              justert for utbytte.
+#   Med:       bare rene innslag (hendelse tenkt_kjoep). Ikke papirer som sto i
+#              sonen da loggen startet, og ikke d95.
+#   Bekreftet: naar minst fem episoder er ferdige (innslag med hoeyst seks
+#              maaneder mellom er en episode), og episodens median mot ACWI er
+#              positiv i minst fire av fem, eller i minst 80 % hvis det er
+#              flere. Ellers forkastet. Grensen skal ikke flyttes etter at
+#              utfallene kommer.
+# ---------------------------------------------------------------------------
+REFERANSE = "ACWI"
+F_HYP = ["segment", "ticker", "flaggdato", "status", "inngang_dato", "inngang_kurs", "utgang_dato",
+         "utgang_kurs", "valuta", "avk_pst", "acwi_avk_pst", "mot_acwi_pst"]
+
+
+def _dato(x):
+    try:
+        return dt.date.fromisoformat(str(x)[:10])
+    except ValueError:
+        return None
+
+
+def hypotese_3mnd(hendelser, kurser, idag):
+    """Regner hypotesefila fra hele hendelses- og kursloggen. Bare loggede
+    kurser brukes, saa ingenting kan hentes i ettertid."""
+    serie = {}
+    for r in kurser:
+        d, k = _dato(r.get("kursdato")), r.get("kurs")
+        try:
+            k = float(k)
+        except (TypeError, ValueError):
+            continue
+        if d:
+            serie.setdefault(r["ticker"], {})[d] = (k, r.get("valuta"))
+    serie = {tk: sorted(v.items()) for tk, v in serie.items()}
+
+    def forste_etter(tk, grense):
+        for d, (k, v) in serie.get(tk, []):
+            if d >= grense:
+                return d, k, v
+        return None
+
+    ut = []
+    for h in hendelser:
+        if h.get("hendelse") != "tenkt_kjoep" or not h.get("ticker"):
+            continue
+        if "sto allerede" in str(h.get("merknad", "")):   # ikke et rent innslag
+            continue
+        f0 = _dato(h.get("dato"))
+        rad = {"segment": h["segment"], "ticker": h["ticker"], "flaggdato": str(f0)}
+        inn = forste_etter(h["ticker"], f0 + dt.timedelta(days=28)) if f0 else None
+        if not inn:
+            ut.append({**rad, "status": "venter_inngang"}); continue
+        rad.update({"inngang_dato": str(inn[0]), "inngang_kurs": inn[1], "valuta": inn[2]})
+        uts = forste_etter(h["ticker"], inn[0] + dt.timedelta(days=91))
+        if not uts:
+            ut.append({**rad, "status": "aapen"}); continue
+        rad.update({"utgang_dato": str(uts[0]), "utgang_kurs": uts[1],
+                    "avk_pst": round(100 * (uts[1] / inn[1] - 1), 2)})
+        ai, au = forste_etter(REFERANSE, inn[0]), forste_etter(REFERANSE, uts[0])
+        if ai and au:
+            rad["acwi_avk_pst"] = round(100 * (au[1] / ai[1] - 1), 2)
+            rad["mot_acwi_pst"] = round(rad["avk_pst"] - rad["acwi_avk_pst"], 2)
+        ut.append({**rad, "status": "ferdig"})
+    return ut
+
+
 def oppdater(segmenter, les, skriv, note=print, idag=None, kursfunk=siste_kurs):
     """segmenter: listen fra priser.py (dict med id, scores, trend, cot,
     instrumenter, last_obs). les(sti) -> tekst eller None. skriv(sti, tekst)."""
@@ -116,6 +202,8 @@ def oppdater(segmenter, les, skriv, note=print, idag=None, kursfunk=siste_kurs):
     for s in segmenter:
         for i in s.get("instrumenter") or []:
             papirer.setdefault(i["ticker"], {"segs": set(), "info": i})["segs"].add(s["id"])
+    # Verdensindeksen logges ved siden av, som maalestokk for hypotesen.
+    papirer.setdefault(REFERANSE, {"segs": set(), "info": {}})["segs"].add("referanse")
     kurs = {}
     for tk in sorted(papirer):
         kurs[tk] = kursfunk(tk)
@@ -166,7 +254,10 @@ def oppdater(segmenter, les, skriv, note=print, idag=None, kursfunk=siste_kurs):
     skriv("logg/flagg_uke.csv", skriv_csv(gml_uke + nye_uke, F_UKE))
     skriv("logg/kurser_uke.csv", skriv_csv(gml_kurs + nye_kurs, F_KURS))
     skriv("logg/hendelser.csv", skriv_csv(gml_hend + nye_hend, F_HEND))
+    hyp = hypotese_3mnd(gml_hend + nye_hend, gml_kurs + nye_kurs, idag)
+    skriv("logg/hypotese_3mnd.csv", skriv_csv(hyp, F_HYP))
     note("flagglogg", True, f"uke {uke}: {len(nye_uke)} segmenter, {len(nye_kurs)} kurser"
          + (f" ({len(mangler)} uten kurs)" if mangler else "")
-         + f", {sum(1 for h in nye_hend if h['ticker'] == '')} hendelser")
+         + f", {sum(1 for h in nye_hend if h['ticker'] == '')} hendelser"
+         + f", hypotese 3 mnd: {sum(1 for h in hyp if h['status'] == 'ferdig')} ferdige av {len(hyp)}")
     return nye_uke, nye_kurs, nye_hend
