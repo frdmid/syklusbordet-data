@@ -1,0 +1,378 @@
+sonde:   sonde_kjor_c_manuell2
+kjort:   2026-09-28 06:24:39 UTC
+commit:  d065565
+status:  OK
+brukte:  235 sekunder
+--------------------------------------------------------------
+1. Aker BP, rapportene med hull
+
+=== https://akerbp.com/wp-content/uploads/2021/03/akerbp-annual-report-2020.pdf
+   HTTP 200, 12539610 byte
+   142 sider
+
+   ---- BALANSE, side 135
+      Alternative performance measures
+      Aker BP may disclose alternative performance measures as part of its financial reporting as a supplement to the financial statements prepared in accor
+      believes that the alternative performance measures provide useful supplemental information to management, investors, security analysts and other stake
+      provide an enhanced insight into the financial development of Aker BP’s business operations and to improve comparability between periods.
+      AAbbaannddoonnmmeenntt ssppeenndd ((aabbeexx)) is payment for removal and decommissioning of oil fields1)
+      DDeepprreecciiaattiioonn ppeerr bbooee is depreciation divided by number of barrels of oil equivalents produced in the corresponding period
+      DDiivviiddeenndd ppeerr sshhaarree ((DDPPSS)) is dividend paid during the year divided by number of shares outstanding
+      CCaappeexx is disbursements on investments in fixed assets deducted by capitalized interest cost1)
+      EEBBIITTDDAA is short for earnings before interest and other financial items, taxes, depreciation and amortisation and impairments
+      EEBBIITTDDAAXX is short for earnings before interest and other financial items, taxes, depreciation and amortisation, impairments and exploration expe
+      EEqquuiittyy rraattiioo is total equity divided by total assets
+      EExxpplloorraattiioonn ssppeenndd ((eexxppeexx)) is exploration expenses plus additions to capitalized exploration wells less dry well expenses1)
+      LLeevveerraaggee rraattiioo is calculated as Net interest-bearing debt divided by twelve months rolling EBITDAX, excluding any impacts from IFRS 16
+      IInntteerreesstt ccoovveerraaggee rraattiioo is calculated as twelve months rolling EBITDA, divided by interest expenses, excluding any impacts from I
+      NNeett iinntteerreesstt--bbeeaarriinngg ddeebbtt is book value of current and non-current interest-bearing debt less cash and cash equivalents
+      OOppeerraattiinngg pprrooffiitt//lloossss is short for earnings/loss before interest and other financial items and taxes
+      PPrroodduuccttiioonn ccoosstt ppeerr bbooee is production cost basd on produced volumes, divided by number of barrels of oil equivalents produced in t
+      1) Includes payments of lease debt as disclosed in note 25.
+      135 · Aker BP Annual Report 2020 · Financial Statements with Notes
+
+=== https://akerbp.com/wp-content/uploads/2021/02/detnor-annual-report-2014.pdf
+   HTTP 200, 5993359 byte
+   72 sider
+
+   ---- BALANSE, side 44
+      STATEMENT OF FINANCIAL POSITION STATEMENT OF FINANCIAL POSITION
+      Group Parent company Group Parent company
+      (USD 1 000) Note 31.12.2014 31.12.2013 31.12.2014 31.12.2013 (USD 1 000) Note 31.12.2014 31.12.2013 31.12.2014 31.12.2013
+      ASSETS
+      EQUITY AND LIABILITIES
+      Intangible assets
+      Equity
+      Goodwill 14,15 1 186 704 52 784 1 186 704 52 784
+      Share capital 21 37 530 27 656 37 530 27 656
+      Capitalized exploration expenditures 14,15 291 619 337 969 291 619 337 969
+      Share premium 21 1 029 617 564 736 1 029 617 564 736
+      Other intangible assets 14,15 648 788 106 235 648 788 106 235
+      Other equity -415 485 -68 292 -415 485 -68 292
+      Deferred tax asset 12 103 625 103 625
+      Total equity 651 662 524 100 651 662 524 100
+      Tangible fixed assets
+      Property, plant and equipment 14,15 2 549 271 436 834 2 549 271 436 834
+      Provision for liabilities
+      Financial assets
+      Pension obligations 22 2 021 10 933 2 021 10 933
+      Long-term receivables 18 8 799 20 618 8 799 20 618
+      Deferred taxes 12 1 286 357 1 286 357
+      Other non-current assets 19 3 598 46 912 4 619 46 912
+      Abandonment provision 23 483 323 136 188 483 323 136 188
+      Provisions for other liabilities 12 044 128 12 044 128
+      Total non-current assets 4 688 778 1 104 976 4 689 799 1 104 976
+      Non-current liabilities
+      Bonds 25 253 141 406 592 253 141 406 592
+      Inventories
+      Other interest-bearing debt 26 2 037 299 334 814 2 037 299 334 814
+      Inventories 7 25 008 6 720 25 008 6 720
+      Long-term derivatives 24 5 646 8 129 5 646 8 129
+      Receivables
+      Current liabilities
+      Accounts receivable 16 186 461 22 062 186 461 22 062
+      Short-term loan 78 579 78 579
+      Other short-term receivables 17 184 592 82 091 184 592 82 091
+      Trade creditors 152 258 74 368 152 258 74 368
+      Other current financial assets 3 289 3 957 3 289 3 957
+      Social security and other indirect taxes 6 758 3 876 6 758 3 876
+      Tax receivables 12 231 972 231 972
+      Tax payable 12 189 098 189 098
+      Short-term derivatives 24 25 224 25 224
+      Cash and cash equivalents
+      Abandonment provision 23 5 728 24 225 5 728 24 225
+      Cash and cash equivalents 20 296 244 280 942 295 222 280 942
+      Other current liabilities 27 273 813 130 789 273 813 130 789
+      Total current assets 695 594 627 745 694 573 627 745
+      Total liabilities and provision for liabilities 4 732 710 1 208 620 4 732 710 1 208 620
+      TOTAL ASSETS 5 384 372 1 732 720 5 384 372 1 732 720
+      TOTAL EQUITY AND LIABILITIES 5 384 372 1 732 720 5 384 372 1 732 720
+      The Board of Directors and the CEO of Det norske oljeselskap ASA
+      Trondheim, 11 March 2015
+      Sverre Skogen, Chair of the Board Tom Røtjer, Board member
+      Anne Marie Cannon, Deputy Chair Kjell Inge Røkke, Board member
+      Kitty Hall (Katherine Jessie Martin), Board member Jørgen C. Arentz Rostrup, Board member
+      Gudmund Evju, Board member Inge Sundet, Board member
+      Kristin Gjertsen, Board member Karl Johnny Hersvik, CEO
+      86 87
+      ANNUAL REPORT 2014 144 144
+      Gro Kielland, Board member
+
+=== https://akerbp.com/wp-content/uploads/2025/04/annual-report-2024.pdf
+   HTTP 200, 13954070 byte
+   235 sider
+
+   ---- BALANSE, side 150
+      Intro BoD report Sustainability Transparency Financials Remuneration Corp. governance Gov. payments Appendix Aker BP annual report 2024 150
+      Statement of financial position
+      Group Parent
+      (USD million) Note 31.12.2024 31.12.2023 31.12.2024 31.12.2023
+      Equity and liabilities
+      Equity
+      Share capital 20 84.3 84.3 84.3 84.3
+      Share premium 12,946.6 12,946.6 12,946.6 12,946.6
+      Other equity -339.9 -668.8 -339.8 -659.7
+      Total equity 12,691.1 12,362.2 12,691.2 12,371.3
+      Non-current liabilities
+      Deferred taxes 11 12,990.0 10,592.3 12,990.0 10,592.3
+      Long-term abandonment provision 22 4,147.7 4,304.1 4,147.7 4,304.1
+      Long-term bonds 21 7,336.8 5,798.2 7,336.8 5,798.2
+      Long-term derivatives 23 55.3 0.5 55.3 0.5
+      Long-term lease debt 25 458.0 555.5 458.0 555.5
+      Other non-current liabilities - 1.0 - 1.0
+      Total non-current liabilities 24,987.8 21,251.5 24,987.8 21,251.5
+      Current liabilities
+      Trade creditors 329.1 291.0 329.1 291.1
+      Short-term bonds 21 63.5 - 63.5 -
+      Accrued public charges and indirect taxes 40.8 38.8 40.8 38.8
+      Tax payable 11 2,433.6 3,599.9 2,433.6 3,599.9
+      Short-term derivatives 23 151.7 32.8 151.7 32.8
+      Short-term abandonment provision 22 131.7 250.6 131.7 250.6
+      Short-term lease debt 25 217.7 148.7 217.7 148.7
+      Other current liabilities 24 1,145.8 1,071.0 1,145.7 1,070.2
+      Total current liabilities 4,514.0 5,432.9 4,513.9 5,432.2
+      Total liabilities 29,501.7 26,684.3 29,501.7 26,683.7
+      Total equity and liabilities 42,192.9 39,046.5 42,192.8 39,055.0
+
+   ---- BALANSE, side 200
+      Intro BoD report Sustainability Transparency Financials Remuneration Corp. governance Gov. payments Appendix Aker BP annual report 2024 200
+      ALTERNATIVE PERFORMANCE MEASURES
+      Aker BP may disclose alternative performance measures as part of its financial reporting as a supplement to the financial statements prepared in accor
+      measures provide useful supplemental information to management, investors, security analysts and other stakeholders and are meant to provide an enhanc
+      operations and to improve comparability between periods.
+      Abandonment spend (abex) is payment for removal and decommissioning of oil fields1)
+      Capex is disbursements on investments in fixed assets1)
+      Depreciation per boe is depreciation divided by number of barrels of oil equivalents produced in the corresponding period
+      Dividend per share (DPS) is dividend paid during the year divided by number of shares outstanding
+      EBITDA is short for earnings before interest and other financial items, taxes, depreciation and amortisation and impairments
+      EBITDAX is short for earnings before interest and other financial items, taxes, depreciation and amortisation, impairments and exploration expenses
+      Equity ratio is total equity divided by total assets
+      Exploration spend (expex) is exploration expenses plus additions to capitalised exploration wells less dry well expenses1)
+      Free cash flow (FCF) is net cash flow from operating activities less net cash flow from investment activities
+      Interest coverage ratio is calculated as twelve months rolling EBITDA, divided by interest expenses, excluding any impacts from IFRS 16
+      Leverage ratio is calculated as Net interest-bearing debt divided by twelve months rolling EBITDAX, excluding any impacts from IFRS 16
+      Net interest-bearing debt is book value of current and non-current interest-bearing debt less cash and cash equivalents
+      Operating profit/loss is short for earnings/loss before interest and other financial items and taxes
+      Production cost per boe is production cost based on produced volumes, divided by number of barrels of oil equivalents produced in the corresponding pe
+      1) Includes payments of lease debt as disclosed in note 25.
+
+=== https://akerbp.com/wp-content/uploads/2026/03/akerbp-annual-report-2025.pdf
+   HTTP 200, 10125984 byte
+   224 sider
+
+   ---- BALANSE, side 140
+      Intro BoD report Sustainability Transparency Financials Remuneration Corp. governance Gov. payments Appendix Aker BP annual report 2025 140
+      Statement of financial position
+      Group Parent
+      (USD million) Note 31.12.2025 31.12.2024 31.12.2025 31.12.2024
+      Equity and liabilities
+      Equity
+      Share capital note 21 84.3 84.3 84.3 84.3
+      Share premium 12,946.6 12,946.6 12,946.6 12,946.6
+      Other equity -1,804.7 -339.9 -1,804.7 -339.8
+      Total equity 11,226.2 12,691.1 11,226.3 12,691.2
+      Non-current liabilities
+      Deferred taxes note 11 16,001.2 12,990.0 16,001.2 12,990.0
+      Long-term abandonment provision note 23 4,576.0 4,147.7 4,576.0 4,147.7
+      Long-term bonds note 22 8,358.6 7,336.8 8,358.6 7,336.8
+      Long-term derivatives note 24 0.6 55.3 0.6 55.3
+      Long-term lease debt note 26 712.7 458.0 712.7 458.0
+      Total non-current liabilities 29,649.0 24,987.8 29,649.0 24,987.8
+      Current liabilities
+      Trade creditors 692.6 329.1 692.6 329.1
+      Short-term bonds note 22 307.2 160.8 307.2 160.8
+      Accrued public charges and indirect taxes 46.3 40.8 46.3 40.8
+      Tax payable note 11 1,052.8 2,433.6 1,052.8 2,433.6
+      Short-term derivatives note 24 3.4 151.7 3.4 151.7
+      Short-term abandonment provision note 23 93.4 131.7 93.4 131.7
+      Short-term lease debt note 26 359.4 217.7 359.4 217.7
+      Other current liabilities note 25 1,375.7 1,048.5 1,375.6 1,048.4
+      Total current liabilities 3,930.7 4,514.0 3,930.6 4,513.9
+      Total liabilities 33,579.8 29,501.7 33,579.7 29,501.7
+      Total equity and liabilities 44,806.0 42,192.9 44,806.0 42,192.8
+
+   ---- BALANSE, side 188
+      Intro BoD report Sustainability Transparency Financials Remuneration Corp. governance Gov. payments Appendix Aker BP annual report 2025 188
+      ALTERNATIVE PERFORMANCE MEASURES
+      Aker BP may disclose alternative performance measures as part of its financial reporting as a supplement to the financial statements prepared in accor
+      measures provide useful supplemental information to management, investors, security analysts and other stakeholders and are meant to provide an enhanc
+      operations and to improve comparability between periods.
+      In 2025 leverage ratio was revised so that financial investments are deducted when calculating net interest-bearing debt. This approach aligns with th
+      company’s Revolving Credit Facility. The definition of free cash flow was also adjusted to reflect the financial investment.
+      Abandonment spend (abex) is payment for removal and decommissioning of oil fields1)
+      Available liquidity is the sum of cash and cash equivalents, financial investments and undrawn RCF facility
+      Capex is disbursements on investments in fixed assets1)
+      Depreciation per boe is depreciation divided by number of barrels of oil equivalent produced in the corresponding period
+      Dividend per share (DPS) is dividend paid during the year divided by number of shares outstanding
+      EBITDA is short for earnings before interest and other financial items, taxes, depreciation and amortisation and impairments
+      EBITDAX is short for earnings before interest and other financial items, taxes, depreciation and amortisation, impairments and exploration expenses
+      Equity ratio is total equity divided by total assets
+      Exploration spend (expex) is exploration expenses plus additions to capitalised exploration wells less dry well expenses1)
+      Free cash flow (FCF) is net cash flow from operating activities less net cash flow from investment activities, adjusted for investments in financial a
+      Interest coverage ratio is calculated as twelve months rolling EBITDA, divided by interest expenses, excluding any impacts from IFRS 16
+      Leverage ratio is calculated as net interest-bearing debt divided by twelve months rolling EBITDAX, excluding any impacts from IFRS 16
+      Net interest-bearing debt is book value of current and non-current interest-bearing debt less financial investments and cash and cash equivalents
+      Operating profit/loss is short for earnings/loss before interest and other financial items and taxes
+      Production cost per boe is production expenses based on produced volumes, divided by number of barrels of oil equivalent produced in the corresponding
+      1) Includes payments of lease debt as disclosed in note 26, page 173.
+
+=== https://akerbp.com/wp-content/uploads/2021/02/detnor-annual-report-2010.pdf
+   HTTP 200, 11356896 byte
+   17 sider
+
+
+2. DNO via NewsWeb
+   2008-01-01..2013-12-31 POST: HTTP 200, 3600 byte
+      6 meldinger
+      326922 2013-04-30 DNO International ASA releases 2012 Annual Report and Accounts
+      304052 2012-04-30 DNO International Releases 2011 Annual Report and Accounts; Updates Financial Calendar
+      281358 2011-04-29 Annual Report for 2010
+      245595 2009-09-21 DNO International ASA - Clarification to 2008 Annual Report note 27
+      236288 2009-04-30 DNO International ASA - 2008 Annual Report
+      212230 2008-06-05 DNO International ASA - Annual Report 2007
+   2014-01-01..2019-12-31 POST: HTTP 200, 3693 byte
+      6 meldinger
+      473009 2019-03-27 DNO Releases 2018 Annual Report and Accounts
+      446557 2018-03-15 DNO Releases 2017 Annual Report and Annual Statement of Reserves and Resources; Records Hi
+      422692 2017-03-16 DNO Releases 2016 Annual Report and Accounts
+      397676 2016-03-18 DNO Releases 2015 Annual Report and Accounts and Annual Statement of Reserves
+      373874 2015-03-20 DNO Releases 2014 Annual Report and Accounts and Annual Statement of Reserves
+      351649 2014-04-30 DNO Releases 2013 Annual Report and Accounts and Annual Statement of Reserves
+   2020-01-01..2026-09-30 POST: HTTP 200, 4092 byte
+      7 meldinger
+      668073 2026-03-12 DNO Releases 2025 Annual Report
+      642876 2025-04-03 DNO Releases 2024 Annual Report and Accounts
+      613370 2024-03-14 DNO Releases 2023 Annual Report and Accounts
+      585329 2023-03-16 DNO Releases 2022 Annual Report and Accounts
+      556782 2022-03-17 DNO Releases 2021 Annual Report and Accounts
+      528016 2021-03-18 DNO Releases 2020 Annual Report and Accounts
+      498689 2020-03-18 DNO Announces Sharp Drop in 2020 Budget; Releases 2019 Annual Report and Annual Statement 
+
+=== DNO melding 326922 2013-04-30 DNO International ASA releases 2012 Annual Report and Accounts: 1 vedlegg
+      vedlegg 69133 DNO Annual Report for 2012.pdf
+      henter: HTTP 200, 3715 byte
+
+=== DNO melding 304052 2012-04-30 DNO International Releases 2011 Annual Report and Accounts; Updates Financial Ca: 1 vedlegg
+      vedlegg 79719 DNO Annual Report for 2011.pdf
+      henter: HTTP 200, 3715 byte
+
+=== DNO melding 281358 2011-04-29 Annual Report for 2010: 1 vedlegg
+      vedlegg 90648 DNO Annual Report for 2010.pdf
+      henter: HTTP 200, 3715 byte
+
+=== DNO melding 245595 2009-09-21 DNO International ASA - Clarification to 2008 Annual Report note 27: 0 vedlegg
+
+=== DNO melding 236288 2009-04-30 DNO International ASA - 2008 Annual Report: 1 vedlegg
+      vedlegg 111879 Annual Report 2008.pdf
+      henter: HTTP 200, 3715 byte
+
+=== DNO melding 212230 2008-06-05 DNO International ASA - Annual Report 2007: 1 vedlegg
+      vedlegg 121320 Annual Report 2007.pdf
+      henter: HTTP 200, 3715 byte
+
+=== DNO melding 473009 2019-03-27 DNO Releases 2018 Annual Report and Accounts: 3 vedlegg
+      vedlegg 180950 Country by Country Report 2018.pdf
+      henter: HTTP 200, 3715 byte
+      vedlegg 180951 Corporate Social Responsibility Highlights 2018.pdf
+      henter: HTTP 200, 3715 byte
+      vedlegg 180952 Annual Report 2018.pdf
+      henter: HTTP 200, 3715 byte
+
+=== DNO melding 446557 2018-03-15 DNO Releases 2017 Annual Report and Annual Statement of Reserves and Resources; : 4 vedlegg
+      vedlegg 8740 Corporate Social Responsibility Highlights 2017.pdf
+      henter: HTTP 200, 3715 byte
+      vedlegg 8741 Country by Country Report 2017.pdf
+      henter: HTTP 200, 3715 byte
+      vedlegg 8742 Annual Statement of Reserves and Resources 2017.pdf
+      henter: HTTP 200, 3715 byte
+      vedlegg 8743 Annual Report 2017.pdf
+      henter: HTTP 200, 3715 byte
+
+=== DNO melding 422692 2017-03-16 DNO Releases 2016 Annual Report and Accounts: 3 vedlegg
+      vedlegg 22275 Country by Country Report 2016.pdf
+      henter: HTTP 200, 3715 byte
+      vedlegg 22276 Annual Report 2016.pdf
+      henter: HTTP 200, 3715 byte
+      vedlegg 22277 Corporate Social Responsibility Highlights 2016.pdf
+      henter: HTTP 200, 3715 byte
+
+=== DNO melding 397676 2016-03-18 DNO Releases 2015 Annual Report and Accounts and Annual Statement of Reserves: 4 vedlegg
+      vedlegg 35166 Country by Country Report 2015.pdf
+      henter: HTTP 200, 3715 byte
+      vedlegg 35167 Corporate Social Responsibility Highlights 2015.pdf
+      henter: HTTP 200, 3715 byte
+      vedlegg 35168 Annual Report 2015.pdf
+      henter: HTTP 200, 3715 byte
+      vedlegg 35169 Annual Statement of Reserves 2015.pdf
+      henter: HTTP 200, 3715 byte
+
+=== DNO melding 373874 2015-03-20 DNO Releases 2014 Annual Report and Accounts and Annual Statement of Reserves: 4 vedlegg
+      vedlegg 47309 Annual Report 2014.pdf
+      henter: HTTP 200, 3715 byte
+      vedlegg 47310 Annual Statement of Reserves 2014.pdf
+      henter: HTTP 200, 3715 byte
+      vedlegg 47311 Country by Country Report 2014.pdf
+      henter: HTTP 200, 3715 byte
+      vedlegg 47312 Corporate Social Responsibility Highlights 2014.pdf
+      henter: HTTP 200, 3715 byte
+
+=== DNO melding 351649 2014-04-30 DNO Releases 2013 Annual Report and Accounts and Annual Statement of Reserves: 2 vedlegg
+      vedlegg 57813 Annual Report 2013.pdf
+      henter: HTTP 200, 3715 byte
+      vedlegg 57814 Annual Statement of Reserves 2013.pdf
+      henter: HTTP 200, 3715 byte
+
+=== DNO melding 668073 2026-03-12 DNO Releases 2025 Annual Report: 4 vedlegg
+      vedlegg 321006 2025 Annual Report.pdf
+      henter: HTTP 200, 3715 byte
+      vedlegg 321008 2025 Remuneration Report.pdf
+      vedlegg 321009 2025 Annual Statement of Reserves and Resources.pdf
+      henter: HTTP 200, 3715 byte
+      vedlegg 321010 5967007LIEEXZXH3K072-2025-12-31-1-en.zip
+
+=== DNO melding 642876 2025-04-03 DNO Releases 2024 Annual Report and Accounts: 4 vedlegg
+      vedlegg 301342 2024 Annual Report.pdf
+      henter: HTTP 200, 3715 byte
+      vedlegg 301343 2024 Remuneration Report.pdf
+      vedlegg 301344 2024 Annual Statement of Reserves and Resources.pdf
+      henter: HTTP 200, 3715 byte
+      vedlegg 301345 5967007LIEEXZXH3K072-2024-12-31-0-en.zip
+
+=== DNO melding 613370 2024-03-14 DNO Releases 2023 Annual Report and Accounts: 5 vedlegg
+      vedlegg 278246 2023 Annual Report.pdf
+      henter: HTTP 200, 3715 byte
+      vedlegg 278247 2023 DNO Remuneration report.pdf
+      vedlegg 278248 Annual Statement of Reserves and Resources 2023.pdf
+      henter: HTTP 200, 3715 byte
+      vedlegg 278249 Corporate Social Responsibility Report 2023.pdf
+      henter: HTTP 200, 3715 byte
+      vedlegg 278250 DNO-ASA-2023-12-31-EN.zip
+
+=== DNO melding 585329 2023-03-16 DNO Releases 2022 Annual Report and Accounts: 5 vedlegg
+      vedlegg 256656 Annual Statement of Reserves 2022.pdf
+      henter: HTTP 200, 3715 byte
+      vedlegg 256657 Corporate Social Responsibility Report 2022.pdf
+      henter: HTTP 200, 3715 byte
+      vedlegg 256658 2022 Remuneration Report.pdf
+      vedlegg 256659 DNO-ASA-2022-12-31-EN.zip
+      vedlegg 256661 2022 Annual Report.pdf
+      henter: HTTP 200, 3715 byte
+
+=== DNO melding 556782 2022-03-17 DNO Releases 2021 Annual Report and Accounts: 2 vedlegg
+      vedlegg 234728 2021 Annual Report.pdf
+      henter: HTTP 200, 3715 byte
+      vedlegg 234734 dnoasa-2021-12-31.zip
+
+=== DNO melding 528016 2021-03-18 DNO Releases 2020 Annual Report and Accounts: 2 vedlegg
+      vedlegg 213606 2020 Annual Report.pdf
+      henter: HTTP 200, 3715 byte
+      vedlegg 213607 Country-by-Country Report 2020.pdf
+      henter: HTTP 200, 3715 byte
+
+=== DNO melding 498689 2020-03-18 DNO Announces Sharp Drop in 2020 Budget; Releases 2019 Annual Report and Annual : 3 vedlegg
+      vedlegg 194985 DNO ASA 2019 ASRR.pdf
+      henter: HTTP 200, 3715 byte
+      vedlegg 194986 DNO 2019 Country-by-Country Report.pdf
+      henter: HTTP 200, 3715 byte
+      vedlegg 194987 DNO ASA Annual Report and Accounts 2019.pdf
+      henter: HTTP 200, 3715 byte

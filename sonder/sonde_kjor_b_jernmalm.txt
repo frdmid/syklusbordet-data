@@ -1,0 +1,611 @@
+sonde:   sonde_kjor_b_jernmalm
+kjort:   2026-09-28 06:20:11 UTC
+commit:  d065565
+status:  OK
+brukte:  112 sekunder
+--------------------------------------------------------------
+1. Fortescue
+
+   https://investors.fortescue.com/en/results-and-operational-performance: 31 lenker
+   https://investors.fortescue.com/en/announcements-and-reports: 0 lenker
+   https://www.fortescue.com/en/investors/reports: 0 lenker
+      https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/documents/regulatory/asx-announcements/automated/03123297-fy26-full-year-results-presentation.pdf
+      https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/documents/regulatory/asx-announcements/automated/03123297-fy26-full-year-results-presentation.pdf?download=true
+      https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/documents/regulatory/asx-announcements/automated/03123292-fy26-full-year-results.pdf
+      https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/documents/regulatory/asx-announcements/automated/03123292-fy26-full-year-results.pdf?download=true
+      https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/documents/regulatory/asx-announcements/fy26-annual-report_-app4e_updated.pdf
+      https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/documents/regulatory/asx-announcements/fy26-annual-report_-app4e_updated.pdf?download=true
+      https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/documents/regulatory/transcripts/fy25-full-year-results---investor-and-analyst-call-transcript.pdf
+      https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/documents/regulatory/transcripts/fy25-full-year-results---investor-and-analyst-call-transcript.pdf?download=true
+      https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/documents/regulatory/asx-announcements/2935118-fy25-full-year-results-presentation.pdf
+      https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/documents/regulatory/asx-announcements/2935118-fy25-full-year-results-presentation.pdf?download=true
+      https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/documents/regulatory/asx-announcements/2935116-fy25-full-year-results.pdf
+      https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/documents/regulatory/asx-announcements/2935116-fy25-full-year-results.pdf?download=true
+      https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/documents/regulatory/asx-announcements/2935109-fy25-annual-report-and-appendix-4e.pdf
+      https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/documents/regulatory/asx-announcements/2935109-fy25-annual-report-and-appendix-4e.pdf?download=true
+      https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/docs/default-source/announcements-and-reports/fy24-full-year-results-presentation.pdf
+      https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/docs/default-source/announcements-and-reports/fy24-full-year-results-presentation.pdf?download=true
+      https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/docs/default-source/announcements-and-reports/fy24-full-year-results.pdf
+      https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/docs/default-source/announcements-and-reports/fy24-full-year-results.pdf?download=true
+      https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/docs/default-source/announcements-and-reports/fy24-annual-report.pdf
+      https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/docs/default-source/announcements-and-reports/fy24-annual-report.pdf?download=true
+
+   === FMG  (8396 kB)  https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/documents/regulatory/asx-announcements/automated/03123297-fy26-full-year-results-presentation.pdf
+      s. 27   []
+         Capital expenditure (US$m)1
+         1 Total capital expenditure and investments (including joint ventures).
+      s. 28   []
+         CAPITAL EXPENDITURE
+         FY26 capital expenditure and investments (US$m)
+         FY27 capital expenditure and investments guidance (US$m)   -> 150
+
+   === FMG  (8396 kB)  https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/documents/regulatory/asx-announcements/automated/03123297-fy26-full-year-results-presentation.pdf?download=true
+      s. 27   []
+         Capital expenditure (US$m)1
+         1 Total capital expenditure and investments (including joint ventures).
+      s. 28   []
+         CAPITAL EXPENDITURE
+         FY26 capital expenditure and investments (US$m)
+         FY27 capital expenditure and investments guidance (US$m)   -> 150
+
+   === FMG  (382 kB)  https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/documents/regulatory/asx-announcements/automated/03123292-fy26-full-year-results.pdf
+      s. 4   [is 1 September 2026, and the dividend will be paid to shareholders on 29 Septemb]
+         Total capital expenditure and investments in FY26 were US$3.6 billion, comprising US$2.1
+         Capital expenditure   -> (3,640) | (3,930) | (7)
+
+   === FMG  (382 kB)  https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/documents/regulatory/asx-announcements/automated/03123292-fy26-full-year-results.pdf?download=true
+      s. 4   [is 1 September 2026, and the dividend will be paid to shareholders on 29 Septemb]
+         Total capital expenditure and investments in FY26 were US$3.6 billion, comprising US$2.1
+         Capital expenditure   -> (3,640) | (3,930) | (7)
+
+   === FMG  (20962 kB)  https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/documents/regulatory/asx-announcements/fy26-annual-report_-app4e_updated.pdf
+      s. 39   []
+         Zero manufacturing and Metals sustaining capital. Additionally, pre-tax impairment expense of US$750 million a
+      s. 40   []
+         Depreciation and
+         amortisation   -> 5,6 | (2,872) | (2,506)
+      s. 44   []
+         Underlying EBITDA, defined as earnings before interest, tax, depreciation and amortisation, exploration, devel
+         Cost of sales excluding depreciation and amortisation   -> 5 | (7,343) | (6,671)
+         Depreciation and amortisation   -> 5,6 | (2,872) | (2,506)
+      s. 45   []
+         Depreciation and
+         amortisation   -> 178
+      s. 46   []
+         Depreciation, interest and tax
+         Depreciation and amortisation of US$2,872 million is up 15 per cent (FY25: US$2,506 million) reflecting a high
+         depreciation expense than FY25 but in line with H1 FY26. The increase in depreciation expense in FY26 is large
+         •	 Increases in sustaining capital spend across various mine sites and infrastructure in line with the lifecyc
+         •	 Metals sustaining capital: A comprehensive review was performed over the sustaining capital within the Meta
+      s. 49   []
+         Capital expenditure (including joint operations)1   -> (3,640) | (3,930)
+         1 Capital expenditure comprises payments for property, plant and equipment (including deposits) as well as pu
+         Capital expenditure including joint operations and investments was US$3,640 million for the year (FY25: US$3,9
+         Capital expenditure throughout the period consisted of:
+         excavators, sustaining capital on existing mine sites, port and rail infrastructure. Development spend was inc
+      s. 82   []
+         Initial and short-term impacts are expected to increase capital expenditure associated with
+         systems scale, while depreciation expense is expected to increase. Over the medium to long term,
+         Green Metals. See the Capital Expenditure and Climate-related Investment table on page 84.
+         Resourcing includes capital expenditure, specialist internal capability and partnerships with equipment manufa
+      s. 87   []
+         Capital expenditure and climate-related investment
+         Capital expenditure is required to support Fortescue’s response to climate-related risks and opportunities and
+         broader operating and capital expenditure. Fortescue also continues to invest in exploration, studies and reso
+      s. 192   []
+         Payments for property, plant and equipment - Fortescue   -> (3,033) | (3,028)
+         Payments for property, plant and equipment - joint operations   -> (148) | (235)
+      s. 195   []
+         Fortescue uses Underlying EBITDA defined as earnings before interest, tax, depreciation and amortisation, expl
+         Depreciation and amortisation   -> 5,6 | (2,872) | (2,506)
+      s. 196   []
+         Capital expenditure and
+      s. 204   []
+         Depreciation and amortisation   -> 2,872 | 2,506
+         Depreciation in inventory   -> 38 | 51
+      s. 241   []
+         depreciation and impairment loss. Historical cost includes expenditure that is directly attributable to the ac
+         purchases of property, plant and equipment. Borrowing costs related to the acquisition or construction of qual
+      s. 242   []
+         (iii) Depreciation
+         Depreciation of assets, other than land which is not depreciated, is calculated using the straight-line method
+         of production method, net of residual values, over estimated useful lives. Depreciation commences on the date 
+         Where the useful life is not linked to the quantities of iron ore produced or when doing so results in depreci
+         The estimated useful lives, residual values and depreciation method are reviewed at the end of each reporting 
+         the units of production method, unless doing so results in depreciation charges that do not reflect the asset’
+         The units of production method is an amortised charge proportional to the depletion of the estimated proven an
+      s. 243   []
+         Amortisation of development costs capitalised is charged on a unit of production basis over the life of estima
+      s. 245   []
+         amortisation and accumulated impairment losses. Amortisation of the asset begins when development is complete 
+         the asset is available for use. It is amortised over the period of expected future benefit. Amortisation is re
+         When the right-of-use asset is used in the extraction, processing and transportation of ore, depreciation is i
+         and rehabilitation. Right-of-use assets are subsequently measured at cost less any accumulated depreciation an
+      (stopper, nok linjer)
+
+   === FMG  (20962 kB)  https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/documents/regulatory/asx-announcements/fy26-annual-report_-app4e_updated.pdf?download=true
+      s. 39   []
+         Zero manufacturing and Metals sustaining capital. Additionally, pre-tax impairment expense of US$750 million a
+      s. 40   []
+         Depreciation and
+         amortisation   -> 5,6 | (2,872) | (2,506)
+      s. 44   []
+         Underlying EBITDA, defined as earnings before interest, tax, depreciation and amortisation, exploration, devel
+         Cost of sales excluding depreciation and amortisation   -> 5 | (7,343) | (6,671)
+         Depreciation and amortisation   -> 5,6 | (2,872) | (2,506)
+      s. 45   []
+         Depreciation and
+         amortisation   -> 178
+      s. 46   []
+         Depreciation, interest and tax
+         Depreciation and amortisation of US$2,872 million is up 15 per cent (FY25: US$2,506 million) reflecting a high
+         depreciation expense than FY25 but in line with H1 FY26. The increase in depreciation expense in FY26 is large
+         •	 Increases in sustaining capital spend across various mine sites and infrastructure in line with the lifecyc
+         •	 Metals sustaining capital: A comprehensive review was performed over the sustaining capital within the Meta
+      s. 49   []
+         Capital expenditure (including joint operations)1   -> (3,640) | (3,930)
+         1 Capital expenditure comprises payments for property, plant and equipment (including deposits) as well as pu
+         Capital expenditure including joint operations and investments was US$3,640 million for the year (FY25: US$3,9
+         Capital expenditure throughout the period consisted of:
+         excavators, sustaining capital on existing mine sites, port and rail infrastructure. Development spend was inc
+      s. 82   []
+         Initial and short-term impacts are expected to increase capital expenditure associated with
+         systems scale, while depreciation expense is expected to increase. Over the medium to long term,
+         Green Metals. See the Capital Expenditure and Climate-related Investment table on page 84.
+         Resourcing includes capital expenditure, specialist internal capability and partnerships with equipment manufa
+      s. 87   []
+         Capital expenditure and climate-related investment
+         Capital expenditure is required to support Fortescue’s response to climate-related risks and opportunities and
+         broader operating and capital expenditure. Fortescue also continues to invest in exploration, studies and reso
+      s. 192   []
+         Payments for property, plant and equipment - Fortescue   -> (3,033) | (3,028)
+         Payments for property, plant and equipment - joint operations   -> (148) | (235)
+      s. 195   []
+         Fortescue uses Underlying EBITDA defined as earnings before interest, tax, depreciation and amortisation, expl
+         Depreciation and amortisation   -> 5,6 | (2,872) | (2,506)
+      s. 196   []
+         Capital expenditure and
+      s. 204   []
+         Depreciation and amortisation   -> 2,872 | 2,506
+         Depreciation in inventory   -> 38 | 51
+      s. 241   []
+         depreciation and impairment loss. Historical cost includes expenditure that is directly attributable to the ac
+         purchases of property, plant and equipment. Borrowing costs related to the acquisition or construction of qual
+      s. 242   []
+         (iii) Depreciation
+         Depreciation of assets, other than land which is not depreciated, is calculated using the straight-line method
+         of production method, net of residual values, over estimated useful lives. Depreciation commences on the date 
+         Where the useful life is not linked to the quantities of iron ore produced or when doing so results in depreci
+         The estimated useful lives, residual values and depreciation method are reviewed at the end of each reporting 
+         the units of production method, unless doing so results in depreciation charges that do not reflect the asset’
+         The units of production method is an amortised charge proportional to the depletion of the estimated proven an
+      s. 243   []
+         Amortisation of development costs capitalised is charged on a unit of production basis over the life of estima
+      s. 245   []
+         amortisation and accumulated impairment losses. Amortisation of the asset begins when development is complete 
+         the asset is available for use. It is amortised over the period of expected future benefit. Amortisation is re
+         When the right-of-use asset is used in the extraction, processing and transportation of ore, depreciation is i
+         and rehabilitation. Right-of-use assets are subsequently measured at cost less any accumulated depreciation an
+      (stopper, nok linjer)
+
+   === FMG  (272 kB)  https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/documents/regulatory/transcripts/fy25-full-year-results---investor-and-analyst-call-transcript.pdf
+      s. 5   []
+         reflecting lower prices, while NPAT was impacted by the higher depreciation expense – a result of
+         in the Notes to the financials. Looking ahead, we expect a modest increase in depreciation
+
+   === FMG  (272 kB)  https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/documents/regulatory/transcripts/fy25-full-year-results---investor-and-analyst-call-transcript.pdf?download=true
+      s. 5   []
+         reflecting lower prices, while NPAT was impacted by the higher depreciation expense – a result of
+         in the Notes to the financials. Looking ahead, we expect a modest increase in depreciation
+
+   === FMG  (6698 kB)  https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/documents/regulatory/asx-announcements/2935118-fy25-full-year-results-presentation.pdf
+      s. 26   []
+         Depreciation and
+         amortisation
+      s. 29   []
+         Capital expenditure (US$m)1
+         1 Total capital expenditure and investments (including joint ventures).
+
+   === FMG  (6698 kB)  https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/documents/regulatory/asx-announcements/2935118-fy25-full-year-results-presentation.pdf?download=true
+      s. 26   []
+         Depreciation and
+         amortisation
+      s. 29   []
+         Capital expenditure (US$m)1
+         1 Total capital expenditure and investments (including joint ventures).
+
+   === FMG  (345 kB)  https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/documents/regulatory/asx-announcements/2935116-fy25-full-year-results.pdf
+      s. 4   [is 1 September 2025, and the dividend will be paid to shareholders on 26 Septemb]
+         Capital expenditure   -> (3,930) | (2,895) | 36
+
+   === FMG  (345 kB)  https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/documents/regulatory/asx-announcements/2935116-fy25-full-year-results.pdf?download=true
+      s. 4   [is 1 September 2025, and the dividend will be paid to shareholders on 26 Septemb]
+         Capital expenditure   -> (3,930) | (2,895) | 36
+
+   === FMG  (13904 kB)  https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/documents/regulatory/asx-announcements/2935109-fy25-annual-report-and-appendix-4e.pdf
+      s. 36   []
+         Depreciation and amortisation   -> 5,6 | (2,506) | (2,144)
+      s. 39   []
+         Cost of sales excluding depreciation and amortisation   -> 5 | (6,671) | (6,575)
+         Depreciation and amortisation   -> 5,6 | (2,506) | (2,144)
+         Underlying EBITDA, defined as earnings before interest, tax, depreciation and amortisation, exploration, devel
+      s. 40   []
+         sales revenue declined despite the four per cent increase in volume of ore sold. Cost of sales excluding depre
+         amortisation remained largely in line with FY24 despite the increase in sales volume. Total Fortescue Energy U
+         Depreciation and
+         amortisation
+      s. 41   []
+         Depreciation, Interest and Tax
+         •	 Depreciation and amortisation of US$2,506 million is up 17 per cent on the prior period (FY24: US$2,144 mil
+         reflecting increases in sustaining capital and commissioning of assets during the year and is in line with the
+         annualised depreciation for H2 FY24.
+      s. 43   []
+         Capital expenditure (including joint operations)¹   -> (3,930) | (2,895)
+         ¹ Capital expenditure comprises payments for property, plant and equipment as well as purchases of investment
+      s. 175   []
+         Payments for property, plant and equipment - Fortescue   -> (3,028) | (2,547)
+         Payments for property, plant and equipment - joint operations   -> (235) | (287)
+      s. 178   []
+         Fortescue uses Underlying EBITDA defined as earnings before interest, tax, depreciation and amortisation, expl
+         Depreciation and amortisation   -> 5,6 | (2,506) | (2,144)
+      s. 179   []
+         Capital expenditure and
+      s. 187   []
+         Depreciation and amortisation   -> 2,506 | 2,144
+         Depreciation in inventory   -> 51 | (1)
+      s. 221   []
+         Each class of property, plant and equipment is stated at historical cost less, where applicable, any accumulat
+      s. 222   []
+         (iii) Depreciation
+         Depreciation of assets, other than land which is not depreciated, is calculated using the straight-line method
+         of production method, net of residual values, over estimated useful lives. Depreciation commences on the date 
+         Where the useful life is not linked to the quantities of iron ore produced or when doing so results in depreci
+         The estimated useful lives, residual values and depreciation method are reviewed at the end of each reporting 
+         the units of production method, unless doing so results in depreciation charges that do not reflect the asset’
+         The units of production method is an amortised charge proportional to the depletion of the estimated proven an
+      s. 223   []
+         Amortisation of development costs capitalised is charged on a unit of production basis over the life of estima
+      s. 224   []
+         Capitalisation of development stripping costs ceases and amortisation of those capitalised costs commences upo
+         Amortisation of capitalised development stripping costs is determined on a unit of production basis for each a
+         initial recognition, intangible assets are carried at cost less amortisation and any impairment losses. Intang
+         indication that they may be impaired. The amortisation period and method is reviewed at each financial year en
+      s. 225   []
+         amortisation and accumulated impairment losses. Amortisation of the asset begins when development is complete 
+         the asset is available for use. It is amortised over the period of expected future benefit. Amortisation is re
+         When the right of use asset is used in the extraction, processing and transportation of ore, depreciation is i
+         and rehabilitation. Right of use assets are subsequently measured at cost less any accumulated depreciation an
+      s. 230   []
+         • Depreciation and amortisation charges in the income statement may change where such charges are determined b
+      s. 231   []
+         and future capital expenditure. Management also considers the impact of material climate-related risks, both t
+
+   === FMG  (13904 kB)  https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/documents/regulatory/asx-announcements/2935109-fy25-annual-report-and-appendix-4e.pdf?download=true
+      s. 36   []
+         Depreciation and amortisation   -> 5,6 | (2,506) | (2,144)
+      s. 39   []
+         Cost of sales excluding depreciation and amortisation   -> 5 | (6,671) | (6,575)
+         Depreciation and amortisation   -> 5,6 | (2,506) | (2,144)
+         Underlying EBITDA, defined as earnings before interest, tax, depreciation and amortisation, exploration, devel
+      s. 40   []
+         sales revenue declined despite the four per cent increase in volume of ore sold. Cost of sales excluding depre
+         amortisation remained largely in line with FY24 despite the increase in sales volume. Total Fortescue Energy U
+         Depreciation and
+         amortisation
+      s. 41   []
+         Depreciation, Interest and Tax
+         •	 Depreciation and amortisation of US$2,506 million is up 17 per cent on the prior period (FY24: US$2,144 mil
+         reflecting increases in sustaining capital and commissioning of assets during the year and is in line with the
+         annualised depreciation for H2 FY24.
+      s. 43   []
+         Capital expenditure (including joint operations)¹   -> (3,930) | (2,895)
+         ¹ Capital expenditure comprises payments for property, plant and equipment as well as purchases of investment
+      s. 175   []
+         Payments for property, plant and equipment - Fortescue   -> (3,028) | (2,547)
+         Payments for property, plant and equipment - joint operations   -> (235) | (287)
+      s. 178   []
+         Fortescue uses Underlying EBITDA defined as earnings before interest, tax, depreciation and amortisation, expl
+         Depreciation and amortisation   -> 5,6 | (2,506) | (2,144)
+      s. 179   []
+         Capital expenditure and
+      s. 187   []
+         Depreciation and amortisation   -> 2,506 | 2,144
+         Depreciation in inventory   -> 51 | (1)
+      s. 221   []
+         Each class of property, plant and equipment is stated at historical cost less, where applicable, any accumulat
+      s. 222   []
+         (iii) Depreciation
+         Depreciation of assets, other than land which is not depreciated, is calculated using the straight-line method
+         of production method, net of residual values, over estimated useful lives. Depreciation commences on the date 
+         Where the useful life is not linked to the quantities of iron ore produced or when doing so results in depreci
+         The estimated useful lives, residual values and depreciation method are reviewed at the end of each reporting 
+         the units of production method, unless doing so results in depreciation charges that do not reflect the asset’
+         The units of production method is an amortised charge proportional to the depletion of the estimated proven an
+      s. 223   []
+         Amortisation of development costs capitalised is charged on a unit of production basis over the life of estima
+      s. 224   []
+         Capitalisation of development stripping costs ceases and amortisation of those capitalised costs commences upo
+         Amortisation of capitalised development stripping costs is determined on a unit of production basis for each a
+         initial recognition, intangible assets are carried at cost less amortisation and any impairment losses. Intang
+         indication that they may be impaired. The amortisation period and method is reviewed at each financial year en
+      s. 225   []
+         amortisation and accumulated impairment losses. Amortisation of the asset begins when development is complete 
+         the asset is available for use. It is amortised over the period of expected future benefit. Amortisation is re
+         When the right of use asset is used in the extraction, processing and transportation of ore, depreciation is i
+         and rehabilitation. Right of use assets are subsequently measured at cost less any accumulated depreciation an
+      s. 230   []
+         • Depreciation and amortisation charges in the income statement may change where such charges are determined b
+      s. 231   []
+         and future capital expenditure. Management also considers the impact of material climate-related risks, both t
+
+   === FMG  (6759 kB)  https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/docs/default-source/announcements-and-reports/fy24-full-year-results-presentation.pdf
+      s. 36   []
+         Capital expenditure (US$m)1   -> 1,954 | 3,383 | 2,864 | 3,170 | 2,871
+         1 Total capital expenditure and investments (including joint ventures).   -> 4,447 | 8,967 | 3,576 | 4,317 | 5,108
+
+   === FMG  (6759 kB)  https://content.fortescue.com/fortescue17114-fortescueeb60-productionbbdb-8be5/media/project/fortescueportal/shared/docs/default-source/announcements-and-reports/fy24-full-year-results-presentation.pdf?download=true
+      s. 36   []
+         Capital expenditure (US$m)1   -> 1,954 | 3,383 | 2,864 | 3,170 | 2,871
+         1 Total capital expenditure and investments (including joint ventures).   -> 4,447 | 8,967 | 3,576 | 4,317 | 5,108
+
+
+2. Kumba
+
+
+
+3. Champion Iron
+
+      https://www.championiron.com/wp-content/uploads/2026/05/fs-q4fy2026-2026-05-28-final-div.pdf
+      https://www.championiron.com/wp-content/uploads/2026/05/annual-report-fy2026-asx-2026-05-28.pdf
+      https://www.championiron.com/wp-content/uploads/2025/05/fy2025-fs-20250529-tsx.pdf
+      https://www.championiron.com/wp-content/uploads/2025/05/fy2025-annual-report-asx-20250529.pdf
+      https://www.championiron.com/wp-content/uploads/2024/05/2024-05-31-fs-q4-fy2024-asx.pdf
+      https://www.championiron.com/wp-content/uploads/2024/05/2024-05-31-annual-report-fy2024-asx.pdf
+      https://www.championiron.com/wp-content/uploads/2023/05/2023-05-31-fs-fy2023-sedar.pdf
+      https://www.championiron.com/wp-content/uploads/2023/05/2023-05-31-annual-report-fy2023-sedar.pdf
+      https://www.championiron.com/wp-content/uploads/2022/05/2022-05-26-fs-fy2022-sedar.pdf
+      https://www.championiron.com/wp-content/uploads/2022/05/2022-05-26-annual-report-fy2022-sedar.pdf
+      https://www.championiron.com/wp-content/uploads/2021/05/2021-05-27-fs-fy2021-sedar.pdf
+      https://www.championiron.com/wp-content/uploads/2021/05/2021-05-27-annual-report-fy2021.pdf
+      https://www.championiron.com/wp-content/uploads/2020/05/annual-report-2020-sedar-1.pdf
+      https://www.championiron.com/wp-content/uploads/2019/07/fs-2019-fye-2019-06-19-sedar.pdf
+      https://www.championiron.com/wp-content/uploads/2019/07/fye2019-annual-report-sedar.pdf
+
+   === CIA  (851 kB)  https://www.championiron.com/wp-content/uploads/2026/05/fs-q4fy2026-2026-05-28-final-div.pdf
+      s. 12   []
+         Depreciation   -> 31 | 180,284 | 148,604
+         Amortization of transaction costs and accretion of long-term debt   -> 22 | 6,530 | 4,648
+         Amortization of deferred grant   -> 14, 22 | (1,536) | (1,224)
+         Purchase of property, plant and equipment   -> 10, 31 | (395,427) | (576,375)
+      s. 53   []
+         Depreciation of property, plant and equipment allocated to stripping activity asset   -> (5,633) | (3,737)
+         Net cash flows used in investing activities - Purchase of property, plant and equipment   -> 395,427 | 576,375
+         c)  Reconciliation of depreciation presented in the property, plant and equipment schedule to the consolidated
+         Depreciation of property, plant and equipment as per note 10   -> 170,130 | 155,750
+         Depreciation of property, plant and equipment allocated to stripping activity asset   -> (5,633) | (3,737)
+         Depreciation of intangible assets   -> 2,092 | 1,521
+         Net effect of depreciation of property, plant and equipment allocated to inventory   -> 13,695 | (4,930)
+         Depreciation as per consolidated statements of income   -> 180,284 | 148,604
+      s. 54   [As at March 31, 2026 and 2025, the Company conducted mining operations and explo]
+         Amortization of transaction costs and accretion   -> 4,841 | 3,108
+         Depreciation   -> (178,100) | (188) | (1,996) | (180,284)
+      s. 55   []
+         Depreciation   -> (146,380) | (125) | (2,099) | (148,604)
+
+   === CIA  (18272 kB)  https://www.championiron.com/wp-content/uploads/2026/05/annual-report-fy2026-asx-2026-05-28.pdf
+      s. 143   []
+         Depreciation   -> 31 | 180,284 | 148,604
+         Amortization of transaction costs and accretion of long-term debt   -> 22 | 6,530 | 4,648
+         Amortization of deferred grant   -> 14, 22 | (1,536) | (1,224)
+         Purchase of property, plant and equipment   -> 10, 31 | (395,427) | (576,375)
+      s. 184   []
+         Depreciation of property, plant and equipment allocated to stripping activity asset   -> (5,633) | (3,737)
+         Net cash flows used in investing activities - Purchase of property, plant and equipment   -> 395,427 | 576,375
+         c)  Reconciliation of depreciation presented in the property, plant and equipment schedule to the consolidated
+         Depreciation of property, plant and equipment as per note 10   -> 170,130 | 155,750
+         Depreciation of property, plant and equipment allocated to stripping activity asset   -> (5,633) | (3,737)
+         Depreciation of intangible assets   -> 2,092 | 1,521
+         Net effect of depreciation of property, plant and equipment allocated to inventory   -> 13,695 | (4,930)
+         Depreciation as per consolidated statements of income   -> 180,284 | 148,604
+      s. 185   [As at March 31, 2026 and 2025, the Company conducted mining operations and explo]
+         Amortization of transaction costs and accretion   -> 4,841 | 3,108
+         Depreciation   -> (178,100) | (188) | (1,996) | (180,284)
+      s. 186   []
+         Depreciation   -> (146,380) | (125) | (2,099) | (148,604)
+
+   === CIA  (1144 kB)  https://www.championiron.com/wp-content/uploads/2025/05/fy2025-fs-20250529-tsx.pdf
+      s. 11   []
+         Depreciation   -> 30 | 148,604 | 123,584
+         Amortization of transaction costs and accretion of long-term debt   -> 22 | 4,648 | 5,129
+         Amortization of deferred grant   -> 14, 22 | (1,224) | (817)
+         Purchase of property, plant and equipment   -> 10, 30 | (576,375) | (328,144)
+      s. 50   []
+         Depreciation of property, plant and equipment allocated to stripping activity asset   -> (3,737) | (440)
+         Capitalized amortization of transaction costs   -> (597) | (67)
+         Net cash flows used in investing activities - Purchase of property, plant and equipment   -> 576,375 | 328,144
+         c)  Reconciliation of depreciation presented in the property, plant and equipment schedule to the consolidated
+         Depreciation of property, plant and equipment as per note 10   -> 155,750 | 134,495
+         Depreciation of property, plant and equipment allocated to stripping activity asset   -> (3,737) | (440)
+         Depreciation of intangible assets   -> 1,521 | 3,124
+         Net effect of depreciation of property, plant and equipment allocated to inventory   -> (4,930) | (13,595)
+      s. 51   []
+         Depreciation   -> (146,380) | (125) | (2,099) | (148,604)
+         Depreciation   -> (121,919) | (42) | (1,623) | (123,584)
+
+   === CIA  (16357 kB)  https://www.championiron.com/wp-content/uploads/2025/05/fy2025-annual-report-asx-20250529.pdf
+      s. 141   []
+         Depreciation   -> 30 | 148,604 | 123,584
+         Amortization of transaction costs and accretion of long-term debt   -> 22 | 4,648 | 5,129
+         Amortization of deferred grant   -> 14, 22 | (1,224) | (817)
+         Purchase of property, plant and equipment   -> 10, 30 | (576,375) | (328,144)
+      s. 180   []
+         Depreciation of property, plant and equipment allocated to stripping activity asset   -> (3,737) | (440)
+         Capitalized amortization of transaction costs   -> (597) | (67)
+         Net cash flows used in investing activities - Purchase of property, plant and equipment   -> 576,375 | 328,144
+         c)  Reconciliation of depreciation presented in the property, plant and equipment schedule to the consolidated
+         Depreciation of property, plant and equipment as per note 10   -> 155,750 | 134,495
+         Depreciation of property, plant and equipment allocated to stripping activity asset   -> (3,737) | (440)
+         Depreciation of intangible assets   -> 1,521 | 3,124
+         Net effect of depreciation of property, plant and equipment allocated to inventory   -> (4,930) | (13,595)
+      s. 181   []
+         Depreciation   -> (146,380) | (125) | (2,099) | (148,604)
+         Depreciation   -> (121,919) | (42) | (1,623) | (123,584)
+
+   === CIA  (979 kB)  https://www.championiron.com/wp-content/uploads/2024/05/2024-05-31-fs-q4-fy2024-asx.pdf
+      s. 11   []
+         Depreciation   -> 30 | 123,584 | 121,044
+         Amortization of transaction costs and accretion of long-term debt   -> 22 | 5,129 | 4,676
+         Amortization of deferred grant   -> 14, 22 | (817)
+         Purchase of property, plant and equipment   -> 10, 30 | (328,144) | (282,892)
+      s. 49   []
+         Depreciation of property, plant and equipment allocated to stripping activity asset   -> (440) | (1,089)
+         Capitalized amortization of transaction costs   -> (67) | (666)
+         Net cash flows used in investing activities - Purchase of property, plant and equipment   -> 328,144 | 282,892
+         c)  Reconciliation of depreciation presented in the property, plant and equipment schedule to the consolidated
+         Depreciation of property, plant and equipment as per note 10   -> 134,495 | 124,105
+         Depreciation of property, plant and equipment allocated to stripping activity asset   -> (440) | (1,089)
+         Depreciation of intangible assets   -> 3,124 | 3,134
+         Net effect of depreciation of property, plant and equipment allocated to inventory   -> (13,595) | (5,106)
+      s. 50   []
+         Depreciation   -> (121,919) | (42) | (1,623) | (123,584)
+         Depreciation   -> (120,759)
+
+   === CIA  (11516 kB)  https://www.championiron.com/wp-content/uploads/2024/05/2024-05-31-annual-report-fy2024-asx.pdf
+      s. 141   []
+         Depreciation   -> 30 | 123,584 | 121,044
+         Amortization of transaction costs and accretion of long-term debt   -> 22 | 5,129 | 4,676
+         Amortization of deferred grant   -> 14, 22 | (817)
+         Purchase of property, plant and equipment   -> 10, 30 | (328,144) | (282,892)
+      s. 179   []
+         Depreciation of property, plant and equipment allocated to stripping activity asset   -> (440) | (1,089)
+         Capitalized amortization of transaction costs   -> (67) | (666)
+         Net cash flows used in investing activities - Purchase of property, plant and equipment   -> 328,144 | 282,892
+         c)  Reconciliation of depreciation presented in the property, plant and equipment schedule to the consolidated
+         Depreciation of property, plant and equipment as per note 10   -> 134,495 | 124,105
+         Depreciation of property, plant and equipment allocated to stripping activity asset   -> (440) | (1,089)
+         Depreciation of intangible assets   -> 3,124 | 3,134
+         Net effect of depreciation of property, plant and equipment allocated to inventory   -> (13,595) | (5,106)
+      s. 180   []
+         Depreciation   -> (121,919) | (42) | (1,623) | (123,584)
+         Depreciation   -> (120,759)
+
+   === CIA  (1094 kB)  https://www.championiron.com/wp-content/uploads/2023/05/2023-05-31-fs-fy2023-sedar.pdf
+      s. 15   []
+         Depreciation   -> 32 | 121,044 | 43,929
+         Purchase of property, plant and equipment   -> 11, 32 | (282,892) | (519,322)
+      s. 17   []
+         Property, plant and equipment are carried at historical cost less any accumulated depreciation and impairment 
+      s. 55   [statements of cash flows is net of government grants totalling $5,195,000 for th]
+         Depreciation of property, plant and equipment allocated to stripping activity asset   -> (1,089) | (5,845)
+         Capitalized amortization of transaction costs   -> (666) | (3,179)
+         Net cash flow used in investing activities - purchase of property, plant and equipment   -> 282,892 | 519,322
+         $7,075,000 was receivable as at March 31, 2023. The net cash flow from purchase of property, plant and equipme
+         c)  Reconciliation of depreciation presented in the property, plant and equipment schedule to the consolidated
+         Depreciation of property, plant and equipment as per note 11   -> 124,105 | 56,183
+         Depreciation of property, plant and equipment allocated to stripping activity asset   -> (1,089) | (5,845)
+         Depreciation of intangible assets   -> 3,134 | 2,582
+      s. 56   [On May 30, 2023 (Montréal time) / May 31, 2023 (Sydney time), the Board declared]
+         Depreciation   -> (120,759)
+         Depreciation   -> (43,671)
+
+   === CIA  (15949 kB)  https://www.championiron.com/wp-content/uploads/2023/05/2023-05-31-annual-report-fy2023-sedar.pdf
+      s. 48   []
+         i. Purchase of Property, Plant and Equipment
+         Sustaining capital expenditures   -> 9,303 | 11,743 | 91,924 | 76,956
+         Purchase of property, plant and equipment as per cash flows   -> 25,377 | 117,779 | 282,892 | 519,322
+         Sustaining Capital Expenditures
+      s. 131   []
+         Depreciation   -> 32 | 121,044 | 43,929
+         Purchase of property, plant and equipment   -> 11, 32 | (282,892) | (519,322)
+      s. 133   []
+         Property, plant and equipment are carried at historical cost less any accumulated depreciation and impairment 
+      s. 171   [statements of cash flows is net of government grants totalling $5,195,000 for th]
+         Depreciation of property, plant and equipment allocated to stripping activity asset   -> (1,089) | (5,845)
+         Capitalized amortization of transaction costs   -> (666) | (3,179)
+         Net cash flow used in investing activities - purchase of property, plant and equipment   -> 282,892 | 519,322
+         $7,075,000 was receivable as at March 31, 2023. The net cash flow from purchase of property, plant and equipme
+         c)  Reconciliation of depreciation presented in the property, plant and equipment schedule to the consolidated
+         Depreciation of property, plant and equipment as per note 11   -> 124,105 | 56,183
+         Depreciation of property, plant and equipment allocated to stripping activity asset   -> (1,089) | (5,845)
+         Depreciation of intangible assets   -> 3,134 | 2,582
+      s. 172   [On May 30, 2023 (Montréal time) / May 31, 2023 (Sydney time), the Board declared]
+         Depreciation   -> (120,759)
+         Depreciation   -> (43,671)
+
+   === CIA  (2764 kB)  https://www.championiron.com/wp-content/uploads/2022/05/2022-05-26-fs-fy2022-sedar.pdf
+      s. 19   []
+         Depreciation   -> 32 | 43,929 | 35,177
+         Purchase of property, plant and equipment   -> 11, 32 | (519,322) | (174,650)
+      s. 21   []
+         Property, plant and equipment are carried at historical cost less any accumulated depreciation and impairment 
+      s. 60   []
+         Depreciation of property, plant and equipment allocated to stripping activity asset   -> (5,845) | (2,636)
+         Capitalized amortization of transaction costs   -> (3,179) | (365)
+         Net cash flow used in investing activities - purchase of property, plant and equipment   -> 519,322 | 174,650
+         $3,298,000 was receivable as at March 31, 2022. The net cash flow from purchase of property, plant and equipme
+         c)  Reconciliation of depreciation presented in the property, plant and equipment schedule to the statements o
+         Depreciation of property, plant and equipment as per note 11   -> 56,183 | 36,010
+         Depreciation of property, plant and equipment allocated to stripping activity asset   -> (5,845) | (2,636)
+         Depreciation of intangible assets   -> 2,582 | 1,518
+      s. 61   []
+         Depreciation   -> (43,671)
+         Depreciation   -> (34,919)
+
+   === CIA  (8202 kB)  https://www.championiron.com/wp-content/uploads/2022/05/2022-05-26-annual-report-fy2022-sedar.pdf
+      s. 49   [ended March 31, 2022 was $0.01, compared to an operating cash flow per share1 of]
+         i. Purchase of Property, Plant and Equipment
+         Sustaining capital expenditures   -> 11,743 | 13,193 | 76,956 | 42,758
+         Purchase of property, plant and equipment as per cash flows   -> 117,779 | 74,500 | 519,322 | 174,650 | 1
+      s. 136   []
+         Depreciation   -> 32 | 43,929 | 35,177
+         Purchase of property, plant and equipment   -> 11, 32 | (519,322) | (174,650)
+      s. 138   []
+         Property, plant and equipment are carried at historical cost less any accumulated depreciation and impairment 
+      s. 177   []
+         Depreciation of property, plant and equipment allocated to stripping activity asset   -> (5,845) | (2,636)
+         Capitalized amortization of transaction costs   -> (3,179) | (365)
+         Net cash flow used in investing activities - purchase of property, plant and equipment   -> 519,322 | 174,650
+         $3,298,000 was receivable as at March 31, 2022. The net cash flow from purchase of property, plant and equipme
+         c)  Reconciliation of depreciation presented in the property, plant and equipment schedule to the statements o
+         Depreciation of property, plant and equipment as per note 11   -> 56,183 | 36,010
+         Depreciation of property, plant and equipment allocated to stripping activity asset   -> (5,845) | (2,636)
+         Depreciation of intangible assets   -> 2,582 | 1,518
+      s. 178   []
+         Depreciation   -> (43,671)
+         Depreciation   -> (34,919)
+
+
+4. Vale, jernmalmsegmentet i 20-F
+
+   5 20-F i den nyere listen
+
+   === Vale 20-F levert 2026-03-27
+      In 2025, we recorded net / income of US$1,983 million, compared to US$5,975 million in 2024. Our Adjusted EBITDA incr / million in 2024, mainly due to higher sales volumes of iron ore, copper and nickel, which 
+      Iron Ore Solutions / (excluding depreciation, depletion and amortization). Increased by 1.8% or US$290 million / in 2025 to US$16,612 million from US$16,322 million in 2024. This increase primarily refle
+      (excluding depreciation, depletion and amortization). Increased by 1.8% or US$290 million / in 2025 to US$16,612 million from US$16,322 million in 2024. This increase primarily refle / 5% with an impact of US$783 million, higher costs from third-party iron ore acquisitions o
+      in 2025 to US$16,612 million from US$16,322 million in 2024. This increase primarily refle / 5% with an impact of US$783 million, higher costs from third-party iron ore acquisitions o / in iron ore pellet sales volumes of 14%, with an impact of US$390 million, and lower marit
+      and nickel of 2.5%, 12.4% and 11.3%, respectively, resulting in an impact of US$326 millio / real contributed an impact of US$374 million. In 2024, our consolidated Adjusted EBITDA fr / million from US$18,601 million in 2023, mainly due to the 7.8% drop in the realized averag
+
+   === Vale 20-F levert 2025-03-28
+
+   === Vale 20-F levert 2024-04-19
+
+   === Vale 20-F levert 2023-04-13
+
+   === Vale 20-F levert 2022-04-14
+      &#8203;&#8203;&#8203;&#8203;&#8203;&#8203;&#8203; / Table of ContentsI. | OVERVIEW / We are one of the largest metals and mining companies in the world, based on market capita
+      &#190; | Water usage reduction. / &#190; | Social ambition. / Our social ambition is to be a partner company in the development of resilient communities
+      &#190; | Social ambition. / Our social ambition is to be a partner company in the development of resilient communities / &#190; | We continue to improve our portfolio in order to provide our customers with solut
+      &#190; | We continue to improve our portfolio in order to provide our customers with solut / &#190; | Our goal is to achieve an overall run-rate capacity of 400 Mtpy in the medium ter / &#190; | Another key goal is to increase our flexibility by creating capacity buffers acro
+      Table of ContentsBUSINESS OVERVIEW&#8203;Sale of Coal Assets. In December 2021, we entered / &#8203; / Table of Contentsproduction capacity of 250 thousand tons per year of green pig iron and m
+      Table of Contentsproduction capacity of 250 thousand tons per year of green pig iron and m / &#8203; / Table of ContentsBUSINESS OVERVIEW&#8203;independent third parties, represent 98% of our t
+      Table of ContentsBUSINESS OVERVIEW&#8203;independent third parties, represent 98% of our t / &#8203; / Table of Contentsfor use in our production processes. The goal was to reduce 10% of specif
+      &#8203;We have implemented several initiatives to enhance our tailings and dam management  / &#8203; / Table of Contentsits upstream structures in Brazil. Samarco is currently implementing a cl
+      &#190; | Increased cost of insurance. Our cost of insurance may rise, and we may not be ab / &#190; | Increased taxation and other obligations. We may be subject to new or increased t / EXTERNAL RISKSGeopolitical tensions and military hostilities, including the ongoing milita
+      EXTERNAL RISKSGeopolitical tensions and military hostilities, including the ongoing milita / &#8203; / Table of ContentsRISK FACTORS&#8203;When demand exceeds our production capacity, we may me
+      Table of ContentsRISK FACTORS&#8203;When demand exceeds our production capacity, we may me / &#8203; / Table of ContentsRISK FACTORS&#8203;Changes in exchange rates for the currencies in which 
+      Failures in our cybersecurity controls, information technology, operational technology and / &#8203; / Table of ContentsRISK FACTORS&#8203;the port of Ponta da Madeira could significantly impac
+      &#8203;&#8203;30 | VALE ANNUAL REPORT FORM 20-F | &#8203; / &#8203; / Table of ContentsRISK FACTORS&#8203;construction of processing plants and expansion or con
+      &#8203; | VALE ANNUAL REPORT FORM 20-F | 89 / &#8203;&#8203; / Table of ContentsRESERVES AND RESOURCES&#8203;The projected exhaustion date of our mines o
+
+Send utskriften til Claude. Tallene leses av for haand til b_manuell.json.

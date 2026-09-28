@@ -1,0 +1,107 @@
+sonde:   sonde_kjor_brasil
+kjort:   2026-09-28 06:20:44 UTC
+commit:  d065565
+status:  OK
+brukte:  4 sekunder
+--------------------------------------------------------------
+1. Fond og kontroll
+
+   IBZL.L    iShares MSCI Brazil UCITS              2009-01 til 2026-09 (GBp)
+   XMBR.DE   Xtrackers MSCI Brazil UCITS            2008-01 til 2026-09 (EUR)
+   EWZ       iShares MSCI Brazil (USA, kontroll)    2000-07 til 2026-09 (USD)
+   IWDA.L    iShares Core MSCI World                2009-09 til 2026-09 (USD)
+
+2. Raavarer fra Pink Sheet
+
+   69 serier med. Utelatt som forhandlet pris: Sugar, EU (40 % stille), Phosphate rock (61 % stille), Potassium chloride ** (58 % stille)
+
+3. Maaling
+
+   IBZL.L: 2009-01 til 2026-09, sortert paa rf1 (fra 2016-01)
+      raavare                                       n   nf    rf1     r1     rp    r12
+      Real mot dollar (dollar per real)           212  129  +0.86  +0.84  +0.80  +0.86
+      Crude oil, Brent                            211  128  +0.34  +0.34  +0.28  +0.57
+      Crude oil, Dubai                            211  128  +0.34  +0.34  +0.28  +0.57
+      Crude oil, average                          211  128  +0.33  +0.34  +0.28  +0.57
+      Crude oil, WTI                              211  128  +0.30  +0.32  +0.28  +0.57
+      Platinum                                    211  128  +0.29  +0.25  +0.18  +0.62
+      Iron ore, cfr spot                          211  128  +0.28  +0.16  +0.18  +0.58
+      Copper                                      211  128  +0.27  +0.28  +0.15  +0.65
+      Tin                                         211  128  +0.27  +0.28  +0.15  +0.55
+      Silver                                      211  128  +0.24  +0.21  +0.16  +0.43
+      Logs, Cameroon                              211  128  +0.24  +0.22  +0.18  +0.36
+      Lead                                        211  128  +0.23  +0.25  +0.12  +0.63
+      Palm kernel oil                             211  128  +0.22  +0.17  +0.08  +0.26
+      Zinc                                        211  128  +0.22  +0.28  +0.18  +0.61
+      Sawnwood, Malaysian                         211  128  +0.22  +0.20  +0.05  +0.12
+      Sawnwood, Cameroon                          211  128  +0.22  +0.26  +0.11  +0.24
+      Aluminum                                    211  128  +0.22  +0.26  +0.20  +0.57
+      Soybean oil                                 211  128  +0.21  +0.24  +0.17  +0.34
+      Gold                                        211  128  +0.21  +0.17  +0.21  +0.29
+      Sugar, world                                211  128  +0.21  +0.22  +0.17  +0.36
+      ... svakeste fem:
+      Groundnuts                                  211  128  -0.08  -0.06  -0.08  -0.10
+      Sugar, US                                   211  128  -0.09  +0.01  -0.02  +0.32
+      Rice, Thai 5%                               211  128  -0.10  -0.11  -0.13  -0.02
+      Rice, Thai A.1                              211  128  -0.13  -0.09  -0.11  +0.07
+      Urea                                        211  128  -0.14  -0.13  -0.11  +0.07
+
+   XMBR.DE: 2008-01 til 2026-09, sortert paa rf1 (fra 2016-01)
+      raavare                                       n   nf    rf1     r1     rp    r12
+      Real mot dollar (dollar per real)           224  129  +0.85  +0.79  +0.78  +0.82
+      Crude oil, Brent                            223  128  +0.35  +0.37  +0.29  +0.65
+      Crude oil, Dubai                            223  128  +0.35  +0.37  +0.29  +0.65
+      Crude oil, average                          223  128  +0.34  +0.37  +0.29  +0.65
+      Crude oil, WTI                              223  128  +0.30  +0.34  +0.28  +0.65
+      Platinum                                    223  128  +0.27  +0.35  +0.16  +0.71
+      Iron ore, cfr spot                          223  128  +0.26  +0.25  +0.16  +0.67
+      Copper                                      223  128  +0.26  +0.35  +0.15  +0.74
+      Tin                                         223  128  +0.25  +0.33  +0.14  +0.58
+      Silver                                      223  128  +0.22  +0.24  +0.14  +0.47
+      Soybean oil                                 223  128  +0.22  +0.31  +0.17  +0.48
+      Sawnwood, Malaysian                         223  128  +0.21  +0.21  +0.04  +0.14
+      Sawnwood, Cameroon                          223  128  +0.21  +0.37  +0.10  +0.49
+      Lead                                        223  128  +0.20  +0.20  +0.11  +0.70
+      Logs, Cameroon                              223  128  +0.20  +0.30  +0.17  +0.48
+      Aluminum                                    223  128  +0.20  +0.31  +0.19  +0.68
+      Palm kernel oil                             223  128  +0.19  +0.24  +0.06  +0.38
+      Sugar, world                                223  128  +0.19  +0.21  +0.17  +0.24
+      Zinc                                        223  128  +0.19  +0.29  +0.15  +0.66
+      Gold                                        223  128  +0.18  +0.15  +0.18  +0.28
+      ... svakeste fem:
+      Rice, Thai 25%                              218  128  -0.09  +0.01  -0.06  -0.13
+      Sugar, US                                   223  128  -0.10  +0.03  -0.03  +0.28
+      Rice, Thai 5%                               223  128  -0.11  +0.01  -0.14  +0.02
+      Urea                                        223  128  -0.12  -0.05  -0.10  +0.20
+      Rice, Thai A.1                              223  128  -0.14  +0.07  -0.12  +0.29
+
+   EWZ: 2000-07 til 2026-09, sortert paa rf1 (fra 2016-01)
+      raavare                                       n   nf    rf1     r1     rp    r12
+      Real mot dollar (dollar per real)           255  129  +0.85  +0.74  +0.79  +0.86
+      Crude oil, Brent                            313  128  +0.35  +0.25  +0.29  +0.57
+      Crude oil, Dubai                            313  128  +0.34  +0.25  +0.28  +0.58
+      Crude oil, average                          313  128  +0.34  +0.26  +0.29  +0.57
+      Crude oil, WTI                              313  128  +0.31  +0.25  +0.29  +0.56
+      Platinum                                    313  128  +0.28  +0.29  +0.16  +0.65
+      Iron ore, cfr spot                          313  128  +0.24  +0.18  +0.14  +0.63
+      Copper                                      313  128  +0.23  +0.26  +0.13  +0.69
+      Silver                                      313  128  +0.22  +0.17  +0.14  +0.49
+      Sugar, world                                313  128  +0.21  +0.19  +0.17  +0.28
+      Tin                                         313  128  +0.21  +0.23  +0.11  +0.52
+      Palm kernel oil                             313  128  +0.20  +0.18  +0.07  +0.31
+      Soybean oil                                 313  128  +0.20  +0.15  +0.16  +0.31
+      Rapeseed oil                                294  128  +0.19  +0.23  +0.14  +0.35
+      Rubber, RSS3                                313  128  +0.17  +0.17  +0.13  +0.49
+      Sawnwood, Malaysian                         313  128  +0.17  +0.11  +0.01  +0.17
+      Sawnwood, Cameroon                          313  128  +0.17  +0.18  +0.08  +0.35
+      Gold                                        313  128  +0.17  +0.11  +0.17  +0.34
+      Zinc                                        313  128  +0.17  +0.24  +0.13  +0.54
+      Logs, Cameroon                              313  128  +0.16  +0.13  +0.14  +0.37
+      ... svakeste fem:
+      Groundnuts                                  313  128  -0.10  -0.04  -0.09  +0.10
+      Sugar, US                                   313  128  -0.12  -0.03  -0.04  +0.19
+      Rice, Thai 5%                               313  128  -0.12  +0.01  -0.13  +0.10
+      Urea                                        313  128  -0.13  -0.01  -0.10  +0.21
+      Rice, Thai A.1                              313  128  -0.15  +0.05  -0.12  +0.27
+
+Lagret sonder/brasil.json

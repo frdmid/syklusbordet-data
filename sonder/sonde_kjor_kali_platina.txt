@@ -1,0 +1,198 @@
+sonde:   sonde_kjor_kali_platina
+kjort:   2026-09-28 06:28:39 UTC
+commit:  d065565
+status:  OK
+brukte:  171 sekunder
+--------------------------------------------------------------
+DEL 1. Stillstand i nominell pris (Verdensbanken, Pink Sheet)
+
+   platina (kolonne 'Platinum'): 1960-01 til 2026-08, 800 mnd, siste 1780.00
+      uendret per tiaar: 1960-t 87 %  1970-t 50 %  1980-t 2 %  1990-t 6 %  2000-t 2 %  2010-t 1 %  2020-t 0 %
+      aar over 40 % (16 av 67): 1960 (100 %), 1961 (100 %), 1962 (100 %), ..., 1970 (100 %), 1971 (83 %), 1972 (83 %), 1973 (67 %), 1974 (67 %), 1976 (50 %)
+      start etter regelen: 1977-01, 596 mnd etter avkorting
+
+   kalium (kolonne 'Potassium chloride **'): 1960-01 til 2026-08, 800 mnd, siste 386.90
+      uendret per tiaar: 1960-t 94 %  1970-t 59 %  1980-t 65 %  1990-t 89 %  2000-t 84 %  2010-t 70 %  2020-t 0 %
+      aar over 40 % (57 av 67): 1960 (100 %), 1961 (92 %), 1962 (100 %), ..., 2014 (50 %), 2015 (67 %), 2016 (83 %), 2017 (67 %), 2018 (100 %), 2019 (83 %)
+      start etter regelen: 2020-01, 80 mnd etter avkorting
+
+DEL 2. A og detrendet A paa den avkortede serien
+
+   platina: 1977-01 til 2026-08. Naa A 22.0, detrendet A 26.7. Flagget i 6.5 % av maanedene med skaar.
+      innslag 1982-06  A  81.8  Ad  98.5   realpris 12 mnd  +49.1 %, 24 mnd  +29.5 %
+      innslag 1984-07  A  80.2  Ad  82.4   realpris 12 mnd  -24.3 %, 24 mnd  +21.7 %
+      innslag 1991-02  A  87.1  Ad  84.1   realpris 12 mnd   -9.0 %, 24 mnd  -12.6 %
+      snitt alle maaneder med skaar: 12 mnd   +1.1 %, 24 mnd   +0.5 %
+
+   kalium: 2020-01 til 2026-08. Naa A 38.7, detrendet A 32.5. Flagget i 0.0 % av maanedene med skaar.
+      snitt alle maaneder med skaar: 12 mnd  +10.6 %, 24 mnd -
+
+DEL 3. IKZ-universet maalt mot platina og kalium (sonde_ikz.py)
+
+1. Deflator og raavarepriser
+  ok    deflator   siste 2026-07
+  ok    uran, kontroll av Cameco   mot IMF 1992-2021: median avvik 1.8 % over 357 mnd, mot futures fra 2022: 1.6 % over 49 mnd
+  ok    uran   Cameco, maanedsslutt spot (UxC og TradeTech), 1988-01 til 2026-08, 464 mnd
+   IKZ_KUN=platina,kalium: maaler bare mot denne
+  ok    raavareserier   2 segment, korteste 80 mnd
+
+2. Kandidatunivers: 233 papirer
+
+3. Kurser
+  FEIL  kurs COPM.L   ingen serie
+  FEIL  kurs CTRA   ingen serie
+  FEIL  kurs MEG.TO   ingen serie
+  FEIL  kurs NGD   ingen serie
+  FEIL  kurs BAKKA.CO   ingen serie
+  FEIL  kurs JDEP.AS   ingen serie
+  FEIL  kurs KAP.L   ingen serie
+  FEIL  kurs 1COV.DE   ingen serie
+  ok    kurser   225 av 233 hentet
+
+4. Maaling
+   kalium            219 par
+   platina           219 par
+  ok    par maalt   438 totalt, 12 a priori
+# Sonde: instrumenter i IKZ-universet
+
+Kjort 2026-09-28 06:28 UTC. 225 papirer hentet av 233 forsokt. 438 par maalt mot 2 raavarer.
+
+Kolonner: r1 = korrelasjon i manedlige realendringer. r12 = samme over overlappende 12-manedersendringer, p fra blokkbootstrap. rp = partiell korrelasjon i r1 etter at verdensindeksen er tatt ut. beta12 = hvor mye papiret beveger seg per enhet ravare over 12 maneder. opp/ned = beta maalt bare i maneder der ravaren steg, mot bare der den falt. fangstB og fangstT = papirets samlede 12-manedersavkastning fra daterte bunner og fra daterte topper, delt pa ravarens. vent = hvilket fortegn papiret var ventet a ha: p = produsent, ravaren er inntekt, ventet positiv. f = forbruker, ravaren er kostnad, ventet negativ. b = blandet. ok = fortegnet kom ut som ventet. rf1 og rf12 er de samme maalt i det faste vinduet fra 2016-01, som er det eneste som er sammenlignbart pa tvers av papirer med ulik alder. nf = antall maneder i det faste vinduet; par med nf under 72 er sortert bakerst fordi en kort serie nar hoye tall ved flaks alene. ap = papiret var ventet a folge denne ravaren; tomt felt betyr at treffet er funnet ved leting.
+
+## kalium   (1 daterte bunner, 1 daterte topper)
+
+### Folger raavaren
+
+| papir | navn | type | n | nf | rf1 | rf12 | r1 | r12 | p12 | q12 | rp | beta12 | opp | ned | fangstB | fangstT | vent | ok | ap |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| IPI | Intrepid Potash | aksje | 79 | 79 | 0.216 | 0.877 | 0.216 | 0.877 |  |  | 0.231 | 0.87 | 0.14 | 0.75 |  |  | p | ja | x |
+| CMFP.L | L&G Longer Dated All Commo | ETF | 79 | 79 | 0.333 | 0.855 | 0.333 | 0.855 |  |  | 0.349 | 0.21 | 0.09 | 0.23 |  |  | p |  |  |
+| LXU | LSB Industries | aksje | 79 | 79 | 0.271 | 0.855 | 0.271 | 0.855 |  |  | 0.271 | 1.06 | 0.68 | 0.9 |  |  | p |  |  |
+| ICL | ICL Group | aksje | 79 | 79 | 0.166 | 0.85 | 0.166 | 0.85 |  |  | 0.179 | 0.57 | -0.01 | 0.51 |  |  | p | ja | x |
+| NTR | Nutrien | aksje | 79 | 79 | 0.219 | 0.846 | 0.219 | 0.846 |  |  | 0.231 | 0.44 | 0.01 | 0.43 |  |  | p | ja | x |
+| SDF.DE | K+S | aksje | 79 | 79 | 0.268 | 0.846 | 0.268 | 0.846 |  |  | 0.276 | 0.55 | 0.16 | 0.42 |  |  | p | ja | x |
+| CMOD.L | Invesco Bloomberg Commodit | ETF | 79 | 79 | 0.308 | 0.825 | 0.308 | 0.825 |  |  | 0.316 | 0.22 | 0.07 | 0.26 |  |  | p |  |  |
+| EXXY.DE | iShares Diversified Commod | ETF | 79 | 79 | 0.312 | 0.823 | 0.312 | 0.823 |  |  | 0.32 | 0.21 | 0.07 | 0.25 |  |  | p |  |  |
+| BIR.TO | Birchcliff Energy | aksje | 79 | 79 | 0.22 | 0.82 | 0.22 | 0.82 |  |  | 0.224 | 0.75 | 0.41 | -0.03 |  |  | p |  |  |
+| PEY.TO | Peyto | aksje | 79 | 79 | 0.169 | 0.808 | 0.169 | 0.808 |  |  | 0.169 | 0.56 | 0.25 | 0.29 |  |  | p |  |  |
+
+### Gaar motsatt
+
+| papir | navn | type | n | nf | rf1 | rf12 | r1 | r12 | p12 | q12 | rp | beta12 | opp | ned | fangstB | fangstT | vent | ok | ap |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| HOLN.SW | Holcim | aksje | 79 | 79 | -0.063 | -0.534 | -0.063 | -0.534 |  |  | -0.099 | -0.21 | -0.1 | -0.1 |  |  | p |  |  |
+| BWXT | BWX Technologies | aksje | 79 | 79 | -0.118 | -0.488 | -0.118 | -0.488 |  |  | -0.142 | -0.21 | -0.03 | 0.26 |  |  | p |  |  |
+| ULVR.L | Unilever (London) | aksje | 79 | 79 | -0.088 | -0.467 | -0.088 | -0.467 |  |  | -0.114 | -0.11 | -0.13 | 0.05 |  |  | p |  |  |
+| SUBC.OL | Subsea 7 | aksje | 79 | 79 | -0.0 | -0.409 | -0.0 | -0.409 |  |  | -0.021 | -0.2 | -0.31 | 0.03 |  |  | p |  |  |
+| NAS.OL | Norwegian Air Shuttle | aksje | 79 | 79 | 0.034 | -0.407 | 0.034 | -0.407 |  |  | 0.028 | -0.65 | 0.35 | 1.05 |  |  | p |  |  |
+| ELD.TO | Eldorado Gold | aksje | 79 | 79 | -0.141 | -0.391 | -0.141 | -0.391 |  |  | -0.157 | -0.25 | -0.49 | -0.0 |  |  | p |  |  |
+| HMY | Harmony Gold | aksje | 79 | 79 | -0.053 | -0.388 | -0.053 | -0.388 |  |  | -0.071 | -0.26 | -0.36 | -0.13 |  |  | p |  |  |
+| RNO.PA | Renault | aksje | 79 | 79 | -0.112 | -0.371 | -0.112 | -0.371 |  |  | -0.155 | -0.2 | -0.45 | -0.06 |  |  | p |  |  |
+| AI.PA | Air Liquide | aksje | 79 | 79 | 0.033 | -0.346 | 0.033 | -0.346 |  |  | 0.021 | -0.08 | -0.0 | 0.07 |  |  | p |  |  |
+| LHA.DE | Lufthansa | aksje | 79 | 79 | -0.086 | -0.323 | -0.086 | -0.323 |  |  | -0.128 | -0.15 | -0.16 | 0.19 |  |  | p |  |  |
+
+## platina   (9 daterte bunner, 9 daterte topper)
+
+### Folger raavaren
+
+| papir | navn | type | n | nf | rf1 | rf12 | r1 | r12 | p12 | q12 | rp | beta12 | opp | ned | fangstB | fangstT | vent | ok | ap |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| GDIG.L | VanEck Global Mining | ETF | 100 | 100 | 0.413 | 0.861 | 0.413 | 0.861 | 0.001 | 0.0312 | 0.315 | 0.81 | 0.29 | 0.33 | 1.39 |  | p |  |  |
+| GJGB.L | VanEck Junior Gold Miners  | ETF | 110 | 110 | 0.297 | 0.758 | 0.297 | 0.758 | 0.001 | 0.0234 | 0.205 | 1.04 | -0.07 | 0.71 | 1.69 |  | p |  |  |
+| FRES.L | Fresnillo | aksje | 219 | 128 | 0.231 | 0.734 | 0.362 | 0.712 | 0.001 | 0.0058 | 0.227 | 1.67 | 0.63 | 1.26 | 2.88 | 0.63 | p |  |  |
+| LUN.TO | Lundin Mining | aksje | 274 | 128 | 0.382 | 0.729 | 0.355 | 0.692 | 0.001 | 0.0043 | 0.275 | 1.83 | 0.32 | 1.34 | 3.14 | 1.84 | p |  |  |
+| JMAT.L | Johnson Matthey | aksje | 272 | 128 | 0.358 | 0.719 | 0.332 | 0.699 | 0.001 |  | 0.193 | 0.88 | 0.2 | 0.86 | 1.12 | 1.23 | b |  | x |
+| EXH9.DE | iShares STOXX Europe 600 U | ETF | 223 | 128 | 0.252 | 0.71 | 0.272 | 0.634 | 0.001 | 0.0467 | 0.126 | 0.52 | 0.04 | 0.4 | 0.31 | 1.01 | p |  |  |
+| SPGP.L | iShares Gold Producers | ETF | 179 | 128 | 0.253 | 0.688 | 0.313 | 0.66 | 0.001 | 0.0208 | 0.27 | 1.06 | 0.14 | 0.61 | 1.94 |  | p |  |  |
+| IAUP.L | iShares MSCI Global Metals | ETF | 179 | 128 | 0.251 | 0.687 | 0.31 | 0.659 | 0.001 | 0.0374 | 0.266 | 1.06 | 0.16 | 0.59 | 1.93 |  | p |  |  |
+| IAUP.L | iShares Gold Producers (US | ETF | 179 | 128 | 0.251 | 0.687 | 0.31 | 0.659 | 0.001 | 0.0187 | 0.266 | 1.06 | 0.16 | 0.59 | 1.93 |  | p |  |  |
+| CLA-B.ST | Cloetta | aksje | 212 | 128 | 0.197 | 0.687 | 0.145 | 0.621 | 0.001 | 0.0033 | 0.058 | 0.8 | 0.24 | -0.07 | 1.18 | 0.36 | p |  |  |
+
+### Gaar motsatt
+
+| papir | navn | type | n | nf | rf1 | rf12 | r1 | r12 | p12 | q12 | rp | beta12 | opp | ned | fangstB | fangstT | vent | ok | ap |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| KDP | Keurig Dr Pepper | aksje | 219 | 128 | 0.055 | -0.296 | -0.011 | -0.064 |  |  | -0.112 | -0.05 | -0.09 | -0.02 | 0.84 | -0.7 | p |  |  |
+| ORSTED.CO | Ørsted | aksje | 122 | 122 | 0.13 | -0.242 | 0.13 | -0.242 | 0.4655 | 0.468 | 0.052 | -0.45 | 0.17 | -0.06 | 0.42 |  | p |  |  |
+| MDLZ | Mondelez | aksje | 302 | 128 | 0.087 | -0.167 | 0.024 | -0.106 |  |  | -0.074 | -0.06 | -0.03 | 0.09 | 0.12 | -0.08 | p |  |  |
+| CNR | Core Natural Resources | aksje | 105 | 105 | 0.111 | -0.137 | 0.111 | -0.137 |  |  | 0.025 | -0.47 | 0.46 | 1.12 | 1.62 |  | p |  |  |
+| BORR.OL | Borr Drilling | aksje | 97 | 97 | 0.316 | -0.058 | 0.316 | -0.058 |  |  | 0.211 | -0.24 | 0.25 | 2.67 |  |  | p |  |  |
+| U-UN.TO | Sprott Physical Uranium Tr | aksje | 243 | 128 | 0.17 | -0.058 | 0.21 | 0.171 | 0.2897 | 0.3026 | 0.131 | 0.24 | 0.35 | 0.43 | -0.06 | 0.03 | p |  |  |
+| COP | ConocoPhillips | aksje | 499 | 128 | 0.22 | -0.049 | 0.164 | 0.205 | 0.0699 | 0.0833 | 0.156 | 0.23 | 0.11 | 0.59 | 0.17 | -0.66 | p |  |  |
+| ARLP | Alliance Resource | aksje | 324 | 128 | 0.15 | -0.03 | 0.13 | 0.158 | 0.2937 | 0.3051 | 0.071 | 0.32 | -0.11 | 0.55 | 1.56 | -1.12 | p |  |  |
+| OXY | Occidental | aksje | 499 | 128 | 0.255 | -0.019 | 0.187 | 0.225 | 0.042 | 0.0542 | 0.161 | 0.33 | 0.12 | 0.8 | 0.41 | -0.74 | p |  |  |
+| FXPO.L | Ferrexpo | aksje | 230 | 128 | 0.144 | -0.016 | 0.235 | 0.359 | 0.014 | 0.0206 | 0.131 | 1.48 | 1.55 | 1.67 | 4.76 | 3.4 | p |  |  |
+
+## Fortegn mot forventning
+
+0 av 11 par med forhandsantatt retning fikk motsatt fortegn av det antagelsen tilsa. Et feil fortegn er ikke et daarlig papir: det betyr at antagelsen om hvem som tjener og hvem som betaler var feil, og det er i seg selv verdt a vite.
+
+## Papirer som ikke lot seg hente
+
+- kurs COPM.L: ingen serie
+- kurs CTRA: ingen serie
+- kurs MEG.TO: ingen serie
+- kurs NGD: ingen serie
+- kurs BAKKA.CO: ingen serie
+- kurs JDEP.AS: ingen serie
+- kurs KAP.L: ingen serie
+- kurs 1COV.DE: ingen serie
+
+   skrevet sonder/ikz_platina_kalium.json (438 par)
+
+
+(del 3 brukte 169 s, kode 0)
+
+DEL 4. Vurdering mot kravene og utfall etter innslag
+
+   PLATINA: ventede papirer (krav nf >= 72, rf1 >= 0.3, rp >= 0.3)
+      papir     navn                               bors   nf    rf1     r1     rp    b12  fangst  bestaar
+      THS.L     Tharisa                            ok    122   0.52   0.52   0.46   1.18    2.93  JA
+      IMPUY     Impala Platinum (ADR)              T     128   0.43   0.39   0.37   1.53    3.01  JA
+      SBSW      Sibanye-Stillwater                 ok    128   0.42   0.43   0.39   1.72    1.91  JA
+      ELR.TO    Eastern Platinum                   ok    128   0.41   0.42   0.34   2.30    1.23  JA
+      ANGPY     Anglo American Platinum / Valterra T     128   0.37   0.38   0.33   1.43    2.19  JA
+      SLP.L     Sylvania Platinum                  ok    128   0.36   0.30   0.23   1.42    1.55  nei
+      JMAT.L    Johnson Matthey                    ok    128   0.36   0.33   0.19   0.88    1.12  nei
+      sterkeste uventede (funnet ved leting, strengere krav):
+         GLEN.L    Glencore                           rf1 0.43  rp 0.31  q12 0.01
+         GDIG.L    VanEck Global Mining               rf1 0.41  rp 0.32  q12 0.03
+         ATYM.L    Atalaya Mining                     rf1 0.41  rp 0.34  q12 0.00
+         DNN       Denison Mines                      rf1 0.40  rp 0.28  q12 0.00
+         HAL       Halliburton                        rf1 0.40  rp 0.27  q12 0.00
+         XDBC.DE   Xtrackers Optimum Yield Diversifie rf1 0.40  rp 0.28  q12 0.02
+      papirene etter innslag, realavkastning (og mot papirets eget snitt):
+         SBSW      ingen innslag i papirets historikk
+         SLP.L     ingen innslag i papirets historikk
+         THS.L     ingen innslag i papirets historikk
+         ELR.TO    ingen innslag i papirets historikk
+         IMPUY     ingen innslag i papirets historikk
+         ANGPY     ingen innslag i papirets historikk
+         JMAT.L    ingen innslag i papirets historikk
+
+   KALIUM: ventede papirer (krav nf >= 72, rf1 >= 0.3, rp >= 0.3)
+      papir     navn                               bors   nf    rf1     r1     rp    b12  fangst  bestaar
+      SDF.DE    K+S                                ok     79   0.27   0.27   0.28   0.55       -  nei
+      NTR       Nutrien                            ok     79   0.22   0.22   0.23   0.44       -  nei
+      IPI       Intrepid Potash                    ok     79   0.22   0.22   0.23   0.87       -  nei
+      MOS       Mosaic                             ok     79   0.20   0.20   0.22   0.52       -  nei
+      ICL       ICL Group                          ok     79   0.17   0.17   0.18   0.57       -  nei
+      sterkeste uventede (funnet ved leting, strengere krav):
+         CMFP.L    L&G Longer Dated All Commodities   rf1 0.33  rp 0.35  q12 -
+         EXXY.DE   iShares Diversified Commodity Swap rf1 0.31  rp 0.32  q12 -
+         CMOD.L    Invesco Bloomberg Commodity        rf1 0.31  rp 0.32  q12 -
+         U-UN.TO   Sprott Physical Uranium Trust      rf1 0.31  rp 0.31  q12 -
+         RE.L      REA Holdings                       rf1 0.28  rp 0.28  q12 -
+         LXU       LSB Industries                     rf1 0.27  rp 0.27  q12 -
+      papirene etter innslag, realavkastning (og mot papirets eget snitt):
+         NTR       ingen innslag i papirets historikk
+         MOS       ingen innslag i papirets historikk
+         ICL       ingen innslag i papirets historikk
+         SDF.DE    ingen innslag i papirets historikk
+         IPI       ingen innslag i papirets historikk
+
+SAMLET
+   platina: prisen kan gi A (start 1977-01, 596 mnd). Papirer som bestaar: THS.L, IMPUY, SBSW, ELR.TO, ANGPY.
+   kalium: prisen kan gi A (start 2020-01, 80 mnd, under ti aar: for kort til en fordeling). Papirer som bestaar: ingen.
+
+Lagret sonder/kali_platina.json

@@ -1,0 +1,59 @@
+sonde:   sonde_kjor_tio
+kjort:   2026-09-28 06:28:44 UTC
+commit:  d065565
+status:  OK
+brukte:  5 sekunder
+--------------------------------------------------------------
+1. Maanedskontrakter, siste 10 dager
+
+   kontrakt          siste        dato  volum 10d  med i kurven
+   TIOU26.NYM     svarer ikke
+   TIOV26.NYM     svarer ikke
+   TIOX26.NYM     svarer ikke
+   TIOZ26.NYM     svarer ikke
+   TIOF27.NYM     svarer ikke
+   TIOG27.NYM     svarer ikke
+   TIOH27.NYM     svarer ikke
+   TIOJ27.NYM     svarer ikke
+   TIOK27.NYM     svarer ikke
+   TIOM27.NYM     svarer ikke
+   TION27.NYM     svarer ikke
+   TIOQ27.NYM     svarer ikke
+   TIOU27.NYM     svarer ikke
+   TIOV27.NYM     svarer ikke
+   TIOX27.NYM     svarer ikke
+   TIOZ27.NYM     svarer ikke
+
+2. Kontinuerlig front TIO=F
+
+   2010-11-01 til 2026-09-01, 191 dager, siste 97.14
+
+3. Maanedssnitt TIO=F mot Verdensbanken (Iron ore, cfr spot)
+
+   190 felles maaneder. Avvik TIO=F mot Verdensbanken: median -0.2 %, snitt absolutt 1.0 %, stoerste 4.8 % (2011-05)
+   korrelasjon i maanedsendringer: 0.992
+      2010: median  +3.0 %  (2 mnd)
+      2011: median  +0.0 %  (12 mnd)
+      2012: median  +0.0 %  (12 mnd)
+      2013: median  +0.0 %  (12 mnd)
+      2014: median  -0.0 %  (12 mnd)
+      2015: median  -1.5 %  (12 mnd)
+      2016: median  -1.2 %  (12 mnd)
+      2017: median  -1.4 %  (12 mnd)
+      2018: median  -0.3 %  (12 mnd)
+      2019: median  -0.4 %  (12 mnd)
+      2020: median  -0.1 %  (12 mnd)
+      2021: median  -1.0 %  (12 mnd)
+      2022: median  -0.6 %  (12 mnd)
+      2023: median  -0.6 %  (12 mnd)
+      2024: median  -0.4 %  (12 mnd)
+      2025: median  +2.2 %  (12 mnd)
+      2026: median  +0.2 %  (8 mnd)
+
+   siste seks maaneder:
+      2026-03  TIO=F  106.38   Verdensbanken  104.50    +1.8 %
+      2026-04  TIO=F  107.18   Verdensbanken  106.10    +1.0 %
+      2026-05  TIO=F  108.82   Verdensbanken  108.60    +0.2 %
+      2026-06  TIO=F  100.20   Verdensbanken  100.80    -0.6 %
+      2026-07  TIO=F   98.00   Verdensbanken   98.20    -0.2 %
+      2026-08  TIO=F   96.05   Verdensbanken   96.30    -0.3 %

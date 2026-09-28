@@ -1,6 +1,6 @@
 sonde:   sonde_kjor_b_kilder
-kjort:   2026-09-25 14:08:52 UTC
-commit:  442b686
+kjort:   2026-09-28 06:20:41 UTC
+commit:  d065565
 status:  OK
 brukte:  30 sekunder
 --------------------------------------------------------------

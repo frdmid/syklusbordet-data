@@ -1,0 +1,134 @@
+sonde:   sonde_kjor_d95
+kjort:   2026-09-28 06:25:21 UTC
+commit:  d065565
+status:  OK
+brukte:  42 sekunder
+--------------------------------------------------------------
+1. Realprishistorikk
+
+1. Deflator
+  ok    GitHub-speil cpi-us   siste 2026-07
+  ok    deflator, alder   GitHub-speil cpi-us, siste 2026-07, 2 mnd gammel
+  ok    deflator, kontroll mot BLS   24 mnd, stoerste avvik 0.000 %
+
+2. Energi og gull fra GitHub-speil
+  ok    avkorting gold   2324 -> 661 mnd, starter 1971-08
+
+2b. Uran
+  ok    uran, kontroll av Cameco   mot IMF 1992-2021: median avvik 1.8 % over 357 mnd, mot futures fra 2022: 1.6 % over 49 mnd
+
+2c. Laks
+
+3. Metall, innsatsfaktorer og flerårige fra Pink Sheet
+  ok    Verdensbanken Pink Sheet   72 kolonner, 800 måneder, skiprows=4
+   kolonner i arket: Aluminum, Banana, Europe, Banana, US, Barley, Beef **, Chicken **, Coal, Australian, Coal, South African **, Cocoa, Coconut oil, Coffee, Arabica, Coffee, Robusta, Copper, Cotton, A Index, Crude oil, Brent, Crude oil, Dubai, Crude oil, WTI, Crude oil, average, DAP, Fish meal, Gold, Groundnut oil **, Groundnuts, Iron ore, cfr spot, Lamb **, Lead, Liquefied natural gas, Japan, Logs, Cameroon, Logs, Malaysian, Maize, Natural gas index, Natural gas, Europe, Natural gas, US, Nickel, Orange, Palm kernel oil, Palm oil, Phosphate rock, Platinum, Plywood, Potassium chloride **, Rapeseed oil, Rice, Thai 25%, Rice, Thai 5%, Rice, Thai A.1, Rice, Viet Namese 5%, Rubber, RSS3, Rubber, TSR20 **, Sawnwood, Cameroon, Sawnwood, Malaysian, Shrimps, Mexican, Silver, Sorghum, Soybean meal, Soybean oil, Soybeans, Sugar, EU, Sugar, US, Sugar, world, Sunflower oil, TSP, Tea, Colombo, Tea, Kolkata, Tea, Mombasa, Tea, avg 3 auctions, Tin, Tobacco, US import u.v., Urea, Wheat, US HRW, Wheat, US SRW, Zinc
+  ok    avkorting nikkel   800 -> 560 mnd, starter 1980-01
+  ok    avkorting aluminium   800 -> 560 mnd, starter 1980-01
+  ok    avkorting jernmalm   800 -> 200 mnd, starter 2010-01
+  ok    avkorting kull   680 -> 320 mnd, starter 2000-01
+  ok    avkorting ttf   800 -> 320 mnd, starter 2000-01
+  ok    avkorting kakao   800 -> 560 mnd, starter 1980-01
+   kontroll av de raske persentilfunksjonene mot priser.py: like paa alle 17 serier
+   aluminium  1980-01 til 2026-08  560 mnd
+   bly        1960-01 til 2026-08  800 mnd
+   brent      1987-05 til 2026-09  473 mnd
+   gold       1971-08 til 2026-08  661 mnd
+   henryhub   1997-01 til 2026-09  357 mnd
+   jernmalm   2010-01 til 2026-08  200 mnd
+   kakao      1980-01 til 2026-08  560 mnd
+   kobber     1960-01 til 2026-08  800 mnd
+   kull       2000-01 til 2026-08  320 mnd
+   laks: utelatt (ikke et av de seksten raavaresegmentene)
+   nikkel     1980-01 til 2026-08  560 mnd
+   palmeolje  1960-01 til 2026-08  800 mnd
+   sink       1960-01 til 2026-08  800 mnd
+   tinn       1960-01 til 2026-08  800 mnd
+   ttf        2000-01 til 2026-08  320 mnd
+   uran       1988-01 til 2026-08  464 mnd
+   wti        1986-01 til 2026-09  489 mnd
+
+   kontroll: d95 for Brent likt segmentfilen i 180 av 180 maaneder
+
+2. Hele utvalget, 500 trekk i nullen
+
+   (35 s)
+
+   variant       mnd episoder innslag positive         S    median       p andel mnd
+   d95             1       33      62       13    -0.5 %    -1.1 %   0.182     10.8 %
+   d95             3       33      62       14    -0.3 %    -3.1 %   0.465     10.8 %
+   d95             6       33      62       16    +0.4 %    -2.7 %   0.581     10.8 %
+   d95            12       32      60       15    +0.6 %    -0.9 %   0.577     10.8 %
+   d95            24       31      59       18    +8.6 %    +7.4 %   0.246     10.8 %
+
+   d95_utenom      1       23      31       12    -1.0 %    +0.5 %   0.263      4.8 %
+   d95_utenom      3       23      31       10    +2.2 %    -0.7 %   0.118      4.8 %
+   d95_utenom      6       23      31       13    +3.4 %    +2.0 %   0.144      4.8 %
+   d95_utenom     12       22      29       10    +0.5 %    -2.4 %   0.331      4.8 %
+   d95_utenom     24       21      28       12    +3.6 %    +5.4 %   0.232      4.8 %
+
+   dagens          1       27      57       11    -0.2 %    -2.4 %   0.214     14.0 %
+   dagens          3       27      57       11    +1.5 %    -1.2 %   0.329     14.0 %
+   dagens          6       27      57       13    +5.1 %    -1.4 %   0.271     14.0 %
+   dagens         12       27      57       10    +3.4 %    -5.2 %   0.535     14.0 %
+   dagens         24       27      57       17   +19.7 %   +15.2 %   0.098     14.0 %
+
+3. Innslagene i d95_utenom (det signalet tilfoerer), meravkastning per horisont
+
+   innslag  segment     raa A detr A   1 mnd      3 mnd      6 mnd     12 mnd     24 mnd   
+   1966-08  tinn         32.5   98.8     -1.5 %     -3.9 %     -4.3 %     -6.5 %    -16.6 %
+   1967-04  kobber       36.4   98.9     +3.8 %     -0.7 %    +12.3 %    +21.5 %    +28.4 %
+   1970-06  tinn         50.8   99.2     -1.8 %     +1.7 %     -4.0 %     -7.2 %     -1.8 %
+   1970-07  kobber       40.9   98.4     -7.3 %    -17.3 %    -27.6 %    -21.8 %    -28.9 %
+   1974-10  kobber       57.3   96.1     +0.5 %    -15.1 %     -8.3 %    -21.5 %    -18.2 %
+   1975-05  bly          67.6   96.8     -1.8 %     +5.7 %     -8.7 %    +28.6 %    +65.7 %
+   1976-07  gold         65.0   98.3     -7.6 %     -3.9 %     +7.2 %     +9.4 %    +30.7 %
+   1977-06  sink         40.0   99.5     -0.5 %     -5.5 %     -3.0 %     -0.7 %    +16.7 %
+   1979-08  sink         39.8   96.6     +7.7 %     +2.6 %    +22.4 %     +2.4 %    +14.8 %
+   1981-02  bly          48.4   95.3     +5.3 %     -0.7 %    +14.5 %    -15.9 %    -39.9 %
+   1982-01  gold         23.0   98.4     -3.2 %    -10.3 %    -16.2 %    +16.5 %    -16.1 %
+   1982-04  tinn         33.6   97.0     -0.1 %    -12.8 %     -5.1 %     +5.0 %     -9.2 %
+   1983-10  gold         30.6   95.2     -3.5 %     -7.5 %     -7.0 %    -20.0 %    -27.8 %
+   1990-06  gold         74.9   95.2     +2.4 %     +7.2 %     +2.0 %     -4.0 %    -15.7 %
+   2001-12  henryhub     68.3   95.0     -5.1 %    +31.6 %    +33.4 %   +100.2 %   +179.8 %
+   2006-09  henryhub     47.0   96.6    +38.8 %    +11.4 %    +47.1 %    +22.6 %    +43.1 %
+   2008-10  henryhub     43.7   96.5     +6.2 %    -20.4 %    -46.0 %    -31.9 %    -42.2 %
+   2009-03  kull         24.3   98.2     +3.8 %    +14.9 %     +8.1 %    +48.4 %    +88.6 %
+   2009-04  ttf          31.2   97.3     -5.5 %    -23.0 %    -13.1 %    -14.7 %    +14.0 %
+   2012-06  kull         28.7   98.7     +1.2 %     +0.7 %     +5.4 %     -8.5 %    -24.3 %
+   2014-05  ttf          34.7   96.0     -4.7 %    -11.1 %    -13.3 %    -35.4 %    -58.5 %
+   2015-01  brent        39.0   97.3    +29.4 %    +32.1 %     +8.7 %    -32.5 %     +7.4 %
+   2015-01  wti          37.2   96.3     +3.8 %    +22.8 %     -4.2 %    -31.3 %     +3.9 %
+   2016-09  uran         49.0   97.4    -18.8 %    -12.8 %     +0.8 %    -16.9 %     +5.4 %
+   2018-12  wti          47.0   96.5    +18.9 %    +31.3 %    +25.5 %    +31.0 %     +1.1 %
+   2019-08  kull         66.1   97.0     +0.4 %     +1.4 %     +1.2 %    -26.0 %   +132.4 %
+   2020-02  brent        46.2   95.4    -71.1 %    -33.2 %    -13.2 %    +23.9 %    +75.7 %
+   2020-02  wti          50.0   97.3    -54.2 %    -20.2 %     -6.1 %    +33.6 %    +91.3 %
+   2025-04  kull         54.3   96.4     +5.5 %    +13.2 %     +6.6 %    +25.5 %          -
+   2025-12  brent        53.4   95.0    +17.1 %   +101.6 %    +10.3 %          -          -
+   2025-12  wti          55.2   95.4    +12.1 %    +75.7 %    +18.7 %          -          -
+
+4. Brent alene (beskrivende): alle innslag i d95, endring i realpris og mot Brent sitt eget snitt
+
+   1993-10  raa A  96.2  detr A  96.2   1m   -7.8 % (mot snitt   -8.0 %); 3m   -4.2 % (mot snitt   -4.7 %); 6m   +0.9 % (mot snitt   -0.1 %); 12m   +8.5 % (mot snitt   +6.5 %); 24m   -1.8 % (mot snitt   -5.8 %)
+   1998-02  raa A  99.2  detr A  95.4   1m   +2.3 % (mot snitt   +2.1 %); 3m   +3.1 % (mot snitt   +2.6 %); 6m  -11.7 % (mot snitt  -12.6 %); 12m  -23.0 % (mot snitt  -24.5 %); 24m +104.4 % (mot snitt  +96.2 %)
+   2015-01  raa A  39.0  detr A  97.3   1m  +29.7 % (mot snitt  +29.4 %); 3m  +32.8 % (mot snitt  +32.1 %); 6m   +9.8 % (mot snitt   +8.7 %); 12m  -31.2 % (mot snitt  -32.5 %); 24m  +11.9 % (mot snitt   +7.4 %)
+   2020-02  raa A  46.2  detr A  95.4   1m  -71.0 % (mot snitt  -71.1 %); 3m  -32.9 % (mot snitt  -33.2 %); 6m  -12.3 % (mot snitt  -13.2 %); 12m  +26.2 % (mot snitt  +23.9 %); 24m  +83.2 % (mot snitt  +75.7 %)
+   2025-12  raa A  53.4  detr A  95.0   1m  +17.3 % (mot snitt  +17.1 %); 3m +102.7 % (mot snitt +101.6 %); 6m  +11.4 % (mot snitt  +10.3 %); 12m -; 24m -
+
+5. Beslutning etter regelen satt foer kjoering
+
+   S1 har regelen informasjon (d95):
+      a) 12 mnd: S   +0.6 %, p 0.577 (krav S > 0 og p <= 0,0125): nei
+      b)  6 mnd: S   +0.4 % (krav S > 0): ja
+      c) episoder ved 12 mnd: 32 (krav minst 5): ja
+      -> BESTAAR IKKE
+
+   S2 tilfoerer den noe utover bunnsonen (d95_utenom):
+      a) 12 mnd: S   +0.5 %, p 0.331 (krav S > 0 og p <= 0,0125): nei
+      b)  6 mnd: S   +3.4 % (krav S > 0): ja
+      c) episoder ved 12 mnd: 22 (krav minst 5): ja
+      -> BESTAAR IKKE
+
+   IKKE STOETTET: ingen av spoersmaalene bestaar. Signalet er Frodes eget valg.
+
+Lagret sonder/d95.json

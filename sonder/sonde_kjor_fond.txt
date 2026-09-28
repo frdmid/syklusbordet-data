@@ -1,0 +1,406 @@
+sonde:   sonde_kjor_fond
+kjort:   2026-09-28 06:25:48 UTC
+commit:  d065565
+status:  OK
+brukte:  28 sekunder
+--------------------------------------------------------------
+0. Raavarene fra bordets egen kode
+
+1. Deflator
+  ok    GitHub-speil cpi-us   siste 2026-07
+  ok    deflator, alder   GitHub-speil cpi-us, siste 2026-07, 2 mnd gammel
+  ok    deflator, kontroll mot BLS   24 mnd, stoerste avvik 0.000 %
+
+2. Energi og gull fra GitHub-speil
+  ok    avkorting gold   2324 -> 661 mnd, starter 1971-08
+
+2b. Uran
+  ok    uran, kontroll av Cameco   mot IMF 1992-2021: median avvik 1.8 % over 357 mnd, mot futures fra 2022: 1.6 % over 49 mnd
+
+2c. Laks
+
+3. Metall, innsatsfaktorer og flerårige fra Pink Sheet
+  ok    Verdensbanken Pink Sheet   72 kolonner, 800 måneder, skiprows=4
+   kolonner i arket: Aluminum, Banana, Europe, Banana, US, Barley, Beef **, Chicken **, Coal, Australian, Coal, South African **, Cocoa, Coconut oil, Coffee, Arabica, Coffee, Robusta, Copper, Cotton, A Index, Crude oil, Brent, Crude oil, Dubai, Crude oil, WTI, Crude oil, average, DAP, Fish meal, Gold, Groundnut oil **, Groundnuts, Iron ore, cfr spot, Lamb **, Lead, Liquefied natural gas, Japan, Logs, Cameroon, Logs, Malaysian, Maize, Natural gas index, Natural gas, Europe, Natural gas, US, Nickel, Orange, Palm kernel oil, Palm oil, Phosphate rock, Platinum, Plywood, Potassium chloride **, Rapeseed oil, Rice, Thai 25%, Rice, Thai 5%, Rice, Thai A.1, Rice, Viet Namese 5%, Rubber, RSS3, Rubber, TSR20 **, Sawnwood, Cameroon, Sawnwood, Malaysian, Shrimps, Mexican, Silver, Sorghum, Soybean meal, Soybean oil, Soybeans, Sugar, EU, Sugar, US, Sugar, world, Sunflower oil, TSP, Tea, Colombo, Tea, Kolkata, Tea, Mombasa, Tea, avg 3 auctions, Tin, Tobacco, US import u.v., Urea, Wheat, US HRW, Wheat, US SRW, Zinc
+  ok    avkorting nikkel   800 -> 560 mnd, starter 1980-01
+  ok    avkorting aluminium   800 -> 560 mnd, starter 1980-01
+  ok    avkorting jernmalm   800 -> 200 mnd, starter 2010-01
+  ok    avkorting kull   680 -> 320 mnd, starter 2000-01
+  ok    avkorting ttf   800 -> 320 mnd, starter 2000-01
+  ok    avkorting kakao   800 -> 560 mnd, starter 1980-01
+   kontroll av de raske persentilfunksjonene mot priser.py: like paa alle 17 serier
+   16 segmenter
+
+1. Fondene
+
+   brasil             UCITS IBZL.L       2009-01    tvilling EWZ    2000-07
+   norge              UCITS -                       tvilling ENOR   2012-01
+   canada             UCITS SXR2.DE      2010-03    tvilling EWC    1996-03
+   australia          UCITS SAUS.L       2010-01    tvilling EWA    1996-03
+   sorafrika          UCITS SRSA.L       2010-01    tvilling EZA    2003-02
+   latam              UCITS LTAM.L       2009-01    tvilling ILF    2001-10
+   saudi              UCITS IKSA.L       2019-04    tvilling KSA    2015-09
+   indonesia          UCITS -                       tvilling EIDO   2010-05
+   malaysia           UCITS -                       tvilling EWM    1996-03
+   olje_europa        UCITS EXH1.DE      2008-01    tvilling IXC    2001-11
+   olje_ep            UCITS IOGP.L       2011-09    tvilling XOP    2006-06
+   gruve_europa       UCITS EXV6.DE      2008-01    tvilling PICK   2012-02
+   gruve_global       UCITS IAUP.L       2011-09    tvilling PICK   2012-02
+   gruve_vaneck       UCITS GDIG.L       2018-04    tvilling PICK   2012-02
+   jordbruk           UCITS ISAG.L       2011-09    tvilling MOO    2007-09
+   raavare_ishares    UCITS EXXY.DE      2008-01    tvilling DBC    2006-02
+   raavare_xtrackers  UCITS XDBC.DE      2008-01    tvilling DBC    2006-02
+   raavare_invesco    UCITS CMOD.L       2017-01    tvilling DBC    2006-02
+
+2. Kart: raavarer per fond (fast vindu fra 2016, etter verdensindeksen)
+
+   brasil (iShares MSCI Brazil, maalt paa UCITS IBZL.L)
+      brent      rf1 +0.39  rp +0.31  fangst fra bunner  0.37 (5 bunner)  med
+      wti        rf1 +0.35  rp +0.25  fangst fra bunner  0.54 (5 bunner)  med
+      jernmalm   rf1 +0.28  rp +0.23  fangst fra bunner  0.30 (3 bunner)  med
+      nikkel     rf1 +0.16  rp +0.13  fangst fra bunner  0.75 (3 bunner)  
+      par brent+jernmalm: samlet 0.36  KVALIFISERER
+      par wti+jernmalm: samlet 0.31  KVALIFISERER
+      par brent+wti: samme faktor (raavarene korrelerer 0.94), telles ikke
+
+   norge (OBX (DNB eller XACT), maalt paa tvilling ENOR)
+      brent      rf1 +0.60  rp +0.58  fangst fra bunner  0.44 (3 bunner)  med
+      wti        rf1 +0.61  rp +0.57  fangst fra bunner  0.42 (2 bunner)  med
+      aluminium  rf1 +0.30  rp +0.24  fangst fra bunner  0.99 (3 bunner)  med
+      ttf        rf1 +0.14  rp +0.20  fangst fra bunner  0.24 (3 bunner)  med
+      par brent+ttf: samlet 0.61  KVALIFISERER
+      par brent+aluminium: samlet 0.61  KVALIFISERER
+      par wti+ttf: samlet 0.59  KVALIFISERER
+      par wti+aluminium: samlet 0.59  KVALIFISERER
+      par ttf+aluminium: samlet 0.28  
+      par brent+wti: samme faktor (raavarene korrelerer 0.94), telles ikke
+
+   canada (iShares MSCI Canada, maalt paa UCITS SXR2.DE)
+      brent      rf1 +0.41  rp +0.38  fangst fra bunner  0.32 (6 bunner)  med
+      wti        rf1 +0.40  rp +0.30  fangst fra bunner  0.34 (6 bunner)  med
+      kobber     rf1 +0.33  rp +0.16  fangst fra bunner  0.70 (6 bunner)  
+      gold       rf1 +0.19  rp +0.15  fangst fra bunner  0.18 (4 bunner)  
+      sink       rf1 +0.22  rp +0.13  fangst fra bunner  0.74 (8 bunner)  
+      nikkel     rf1 +0.14  rp +0.12  fangst fra bunner  0.45 (4 bunner)  
+      uran       rf1 +0.07  rp +0.03  fangst fra bunner -0.09 (4 bunner)  
+      henryhub   rf1 +0.01  rp -0.06  fangst fra bunner  0.27 (8 bunner)  
+      par wti+brent: samme faktor (raavarene korrelerer 0.94), telles ikke
+
+   australia (iShares MSCI Australia, maalt paa UCITS SAUS.L)
+      kull       rf1 +0.14  rp +0.24  fangst fra bunner  0.61 (5 bunner)  med
+      kobber     rf1 +0.35  rp +0.20  fangst fra bunner  0.58 (6 bunner)  med
+      sink       rf1 +0.23  rp +0.15  fangst fra bunner  0.58 (8 bunner)  
+      nikkel     rf1 +0.17  rp +0.14  fangst fra bunner  0.50 (4 bunner)  
+      gold       rf1 +0.17  rp +0.11  fangst fra bunner  0.39 (4 bunner)  
+      aluminium  rf1 +0.21  rp +0.10  fangst fra bunner  0.90 (7 bunner)  
+      jernmalm   rf1 +0.18  rp +0.09  fangst fra bunner  0.17 (3 bunner)  
+      ttf        rf1 +0.04  rp +0.06  fangst fra bunner  0.25 (5 bunner)  
+      par kull+kobber: samlet 0.30  KVALIFISERER
+
+   sorafrika (iShares MSCI South Africa, maalt paa UCITS SRSA.L)
+      gold       rf1 +0.31  rp +0.29  fangst fra bunner  0.07 (3 bunner)  med
+      nikkel     rf1 +0.16  rp +0.13  fangst fra bunner  0.70 (2 bunner)  
+      jernmalm   rf1 +0.20  rp +0.13  fangst fra bunner  0.07 (3 bunner)  
+      kull       rf1 +0.04  rp +0.08  fangst fra bunner  0.52 (4 bunner)  
+
+   latam (iShares MSCI EM Latin America, maalt paa UCITS LTAM.L)
+      brent      rf1 +0.41  rp +0.32  fangst fra bunner  0.37 (5 bunner)  med
+      wti        rf1 +0.37  rp +0.26  fangst fra bunner  0.49 (5 bunner)  med
+      jernmalm   rf1 +0.25  rp +0.20  fangst fra bunner  0.16 (3 bunner)  
+      kobber     rf1 +0.28  rp +0.15  fangst fra bunner  0.85 (5 bunner)  
+      sink       rf1 +0.20  rp +0.12  fangst fra bunner  0.66 (6 bunner)  
+      par brent+wti: samme faktor (raavarene korrelerer 0.94), telles ikke
+
+   saudi (iShares MSCI Saudi Arabia, maalt paa UCITS IKSA.L)
+      wti        rf1 +0.44  rp +0.36  fangst fra bunner  0.32 (2 bunner)  med
+      brent      rf1 +0.38  rp +0.30  fangst fra bunner  0.31 (2 bunner)  med
+      par brent+wti: samme faktor (raavarene korrelerer 0.94), telles ikke
+
+   indonesia (Xtrackers MSCI Indonesia, maalt paa tvilling EIDO)
+      palmeolje  rf1 +0.19  rp +0.11  fangst fra bunner  0.20 (3 bunner)  
+      kull       rf1 +0.04  rp +0.07  fangst fra bunner  0.09 (2 bunner)  
+      tinn       rf1 +0.09  rp -0.03  fangst fra bunner  0.15 (4 bunner)  
+      nikkel     rf1 +0.02  rp -0.03  fangst fra bunner     - (1 bunner)  
+
+   malaysia (Xtrackers MSCI Malaysia, maalt paa tvilling EWM)
+      palmeolje  rf1 +0.19  rp +0.11  fangst fra bunner  0.63 (7 bunner)  
+      brent      rf1 +0.20  rp +0.08  fangst fra bunner  0.29 (6 bunner)  
+
+   olje_europa (iShares STOXX Europe 600 Oil & Gas, maalt paa UCITS EXH1.DE)
+      wti        rf1 +0.62  rp +0.57  fangst fra bunner  0.24 (5 bunner)  med
+      brent      rf1 +0.57  rp +0.52  fangst fra bunner  0.27 (5 bunner)  med
+      ttf        rf1 +0.11  rp +0.14  fangst fra bunner  0.09 (5 bunner)  
+      par brent+wti: samme faktor (raavarene korrelerer 0.94), telles ikke
+
+   olje_ep (iShares Oil & Gas Exploration & Production, maalt paa UCITS IOGP.L)
+      brent      rf1 +0.68  rp +0.65  fangst fra bunner  0.61 (4 bunner)  med
+      wti        rf1 +0.67  rp +0.62  fangst fra bunner  0.47 (4 bunner)  med
+      henryhub   rf1 +0.15  rp +0.15  fangst fra bunner  0.32 (6 bunner)  
+      par brent+wti: samme faktor (raavarene korrelerer 0.94), telles ikke
+
+   gruve_europa (iShares STOXX Europe 600 Basic Resources, maalt paa UCITS EXV6.DE)
+      kobber     rf1 +0.50  rp +0.43  fangst fra bunner  1.22 (4 bunner)  med
+      aluminium  rf1 +0.38  rp +0.34  fangst fra bunner  1.68 (4 bunner)  med
+      sink       rf1 +0.36  rp +0.33  fangst fra bunner  1.11 (5 bunner)  med
+      nikkel     rf1 +0.30  rp +0.31  fangst fra bunner  1.17 (2 bunner)  med
+      bly        rf1 +0.41  rp +0.30  fangst fra bunner  0.92 (5 bunner)  med
+      jernmalm   rf1 +0.32  rp +0.29  fangst fra bunner  0.38 (3 bunner)  med
+      kull       rf1 +0.14  rp +0.21  fangst fra bunner  0.84 (3 bunner)  med
+      par kobber+kull: samlet 0.46  KVALIFISERER
+      par kobber+aluminium: samlet 0.44  KVALIFISERER
+      par kobber+jernmalm: samlet 0.44  KVALIFISERER
+      par kobber+nikkel: samlet 0.44  KVALIFISERER
+      par kobber+bly: samlet 0.44  KVALIFISERER
+      par aluminium+jernmalm: samlet 0.40  KVALIFISERER
+      par aluminium+sink: samlet 0.38  KVALIFISERER
+      par aluminium+bly: samlet 0.38  KVALIFISERER
+      par nikkel+aluminium: samlet 0.38  KVALIFISERER
+      par nikkel+jernmalm: samlet 0.38  KVALIFISERER
+      par nikkel+sink: samlet 0.37  KVALIFISERER
+      par sink+jernmalm: samlet 0.37  KVALIFISERER
+      par bly+jernmalm: samlet 0.37  KVALIFISERER
+      par aluminium+kull: samlet 0.36  KVALIFISERER
+      par sink+kull: samlet 0.36  KVALIFISERER
+      par sink+bly: samlet 0.35  KVALIFISERER
+      par nikkel+bly: samlet 0.35  KVALIFISERER
+      par bly+kull: samlet 0.34  KVALIFISERER
+      par jernmalm+kull: samlet 0.34  KVALIFISERER
+      par nikkel+kull: samlet 0.34  KVALIFISERER
+      par kobber+sink: samme faktor (raavarene korrelerer 0.70), telles ikke
+
+   gruve_global (iShares MSCI Global Metals & Mining Producers, maalt paa UCITS IAUP.L)
+      gold       rf1 +0.56  rp +0.55  fangst fra bunner  2.57 (3 bunner)  med
+      kobber     rf1 +0.26  rp +0.18  fangst fra bunner  0.76 (3 bunner)  
+      nikkel     rf1 +0.16  rp +0.14  fangst fra bunner     - (1 bunner)  
+      sink       rf1 +0.18  rp +0.14  fangst fra bunner  0.73 (4 bunner)  
+      bly        rf1 +0.16  rp +0.08  fangst fra bunner -0.12 (4 bunner)  
+      jernmalm   rf1 +0.12  rp +0.08  fangst fra bunner -0.12 (3 bunner)  
+      aluminium  rf1 +0.09  rp +0.03  fangst fra bunner  1.04 (3 bunner)  
+      kull       rf1 -0.09  rp -0.08  fangst fra bunner  0.11 (2 bunner)  
+
+   gruve_vaneck (VanEck Global Mining, maalt paa UCITS GDIG.L)
+      gold       rf1 +0.49  rp +0.53  fangst fra bunner  0.88 (3 bunner)  med
+      kobber     rf1 +0.50  rp +0.44  fangst fra bunner  1.82 (3 bunner)  med
+      nikkel     rf1 +0.33  rp +0.36  fangst fra bunner     - (1 bunner)  med
+      sink       rf1 +0.31  rp +0.26  fangst fra bunner  1.25 (4 bunner)  med
+      aluminium  rf1 +0.30  rp +0.24  fangst fra bunner  1.77 (3 bunner)  med
+      jernmalm   rf1 +0.25  rp +0.20  fangst fra bunner  0.39 (3 bunner)  med
+      bly        rf1 +0.28  rp +0.13  fangst fra bunner  1.33 (4 bunner)  
+      kull       rf1 +0.05  rp +0.11  fangst fra bunner  0.69 (2 bunner)  
+      par kobber+gold: samlet 0.58  KVALIFISERER
+      par nikkel+gold: samlet 0.55  KVALIFISERER
+      par jernmalm+gold: samlet 0.54  KVALIFISERER
+      par aluminium+gold: samlet 0.54  KVALIFISERER
+      par sink+gold: samlet 0.54  KVALIFISERER
+      par kobber+nikkel: samlet 0.47  KVALIFISERER
+      par kobber+jernmalm: samlet 0.44  KVALIFISERER
+      par kobber+aluminium: samlet 0.44  KVALIFISERER
+      par nikkel+jernmalm: samlet 0.38  KVALIFISERER
+      par nikkel+sink: samlet 0.38  KVALIFISERER
+      par nikkel+aluminium: samlet 0.36  KVALIFISERER
+      par sink+jernmalm: samlet 0.29  
+      par aluminium+sink: samlet 0.29  
+      par aluminium+jernmalm: samlet 0.28  
+      par kobber+sink: samme faktor (raavarene korrelerer 0.71), telles ikke
+
+   jordbruk (iShares Agribusiness, maalt paa UCITS ISAG.L)
+      palmeolje  rf1 +0.31  rp +0.25  fangst fra bunner  0.54 (4 bunner)  med
+      kakao      rf1 -0.01  rp -0.18  fangst fra bunner  0.21 (4 bunner)  
+
+   raavare_ishares (iShares Diversified Commodity Swap, maalt paa UCITS EXXY.DE)
+      wti        rf1 +0.65  rp +0.61  fangst fra bunner  0.39 (4 bunner)  med
+      brent      rf1 +0.60  rp +0.56  fangst fra bunner  0.23 (4 bunner)  med
+      aluminium  rf1 +0.49  rp +0.46  fangst fra bunner  0.59 (4 bunner)  med
+      henryhub   rf1 +0.34  rp +0.34  fangst fra bunner  0.23 (6 bunner)  med
+      nikkel     rf1 +0.32  rp +0.30  fangst fra bunner  0.31 (2 bunner)  med
+      kobber     rf1 +0.31  rp +0.24  fangst fra bunner  0.41 (4 bunner)  med
+      sink       rf1 +0.27  rp +0.22  fangst fra bunner  0.36 (5 bunner)  med
+      gold       rf1 +0.10  rp +0.07  fangst fra bunner -0.22 (3 bunner)  
+      par wti+henryhub: samlet 0.70  KVALIFISERER
+      par wti+aluminium: samlet 0.69  KVALIFISERER
+      par brent+aluminium: samlet 0.67  KVALIFISERER
+      par brent+henryhub: samlet 0.65  KVALIFISERER
+      par wti+nikkel: samlet 0.64  KVALIFISERER
+      par wti+kobber: samlet 0.63  KVALIFISERER
+      par wti+sink: samlet 0.62  KVALIFISERER
+      par brent+nikkel: samlet 0.61  KVALIFISERER
+      par brent+kobber: samlet 0.59  KVALIFISERER
+      par brent+sink: samlet 0.58  KVALIFISERER
+      par henryhub+aluminium: samlet 0.53  KVALIFISERER
+      par nikkel+aluminium: samlet 0.47  KVALIFISERER
+      par kobber+aluminium: samlet 0.46  KVALIFISERER
+      par aluminium+sink: samlet 0.46  KVALIFISERER
+      par henryhub+nikkel: samlet 0.44  KVALIFISERER
+      par henryhub+kobber: samlet 0.42  KVALIFISERER
+      par henryhub+sink: samlet 0.40  KVALIFISERER
+      par kobber+nikkel: samlet 0.32  KVALIFISERER
+      par nikkel+sink: samlet 0.32  KVALIFISERER
+      par brent+wti: samme faktor (raavarene korrelerer 0.94), telles ikke
+      par kobber+sink: samme faktor (raavarene korrelerer 0.70), telles ikke
+
+   raavare_xtrackers (Xtrackers Optimum Yield Diversified Commodity Swap, maalt paa UCITS XDBC.DE)
+      wti        rf1 +0.55  rp +0.48  fangst fra bunner  0.39 (4 bunner)  med
+      aluminium  rf1 +0.48  rp +0.44  fangst fra bunner  0.59 (4 bunner)  med
+      brent      rf1 +0.47  rp +0.40  fangst fra bunner  0.23 (4 bunner)  med
+      kobber     rf1 +0.43  rp +0.34  fangst fra bunner  0.41 (4 bunner)  med
+      nikkel     rf1 +0.35  rp +0.34  fangst fra bunner  0.31 (2 bunner)  med
+      henryhub   rf1 +0.24  rp +0.24  fangst fra bunner  0.23 (6 bunner)  med
+      sink       rf1 +0.29  rp +0.24  fangst fra bunner  0.36 (5 bunner)  med
+      gold       rf1 +0.26  rp +0.23  fangst fra bunner -0.22 (3 bunner)  med
+      par wti+aluminium: samlet 0.58  KVALIFISERER
+      par wti+gold: samlet 0.56  KVALIFISERER
+      par brent+aluminium: samlet 0.55  KVALIFISERER
+      par wti+kobber: samlet 0.55  KVALIFISERER
+      par wti+nikkel: samlet 0.55  KVALIFISERER
+      par wti+henryhub: samlet 0.54  KVALIFISERER
+      par wti+sink: samlet 0.51  KVALIFISERER
+      par brent+kobber: samlet 0.50  KVALIFISERER
+      par brent+nikkel: samlet 0.50  KVALIFISERER
+      par brent+gold: samlet 0.49  KVALIFISERER
+      par henryhub+aluminium: samlet 0.47  KVALIFISERER
+      par brent+henryhub: samlet 0.47  KVALIFISERER
+      par nikkel+aluminium: samlet 0.47  KVALIFISERER
+      par gold+aluminium: samlet 0.46  KVALIFISERER
+      par kobber+aluminium: samlet 0.46  KVALIFISERER
+      par brent+sink: samlet 0.44  KVALIFISERER
+      par aluminium+sink: samlet 0.44  KVALIFISERER
+      par henryhub+kobber: samlet 0.42  KVALIFISERER
+      par henryhub+nikkel: samlet 0.40  KVALIFISERER
+      par kobber+nikkel: samlet 0.40  KVALIFISERER
+      par gold+kobber: samlet 0.37  KVALIFISERER
+      par gold+nikkel: samlet 0.36  KVALIFISERER
+      par nikkel+sink: samlet 0.35  KVALIFISERER
+      par henryhub+gold: samlet 0.35  KVALIFISERER
+      par henryhub+sink: samlet 0.34  KVALIFISERER
+      par gold+sink: samlet 0.29  
+      par brent+wti: samme faktor (raavarene korrelerer 0.94), telles ikke
+      par kobber+sink: samme faktor (raavarene korrelerer 0.70), telles ikke
+
+   raavare_invesco (Invesco Bloomberg Commodity, maalt paa UCITS CMOD.L)
+      wti        rf1 +0.64  rp +0.60  fangst fra bunner  0.39 (4 bunner)  med
+      brent      rf1 +0.60  rp +0.56  fangst fra bunner  0.23 (4 bunner)  med
+      aluminium  rf1 +0.53  rp +0.50  fangst fra bunner  0.59 (4 bunner)  med
+      henryhub   rf1 +0.35  rp +0.36  fangst fra bunner  0.23 (6 bunner)  med
+      nikkel     rf1 +0.36  rp +0.36  fangst fra bunner  0.31 (2 bunner)  med
+      kobber     rf1 +0.37  rp +0.30  fangst fra bunner  0.41 (4 bunner)  med
+      sink       rf1 +0.31  rp +0.27  fangst fra bunner  0.36 (5 bunner)  med
+      gold       rf1 +0.16  rp +0.13  fangst fra bunner -0.22 (3 bunner)  
+      par wti+henryhub: samlet 0.70  KVALIFISERER
+      par wti+aluminium: samlet 0.69  KVALIFISERER
+      par brent+aluminium: samlet 0.69  KVALIFISERER
+      par brent+henryhub: samlet 0.67  KVALIFISERER
+      par wti+nikkel: samlet 0.65  KVALIFISERER
+      par wti+kobber: samlet 0.63  KVALIFISERER
+      par brent+nikkel: samlet 0.63  KVALIFISERER
+      par wti+sink: samlet 0.62  KVALIFISERER
+      par brent+kobber: samlet 0.60  KVALIFISERER
+      par brent+sink: samlet 0.60  KVALIFISERER
+      par henryhub+aluminium: samlet 0.57  KVALIFISERER
+      par nikkel+aluminium: samlet 0.52  KVALIFISERER
+      par kobber+aluminium: samlet 0.50  KVALIFISERER
+      par aluminium+sink: samlet 0.50  KVALIFISERER
+      par henryhub+nikkel: samlet 0.49  KVALIFISERER
+      par henryhub+kobber: samlet 0.48  KVALIFISERER
+      par henryhub+sink: samlet 0.45  KVALIFISERER
+      par kobber+nikkel: samlet 0.39  KVALIFISERER
+      par nikkel+sink: samlet 0.38  KVALIFISERER
+      par brent+wti: samme faktor (raavarene korrelerer 0.94), telles ikke
+      par kobber+sink: samme faktor (raavarene korrelerer 0.72), telles ikke
+
+3. Historisk test av regelen (beskrivende)
+
+   brasil              6 mnd  regelen: 0 innslag, median mot snitt    -  , 0 positive   |   en i bunnsone: 2 innslag, median   +0.8 %, 1 positive
+   brasil             12 mnd  regelen: 0 innslag, median mot snitt    -  , 0 positive   |   en i bunnsone: 2 innslag, median  -13.5 %, 1 positive
+   brasil             24 mnd  regelen: 0 innslag, median mot snitt    -  , 0 positive   |   en i bunnsone: 2 innslag, median  +11.7 %, 1 positive
+
+   norge               6 mnd  regelen: 1 innslag, median mot snitt  +30.6 %, 1 positive   |   en i bunnsone: 2 innslag, median   -2.1 %, 1 positive
+   norge              12 mnd  regelen: 1 innslag, median mot snitt  +73.4 %, 1 positive   |   en i bunnsone: 2 innslag, median  -19.6 %, 1 positive
+   norge              24 mnd  regelen: 1 innslag, median mot snitt  +80.0 %, 1 positive   |   en i bunnsone: 2 innslag, median  +19.3 %, 2 positive
+      2020-03  6 mnd  +30.6 %  12 mnd  +73.4 %  24 mnd  +80.0 %  (mot fondets snitt)
+
+   australia           6 mnd  regelen: 0 innslag, median mot snitt    -  , 0 positive   |   en i bunnsone: 3 innslag, median  +14.6 %, 3 positive
+   australia          12 mnd  regelen: 0 innslag, median mot snitt    -  , 0 positive   |   en i bunnsone: 3 innslag, median  +15.4 %, 2 positive
+   australia          24 mnd  regelen: 0 innslag, median mot snitt    -  , 0 positive   |   en i bunnsone: 3 innslag, median   +8.2 %, 2 positive
+
+   gruve_europa        6 mnd  regelen: 3 innslag, median mot snitt  +37.0 %, 2 positive   |   en i bunnsone: 3 innslag, median  +19.1 %, 2 positive
+   gruve_europa       12 mnd  regelen: 3 innslag, median mot snitt  +41.7 %, 2 positive   |   en i bunnsone: 3 innslag, median  +81.8 %, 2 positive
+   gruve_europa       24 mnd  regelen: 3 innslag, median mot snitt  +11.7 %, 2 positive   |   en i bunnsone: 3 innslag, median  +83.9 %, 2 positive
+      2008-12  6 mnd  +37.0 %  12 mnd  +95.5 %  24 mnd +131.3 %  (mot fondets snitt)
+      2014-12  6 mnd   -6.2 %  12 mnd  -39.0 %  24 mnd   -6.6 %  (mot fondets snitt)
+      2020-08  6 mnd  +41.4 %  12 mnd  +41.7 %  24 mnd  +11.7 %  (mot fondets snitt)
+
+   gruve_vaneck        6 mnd  regelen: 1 innslag, median mot snitt   +4.7 %, 1 positive   |   en i bunnsone: 2 innslag, median   +3.7 %, 1 positive
+   gruve_vaneck       12 mnd  regelen: 1 innslag, median mot snitt  +42.7 %, 1 positive   |   en i bunnsone: 2 innslag, median   +8.0 %, 1 positive
+   gruve_vaneck       24 mnd  regelen: 1 innslag, median mot snitt  +65.7 %, 1 positive   |   en i bunnsone: 2 innslag, median  +28.7 %, 1 positive
+      2015-11  6 mnd   +4.7 %  12 mnd  +42.7 %  24 mnd  +65.7 %  (mot fondets snitt)
+
+   raavare_ishares     6 mnd  regelen: 5 innslag, median mot snitt   +3.3 %, 4 positive   |   en i bunnsone: 5 innslag, median   +2.9 %, 3 positive
+   raavare_ishares    12 mnd  regelen: 5 innslag, median mot snitt   -3.2 %, 1 positive   |   en i bunnsone: 5 innslag, median   -1.0 %, 2 positive
+   raavare_ishares    24 mnd  regelen: 5 innslag, median mot snitt   +3.1 %, 4 positive   |   en i bunnsone: 5 innslag, median   +2.5 %, 3 positive
+      2008-12  6 mnd   +4.3 %  12 mnd  +14.1 %  24 mnd  +29.3 %  (mot fondets snitt)
+      2012-06  6 mnd   +8.1 %  12 mnd   -3.2 %  24 mnd   +3.1 %  (mot fondets snitt)
+      2014-12  6 mnd   -3.8 %  12 mnd  -27.5 %  24 mnd  -13.4 %  (mot fondets snitt)
+      2019-06  6 mnd   +2.9 %  12 mnd  -20.3 %  24 mnd  +21.5 %  (mot fondets snitt)
+      2023-03  6 mnd   +3.3 %  12 mnd   -1.0 %  24 mnd   +2.5 %  (mot fondets snitt)
+
+   raavare_xtrackers   6 mnd  regelen: 5 innslag, median mot snitt   +3.3 %, 4 positive   |   en i bunnsone: 5 innslag, median   +2.9 %, 3 positive
+   raavare_xtrackers  12 mnd  regelen: 5 innslag, median mot snitt   -3.2 %, 1 positive   |   en i bunnsone: 5 innslag, median   -1.0 %, 2 positive
+   raavare_xtrackers  24 mnd  regelen: 5 innslag, median mot snitt   +3.1 %, 4 positive   |   en i bunnsone: 5 innslag, median   +2.5 %, 3 positive
+      2008-12  6 mnd   +4.3 %  12 mnd  +14.1 %  24 mnd  +29.3 %  (mot fondets snitt)
+      2012-06  6 mnd   +8.1 %  12 mnd   -3.2 %  24 mnd   +3.1 %  (mot fondets snitt)
+      2014-12  6 mnd   -3.8 %  12 mnd  -27.5 %  24 mnd  -13.4 %  (mot fondets snitt)
+      2019-06  6 mnd   +2.9 %  12 mnd  -20.3 %  24 mnd  +21.5 %  (mot fondets snitt)
+      2023-03  6 mnd   +3.3 %  12 mnd   -1.0 %  24 mnd   +2.5 %  (mot fondets snitt)
+
+   raavare_invesco     6 mnd  regelen: 5 innslag, median mot snitt   +3.3 %, 4 positive   |   en i bunnsone: 5 innslag, median   +2.9 %, 3 positive
+   raavare_invesco    12 mnd  regelen: 5 innslag, median mot snitt   -3.2 %, 1 positive   |   en i bunnsone: 5 innslag, median   -1.0 %, 2 positive
+   raavare_invesco    24 mnd  regelen: 5 innslag, median mot snitt   +3.1 %, 4 positive   |   en i bunnsone: 5 innslag, median   +2.5 %, 3 positive
+      2008-12  6 mnd   +4.3 %  12 mnd  +14.1 %  24 mnd  +29.3 %  (mot fondets snitt)
+      2012-06  6 mnd   +8.1 %  12 mnd   -3.2 %  24 mnd   +3.1 %  (mot fondets snitt)
+      2014-12  6 mnd   -3.8 %  12 mnd  -27.5 %  24 mnd  -13.4 %  (mot fondets snitt)
+      2019-06  6 mnd   +2.9 %  12 mnd  -20.3 %  24 mnd  +21.5 %  (mot fondets snitt)
+      2023-03  6 mnd   +3.3 %  12 mnd   -1.0 %  24 mnd   +2.5 %  (mot fondets snitt)
+
+
+   Per kalenderepisode (innslag paa tvers av fond med hoeyst seks maaneder mellom):
+   6 mnd:
+      2008-12 til 2008-12: 4 fond, median   +4.3 %  (gruve_europa, raavare_invesco, raavare_ishares, raavare_xtrackers)
+      2012-06 til 2012-06: 3 fond, median   +8.1 %  (raavare_invesco, raavare_ishares, raavare_xtrackers)
+      2014-12 til 2014-12: 4 fond, median   -3.8 %  (gruve_europa, raavare_invesco, raavare_ishares, raavare_xtrackers)
+      2015-11 til 2015-11: 1 fond, median   +4.7 %  (gruve_vaneck)
+      2019-06 til 2019-06: 3 fond, median   +2.9 %  (raavare_invesco, raavare_ishares, raavare_xtrackers)
+      2020-03 til 2020-08: 2 fond, median  +35.9 %  (gruve_europa, norge)
+      2023-03 til 2023-03: 3 fond, median   +3.3 %  (raavare_invesco, raavare_ishares, raavare_xtrackers)
+      6 av 7 episoder positive
+   12 mnd:
+      2008-12 til 2008-12: 4 fond, median  +14.1 %  (gruve_europa, raavare_invesco, raavare_ishares, raavare_xtrackers)
+      2012-06 til 2012-06: 3 fond, median   -3.2 %  (raavare_invesco, raavare_ishares, raavare_xtrackers)
+      2014-12 til 2014-12: 4 fond, median  -27.5 %  (gruve_europa, raavare_invesco, raavare_ishares, raavare_xtrackers)
+      2015-11 til 2015-11: 1 fond, median  +42.7 %  (gruve_vaneck)
+      2019-06 til 2019-06: 3 fond, median  -20.3 %  (raavare_invesco, raavare_ishares, raavare_xtrackers)
+      2020-03 til 2020-08: 2 fond, median  +56.7 %  (gruve_europa, norge)
+      2023-03 til 2023-03: 3 fond, median   -1.0 %  (raavare_invesco, raavare_ishares, raavare_xtrackers)
+      3 av 7 episoder positive
+   24 mnd:
+      2008-12 til 2008-12: 4 fond, median  +29.3 %  (gruve_europa, raavare_invesco, raavare_ishares, raavare_xtrackers)
+      2012-06 til 2012-06: 3 fond, median   +3.1 %  (raavare_invesco, raavare_ishares, raavare_xtrackers)
+      2014-12 til 2014-12: 4 fond, median  -13.4 %  (gruve_europa, raavare_invesco, raavare_ishares, raavare_xtrackers)
+      2015-11 til 2015-11: 1 fond, median  +65.7 %  (gruve_vaneck)
+      2019-06 til 2019-06: 3 fond, median  +21.5 %  (raavare_invesco, raavare_ishares, raavare_xtrackers)
+      2020-03 til 2020-08: 2 fond, median  +41.8 %  (gruve_europa, norge)
+      2023-03 til 2023-03: 3 fond, median   +2.5 %  (raavare_invesco, raavare_ishares, raavare_xtrackers)
+      6 av 7 episoder positive
+
+4. Status i dag
+
+   brasil                    brent A18/42  jernmalm A82/65+  wti A25/51
+   norge                     aluminium A40/10  brent A18/42  ttf A8/13  wti A25/51
+   australia                 kobber A4/3  kull A30/72
+   gruve_europa              aluminium A40/10  bly A65/62  jernmalm A82/65+  kobber A4/3  kull A30/72  nikkel A59/70  sink A14/14
+   gruve_vaneck              aluminium A40/10  gold A1/3  jernmalm A82/65+  kobber A4/3  nikkel A59/70  sink A14/14
+   raavare_ishares           aluminium A40/10  brent A18/42  henryhub A90/59+  kobber A4/3  nikkel A59/70  sink A14/14  wti A25/51
+   raavare_xtrackers         aluminium A40/10  brent A18/42  gold A1/3  henryhub A90/59+  kobber A4/3  nikkel A59/70  sink A14/14  wti A25/51
+   raavare_invesco           aluminium A40/10  brent A18/42  henryhub A90/59+  kobber A4/3  nikkel A59/70  sink A14/14  wti A25/51
+   (* bunnsone, + under oppsikt)
+
+Lagret sonder/fond.json og sonder/fondkart_forslag.json (8 fond med minst ett par)
