@@ -33,7 +33,27 @@ Oppstarter: 1 sonde(r) funnet
 
    undersider: ['Data_Library/int_country_port_formed.html']
       Data_Library/int_country_port_formed.html: 0 zip, f.eks. []
-   297 lenker totalt. Med landnavn:
+   rundt 'countr': ... International Research Returns Data (Downloadable Files) Country Portfolios formed on B/M, E/P, CE/P, and D/P &nbsp;&nbsp; Details Country Portfolios formed on B/M, E/P, CE/P, and D/P [ex. Dividends] &nbsp;&nbsp;<a hr...
+   lenker i naerheten: ftp/F-F_International_Countries.zip, Data_Library/int_country_port_formed.html, ftp/F-F_International_Countries_Wout_Div.zip, Data_Library/int_country_port_formed.html, ftp/F-F_International_Indices.zip, Data_Library/int_index_port_formed.html, ftp/F-F_International_Indices_Wout_Div.zip, Data_Library/int_index_port_formed.html
+   rundt 'countr': ...ze="3" face="Courier New, Courier, mono"> International Research Returns Data (Downloadable Files) Country Portfolios formed on B/M, E/P, CE/P, and D/P &nbsp;&nbsp; Details Country Portfolios formed on B/M, E/P, CE/P, and D/P [ex. Dividends] &nbsp;&nbsp;<a href="Data_Library/int_countr...
+   lenker i naerheten: ftp/F-F_International_Countries.zip, Data_Library/int_country_port_formed.html, ftp/F-F_International_Countries_Wout_Div.zip, Data_Library/int_country_port_formed.html, ftp/F-F_International_Indices.zip, Data_Library/int_index_port_formed.html, ftp/F-F_International_Indices_Wout_Div.zip, Data_Library/int_index_port_formed.html
+   rundt 'countr': ...arch Returns Data (Downloadable Files) Country Portfolios formed on B/M, E/P, CE/P, and D/P &nbsp;&nbsp; Details Country Portfolios formed on B/M, E/P, CE/P, and D/P [ex. Dividends] &nbsp;&nbsp; Details</f...
+   lenker i naerheten: ftp/F-F_International_Countries.zip, Data_Library/int_country_port_formed.html, ftp/F-F_International_Countries_Wout_Div.zip, Data_Library/int_country_port_formed.html, ftp/F-F_International_Indices.zip, Data_Library/int_index_port_formed.html, ftp/F-F_International_Indices_Wout_Div.zip, Data_Library/int_index_port_formed.html
+   rundt 'countr': ... and D/P &nbsp;&nbsp; Details Country Portfolios formed on B/M, E/P, CE/P, and D/P [ex. Dividends] &nbsp;&nbsp; Details Index Portfolios formed on B/M, E/P, CE/P, and D/P &nbsp;&nbsp;<a href="...
+   lenker i naerheten: Data_Library/int_country_port_formed.html, ftp/F-F_International_Countries_Wout_Div.zip, Data_Library/int_country_port_formed.html, ftp/F-F_International_Indices.zip, Data_Library/int_index_port_formed.html, ftp/F-F_International_Indices_Wout_Div.zip, Data_Library/int_index_port_formed.html
+   rundt 'countr': ..."Data_Library/int_country_port_formed.html"> Details Country Portfolios formed on B/M, E/P, CE/P, and D/P [ex. Dividends] &nbsp;&nbsp; Details Index Portfolios formed on B/M, E/P, CE/P, and D/P &nbsp;&nbsp;<a href="Data_Library/int_index_port_formed.h...
+   lenker i naerheten: ftp/F-F_International_Countries_Wout_Div.zip, Data_Library/int_country_port_formed.html, ftp/F-F_International_Indices.zip, Data_Library/int_index_port_formed.html, ftp/F-F_International_Indices_Wout_Div.zip, Data_Library/int_index_port_formed.html
+   rundt 'countr': ...tails Country Portfolios formed on B/M, E/P, CE/P, and D/P [ex. Dividends] &nbsp;&nbsp; Details Index Portfolios formed on B/M, E/P, CE/P, and D/P &nbsp;&nbsp; Details ...
+   lenker i naerheten: ftp/F-F_International_Countries_Wout_Div.zip, Data_Library/int_country_port_formed.html, ftp/F-F_International_Indices.zip, Data_Library/int_index_port_formed.html, ftp/F-F_International_Indices_Wout_Div.zip, Data_Library/int_index_port_formed.html, #Benchmarks
+   rundt 'countr': ...ed on B/M, E/P, CE/P, and D/P [ex. Dividends] &nbsp;&nbsp; Details We form value and growth portfolios in each country using four ratios: book-to-market (B/M); earnings-price (E/P); cash earnings to price (CE/P); and dividend yield (D/P). Firms in the country portfolios are value-weighted. To construct index returns, we weight each country in proportion to its EAFE weight. The raw data are from Mo...
+   lenker i naerheten: Data_Library/int_index_port_formed.html, #Benchmarks, Data_Library/details_main.html, ftp/Developed_3_Factors_TXT.zip
+   rundt 'countr': ... New Roman, Times, serif" size="1">Details We form value and growth portfolios in each country using four ratios: book-to-market (B/M); earnings-price (E/P); cash earnings to price (CE/P); and dividend yield (D/P). Firms in the country portfolios are value-weighted. To construct index returns, we weight each country in proportion to its EAFE weight. The raw data are from Morgan Stanley Capital Int...
+   lenker i naerheten: #Benchmarks, Data_Library/details_main.html, ftp/Developed_3_Factors_TXT.zip, ftp/Developed_3_Factors_CSV.zip
+   rundt 'countr': ... We form value and growth portfolios in each country using four ratios: book-to-market (B/M); earnings-price (E/P); cash earnings to price (CE/P); and dividend yield (D/P). Firms in the country portfolios are value-weighted. To construct index returns, we weight each country in proportion to its EAFE weight. The raw data are from Morgan Stanley Capital International for 1975 to 2006 and from Bloom...
+   lenker i naerheten: #Benchmarks, Data_Library/details_main.html, ftp/Developed_3_Factors_TXT.zip, ftp/Developed_3_Factors_CSV.zip, Data_Library/f-f_3developed.html
+   299 lenker totalt. Med landnavn:
+      ftp/F-F_International_Countries.zip
+      ftp/F-F_International_Countries_Wout_Div.zip
    Norway: ingen fil
    Australia: ingen fil
    Brazil: ingen fil
@@ -41,8 +61,8 @@ Oppstarter: 1 sonde(r) funnet
 [stderr]
 Fant ingen landportefølje. Lenkene over viser hva som finnes.
 
---- skrevet til sonder/sonde_kjor_land.txt (11 s, kode 1)
+--- skrevet til sonder/sonde_kjor_land.txt (9 s, kode 1)
 
 
 OPPSUMMERING
-   FEIL  sonde_kjor_land                             11 s  -> sonder/sonde_kjor_land.txt
+   FEIL  sonde_kjor_land                              9 s  -> sonder/sonde_kjor_land.txt
