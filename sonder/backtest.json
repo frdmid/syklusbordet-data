@@ -1,0 +1,1464 @@
+{
+ "kjort": "2026-09-28 13:43:28",
+ "horisonter": [
+  1,
+  2,
+  3,
+  6,
+  12
+ ],
+ "innslag": {
+  "brent": [
+   "1992-12",
+   "1997-12",
+   "2020-03"
+  ],
+  "wti": [
+   "1992-02",
+   "1993-06",
+   "1997-12",
+   "2020-03"
+  ],
+  "henryhub": [
+   "2009-08",
+   "2011-12",
+   "2014-12",
+   "2019-06",
+   "2023-03"
+  ],
+  "gold": [
+   "1992-03",
+   "1996-07"
+  ],
+  "uran": [
+   "1998-10",
+   "2000-04"
+  ],
+  "kobber": [
+   "1975-10",
+   "1977-07",
+   "1981-05",
+   "1998-08",
+   "2001-07"
+  ],
+  "nikkel": [
+   "1987-01",
+   "1992-10",
+   "1997-12",
+   "2001-09",
+   "2015-11"
+  ],
+  "aluminium": [
+   "1991-05",
+   "2009-01",
+   "2015-10",
+   "2020-04"
+  ],
+  "sink": [
+   "1971-02",
+   "1982-06",
+   "1985-06",
+   "1991-09",
+   "1992-11",
+   "1998-02",
+   "2000-10",
+   "2008-11"
+  ],
+  "bly": [
+   "1971-09",
+   "1975-11",
+   "1982-02",
+   "1991-05",
+   "1998-10"
+  ],
+  "tinn": [
+   "1985-12"
+  ],
+  "jernmalm": [
+   "2014-12"
+  ],
+  "kull": [
+   "2020-08"
+  ],
+  "ttf": [
+   "2015-12",
+   "2019-03"
+  ],
+  "kakao": [
+   "1988-02",
+   "1991-04",
+   "2000-02"
+  ],
+  "palmeolje": [
+   "1966-04",
+   "1972-02",
+   "1980-08",
+   "1984-08",
+   "1993-06",
+   "1999-07"
+  ]
+ },
+ "resultat": {
+  "A_alle": {
+   "1": {
+    "h": 1,
+    "innslag": 23,
+    "episoder": 11,
+    "abs_median": -0.04529,
+    "abs_snitt": -0.01109,
+    "abs_treff": 0.3913,
+    "mer_median": -0.0477,
+    "mer_treff": 0.3913,
+    "S": -0.03122,
+    "S_pos": 4,
+    "p": 0.83608,
+    "verden_median": -0.03545,
+    "verden_treff": 0.40909,
+    "S_verden": -0.02875,
+    "S_verden_pos": 4,
+    "raavare_median": -0.03006,
+    "verste": -0.46944,
+    "beste": 0.31489
+   },
+   "2": {
+    "h": 2,
+    "innslag": 23,
+    "episoder": 11,
+    "abs_median": -0.02839,
+    "abs_snitt": -0.04007,
+    "abs_treff": 0.43478,
+    "mer_median": -0.0445,
+    "mer_treff": 0.3913,
+    "S": -0.05846,
+    "S_pos": 3,
+    "p": 0.91304,
+    "verden_median": -0.01377,
+    "verden_treff": 0.45455,
+    "S_verden": -0.08286,
+    "S_verden_pos": 3,
+    "raavare_median": -0.00756,
+    "verste": -0.70471,
+    "beste": 0.49414
+   },
+   "3": {
+    "h": 3,
+    "innslag": 23,
+    "episoder": 11,
+    "abs_median": 0.1293,
+    "abs_snitt": 0.06005,
+    "abs_treff": 0.6087,
+    "mer_median": 0.11897,
+    "mer_treff": 0.6087,
+    "S": 3e-05,
+    "S_pos": 5,
+    "p": 0.51224,
+    "verden_median": 0.06166,
+    "verden_treff": 0.63636,
+    "S_verden": -0.03415,
+    "S_verden_pos": 5,
+    "raavare_median": -0.00424,
+    "verste": -0.65925,
+    "beste": 0.6943
+   },
+   "6": {
+    "h": 6,
+    "innslag": 23,
+    "episoder": 11,
+    "abs_median": 0.19482,
+    "abs_snitt": 0.23965,
+    "abs_treff": 0.82609,
+    "mer_median": 0.15158,
+    "mer_treff": 0.82609,
+    "S": 0.08026,
+    "S_pos": 7,
+    "p": 0.15092,
+    "verden_median": 0.18016,
+    "verden_treff": 0.72727,
+    "S_verden": 0.06854,
+    "S_verden_pos": 6,
+    "raavare_median": 0.14618,
+    "verste": -0.36667,
+    "beste": 0.89055
+   },
+   "12": {
+    "h": 12,
+    "innslag": 23,
+    "episoder": 11,
+    "abs_median": 0.62891,
+    "abs_snitt": 0.49172,
+    "abs_treff": 0.78261,
+    "mer_median": 0.59082,
+    "mer_treff": 0.73913,
+    "S": 0.12513,
+    "S_pos": 6,
+    "p": 0.12644,
+    "verden_median": 0.29729,
+    "verden_treff": 0.68182,
+    "S_verden": 0.11122,
+    "S_verden_pos": 4,
+    "raavare_median": 0.1688,
+    "verste": -0.85905,
+    "beste": 1.81199
+   }
+  },
+  "A_T1": {
+   "1": {
+    "h": 1,
+    "innslag": 23,
+    "episoder": 11,
+    "abs_median": -0.00673,
+    "abs_snitt": -0.02898,
+    "abs_treff": 0.47826,
+    "mer_median": -0.00946,
+    "mer_treff": 0.43478,
+    "S": -0.0413,
+    "S_pos": 4,
+    "p": null,
+    "verden_median": 0.00215,
+    "verden_treff": 0.54545,
+    "S_verden": -0.05913,
+    "S_verden_pos": 5,
+    "raavare_median": 0.01564,
+    "verste": -0.57827,
+    "beste": 0.19919
+   },
+   "2": {
+    "h": 2,
+    "innslag": 23,
+    "episoder": 11,
+    "abs_median": 0.03125,
+    "abs_snitt": 0.07114,
+    "abs_treff": 0.56522,
+    "mer_median": 0.0258,
+    "mer_treff": 0.56522,
+    "S": 0.04712,
+    "S_pos": 6,
+    "p": null,
+    "verden_median": 0.08278,
+    "verden_treff": 0.54545,
+    "S_verden": 0.01195,
+    "S_verden_pos": 5,
+    "raavare_median": 0.06126,
+    "verste": -0.5328,
+    "beste": 0.59874
+   },
+   "3": {
+    "h": 3,
+    "innslag": 23,
+    "episoder": 11,
+    "abs_median": 0.12744,
+    "abs_snitt": 0.2015,
+    "abs_treff": 0.65217,
+    "mer_median": 0.12192,
+    "mer_treff": 0.65217,
+    "S": 0.10376,
+    "S_pos": 7,
+    "p": null,
+    "verden_median": 0.08466,
+    "verden_treff": 0.63636,
+    "S_verden": 0.05449,
+    "S_verden_pos": 6,
+    "raavare_median": 0.08545,
+    "verste": -0.33896,
+    "beste": 0.99592
+   },
+   "6": {
+    "h": 6,
+    "innslag": 23,
+    "episoder": 11,
+    "abs_median": 0.18826,
+    "abs_snitt": 0.23279,
+    "abs_treff": 0.69565,
+    "mer_median": 0.15258,
+    "mer_treff": 0.65217,
+    "S": 0.08589,
+    "S_pos": 7,
+    "p": null,
+    "verden_median": 0.13937,
+    "verden_treff": 0.63636,
+    "S_verden": 0.05545,
+    "S_verden_pos": 7,
+    "raavare_median": 0.18232,
+    "verste": -0.91009,
+    "beste": 1.52782
+   },
+   "12": {
+    "h": 12,
+    "innslag": 23,
+    "episoder": 11,
+    "abs_median": 0.45878,
+    "abs_snitt": 0.54046,
+    "abs_treff": 0.78261,
+    "mer_median": 0.42684,
+    "mer_treff": 0.78261,
+    "S": 0.18661,
+    "S_pos": 7,
+    "p": null,
+    "verden_median": 0.338,
+    "verden_treff": 0.72727,
+    "S_verden": 0.1486,
+    "S_verden_pos": 5,
+    "raavare_median": 0.21057,
+    "verste": -1.00235,
+    "beste": 1.86104
+   }
+  },
+  "A_foer2016": {
+   "1": {
+    "h": 1,
+    "innslag": 14,
+    "episoder": 8,
+    "abs_median": -0.04926,
+    "abs_snitt": -0.06766,
+    "abs_treff": 0.28571,
+    "mer_median": -0.05221,
+    "mer_treff": 0.28571,
+    "S": -0.06093,
+    "S_pos": 2,
+    "p": 0.95302,
+    "verden_median": -0.06002,
+    "verden_treff": 0.30769,
+    "S_verden": -0.05521,
+    "S_verden_pos": 2,
+    "raavare_median": -0.05323,
+    "verste": -0.46944,
+    "beste": 0.10536
+   },
+   "2": {
+    "h": 2,
+    "innslag": 14,
+    "episoder": 8,
+    "abs_median": -0.03326,
+    "abs_snitt": -0.08104,
+    "abs_treff": 0.35714,
+    "mer_median": -0.04566,
+    "mer_treff": 0.28571,
+    "S": -0.06959,
+    "S_pos": 1,
+    "p": 0.89755,
+    "verden_median": -0.0561,
+    "verden_treff": 0.30769,
+    "S_verden": -0.09312,
+    "S_verden_pos": 1,
+    "raavare_median": -0.07237,
+    "verste": -0.52026,
+    "beste": 0.19967
+   },
+   "3": {
+    "h": 3,
+    "innslag": 14,
+    "episoder": 8,
+    "abs_median": 0.01074,
+    "abs_snitt": -0.00829,
+    "abs_treff": 0.5,
+    "mer_median": -0.00833,
+    "mer_treff": 0.5,
+    "S": -0.0143,
+    "S_pos": 3,
+    "p": 0.5952,
+    "verden_median": 0.02307,
+    "verden_treff": 0.53846,
+    "S_verden": -0.04414,
+    "S_verden_pos": 3,
+    "raavare_median": -0.06922,
+    "verste": -0.47142,
+    "beste": 0.26533
+   },
+   "6": {
+    "h": 6,
+    "innslag": 14,
+    "episoder": 8,
+    "abs_median": 0.11832,
+    "abs_snitt": 0.1974,
+    "abs_treff": 0.78571,
+    "mer_median": 0.06983,
+    "mer_treff": 0.78571,
+    "S": 0.08325,
+    "S_pos": 5,
+    "p": 0.1969,
+    "verden_median": 0.05019,
+    "verden_treff": 0.76923,
+    "S_verden": 0.08393,
+    "S_verden_pos": 4,
+    "raavare_median": -0.07738,
+    "verste": -0.29628,
+    "beste": 0.89055
+   },
+   "12": {
+    "h": 12,
+    "innslag": 14,
+    "episoder": 8,
+    "abs_median": 0.23562,
+    "abs_snitt": 0.26597,
+    "abs_treff": 0.71429,
+    "mer_median": 0.19123,
+    "mer_treff": 0.64286,
+    "S": 0.10594,
+    "S_pos": 4,
+    "p": 0.22539,
+    "verden_median": 0.17339,
+    "verden_treff": 0.61538,
+    "S_verden": 0.10198,
+    "S_verden_pos": 3,
+    "raavare_median": 0.10075,
+    "verste": -0.85905,
+    "beste": 1.15962
+   }
+  },
+  "A_fra2016": {
+   "1": {
+    "h": 1,
+    "innslag": 9,
+    "episoder": 3,
+    "abs_median": 0.08785,
+    "abs_snitt": 0.0769,
+    "abs_treff": 0.55556,
+    "mer_median": 0.07968,
+    "mer_treff": 0.55556,
+    "S": 0.04803,
+    "S_pos": 2,
+    "p": 0.15392,
+    "verden_median": 0.07228,
+    "verden_treff": 0.55556,
+    "S_verden": 0.03297,
+    "S_verden_pos": 2,
+    "raavare_median": 0.0728,
+    "verste": -0.18413,
+    "beste": 0.31489
+   },
+   "2": {
+    "h": 2,
+    "innslag": 9,
+    "episoder": 3,
+    "abs_median": 0.09049,
+    "abs_snitt": 0.02366,
+    "abs_treff": 0.55556,
+    "mer_median": 0.07438,
+    "mer_treff": 0.55556,
+    "S": -0.02879,
+    "S_pos": 2,
+    "p": 0.67366,
+    "verden_median": 0.08546,
+    "verden_treff": 0.66667,
+    "S_verden": -0.05892,
+    "S_verden_pos": 2,
+    "raavare_median": 0.15149,
+    "verste": -0.70471,
+    "beste": 0.49414
+   },
+   "3": {
+    "h": 3,
+    "innslag": 9,
+    "episoder": 3,
+    "abs_median": 0.3011,
+    "abs_snitt": 0.16636,
+    "abs_treff": 0.77778,
+    "mer_median": 0.26296,
+    "mer_treff": 0.77778,
+    "S": 0.03823,
+    "S_pos": 2,
+    "p": 0.31634,
+    "verden_median": 0.16436,
+    "verden_treff": 0.77778,
+    "S_verden": -0.01086,
+    "S_verden_pos": 2,
+    "raavare_median": 0.2499,
+    "verste": -0.65925,
+    "beste": 0.6943
+   },
+   "6": {
+    "h": 6,
+    "innslag": 9,
+    "episoder": 3,
+    "abs_median": 0.41386,
+    "abs_snitt": 0.30538,
+    "abs_treff": 0.88889,
+    "mer_median": 0.3911,
+    "mer_treff": 0.88889,
+    "S": 0.0723,
+    "S_pos": 2,
+    "p": 0.29535,
+    "verden_median": 0.27697,
+    "verden_treff": 0.66667,
+    "S_verden": 0.03265,
+    "S_verden_pos": 2,
+    "raavare_median": 0.53659,
+    "verste": -0.36667,
+    "beste": 0.58545
+   },
+   "12": {
+    "h": 12,
+    "innslag": 9,
+    "episoder": 3,
+    "abs_median": 0.71031,
+    "abs_snitt": 0.84288,
+    "abs_treff": 0.88889,
+    "mer_median": 0.69478,
+    "mer_treff": 0.88889,
+    "S": 0.17632,
+    "S_pos": 2,
+    "p": 0.18141,
+    "verden_median": 0.43868,
+    "verden_treff": 0.77778,
+    "S_verden": 0.13279,
+    "S_verden_pos": 1,
+    "raavare_median": 1.03398,
+    "verste": -0.2732,
+    "beste": 1.81199
+   }
+  },
+  "d95": {
+   "1": {
+    "h": 1,
+    "innslag": 7,
+    "episoder": 4,
+    "abs_median": 0.07901,
+    "abs_snitt": -0.07839,
+    "abs_treff": 0.71429,
+    "mer_median": 0.07629,
+    "mer_treff": 0.71429,
+    "S": -0.05605,
+    "S_pos": 3,
+    "p": 0.89355,
+    "verden_median": 0.02539,
+    "verden_treff": 0.71429,
+    "S_verden": -0.05705,
+    "S_verden_pos": 3,
+    "raavare_median": 0.11537,
+    "verste": -0.49876,
+    "beste": 0.12218
+   },
+   "2": {
+    "h": 2,
+    "innslag": 7,
+    "episoder": 4,
+    "abs_median": 0.04834,
+    "abs_snitt": 0.02329,
+    "abs_treff": 0.71429,
+    "mer_median": 0.04415,
+    "mer_treff": 0.71429,
+    "S": 0.03043,
+    "S_pos": 3,
+    "p": 0.32334,
+    "verden_median": 0.00944,
+    "verden_treff": 0.71429,
+    "S_verden": 0.00183,
+    "S_verden_pos": 3,
+    "raavare_median": 0.11181,
+    "verste": -0.1937,
+    "beste": 0.16988
+   },
+   "3": {
+    "h": 3,
+    "innslag": 7,
+    "episoder": 4,
+    "abs_median": 0.1624,
+    "abs_snitt": 0.10151,
+    "abs_treff": 0.71429,
+    "mer_median": 0.15726,
+    "mer_treff": 0.71429,
+    "S": 0.10042,
+    "S_pos": 3,
+    "p": 0.07646,
+    "verden_median": 0.09524,
+    "verden_treff": 0.71429,
+    "S_verden": 0.06514,
+    "S_verden_pos": 3,
+    "raavare_median": 0.27577,
+    "verste": -0.20043,
+    "beste": 0.32635
+   },
+   "6": {
+    "h": 6,
+    "innslag": 7,
+    "episoder": 4,
+    "abs_median": -0.12768,
+    "abs_snitt": -0.03109,
+    "abs_treff": 0.42857,
+    "mer_median": -0.13801,
+    "mer_treff": 0.42857,
+    "S": -0.02627,
+    "S_pos": 2,
+    "p": 0.63068,
+    "verden_median": -0.17692,
+    "verden_treff": 0.28571,
+    "S_verden": -0.12842,
+    "S_verden_pos": 1,
+    "raavare_median": 0.09365,
+    "verste": -0.16543,
+    "beste": 0.1392
+   },
+   "12": {
+    "h": 12,
+    "innslag": 5,
+    "episoder": 3,
+    "abs_median": 0.0773,
+    "abs_snitt": -0.09041,
+    "abs_treff": 0.6,
+    "mer_median": 0.06151,
+    "mer_treff": 0.6,
+    "S": -0.07825,
+    "S_pos": 2,
+    "p": 0.66517,
+    "verden_median": -0.15848,
+    "verden_treff": 0.0,
+    "S_verden": -0.20759,
+    "S_verden_pos": 0,
+    "raavare_median": 0.23302,
+    "verste": -0.42346,
+    "beste": 0.15878
+   }
+  },
+  "B_regelen": {
+   "1": {
+    "h": 1,
+    "innslag": 10,
+    "episoder": 7,
+    "abs_median": -0.03623,
+    "abs_snitt": -0.01802,
+    "abs_treff": 0.2,
+    "mer_median": -0.03854,
+    "mer_treff": 0.2,
+    "S": -0.01691,
+    "S_pos": 2,
+    "p": 0.77211,
+    "verden_median": -0.00466,
+    "verden_treff": 0.5,
+    "S_verden": 1e-05,
+    "S_verden_pos": 3,
+    "raavare_median": null,
+    "verste": -0.09668,
+    "beste": 0.11303
+   },
+   "2": {
+    "h": 2,
+    "innslag": 10,
+    "episoder": 7,
+    "abs_median": -0.06638,
+    "abs_snitt": -0.03213,
+    "abs_treff": 0.3,
+    "mer_median": -0.07033,
+    "mer_treff": 0.3,
+    "S": -0.04298,
+    "S_pos": 3,
+    "p": 0.87056,
+    "verden_median": -0.00334,
+    "verden_treff": 0.5,
+    "S_verden": -0.01021,
+    "S_verden_pos": 3,
+    "raavare_median": null,
+    "verste": -0.1884,
+    "beste": 0.19119
+   },
+   "3": {
+    "h": 3,
+    "innslag": 10,
+    "episoder": 7,
+    "abs_median": -0.03741,
+    "abs_snitt": 0.00943,
+    "abs_treff": 0.4,
+    "mer_median": -0.04271,
+    "mer_treff": 0.4,
+    "S": -0.00424,
+    "S_pos": 2,
+    "p": 0.57721,
+    "verden_median": 0.02279,
+    "verden_treff": 0.6,
+    "S_verden": -0.0033,
+    "S_verden_pos": 4,
+    "raavare_median": null,
+    "verste": -0.07774,
+    "beste": 0.20405
+   },
+   "6": {
+    "h": 6,
+    "innslag": 10,
+    "episoder": 7,
+    "abs_median": 0.07059,
+    "abs_snitt": 0.12046,
+    "abs_treff": 0.8,
+    "mer_median": 0.05042,
+    "mer_treff": 0.8,
+    "S": 0.0886,
+    "S_pos": 6,
+    "p": 0.09495,
+    "verden_median": 0.01113,
+    "verden_treff": 0.5,
+    "S_verden": 0.03199,
+    "S_verden_pos": 4,
+    "raavare_median": null,
+    "verste": -0.05067,
+    "beste": 0.3554
+   },
+   "12": {
+    "h": 12,
+    "innslag": 10,
+    "episoder": 7,
+    "abs_median": 0.08251,
+    "abs_snitt": 0.12326,
+    "abs_treff": 0.6,
+    "mer_median": 0.06828,
+    "mer_treff": 0.6,
+    "S": 0.07329,
+    "S_pos": 4,
+    "p": 0.22689,
+    "verden_median": -0.15406,
+    "verden_treff": 0.4,
+    "S_verden": -0.04603,
+    "S_verden_pos": 3,
+    "raavare_median": null,
+    "verste": -0.47688,
+    "beste": 0.70661
+   }
+  },
+  "B_regelen_T1": {
+   "1": {
+    "h": 1,
+    "innslag": 10,
+    "episoder": 7,
+    "abs_median": -0.05197,
+    "abs_snitt": -0.01411,
+    "abs_treff": 0.4,
+    "mer_median": -0.05428,
+    "mer_treff": 0.4,
+    "S": -0.02656,
+    "S_pos": 3,
+    "p": null,
+    "verden_median": 0.00861,
+    "verden_treff": 0.5,
+    "S_verden": -0.01023,
+    "S_verden_pos": 3,
+    "raavare_median": null,
+    "verste": -0.13319,
+    "beste": 0.11262
+   },
+   "2": {
+    "h": 2,
+    "innslag": 10,
+    "episoder": 7,
+    "abs_median": 0.00268,
+    "abs_snitt": 0.02745,
+    "abs_treff": 0.5,
+    "mer_median": -0.00128,
+    "mer_treff": 0.5,
+    "S": 0.01179,
+    "S_pos": 3,
+    "p": null,
+    "verden_median": -0.00069,
+    "verden_treff": 0.5,
+    "S_verden": -0.00332,
+    "S_verden_pos": 3,
+    "raavare_median": null,
+    "verste": -0.03719,
+    "beste": 0.13214
+   },
+   "3": {
+    "h": 3,
+    "innslag": 10,
+    "episoder": 7,
+    "abs_median": 0.06655,
+    "abs_snitt": 0.10215,
+    "abs_treff": 0.8,
+    "mer_median": 0.06125,
+    "mer_treff": 0.8,
+    "S": 0.07862,
+    "S_pos": 6,
+    "p": null,
+    "verden_median": -0.0006,
+    "verden_treff": 0.5,
+    "S_verden": 0.01884,
+    "S_verden_pos": 3,
+    "raavare_median": null,
+    "verste": -0.01425,
+    "beste": 0.29285
+   },
+   "6": {
+    "h": 6,
+    "innslag": 10,
+    "episoder": 7,
+    "abs_median": 0.07186,
+    "abs_snitt": 0.11791,
+    "abs_treff": 0.7,
+    "mer_median": 0.05378,
+    "mer_treff": 0.7,
+    "S": 0.08563,
+    "S_pos": 5,
+    "p": null,
+    "verden_median": -0.06176,
+    "verden_treff": 0.4,
+    "S_verden": 0.00097,
+    "S_verden_pos": 4,
+    "raavare_median": null,
+    "verste": -0.1009,
+    "beste": 0.56683
+   },
+   "12": {
+    "h": 12,
+    "innslag": 10,
+    "episoder": 7,
+    "abs_median": 0.07618,
+    "abs_snitt": 0.10736,
+    "abs_treff": 0.6,
+    "mer_median": 0.06195,
+    "mer_treff": 0.6,
+    "S": 0.06812,
+    "S_pos": 4,
+    "p": null,
+    "verden_median": -0.17569,
+    "verden_treff": 0.4,
+    "S_verden": -0.06114,
+    "S_verden_pos": 3,
+    "raavare_median": null,
+    "verste": -0.57033,
+    "beste": 0.7197
+   }
+  },
+  "B_en": {
+   "1": {
+    "h": 1,
+    "innslag": 17,
+    "episoder": 9,
+    "abs_median": -0.00761,
+    "abs_snitt": -7e-05,
+    "abs_treff": 0.47059,
+    "mer_median": -0.00976,
+    "mer_treff": 0.41176,
+    "S": 0.00862,
+    "S_pos": 5,
+    "p": 0.35482,
+    "verden_median": -0.02289,
+    "verden_treff": 0.29412,
+    "S_verden": -0.00757,
+    "S_verden_pos": 4,
+    "raavare_median": null,
+    "verste": -0.08957,
+    "beste": 0.10042
+   },
+   "2": {
+    "h": 2,
+    "innslag": 17,
+    "episoder": 9,
+    "abs_median": -0.03308,
+    "abs_snitt": 0.00347,
+    "abs_treff": 0.41176,
+    "mer_median": -0.04325,
+    "mer_treff": 0.41176,
+    "S": -0.01568,
+    "S_pos": 4,
+    "p": 0.73913,
+    "verden_median": -0.01092,
+    "verden_treff": 0.29412,
+    "S_verden": -0.02296,
+    "S_verden_pos": 2,
+    "raavare_median": null,
+    "verste": -0.17316,
+    "beste": 0.15882
+   },
+   "3": {
+    "h": 3,
+    "innslag": 17,
+    "episoder": 9,
+    "abs_median": -0.0432,
+    "abs_snitt": 0.00735,
+    "abs_treff": 0.35294,
+    "mer_median": -0.04988,
+    "mer_treff": 0.35294,
+    "S": -0.00582,
+    "S_pos": 3,
+    "p": 0.5912,
+    "verden_median": -0.03727,
+    "verden_treff": 0.41176,
+    "S_verden": -0.0153,
+    "S_verden_pos": 3,
+    "raavare_median": null,
+    "verste": -0.20974,
+    "beste": 0.22937
+   },
+   "6": {
+    "h": 6,
+    "innslag": 17,
+    "episoder": 9,
+    "abs_median": 0.0494,
+    "abs_snitt": 0.07433,
+    "abs_treff": 0.64706,
+    "mer_median": 0.01983,
+    "mer_treff": 0.64706,
+    "S": 0.05335,
+    "S_pos": 6,
+    "p": 0.18341,
+    "verden_median": -0.05248,
+    "verden_treff": 0.47059,
+    "S_verden": 0.00564,
+    "S_verden_pos": 6,
+    "raavare_median": null,
+    "verste": -0.09515,
+    "beste": 0.34152
+   },
+   "12": {
+    "h": 12,
+    "innslag": 17,
+    "episoder": 9,
+    "abs_median": 0.03442,
+    "abs_snitt": 0.04201,
+    "abs_treff": 0.64706,
+    "mer_median": 0.02019,
+    "mer_treff": 0.58824,
+    "S": 0.01202,
+    "S_pos": 6,
+    "p": 0.47226,
+    "verden_median": -0.12042,
+    "verden_treff": 0.29412,
+    "S_verden": -0.06596,
+    "S_verden_pos": 4,
+    "raavare_median": null,
+    "verste": -0.5408,
+    "beste": 0.79371
+   }
+  }
+ },
+ "per_segment": {
+  "aluminium": {
+   "3": {
+    "n": 7,
+    "abs_median": 0.1735,
+    "mer_median": 0.16007
+   },
+   "12": {
+    "n": 7,
+    "abs_median": 0.70277,
+    "mer_median": 0.66388
+   }
+  },
+  "bly": {},
+  "brent": {
+   "3": {
+    "n": 1,
+    "abs_median": 0.30309,
+    "mer_median": 0.29795
+   },
+   "12": {
+    "n": 1,
+    "abs_median": 0.71031,
+    "mer_median": 0.69451
+   }
+  },
+  "gold": {},
+  "henryhub": {
+   "3": {
+    "n": 5,
+    "abs_median": 0.0419,
+    "mer_median": 0.01783
+   },
+   "12": {
+    "n": 5,
+    "abs_median": -0.17515,
+    "mer_median": -0.27199
+   }
+  },
+  "jernmalm": {
+   "3": {
+    "n": 1,
+    "abs_median": -0.37004,
+    "mer_median": -0.40191
+   },
+   "12": {
+    "n": 1,
+    "abs_median": -0.85905,
+    "mer_median": -0.98967
+   }
+  },
+  "kobber": {},
+  "kull": {
+   "3": {
+    "n": 3,
+    "abs_median": 0.22307,
+    "mer_median": 0.22459
+   },
+   "12": {
+    "n": 3,
+    "abs_median": 0.98588,
+    "mer_median": 0.82943
+   }
+  },
+  "nikkel": {
+   "3": {
+    "n": 3,
+    "abs_median": -0.06014,
+    "mer_median": -0.06567
+   },
+   "12": {
+    "n": 3,
+    "abs_median": 0.62891,
+    "mer_median": 0.61293
+   }
+  },
+  "palmeolje": {},
+  "sink": {},
+  "tinn": {},
+  "uran": {
+   "3": {
+    "n": 2,
+    "abs_median": 0.09494,
+    "mer_median": 0.07177
+   },
+   "12": {
+    "n": 2,
+    "abs_median": 0.29932,
+    "mer_median": 0.19771
+   }
+  },
+  "wti": {
+   "3": {
+    "n": 1,
+    "abs_median": 0.30309,
+    "mer_median": 0.29795
+   },
+   "12": {
+    "n": 1,
+    "abs_median": 0.71031,
+    "mer_median": 0.69451
+   }
+  }
+ },
+ "innslag_papirer": [
+  {
+   "sid": "aluminium",
+   "t": "1991-05",
+   "papirer": [
+    "AA"
+   ],
+   "h1": -0.05231,
+   "h2": -0.00141,
+   "h3": -0.02107,
+   "h6": -0.18328,
+   "h12": 0.11174,
+   "raavare12": -0.02134
+  },
+  {
+   "sid": "aluminium",
+   "t": "2009-01",
+   "papirer": [
+    "AA",
+    "CENX"
+   ],
+   "h1": -0.33577,
+   "h2": -0.2792,
+   "h3": 0.1514,
+   "h6": 0.64755,
+   "h12": 0.8399,
+   "raavare12": 0.43261
+  },
+  {
+   "sid": "aluminium",
+   "t": "2015-10",
+   "papirer": [
+    "AA",
+    "CENX"
+   ],
+   "h1": 0.04008,
+   "h2": 0.15148,
+   "h3": 0.03281,
+   "h6": 0.56094,
+   "h12": 0.39283,
+   "raavare12": 0.07812
+  },
+  {
+   "sid": "aluminium",
+   "t": "2020-04",
+   "papirer": [
+    "AA",
+    "CENX"
+   ],
+   "h1": 0.21858,
+   "h2": 0.4078,
+   "h3": 0.58061,
+   "h6": 0.43731,
+   "h12": 1.39203,
+   "raavare12": 0.42194
+  },
+  {
+   "sid": "brent",
+   "t": "2020-03",
+   "papirer": [
+    "IOGP.L"
+   ],
+   "h1": 0.30506,
+   "h2": 0.29833,
+   "h3": 0.30309,
+   "h6": 0.16192,
+   "h12": 0.71031,
+   "raavare12": 1.42749
+  },
+  {
+   "sid": "henryhub",
+   "t": "2009-08",
+   "papirer": [
+    "EQT"
+   ],
+   "h1": 0.07126,
+   "h2": 0.05374,
+   "h3": 0.0419,
+   "h6": 0.10852,
+   "h12": -0.17515,
+   "raavare12": 0.43982
+  },
+  {
+   "sid": "henryhub",
+   "t": "2011-12",
+   "papirer": [
+    "EQT"
+   ],
+   "h1": -0.08114,
+   "h2": -0.02839,
+   "h3": -0.12349,
+   "h6": -0.01249,
+   "h12": 0.09006,
+   "raavare12": 0.12338
+  },
+  {
+   "sid": "henryhub",
+   "t": "2014-12",
+   "papirer": [
+    "EQT"
+   ],
+   "h1": -0.01679,
+   "h2": 0.05324,
+   "h3": 0.09086,
+   "h6": 0.07255,
+   "h12": -0.3715,
+   "raavare12": -0.32732
+  },
+  {
+   "sid": "henryhub",
+   "t": "2019-06",
+   "papirer": [
+    "EQT"
+   ],
+   "h1": -0.04529,
+   "h2": -0.43878,
+   "h3": -0.3936,
+   "h6": -0.36667,
+   "h12": -0.2732,
+   "raavare12": -0.32489
+  },
+  {
+   "sid": "henryhub",
+   "t": "2023-03",
+   "papirer": [
+    "EQT"
+   ],
+   "h1": 0.08785,
+   "h2": 0.09049,
+   "h3": 0.25847,
+   "h6": 0.24858,
+   "h12": 0.16642,
+   "raavare12": -0.34434
+  },
+  {
+   "sid": "jernmalm",
+   "t": "2014-12",
+   "papirer": [
+    "VALE"
+   ],
+   "h1": -0.15151,
+   "h2": -0.09751,
+   "h3": -0.37004,
+   "h6": -0.29628,
+   "h12": -0.85905,
+   "raavare12": -0.53134
+  },
+  {
+   "sid": "kull",
+   "t": "2020-08",
+   "papirer": [
+    "GLEN.L",
+    "BTU",
+    "ARLP"
+   ],
+   "h1": -0.12644,
+   "h2": -0.11273,
+   "h3": 0.22307,
+   "h6": 0.58337,
+   "h12": 0.98588,
+   "raavare12": 1.16824
+  },
+  {
+   "sid": "nikkel",
+   "t": "2015-11",
+   "papirer": [
+    "EXV6.DE",
+    "ERA.PA",
+    "GLEN.L"
+   ],
+   "h1": -0.08131,
+   "h2": -0.23117,
+   "h3": -0.06014,
+   "h6": 0.04782,
+   "h12": 0.62891,
+   "raavare12": 0.1688
+  },
+  {
+   "sid": "uran",
+   "t": "1998-10",
+   "papirer": [
+    "CCJ"
+   ],
+   "h1": -0.01333,
+   "h2": -0.05072,
+   "h3": 0.2103,
+   "h6": 0.12813,
+   "h12": -0.0938,
+   "raavare12": 0.03072
+  },
+  {
+   "sid": "uran",
+   "t": "2000-04",
+   "papirer": [
+    "CCJ"
+   ],
+   "h1": 0.10536,
+   "h2": 0.00021,
+   "h3": -0.02041,
+   "h6": 0.19482,
+   "h12": 0.69243,
+   "raavare12": -0.03217
+  },
+  {
+   "sid": "wti",
+   "t": "2020-03",
+   "papirer": [
+    "IOGP.L"
+   ],
+   "h1": 0.30506,
+   "h2": 0.29833,
+   "h3": 0.30309,
+   "h6": 0.16192,
+   "h12": 0.71031,
+   "raavare12": 1.03398
+  }
+ ],
+ "fond_innslag": [
+  {
+   "fond": "gruve_europa",
+   "t": "1975-11",
+   "h1": null,
+   "h2": null,
+   "h3": null,
+   "h6": null,
+   "h12": null
+  },
+  {
+   "fond": "gruve_europa",
+   "t": "1982-02",
+   "h1": null,
+   "h2": null,
+   "h3": null,
+   "h6": null,
+   "h12": null
+  },
+  {
+   "fond": "gruve_europa",
+   "t": "1991-05",
+   "h1": null,
+   "h2": null,
+   "h3": null,
+   "h6": null,
+   "h12": null
+  },
+  {
+   "fond": "gruve_europa",
+   "t": "2008-12",
+   "h1": -0.09668,
+   "h2": -0.16553,
+   "h3": 0.00705,
+   "h6": 0.33753,
+   "h12": 0.70661
+  },
+  {
+   "fond": "gruve_europa",
+   "t": "2014-12",
+   "h1": -0.04781,
+   "h2": 0.06481,
+   "h3": -0.03003,
+   "h6": -0.05067,
+   "h12": -0.47688
+  },
+  {
+   "fond": "gruve_europa",
+   "t": "2020-08",
+   "h1": -0.02708,
+   "h2": -0.08361,
+   "h3": 0.10506,
+   "h6": 0.3554,
+   "h12": 0.40886
+  },
+  {
+   "fond": "gruve_vaneck",
+   "t": "1984-12",
+   "h1": null,
+   "h2": null,
+   "h3": null,
+   "h6": null,
+   "h12": null
+  },
+  {
+   "fond": "gruve_vaneck",
+   "t": "1991-05",
+   "h1": null,
+   "h2": null,
+   "h3": null,
+   "h6": null,
+   "h12": null
+  },
+  {
+   "fond": "gruve_vaneck",
+   "t": "1996-07",
+   "h1": null,
+   "h2": null,
+   "h3": null,
+   "h6": null,
+   "h12": null
+  },
+  {
+   "fond": "gruve_vaneck",
+   "t": "2015-11",
+   "h1": -0.0552,
+   "h2": -0.1884,
+   "h3": -0.07439,
+   "h6": 0.07803,
+   "h12": 0.40966
+  },
+  {
+   "fond": "norge",
+   "t": "1992-02",
+   "h1": null,
+   "h2": null,
+   "h3": null,
+   "h6": null,
+   "h12": null
+  },
+  {
+   "fond": "norge",
+   "t": "1998-01",
+   "h1": null,
+   "h2": null,
+   "h3": null,
+   "h6": null,
+   "h12": null
+  },
+  {
+   "fond": "norge",
+   "t": "2020-03",
+   "h1": 0.11303,
+   "h2": 0.19119,
+   "h3": 0.20405,
+   "h6": 0.28789,
+   "h12": 0.59574
+  },
+  {
+   "fond": "raavare_ishares",
+   "t": "1984-12",
+   "h1": null,
+   "h2": null,
+   "h3": null,
+   "h6": null,
+   "h12": null
+  },
+  {
+   "fond": "raavare_ishares",
+   "t": "1991-05",
+   "h1": null,
+   "h2": null,
+   "h3": null,
+   "h6": null,
+   "h12": null
+  },
+  {
+   "fond": "raavare_ishares",
+   "t": "1997-12",
+   "h1": null,
+   "h2": null,
+   "h3": null,
+   "h6": null,
+   "h12": null
+  },
+  {
+   "fond": "raavare_ishares",
+   "t": "2000-10",
+   "h1": null,
+   "h2": null,
+   "h3": null,
+   "h6": null,
+   "h12": null
+  },
+  {
+   "fond": "raavare_ishares",
+   "t": "2008-12",
+   "h1": -0.04537,
+   "h2": -0.10332,
+   "h3": -0.0578,
+   "h6": 0.06531,
+   "h12": 0.15003
+  },
+  {
+   "fond": "raavare_ishares",
+   "t": "2012-06",
+   "h1": 0.05662,
+   "h2": 0.11159,
+   "h3": 0.10777,
+   "h6": 0.07588,
+   "h12": -0.02437
+  },
+  {
+   "fond": "raavare_ishares",
+   "t": "2014-12",
+   "h1": -0.05859,
+   "h2": -0.01529,
+   "h3": -0.07774,
+   "h6": -0.02469,
+   "h12": -0.3228
+  },
+  {
+   "fond": "raavare_ishares",
+   "t": "2019-06",
+   "h1": -0.01151,
+   "h2": -0.05892,
+   "h3": -0.04486,
+   "h6": 0.02978,
+   "h12": -0.22927
+  },
+  {
+   "fond": "raavare_ishares",
+   "t": "2023-03",
+   "h1": -0.00761,
+   "h2": -0.07385,
+   "h3": -0.0448,
+   "h6": 0.05011,
+   "h12": 0.015
+  }
+ ],
+ "fond_serier": {
+  "brasil": "EWZ",
+  "norge": "ENOR",
+  "australia": "EWA",
+  "gruve_europa": "EXV6.DE",
+  "gruve_vaneck": "PICK",
+  "raavare_ishares": "DBC"
+ },
+ "papirer_uten_kurs": [
+  "AKRBP.OL",
+  "BIR.TO",
+  "BOL.ST",
+  "CIA.TO",
+  "CS.TO",
+  "CVE.TO",
+  "DNO.OL",
+  "EQNR.OL",
+  "HBM.TO",
+  "LIF.TO",
+  "NHY.OL",
+  "TOU.TO",
+  "U-UN.TO",
+  "WCP.TO"
+ ]
+}
