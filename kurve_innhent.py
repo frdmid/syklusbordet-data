@@ -27,8 +27,19 @@ UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
 KODE = "FGHJKMNQUVXZ"
 ROT = {"wti": ("CL", "NYM", "NYMEX"), "brent": ("BZ", "NYM", "NYMEX"),
        "henryhub": ("NG", "NYM", "NYMEX"), "gold": ("GC", "CMX", "COMEX"),
-       "kobber": ("HG", "CMX", "COMEX"), "kakao": ("CC", "NYB", "ICE US")}
+       "kobber": ("HG", "CMX", "COMEX"), "kakao": ("CC", "NYB", "ICE US"),
+       # Jernmalm 26.09.2026 (Frodes beslutning): CME Iron Ore 62% Fe, CFR
+       # China (TSI), kontantoppgjort mot maanedssnittet av indeksen. Yahoo
+       # har enkeltkontraktene som TIO<kode><aar>.NYM. Samme vare og enhet som
+       # Verdensbankens serie (USD per tonn, 62 % Fe, CFR Kina).
+       "jernmalm": ("TIO", "NYM", "CME")}
 MND_FRAM = 15
+
+# Omregning fra terminens enhet til segmentets enhet, slik at naermeste
+# kontrakt kan sammenlignes med siste maanedssnitt. Kobber handles i dollar
+# per pund og staar i dollar per tonn paa bordet, kakao i dollar per tonn og
+# staar i dollar per kilo. Resten har samme enhet.
+ENHET = {"kobber": 2204.62262, "kakao": 0.001}
 
 
 def siste(sym):
@@ -93,6 +104,13 @@ def oppdater(segmenter, les, skriv, note=print, idag=None):
             p3, pa = kurvepersentil(serie, k["helning12"])
             k.update({"pctl_3aar": p3, "pctl_alle": pa, "fra": min(h)[:4], "mnd_historikk": len(h),
                       "kilde": f"Yahoo, {navn} enkeltkontrakter", "dato": dato})
+            # Naermeste kontrakt i segmentets enhet, og mot siste maanedssnitt.
+            # For segmentene fra Verdensbanken er det en ferskere pris enn
+            # maanedssnittet, som kommer med en maaneds forsinkelse.
+            fp = float(kv[0][2]) * ENHET.get(s["id"], 1.0)
+            k["front_pris"], k["front_mnd"] = round(fp, 4), kv[0][0]
+            ln = s.get("last_nom")
+            k["front_mot_siste_pst"] = round(100 * (fp / ln - 1), 1) if ln else None
             s["kurve"] = k
             n += 1
         except Exception as e:

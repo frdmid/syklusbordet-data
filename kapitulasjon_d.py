@@ -47,13 +47,30 @@ from instrumenter import INSTR
 # Tema-ETF per segment. Bare der koblingen er forsvarlig. XME er bredt metall,
 # XOP olje og gass, MOO jordbruk, BDRY torrlast, GDX gull, COPX kobber.
 TEMA = {"kobber": "COPX", "gold": "GDX",
-        "jernmalm": "XME", "nikkel": "XME", "sink": "XME", "bly": "XME",
+        "jernmalm": "jernmalmkurv", "nikkel": "XME", "sink": "XME", "bly": "XME",
         "tinn": "XME", "aluminium": "XME",
         "brent": "XOP", "wti": "XOP", "henryhub": "XOP", "ttf": "XOP",
         "urea": "MOO", "kalium": "MOO",
         "ship_capesize": "BDRY", "ship_kamsarmax": "BDRY",
         "ship_ultramax": "BDRY", "ship_handysize": "BDRY"}
 
+
+# Kurver i stedet for et fond, der ingen ETF passer. Temaets D er da medianen
+# av kurvens papirer, hvert maalt mot egen historikk slik som fondene.
+#
+# Jernmalm 26.09.2026 (Frodes beslutning): XME er amerikansk metall og gruve,
+# tungt i staal, aluminium, gull og kull, og hadde D 5,7 mens jernmalmpapirene
+# laa paa 78. Det var feil referanse. Kurven er de rene eller nesten rene
+# jernmalmprodusentene som IKKE allerede staar som instrument (Vale, Champion
+# og Labrador telles i medianen av papirene, og skal ikke telles to ganger).
+# Papirene trenger ikke vaere kjoepbare paa IKZ: D er maaling. Ferrexpo falt i
+# 2022 av krigen i Ukraina og ikke av malmprisen. Medianen av fire taaler det.
+KURVER = {
+    "jernmalmkurv": {
+        "navn": "en kurv av rene jernmalmselskaper",
+        "papirer": {"RIO.L": "Rio Tinto", "FMG.AX": "Fortescue",
+                    "KIO.JO": "Kumba Iron Ore", "FXPO.L": "Ferrexpo"}},
+}
 
 UTBYTTEJUSTERT = {}   # ticker -> True hvis utbyttejustert kurs ble brukt
 
@@ -125,7 +142,8 @@ for sid, rader in INSTR.items():
     for tk, bors, navn, typ, kom in rader:
         AKSJER.setdefault(tk, {"navn": navn, "bors": bors, "typ": typ,
                                "segmenter": []})["segmenter"].append(sid)
-alle = sorted(AKSJER) + sorted(set(TEMA.values()))
+alle = (sorted(AKSJER) + sorted(v for v in set(TEMA.values()) if v not in KURVER)
+        + sorted({p for k in KURVER.values() for p in k["papirer"]} - set(AKSJER)))
 KURS = {}
 for tk in alle:
     try:
@@ -176,18 +194,42 @@ for tk in sorted(AKSJER):
 
 print("\n3. Temaets eget kursfall")
 TEMA_D = {}
+
+
+def siste_d(sym):
+    """D for et fond eller kurvpapir, siste maaned med skaar. None hvis ingen."""
+    fall, u200 = ledd(KURS[sym])
+    d = np.nanmean(np.vstack([exp_pct(fall.values), exp_pct(-u200.values)]), axis=0)
+    d = d * np.clip(np.abs(fall.values) / FULLT_FALL, 0, 1)
+    i = len(d) - 1
+    while i >= 0 and np.isnan(d[i]):
+        i -= 1
+    return None if i < 0 else (round(float(d[i]), 1), round(float(fall.values[i]), 1))
+
+
 for sym in sorted(set(TEMA.values())):
-    if sym not in KURS:
-        continue
     try:
-        fall, u200 = ledd(KURS[sym])
-        d = np.nanmean(np.vstack([exp_pct(fall.values), exp_pct(-u200.values)]), axis=0)
-        d = d * np.clip(np.abs(fall.values) / FULLT_FALL, 0, 1)
-        i = len(d) - 1
-        while i >= 0 and np.isnan(d[i]):
-            i -= 1
-        if i >= 0:
-            TEMA_D[sym] = {"D": round(float(d[i]), 1), "fall_pst": round(float(fall.values[i]), 1)}
+        if sym in KURVER:
+            led = {}
+            for p in KURVER[sym]["papirer"]:
+                if p in KURS:
+                    r = siste_d(p)
+                    if r:
+                        led[p] = {"D": r[0], "fall_pst": r[1]}
+            if len(led) >= 2:
+                TEMA_D[sym] = {"D": round(float(np.median([v["D"] for v in led.values()])), 1),
+                               "fall_pst": round(float(np.median([v["fall_pst"] for v in led.values()])), 1),
+                               "papirer": led}
+                print(f"   {sym:12s} D={TEMA_D[sym]['D']:5.1f}  median av "
+                      + ", ".join(f"{p} {v['D']:.0f}" for p, v in led.items()))
+            else:
+                print(f"   {sym:12s} for faa papirer med skaar ({len(led)}), ikke brukt")
+            continue
+        if sym not in KURS:
+            continue
+        r = siste_d(sym)
+        if r:
+            TEMA_D[sym] = {"D": r[0], "fall_pst": r[1]}
             print(f"   {sym:6s} D={TEMA_D[sym]['D']:5.1f}  fall {TEMA_D[sym]['fall_pst']:6.1f} %")
     except Exception as e:
         print(f"   {sym:6s} FEIL {type(e).__name__}")
@@ -199,13 +241,16 @@ for sid in INSTR:
     t = TEMA.get(sid)
     td = TEMA_D.get(t, {}).get("D") if t else None
     if not egne:
-        SEG[sid] = {"D": td, "n": 0, "tema": t, "tema_D": td, "papirer": []}
+        SEG[sid] = {"D": td, "n": 0, "tema": t, "tema_D": td, "papirer": [],
+                    "tema_navn": None if t not in KURVER else KURVER[t]["navn"]}
         continue
     # Medianen, ikke hoyeste. Dokumentet spor om ALLE har gitt opp, ikke om én har.
     med = float(np.median([v["D"] for v in egne]))
     samlet = med if td is None else round((med * 2 + td) / 3, 1)
     SEG[sid] = {"D": round(samlet, 1), "D_aksjer": round(med, 1), "n": len(egne),
                 "tema": t, "tema_D": td,
+                "tema_navn": (KURVER[t]["navn"] + " (" + ", ".join(KURVER[t]["papirer"].values()) + ")")
+                             if t in KURVER else None,
                 "spredning": [round(min(v["D"] for v in egne), 1),
                               round(max(v["D"] for v in egne), 1)],
                 "papirer": [{"ticker": v["ticker"], "D": v["D"], "fall_pst": v["fall_pst"]}
@@ -234,7 +279,8 @@ if GITHUB_TOKEN and D:
                              "EGEN historikk, punkt-i-tid, slik A er. Segmentets D er "
                              "medianen av aksjene, siden spoersmaalet er om alle har gitt opp "
                              "og ikke om én har, vektet to tredeler mot temaets eget kursfall "
-                             "der en ETF passer. Revisjonsbredde og sektorvekt mangler: "
+                             "der en ETF passer, eller mot medianen av en kurv av rene "
+                             "produsenter der ingen ETF passer (jernmalm fra 26.09.2026). Revisjonsbredde og sektorvekt mangler: "
                              "betalingsmur og finnes ikke for disse segmentene. "
                              "Temaleddet er kursfall, IKKE forvaltningskapital. Skaaren dempes "
                              "med hvor stort fallet faktisk er, med full vekt fra "

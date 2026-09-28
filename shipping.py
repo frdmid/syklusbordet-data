@@ -107,15 +107,47 @@ def p_gammel(L):
         if re.match(r"^(Dry|Wet)\s*\(10\s*yr\)", l, re.I):              mal = "sh10";  continue
         if re.match(r"^1\s*Year\s*T/C\s*\(USD/Day\)", l, re.I):         mal = "tc";    continue
         if re.fullmatch(r"Sale & Purchase|Prices|Activity Levels", l, re.I): continue
-        m = re.match(rf"^({SKIP})(?:\s*\(Modern\))?\s+\$([\d.,]+)\s+-?\$?[\d.,]+\s*$", l, re.I)
+        # Endringstallet etter prisen mangler i rapportene fra vaaren 2020, og
+        # toerrlastens timecharter staar med stoerrelse: "Capesize (180 000 dwt)".
+        m = re.match(rf"^({SKIP})(?:\s*\(Modern\))?(?:\s*\([\d ]+dwt\))?\s+\$([\d.,]+)(?:\s+-?\$?[\d.,]+)?\s*$", l, re.I)
         if m and mal:
             ut[mal][m.group(1).strip()] = float(m.group(2).replace(",", ""))
     return ut
 
 
+PUA = re.compile("[\ue000-\uf8ff]")
+
+
+def rens(linje):
+    """To feil i rapportene fra april 2020 til 2023, funnet av
+    sonde_kjor_fearnleys_mal.py 25.09.2026:
+      1. Hver tallinje ender med et ikon fra et privat tegnomraade (U+F061).
+         Det er ikke mellomrom, saa strip() fjerner det ikke, og regexen som
+         krever linjeslutt etter tallet slo aldri til. 158 rapporter ble tomme.
+      2. Rapportene fra vaaren 2020 skriver overskrifter med doble tegn
+         ("DDrryy ((55 yyrr))" for "Dry (5 yr)"), trolig fet skrift lagt paa
+         to ganger. Slike linjer slaas sammen naar ALLE tegn unntatt mellomrom
+         staar parvis, linjen har minst seks tegn og minst en bokstav (saa et
+         tall som "5500" aldri roeres)."""
+    l = PUA.sub("", linje).strip()
+    tegn = [c for c in l if c != " "]
+    if len(tegn) >= 6 and len(tegn) % 2 == 0 and any(c.isalpha() for c in tegn) and all(tegn[i] == tegn[i + 1] for i in range(0, len(tegn), 2)):
+        ut, i = [], 0
+        while i < len(l):
+            if l[i] == " ":
+                ut.append(" "); i += 1
+            elif i + 1 < len(l) and l[i + 1] == l[i]:
+                ut.append(l[i]); i += 2
+            else:
+                ut.append(l[i]); i += 1
+        l = "".join(ut)
+    return l
+
+
 def les(txt):
     """Returnerer rader for en rapport. Prover begge malene."""
-    L = [x.strip() for x in txt.split("\n") if x.strip()]
+    L = [rens(x) for x in txt.split("\n")]
+    L = [x for x in L if x]
     sh, nb, tc = p_ny_sh(L), p_ny_nybygg(L), p_ny_tc(L)
     mal = "fearnpulse"
     if not (sh or nb or tc):

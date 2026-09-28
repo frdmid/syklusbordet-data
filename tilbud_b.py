@@ -175,6 +175,75 @@ for metall, tickere in KURV.items():
               list(r.items())[-8:]))
         time.sleep(0.5)
 
+# ---------------------------------------------------------------------------
+# 2b. Manuelt leste aarsrapporter (b_manuell.json), fra 26.09.2026
+#
+# For metaller der ingen SEC-filer gir et rent tall. Foerst jernmalm (Frodes
+# beslutning 26.09.2026): Fortescue, Kumba, Champion og Vales jernmalmsegment.
+# Tallene er lest av for haand fra aarsrapportene (sonde_kjor_b_jernmalm.py
+# skriver ut sidene), med kilde og side per tall i filen. Formatet:
+#   {"jernmalm": {"FMG": {"valuta": "USD", "regnskapsaar": "juni",
+#                          "aar": {"2015": {"capex": 1.0, "dda": 1.0,
+#                                           "kilde": "AR 2015 s. 80"}}}}}
+# Tallene er i millioner i selskapets valuta. De regnes om til dollar med
+# aarssnittet av valutakursen for aaret regnskapsaaret slutter, slik at summen
+# over kurven blir verdivektet som for SEC-selskapene. Forholdstallet for hvert
+# selskap er uavhengig av valuta, saa omregningen paavirker bare vektingen.
+# Regnskapsaaret merkes med aaret det slutter, samme regel som SEC-delen.
+# ---------------------------------------------------------------------------
+FX_AAR = {}
+
+
+def fx_aarssnitt(valuta):
+    """Dollar per enhet valuta, snitt per kalenderaar, fra Yahoo."""
+    if valuta == "USD":
+        return None
+    if valuta not in FX_AAR:
+        sym = {"ZAR": "ZAR=X", "CAD": "CAD=X", "AUD": "AUDUSD=X", "BRL": "BRL=X"}[valuta]
+        r = requests.get(f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}"
+                         f"?period1=0&period2={int(time.time())}&interval=1mo", headers=UA, timeout=30).json()
+        r = r["chart"]["result"][0]
+        s = pd.Series(r["indicators"]["quote"][0]["close"],
+                      index=pd.to_datetime(r["timestamp"], unit="s")).dropna()
+        s = s.groupby(s.index.year).mean()
+        FX_AAR[valuta] = s if sym.startswith("AUD") else 1.0 / s
+    return FX_AAR[valuta]
+
+
+print("\n2b. Manuelt leste aarsrapporter")
+try:
+    rm = requests.get(f"https://raw.githubusercontent.com/{REPO}/{BRANCH}/b_manuell.json"
+                      f"?cb={int(time.time())}", timeout=30)
+    MAN = rm.json() if rm.status_code == 200 else {}
+    if not MAN:
+        print("   b_manuell.json finnes ikke ennaa")
+    for metall, selskaper in MAN.items():
+        if metall.startswith("_"):
+            continue
+        for tk, d in selskaper.items():
+            aar = {int(k): v for k, v in d["aar"].items()
+                   if v.get("capex") is not None and v.get("dda") not in (None, 0)}
+            if len(aar) < MIN_AAR:
+                print(f"   {metall}/{tk}: bare {len(aar)} aar, trenger {MIN_AAR}")
+                continue
+            fx = fx_aarssnitt(d["valuta"])
+            capex = pd.Series({k: float(v["capex"]) for k, v in aar.items()}).sort_index()
+            dda = pd.Series({k: float(v["dda"]) for k, v in aar.items()}).sort_index()
+            if fx is not None:
+                f_ = fx.reindex(capex.index)
+                if f_.isna().any():
+                    print(f"   {metall}/{tk}: mangler valutakurs for {list(f_[f_.isna()].index)}, de aarene utelates")
+                capex, dda = (capex * f_).dropna(), (dda * f_).dropna()
+            r = (capex / dda).replace([np.inf, -np.inf], np.nan).dropna()
+            if not (RATIO_MIN <= float(r.median()) <= RATIO_MAKS):
+                print(f"   {metall}/{tk}: median {r.median():.2f} utenfor {RATIO_MIN}-{RATIO_MAKS}, ikke brukt")
+                continue
+            hentet.setdefault(metall, {})[tk] = {"ratio": r, "capex": capex[r.index], "dda": dda[r.index]}
+            print(f"   {metall}/{tk:8s} {len(r):>2} aar {r.index.min()}-{r.index.max()}  siste {r.iloc[-1]:5.2f}  "
+                  f"median {r.median():5.2f}  {d['valuta']}  (manuelt lest)")
+except Exception as e:
+    print(f"   FEIL {type(e).__name__}: {str(e)[:80]}")
+
 print("\n3. B1 relativt og B2 absolutt")
 ut = {}
 for metall, d in hentet.items():
@@ -222,8 +291,8 @@ for metall, d in hentet.items():
             "B1 er persentil, altsaa investeres det mindre enn for. B2 er "
             "nivaa mot 1,0 over fem aar, altsaa krymper kapitalapparatet i "
             "absolutt forstand. Arlig frekvens og faa observasjoner. Bare "
-            "borsnoterte filere hos SEC, saa kinesisk og statlig kapasitet "
-            "mangler.")}
+            "borsnoterte selskaper (SEC, og for jernmalm manuelt leste "
+            "aarsrapporter), saa kinesisk og statlig kapasitet mangler.")}
     print(f"\n   {metall:10s} {len(cx.columns)} selskaper, {len(s)} år"
           + (f"   kurvbytte {bytte}" if bytte else ""))
     print(f"      ratio {s.iloc[-1]:.2f}  5-års snitt {ut[metall]['snitt_5aar']}  "

@@ -138,7 +138,17 @@ PINK = [("kobber", "Copper"), ("nikkel", "Nickel"), ("aluminium", "Aluminum"),
         ("kakao", "Cocoa"), ("kaffe_arabica", "Coffee, Arabica"),
         ("kaffe_robusta", "Coffee, Robusta"), ("palmeolje", "Palm oil"),
         ("gummi_rss3", "Rubber, RSS3"), ("gummi_tsr20", "Rubber, TSR20"),
-        ("kokosolje", "Coconut oil"), ("te", "Tea, avg 3 auctions")]
+        ("kokosolje", "Coconut oil"), ("te", "Tea, avg 3 auctions"),
+        # Lagt til 26.09.2026 for sonde_kjor_kali_platina. Maales bare med
+        # IKZ_KUN. Kalium ble tatt ut av bordet 22.09 (administrert pris).
+        ("platina", "Platinum"), ("kalium", "Potassium chloride")]
+
+# IKZ_AVKORT="platina:1975-01,kalium:2020-01" overstyrer avkortingen for en
+# kjoring. Brukes av sonder som maaler stillstanden i prisen selv foerst.
+for _x in os.environ.get("IKZ_AVKORT", "").split(","):
+    if ":" in _x:
+        _k, _v = _x.split(":", 1)
+        AVKORT[_k.strip()] = _v.strip()
 
 print("1. Deflator og raavarepriser")
 cpi = csv_series(MIRROR + "cpi-us/main/data/cpiai.csv")
@@ -199,10 +209,17 @@ for sid in UTEN_A:
 # uten aa skrive over forrige fulle kjoring i sonde_ikz.json.
 KUN = os.environ.get("IKZ_KUN", "").strip()
 if KUN:
-    RAAVARE = {k: v for k, v in RAAVARE.items() if k == KUN}
+    # flere segmenter kan gis med komma, for eksempel IKZ_KUN=platina,kalium
+    _kun = {x.strip() for x in KUN.split(",") if x.strip()}
+    RAAVARE = {k: v for k, v in RAAVARE.items() if k in _kun}
     if not RAAVARE:
         raise SystemExit(f"IKZ_KUN={KUN}: raavaren kom ikke inn, se loggen over")
     print(f"   IKZ_KUN={KUN}: maaler bare mot denne")
+else:
+    # Platina og kalium er ikke segmenter paa bordet. De maales bare naar de
+    # er bedt om med IKZ_KUN, slik at en full kjoring er som foer.
+    for _s in ("platina", "kalium"):
+        RAAVARE.pop(_s, None)
 note("raavareserier", True, f"{len(RAAVARE)} segment, "
      f"korteste {min(len(v) for v in RAAVARE.values())} mnd")
 
@@ -308,7 +325,7 @@ KANDIDATER = [
     E("CENX", "Century Aluminum", ["aluminium"]), E("KALU", "Kaiser Aluminum", ["aluminium"]),
     E("CSTM", "Constellium", ["aluminium"]),
     E("VALE", "Vale", ["jernmalm", "nikkel"]), E("ERA.PA", "Eramet", ["nikkel"]),
-    E("OUT1V.HE", "Outokumpu", ["nikkel"]), E("SBSW", "Sibanye-Stillwater", ["nikkel", "gold"]),
+    E("OUT1V.HE", "Outokumpu", ["nikkel"]), E("SBSW", "Sibanye-Stillwater", ["nikkel", "gold", "platina"]),
     E("FXPO.L", "Ferrexpo", ["jernmalm"]), E("MT.AS", "ArcelorMittal", ["jernmalm", "kull"]),
     E("SSAB-B.ST", "SSAB", ["jernmalm", "kull"]), E("STLD", "Steel Dynamics", ["jernmalm"], alt=["X"]),
     E("NUE", "Nucor", ["jernmalm"]), E("CLF", "Cleveland-Cliffs", ["jernmalm"]),
@@ -322,10 +339,19 @@ KANDIDATER = [
 
     # ---- gjodsel
     E("YAR.OL", "Yara International", ["ttf"]),
-    E("CF", "CF Industries", ["urea", "henryhub"]), E("NTR", "Nutrien", []),
-    E("MOS", "Mosaic", []), E("ICL", "ICL Group", []),
-    E("SDF.DE", "K+S", []), E("OCI.AS", "OCI NV", ["urea"]),
-    E("IPI", "Intrepid Potash", []), E("LXU", "LSB Industries", ["urea"]),
+    E("CF", "CF Industries", ["urea", "henryhub"]), E("NTR", "Nutrien", ["kalium"]),
+    E("MOS", "Mosaic", ["kalium"]), E("ICL", "ICL Group", ["kalium"]),
+    E("SDF.DE", "K+S", ["kalium"]), E("OCI.AS", "OCI NV", ["urea"]),
+    E("IPI", "Intrepid Potash", ["kalium"]), E("LXU", "LSB Industries", ["urea"]),
+
+    # ---- platinagruppemetaller (lagt til 26.09.2026). Sibanye staar under
+    #      nikkel. Impala og Anglo American Platinum (Valterra fra 2025) er
+    #      ADR-er utenfor borsen i USA og trolig ikke kjopbare paa IKZ.
+    E("SLP.L", "Sylvania Platinum", ["platina"]), E("THS.L", "Tharisa", ["platina"]),
+    E("ELR.TO", "Eastern Platinum", ["platina"]),
+    E("IMPUY", "Impala Platinum (ADR)", ["platina"], "T"),
+    E("ANGPY", "Anglo American Platinum / Valterra (ADR)", ["platina"], "T", alt=["VALT.L"]),
+    E("JMAT.L", "Johnson Matthey", ["platina"]),
 
     # ---- fiskemel og sjomat
     E("AUSS.OL", "Austevoll Seafood", ["fiskemel"]), E("MOWI.OL", "Mowi", ["fiskemel"]),
@@ -442,7 +468,7 @@ FORBRUKER = {
     "NDA.DE": {"kobber"},                        # Aurubis smelter, tjener paa margin
     "AUSS.OL": set(),                            # blandet, eier Pelagia
 }
-BLANDET = {"AUSS.OL": {"fiskemel"}, "NHY.OL": {"aluminium"}, "GLEN.L": {"kull"}}
+BLANDET = {"JMAT.L": {"platina"}, "AUSS.OL": {"fiskemel"}, "NHY.OL": {"aluminium"}, "GLEN.L": {"kull"}}
 
 KONTROLL = "IWDA.L"
 print(f"\n2. Kandidatunivers: {len(KANDIDATER)} papirer")
@@ -857,11 +883,17 @@ if KUN:
     # Skrives til sonder/, som arbeidsflyten legger i repoet etter kjoringen.
     # Den fulle kjoringen i sonde_ikz.json roeres ikke.
     os.makedirs("sonder", exist_ok=True)
-    with open(f"sonder/ikz_{KUN}.json", "w", encoding="utf-8") as f:
+    with open(f"sonder/ikz_{KUN.replace(',', '_')}.json", "w", encoding="utf-8") as f:
         json.dump({"kjort": time.strftime("%Y-%m-%d %H:%M:%S"), "kun": KUN, "logg": LOGG,
                    "meta": META, "par": resultat}, f, ensure_ascii=False, indent=1)
+    # Kursene (realpris i dollar) for papirene som var ventet aa folge et av
+    # segmentene, slik at sonden som kalte denne kan maale utfallet etter flagg
+    # med noyaktig de samme seriene.
+    with open(f"sonder/ikz_kurs_{KUN.replace(',', '_')}.json", "w", encoding="utf-8") as f:
+        json.dump({t: {str(p): float(v) for p, v in KURS[t].items()} for t in KURS
+                   if set(META[t]["segmenter"]) & _kun}, f)
     print("\n".join(L))
-    print(f"\n   skrevet sonder/ikz_{KUN}.json ({len(resultat)} par)")
+    print(f"\n   skrevet sonder/ikz_{KUN.replace(',', '_')}.json ({len(resultat)} par)")
     raise SystemExit(0)
 
 try:

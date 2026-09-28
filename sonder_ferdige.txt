@@ -13,3 +13,6 @@ sonde_kjor_salg
 sonde_kjor_indikator
 sonde_kjor_bdi
 sonde_kjor_dadj
+sonde_kjor_rigg
+sonde_kjor_fearnleys_mal
+sonde_kjor_c_manuell

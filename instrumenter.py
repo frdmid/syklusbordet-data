@@ -108,11 +108,18 @@ INSTR = {
   ("GLEN.L","London","Glencore","aksje",
    "r 0,44  rm 0,30  b 0,98  f 1,31. Eneste handlbare papir som holder maal. Alphamin er TSX Venture og gaar ikke paa Nordnet. "
    "Merk at fangsten fra topper er -0,55, altsaa at papiret fulgte tinn ned.")],
+# Jernmalm 26.09.2026: Cleveland-Cliffs er byttet ut med Vale (Frodes
+# beslutning). Cleveland-Cliffs kjoepte AK Steel og ArcelorMittal USA i 2020 og
+# er siden et staalverk som kjoeper malm, ikke selger den. Sonden hadde den
+# allerede som forbruker (vent f), og porten C var stengt (0,3 kvartaler).
+# Korrelasjonen i vinduet fra 2016 kom trolig fra aarene foer oppkjoepet. Vale
+# er maalt i samme sonde (22.09.2026) og bestaar kravene. Rio Tinto (r 0,39,
+# rm 0,29) bestaar ikke kravet etter verdensindeksen.
 "jernmalm": [
   ("LIF.TO","Toronto","Labrador Iron Ore Royalty","aksje",
    "r 0,51  rm 0,42  b 0,92  f 0,76. Royalty, ikke drift. Derfor renest mot prisen og uten kostnadsinflasjon."),
-  ("CLF","NYSE","Cleveland-Cliffs","aksje",
-   "r 0,41  rm 0,38  b 1,55  f 1,07. Hoyere utslag, men selskapet er ogsaa staalverk og dermed delvis kjoper av malm."),
+  ("VALE","NYSE","Vale","aksje",
+   "r 0,42  rm 0,34  b 0,95  f 0,70. Verdens nest stoerste malmprodusent, jernmalm er det meste av driften. Fulgte ogsaa prisen ned fra toppene (0,57). Nikkel og kobber i tillegg."),
   ("CIA.TO","Toronto","Champion Iron","aksje",
    "r 0,41  rm 0,34  b 1,35  f 1,70. Rent hoygradig konsentrat. Sterkeste fangst fra bunn i segmentet.")],
 "kull": [

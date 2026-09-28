@@ -719,7 +719,7 @@ try:
         if not g or g.get("D") is None:
             continue
         s["scores"]["D"] = g["D"]
-        s["d_detalj"] = {k: g.get(k) for k in ("D_aksjer", "tema", "tema_D", "spredning", "n")}
+        s["d_detalj"] = {k: g.get(k) for k in ("D_aksjer", "tema", "tema_D", "tema_navn", "spredning", "n")}
         for i in s.get("instrumenter", []):
             d = papir.get(i["ticker"])
             if d:
@@ -882,6 +882,83 @@ try:
 except Exception as e:
     note("VIX", False, f"{type(e).__name__}: {str(e)[:70]}")
 
+# Dollaren (Frodes beslutning 26.09.2026). To felt oeverst, som VIX: kontekst,
+# ikke testet som signal.
+#   DXY      dollar mot seks valutaer (euro er over halvparten). Hoey = sterk
+#            dollar, som gjoer raavarer billigere i dollar og trekker A opp.
+#   USD/NOK  det som treffer avkastningen til en investor i kroner. Kjoeper man
+#            i bunnsonen mens dollaren er sterk, og dollaren svekkes etterpaa,
+#            spiser kronen noe av gevinsten.
+# Persentil: siste dagskurs mot alle maanedsslutter (DXY) eller maanedssnitt
+# (USD/NOK fra Norges Bank) foer inneværende maaned, og mot siste ti aar.
+# Endring 12 mnd: siste dagskurs mot verdien tolv maaneder tidligere.
+# Fed sin brede dollarindeks ville vaert bedre for raavarer, men den kommer fra
+# FRED, som ikke svarer paalitelig fra Actions. Skrives til dollar.json, som
+# onsdagsoppgaven kopierer til databasen (samlingen "marked", dokument "dollar").
+DOLLAR = None
+
+
+def _markedsfelt(mnd, v_siste, dato, kilde):
+    hist = mnd[mnd.index < pd.Period(dato[:7], "M")]
+    ti = hist[hist.index >= hist.index[-1] - 119]
+    ref = hist[hist.index <= pd.Period(dato[:7], "M") - 12]
+    pct = lambda s, x: round(float(100 * (s <= x).mean()), 1)
+    return {"t": dato, "verdi": round(float(v_siste), 4),
+            "pctl_alle": pct(hist, v_siste), "pctl_10aar": pct(ti, v_siste),
+            "fra": str(hist.index[0]), "median": round(float(hist.median()), 4),
+            "endring_12m_pst": None if ref.empty else round(100 * (float(v_siste) / float(ref.iloc[-1]) - 1), 1),
+            "serie": [[str(p), round(float(v), 4)] for p, v in mnd.iloc[-180:].items()], "kilde": kilde}
+
+
+def _yahoo_mnd_og_siste(sym, tz):
+    r = get(f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}?period1=0"
+            f"&period2={int(time.time())}&interval=1mo", timeout=40).json()["chart"]["result"][0]
+    idx = pd.to_datetime(r["timestamp"], unit="s", utc=True).tz_convert(tz).to_period("M")
+    mnd = pd.Series(r["indicators"]["quote"][0]["close"], index=idx).dropna()
+    mnd = mnd[~mnd.index.duplicated(keep="last")]
+    d = get(f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}?range=10d&interval=1d",
+            timeout=30).json()["chart"]["result"][0]
+    par = [(x, v) for x, v in zip(d["timestamp"], d["indicators"]["quote"][0]["close"]) if v is not None]
+    return mnd, par[-1][1], pd.Timestamp(par[-1][0], unit="s", tz="UTC").tz_convert(tz).strftime("%Y-%m-%d")
+
+
+try:
+    DOLLAR = {"id": "dollar", "merknad": "Kontekst, ikke testet som signal."}
+    try:
+        mnd, v, dato = _yahoo_mnd_og_siste("DX-Y.NYB", "America/New_York")
+        DOLLAR["dxy"] = {"navn": "Dollarindeks (DXY)", **_markedsfelt(mnd, v, dato, "ICE US Dollar Index via Yahoo (DX-Y.NYB)")}
+        note("DXY", True, f"{DOLLAR['dxy']['verdi']} per {dato}, persentil {DOLLAR['dxy']['pctl_alle']} "
+                          f"(fra {DOLLAR['dxy']['fra']}), 12 mnd {DOLLAR['dxy']['endring_12m_pst']} %")
+    except Exception as e:
+        note("DXY", False, f"{type(e).__name__}: {str(e)[:70]}")
+    try:
+        t_ = get("https://data.norges-bank.no/api/data/EXR/M.USD.NOK.SP?format=csv&startPeriod=1971&locale=en",
+                 timeout=40).text
+        dd = pd.read_csv(io.StringIO(t_), sep=None, engine="python")
+        tk = next(c for c in dd.columns if "TIME" in c.upper()); vk = next(c for c in dd.columns if "OBS_VALUE" in c.upper())
+        mnd = pd.Series(pd.to_numeric(dd[vk].astype(str).str.replace(",", "."), errors="coerce").values,
+                        index=pd.PeriodIndex(dd[tk].astype(str), freq="M")).dropna()
+        kilde = "Norges Bank, maanedssnitt, og siste dagskurs"
+        try:
+            t2 = get("https://data.norges-bank.no/api/data/EXR/B.USD.NOK.SP?format=csv&lastNObservations=1&locale=en",
+                     timeout=30).text
+            d2 = pd.read_csv(io.StringIO(t2), sep=None, engine="python")
+            tk2 = next(c for c in d2.columns if "TIME" in c.upper()); vk2 = next(c for c in d2.columns if "OBS_VALUE" in c.upper())
+            v, dato = float(str(d2[vk2].iloc[-1]).replace(",", ".")), str(d2[tk2].iloc[-1])[:10]
+        except Exception:
+            _m, v, dato = _yahoo_mnd_og_siste("NOK=X", "Europe/Oslo")
+            kilde = "Norges Bank, maanedssnitt, og siste dagskurs fra Yahoo (NOK=X)"
+        DOLLAR["usdnok"] = {"navn": "USD/NOK", **_markedsfelt(mnd, v, dato, kilde)}
+        note("USD/NOK", True, f"{DOLLAR['usdnok']['verdi']} per {dato}, persentil {DOLLAR['usdnok']['pctl_alle']} "
+                              f"(fra {DOLLAR['usdnok']['fra']}), 12 mnd {DOLLAR['usdnok']['endring_12m_pst']} %")
+    except Exception as e:
+        note("USD/NOK", False, f"{type(e).__name__}: {str(e)[:70]}")
+    if "dxy" not in DOLLAR and "usdnok" not in DOLLAR:
+        DOLLAR = None
+except Exception as e:
+    DOLLAR = None
+    note("dollar", False, f"{type(e).__name__}: {str(e)[:70]}")
+
 print("\n" + "=" * 70)
 print(f"{len(SEGMENTS)} segment bygget, {len(indicators)} indikatorer, "
       f"{len(vehicle_px)} kursserier")
@@ -908,6 +985,11 @@ if GITHUB_TOKEN and SEGMENTS:
             push("marked.json", json.dumps(MARKED, ensure_ascii=False))
         except Exception as e:
             note("push marked.json", False, str(e)[:70])
+    if DOLLAR:
+        try:
+            push("dollar.json", json.dumps(DOLLAR, ensure_ascii=False))
+        except Exception as e:
+            note("push dollar.json", False, str(e)[:70])
     for navn, obj in [("indicators.json", indicators), ("vehicles.json", vehicle_px)]:
         try:
             push(navn, json.dumps(obj, ensure_ascii=False))
