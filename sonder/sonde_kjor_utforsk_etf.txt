@@ -1,38 +1,28 @@
 sonde:   sonde_kjor_utforsk_etf
-kjort:   2026-09-28 07:21:52 UTC
-commit:  0cc4b4a
+kjort:   2026-09-28 07:33:49 UTC
+commit:  6fbf2ea
 status:  OK
-brukte:  1823 sekunder
+brukte:  421 sekunder
 --------------------------------------------------------------
 1. Universet
 
-   Xetra-lista: 5132 instrumenter fra https://www.cashmarket.deutsche-boerse.com/resource/blob/1528/684b31b077a5de5d5777352984c7a7df/data/t7-xetr-allTradableInstruments.csv
+   Xetra-lista: 5132 instrumenter fra https://www.xetra.com/resource/blob/1528/684b31b077a5de5d5777352984c7a7df/data/t7-xetr-allTradableInstruments.csv
    instrumenttyper: {'ETF': np.int64(3123), 'CS': np.int64(1417), 'ETN': np.int64(386), 'ETC': np.int64(206)}
    3080 ETF-er etter filtrering (giret, short, rente og valutasikret er ute)
 
-2. Kurser (budsjett 30 min, 0 i lageret fra foer)
+2. Kurser (budsjett 30 min, 2034 i lageret fra foer)
 
-   100 hentet (49 s)
-   200 hentet (480 s)
-   300 hentet (521 s)
-   400 hentet (741 s)
-   500 hentet (781 s)
-   600 hentet (996 s)
-   700 hentet (1037 s)
-   800 hentet (1081 s)
-   900 hentet (1121 s)
-   1000 hentet (1161 s)
-   1100 hentet (1208 s)
-   1200 hentet (1246 s)
-   1300 hentet (1298 s)
-   1400 hentet (1343 s)
-   1500 hentet (1401 s)
-   1600 hentet (1439 s)
-   1700 hentet (1477 s)
-   1800 hentet (1521 s)
-   1900 hentet (1561 s)
-   2000 hentet (1786 s)
-   2034 nye denne gangen, 1047 gjenstaar. Kjoer sonden igjen for resten.
+   100 hentet (47 s)
+   200 hentet (82 s)
+   300 hentet (118 s)
+   400 hentet (153 s)
+   500 hentet (188 s)
+   600 hentet (223 s)
+   700 hentet (258 s)
+   800 hentet (297 s)
+   900 hentet (337 s)
+   1000 hentet (372 s)
+   1047 nye denne gangen, 0 gjenstaar
 
 3. Maaling
 
@@ -59,244 +49,444 @@ brukte:  1823 sekunder
   ok    avkorting ttf   800 -> 320 mnd, starter 2000-01
   ok    avkorting kakao   800 -> 560 mnd, starter 1980-01
    kontroll av de raske persentilfunksjonene mot priser.py: like paa alle 17 serier
-   732 fond med minst 72 maaneder, 11530 par fond x raavare
-   370 par bestaar kravene 1 til 4, fordelt paa 236 fond
+   1226 fond med minst 72 maaneder, 19343 par fond x raavare
+   689 par bestaar kravene 1 til 4, fordelt paa 405 fond
 
-4. Fond som foelger minst to raavarer (funnet ved leting), 27 grupper
+4. Fond som foelger minst to raavarer (funnet ved leting), 53 grupper
 
    M9SA.DE    M.A.-R.INT.COM.IN.UETF  nf 129
       wti        rp +0.81  (halvdeler +0.78 / +0.83)  q 0.0000
       brent      rp +0.75  (halvdeler +0.70 / +0.78)  q 0.0000
       aluminium  rp +0.45  (halvdeler +0.32 / +0.56)  q 0.0000
-      palmeolje  rp +0.34  (halvdeler +0.31 / +0.32)  q 0.0073
-      nikkel     rp +0.30  (halvdeler +0.18 / +0.37)  q 0.0192
-      ttf        rp +0.29  (halvdeler +0.21 / +0.35)  q 0.0232
-      tinn       rp +0.27  (halvdeler +0.40 / +0.24)  q 0.0388
+      palmeolje  rp +0.34  (halvdeler +0.31 / +0.32)  q 0.0062
+      nikkel     rp +0.30  (halvdeler +0.18 / +0.37)  q 0.0181
+      ttf        rp +0.29  (halvdeler +0.21 / +0.35)  q 0.0221
+      tinn       rp +0.27  (halvdeler +0.40 / +0.24)  q 0.0369
       par wti+aluminium: samlet 0.84  (halvdeler 0.80 / 0.86)
       par wti+ttf: samlet 0.83  (halvdeler 0.81 / 0.84)
       par wti+nikkel: samlet 0.82  (halvdeler 0.78 / 0.87)
       par wti+tinn: samlet 0.82  (halvdeler 0.81 / 0.84)
 
-   EXXY.DE    ISHS DIV.COMM.SWAP UC.ETF  nf 129  [allerede i fondssonden]
-      wti        rp +0.61  (halvdeler +0.57 / +0.68)  q 0.0000
-      brent      rp +0.56  (halvdeler +0.52 / +0.64)  q 0.0000
-      aluminium  rp +0.46  (halvdeler +0.29 / +0.55)  q 0.0000
-      ttf        rp +0.35  (halvdeler +0.29 / +0.38)  q 0.0042
-      henryhub   rp +0.34  (halvdeler +0.25 / +0.40)  q 0.0060
-      nikkel     rp +0.30  (halvdeler +0.17 / +0.37)  q 0.0176
-      palmeolje  rp +0.28  (halvdeler +0.22 / +0.30)  q 0.0298
-      tinn       rp +0.27  (halvdeler +0.37 / +0.24)  q 0.0426
-      par wti+henryhub: samlet 0.70  (halvdeler 0.63 / 0.77)
-      par wti+aluminium: samlet 0.69  (halvdeler 0.60 / 0.74)
-      par wti+ttf: samlet 0.68  (halvdeler 0.65 / 0.71)
-      par brent+aluminium: samlet 0.67  (halvdeler 0.57 / 0.74)
+   XAAG.DE    INVESCOMI BB CMTY EXAGR A  nf 112
+      wti        rp +0.61  (halvdeler +0.55 / +0.63)  q 0.0000
+      brent      rp +0.58  (halvdeler +0.56 / +0.59)  q 0.0000
+      aluminium  rp +0.51  (halvdeler +0.32 / +0.59)  q 0.0000
+      henryhub   rp +0.47  (halvdeler +0.33 / +0.54)  q 0.0000
+      nikkel     rp +0.40  (halvdeler +0.41 / +0.40)  q 0.0015
+      kobber     rp +0.31  (halvdeler +0.47 / +0.23)  q 0.0241
+      ttf        rp +0.31  (halvdeler +0.11 / +0.39)  q 0.0245
+      tinn       rp +0.29  (halvdeler +0.41 / +0.28)  q 0.0369
+      par wti+henryhub: samlet 0.77  (halvdeler 0.66 / 0.81)
+      par brent+henryhub: samlet 0.74  (halvdeler 0.66 / 0.77)
+      par brent+aluminium: samlet 0.70  (halvdeler 0.62 / 0.73)
+      par wti+aluminium: samlet 0.70  (halvdeler 0.60 / 0.73)
 
-   ETLF.DE    L+G-L+G ALL COMM.U.E.DLA  nf 109
-      wti        rp +0.59  (halvdeler +0.49 / +0.68)  q 0.0000
-      brent      rp +0.56  (halvdeler +0.49 / +0.65)  q 0.0000
-      aluminium  rp +0.51  (halvdeler +0.40 / +0.55)  q 0.0000
-      nikkel     rp +0.37  (halvdeler +0.39 / +0.37)  q 0.0056
-      henryhub   rp +0.36  (halvdeler +0.28 / +0.40)  q 0.0083
-      ttf        rp +0.35  (halvdeler +0.27 / +0.38)  q 0.0093
-      palmeolje  rp +0.29  (halvdeler +0.22 / +0.30)  q 0.0421
-      kobber     rp +0.29  (halvdeler +0.47 / +0.21)  q 0.0434
-      tinn       rp +0.29  (halvdeler +0.51 / +0.24)  q 0.0446
-      par wti+henryhub: samlet 0.69  (halvdeler 0.58 / 0.77)
-      par brent+aluminium: samlet 0.69  (halvdeler 0.61 / 0.74)
-      par wti+aluminium: samlet 0.69  (halvdeler 0.58 / 0.74)
-      par brent+henryhub: samlet 0.66  (halvdeler 0.58 / 0.73)
+   UEQU.DE    UBS FDSO-UBS C.E-A.SF DAA  nf 124
+      wti        rp +0.65  (halvdeler +0.63 / +0.65)  q 0.0000
+      brent      rp +0.60  (halvdeler +0.58 / +0.59)  q 0.0000
+      aluminium  rp +0.54  (halvdeler +0.39 / +0.65)  q 0.0000
+      kobber     rp +0.43  (halvdeler +0.48 / +0.39)  q 0.0001
+      nikkel     rp +0.42  (halvdeler +0.28 / +0.52)  q 0.0002
+      tinn       rp +0.41  (halvdeler +0.47 / +0.43)  q 0.0002
+      sink       rp +0.33  (halvdeler +0.27 / +0.34)  q 0.0084
+      palmeolje  rp +0.32  (halvdeler +0.18 / +0.39)  q 0.0103
+      bly        rp +0.30  (halvdeler +0.34 / +0.25)  q 0.0234
+      kull       rp +0.29  (halvdeler +0.12 / +0.40)  q 0.0283
+      par wti+aluminium: samlet 0.75  (halvdeler 0.70 / 0.77)
+      par brent+aluminium: samlet 0.74  (halvdeler 0.67 / 0.77)
+      par wti+tinn: samlet 0.73  (halvdeler 0.70 / 0.74)
+      par wti+kobber: samlet 0.73  (halvdeler 0.72 / 0.74)
+
+   UIQK.DE    UBS FDSO-UBS C.C.SF DLA  nf 129
+      wti        rp +0.67  (halvdeler +0.62 / +0.70)  q 0.0000
+      brent      rp +0.60  (halvdeler +0.53 / +0.64)  q 0.0000
+      aluminium  rp +0.45  (halvdeler +0.36 / +0.57)  q 0.0000
+      palmeolje  rp +0.37  (halvdeler +0.31 / +0.41)  q 0.0016
+      kobber     rp +0.35  (halvdeler +0.39 / +0.30)  q 0.0036
+      tinn       rp +0.34  (halvdeler +0.44 / +0.32)  q 0.0053
+      nikkel     rp +0.33  (halvdeler +0.18 / +0.46)  q 0.0081
+      sink       rp +0.28  (halvdeler +0.21 / +0.32)  q 0.0317
+      par wti+aluminium: samlet 0.73  (halvdeler 0.67 / 0.77)
+      par wti+tinn: samlet 0.72  (halvdeler 0.69 / 0.74)
+      par wti+kobber: samlet 0.71  (halvdeler 0.68 / 0.75)
+      par wti+nikkel: samlet 0.71  (halvdeler 0.62 / 0.80)
+
+   SXRS.DE    ISHS VI-DIV.COM.S.U.ETF  nf 100  (+ 2 dubletter: EXXY.DE, ETLF.DE)
+      wti        rp +0.60  (halvdeler +0.51 / +0.68)  q 0.0000
+      brent      rp +0.56  (halvdeler +0.47 / +0.64)  q 0.0000
+      aluminium  rp +0.50  (halvdeler +0.38 / +0.55)  q 0.0000
+      henryhub   rp +0.36  (halvdeler +0.31 / +0.40)  q 0.0088
+      ttf        rp +0.36  (halvdeler +0.29 / +0.38)  q 0.0102
+      nikkel     rp +0.35  (halvdeler +0.28 / +0.37)  q 0.0130
+      palmeolje  rp +0.30  (halvdeler +0.24 / +0.30)  q 0.0454
+      tinn       rp +0.30  (halvdeler +0.57 / +0.24)  q 0.0477
+      par wti+henryhub: samlet 0.70  (halvdeler 0.61 / 0.77)
+      par wti+aluminium: samlet 0.69  (halvdeler 0.57 / 0.74)
+      par brent+aluminium: samlet 0.68  (halvdeler 0.57 / 0.74)
+      par wti+ttf: samlet 0.67  (halvdeler 0.61 / 0.71)
+
+   UIQ1.DE    UBS FDSO-UBS C.E-A.SF HEO  nf 110
+      wti        rp +0.57  (halvdeler +0.59 / +0.54)  q 0.0000
+      brent      rp +0.50  (halvdeler +0.47 / +0.50)  q 0.0000
+      aluminium  rp +0.49  (halvdeler +0.40 / +0.55)  q 0.0000
+      kobber     rp +0.47  (halvdeler +0.48 / +0.47)  q 0.0000
+      tinn       rp +0.46  (halvdeler +0.49 / +0.47)  q 0.0001
+      nikkel     rp +0.45  (halvdeler +0.35 / +0.50)  q 0.0001
+      palmeolje  rp +0.36  (halvdeler +0.18 / +0.42)  q 0.0061
+      bly        rp +0.33  (halvdeler +0.45 / +0.24)  q 0.0148
+      sink       rp +0.29  (halvdeler +0.21 / +0.30)  q 0.0397
+      par wti+kobber: samlet 0.69  (halvdeler 0.67 / 0.70)
+      par wti+tinn: samlet 0.69  (halvdeler 0.67 / 0.69)
+      par wti+nikkel: samlet 0.67  (halvdeler 0.63 / 0.70)
+      par wti+aluminium: samlet 0.67  (halvdeler 0.66 / 0.66)
 
    BCFU.DE    UBS FDSO-UBS BBG C.C.DLA  nf 112
       aluminium  rp +0.55  (halvdeler +0.52 / +0.57)  q 0.0000
       wti        rp +0.53  (halvdeler +0.49 / +0.60)  q 0.0000
       brent      rp +0.49  (halvdeler +0.50 / +0.54)  q 0.0000
-      kobber     rp +0.41  (halvdeler +0.52 / +0.36)  q 0.0009
-      nikkel     rp +0.39  (halvdeler +0.28 / +0.47)  q 0.0028
-      tinn       rp +0.37  (halvdeler +0.44 / +0.35)  q 0.0059
-      sink       rp +0.36  (halvdeler +0.30 / +0.38)  q 0.0079
-      palmeolje  rp +0.32  (halvdeler +0.20 / +0.37)  q 0.0209
-      ttf        rp +0.30  (halvdeler +0.23 / +0.34)  q 0.0307
-      henryhub   rp +0.29  (halvdeler +0.15 / +0.37)  q 0.0368
+      kobber     rp +0.41  (halvdeler +0.52 / +0.36)  q 0.0007
+      nikkel     rp +0.39  (halvdeler +0.28 / +0.47)  q 0.0023
+      tinn       rp +0.37  (halvdeler +0.44 / +0.35)  q 0.0049
+      sink       rp +0.36  (halvdeler +0.30 / +0.38)  q 0.0068
+      palmeolje  rp +0.32  (halvdeler +0.20 / +0.37)  q 0.0198
+      ttf        rp +0.30  (halvdeler +0.23 / +0.34)  q 0.0293
+      henryhub   rp +0.29  (halvdeler +0.15 / +0.37)  q 0.0354
       par aluminium+brent: samlet 0.67  (halvdeler 0.69 / 0.69)
       par aluminium+wti: samlet 0.67  (halvdeler 0.65 / 0.70)
       par wti+kobber: samlet 0.62  (halvdeler 0.62 / 0.69)
       par wti+nikkel: samlet 0.60  (halvdeler 0.52 / 0.72)
 
+   WTIC.DE    WISDOMTREE ENH.COM.U.E.DA  nf 123
+      wti        rp +0.58  (halvdeler +0.48 / +0.71)  q 0.0000
+      brent      rp +0.53  (halvdeler +0.43 / +0.67)  q 0.0000
+      aluminium  rp +0.47  (halvdeler +0.26 / +0.55)  q 0.0000
+      ttf        rp +0.34  (halvdeler +0.29 / +0.36)  q 0.0067
+      palmeolje  rp +0.34  (halvdeler +0.19 / +0.38)  q 0.0081
+      nikkel     rp +0.33  (halvdeler +0.18 / +0.41)  q 0.0085
+      tinn       rp +0.30  (halvdeler +0.43 / +0.28)  q 0.0206
+      kobber     rp +0.29  (halvdeler +0.33 / +0.28)  q 0.0263
+      par wti+aluminium: samlet 0.67  (halvdeler 0.52 / 0.76)
+      par brent+aluminium: samlet 0.65  (halvdeler 0.48 / 0.76)
+      par wti+ttf: samlet 0.65  (halvdeler 0.58 / 0.73)
+      par wti+nikkel: samlet 0.63  (halvdeler 0.49 / 0.78)
+
    ETL2.DE    L+G-L.DAT.A.COM.U.E.DLA  nf 129
       wti        rp +0.54  (halvdeler +0.52 / +0.59)  q 0.0000
       brent      rp +0.48  (halvdeler +0.47 / +0.53)  q 0.0000
       aluminium  rp +0.46  (halvdeler +0.30 / +0.54)  q 0.0000
-      nikkel     rp +0.34  (halvdeler +0.18 / +0.44)  q 0.0058
-      ttf        rp +0.34  (halvdeler +0.28 / +0.36)  q 0.0073
-      palmeolje  rp +0.30  (halvdeler +0.28 / +0.31)  q 0.0160
-      tinn       rp +0.30  (halvdeler +0.38 / +0.28)  q 0.0164
-      henryhub   rp +0.28  (halvdeler +0.11 / +0.38)  q 0.0279
-      kobber     rp +0.27  (halvdeler +0.28 / +0.26)  q 0.0431
+      nikkel     rp +0.34  (halvdeler +0.18 / +0.44)  q 0.0049
+      ttf        rp +0.34  (halvdeler +0.28 / +0.36)  q 0.0064
+      palmeolje  rp +0.30  (halvdeler +0.28 / +0.31)  q 0.0152
+      tinn       rp +0.30  (halvdeler +0.38 / +0.28)  q 0.0156
+      henryhub   rp +0.28  (halvdeler +0.11 / +0.38)  q 0.0268
+      kobber     rp +0.27  (halvdeler +0.28 / +0.26)  q 0.0418
       par wti+aluminium: samlet 0.63  (halvdeler 0.57 / 0.67)
       par wti+henryhub: samlet 0.61  (halvdeler 0.54 / 0.68)
       par brent+aluminium: samlet 0.61  (halvdeler 0.54 / 0.66)
       par wti+ttf: samlet 0.61  (halvdeler 0.61 / 0.63)
 
-   EXH1.DE    IS.S.E.600 OIL+G.U.ETF A.  nf 129  [allerede i fondssonden]
-      wti        rp +0.57  (halvdeler +0.39 / +0.64)  q 0.0000
-      brent      rp +0.52  (halvdeler +0.30 / +0.63)  q 0.0000
-      aluminium  rp +0.35  (halvdeler +0.33 / +0.39)  q 0.0053
-      par wti+aluminium: samlet 0.60  (halvdeler 0.47 / 0.66)
-      par brent+aluminium: samlet 0.58  (halvdeler 0.42 / 0.67)
+   SPYN.DE    SSSPDR MSCI EUR.EN.UETF  nf 129
+      wti        rp +0.59  (halvdeler +0.36 / +0.70)  q 0.0000
+      brent      rp +0.55  (halvdeler +0.28 / +0.70)  q 0.0000
+      aluminium  rp +0.32  (halvdeler +0.31 / +0.37)  q 0.0092
+      par wti+aluminium: samlet 0.61  (halvdeler 0.44 / 0.70)
+      par brent+aluminium: samlet 0.59  (halvdeler 0.40 / 0.72)
+
+   SC0V.DE    INVESCOMI STXE600 OIL G A  nf 129  (+ 1 dubletter: EXH1.DE)
+      wti        rp +0.58  (halvdeler +0.41 / +0.63)  q 0.0000
+      brent      rp +0.55  (halvdeler +0.35 / +0.62)  q 0.0000
+      aluminium  rp +0.34  (halvdeler +0.33 / +0.39)  q 0.0048
+      par wti+aluminium: samlet 0.61  (halvdeler 0.49 / 0.65)
+      par brent+aluminium: samlet 0.60  (halvdeler 0.46 / 0.65)
+
+   WTEH.DE    WTR ENH.COMMOD. HGDEOA  nf 97
+      wti        rp +0.51  (halvdeler +0.55 / +0.59)  q 0.0000
+      brent      rp +0.51  (halvdeler +0.65 / +0.55)  q 0.0000
+      aluminium  rp +0.40  (halvdeler +0.22 / +0.46)  q 0.0036
+      kobber     rp +0.37  (halvdeler +0.43 / +0.36)  q 0.0092
+      palmeolje  rp +0.35  (halvdeler +0.24 / +0.40)  q 0.0159
+      tinn       rp +0.33  (halvdeler +0.34 / +0.34)  q 0.0243
+      nikkel     rp +0.33  (halvdeler +0.14 / +0.41)  q 0.0283
+      par brent+aluminium: samlet 0.60  (halvdeler 0.67 / 0.64)
+      par brent+kobber: samlet 0.60  (halvdeler 0.70 / 0.68)
+      par wti+kobber: samlet 0.59  (halvdeler 0.61 / 0.68)
+      par brent+tinn: samlet 0.59  (halvdeler 0.67 / 0.65)
+
+   WMIN.DE    VANECK GL.MINING UC.ETF  nf 100
+      gold       rp +0.54  (halvdeler +0.34 / +0.60)  q 0.0000
+      kobber     rp +0.44  (halvdeler +0.29 / +0.50)  q 0.0005
+      tinn       rp +0.40  (halvdeler +0.33 / +0.41)  q 0.0036
+      par gold+kobber: samlet 0.60  (halvdeler 0.48 / 0.63)
+      par gold+tinn: samlet 0.58  (halvdeler 0.54 / 0.61)
+
+   XDBC.DE    XTR.BBG COMM.X-AGR+LST.1C  nf 129  [allerede i fondssonden]  (+ 1 dubletter: XCBE.DE)
+      wti        rp +0.48  (halvdeler +0.54 / +0.48)  q 0.0000
+      aluminium  rp +0.44  (halvdeler +0.27 / +0.53)  q 0.0000
+      tinn       rp +0.41  (halvdeler +0.41 / +0.42)  q 0.0002
+      brent      rp +0.40  (halvdeler +0.43 / +0.42)  q 0.0004
+      kobber     rp +0.34  (halvdeler +0.24 / +0.41)  q 0.0050
+      palmeolje  rp +0.32  (halvdeler +0.30 / +0.33)  q 0.0090
+      par wti+tinn: samlet 0.59  (halvdeler 0.61 / 0.61)
+      par wti+aluminium: samlet 0.58  (halvdeler 0.57 / 0.61)
+      par wti+kobber: samlet 0.55  (halvdeler 0.56 / 0.62)
+      par aluminium+brent: samlet 0.55  (halvdeler 0.49 / 0.60)
 
    BCFE.DE    UBS FDSO-UBS BBG C.C.EOHA  nf 112
-      wti        rp +0.44  (halvdeler +0.42 / +0.50)  q 0.0003
-      aluminium  rp +0.42  (halvdeler +0.34 / +0.46)  q 0.0006
-      kobber     rp +0.40  (halvdeler +0.44 / +0.38)  q 0.0019
-      brent      rp +0.40  (halvdeler +0.41 / +0.44)  q 0.0019
-      tinn       rp +0.39  (halvdeler +0.47 / +0.36)  q 0.0028
-      nikkel     rp +0.38  (halvdeler +0.30 / +0.43)  q 0.0034
-      palmeolje  rp +0.34  (halvdeler +0.21 / +0.38)  q 0.0129
+      wti        rp +0.44  (halvdeler +0.42 / +0.50)  q 0.0002
+      aluminium  rp +0.42  (halvdeler +0.34 / +0.46)  q 0.0004
+      kobber     rp +0.40  (halvdeler +0.44 / +0.38)  q 0.0015
+      brent      rp +0.40  (halvdeler +0.41 / +0.44)  q 0.0015
+      tinn       rp +0.39  (halvdeler +0.47 / +0.36)  q 0.0023
+      nikkel     rp +0.38  (halvdeler +0.30 / +0.43)  q 0.0029
+      palmeolje  rp +0.34  (halvdeler +0.21 / +0.38)  q 0.0121
       par wti+tinn: samlet 0.55  (halvdeler 0.55 / 0.59)
       par wti+kobber: samlet 0.55  (halvdeler 0.53 / 0.62)
       par wti+aluminium: samlet 0.54  (halvdeler 0.50 / 0.57)
       par wti+nikkel: samlet 0.54  (halvdeler 0.47 / 0.63)
 
-   ISPA.DE    IS.S.GL.SE.D.100 U.ETF A.  nf 129
-      tinn       rp +0.36  (halvdeler +0.34 / +0.39)  q 0.0028
-      brent      rp +0.34  (halvdeler +0.37 / +0.22)  q 0.0059
-      kobber     rp +0.32  (halvdeler +0.21 / +0.37)  q 0.0099
-      wti        rp +0.30  (halvdeler +0.30 / +0.20)  q 0.0171
-      par tinn+brent: samlet 0.48  (halvdeler 0.45 / 0.45)
-      par brent+kobber: samlet 0.45  (halvdeler 0.40 / 0.46)
-      par tinn+wti: samlet 0.45  (halvdeler 0.41 / 0.43)
-      par kobber+wti: samlet 0.41  (halvdeler 0.34 / 0.42)
+   ZPRD.DE    SPDR FTSE UK ALL SH.LSUA  nf 101
+      brent      rp +0.47  (halvdeler +0.65 / +0.14)  q 0.0001
+      wti        rp +0.42  (halvdeler +0.56 / +0.14)  q 0.0011
+      kobber     rp +0.32  (halvdeler +0.39 / +0.28)  q 0.0274
+      par brent+kobber: samlet 0.55  (halvdeler 0.68 / 0.33)
+      par wti+kobber: samlet 0.49  (halvdeler 0.60 / 0.31)
 
-   EXV6.DE    IS.S.E.600 BA.RE.U.ETF A.  nf 129  [allerede i fondssonden]
-      tinn       rp +0.45  (halvdeler +0.53 / +0.42)  q 0.0000
-      kobber     rp +0.43  (halvdeler +0.34 / +0.49)  q 0.0001
-      aluminium  rp +0.34  (halvdeler +0.29 / +0.38)  q 0.0062
-      sink       rp +0.33  (halvdeler +0.32 / +0.31)  q 0.0093
-      bly        rp +0.30  (halvdeler +0.41 / +0.18)  q 0.0192
-      jernmalm   rp +0.29  (halvdeler +0.26 / +0.30)  q 0.0241
-      par tinn+kobber: samlet 0.48  (halvdeler 0.53 / 0.49)
-      par tinn+jernmalm: samlet 0.47  (halvdeler 0.54 / 0.45)
-      par tinn+bly: samlet 0.47  (halvdeler 0.59 / 0.42)
-      par tinn+aluminium: samlet 0.46  (halvdeler 0.54 / 0.45)
+   XGSD.DE    XTR.ST.GL.SE.DI.100SW.1D  nf 129  (+ 1 dubletter: ISPA.DE)
+      tinn       rp +0.37  (halvdeler +0.35 / +0.40)  q 0.0018
+      brent      rp +0.35  (halvdeler +0.39 / +0.22)  q 0.0032
+      kobber     rp +0.33  (halvdeler +0.22 / +0.38)  q 0.0067
+      wti        rp +0.31  (halvdeler +0.31 / +0.20)  q 0.0129
+      sink       rp +0.26  (halvdeler +0.25 / +0.24)  q 0.0483
+      par tinn+brent: samlet 0.49  (halvdeler 0.47 / 0.45)
+      par brent+kobber: samlet 0.47  (halvdeler 0.42 / 0.46)
+      par tinn+wti: samlet 0.46  (halvdeler 0.42 / 0.43)
+      par kobber+wti: samlet 0.42  (halvdeler 0.35 / 0.43)
+
+   SC0W.DE    INVESCOMI STXE600 BASICR  nf 129  (+ 1 dubletter: EXV6.DE)
+      tinn       rp +0.45  (halvdeler +0.54 / +0.42)  q 0.0000
+      kobber     rp +0.44  (halvdeler +0.36 / +0.49)  q 0.0000
+      sink       rp +0.35  (halvdeler +0.38 / +0.31)  q 0.0042
+      aluminium  rp +0.34  (halvdeler +0.31 / +0.37)  q 0.0048
+      bly        rp +0.31  (halvdeler +0.43 / +0.17)  q 0.0139
+      jernmalm   rp +0.29  (halvdeler +0.27 / +0.28)  q 0.0232
+      par tinn+kobber: samlet 0.49  (halvdeler 0.55 / 0.49)
+      par tinn+jernmalm: samlet 0.48  (halvdeler 0.55 / 0.45)
+      par tinn+sink: samlet 0.47  (halvdeler 0.57 / 0.43)
+      par tinn+bly: samlet 0.47  (halvdeler 0.60 / 0.42)
 
    EDEU.DE    BNPPE-DIVIDEND EUROPE C  nf 107
-      wti        rp +0.41  (halvdeler +0.53 / +0.11)  q 0.0016
-      kobber     rp +0.29  (halvdeler +0.31 / +0.26)  q 0.0468
+      wti        rp +0.41  (halvdeler +0.53 / +0.11)  q 0.0013
+      kobber     rp +0.29  (halvdeler +0.31 / +0.26)  q 0.0454
       par wti+kobber: samlet 0.47  (halvdeler 0.56 / 0.29)
 
    IQQX.DE    ISHS-ASIA PAC.DIV.DL D  nf 129  (+ 1 dubletter: EXXW.DE)
-      brent      rp +0.35  (halvdeler +0.42 / +0.17)  q 0.0038
-      tinn       rp +0.32  (halvdeler +0.34 / +0.33)  q 0.0099
-      wti        rp +0.28  (halvdeler +0.28 / +0.17)  q 0.0301
+      brent      rp +0.35  (halvdeler +0.42 / +0.17)  q 0.0032
+      tinn       rp +0.32  (halvdeler +0.34 / +0.33)  q 0.0089
+      wti        rp +0.28  (halvdeler +0.28 / +0.17)  q 0.0290
       par brent+tinn: samlet 0.46  (halvdeler 0.49 / 0.37)
       par tinn+wti: samlet 0.41  (halvdeler 0.40 / 0.36)
 
+   SPF1.DE    STSEE2-SFGCB HEOA  nf 100
+      gold       rp +0.41  (halvdeler +0.39 / +0.45)  q 0.0020
+      kobber     rp +0.33  (halvdeler +0.26 / +0.38)  q 0.0250
+      par gold+kobber: samlet 0.45  (halvdeler 0.49 / 0.47)
+
+   WTEE.DE    WISDOMTREE EUR.HGH D.UE  nf 129
+      brent      rp +0.36  (halvdeler +0.43 / +0.17)  q 0.0021
+      wti        rp +0.35  (halvdeler +0.40 / +0.19)  q 0.0034
+      tinn       rp +0.27  (halvdeler +0.17 / +0.34)  q 0.0367
+      par brent+tinn: samlet 0.44  (halvdeler 0.44 / 0.39)
+      par wti+tinn: samlet 0.42  (halvdeler 0.41 / 0.38)
+
+   SXR2.DE    ISHSVII-MSCI CANADA DLACC  nf 129  [allerede i fondssonden]
+      brent      rp +0.38  (halvdeler +0.49 / +0.19)  q 0.0011
+      wti        rp +0.30  (halvdeler +0.35 / +0.16)  q 0.0188
+      palmeolje  rp +0.28  (halvdeler +0.25 / +0.28)  q 0.0322
+      par brent+palmeolje: samlet 0.43  (halvdeler 0.51 / 0.33)
+      par wti+palmeolje: samlet 0.37  (halvdeler 0.40 / 0.31)
+
    EHDL.DE    INVESCOM3 FT EM HD LV A  nf 123
-      brent      rp +0.35  (halvdeler +0.30 / +0.22)  q 0.0059
-      tinn       rp +0.29  (halvdeler +0.27 / +0.35)  q 0.0301
-      wti        rp +0.28  (halvdeler +0.18 / +0.20)  q 0.0402
+      brent      rp +0.35  (halvdeler +0.30 / +0.22)  q 0.0050
+      tinn       rp +0.29  (halvdeler +0.27 / +0.35)  q 0.0289
+      wti        rp +0.28  (halvdeler +0.18 / +0.20)  q 0.0385
       par brent+tinn: samlet 0.43  (halvdeler 0.36 / 0.40)
       par tinn+wti: samlet 0.38  (halvdeler 0.29 / 0.38)
 
    EL40.DE    DEKA MSCI EM ESG F.SEL.UE  nf 129  (+ 6 dubletter: LYM7.DE, IS3N.DE, EUNM.DE...)
-      tinn       rp +0.39  (halvdeler +0.34 / +0.42)  q 0.0008
-      kobber     rp +0.33  (halvdeler +0.16 / +0.45)  q 0.0082
-      gold       rp +0.29  (halvdeler +0.14 / +0.41)  q 0.0241
+      tinn       rp +0.39  (halvdeler +0.34 / +0.42)  q 0.0006
+      kobber     rp +0.33  (halvdeler +0.16 / +0.45)  q 0.0072
+      gold       rp +0.29  (halvdeler +0.14 / +0.41)  q 0.0231
       par tinn+gold: samlet 0.43  (halvdeler 0.38 / 0.47)
       par tinn+kobber: samlet 0.40  (halvdeler 0.34 / 0.47)
       par kobber+gold: samlet 0.39  (halvdeler 0.21 / 0.49)
 
    LGQM.DE    MUL AMUN PANAFRICA ETF A  nf 126
-      gold       rp +0.36  (halvdeler +0.14 / +0.55)  q 0.0031
-      tinn       rp +0.32  (halvdeler +0.15 / +0.44)  q 0.0122
+      gold       rp +0.36  (halvdeler +0.14 / +0.55)  q 0.0026
+      tinn       rp +0.32  (halvdeler +0.15 / +0.44)  q 0.0114
       par gold+tinn: samlet 0.42  (halvdeler 0.22 / 0.57)
 
    6PSK.DE    IM3-IREMFVUE D  nf 129
-      tinn       rp +0.41  (halvdeler +0.38 / +0.46)  q 0.0004
-      kobber     rp +0.35  (halvdeler +0.18 / +0.49)  q 0.0053
+      tinn       rp +0.41  (halvdeler +0.38 / +0.46)  q 0.0003
+      kobber     rp +0.35  (halvdeler +0.18 / +0.49)  q 0.0045
       par tinn+kobber: samlet 0.42  (halvdeler 0.38 / 0.51)
 
    IQQF.DE    IS MSCI AC FEXJ.U.ETF DLD  nf 129
-      tinn       rp +0.36  (halvdeler +0.28 / +0.40)  q 0.0028
-      gold       rp +0.31  (halvdeler +0.17 / +0.39)  q 0.0156
+      tinn       rp +0.36  (halvdeler +0.28 / +0.40)  q 0.0023
+      gold       rp +0.31  (halvdeler +0.17 / +0.39)  q 0.0148
       par tinn+gold: samlet 0.41  (halvdeler 0.33 / 0.45)
 
    H410.DE    HSBC MSCI EM UC. ETF DL  nf 129
-      tinn       rp +0.37  (halvdeler +0.31 / +0.41)  q 0.0025
-      kobber     rp +0.31  (halvdeler +0.13 / +0.45)  q 0.0129
-      gold       rp +0.29  (halvdeler +0.13 / +0.42)  q 0.0242
+      tinn       rp +0.37  (halvdeler +0.31 / +0.41)  q 0.0020
+      kobber     rp +0.31  (halvdeler +0.13 / +0.45)  q 0.0121
+      gold       rp +0.29  (halvdeler +0.13 / +0.42)  q 0.0232
       par tinn+gold: samlet 0.41  (halvdeler 0.34 / 0.47)
       par tinn+kobber: samlet 0.38  (halvdeler 0.32 / 0.46)
 
-   IUSZ.DE    IS CO.FTSE 100 U.ETF LSD  nf 120
-      brent      rp +0.30  (halvdeler +0.29 / +0.15)  q 0.0274
-      wti        rp +0.29  (halvdeler +0.28 / +0.16)  q 0.0306
-      tinn       rp +0.27  (halvdeler +0.25 / +0.31)  q 0.0483
-      par brent+tinn: samlet 0.39  (halvdeler 0.34 / 0.35)
-      par wti+tinn: samlet 0.38  (halvdeler 0.33 / 0.34)
+   VUKE.DE    VANGUARD FTSE 100UETF LSD  nf 107  (+ 1 dubletter: IUSZ.DE)
+      brent      rp +0.30  (halvdeler +0.26 / +0.16)  q 0.0368
+      wti        rp +0.29  (halvdeler +0.26 / +0.16)  q 0.0417
+      tinn       rp +0.29  (halvdeler +0.31 / +0.32)  q 0.0443
+      par brent+tinn: samlet 0.40  (halvdeler 0.35 / 0.35)
+      par wti+tinn: samlet 0.39  (halvdeler 0.35 / 0.34)
+
+   VGWD.DE    VA.FTSE A.W.H.D.Y.UETFDLD  nf 107
+      brent      rp +0.30  (halvdeler +0.28 / +0.16)  q 0.0350
+      wti        rp +0.29  (halvdeler +0.24 / +0.18)  q 0.0448
+      kobber     rp +0.29  (halvdeler +0.25 / +0.28)  q 0.0476
+      par brent+kobber: samlet 0.40  (halvdeler 0.34 / 0.34)
+      par wti+kobber: samlet 0.38  (halvdeler 0.30 / 0.33)
+
+   SPYP.DE    SS SPDR MSCI EUR.MAT.UETF  nf 129
+      tinn       rp +0.38  (halvdeler +0.46 / +0.35)  q 0.0013
+      kobber     rp +0.34  (halvdeler +0.33 / +0.33)  q 0.0048
+      par tinn+kobber: samlet 0.40  (halvdeler 0.47 / 0.36)
 
    AMEE.DE    AM.GLBL HY. UCITS ETF-ACC  nf 129
-      wti        rp +0.33  (halvdeler +0.31 / +0.26)  q 0.0080
-      aluminium  rp +0.28  (halvdeler +0.31 / +0.29)  q 0.0302
-      brent      rp +0.27  (halvdeler +0.23 / +0.18)  q 0.0456
+      wti        rp +0.33  (halvdeler +0.31 / +0.26)  q 0.0070
+      aluminium  rp +0.28  (halvdeler +0.31 / +0.29)  q 0.0291
+      brent      rp +0.27  (halvdeler +0.23 / +0.18)  q 0.0443
       par wti+aluminium: samlet 0.39  (halvdeler 0.41 / 0.34)
       par aluminium+brent: samlet 0.36  (halvdeler 0.37 / 0.31)
 
    EHDV.DE    INVESCOM3 EUROSTX HDL A  nf 127
-      wti        rp +0.29  (halvdeler +0.35 / +0.10)  q 0.0227
-      tinn       rp +0.28  (halvdeler +0.20 / +0.34)  q 0.0365
+      wti        rp +0.29  (halvdeler +0.35 / +0.10)  q 0.0216
+      tinn       rp +0.28  (halvdeler +0.20 / +0.34)  q 0.0350
       par wti+tinn: samlet 0.38  (halvdeler 0.37 / 0.35)
 
+   XMEM.DE    XTR.MSCI EM.MKT.SWAP 1C  nf 129  (+ 2 dubletter: SPYM.DE, XMAS.DE)
+      tinn       rp +0.37  (halvdeler +0.34 / +0.40)  q 0.0017
+      kobber     rp +0.31  (halvdeler +0.14 / +0.45)  q 0.0120
+      par tinn+kobber: samlet 0.38  (halvdeler 0.34 / 0.45)
+
+   UIMI.DE    UBS COREMSCI EM DLD  nf 129
+      tinn       rp +0.37  (halvdeler +0.34 / +0.40)  q 0.0018
+      kobber     rp +0.32  (halvdeler +0.14 / +0.45)  q 0.0115
+      par tinn+kobber: samlet 0.38  (halvdeler 0.34 / 0.46)
+
    CEBL.DE    ISHSVII-MSCI EM AS.DL ACC  nf 129
-      tinn       rp +0.33  (halvdeler +0.24 / +0.38)  q 0.0080
-      gold       rp +0.29  (halvdeler +0.16 / +0.38)  q 0.0259
+      tinn       rp +0.33  (halvdeler +0.24 / +0.38)  q 0.0070
+      gold       rp +0.29  (halvdeler +0.16 / +0.38)  q 0.0248
       par tinn+gold: samlet 0.38  (halvdeler 0.29 / 0.43)
 
+   SPYA.DE    STSTR.SPDR MSCIEMASIA UE  nf 129
+      tinn       rp +0.34  (halvdeler +0.27 / +0.38)  q 0.0057
+      kobber     rp +0.29  (halvdeler +0.10 / +0.43)  q 0.0224
+      gold       rp +0.28  (halvdeler +0.13 / +0.38)  q 0.0364
+      par tinn+gold: samlet 0.38  (halvdeler 0.31 / 0.43)
+      par tinn+kobber: samlet 0.35  (halvdeler 0.28 / 0.43)
+
+   XAXJ.DE    XTR.MACAEJESG S1C  nf 129
+      tinn       rp +0.34  (halvdeler +0.28 / +0.38)  q 0.0051
+      kobber     rp +0.30  (halvdeler +0.10 / +0.40)  q 0.0206
+      gold       rp +0.26  (halvdeler +0.10 / +0.39)  q 0.0486
+      par tinn+gold: samlet 0.38  (halvdeler 0.31 / 0.44)
+      par tinn+kobber: samlet 0.35  (halvdeler 0.29 / 0.42)
+
+   XBAK.DE    XTR.MSCI PAKIST.SWAP 1CDL  nf 129
+      palmeolje  rp +0.31  (halvdeler +0.28 / +0.31)  q 0.0138
+      sink       rp +0.30  (halvdeler +0.14 / +0.40)  q 0.0164
+      par palmeolje+sink: samlet 0.37  (halvdeler 0.29 / 0.42)
+
+   XDWM.DE    X(IE)-MSCI WO.MATER. 1CDL  nf 125
+      kobber     rp +0.34  (halvdeler +0.30 / +0.36)  q 0.0064
+      tinn       rp +0.33  (halvdeler +0.30 / +0.34)  q 0.0085
+      par kobber+tinn: samlet 0.37  (halvdeler 0.35 / 0.38)
+
    DXSC.DE    XTR.MSCIEUMT 1C  nf 129
-      tinn       rp +0.35  (halvdeler +0.53 / +0.27)  q 0.0041
-      kobber     rp +0.30  (halvdeler +0.34 / +0.25)  q 0.0184
+      tinn       rp +0.35  (halvdeler +0.53 / +0.27)  q 0.0036
+      kobber     rp +0.30  (halvdeler +0.34 / +0.25)  q 0.0174
       par tinn+kobber: samlet 0.36  (halvdeler 0.54 / 0.28)
 
    F701.DE    AMU.MU.AS.PTF U.ETF DIST  nf 125
-      gold       rp +0.30  (halvdeler +0.14 / +0.39)  q 0.0198
-      tinn       rp +0.28  (halvdeler +0.19 / +0.32)  q 0.0328
+      gold       rp +0.30  (halvdeler +0.14 / +0.39)  q 0.0187
+      tinn       rp +0.28  (halvdeler +0.19 / +0.32)  q 0.0316
       par gold+tinn: samlet 0.36  (halvdeler 0.26 / 0.41)
 
+   UEQ3.DE    UBS FDSO-UBS C.C.SF HLSA  nf 129
+      palmeolje  rp +0.30  (halvdeler +0.27 / +0.41)  q 0.0152
+      aluminium  rp +0.28  (halvdeler +0.12 / +0.49)  q 0.0287
+      par palmeolje+aluminium: samlet 0.35  (halvdeler 0.27 / 0.54)
+
+   UIQI.DE    UBS FDSO-U.MS.AC AXJ DLA  nf 129
+      tinn       rp +0.30  (halvdeler +0.23 / +0.37)  q 0.0177
+      gold       rp +0.27  (halvdeler +0.17 / +0.37)  q 0.0451
+      par tinn+gold: samlet 0.35  (halvdeler 0.29 / 0.42)
+
    PSWD.DE    IM3-IRAWFVUE D  nf 129
-      kobber     rp +0.33  (halvdeler +0.28 / +0.36)  q 0.0076
-      tinn       rp +0.28  (halvdeler +0.27 / +0.33)  q 0.0318
+      kobber     rp +0.33  (halvdeler +0.28 / +0.36)  q 0.0067
+      tinn       rp +0.28  (halvdeler +0.27 / +0.33)  q 0.0307
       par kobber+tinn: samlet 0.34  (halvdeler 0.31 / 0.37)
 
    EXV1.DE    IS.S.EU.600 BANK.U.ETF A.  nf 129
-      tinn       rp +0.32  (halvdeler +0.28 / +0.40)  q 0.0107
-      kobber     rp +0.27  (halvdeler +0.10 / +0.42)  q 0.0402
+      tinn       rp +0.32  (halvdeler +0.28 / +0.40)  q 0.0099
+      kobber     rp +0.27  (halvdeler +0.10 / +0.42)  q 0.0383
       par tinn+kobber: samlet 0.33  (halvdeler 0.28 / 0.44)
 
    IBC4.DE    ISHSIII-MSCI S.AFR.DLACC  nf 129
-      tinn       rp +0.31  (halvdeler +0.29 / +0.33)  q 0.0151
-      kobber     rp +0.29  (halvdeler +0.16 / +0.38)  q 0.0255
+      tinn       rp +0.31  (halvdeler +0.29 / +0.33)  q 0.0144
+      kobber     rp +0.29  (halvdeler +0.16 / +0.38)  q 0.0243
       par tinn+kobber: samlet 0.33  (halvdeler 0.29 / 0.38)
 
+   ZPRX.DE    SS SPDR MSCI EUR.SC VW.UE  nf 129
+      tinn       rp +0.31  (halvdeler +0.31 / +0.34)  q 0.0122
+      kobber     rp +0.27  (halvdeler +0.13 / +0.33)  q 0.0434
+      par tinn+kobber: samlet 0.32  (halvdeler 0.31 / 0.35)
+
+   SPYX.DE    SPDR MSCI EM.MAR.SM.C.ETF  nf 129
+      tinn       rp +0.30  (halvdeler +0.32 / +0.32)  q 0.0199
+      kobber     rp +0.28  (halvdeler +0.17 / +0.36)  q 0.0350
+      par tinn+kobber: samlet 0.32  (halvdeler 0.32 / 0.37)
+
+   RQFI.DE    XTR.HARVEST CSI300 1D  nf 129  (+ 1 dubletter: XCHA.DE)
+      kobber     rp +0.30  (halvdeler +0.22 / +0.34)  q 0.0191
+      tinn       rp +0.27  (halvdeler +0.24 / +0.31)  q 0.0446
+      par kobber+tinn: samlet 0.31  (halvdeler 0.26 / 0.35)
+
+   EXX1.DE    ISHS ESTXX BNKS.30-15 D  nf 129
+      tinn       rp +0.29  (halvdeler +0.28 / +0.35)  q 0.0275
+      kobber     rp +0.26  (halvdeler +0.11 / +0.40)  q 0.0496
+      par tinn+kobber: samlet 0.30  (halvdeler 0.28 / 0.41)
+
    EUNI.DE    ISHSIII-MSCI EM SM.C.DL D  nf 129
-      tinn       rp +0.28  (halvdeler +0.31 / +0.29)  q 0.0321
-      kobber     rp +0.27  (halvdeler +0.18 / +0.33)  q 0.0458
+      tinn       rp +0.28  (halvdeler +0.31 / +0.29)  q 0.0310
+      kobber     rp +0.27  (halvdeler +0.18 / +0.33)  q 0.0444
       par tinn+kobber: samlet 0.30  (halvdeler 0.31 / 0.33)
 
    Sterkeste NEGATIVE sammenhenger (raavaren er en kostnad for fondet), bare til orientering:
       JA13.DE    JPM-BB USTB 13Y UE A                               brent      rp -0.47
+      VGTY.DE    VANG.USD TREA.BD UETF DLD                          wti        rp -0.45
+      XUTD.DE    XTR.II US TREASURIES 1D                            wti        rp -0.44
+      SXRL.DE    ISHSVII-DLTB.3-7YR DL ACC                          wti        rp -0.43
       JA13.DE    JPM-BB USTB 13Y UE A                               wti        rp -0.43
+      SXRM.DE    ISHSVII-DLTB.7-10YR DLACC                          wti        rp -0.43
       IS04.DE    ISHSIV-DL T.BD20+YR DL D                           wti        rp -0.43
       OM3M.DE    ISHSVII-DLTB.3-7YR DL DIS                          wti        rp -0.43
+      VGTY.DE    VANG.USD TREA.BD UETF DLD                          brent      rp -0.42
       IUSM.DE    ISHSII-DLT.BD7-10YR DLDIS                          wti        rp -0.42
       OM3M.DE    ISHSVII-DLTB.3-7YR DL DIS                          brent      rp -0.41
-      LYYB.DE    A.ETF-A.MSCI U.ESG BR.T.D                          tinn       rp -0.39
-      IUSM.DE    ISHSII-DLT.BD7-10YR DLDIS                          brent      rp -0.38
-      IS04.DE    ISHSIV-DL T.BD20+YR DL D                           brent      rp -0.38
-      QDVP.DE    ISIV-US MO.B.SE.U.ETF DLD                          wti        rp -0.36
-      AW1R.DE    UBS(I)-U.M.A.S.R.ETF HEOA                          brent      rp -0.36
-      NQSE.DE    ISHSVII-NASDAQ 100 EOHACC                          brent      rp -0.35
-      EUN3.DE    ISHSIII-GL.GOV.BD DL DIS                           wti        rp -0.35
-      HNDX.DE    AIS-AM.NAS.-100 SW.UEEOCD                          brent      rp -0.35
-      IUSU.DE    IS DL T.BD1-3YR U.ETF DLD                          wti        rp -0.34
+      SXRL.DE    ISHSVII-DLTB.3-7YR DL ACC                          brent      rp -0.41
+      XUTD.DE    XTR.II US TREASURIES 1D                            brent      rp -0.41
+      SEAC.DE    UBSMSCIWLDSOCRES DLA                               wti        rp -0.41
+      UET1.DE    UBSMSCIUSSOCRES HEOD                               brent      rp -0.41
 
-Lagret sonder/utforsk_etf.json. 1047 fond gjenstaar: kjoer sonden igjen.
+Lagret sonder/utforsk_etf.json. Alle fond er maalt.
