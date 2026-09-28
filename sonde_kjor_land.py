@@ -104,7 +104,12 @@ for sid, lr in REAL.items():
 
 print("\n1. Ken French: finner landfilene\n")
 side = get(FRENCH + "data_library.html").text
-lenker = sorted(set(re.findall(r'href="(ftp/[^"]+_CSV\.zip)"', side)))
+lenker = sorted(set(re.sub(r"^.*?(ftp/)", r"\1", l)
+                    for l in re.findall(r'href=["\']([^"\']+?\.zip)["\']', side, re.I) if "csv" in l.lower()))
+print(f"   {len(lenker)} CSV-lenker paa siden. De som kan vaere internasjonale:")
+for l in lenker:
+    if re.search(r"intl|international|countr|developed|emerging|global|europe|asia|japan|norw|austral", l, re.I):
+        print(f"      {l}")
 KURS, KILDE = {}, {}
 for fid, (land, _) in LAND.items():
     if fid not in KART:
