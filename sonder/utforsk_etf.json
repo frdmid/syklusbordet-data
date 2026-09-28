@@ -1,0 +1,4066 @@
+{
+ "kjort": "2026-09-28 07:21:52",
+ "ferdig": false,
+ "gjenstaar": 1047,
+ "univers": 3080,
+ "maalt": 732,
+ "par_testet": 11530,
+ "funn": [
+  {
+   "etf": "M9SA.DE",
+   "navn": "M.A.-R.INT.COM.IN.UETF",
+   "isin": "LU0249326488",
+   "nf": 129,
+   "raavarer": {
+    "wti": {
+     "rp": 0.807,
+     "q": 0.0,
+     "halvdeler": [
+      0.776,
+      0.826
+     ]
+    },
+    "brent": {
+     "rp": 0.748,
+     "q": 0.0,
+     "halvdeler": [
+      0.705,
+      0.775
+     ]
+    },
+    "aluminium": {
+     "rp": 0.448,
+     "q": 0.0,
+     "halvdeler": [
+      0.323,
+      0.562
+     ]
+    },
+    "palmeolje": {
+     "rp": 0.336,
+     "q": 0.0073,
+     "halvdeler": [
+      0.313,
+      0.319
+     ]
+    },
+    "nikkel": {
+     "rp": 0.3,
+     "q": 0.0192,
+     "halvdeler": [
+      0.182,
+      0.368
+     ]
+    },
+    "ttf": {
+     "rp": 0.293,
+     "q": 0.0232,
+     "halvdeler": [
+      0.208,
+      0.349
+     ]
+    },
+    "tinn": {
+     "rp": 0.274,
+     "q": 0.0388,
+     "halvdeler": [
+      0.398,
+      0.242
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "wti",
+      "aluminium"
+     ],
+     "r_samlet": 0.844,
+     "halvdeler": [
+      0.803,
+      0.863
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "ttf"
+     ],
+     "r_samlet": 0.833,
+     "halvdeler": [
+      0.815,
+      0.841
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "nikkel"
+     ],
+     "r_samlet": 0.824,
+     "halvdeler": [
+      0.779,
+      0.871
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "tinn"
+     ],
+     "r_samlet": 0.824,
+     "halvdeler": [
+      0.807,
+      0.84
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "palmeolje"
+     ],
+     "r_samlet": 0.816,
+     "halvdeler": [
+      0.791,
+      0.833
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "aluminium"
+     ],
+     "r_samlet": 0.81,
+     "halvdeler": [
+      0.75,
+      0.846
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "ttf"
+     ],
+     "r_samlet": 0.784,
+     "halvdeler": [
+      0.758,
+      0.801
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "nikkel"
+     ],
+     "r_samlet": 0.778,
+     "halvdeler": [
+      0.715,
+      0.846
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "tinn"
+     ],
+     "r_samlet": 0.771,
+     "halvdeler": [
+      0.746,
+      0.804
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "palmeolje"
+     ],
+     "r_samlet": 0.759,
+     "halvdeler": [
+      0.719,
+      0.793
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "ttf"
+     ],
+     "r_samlet": 0.482,
+     "halvdeler": [
+      0.34,
+      0.601
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "palmeolje"
+     ],
+     "r_samlet": 0.48,
+     "halvdeler": [
+      0.389,
+      0.568
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "nikkel"
+     ],
+     "r_samlet": 0.458,
+     "halvdeler": [
+      0.336,
+      0.563
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "tinn"
+     ],
+     "r_samlet": 0.451,
+     "halvdeler": [
+      0.448,
+      0.573
+     ]
+    },
+    {
+     "par": [
+      "palmeolje",
+      "ttf"
+     ],
+     "r_samlet": 0.437,
+     "halvdeler": [
+      0.353,
+      0.476
+     ]
+    },
+    {
+     "par": [
+      "ttf",
+      "tinn"
+     ],
+     "r_samlet": 0.412,
+     "halvdeler": [
+      0.448,
+      0.44
+     ]
+    },
+    {
+     "par": [
+      "palmeolje",
+      "nikkel"
+     ],
+     "r_samlet": 0.395,
+     "halvdeler": [
+      0.354,
+      0.41
+     ]
+    },
+    {
+     "par": [
+      "nikkel",
+      "ttf"
+     ],
+     "r_samlet": 0.387,
+     "halvdeler": [
+      0.255,
+      0.467
+     ]
+    },
+    {
+     "par": [
+      "palmeolje",
+      "tinn"
+     ],
+     "r_samlet": 0.373,
+     "halvdeler": [
+      0.448,
+      0.342
+     ]
+    },
+    {
+     "par": [
+      "nikkel",
+      "tinn"
+     ],
+     "r_samlet": 0.339,
+     "halvdeler": [
+      0.416,
+      0.369
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "EXXY.DE",
+   "navn": "ISHS DIV.COMM.SWAP UC.ETF",
+   "isin": "DE000A0H0728",
+   "nf": 129,
+   "raavarer": {
+    "wti": {
+     "rp": 0.611,
+     "q": 0.0,
+     "halvdeler": [
+      0.568,
+      0.679
+     ]
+    },
+    "brent": {
+     "rp": 0.561,
+     "q": 0.0,
+     "halvdeler": [
+      0.517,
+      0.643
+     ]
+    },
+    "aluminium": {
+     "rp": 0.461,
+     "q": 0.0,
+     "halvdeler": [
+      0.289,
+      0.549
+     ]
+    },
+    "ttf": {
+     "rp": 0.352,
+     "q": 0.0042,
+     "halvdeler": [
+      0.291,
+      0.377
+     ]
+    },
+    "henryhub": {
+     "rp": 0.341,
+     "q": 0.006,
+     "halvdeler": [
+      0.253,
+      0.396
+     ]
+    },
+    "nikkel": {
+     "rp": 0.303,
+     "q": 0.0176,
+     "halvdeler": [
+      0.173,
+      0.372
+     ]
+    },
+    "palmeolje": {
+     "rp": 0.284,
+     "q": 0.0298,
+     "halvdeler": [
+      0.218,
+      0.301
+     ]
+    },
+    "tinn": {
+     "rp": 0.27,
+     "q": 0.0426,
+     "halvdeler": [
+      0.367,
+      0.241
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "wti",
+      "henryhub"
+     ],
+     "r_samlet": 0.698,
+     "halvdeler": [
+      0.63,
+      0.768
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "aluminium"
+     ],
+     "r_samlet": 0.686,
+     "halvdeler": [
+      0.605,
+      0.742
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "ttf"
+     ],
+     "r_samlet": 0.675,
+     "halvdeler": [
+      0.654,
+      0.714
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "aluminium"
+     ],
+     "r_samlet": 0.666,
+     "halvdeler": [
+      0.57,
+      0.74
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "henryhub"
+     ],
+     "r_samlet": 0.655,
+     "halvdeler": [
+      0.584,
+      0.732
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "nikkel"
+     ],
+     "r_samlet": 0.643,
+     "halvdeler": [
+      0.575,
+      0.741
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "ttf"
+     ],
+     "r_samlet": 0.64,
+     "halvdeler": [
+      0.621,
+      0.689
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "tinn"
+     ],
+     "r_samlet": 0.638,
+     "halvdeler": [
+      0.617,
+      0.7
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "palmeolje"
+     ],
+     "r_samlet": 0.622,
+     "halvdeler": [
+      0.577,
+      0.691
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "nikkel"
+     ],
+     "r_samlet": 0.608,
+     "halvdeler": [
+      0.533,
+      0.73
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "tinn"
+     ],
+     "r_samlet": 0.596,
+     "halvdeler": [
+      0.577,
+      0.677
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "palmeolje"
+     ],
+     "r_samlet": 0.575,
+     "halvdeler": [
+      0.525,
+      0.665
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "henryhub"
+     ],
+     "r_samlet": 0.53,
+     "halvdeler": [
+      0.383,
+      0.611
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "ttf"
+     ],
+     "r_samlet": 0.518,
+     "halvdeler": [
+      0.356,
+      0.601
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "palmeolje"
+     ],
+     "r_samlet": 0.474,
+     "halvdeler": [
+      0.316,
+      0.553
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "nikkel"
+     ],
+     "r_samlet": 0.47,
+     "halvdeler": [
+      0.304,
+      0.551
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "tinn"
+     ],
+     "r_samlet": 0.463,
+     "halvdeler": [
+      0.409,
+      0.558
+     ]
+    },
+    {
+     "par": [
+      "henryhub",
+      "palmeolje"
+     ],
+     "r_samlet": 0.46,
+     "halvdeler": [
+      0.385,
+      0.495
+     ]
+    },
+    {
+     "par": [
+      "ttf",
+      "tinn"
+     ],
+     "r_samlet": 0.455,
+     "halvdeler": [
+      0.467,
+      0.463
+     ]
+    },
+    {
+     "par": [
+      "ttf",
+      "palmeolje"
+     ],
+     "r_samlet": 0.443,
+     "halvdeler": [
+      0.341,
+      0.484
+     ]
+    },
+    {
+     "par": [
+      "ttf",
+      "henryhub"
+     ],
+     "r_samlet": 0.44,
+     "halvdeler": [
+      0.353,
+      0.486
+     ]
+    },
+    {
+     "par": [
+      "henryhub",
+      "nikkel"
+     ],
+     "r_samlet": 0.438,
+     "halvdeler": [
+      0.296,
+      0.519
+     ]
+    },
+    {
+     "par": [
+      "henryhub",
+      "tinn"
+     ],
+     "r_samlet": 0.431,
+     "halvdeler": [
+      0.458,
+      0.455
+     ]
+    },
+    {
+     "par": [
+      "ttf",
+      "nikkel"
+     ],
+     "r_samlet": 0.429,
+     "halvdeler": [
+      0.317,
+      0.487
+     ]
+    },
+    {
+     "par": [
+      "nikkel",
+      "palmeolje"
+     ],
+     "r_samlet": 0.363,
+     "halvdeler": [
+      0.271,
+      0.404
+     ]
+    },
+    {
+     "par": [
+      "nikkel",
+      "tinn"
+     ],
+     "r_samlet": 0.338,
+     "halvdeler": [
+      0.385,
+      0.372
+     ]
+    },
+    {
+     "par": [
+      "palmeolje",
+      "tinn"
+     ],
+     "r_samlet": 0.335,
+     "halvdeler": [
+      0.384,
+      0.327
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "ETLF.DE",
+   "navn": "L+G-L+G ALL COMM.U.E.DLA",
+   "isin": "IE00BF0BCP69",
+   "nf": 109,
+   "raavarer": {
+    "wti": {
+     "rp": 0.589,
+     "q": 0.0,
+     "halvdeler": [
+      0.488,
+      0.68
+     ]
+    },
+    "brent": {
+     "rp": 0.557,
+     "q": 0.0,
+     "halvdeler": [
+      0.492,
+      0.646
+     ]
+    },
+    "aluminium": {
+     "rp": 0.507,
+     "q": 0.0,
+     "halvdeler": [
+      0.404,
+      0.547
+     ]
+    },
+    "nikkel": {
+     "rp": 0.374,
+     "q": 0.0056,
+     "halvdeler": [
+      0.386,
+      0.372
+     ]
+    },
+    "henryhub": {
+     "rp": 0.356,
+     "q": 0.0083,
+     "halvdeler": [
+      0.285,
+      0.396
+     ]
+    },
+    "ttf": {
+     "rp": 0.353,
+     "q": 0.0093,
+     "halvdeler": [
+      0.274,
+      0.38
+     ]
+    },
+    "palmeolje": {
+     "rp": 0.294,
+     "q": 0.0421,
+     "halvdeler": [
+      0.22,
+      0.3
+     ]
+    },
+    "kobber": {
+     "rp": 0.292,
+     "q": 0.0434,
+     "halvdeler": [
+      0.475,
+      0.208
+     ]
+    },
+    "tinn": {
+     "rp": 0.291,
+     "q": 0.0446,
+     "halvdeler": [
+      0.51,
+      0.238
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "wti",
+      "henryhub"
+     ],
+     "r_samlet": 0.689,
+     "halvdeler": [
+      0.582,
+      0.769
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "aluminium"
+     ],
+     "r_samlet": 0.688,
+     "halvdeler": [
+      0.61,
+      0.741
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "aluminium"
+     ],
+     "r_samlet": 0.686,
+     "halvdeler": [
+      0.581,
+      0.742
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "henryhub"
+     ],
+     "r_samlet": 0.658,
+     "halvdeler": [
+      0.576,
+      0.735
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "ttf"
+     ],
+     "r_samlet": 0.656,
+     "halvdeler": [
+      0.582,
+      0.716
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "nikkel"
+     ],
+     "r_samlet": 0.645,
+     "halvdeler": [
+      0.563,
+      0.742
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "ttf"
+     ],
+     "r_samlet": 0.634,
+     "halvdeler": [
+      0.591,
+      0.693
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "nikkel"
+     ],
+     "r_samlet": 0.631,
+     "halvdeler": [
+      0.581,
+      0.733
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "tinn"
+     ],
+     "r_samlet": 0.623,
+     "halvdeler": [
+      0.615,
+      0.7
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "kobber"
+     ],
+     "r_samlet": 0.615,
+     "halvdeler": [
+      0.594,
+      0.702
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "palmeolje"
+     ],
+     "r_samlet": 0.607,
+     "halvdeler": [
+      0.516,
+      0.692
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "tinn"
+     ],
+     "r_samlet": 0.601,
+     "halvdeler": [
+      0.624,
+      0.68
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "kobber"
+     ],
+     "r_samlet": 0.595,
+     "halvdeler": [
+      0.61,
+      0.69
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "palmeolje"
+     ],
+     "r_samlet": 0.578,
+     "halvdeler": [
+      0.516,
+      0.668
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "henryhub"
+     ],
+     "r_samlet": 0.57,
+     "halvdeler": [
+      0.485,
+      0.61
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "ttf"
+     ],
+     "r_samlet": 0.554,
+     "halvdeler": [
+      0.429,
+      0.602
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "nikkel"
+     ],
+     "r_samlet": 0.526,
+     "halvdeler": [
+      0.499,
+      0.55
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "palmeolje"
+     ],
+     "r_samlet": 0.514,
+     "halvdeler": [
+      0.405,
+      0.552
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "tinn"
+     ],
+     "r_samlet": 0.508,
+     "halvdeler": [
+      0.559,
+      0.557
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "kobber"
+     ],
+     "r_samlet": 0.507,
+     "halvdeler": [
+      0.488,
+      0.561
+     ]
+    },
+    {
+     "par": [
+      "nikkel",
+      "henryhub"
+     ],
+     "r_samlet": 0.499,
+     "halvdeler": [
+      0.475,
+      0.519
+     ]
+    },
+    {
+     "par": [
+      "nikkel",
+      "ttf"
+     ],
+     "r_samlet": 0.473,
+     "halvdeler": [
+      0.437,
+      0.489
+     ]
+    },
+    {
+     "par": [
+      "henryhub",
+      "palmeolje"
+     ],
+     "r_samlet": 0.473,
+     "halvdeler": [
+      0.406,
+      0.494
+     ]
+    },
+    {
+     "par": [
+      "ttf",
+      "tinn"
+     ],
+     "r_samlet": 0.469,
+     "halvdeler": [
+      0.574,
+      0.464
+     ]
+    },
+    {
+     "par": [
+      "henryhub",
+      "kobber"
+     ],
+     "r_samlet": 0.463,
+     "halvdeler": [
+      0.56,
+      0.448
+     ]
+    },
+    {
+     "par": [
+      "ttf",
+      "kobber"
+     ],
+     "r_samlet": 0.46,
+     "halvdeler": [
+      0.512,
+      0.452
+     ]
+    },
+    {
+     "par": [
+      "henryhub",
+      "tinn"
+     ],
+     "r_samlet": 0.456,
+     "halvdeler": [
+      0.606,
+      0.454
+     ]
+    },
+    {
+     "par": [
+      "henryhub",
+      "ttf"
+     ],
+     "r_samlet": 0.448,
+     "halvdeler": [
+      0.354,
+      0.488
+     ]
+    },
+    {
+     "par": [
+      "ttf",
+      "palmeolje"
+     ],
+     "r_samlet": 0.443,
+     "halvdeler": [
+      0.309,
+      0.486
+     ]
+    },
+    {
+     "par": [
+      "nikkel",
+      "palmeolje"
+     ],
+     "r_samlet": 0.411,
+     "halvdeler": [
+      0.419,
+      0.403
+     ]
+    },
+    {
+     "par": [
+      "nikkel",
+      "tinn"
+     ],
+     "r_samlet": 0.396,
+     "halvdeler": [
+      0.599,
+      0.373
+     ]
+    },
+    {
+     "par": [
+      "nikkel",
+      "kobber"
+     ],
+     "r_samlet": 0.395,
+     "halvdeler": [
+      0.551,
+      0.373
+     ]
+    },
+    {
+     "par": [
+      "palmeolje",
+      "tinn"
+     ],
+     "r_samlet": 0.354,
+     "halvdeler": [
+      0.516,
+      0.326
+     ]
+    },
+    {
+     "par": [
+      "palmeolje",
+      "kobber"
+     ],
+     "r_samlet": 0.347,
+     "halvdeler": [
+      0.475,
+      0.313
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "BCFU.DE",
+   "navn": "UBS FDSO-UBS BBG C.C.DLA",
+   "isin": "IE00BYYLVH00",
+   "nf": 112,
+   "raavarer": {
+    "aluminium": {
+     "rp": 0.545,
+     "q": 0.0,
+     "halvdeler": [
+      0.516,
+      0.571
+     ]
+    },
+    "wti": {
+     "rp": 0.526,
+     "q": 0.0,
+     "halvdeler": [
+      0.488,
+      0.602
+     ]
+    },
+    "brent": {
+     "rp": 0.492,
+     "q": 0.0,
+     "halvdeler": [
+      0.504,
+      0.54
+     ]
+    },
+    "kobber": {
+     "rp": 0.415,
+     "q": 0.0009,
+     "halvdeler": [
+      0.515,
+      0.364
+     ]
+    },
+    "nikkel": {
+     "rp": 0.388,
+     "q": 0.0028,
+     "halvdeler": [
+      0.276,
+      0.466
+     ]
+    },
+    "tinn": {
+     "rp": 0.367,
+     "q": 0.0059,
+     "halvdeler": [
+      0.444,
+      0.352
+     ]
+    },
+    "sink": {
+     "rp": 0.356,
+     "q": 0.0079,
+     "halvdeler": [
+      0.297,
+      0.375
+     ]
+    },
+    "palmeolje": {
+     "rp": 0.318,
+     "q": 0.0209,
+     "halvdeler": [
+      0.198,
+      0.374
+     ]
+    },
+    "ttf": {
+     "rp": 0.303,
+     "q": 0.0307,
+     "halvdeler": [
+      0.226,
+      0.34
+     ]
+    },
+    "henryhub": {
+     "rp": 0.294,
+     "q": 0.0368,
+     "halvdeler": [
+      0.147,
+      0.371
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "aluminium",
+      "brent"
+     ],
+     "r_samlet": 0.672,
+     "halvdeler": [
+      0.688,
+      0.688
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "wti"
+     ],
+     "r_samlet": 0.67,
+     "halvdeler": [
+      0.654,
+      0.702
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "kobber"
+     ],
+     "r_samlet": 0.619,
+     "halvdeler": [
+      0.625,
+      0.692
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "nikkel"
+     ],
+     "r_samlet": 0.604,
+     "halvdeler": [
+      0.518,
+      0.725
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "tinn"
+     ],
+     "r_samlet": 0.604,
+     "halvdeler": [
+      0.575,
+      0.67
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "henryhub"
+     ],
+     "r_samlet": 0.604,
+     "halvdeler": [
+      0.52,
+      0.69
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "kobber"
+     ],
+     "r_samlet": 0.604,
+     "halvdeler": [
+      0.642,
+      0.668
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "sink"
+     ],
+     "r_samlet": 0.591,
+     "halvdeler": [
+      0.535,
+      0.686
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "nikkel"
+     ],
+     "r_samlet": 0.588,
+     "halvdeler": [
+      0.539,
+      0.701
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "tinn"
+     ],
+     "r_samlet": 0.584,
+     "halvdeler": [
+      0.592,
+      0.634
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "ttf"
+     ],
+     "r_samlet": 0.582,
+     "halvdeler": [
+      0.557,
+      0.637
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "henryhub"
+     ],
+     "r_samlet": 0.576,
+     "halvdeler": [
+      0.53,
+      0.618
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "sink"
+     ],
+     "r_samlet": 0.576,
+     "halvdeler": [
+      0.551,
+      0.677
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "henryhub"
+     ],
+     "r_samlet": 0.57,
+     "halvdeler": [
+      0.529,
+      0.634
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "ttf"
+     ],
+     "r_samlet": 0.567,
+     "halvdeler": [
+      0.518,
+      0.606
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "palmeolje"
+     ],
+     "r_samlet": 0.561,
+     "halvdeler": [
+      0.509,
+      0.646
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "nikkel"
+     ],
+     "r_samlet": 0.559,
+     "halvdeler": [
+      0.53,
+      0.591
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "ttf"
+     ],
+     "r_samlet": 0.558,
+     "halvdeler": [
+      0.576,
+      0.592
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "kobber"
+     ],
+     "r_samlet": 0.556,
+     "halvdeler": [
+      0.561,
+      0.573
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "palmeolje"
+     ],
+     "r_samlet": 0.552,
+     "halvdeler": [
+      0.518,
+      0.589
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "tinn"
+     ],
+     "r_samlet": 0.551,
+     "halvdeler": [
+      0.582,
+      0.571
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "sink"
+     ],
+     "r_samlet": 0.55,
+     "halvdeler": [
+      0.517,
+      0.576
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "palmeolje"
+     ],
+     "r_samlet": 0.533,
+     "halvdeler": [
+      0.521,
+      0.604
+     ]
+    },
+    {
+     "par": [
+      "kobber",
+      "ttf"
+     ],
+     "r_samlet": 0.515,
+     "halvdeler": [
+      0.531,
+      0.522
+     ]
+    },
+    {
+     "par": [
+      "kobber",
+      "henryhub"
+     ],
+     "r_samlet": 0.511,
+     "halvdeler": [
+      0.539,
+      0.519
+     ]
+    },
+    {
+     "par": [
+      "tinn",
+      "ttf"
+     ],
+     "r_samlet": 0.488,
+     "halvdeler": [
+      0.493,
+      0.508
+     ]
+    },
+    {
+     "par": [
+      "nikkel",
+      "henryhub"
+     ],
+     "r_samlet": 0.471,
+     "halvdeler": [
+      0.31,
+      0.569
+     ]
+    },
+    {
+     "par": [
+      "tinn",
+      "henryhub"
+     ],
+     "r_samlet": 0.466,
+     "halvdeler": [
+      0.48,
+      0.5
+     ]
+    },
+    {
+     "par": [
+      "kobber",
+      "nikkel"
+     ],
+     "r_samlet": 0.465,
+     "halvdeler": [
+      0.529,
+      0.479
+     ]
+    },
+    {
+     "par": [
+      "sink",
+      "henryhub"
+     ],
+     "r_samlet": 0.458,
+     "halvdeler": [
+      0.327,
+      0.523
+     ]
+    },
+    {
+     "par": [
+      "nikkel",
+      "ttf"
+     ],
+     "r_samlet": 0.453,
+     "halvdeler": [
+      0.326,
+      0.533
+     ]
+    },
+    {
+     "par": [
+      "kobber",
+      "palmeolje"
+     ],
+     "r_samlet": 0.445,
+     "halvdeler": [
+      0.515,
+      0.438
+     ]
+    },
+    {
+     "par": [
+      "palmeolje",
+      "henryhub"
+     ],
+     "r_samlet": 0.444,
+     "halvdeler": [
+      0.277,
+      0.524
+     ]
+    },
+    {
+     "par": [
+      "nikkel",
+      "tinn"
+     ],
+     "r_samlet": 0.441,
+     "halvdeler": [
+      0.49,
+      0.475
+     ]
+    },
+    {
+     "par": [
+      "nikkel",
+      "sink"
+     ],
+     "r_samlet": 0.437,
+     "halvdeler": [
+      0.35,
+      0.494
+     ]
+    },
+    {
+     "par": [
+      "nikkel",
+      "palmeolje"
+     ],
+     "r_samlet": 0.434,
+     "halvdeler": [
+      0.32,
+      0.505
+     ]
+    },
+    {
+     "par": [
+      "sink",
+      "ttf"
+     ],
+     "r_samlet": 0.434,
+     "halvdeler": [
+      0.346,
+      0.472
+     ]
+    },
+    {
+     "par": [
+      "palmeolje",
+      "ttf"
+     ],
+     "r_samlet": 0.423,
+     "halvdeler": [
+      0.264,
+      0.508
+     ]
+    },
+    {
+     "par": [
+      "tinn",
+      "sink"
+     ],
+     "r_samlet": 0.419,
+     "halvdeler": [
+      0.469,
+      0.412
+     ]
+    },
+    {
+     "par": [
+      "tinn",
+      "palmeolje"
+     ],
+     "r_samlet": 0.417,
+     "halvdeler": [
+      0.451,
+      0.434
+     ]
+    },
+    {
+     "par": [
+      "sink",
+      "palmeolje"
+     ],
+     "r_samlet": 0.407,
+     "halvdeler": [
+      0.324,
+      0.444
+     ]
+    },
+    {
+     "par": [
+      "ttf",
+      "henryhub"
+     ],
+     "r_samlet": 0.376,
+     "halvdeler": [
+      0.245,
+      0.447
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "ETL2.DE",
+   "navn": "L+G-L.DAT.A.COM.U.E.DLA",
+   "isin": "IE00B4WPHX27",
+   "nf": 129,
+   "raavarer": {
+    "wti": {
+     "rp": 0.54,
+     "q": 0.0,
+     "halvdeler": [
+      0.524,
+      0.587
+     ]
+    },
+    "brent": {
+     "rp": 0.48,
+     "q": 0.0,
+     "halvdeler": [
+      0.469,
+      0.526
+     ]
+    },
+    "aluminium": {
+     "rp": 0.458,
+     "q": 0.0,
+     "halvdeler": [
+      0.301,
+      0.54
+     ]
+    },
+    "nikkel": {
+     "rp": 0.344,
+     "q": 0.0058,
+     "halvdeler": [
+      0.183,
+      0.44
+     ]
+    },
+    "ttf": {
+     "rp": 0.335,
+     "q": 0.0073,
+     "halvdeler": [
+      0.277,
+      0.359
+     ]
+    },
+    "palmeolje": {
+     "rp": 0.305,
+     "q": 0.016,
+     "halvdeler": [
+      0.276,
+      0.311
+     ]
+    },
+    "tinn": {
+     "rp": 0.304,
+     "q": 0.0164,
+     "halvdeler": [
+      0.384,
+      0.279
+     ]
+    },
+    "henryhub": {
+     "rp": 0.285,
+     "q": 0.0279,
+     "halvdeler": [
+      0.109,
+      0.376
+     ]
+    },
+    "kobber": {
+     "rp": 0.269,
+     "q": 0.0431,
+     "halvdeler": [
+      0.276,
+      0.257
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "wti",
+      "aluminium"
+     ],
+     "r_samlet": 0.632,
+     "halvdeler": [
+      0.57,
+      0.674
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "henryhub"
+     ],
+     "r_samlet": 0.61,
+     "halvdeler": [
+      0.539,
+      0.679
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "aluminium"
+     ],
+     "r_samlet": 0.609,
+     "halvdeler": [
+      0.535,
+      0.659
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "ttf"
+     ],
+     "r_samlet": 0.608,
+     "halvdeler": [
+      0.606,
+      0.63
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "nikkel"
+     ],
+     "r_samlet": 0.599,
+     "halvdeler": [
+      0.535,
+      0.698
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "tinn"
+     ],
+     "r_samlet": 0.589,
+     "halvdeler": [
+      0.589,
+      0.628
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "kobber"
+     ],
+     "r_samlet": 0.571,
+     "halvdeler": [
+      0.553,
+      0.632
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "ttf"
+     ],
+     "r_samlet": 0.566,
+     "halvdeler": [
+      0.571,
+      0.587
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "palmeolje"
+     ],
+     "r_samlet": 0.565,
+     "halvdeler": [
+      0.551,
+      0.611
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "nikkel"
+     ],
+     "r_samlet": 0.561,
+     "halvdeler": [
+      0.491,
+      0.673
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "henryhub"
+     ],
+     "r_samlet": 0.557,
+     "halvdeler": [
+      0.486,
+      0.625
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "tinn"
+     ],
+     "r_samlet": 0.542,
+     "halvdeler": [
+      0.549,
+      0.587
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "kobber"
+     ],
+     "r_samlet": 0.526,
+     "halvdeler": [
+      0.513,
+      0.6
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "palmeolje"
+     ],
+     "r_samlet": 0.513,
+     "halvdeler": [
+      0.497,
+      0.566
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "ttf"
+     ],
+     "r_samlet": 0.507,
+     "halvdeler": [
+      0.355,
+      0.587
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "henryhub"
+     ],
+     "r_samlet": 0.502,
+     "halvdeler": [
+      0.319,
+      0.595
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "nikkel"
+     ],
+     "r_samlet": 0.478,
+     "halvdeler": [
+      0.318,
+      0.559
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "palmeolje"
+     ],
+     "r_samlet": 0.477,
+     "halvdeler": [
+      0.353,
+      0.547
+     ]
+    },
+    {
+     "par": [
+      "ttf",
+      "tinn"
+     ],
+     "r_samlet": 0.465,
+     "halvdeler": [
+      0.472,
+      0.472
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "tinn"
+     ],
+     "r_samlet": 0.464,
+     "halvdeler": [
+      0.427,
+      0.542
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "kobber"
+     ],
+     "r_samlet": 0.458,
+     "halvdeler": [
+      0.323,
+      0.543
+     ]
+    },
+    {
+     "par": [
+      "ttf",
+      "palmeolje"
+     ],
+     "r_samlet": 0.444,
+     "halvdeler": [
+      0.365,
+      0.477
+     ]
+    },
+    {
+     "par": [
+      "nikkel",
+      "ttf"
+     ],
+     "r_samlet": 0.443,
+     "halvdeler": [
+      0.309,
+      0.523
+     ]
+    },
+    {
+     "par": [
+      "palmeolje",
+      "henryhub"
+     ],
+     "r_samlet": 0.434,
+     "halvdeler": [
+      0.331,
+      0.485
+     ]
+    },
+    {
+     "par": [
+      "nikkel",
+      "henryhub"
+     ],
+     "r_samlet": 0.429,
+     "halvdeler": [
+      0.206,
+      0.552
+     ]
+    },
+    {
+     "par": [
+      "ttf",
+      "kobber"
+     ],
+     "r_samlet": 0.428,
+     "halvdeler": [
+      0.36,
+      0.462
+     ]
+    },
+    {
+     "par": [
+      "tinn",
+      "henryhub"
+     ],
+     "r_samlet": 0.414,
+     "halvdeler": [
+      0.405,
+      0.459
+     ]
+    },
+    {
+     "par": [
+      "nikkel",
+      "palmeolje"
+     ],
+     "r_samlet": 0.403,
+     "halvdeler": [
+      0.323,
+      0.46
+     ]
+    },
+    {
+     "par": [
+      "ttf",
+      "henryhub"
+     ],
+     "r_samlet": 0.396,
+     "halvdeler": [
+      0.282,
+      0.462
+     ]
+    },
+    {
+     "par": [
+      "henryhub",
+      "kobber"
+     ],
+     "r_samlet": 0.392,
+     "halvdeler": [
+      0.296,
+      0.455
+     ]
+    },
+    {
+     "par": [
+      "nikkel",
+      "tinn"
+     ],
+     "r_samlet": 0.383,
+     "halvdeler": [
+      0.404,
+      0.44
+     ]
+    },
+    {
+     "par": [
+      "palmeolje",
+      "tinn"
+     ],
+     "r_samlet": 0.369,
+     "halvdeler": [
+      0.42,
+      0.354
+     ]
+    },
+    {
+     "par": [
+      "nikkel",
+      "kobber"
+     ],
+     "r_samlet": 0.361,
+     "halvdeler": [
+      0.29,
+      0.44
+     ]
+    },
+    {
+     "par": [
+      "palmeolje",
+      "kobber"
+     ],
+     "r_samlet": 0.348,
+     "halvdeler": [
+      0.346,
+      0.341
+     ]
+    },
+    {
+     "par": [
+      "tinn",
+      "kobber"
+     ],
+     "r_samlet": 0.317,
+     "halvdeler": [
+      0.396,
+      0.287
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "EXH1.DE",
+   "navn": "IS.S.E.600 OIL+G.U.ETF A.",
+   "isin": "DE000A0H08M3",
+   "nf": 129,
+   "raavarer": {
+    "wti": {
+     "rp": 0.569,
+     "q": 0.0,
+     "halvdeler": [
+      0.385,
+      0.642
+     ]
+    },
+    "brent": {
+     "rp": 0.52,
+     "q": 0.0,
+     "halvdeler": [
+      0.296,
+      0.629
+     ]
+    },
+    "aluminium": {
+     "rp": 0.346,
+     "q": 0.0053,
+     "halvdeler": [
+      0.327,
+      0.39
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "wti",
+      "aluminium"
+     ],
+     "r_samlet": 0.604,
+     "halvdeler": [
+      0.472,
+      0.659
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "aluminium"
+     ],
+     "r_samlet": 0.578,
+     "halvdeler": [
+      0.421,
+      0.666
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "BCFE.DE",
+   "navn": "UBS FDSO-UBS BBG C.C.EOHA",
+   "isin": "IE00BYYLVJ24",
+   "nf": 112,
+   "raavarer": {
+    "wti": {
+     "rp": 0.438,
+     "q": 0.0003,
+     "halvdeler": [
+      0.417,
+      0.497
+     ]
+    },
+    "aluminium": {
+     "rp": 0.425,
+     "q": 0.0006,
+     "halvdeler": [
+      0.34,
+      0.458
+     ]
+    },
+    "brent": {
+     "rp": 0.397,
+     "q": 0.0019,
+     "halvdeler": [
+      0.41,
+      0.443
+     ]
+    },
+    "kobber": {
+     "rp": 0.398,
+     "q": 0.0019,
+     "halvdeler": [
+      0.44,
+      0.381
+     ]
+    },
+    "tinn": {
+     "rp": 0.388,
+     "q": 0.0028,
+     "halvdeler": [
+      0.474,
+      0.365
+     ]
+    },
+    "nikkel": {
+     "rp": 0.382,
+     "q": 0.0034,
+     "halvdeler": [
+      0.303,
+      0.429
+     ]
+    },
+    "palmeolje": {
+     "rp": 0.336,
+     "q": 0.0129,
+     "halvdeler": [
+      0.211,
+      0.381
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "wti",
+      "tinn"
+     ],
+     "r_samlet": 0.549,
+     "halvdeler": [
+      0.551,
+      0.593
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "kobber"
+     ],
+     "r_samlet": 0.547,
+     "halvdeler": [
+      0.534,
+      0.617
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "aluminium"
+     ],
+     "r_samlet": 0.541,
+     "halvdeler": [
+      0.496,
+      0.574
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "nikkel"
+     ],
+     "r_samlet": 0.536,
+     "halvdeler": [
+      0.47,
+      0.626
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "brent"
+     ],
+     "r_samlet": 0.533,
+     "halvdeler": [
+      0.508,
+      0.561
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "kobber"
+     ],
+     "r_samlet": 0.529,
+     "halvdeler": [
+      0.536,
+      0.603
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "tinn"
+     ],
+     "r_samlet": 0.528,
+     "halvdeler": [
+      0.552,
+      0.566
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "nikkel"
+     ],
+     "r_samlet": 0.518,
+     "halvdeler": [
+      0.472,
+      0.609
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "palmeolje"
+     ],
+     "r_samlet": 0.499,
+     "halvdeler": [
+      0.448,
+      0.566
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "palmeolje"
+     ],
+     "r_samlet": 0.47,
+     "halvdeler": [
+      0.439,
+      0.535
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "nikkel"
+     ],
+     "r_samlet": 0.466,
+     "halvdeler": [
+      0.398,
+      0.496
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "tinn"
+     ],
+     "r_samlet": 0.464,
+     "halvdeler": [
+      0.505,
+      0.473
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "kobber"
+     ],
+     "r_samlet": 0.462,
+     "halvdeler": [
+      0.443,
+      0.481
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "palmeolje"
+     ],
+     "r_samlet": 0.457,
+     "halvdeler": [
+      0.346,
+      0.501
+     ]
+    },
+    {
+     "par": [
+      "kobber",
+      "nikkel"
+     ],
+     "r_samlet": 0.451,
+     "halvdeler": [
+      0.474,
+      0.458
+     ]
+    },
+    {
+     "par": [
+      "tinn",
+      "nikkel"
+     ],
+     "r_samlet": 0.449,
+     "halvdeler": [
+      0.526,
+      0.449
+     ]
+    },
+    {
+     "par": [
+      "kobber",
+      "palmeolje"
+     ],
+     "r_samlet": 0.44,
+     "halvdeler": [
+      0.443,
+      0.452
+     ]
+    },
+    {
+     "par": [
+      "tinn",
+      "palmeolje"
+     ],
+     "r_samlet": 0.44,
+     "halvdeler": [
+      0.481,
+      0.445
+     ]
+    },
+    {
+     "par": [
+      "nikkel",
+      "palmeolje"
+     ],
+     "r_samlet": 0.438,
+     "halvdeler": [
+      0.347,
+      0.481
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "ISPA.DE",
+   "navn": "IS.S.GL.SE.D.100 U.ETF A.",
+   "isin": "DE000A0F5UH1",
+   "nf": 129,
+   "raavarer": {
+    "tinn": {
+     "rp": 0.362,
+     "q": 0.0028,
+     "halvdeler": [
+      0.341,
+      0.389
+     ]
+    },
+    "brent": {
+     "rp": 0.342,
+     "q": 0.0059,
+     "halvdeler": [
+      0.37,
+      0.223
+     ]
+    },
+    "kobber": {
+     "rp": 0.323,
+     "q": 0.0099,
+     "halvdeler": [
+      0.207,
+      0.373
+     ]
+    },
+    "wti": {
+     "rp": 0.302,
+     "q": 0.0171,
+     "halvdeler": [
+      0.299,
+      0.205
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "tinn",
+      "brent"
+     ],
+     "r_samlet": 0.48,
+     "halvdeler": [
+      0.454,
+      0.449
+     ]
+    },
+    {
+     "par": [
+      "brent",
+      "kobber"
+     ],
+     "r_samlet": 0.454,
+     "halvdeler": [
+      0.4,
+      0.456
+     ]
+    },
+    {
+     "par": [
+      "tinn",
+      "wti"
+     ],
+     "r_samlet": 0.448,
+     "halvdeler": [
+      0.409,
+      0.429
+     ]
+    },
+    {
+     "par": [
+      "kobber",
+      "wti"
+     ],
+     "r_samlet": 0.415,
+     "halvdeler": [
+      0.335,
+      0.425
+     ]
+    },
+    {
+     "par": [
+      "tinn",
+      "kobber"
+     ],
+     "r_samlet": 0.378,
+     "halvdeler": [
+      0.343,
+      0.405
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "EXV6.DE",
+   "navn": "IS.S.E.600 BA.RE.U.ETF A.",
+   "isin": "DE000A0F5UK5",
+   "nf": 129,
+   "raavarer": {
+    "tinn": {
+     "rp": 0.446,
+     "q": 0.0,
+     "halvdeler": [
+      0.528,
+      0.421
+     ]
+    },
+    "kobber": {
+     "rp": 0.427,
+     "q": 0.0001,
+     "halvdeler": [
+      0.338,
+      0.486
+     ]
+    },
+    "aluminium": {
+     "rp": 0.341,
+     "q": 0.0062,
+     "halvdeler": [
+      0.294,
+      0.38
+     ]
+    },
+    "sink": {
+     "rp": 0.327,
+     "q": 0.0093,
+     "halvdeler": [
+      0.324,
+      0.313
+     ]
+    },
+    "bly": {
+     "rp": 0.3,
+     "q": 0.0192,
+     "halvdeler": [
+      0.411,
+      0.176
+     ]
+    },
+    "jernmalm": {
+     "rp": 0.292,
+     "q": 0.0241,
+     "halvdeler": [
+      0.259,
+      0.298
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "tinn",
+      "kobber"
+     ],
+     "r_samlet": 0.478,
+     "halvdeler": [
+      0.534,
+      0.491
+     ]
+    },
+    {
+     "par": [
+      "tinn",
+      "jernmalm"
+     ],
+     "r_samlet": 0.475,
+     "halvdeler": [
+      0.541,
+      0.449
+     ]
+    },
+    {
+     "par": [
+      "tinn",
+      "bly"
+     ],
+     "r_samlet": 0.465,
+     "halvdeler": [
+      0.586,
+      0.422
+     ]
+    },
+    {
+     "par": [
+      "tinn",
+      "aluminium"
+     ],
+     "r_samlet": 0.464,
+     "halvdeler": [
+      0.544,
+      0.451
+     ]
+    },
+    {
+     "par": [
+      "tinn",
+      "sink"
+     ],
+     "r_samlet": 0.463,
+     "halvdeler": [
+      0.543,
+      0.43
+     ]
+    },
+    {
+     "par": [
+      "kobber",
+      "aluminium"
+     ],
+     "r_samlet": 0.443,
+     "halvdeler": [
+      0.356,
+      0.502
+     ]
+    },
+    {
+     "par": [
+      "kobber",
+      "jernmalm"
+     ],
+     "r_samlet": 0.443,
+     "halvdeler": [
+      0.359,
+      0.498
+     ]
+    },
+    {
+     "par": [
+      "kobber",
+      "bly"
+     ],
+     "r_samlet": 0.437,
+     "halvdeler": [
+      0.438,
+      0.493
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "jernmalm"
+     ],
+     "r_samlet": 0.397,
+     "halvdeler": [
+      0.356,
+      0.42
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "sink"
+     ],
+     "r_samlet": 0.382,
+     "halvdeler": [
+      0.355,
+      0.4
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "bly"
+     ],
+     "r_samlet": 0.38,
+     "halvdeler": [
+      0.435,
+      0.38
+     ]
+    },
+    {
+     "par": [
+      "sink",
+      "jernmalm"
+     ],
+     "r_samlet": 0.372,
+     "halvdeler": [
+      0.36,
+      0.365
+     ]
+    },
+    {
+     "par": [
+      "bly",
+      "jernmalm"
+     ],
+     "r_samlet": 0.368,
+     "halvdeler": [
+      0.446,
+      0.307
+     ]
+    },
+    {
+     "par": [
+      "sink",
+      "bly"
+     ],
+     "r_samlet": 0.354,
+     "halvdeler": [
+      0.426,
+      0.313
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "EDEU.DE",
+   "navn": "BNPPE-DIVIDEND EUROPE C",
+   "isin": "LU1615090864",
+   "nf": 107,
+   "raavarer": {
+    "wti": {
+     "rp": 0.409,
+     "q": 0.0016,
+     "halvdeler": [
+      0.534,
+      0.113
+     ]
+    },
+    "kobber": {
+     "rp": 0.291,
+     "q": 0.0468,
+     "halvdeler": [
+      0.313,
+      0.262
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "wti",
+      "kobber"
+     ],
+     "r_samlet": 0.469,
+     "halvdeler": [
+      0.555,
+      0.286
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "IQQX.DE",
+   "navn": "ISHS-ASIA PAC.DIV.DL D",
+   "isin": "IE00B14X4T88",
+   "nf": 129,
+   "raavarer": {
+    "brent": {
+     "rp": 0.354,
+     "q": 0.0038,
+     "halvdeler": [
+      0.423,
+      0.17
+     ]
+    },
+    "tinn": {
+     "rp": 0.324,
+     "q": 0.0099,
+     "halvdeler": [
+      0.344,
+      0.334
+     ]
+    },
+    "wti": {
+     "rp": 0.282,
+     "q": 0.0301,
+     "halvdeler": [
+      0.28,
+      0.166
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "brent",
+      "tinn"
+     ],
+     "r_samlet": 0.459,
+     "halvdeler": [
+      0.494,
+      0.372
+     ]
+    },
+    {
+     "par": [
+      "tinn",
+      "wti"
+     ],
+     "r_samlet": 0.406,
+     "halvdeler": [
+      0.401,
+      0.362
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "EXXW.DE",
+   "navn": "IS.DJ AS.PAC.S.D.50 U.ETF",
+   "isin": "DE000A0H0744",
+   "nf": 129,
+   "raavarer": {
+    "brent": {
+     "rp": 0.341,
+     "q": 0.006,
+     "halvdeler": [
+      0.411,
+      0.167
+     ]
+    },
+    "tinn": {
+     "rp": 0.326,
+     "q": 0.0093,
+     "halvdeler": [
+      0.349,
+      0.334
+     ]
+    },
+    "wti": {
+     "rp": 0.275,
+     "q": 0.0366,
+     "halvdeler": [
+      0.275,
+      0.165
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "brent",
+      "tinn"
+     ],
+     "r_samlet": 0.451,
+     "halvdeler": [
+      0.488,
+      0.369
+     ]
+    },
+    {
+     "par": [
+      "tinn",
+      "wti"
+     ],
+     "r_samlet": 0.403,
+     "halvdeler": [
+      0.402,
+      0.361
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "EHDL.DE",
+   "navn": "INVESCOM3 FT EM HD LV A",
+   "isin": "IE00BYYXBF44",
+   "nf": 123,
+   "raavarer": {
+    "brent": {
+     "rp": 0.349,
+     "q": 0.0059,
+     "halvdeler": [
+      0.302,
+      0.224
+     ]
+    },
+    "tinn": {
+     "rp": 0.29,
+     "q": 0.0301,
+     "halvdeler": [
+      0.265,
+      0.346
+     ]
+    },
+    "wti": {
+     "rp": 0.278,
+     "q": 0.0402,
+     "halvdeler": [
+      0.181,
+      0.198
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "brent",
+      "tinn"
+     ],
+     "r_samlet": 0.431,
+     "halvdeler": [
+      0.357,
+      0.4
+     ]
+    },
+    {
+     "par": [
+      "tinn",
+      "wti"
+     ],
+     "r_samlet": 0.376,
+     "halvdeler": [
+      0.287,
+      0.382
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "EL40.DE",
+   "navn": "DEKA MSCI EM ESG F.SEL.UE",
+   "isin": "DE000ETFL342",
+   "nf": 129,
+   "raavarer": {
+    "tinn": {
+     "rp": 0.391,
+     "q": 0.0008,
+     "halvdeler": [
+      0.345,
+      0.422
+     ]
+    },
+    "kobber": {
+     "rp": 0.331,
+     "q": 0.0082,
+     "halvdeler": [
+      0.157,
+      0.453
+     ]
+    },
+    "gold": {
+     "rp": 0.292,
+     "q": 0.0241,
+     "halvdeler": [
+      0.136,
+      0.407
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "tinn",
+      "gold"
+     ],
+     "r_samlet": 0.426,
+     "halvdeler": [
+      0.376,
+      0.475
+     ]
+    },
+    {
+     "par": [
+      "tinn",
+      "kobber"
+     ],
+     "r_samlet": 0.402,
+     "halvdeler": [
+      0.345,
+      0.467
+     ]
+    },
+    {
+     "par": [
+      "kobber",
+      "gold"
+     ],
+     "r_samlet": 0.386,
+     "halvdeler": [
+      0.214,
+      0.486
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "LGQM.DE",
+   "navn": "MUL AMUN PANAFRICA ETF A",
+   "isin": "LU1287022708",
+   "nf": 126,
+   "raavarer": {
+    "gold": {
+     "rp": 0.364,
+     "q": 0.0031,
+     "halvdeler": [
+      0.137,
+      0.545
+     ]
+    },
+    "tinn": {
+     "rp": 0.319,
+     "q": 0.0122,
+     "halvdeler": [
+      0.149,
+      0.443
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "gold",
+      "tinn"
+     ],
+     "r_samlet": 0.423,
+     "halvdeler": [
+      0.224,
+      0.575
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "6PSK.DE",
+   "navn": "IM3-IREMFVUE D",
+   "isin": "IE00B23D9570",
+   "nf": 129,
+   "raavarer": {
+    "tinn": {
+     "rp": 0.405,
+     "q": 0.0004,
+     "halvdeler": [
+      0.382,
+      0.455
+     ]
+    },
+    "kobber": {
+     "rp": 0.347,
+     "q": 0.0053,
+     "halvdeler": [
+      0.18,
+      0.491
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "tinn",
+      "kobber"
+     ],
+     "r_samlet": 0.417,
+     "halvdeler": [
+      0.383,
+      0.505
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "IQQF.DE",
+   "navn": "IS MSCI AC FEXJ.U.ETF DLD",
+   "isin": "IE00B0M63730",
+   "nf": 129,
+   "raavarer": {
+    "tinn": {
+     "rp": 0.362,
+     "q": 0.0028,
+     "halvdeler": [
+      0.275,
+      0.4
+     ]
+    },
+    "gold": {
+     "rp": 0.306,
+     "q": 0.0156,
+     "halvdeler": [
+      0.174,
+      0.387
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "tinn",
+      "gold"
+     ],
+     "r_samlet": 0.412,
+     "halvdeler": [
+      0.332,
+      0.45
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "LYM7.DE",
+   "navn": "MUF-AMU.MSCI EMERMKT3 EOA",
+   "isin": "FR0010429068",
+   "nf": 129,
+   "raavarer": {
+    "tinn": {
+     "rp": 0.368,
+     "q": 0.0024,
+     "halvdeler": [
+      0.327,
+      0.4
+     ]
+    },
+    "kobber": {
+     "rp": 0.317,
+     "q": 0.0114,
+     "halvdeler": [
+      0.14,
+      0.447
+     ]
+    },
+    "gold": {
+     "rp": 0.296,
+     "q": 0.0218,
+     "halvdeler": [
+      0.129,
+      0.424
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "tinn",
+      "gold"
+     ],
+     "r_samlet": 0.411,
+     "halvdeler": [
+      0.357,
+      0.472
+     ]
+    },
+    {
+     "par": [
+      "tinn",
+      "kobber"
+     ],
+     "r_samlet": 0.38,
+     "halvdeler": [
+      0.328,
+      0.455
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "IS3N.DE",
+   "navn": "IS C.MSCI EMIMI U.ETF DLA",
+   "isin": "IE00BKM4GZ66",
+   "nf": 129,
+   "raavarer": {
+    "tinn": {
+     "rp": 0.366,
+     "q": 0.0025,
+     "halvdeler": [
+      0.321,
+      0.404
+     ]
+    },
+    "kobber": {
+     "rp": 0.315,
+     "q": 0.0123,
+     "halvdeler": [
+      0.142,
+      0.446
+     ]
+    },
+    "gold": {
+     "rp": 0.298,
+     "q": 0.0202,
+     "halvdeler": [
+      0.13,
+      0.434
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "tinn",
+      "gold"
+     ],
+     "r_samlet": 0.411,
+     "halvdeler": [
+      0.351,
+      0.481
+     ]
+    },
+    {
+     "par": [
+      "tinn",
+      "kobber"
+     ],
+     "r_samlet": 0.378,
+     "halvdeler": [
+      0.322,
+      0.455
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "EUNM.DE",
+   "navn": "ISHSIII-MSCI EM USD(ACC)",
+   "isin": "IE00B4L5YC18",
+   "nf": 129,
+   "raavarer": {
+    "tinn": {
+     "rp": 0.366,
+     "q": 0.0025,
+     "halvdeler": [
+      0.323,
+      0.401
+     ]
+    },
+    "kobber": {
+     "rp": 0.316,
+     "q": 0.0118,
+     "halvdeler": [
+      0.146,
+      0.444
+     ]
+    },
+    "gold": {
+     "rp": 0.293,
+     "q": 0.0232,
+     "halvdeler": [
+      0.129,
+      0.423
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "tinn",
+      "gold"
+     ],
+     "r_samlet": 0.408,
+     "halvdeler": [
+      0.353,
+      0.472
+     ]
+    },
+    {
+     "par": [
+      "tinn",
+      "kobber"
+     ],
+     "r_samlet": 0.379,
+     "halvdeler": [
+      0.324,
+      0.453
+     ]
+    },
+    {
+     "par": [
+      "kobber",
+      "gold"
+     ],
+     "r_samlet": 0.376,
+     "halvdeler": [
+      0.201,
+      0.487
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "H410.DE",
+   "navn": "HSBC MSCI EM UC. ETF DL",
+   "isin": "IE00B5SSQT16",
+   "nf": 129,
+   "raavarer": {
+    "tinn": {
+     "rp": 0.366,
+     "q": 0.0025,
+     "halvdeler": [
+      0.314,
+      0.405
+     ]
+    },
+    "kobber": {
+     "rp": 0.313,
+     "q": 0.0129,
+     "halvdeler": [
+      0.128,
+      0.45
+     ]
+    },
+    "gold": {
+     "rp": 0.292,
+     "q": 0.0242,
+     "halvdeler": [
+      0.126,
+      0.422
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "tinn",
+      "gold"
+     ],
+     "r_samlet": 0.407,
+     "halvdeler": [
+      0.343,
+      0.474
+     ]
+    },
+    {
+     "par": [
+      "tinn",
+      "kobber"
+     ],
+     "r_samlet": 0.377,
+     "halvdeler": [
+      0.316,
+      0.459
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "AMEM.DE",
+   "navn": "AIS-AM.MSCI EM.MA.S. EOA",
+   "isin": "LU1681045370",
+   "nf": 129,
+   "raavarer": {
+    "tinn": {
+     "rp": 0.361,
+     "q": 0.003,
+     "halvdeler": [
+      0.317,
+      0.396
+     ]
+    },
+    "kobber": {
+     "rp": 0.311,
+     "q": 0.0133,
+     "halvdeler": [
+      0.135,
+      0.445
+     ]
+    },
+    "gold": {
+     "rp": 0.296,
+     "q": 0.0217,
+     "halvdeler": [
+      0.135,
+      0.423
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "tinn",
+      "gold"
+     ],
+     "r_samlet": 0.406,
+     "halvdeler": [
+      0.35,
+      0.47
+     ]
+    },
+    {
+     "par": [
+      "tinn",
+      "kobber"
+     ],
+     "r_samlet": 0.373,
+     "halvdeler": [
+      0.318,
+      0.452
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "IQQE.DE",
+   "navn": "IS MSCI EM U.ETF USD D",
+   "isin": "IE00B0M63177",
+   "nf": 129,
+   "raavarer": {
+    "tinn": {
+     "rp": 0.362,
+     "q": 0.0029,
+     "halvdeler": [
+      0.327,
+      0.391
+     ]
+    },
+    "kobber": {
+     "rp": 0.303,
+     "q": 0.0174,
+     "halvdeler": [
+      0.136,
+      0.432
+     ]
+    },
+    "gold": {
+     "rp": 0.292,
+     "q": 0.0241,
+     "halvdeler": [
+      0.134,
+      0.415
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "tinn",
+      "gold"
+     ],
+     "r_samlet": 0.404,
+     "halvdeler": [
+      0.358,
+      0.462
+     ]
+    },
+    {
+     "par": [
+      "tinn",
+      "kobber"
+     ],
+     "r_samlet": 0.371,
+     "halvdeler": [
+      0.328,
+      0.441
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "EMSM.DE",
+   "navn": "INVESCOMI MSCI EM A",
+   "isin": "IE00B3DWVS88",
+   "nf": 129,
+   "raavarer": {
+    "tinn": {
+     "rp": 0.36,
+     "q": 0.003,
+     "halvdeler": [
+      0.295,
+      0.405
+     ]
+    },
+    "kobber": {
+     "rp": 0.307,
+     "q": 0.0151,
+     "halvdeler": [
+      0.114,
+      0.449
+     ]
+    },
+    "gold": {
+     "rp": 0.291,
+     "q": 0.0249,
+     "halvdeler": [
+      0.129,
+      0.417
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "tinn",
+      "gold"
+     ],
+     "r_samlet": 0.403,
+     "halvdeler": [
+      0.327,
+      0.471
+     ]
+    },
+    {
+     "par": [
+      "tinn",
+      "kobber"
+     ],
+     "r_samlet": 0.371,
+     "halvdeler": [
+      0.298,
+      0.458
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "IUSZ.DE",
+   "navn": "IS CO.FTSE 100 U.ETF LSD",
+   "isin": "IE0005042456",
+   "nf": 120,
+   "raavarer": {
+    "brent": {
+     "rp": 0.296,
+     "q": 0.0274,
+     "halvdeler": [
+      0.293,
+      0.15
+     ]
+    },
+    "wti": {
+     "rp": 0.292,
+     "q": 0.0306,
+     "halvdeler": [
+      0.284,
+      0.162
+     ]
+    },
+    "tinn": {
+     "rp": 0.274,
+     "q": 0.0483,
+     "halvdeler": [
+      0.247,
+      0.307
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "brent",
+      "tinn"
+     ],
+     "r_samlet": 0.392,
+     "halvdeler": [
+      0.337,
+      0.346
+     ]
+    },
+    {
+     "par": [
+      "wti",
+      "tinn"
+     ],
+     "r_samlet": 0.38,
+     "halvdeler": [
+      0.328,
+      0.34
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "AMEE.DE",
+   "navn": "AM.GLBL HY. UCITS ETF-ACC",
+   "isin": "FR0010930644",
+   "nf": 129,
+   "raavarer": {
+    "wti": {
+     "rp": 0.331,
+     "q": 0.008,
+     "halvdeler": [
+      0.306,
+      0.263
+     ]
+    },
+    "aluminium": {
+     "rp": 0.283,
+     "q": 0.0302,
+     "halvdeler": [
+      0.313,
+      0.29
+     ]
+    },
+    "brent": {
+     "rp": 0.266,
+     "q": 0.0456,
+     "halvdeler": [
+      0.233,
+      0.181
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "wti",
+      "aluminium"
+     ],
+     "r_samlet": 0.391,
+     "halvdeler": [
+      0.408,
+      0.335
+     ]
+    },
+    {
+     "par": [
+      "aluminium",
+      "brent"
+     ],
+     "r_samlet": 0.359,
+     "halvdeler": [
+      0.373,
+      0.309
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "EHDV.DE",
+   "navn": "INVESCOM3 EUROSTX HDL A",
+   "isin": "IE00BZ4BMM98",
+   "nf": 127,
+   "raavarer": {
+    "wti": {
+     "rp": 0.295,
+     "q": 0.0227,
+     "halvdeler": [
+      0.352,
+      0.103
+     ]
+    },
+    "tinn": {
+     "rp": 0.278,
+     "q": 0.0365,
+     "halvdeler": [
+      0.203,
+      0.34
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "wti",
+      "tinn"
+     ],
+     "r_samlet": 0.384,
+     "halvdeler": [
+      0.369,
+      0.35
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "CEBL.DE",
+   "navn": "ISHSVII-MSCI EM AS.DL ACC",
+   "isin": "IE00B5L8K969",
+   "nf": 129,
+   "raavarer": {
+    "tinn": {
+     "rp": 0.332,
+     "q": 0.008,
+     "halvdeler": [
+      0.241,
+      0.377
+     ]
+    },
+    "gold": {
+     "rp": 0.289,
+     "q": 0.0259,
+     "halvdeler": [
+      0.16,
+      0.378
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "tinn",
+      "gold"
+     ],
+     "r_samlet": 0.381,
+     "halvdeler": [
+      0.295,
+      0.432
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "DXSC.DE",
+   "navn": "XTR.MSCIEUMT 1C",
+   "isin": "LU0292100806",
+   "nf": 129,
+   "raavarer": {
+    "tinn": {
+     "rp": 0.353,
+     "q": 0.0041,
+     "halvdeler": [
+      0.532,
+      0.272
+     ]
+    },
+    "kobber": {
+     "rp": 0.301,
+     "q": 0.0184,
+     "halvdeler": [
+      0.336,
+      0.254
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "tinn",
+      "kobber"
+     ],
+     "r_samlet": 0.363,
+     "halvdeler": [
+      0.538,
+      0.28
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "F701.DE",
+   "navn": "AMU.MU.AS.PTF U.ETF DIST",
+   "isin": "DE000ETF7011",
+   "nf": 125,
+   "raavarer": {
+    "gold": {
+     "rp": 0.304,
+     "q": 0.0198,
+     "halvdeler": [
+      0.141,
+      0.387
+     ]
+    },
+    "tinn": {
+     "rp": 0.284,
+     "q": 0.0328,
+     "halvdeler": [
+      0.188,
+      0.316
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "gold",
+      "tinn"
+     ],
+     "r_samlet": 0.363,
+     "halvdeler": [
+      0.259,
+      0.409
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "PSWD.DE",
+   "navn": "IM3-IRAWFVUE D",
+   "isin": "IE00B23LNQ02",
+   "nf": 129,
+   "raavarer": {
+    "kobber": {
+     "rp": 0.333,
+     "q": 0.0076,
+     "halvdeler": [
+      0.275,
+      0.357
+     ]
+    },
+    "tinn": {
+     "rp": 0.281,
+     "q": 0.0318,
+     "halvdeler": [
+      0.267,
+      0.331
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "kobber",
+      "tinn"
+     ],
+     "r_samlet": 0.342,
+     "halvdeler": [
+      0.313,
+      0.367
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "EXV1.DE",
+   "navn": "IS.S.EU.600 BANK.U.ETF A.",
+   "isin": "DE000A0F5UJ7",
+   "nf": 129,
+   "raavarer": {
+    "tinn": {
+     "rp": 0.32,
+     "q": 0.0107,
+     "halvdeler": [
+      0.277,
+      0.401
+     ]
+    },
+    "kobber": {
+     "rp": 0.273,
+     "q": 0.0402,
+     "halvdeler": [
+      0.103,
+      0.422
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "tinn",
+      "kobber"
+     ],
+     "r_samlet": 0.329,
+     "halvdeler": [
+      0.281,
+      0.437
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "IBC4.DE",
+   "navn": "ISHSIII-MSCI S.AFR.DLACC",
+   "isin": "IE00B52XQP83",
+   "nf": 129,
+   "raavarer": {
+    "tinn": {
+     "rp": 0.307,
+     "q": 0.0151,
+     "halvdeler": [
+      0.288,
+      0.329
+     ]
+    },
+    "kobber": {
+     "rp": 0.29,
+     "q": 0.0255,
+     "halvdeler": [
+      0.162,
+      0.378
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "tinn",
+      "kobber"
+     ],
+     "r_samlet": 0.328,
+     "halvdeler": [
+      0.289,
+      0.382
+     ]
+    }
+   ]
+  },
+  {
+   "etf": "EUNI.DE",
+   "navn": "ISHSIII-MSCI EM SM.C.DL D",
+   "isin": "IE00B3F81G20",
+   "nf": 129,
+   "raavarer": {
+    "tinn": {
+     "rp": 0.281,
+     "q": 0.0321,
+     "halvdeler": [
+      0.307,
+      0.291
+     ]
+    },
+    "kobber": {
+     "rp": 0.267,
+     "q": 0.0458,
+     "halvdeler": [
+      0.184,
+      0.327
+     ]
+    }
+   },
+   "par": [
+    {
+     "par": [
+      "tinn",
+      "kobber"
+     ],
+     "r_samlet": 0.3,
+     "halvdeler": [
+      0.309,
+      0.332
+     ]
+    }
+   ]
+  }
+ ],
+ "grupper": [
+  [
+   "M9SA.DE"
+  ],
+  [
+   "EXXY.DE"
+  ],
+  [
+   "ETLF.DE"
+  ],
+  [
+   "BCFU.DE"
+  ],
+  [
+   "ETL2.DE"
+  ],
+  [
+   "EXH1.DE"
+  ],
+  [
+   "BCFE.DE"
+  ],
+  [
+   "ISPA.DE"
+  ],
+  [
+   "EXV6.DE"
+  ],
+  [
+   "EDEU.DE"
+  ],
+  [
+   "IQQX.DE",
+   "EXXW.DE"
+  ],
+  [
+   "EHDL.DE"
+  ],
+  [
+   "EL40.DE",
+   "LYM7.DE",
+   "IS3N.DE",
+   "EUNM.DE",
+   "AMEM.DE",
+   "IQQE.DE",
+   "EMSM.DE"
+  ],
+  [
+   "LGQM.DE"
+  ],
+  [
+   "6PSK.DE"
+  ],
+  [
+   "IQQF.DE"
+  ],
+  [
+   "H410.DE"
+  ],
+  [
+   "IUSZ.DE"
+  ],
+  [
+   "AMEE.DE"
+  ],
+  [
+   "EHDV.DE"
+  ],
+  [
+   "CEBL.DE"
+  ],
+  [
+   "DXSC.DE"
+  ],
+  [
+   "F701.DE"
+  ],
+  [
+   "PSWD.DE"
+  ],
+  [
+   "EXV1.DE"
+  ],
+  [
+   "IBC4.DE"
+  ],
+  [
+   "EUNI.DE"
+  ]
+ ]
+}
