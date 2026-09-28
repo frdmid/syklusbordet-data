@@ -106,9 +106,24 @@ print("\n1. Ken French: finner landfilene\n")
 side = get(FRENCH + "data_library.html").text
 lenker = sorted(set(re.sub(r"^.*?(ftp/)", r"\1", l)
                     for l in re.findall(r'href=["\']([^"\']+?\.zip)["\']', side, re.I) if "csv" in l.lower()))
-print(f"   {len(lenker)} CSV-lenker paa siden. De som kan vaere internasjonale:")
+# Landporteføljene ligger ikke paa hovedsiden (foerste kjoering fant bare
+# regioner). Undersider med land eller internasjonalt i navnet folges ett nivaa.
+under = sorted(set(re.findall(r'href=["\']([^"\']+?\.html?)["\']', side, re.I)))
+under = [u for u in under if re.search(r"countr|internat|intl|norw|austral", u, re.I)]
+print(f"   undersider: {under or 'ingen'}")
+for u in under:
+    url = u if u.startswith("http") else FRENCH + u.lstrip("./")
+    try:
+        t = get(url).text
+    except Exception as e:
+        print(f"      {u}: {type(e).__name__}"); continue
+    z = re.findall(r'href=["\']([^"\']+?\.zip)["\']', t, re.I)
+    print(f"      {u}: {len(z)} zip, f.eks. {z[:4]}")
+    lenker += sorted(set(re.sub(r"^.*?(ftp/)", r"\1", l) for l in z))
+lenker = sorted(set(lenker))
+print(f"   {len(lenker)} lenker totalt. Med landnavn:")
 for l in lenker:
-    if re.search(r"intl|international|countr|developed|emerging|global|europe|asia|japan|norw|austral", l, re.I):
+    if re.search(r"norw|austral|brazil|countr", l, re.I):
         print(f"      {l}")
 KURS, KILDE = {}, {}
 for fid, (land, _) in LAND.items():
