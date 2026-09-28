@@ -52,22 +52,7 @@ Oppstarter: 1 sonde(r) funnet
 1. Kurser
 
    verdensindeks: ACWI fra 2008-03, SPY foer det fra 1993-01
-      AKRBP.OL: RecursionError: maximum recursion depth exceeded
-      BIR.TO: RecursionError: maximum recursion depth exceeded
-      BOL.ST: RecursionError: maximum recursion depth exceeded
-      CIA.TO: RecursionError: maximum recursion depth exceeded
-      CS.TO: RecursionError: maximum recursion depth exceeded
-      CVE.TO: RecursionError: maximum recursion depth exceeded
-      DNO.OL: RecursionError: maximum recursion depth exceeded
-      EQNR.OL: RecursionError: maximum recursion depth exceeded
-      HBM.TO: RecursionError: maximum recursion depth exceeded
-      LIF.TO: RecursionError: maximum recursion depth exceeded
-      NHY.OL: RecursionError: maximum recursion depth exceeded
-      TOU.TO: RecursionError: maximum recursion depth exceeded
-      U-UN.TO: RecursionError: maximum recursion depth exceeded
-      WCP.TO: RecursionError: maximum recursion depth exceeded
-   20 av 34 papirer med kurs: AA (1985-01), ARLP (1999-08), ATYM.L (2005-05), BTU (2017-04), CCJ (1996-03), CENX (1996-03), EQT (1985-01), ERA.PA (2003-12), EXV6.DE (2008-01), GDX.L (2015-03), GJGB.L (2017-06), GLEN.L (2011-05), IOGP.L (2011-09), ISAG.L (2011-09), MPE.L (2003-12), NEXA (2017-10), RE.L (2003-12), SPGP.L (2011-09), UUUU (2007-03), VALE (2002-03)
-   uten kurs: AKRBP.OL, BIR.TO, BOL.ST, CIA.TO, CS.TO, CVE.TO, DNO.OL, EQNR.OL, HBM.TO, LIF.TO, NHY.OL, TOU.TO, U-UN.TO, WCP.TO
+   34 av 34 papirer med kurs: AA (1985-01), AKRBP.OL (2009-01), ARLP (1999-08), ATYM.L (2005-05), BIR.TO (2003-10), BOL.ST (2001-12), BTU (2017-04), CCJ (1996-03), CENX (1996-03), CIA.TO (2014-07), CS.TO (2003-10), CVE.TO (2009-11), DNO.OL (2001-08), EQNR.OL (2001-08), EQT (1985-01), ERA.PA (2003-12), EXV6.DE (2008-01), GDX.L (2015-03), GJGB.L (2017-06), GLEN.L (2011-05), HBM.TO (2005-02), IOGP.L (2011-09), ISAG.L (2011-09), LIF.TO (2008-07), MPE.L (2003-12), NEXA (2017-10), NHY.OL (2001-08), RE.L (2003-12), SPGP.L (2011-09), TOU.TO (2010-11), U-UN.TO (2006-05), UUUU (2007-03), VALE (2002-03), WCP.TO (2003-10)
 
 
 2. (A) ENKELTPAPIRENE PAA DASHBORDET, VED BUNNSONE I EGEN RAAVARE
@@ -77,70 +62,74 @@ Oppstarter: 1 sonde(r) funnet
 
    Alle innslag, inngang T0 (slutten av flaggmaaneden)
    h    innsl ep | abs: median   snitt  treff | mot eget snitt: median treff |   S       ep+   p    | mot verden: median  S      ep+ | raavare median
-    1     23  11 |    -4.4 %    -1.1 %   39 % |    -4.7 %   39 % |    -3.1 %  4/11 0.836 |    -3.5 %    -2.8 %  4 |    -3.0 %
-    2     23  11 |    -2.8 %    -3.9 %   43 % |    -4.4 %   39 % |    -5.7 %  3/11 0.913 |    -1.4 %    -8.0 %  3 |    -0.8 %
-    3     23  11 |   +13.8 %    +6.2 %   61 % |   +12.6 %   61 % |    +0.0 %  5/11 0.512 |    +6.4 %    -3.4 %  5 |    -0.4 %
-    6     23  11 |   +21.5 %   +27.1 %   83 % |   +16.4 %   83 % |    +8.4 %  7/11 0.151 |   +19.7 %    +7.1 %  6 |   +15.7 %
-   12     23  11 |   +87.6 %   +63.5 %   78 % |   +80.5 %   74 % |   +13.3 %  6/11 0.126 |   +34.6 %   +11.8 %  4 |   +18.4 %
+    1     45  11 |    -1.3 %    +1.8 %   49 % |    -2.1 %   44 % |    -0.1 %  4/11 0.512 |    -1.1 %    +0.3 %  5 |    -3.5 %
+    2     45  11 |    -0.1 %    +1.0 %   49 % |    -1.5 %   44 % |    -2.3 %  4/11 0.701 |    -0.7 %    -4.5 %  4 |    -0.8 %
+    3     45  11 |   +10.5 %    +7.3 %   58 % |    +7.5 %   58 % |    +0.5 %  5/11 0.492 |    +4.4 %    -1.6 %  6 |    -1.9 %
+    6     45  11 |   +21.4 %   +23.7 %   76 % |   +16.4 %   69 % |   +12.6 %  7/11 0.094 |   +10.8 %   +12.4 %  6 |   +15.7 %
+   12     45  11 |   +38.3 %   +48.6 %   69 % |   +23.6 %   67 % |   +15.7 %  6/11 0.135 |   +29.4 %   +13.6 %  5 |   +13.1 %
 
    Kontroll: inngang en maaned senere (T+1)
    h    innsl ep | abs: median   snitt  treff | mot eget snitt: median treff |   S       ep+   p    | mot verden: median  S      ep+ | raavare median
-    1     23  11 |    -0.7 %    -2.9 %   48 % |    -0.9 %   43 % |    -4.0 %  4/11   -   |    +0.2 %    -5.7 %  5 |    +1.6 %
-    2     23  11 |    +3.2 %    +7.4 %   57 % |    +2.6 %   57 % |    +4.8 %  6/11   -   |    +8.6 %    +1.2 %  5 |    +6.3 %
-    3     23  11 |   +13.6 %   +22.3 %   65 % |   +13.0 %   65 % |   +10.9 %  7/11   -   |    +8.8 %    +5.6 %  6 |    +8.9 %
-    6     23  11 |   +20.7 %   +26.2 %   70 % |   +16.5 %   65 % |    +9.0 %  7/11   -   |   +15.0 %    +5.7 %  7 |   +20.0 %
-   12     23  11 |   +58.2 %   +71.7 %   78 % |   +53.2 %   78 % |   +20.5 %  7/11   -   |   +40.2 %   +16.0 %  5 |   +23.4 %
+    1     45  11 |    +0.3 %    -0.8 %   51 % |    -0.6 %   49 % |    -2.8 %  5/11   -   |    +0.4 %    -4.9 %  5 |    +1.6 %
+    2     45  11 |    +8.9 %    +5.4 %   60 % |    +7.4 %   56 % |    +3.3 %  7/11   -   |    +3.4 %    +2.2 %  6 |    +3.9 %
+    3     45  11 |   +16.3 %   +16.8 %   69 % |   +13.0 %   64 % |    +8.4 %  7/11   -   |    +8.8 %    +7.5 %  7 |    +9.2 %
+    6     45  11 |   +11.8 %   +18.6 %   60 % |    +2.8 %   56 % |   +10.6 %  7/11   -   |    +5.2 %   +12.0 %  7 |   +26.1 %
+   12     45  11 |   +43.4 %   +52.3 %   71 % |   +31.0 %   67 % |   +22.9 %  7/11   -   |   +23.6 %   +21.3 %  5 |   +23.4 %
 
    Innslag foer 2016 (utenfor vinduet papirene ble valgt paa)
    h    innsl ep | abs: median   snitt  treff | mot eget snitt: median treff |   S       ep+   p    | mot verden: median  S      ep+ | raavare median
-    1     14   8 |    -4.8 %    -6.5 %   29 % |    -5.1 %   29 % |    -5.9 %  2/8  0.953 |    -5.8 %    -5.4 %  2 |    -5.2 %
-    2     14   8 |    -3.3 %    -7.8 %   36 % |    -4.5 %   29 % |    -6.7 %  1/8  0.898 |    -5.5 %    -8.9 %  1 |    -7.0 %
-    3     14   8 |    +1.1 %    -0.8 %   50 % |    -0.8 %   50 % |    -1.4 %  3/8  0.595 |    +2.3 %    -4.3 %  3 |    -6.7 %
-    6     14   8 |   +12.6 %   +21.8 %   79 % |    +7.2 %   79 % |    +8.7 %  5/8  0.197 |    +5.1 %    +8.8 %  4 |    -7.4 %
-   12     14   8 |   +26.6 %   +30.5 %   71 % |   +21.1 %   64 % |   +11.2 %  4/8  0.225 |   +18.9 %   +10.7 %  3 |   +10.6 %
+    1     26   8 |    -6.2 %    -7.2 %   27 % |    -6.6 %   23 % |    -4.4 %  2/8  0.877 |    -6.5 %    -3.0 %  3 |    -5.2 %
+    2     26   8 |    -1.8 %    -5.0 %   42 % |    -3.2 %   35 % |    -2.4 %  2/8  0.686 |    -5.5 %    -4.4 %  2 |    -7.8 %
+    3     26   8 |    -2.1 %    -3.1 %   46 % |    -3.8 %   46 % |    -1.8 %  3/8  0.610 |    -0.1 %    -3.7 %  4 |    -9.8 %
+    6     26   8 |   +12.6 %   +18.0 %   69 % |    +7.2 %   65 % |   +10.3 %  5/8  0.177 |    +5.1 %   +11.8 %  4 |    -7.4 %
+   12     26   8 |   +24.4 %   +24.6 %   65 % |   +14.3 %   62 % |   +13.3 %  4/8  0.202 |   +18.9 %   +13.4 %  4 |   +10.6 %
 
    Innslag fra 2016 (inne i utvalgsvinduet)
    h    innsl ep | abs: median   snitt  treff | mot eget snitt: median treff |   S       ep+   p    | mot verden: median  S      ep+ | raavare median
-    1      9   3 |    +9.2 %    +8.0 %   56 % |    +8.3 %   56 % |    +4.9 %  2/3  0.154 |    +7.5 %    +3.4 %  2 |    +7.6 %
-    2      9   3 |    +9.5 %    +2.4 %   56 % |    +7.7 %   56 % |    -2.8 %  2/3  0.674 |    +8.9 %    -5.7 %  2 |   +16.4 %
-    3      9   3 |   +35.1 %   +18.1 %   78 % |   +30.1 %   78 % |    +3.9 %  2/3  0.316 |   +17.9 %    -1.1 %  2 |   +28.4 %
-    6      9   3 |   +51.3 %   +35.7 %   89 % |   +47.9 %   89 % |    +7.5 %  2/3  0.295 |   +31.9 %    +3.3 %  2 |   +71.0 %
-   12      9   3 |  +103.5 %  +132.3 %   89 % |  +100.3 %   89 % |   +19.3 %  2/3  0.181 |   +55.1 %   +14.2 %  1 |  +181.2 %
+    1     19   3 |    +7.1 %   +15.4 %   79 % |    +6.3 %   74 % |   +12.0 %  2/3  0.019 |    +5.4 %    +8.4 %  2 |    +0.4 %
+    2     19   3 |    +8.2 %    +9.8 %   58 % |    +6.3 %   58 % |    -1.9 %  2/3  0.633 |    +2.3 %    -4.8 %  2 |    +6.9 %
+    3     19   3 |   +29.5 %   +23.4 %   74 % |   +26.4 %   74 % |    +7.0 %  2/3  0.239 |   +14.0 %    +3.3 %  2 |   +16.8 %
+    6     19   3 |   +26.7 %   +32.0 %   84 % |   +22.2 %   74 % |   +19.1 %  2/3  0.114 |   +23.8 %   +13.7 %  2 |   +25.2 %
+   12     19   3 |  +103.5 %   +89.3 %   74 % |  +100.3 %   74 % |   +22.5 %  2/3  0.196 |   +53.3 %   +13.9 %  1 |   +52.5 %
 
    Per segment, 3 og 12 mnd (median abs, median mot eget snitt, antall innslag x papirer):
-      aluminium   3 mnd   +18.9 % /   +17.4 % (n  7)   12 mnd  +101.9 % /   +94.2 % (n  7)
+      aluminium   3 mnd   +16.3 % /   +15.0 % (n 10)   12 mnd  +103.4 % /   +89.1 % (n 10)
       bly         3 mnd    -   12 mnd    -
-      brent       3 mnd   +35.4 % /   +34.7 % (n  1)   12 mnd  +103.5 % /  +100.3 % (n  1)
+      brent       3 mnd   +45.8 % /   +39.9 % (n  3)   12 mnd  +136.8 % /  +104.5 % (n  3)
       gold        3 mnd    -   12 mnd    -
-      henryhub    3 mnd    +4.3 % /    +1.8 % (n  5)   12 mnd   -16.1 % /   -23.8 % (n  5)
-      jernmalm    3 mnd   -30.9 % /   -33.1 % (n  1)   12 mnd   -57.6 % /   -62.8 % (n  1)
+      henryhub    3 mnd   -10.5 % /   -12.4 % (n 14)   12 mnd   -23.4 % /   -32.1 % (n 14)
+      jernmalm    3 mnd   -30.9 % /   -33.1 % (n  3)   12 mnd   -53.6 % /   -58.5 % (n  3)
       kobber      3 mnd    -   12 mnd    -
       kull        3 mnd   +25.0 % /   +25.2 % (n  3)   12 mnd  +168.0 % /  +129.2 % (n  3)
       nikkel      3 mnd    -5.8 % /    -6.4 % (n  3)   12 mnd   +87.6 % /   +84.6 % (n  3)
       palmeolje   3 mnd    -   12 mnd    -
-      sink        3 mnd    -   12 mnd    -
+      sink        3 mnd   +28.6 % /   +24.6 % (n  2)   12 mnd  +390.2 % /  +330.5 % (n  2)
       tinn        3 mnd    -   12 mnd    -
+      ttf         3 mnd    +1.8 % /    -1.1 % (n  2)   12 mnd    -8.9 % /   -18.3 % (n  2)
       uran        3 mnd   +10.0 % /    +7.4 % (n  2)   12 mnd   +34.9 % /   +21.9 % (n  2)
-      wti         3 mnd   +35.4 % /   +34.7 % (n  1)   12 mnd  +103.5 % /  +100.3 % (n  1)
+      wti         3 mnd  +102.5 % /   +97.3 % (n  3)   12 mnd  +274.1 % /  +268.9 % (n  3)
 
    Hvert innslag, median over segmentets papirer (abs, dollar):
       segment    innslag  papirer         1 mnd        2 mnd        3 mnd        6 mnd       12 mnd    raavare 12 mnd
       aluminium  1991-05    1           -5.1 %       -0.1 %       -2.1 %      -16.7 %      +11.8 %      -2.1 %
-      aluminium  2009-01    2          -28.5 %      -24.4 %      +16.3 %      +91.1 %     +131.6 %     +54.1 %
-      aluminium  2015-10    2           +4.1 %      +16.4 %       +3.3 %      +75.2 %      +48.1 %      +8.1 %
-      aluminium  2020-04    2          +24.4 %      +50.4 %      +78.7 %      +54.9 %     +302.3 %     +52.5 %
-      brent      2020-03    1          +35.7 %      +34.8 %      +35.4 %      +17.6 %     +103.5 %    +316.8 %
-      henryhub   2009-08    1           +7.4 %       +5.5 %       +4.3 %      +11.5 %      -16.1 %     +55.2 %
-      henryhub   2011-12    1           -7.8 %       -2.8 %      -11.6 %       -1.2 %       +9.4 %     +13.1 %
-      henryhub   2014-12    1           -1.7 %       +5.5 %       +9.5 %       +7.5 %      -31.0 %     -27.9 %
-      henryhub   2019-06    1           -4.4 %      -35.5 %      -32.5 %      -30.7 %      -23.9 %     -27.7 %
-      henryhub   2023-03    1           +9.2 %       +9.5 %      +29.5 %      +28.2 %      +18.1 %     -29.1 %
-      jernmalm   2014-12    1          -14.1 %       -9.3 %      -30.9 %      -25.6 %      -57.6 %     -41.2 %
+      aluminium  2009-01    3          -18.3 %       -3.7 %      +18.9 %      +64.0 %     +104.8 %     +54.1 %
+      aluminium  2015-10    3           +5.2 %      +10.9 %       -7.9 %      +26.0 %      +28.6 %      +8.1 %
+      aluminium  2020-04    3          +13.0 %      +37.9 %      +59.5 %      +51.3 %     +260.0 %     +52.5 %
+      brent      2020-03    3          +35.7 %      +34.8 %      +45.8 %      +26.1 %     +136.8 %    +316.8 %
+      henryhub   2009-08    2          +16.4 %       +8.1 %       +9.9 %      +28.3 %       +7.8 %     +55.2 %
+      henryhub   2011-12    3           -7.2 %       -2.8 %      -15.3 %       -1.2 %       +9.4 %     +13.1 %
+      henryhub   2014-12    3          -17.7 %       -6.9 %       -9.3 %       -9.4 %      -51.7 %     -27.9 %
+      henryhub   2019-06    3           +0.7 %      -32.9 %      -21.6 %       -6.9 %      -28.9 %     -27.7 %
+      henryhub   2023-03    3           +7.1 %       +2.8 %      +16.5 %      +26.7 %      +18.1 %     -29.1 %
+      jernmalm   2014-12    3          -15.0 %       -9.3 %      -30.9 %      -25.9 %      -53.6 %     -41.2 %
       kull       2020-08    3          -11.9 %      -10.7 %      +25.0 %      +79.2 %     +168.0 %    +221.6 %
       nikkel     2015-11    3           -7.8 %      -20.6 %       -5.8 %       +4.9 %      +87.6 %     +18.4 %
+      sink       2008-11    2          -12.2 %       +4.3 %      +28.6 %     +179.3 %     +390.2 %     +86.8 %
+      ttf        2015-12    1           -3.2 %       +5.5 %      +13.2 %      +25.7 %      +37.8 %      +4.3 %
+      ttf        2019-03    1           +1.6 %      -11.6 %       -8.5 %      -10.4 %      -39.8 %     -48.3 %
       uran       1998-10    1           -1.3 %       -4.9 %      +23.4 %      +13.7 %       -9.0 %      +3.1 %
       uran       2000-04    1          +11.1 %       +0.0 %       -2.0 %      +21.5 %      +99.9 %      -3.2 %
-      wti        2020-03    1          +35.7 %      +34.8 %      +35.4 %      +17.6 %     +103.5 %    +181.2 %
+      wti        2020-03    3          +61.5 %      +81.9 %     +102.5 %      +93.6 %     +274.1 %    +181.2 %
 
 
 3. d95 (detrendet A >= 95), Brent og WTI, samme papirer
@@ -149,11 +138,11 @@ Oppstarter: 1 sonde(r) funnet
 
    d95, inngang T0
    h    innsl ep | abs: median   snitt  treff | mot eget snitt: median treff |   S       ep+   p    | mot verden: median  S      ep+ | raavare median
-    1      7   4 |    +8.2 %    -7.5 %   71 % |    +7.9 %   71 % |    -5.5 %  3/4  0.894 |    +2.6 %    -5.5 %  3 |   +12.2 %
-    2      7   4 |    +5.0 %    +2.4 %   71 % |    +4.5 %   71 % |    +3.1 %  3/4  0.323 |    +0.9 %    +0.2 %  3 |   +11.8 %
-    3      7   4 |   +17.6 %   +10.7 %   71 % |   +17.0 %   71 % |   +10.6 %  3/4  0.076 |   +10.0 %    +6.7 %  3 |   +31.8 %
-    6      7   4 |   -12.0 %    -3.1 %   43 % |   -12.9 %   43 % |    -2.6 %  2/4  0.631 |   -16.2 %   -12.1 %  1 |    +9.8 %
-   12      5   3 |    +8.0 %    -8.6 %   60 % |    +6.3 %   60 % |    -7.5 %  2/3  0.665 |   -14.7 %   -18.7 %  0 |   +26.2 %
+    1     21   4 |    +8.2 %   -17.1 %   62 % |    +7.9 %   62 % |   -12.3 %  3/4  0.979 |    +2.6 %   -12.1 %  3 |   +12.2 %
+    2     21   4 |   +10.4 %    -5.1 %   62 % |    +7.7 %   62 % |    -1.9 %  3/4  0.641 |    +1.2 %    -3.6 %  3 |   +11.8 %
+    3     21   4 |   +17.6 %    +7.1 %   67 % |   +17.0 %   67 % |    +6.7 %  3/4  0.229 |   +10.0 %    +4.3 %  3 |   +31.8 %
+    6     21   4 |    -7.5 %    -3.7 %   48 % |   -12.3 %   43 % |    -3.1 %  2/4  0.623 |   -11.9 %   -11.2 %  1 |    +9.8 %
+   12     15   3 |   +15.7 %    -3.0 %   67 % |    +6.3 %   60 % |    -1.3 %  2/3  0.567 |   -11.1 %   -10.7 %  1 |   +26.2 %
 
 
 4. (B) FLERFAKTORFOND VED FONDSFLAGG
@@ -223,8 +212,8 @@ Oppstarter: 1 sonde(r) funnet
 
    lagret sonder/backtest.json
 
---- skrevet til sonder/sonde_kjor_backtest.txt (1025 s, kode 0)
+--- skrevet til sonder/sonde_kjor_backtest.txt (24 s, kode 0)
 
 
 OPPSUMMERING
-   OK    sonde_kjor_backtest                       1025 s  -> sonder/sonde_kjor_backtest.txt
+   OK    sonde_kjor_backtest                         24 s  -> sonder/sonde_kjor_backtest.txt
