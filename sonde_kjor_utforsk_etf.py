@@ -70,8 +70,18 @@ def get(url, timeout=60):
             r = requests.get(url, headers=UA, timeout=timeout)
             if r.status_code in (429, 502, 503):
                 time.sleep(4 * (i + 1)); continue
+            if r.status_code in (400, 404):
+                # finnes ikke hos Yahoo: ikke proev igjen, det koster seks
+                # sekunder per symbol og spiser tidsbudsjettet (28.09.2026)
+                r.raise_for_status()
             r.raise_for_status()
             return r
+        except requests.HTTPError as e:
+            if e.response is not None and e.response.status_code in (400, 404):
+                raise
+            if i == 2:
+                raise
+            time.sleep(2 * (i + 1))
         except requests.RequestException:
             if i == 2:
                 raise
