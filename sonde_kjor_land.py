@@ -43,7 +43,7 @@ HORISONTER = (1, 2, 3, 6, 12, 24)
 KLYNGEGAP, PAUSE, TREKK = 6, M.PAUSE, 2000
 rng = np.random.default_rng(20260928)
 FRENCH = "https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/"
-LAND = {"norge": ("Norway", "2012-01"), "australia": ("Australia", "1996-03"),
+LAND = {"norge": ("Norway", "2012-01"), "australia": ("Austrlia", "1996-03"),   # filnavnet hos French
         "brasil": ("Brazil", "2000-07")}
 
 
