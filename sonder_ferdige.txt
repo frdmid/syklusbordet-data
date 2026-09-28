@@ -29,3 +29,4 @@ sonde_kjor_fond_norge
 sonde_kjor_c_manuell3
 sonde_kjor_backtest
 sonde_kjor_backtest_lang
+sonde_kjor_land
