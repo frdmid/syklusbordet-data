@@ -27,12 +27,15 @@ UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
 KODE = "FGHJKMNQUVXZ"
 ROT = {"wti": ("CL", "NYM", "NYMEX"), "brent": ("BZ", "NYM", "NYMEX"),
        "henryhub": ("NG", "NYM", "NYMEX"), "gold": ("GC", "CMX", "COMEX"),
-       "kobber": ("HG", "CMX", "COMEX"), "kakao": ("CC", "NYB", "ICE US"),
-       # Jernmalm 26.09.2026 (Frodes beslutning): CME Iron Ore 62% Fe, CFR
-       # China (TSI), kontantoppgjort mot maanedssnittet av indeksen. Yahoo
-       # har enkeltkontraktene som TIO<kode><aar>.NYM. Samme vare og enhet som
-       # Verdensbankens serie (USD per tonn, 62 % Fe, CFR Kina).
-       "jernmalm": ("TIO", "NYM", "CME")}
+       "kobber": ("HG", "CMX", "COMEX"), "kakao": ("CC", "NYB", "ICE US")}
+
+# Fersk pris uten kurve. Jernmalm 28.09.2026: sonde_kjor_tio viste at Yahoo
+# ikke svarer paa enkeltkontraktene (TIO<kode><aar>.NYM), saa kurven kan ikke
+# bygges. Den kontinuerlige fronten TIO=F svarer, og maanedssnittet av den
+# ligger 0,2 % under Verdensbankens serie (median 2010 til 2026, stoerste avvik
+# 4,8 %, korrelasjon i maanedsendringer 0,992). Den gir en ukentlig pris mens
+# Verdensbankens maanedssnitt kommer med en maaneds forsinkelse.
+FERSK = {"jernmalm": ("TIO=F", "CME jernmalmtermin 62 % Fe, nærmeste kontrakt (Yahoo TIO=F)")}
 MND_FRAM = 15
 
 # Omregning fra terminens enhet til segmentets enhet, slik at naermeste
@@ -115,6 +118,18 @@ def oppdater(segmenter, les, skriv, note=print, idag=None):
             n += 1
         except Exception as e:
             note(f"kurve {s['id']}", False, f"{type(e).__name__}: {str(e)[:60]}")
+    for s in segmenter:
+        if s["id"] not in FERSK:
+            continue
+        sym, kilde = FERSK[s["id"]]
+        p, d = siste(sym)
+        if p is None:
+            note(f"fersk pris {s['id']}", False, f"{sym} svarte ikke")
+            continue
+        ln = s.get("last_nom")
+        s["fersk"] = {"pris": round(p, 2), "dato": d, "kilde": kilde,
+                      "mot_siste_pst": round(100 * (p / ln - 1), 1) if ln else None}
+        note(f"fersk pris {s['id']}", True, f"{p:.2f} per {d}")
     skriv("kurve_hist.json", json.dumps(hist, ensure_ascii=False, indent=0))
     note("kurveform", n > 0, f"{n} segmenter, rente {rente}, historikk " +
          ", ".join(f"{k} {len(v)} mnd" for k, v in hist.items() if not k.startswith("_")))

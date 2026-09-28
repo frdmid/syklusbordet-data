@@ -16,3 +16,11 @@ sonde_kjor_dadj
 sonde_kjor_rigg
 sonde_kjor_fearnleys_mal
 sonde_kjor_c_manuell
+sonde_kjor_d95
+sonde_kjor_c_manuell2
+sonde_kjor_b_kilder
+sonde_kjor_kali_platina
+sonde_kjor_brasil
+sonde_kjor_tio
+sonde_kjor_b_jernmalm
+sonde_kjor_fond
