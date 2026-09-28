@@ -1,5 +1,5 @@
 {
- "oppdatert": "2026-09-28 11:23:36",
+ "oppdatert": "2026-09-28 11:53:20",
  "segmenter": [
   "brent",
   "wti",
@@ -198,7 +198,7 @@
   {
    "kilde": "overlevelsesport C",
    "status": "OK",
-   "detalj": "17 segment, 8 aapne"
+   "detalj": "17 segment, 9 aapne"
   },
   {
    "kilde": "tilbudsskaar B",
@@ -258,12 +258,12 @@
   {
    "kilde": "VIX",
    "status": "OK",
-   "detalj": "16.36 per 2026-09-28, persentil 42.3 (fra 1990-01) / 45.8 (10 aar)"
+   "detalj": "16.27 per 2026-09-28, persentil 40.9 (fra 1990-01) / 43.3 (10 aar)"
   },
   {
    "kilde": "DXY",
    "status": "OK",
-   "detalj": "101.167 per 2026-09-28, persentil 78.4 (fra 1985-01), 12 mnd 3.5 %"
+   "detalj": "101.119 per 2026-09-28, persentil 78.2 (fra 1985-01), 12 mnd 3.4 %"
   },
   {
    "kilde": "USD/NOK",
