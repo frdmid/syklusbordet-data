@@ -31,141 +31,9 @@ Oppstarter: 1 sonde(r) funnet
 
 1. Ken French: finner landfilene
 
-   297 CSV-lenker paa siden. De som kan vaere internasjonale:
-      ftp/Asia_Pacific_ex_Japan_25_Portfolios_ME_BE-ME_CSV.zip
-      ftp/Asia_Pacific_ex_Japan_25_Portfolios_ME_BE-ME_daily_CSV.zip
-      ftp/Asia_Pacific_ex_Japan_25_Portfolios_ME_INV_CSV.zip
-      ftp/Asia_Pacific_ex_Japan_25_Portfolios_ME_INV_Daily_CSV.zip
-      ftp/Asia_Pacific_ex_Japan_25_Portfolios_ME_OP_CSV.zip
-      ftp/Asia_Pacific_ex_Japan_25_Portfolios_ME_OP_Daily_CSV.zip
-      ftp/Asia_Pacific_ex_Japan_25_Portfolios_ME_Prior_12_2_CSV.zip
-      ftp/Asia_Pacific_ex_Japan_25_Portfolios_ME_Prior_250_20_daily_CSV.zip
-      ftp/Asia_Pacific_ex_Japan_32_Portfolios_ME_BE-ME_INV(TA)_2x4x4_CSV.zip
-      ftp/Asia_Pacific_ex_Japan_32_Portfolios_ME_BE-ME_OP_2x4x4_CSV.zip
-      ftp/Asia_Pacific_ex_Japan_32_Portfolios_ME_INV(TA)_OP_2x4x4_CSV.zip
-      ftp/Asia_Pacific_ex_Japan_3_Factors_CSV.zip
-      ftp/Asia_Pacific_ex_Japan_3_Factors_Daily_CSV.zip
-      ftp/Asia_Pacific_ex_Japan_5_Factors_CSV.zip
-      ftp/Asia_Pacific_ex_Japan_5_Factors_Daily_CSV.zip
-      ftp/Asia_Pacific_ex_Japan_6_Portfolios_ME_BE-ME_CSV.zip
-      ftp/Asia_Pacific_ex_Japan_6_Portfolios_ME_BE-ME_daily_CSV.zip
-      ftp/Asia_Pacific_ex_Japan_6_Portfolios_ME_INV_CSV.zip
-      ftp/Asia_Pacific_ex_Japan_6_Portfolios_ME_INV_Daily_CSV.zip
-      ftp/Asia_Pacific_ex_Japan_6_Portfolios_ME_OP_CSV.zip
-      ftp/Asia_Pacific_ex_Japan_6_Portfolios_ME_OP_Daily_CSV.zip
-      ftp/Asia_Pacific_ex_Japan_6_Portfolios_ME_Prior_12_2_CSV.zip
-      ftp/Asia_Pacific_ex_Japan_6_Portfolios_ME_Prior_250_20_daily_CSV.zip
-      ftp/Asia_Pacific_ex_Japan_MOM_Factor_CSV.zip
-      ftp/Asia_Pacific_ex_Japan_MOM_Factor_Daily_CSV.zip
-      ftp/Developed_25_Portfolios_ME_BE-ME_CSV.zip
-      ftp/Developed_25_Portfolios_ME_BE-ME_daily_CSV.zip
-      ftp/Developed_25_Portfolios_ME_INV_CSV.zip
-      ftp/Developed_25_Portfolios_ME_INV_Daily_CSV.zip
-      ftp/Developed_25_Portfolios_ME_OP_CSV.zip
-      ftp/Developed_25_Portfolios_ME_OP_Daily_CSV.zip
-      ftp/Developed_25_Portfolios_ME_Prior_12_2_CSV.zip
-      ftp/Developed_25_Portfolios_ME_Prior_250_20_daily_CSV.zip
-      ftp/Developed_32_Portfolios_ME_BE-ME_INV(TA)_2x4x4_CSV.zip
-      ftp/Developed_32_Portfolios_ME_BE-ME_OP_2x4x4_CSV.zip
-      ftp/Developed_32_Portfolios_ME_INV(TA)_OP_2x4x4_CSV.zip
-      ftp/Developed_3_Factors_CSV.zip
-      ftp/Developed_3_Factors_Daily_CSV.zip
-      ftp/Developed_5_Factors_CSV.zip
-      ftp/Developed_5_Factors_Daily_CSV.zip
-      ftp/Developed_6_Portfolios_ME_BE-ME_CSV.zip
-      ftp/Developed_6_Portfolios_ME_BE-ME_daily_CSV.zip
-      ftp/Developed_6_Portfolios_ME_INV_CSV.zip
-      ftp/Developed_6_Portfolios_ME_INV_Daily_CSV.zip
-      ftp/Developed_6_Portfolios_ME_OP_CSV.zip
-      ftp/Developed_6_Portfolios_ME_OP_Daily_CSV.zip
-      ftp/Developed_6_Portfolios_ME_Prior_12_2_CSV.zip
-      ftp/Developed_6_Portfolios_ME_Prior_250_20_daily_CSV.zip
-      ftp/Developed_Mom_Factor_CSV.zip
-      ftp/Developed_Mom_Factor_Daily_CSV.zip
-      ftp/Developed_ex_US_25_Portfolios_ME_BE-ME_CSV.zip
-      ftp/Developed_ex_US_25_Portfolios_ME_BE-ME_daily_CSV.zip
-      ftp/Developed_ex_US_25_Portfolios_ME_INV_CSV.zip
-      ftp/Developed_ex_US_25_Portfolios_ME_INV_Daily_CSV.zip
-      ftp/Developed_ex_US_25_Portfolios_ME_OP_CSV.zip
-      ftp/Developed_ex_US_25_Portfolios_ME_OP_Daily_CSV.zip
-      ftp/Developed_ex_US_25_Portfolios_ME_Prior_12_2_CSV.zip
-      ftp/Developed_ex_US_25_Portfolios_ME_Prior_250_20_daily_CSV.zip
-      ftp/Developed_ex_US_32_Portfolios_ME_BE-ME_INV(TA)_2x4x4_CSV.zip
-      ftp/Developed_ex_US_32_Portfolios_ME_BE-ME_OP_2x4x4_CSV.zip
-      ftp/Developed_ex_US_32_Portfolios_ME_INV(TA)_OP_2x4x4_CSV.zip
-      ftp/Developed_ex_US_3_Factors_CSV.zip
-      ftp/Developed_ex_US_3_Factors_Daily_CSV.zip
-      ftp/Developed_ex_US_5_Factors_CSV.zip
-      ftp/Developed_ex_US_5_Factors_Daily_CSV.zip
-      ftp/Developed_ex_US_6_Portfolios_ME_BE-ME_CSV.zip
-      ftp/Developed_ex_US_6_Portfolios_ME_BE-ME_daily_CSV.zip
-      ftp/Developed_ex_US_6_Portfolios_ME_INV_CSV.zip
-      ftp/Developed_ex_US_6_Portfolios_ME_INV_Daily_CSV.zip
-      ftp/Developed_ex_US_6_Portfolios_ME_OP_CSV.zip
-      ftp/Developed_ex_US_6_Portfolios_ME_OP_Daily_CSV.zip
-      ftp/Developed_ex_US_6_Portfolios_ME_Prior_12_2_CSV.zip
-      ftp/Developed_ex_US_6_Portfolios_ME_Prior_250_20_daily_CSV.zip
-      ftp/Developed_ex_US_Mom_Factor_CSV.zip
-      ftp/Developed_ex_US_Mom_Factor_Daily_CSV.zip
-      ftp/Emerging_5_Factors_CSV.zip
-      ftp/Emerging_MOM_Factor_CSV.zip
-      ftp/Emerging_Markets_4_Portfolios_BE-ME_INV_CSV.zip
-      ftp/Emerging_Markets_4_Portfolios_BE-ME_OP_CSV.zip
-      ftp/Emerging_Markets_4_Portfolios_OP_INV_CSV.zip
-      ftp/Emerging_Markets_6_Portfolios_ME_BE-ME_CSV.zip
-      ftp/Emerging_Markets_6_Portfolios_ME_INV_CSV.zip
-      ftp/Emerging_Markets_6_Portfolios_ME_OP_CSV.zip
-      ftp/Emerging_Markets_6_Portfolios_ME_Prior_12_2_CSV.zip
-      ftp/Europe_25_Portfolios_ME_BE-ME_CSV.zip
-      ftp/Europe_25_Portfolios_ME_BE-ME_daily_CSV.zip
-      ftp/Europe_25_Portfolios_ME_INV_CSV.zip
-      ftp/Europe_25_Portfolios_ME_INV_Daily_CSV.zip
-      ftp/Europe_25_Portfolios_ME_OP_CSV.zip
-      ftp/Europe_25_Portfolios_ME_OP_Daily_CSV.zip
-      ftp/Europe_25_Portfolios_ME_Prior_12_2_CSV.zip
-      ftp/Europe_25_Portfolios_ME_Prior_250_20_daily_CSV.zip
-      ftp/Europe_32_Portfolios_ME_BE-ME_INV(TA)_2x4x4_CSV.zip
-      ftp/Europe_32_Portfolios_ME_BE-ME_OP_2x4x4_CSV.zip
-      ftp/Europe_32_Portfolios_ME_INV(TA)_OP_2x4x4_CSV.zip
-      ftp/Europe_3_Factors_CSV.zip
-      ftp/Europe_3_Factors_Daily_CSV.zip
-      ftp/Europe_5_Factors_CSV.zip
-      ftp/Europe_5_Factors_Daily_CSV.zip
-      ftp/Europe_6_Portfolios_ME_BE-ME_CSV.zip
-      ftp/Europe_6_Portfolios_ME_BE-ME_daily_CSV.zip
-      ftp/Europe_6_Portfolios_ME_INV_CSV.zip
-      ftp/Europe_6_Portfolios_ME_INV_Daily_CSV.zip
-      ftp/Europe_6_Portfolios_ME_OP_CSV.zip
-      ftp/Europe_6_Portfolios_ME_OP_Daily_CSV.zip
-      ftp/Europe_6_Portfolios_ME_Prior_12_2_CSV.zip
-      ftp/Europe_6_Portfolios_ME_Prior_250_20_daily_CSV.zip
-      ftp/Europe_Mom_Factor_CSV.zip
-      ftp/Europe_Mom_Factor_Daily_CSV.zip
-      ftp/Japan_25_Portfolios_ME_BE-ME_CSV.zip
-      ftp/Japan_25_Portfolios_ME_BE-ME_daily_CSV.zip
-      ftp/Japan_25_Portfolios_ME_INV_CSV.zip
-      ftp/Japan_25_Portfolios_ME_INV_Daily_CSV.zip
-      ftp/Japan_25_Portfolios_ME_OP_CSV.zip
-      ftp/Japan_25_Portfolios_ME_OP_Daily_CSV.zip
-      ftp/Japan_25_Portfolios_ME_Prior_12_2_CSV.zip
-      ftp/Japan_25_Portfolios_ME_Prior_250_20_daily_CSV.zip
-      ftp/Japan_32_Portfolios_ME_BE-ME_INV(TA)_2x4x4_CSV.zip
-      ftp/Japan_32_Portfolios_ME_BE-ME_OP_2x4x4_CSV.zip
-      ftp/Japan_32_Portfolios_ME_INV(TA)_OP_2x4x4_CSV.zip
-      ftp/Japan_3_Factors_CSV.zip
-      ftp/Japan_3_Factors_Daily_CSV.zip
-      ftp/Japan_5_Factors_CSV.zip
-      ftp/Japan_5_Factors_Daily_CSV.zip
-      ftp/Japan_6_Portfolios_ME_BE-ME_CSV.zip
-      ftp/Japan_6_Portfolios_ME_BE-ME_daily_CSV.zip
-      ftp/Japan_6_Portfolios_ME_INV_CSV.zip
-      ftp/Japan_6_Portfolios_ME_INV_Daily_CSV.zip
-      ftp/Japan_6_Portfolios_ME_OP_CSV.zip
-      ftp/Japan_6_Portfolios_ME_OP_Daily_CSV.zip
-      ftp/Japan_6_Portfolios_ME_Prior_12_2_CSV.zip
-      ftp/Japan_6_Portfolios_ME_Prior_250_20_daily_CSV.zip
-      ftp/Japan_Mom_Factor_CSV.zip
-      ftp/Japan_Mom_Factor_Daily_CSV.zip
+   undersider: ['Data_Library/int_country_port_formed.html']
+      Data_Library/int_country_port_formed.html: 0 zip, f.eks. []
+   297 lenker totalt. Med landnavn:
    Norway: ingen fil
    Australia: ingen fil
    Brazil: ingen fil
@@ -173,8 +41,8 @@ Oppstarter: 1 sonde(r) funnet
 [stderr]
 Fant ingen landportefølje. Lenkene over viser hva som finnes.
 
---- skrevet til sonder/sonde_kjor_land.txt (9 s, kode 1)
+--- skrevet til sonder/sonde_kjor_land.txt (11 s, kode 1)
 
 
 OPPSUMMERING
-   FEIL  sonde_kjor_land                              9 s  -> sonder/sonde_kjor_land.txt
+   FEIL  sonde_kjor_land                             11 s  -> sonder/sonde_kjor_land.txt
