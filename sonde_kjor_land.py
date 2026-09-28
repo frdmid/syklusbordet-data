@@ -102,65 +102,67 @@ for sid, lr in REAL.items():
     BUNN[sid] = pd.Series(ok & (s.A >= 80) & (s.Ad >= 80), index=lr.index)
     SONE[sid] = pd.Series(ok & (s.A >= 80), index=lr.index)
 
-print("\n1. Ken French: finner landfilene\n")
-side = get(FRENCH + "data_library.html").text
-lenker = sorted(set(re.sub(r"^.*?(ftp/)", r"\1", l)
-                    for l in re.findall(r'href=["\']([^"\']+?\.zip)["\']', side, re.I) if "csv" in l.lower()))
-# Landporteføljene ligger ikke paa hovedsiden (foerste kjoering fant bare
-# regioner). Undersider med land eller internasjonalt i navnet folges ett nivaa.
-under = sorted(set(re.findall(r'href=["\']([^"\']+?\.html?)["\']', side, re.I)))
-under = [u for u in under if re.search(r"countr|internat|intl|norw|austral", u, re.I)]
-print(f"   undersider: {under or 'ingen'}")
-for u in under:
-    url = u if u.startswith("http") else FRENCH + u.lstrip("./")
-    try:
-        t = get(url).text
-    except Exception as e:
-        print(f"      {u}: {type(e).__name__}"); continue
-    z = re.findall(r'href=["\']([^"\']+?\.zip)["\']', t, re.I)
-    print(f"      {u}: {len(z)} zip, f.eks. {z[:4]}")
-    lenker += sorted(set(re.sub(r"^.*?(ftp/)", r"\1", l) for l in z))
-alle_zip = sorted(set(re.sub(r"^.*?(ftp/)", r"\1", l)
-                      for l in re.findall(r'href=["\']([^"\']+?\.zip)["\']', side, re.I)))
-lenker = sorted(set(lenker) | {l for l in alle_zip if re.search(r"norw|austral|brazil|countr|intl|int_", l, re.I)})
-for m in re.finditer(r"countr", side, re.I):
-    utdrag = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", side[max(0, m.start() - 300):m.start() + 500]))
-    print(f"   rundt 'countr': ...{utdrag[:400]}...")
-    print("   lenker i naerheten: " + ", ".join(re.findall(r'href=["\']([^"\']+)["\']',
-                                                          side[m.start() - 300:m.start() + 1500])[:12]))
-print(f"   {len(lenker)} lenker totalt. Med landnavn:")
-for l in lenker:
-    if re.search(r"norw|austral|brazil|countr", l, re.I):
-        print(f"      {l}")
+print("\n1. Ken French: landporteføljene (F-F_International_Countries.zip)\n")
+# Alle landene ligger i én zip, en fil per land. Formatet er ikke det samme
+# som i bransjefilene, saa lesingen er generell: foerste linje som starter med
+# YYYYMM er data, linjen over er overskriften. Markedskolonnen heter "Mkt" hvis
+# den finnes, ellers brukes foerste kolonne, og det skrives ut hva som ble valgt.
+z = zipfile.ZipFile(io.BytesIO(get(FRENCH + "ftp/F-F_International_Countries.zip").content))
+navn = z.namelist()
+print(f"   {len(navn)} filer i zip: {', '.join(navn[:40])}")
+
+
+def les_land(tekst):
+    rader, kol = {}, None
+    for i, l in enumerate(tekst):
+        f = [x for x in re.split(r"[,\s]+", l.strip()) if x]
+        if f and re.fullmatch(r"\d{6}", f[0]):
+            if kol is None:
+                j = i - 1
+                while j >= 0 and not tekst[j].strip():
+                    j -= 1
+                kol = [x for x in re.split(r",|\s{2,}|\t", tekst[j].strip()) if x.strip()]
+            elif rader and pd.Period(f"{f[0][:4]}-{f[0][4:]}", "M") <= max(rader):
+                break      # neste blokk begynner (for eksempel aarlige tall eller likevektet)
+            try:
+                rader[pd.Period(f"{f[0][:4]}-{f[0][4:]}", "M")] = [float(x) for x in f[1:]]
+            except ValueError:
+                continue
+    if not rader:
+        return None, None
+    n = min(len(v) for v in rader.values())
+    d = pd.DataFrame({p: v[:n] for p, v in rader.items()}).T.sort_index()
+    kol = [k.strip() for k in (kol or [])]
+    if len(kol) >= n:
+        d.columns = kol[-n:] if len(kol) > n else kol
+    return d.where(d > -99.0), kol
+
+
 KURS, KILDE = {}, {}
 for fid, (land, _) in LAND.items():
     if fid not in KART:
         continue
-    treff = [l for l in lenker if land.lower() in l.lower()]
-    print(f"   {land}: {', '.join(treff) or 'ingen fil'}")
-    for l in treff:
-        try:
-            t = zip_tekst(FRENCH + l)
-        except Exception as e:
-            print(f"      {l}: {type(e).__name__}"); continue
-        print("      foerste linjer: " + " | ".join(x.strip()[:70] for x in t[:6] if x.strip()))
-        d, i = les_blokk(t)
-        print(f"      kolonner: {list(d.columns)}  ({len(d)} mnd fra {d.index[0] if len(d) else '-'})")
-        kol = next((c for c in d.columns if c.lower() in ("mkt", "market", "mkt ")), None)
-        if kol is None:
-            kol = next((c for c in d.columns if "mkt" in c.lower() or "market" in c.lower()), None)
-        if kol is None or len(d) < 120:
-            continue
-        KURS[fid] = np.log1p(d[kol].dropna() / 100.0).cumsum()
-        KILDE[fid] = f"{l}, kolonne {kol}"
-        print(f"      BRUKT: kolonne {kol}, {KURS[fid].index[0]} til {KURS[fid].index[-1]}")
-        break
+    treff = [x for x in navn if land.lower() in x.lower()]
+    if not treff:
+        print(f"   {land}: ingen fil"); continue
+    tekst = z.read(treff[0]).decode("latin1").splitlines()
+    print(f"   {land}: {treff[0]}")
+    print("      foerste linjer: " + " | ".join(x.strip()[:80] for x in tekst[:8] if x.strip()))
+    d, kol = les_land(tekst)
+    if d is None:
+        print("      fant ingen datarader"); continue
+    k = next((c for c in d.columns if str(c).lower() in ("mkt", "market")), d.columns[0])
+    print(f"      overskrift: {kol}")
+    print(f"      kolonner: {list(d.columns)}, {len(d)} mnd fra {d.index[0]} til {d.index[-1]}")
+    print(f"      BRUKT: kolonne {k}. Snitt {d[k].mean():.2f} % per mnd, std {d[k].std():.2f}")
+    KURS[fid] = np.log1p(d[k].dropna() / 100.0).cumsum()
+    KILDE[fid] = f"{treff[0]}, kolonne {k}"
 
 fak = zip_tekst(FRENCH + "ftp/F-F_Research_Data_Factors_CSV.zip")
 F, _ = les_blokk(fak)
 MARKED = np.log1p((F["Mkt-RF"] + F["RF"]) / 100.0).cumsum()
 if not KURS:
-    raise SystemExit("Fant ingen landportefølje. Lenkene over viser hva som finnes.")
+    raise SystemExit("Fant ingen landportefølje. Filnavnene over viser hva zip-fila inneholder.")
 
 
 # ================================================================ regnestykket
