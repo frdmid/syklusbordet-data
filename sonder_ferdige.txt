@@ -27,3 +27,4 @@ sonde_kjor_fond
 sonde_kjor_utforsk_etf
 sonde_kjor_fond_norge
 sonde_kjor_c_manuell3
+sonde_kjor_backtest
