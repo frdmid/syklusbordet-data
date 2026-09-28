@@ -274,19 +274,26 @@ def null_S(rader, h):
     ep = {}
     for r, c in zip(rader, kl):
         ep.setdefault(c, []).append(r["tk"])
+    # Paa forhaand, per episode: for hver kalendermaaned der minst halvparten
+    # av episodens papirer har utfall, medianen av deres "mer". Da blir hvert
+    # trekk bare et oppslag i en liste. Samme null som foer, men foerste
+    # versjon slo opp i pandas for hvert papir i hvert trekk og var for treg.
     alle = sorted({p for f in FWD[h].values() for p in f.index})
-    ut = []
-    for _ in range(TREKK):
-        meds = []
-        for c, tks in ep.items():
-            for _forsok in range(20):
-                m = alle[int(rng.integers(len(alle)))]
-                v = [FWD[h][tk][m] - SNITT[h][tk] for tk in tks if m in FWD[h][tk].index]
-                if len(v) * 2 >= len(tks):
-                    meds.append(np.median(v)); break
-        if meds:
-            ut.append(np.mean(meds))
-    return np.array(ut)
+    d = {tk: {p: float(x) - SNITT[h][tk] for p, x in FWD[h][tk].items()} for tk in {t for v in ep.values() for t in v}}
+    kand = []
+    for tks in ep.values():
+        med = []
+        for m in alle:
+            v = [d[tk][m] for tk in tks if m in d[tk]]
+            if v and len(v) * 2 >= len(tks):
+                med.append(float(np.median(v)))
+        kand.append(np.array(med))
+    if any(len(k) == 0 for k in kand):
+        kand = [k for k in kand if len(k)]
+    if not kand:
+        return np.array([])
+    trekk = np.column_stack([k[rng.integers(len(k), size=TREKK)] for k in kand])
+    return trekk.mean(axis=1)
 
 
 pst = lambda v: "     -  " if v is None or not np.isfinite(v) else f"{100 * (np.exp(v) - 1):+7.1f} %"
@@ -332,7 +339,7 @@ def skriv_tabell(tittel, hendelser, forsink=0, med_p=True):
               f"{100 * o['abs_treff']:4.0f} % | {pst(o['mer_median'])} {100 * o['mer_treff']:4.0f} % | "
               f"{pst(o['S'])} {o['S_pos']:2d}/{o['episoder']:<2d} "
               f"{'  -  ' if not np.isfinite(o['p']) else format(o['p'], '.3f')} | "
-              f"{pst(o['verden_median'])} {pst(o['S_verden'])} {o['S_verden_pos']:2d} | {pst(o['raavare_median'])}")
+              f"{pst(o['verden_median'])} {pst(o['S_verden'])} {o['S_verden_pos']:2d} | {pst(o['raavare_median'])}", flush=True)
     return ut
 
 
