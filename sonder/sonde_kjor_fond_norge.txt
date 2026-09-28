@@ -1,8 +1,9 @@
-Hopper over 25 ferdige sonder (sonder_ferdige.txt): sonde_kjor_b_jernmalm, sonde_kjor_b_kilder, sonde_kjor_bdi, sonde_kjor_brasil, sonde_kjor_c_manuell, sonde_kjor_c_manuell2, sonde_kjor_cot, sonde_kjor_d95, sonde_kjor_dadj, sonde_kjor_fearnleys_mal, sonde_kjor_fond, sonde_kjor_indikator, sonde_kjor_instrumenttest, sonde_kjor_kali_platina, sonde_kjor_kurve, sonde_kjor_laks, sonde_kjor_macrotrends, sonde_kjor_rigg, sonde_kjor_salg, sonde_kjor_stockanalysis, sonde_kjor_terskel, sonde_kjor_timing, sonde_kjor_tio, sonde_kjor_uran, sonde_kjor_utforsk_etf
-
-Oppstarter: 1 sonde(r) funnet
-
-=== sonde_kjor_fond_norge ===
+sonde:   sonde_kjor_fond_norge
+kjort:   2026-09-28 09:58:22 UTC
+commit:  1afbfb5
+status:  OK
+brukte:  393 sekunder
+--------------------------------------------------------------
 0. Raavarene fra bordets egen kode
 
 1. Deflator
@@ -92,9 +93,3 @@ Oppstarter: 1 sonde(r) funnet
    (* bunnsone, + under oppsikt)
 
 Lagret sonder/fond_norge.json og sonder/fondkart_forslag_norge.json (2 fond med minst ett par)
-
---- skrevet til sonder/sonde_kjor_fond_norge.txt (393 s, kode 0)
-
-
-OPPSUMMERING
-   OK    sonde_kjor_fond_norge                      393 s  -> sonder/sonde_kjor_fond_norge.txt
