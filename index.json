@@ -1,5 +1,5 @@
 {
- "oppdatert": "2026-09-25 13:57:02",
+ "oppdatert": "2026-09-28 06:35:25",
  "segmenter": [
   "brent",
   "wti",
@@ -213,32 +213,32 @@
   {
    "kilde": "COT brent",
    "status": "OK",
-   "detalj": "2026-09-15, forvaltere +3.0 % av OI, persentil 36.5 (3 aar) / 70.6 (fra 2011), 768 uker"
+   "detalj": "2026-09-22, forvaltere +2.0 % av OI, persentil 23.1 (3 aar) / 62.8 (fra 2011), 769 uker"
   },
   {
    "kilde": "COT wti",
    "status": "OK",
-   "detalj": "2026-09-15, forvaltere +5.4 % av OI, persentil 48.7 (3 aar) / 23.1 (fra 2006), 1058 uker"
+   "detalj": "2026-09-22, forvaltere +5.5 % av OI, persentil 51.3 (3 aar) / 24.0 (fra 2006), 1059 uker"
   },
   {
    "kilde": "COT henryhub",
    "status": "OK",
-   "detalj": "2026-09-15, forvaltere -5.5 % av OI, persentil 28.2 (3 aar) / 41.6 (fra 2006), 1058 uker"
+   "detalj": "2026-09-22, forvaltere -3.6 % av OI, persentil 53.2 (3 aar) / 50.2 (fra 2006), 1059 uker"
   },
   {
    "kilde": "COT gold",
    "status": "OK",
-   "detalj": "2026-09-15, forvaltere +32.5 % av OI, persentil 67.3 (3 aar) / 75.4 (fra 2006), 1058 uker"
+   "detalj": "2026-09-22, forvaltere +30.9 % av OI, persentil 60.9 (3 aar) / 70.6 (fra 2006), 1059 uker"
   },
   {
    "kilde": "COT kobber",
    "status": "OK",
-   "detalj": "2026-09-15, forvaltere +22.5 % av OI, persentil 76.3 (3 aar) / 88.1 (fra 2006), 1058 uker"
+   "detalj": "2026-09-22, forvaltere +27.4 % av OI, persentil 95.5 (3 aar) / 93.1 (fra 2006), 1059 uker"
   },
   {
    "kilde": "COT kakao",
    "status": "OK",
-   "detalj": "2026-09-15, forvaltere -5.2 % av OI, persentil 15.4 (3 aar) / 14.7 (fra 2006), 1058 uker"
+   "detalj": "2026-09-22, forvaltere -9.2 % av OI, persentil 3.8 (3 aar) / 8.2 (fra 2006), 1059 uker"
   },
   {
    "kilde": "COT totalt",
@@ -246,19 +246,34 @@
    "detalj": "6 av 6 kontrakter"
   },
   {
+   "kilde": "kurve jernmalm",
+   "status": "FEIL",
+   "detalj": "for kort kurve, ingen tolvmaanederspunkt"
+  },
+  {
    "kilde": "kurveform",
    "status": "OK",
-   "detalj": "6 segmenter, rente 4.074999809265137, historikk brent 1 mnd, wti 1 mnd, henryhub 1 mnd, gold 1 mnd, kobber 1 mnd, kakao 1 mnd"
+   "detalj": "6 segmenter, rente 4.070000171661377, historikk brent 1 mnd, wti 1 mnd, henryhub 1 mnd, gold 1 mnd, kobber 1 mnd, kakao 1 mnd"
   },
   {
    "kilde": "VIX",
    "status": "OK",
-   "detalj": "15.12 per 2026-09-25, persentil 31.6 (fra 1990-01) / 33.3 (10 aar)"
+   "detalj": "14.87 per 2026-09-25, persentil 30.0 (fra 1990-01) / 30.0 (10 aar)"
+  },
+  {
+   "kilde": "DXY",
+   "status": "OK",
+   "detalj": "101.173 per 2026-09-28, persentil 78.6 (fra 1985-01), 12 mnd 3.5 %"
+  },
+  {
+   "kilde": "USD/NOK",
+   "status": "OK",
+   "detalj": "9.5063 per 2026-09-25, persentil 92.1 (fra 1971-01), 12 mnd -4.4 %"
   },
   {
    "kilde": "flagglogg",
    "status": "OK",
-   "detalj": "uke 2026-W39: 17 segmenter, 43 kurser, 2 hendelser"
+   "detalj": "uke 2026-W40: 17 segmenter, 43 kurser, 0 hendelser"
   }
  ]
 }
