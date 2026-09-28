@@ -1,8 +1,9 @@
-Hopper over 26 ferdige sonder (sonder_ferdige.txt): sonde_kjor_b_jernmalm, sonde_kjor_b_kilder, sonde_kjor_bdi, sonde_kjor_brasil, sonde_kjor_c_manuell, sonde_kjor_c_manuell2, sonde_kjor_cot, sonde_kjor_d95, sonde_kjor_dadj, sonde_kjor_fearnleys_mal, sonde_kjor_fond, sonde_kjor_fond_norge, sonde_kjor_indikator, sonde_kjor_instrumenttest, sonde_kjor_kali_platina, sonde_kjor_kurve, sonde_kjor_laks, sonde_kjor_macrotrends, sonde_kjor_rigg, sonde_kjor_salg, sonde_kjor_stockanalysis, sonde_kjor_terskel, sonde_kjor_timing, sonde_kjor_tio, sonde_kjor_uran, sonde_kjor_utforsk_etf
-
-Oppstarter: 1 sonde(r) funnet
-
-=== sonde_kjor_c_manuell3 ===
+sonde:   sonde_kjor_c_manuell3
+kjort:   2026-09-28 11:42:59 UTC
+commit:  e2f4d2f
+status:  OK
+brukte:  68 sekunder
+--------------------------------------------------------------
 1. DNO via NewsWeb
 
    200    10558995 byte  b'%PDF-1.7'  https://api3.oslo.oslobors.no/v1/newsreader/attachment?messageId=668073&attachmentId=321006
@@ -5589,9 +5590,3 @@ Oppstarter: 1 sonde(r) funnet
    0 kandidater til aarsregnskap
 
 Send utskriften til Claude. Tallene leses av for haand til c_manuell.json.
-
---- skrevet til sonder/sonde_kjor_c_manuell3.txt (68 s, kode 0)
-
-
-OPPSUMMERING
-   OK    sonde_kjor_c_manuell3                       68 s  -> sonder/sonde_kjor_c_manuell3.txt
