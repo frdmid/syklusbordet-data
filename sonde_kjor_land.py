@@ -120,7 +120,14 @@ for u in under:
     z = re.findall(r'href=["\']([^"\']+?\.zip)["\']', t, re.I)
     print(f"      {u}: {len(z)} zip, f.eks. {z[:4]}")
     lenker += sorted(set(re.sub(r"^.*?(ftp/)", r"\1", l) for l in z))
-lenker = sorted(set(lenker))
+alle_zip = sorted(set(re.sub(r"^.*?(ftp/)", r"\1", l)
+                      for l in re.findall(r'href=["\']([^"\']+?\.zip)["\']', side, re.I)))
+lenker = sorted(set(lenker) | {l for l in alle_zip if re.search(r"norw|austral|brazil|countr|intl|int_", l, re.I)})
+for m in re.finditer(r"countr", side, re.I):
+    utdrag = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", side[max(0, m.start() - 300):m.start() + 500]))
+    print(f"   rundt 'countr': ...{utdrag[:400]}...")
+    print("   lenker i naerheten: " + ", ".join(re.findall(r'href=["\']([^"\']+)["\']',
+                                                          side[m.start() - 300:m.start() + 1500])[:12]))
 print(f"   {len(lenker)} lenker totalt. Med landnavn:")
 for l in lenker:
     if re.search(r"norw|austral|brazil|countr", l, re.I):
