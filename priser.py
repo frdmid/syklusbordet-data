@@ -199,7 +199,7 @@ def expanding_bands(x, qs=(10, 25, 50, 75, 90)):
     return res
 
 
-D95_SEGMENTER, D95_NIVAA = {"brent"}, 95
+D95_SEGMENTER, D95_NIVAA = {"brent", "wti"}, 95   # WTI lagt til etter Frodes beslutning 28.09.2026
 
 
 def build_segment(seg_id, name, group, unit, nom, cpi, note_txt, source, url):
@@ -247,6 +247,10 @@ def build_segment(seg_id, name, group, unit, nom, cpi, note_txt, source, url):
     # alene har fem innslag siden 1987 (1993-10, 1998-02, 2015-01, 2020-02,
     # 2025-12). Det vises og logges separat fra bunnsonen, slik at det kan
     # vurderes framover uten aa blandes med den testede regelen.
+    # WTI lagt til 28.09.2026, samme regel, ogsaa Frodes valg og ikke testet.
+    # WTI har seks innslag siden 1986 (1993-11, 1998-06, 2015-01, 2018-12,
+    # 2020-02, 2025-12). De to oljeprisene korrelerer 0,94 og har 34 felles
+    # maaneder over 95, saa WTI er i praksis samme signal som Brent.
     if seg_id in D95_SEGMENTER:
         d95 = np.array([(not np.isnan(Ad[i])) and Ad[i] >= D95_NIVAA for i in range(len(Ad))])
     else:
