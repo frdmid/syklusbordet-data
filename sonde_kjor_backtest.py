@@ -68,7 +68,7 @@ UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
 HORISONTER = (1, 2, 3, 6, 12)
 KLYNGEGAP, PAUSE, TREKK = 6, M.PAUSE, 2000
 SPLITT = pd.Period("2016-01", "M")
-NAA = pd.Period(pd.Timestamp.utcnow().strftime("%Y-%m"), "M")   # innevaerende maaned er ikke ferdig
+NAA = pd.Period(pd.Timestamp.utcnow().strftime("%Y-%m"), "M")   # inneværende maaned er ikke ferdig
 rng = np.random.default_rng(20260928)
 
 FX = {"USD": None, "EUR": ("EURUSD=X", False), "GBP": ("GBPUSD=X", False), "GBp": ("GBPUSD=X", False),
@@ -92,9 +92,12 @@ def get(url, timeout=60):
 
 
 _fx = {}
-def yahoo(sym, justert=True):
+def yahoo(sym, justert=True, valutakurs=False):
     """Maanedskurs i dollar, justert for utbytte og splitt, tidsstemplet i
-    boersens egen tidssone (se yahoo_monthly i priser.py for hvorfor)."""
+    boersens egen tidssone (se yahoo_monthly i priser.py for hvorfor).
+    valutakurs=True: serien er selv en valutakurs og skal ikke omregnes.
+    Uten det oppgir Yahoo NOK=X i NOK, og omregningen kalte seg selv til
+    rekursjonen sprakk (foerste kjoering mistet alle papirer i NOK, CAD og SEK)."""
     j = "&events=div%7Csplit&includeAdjustedClose=true" if justert else ""
     res = get(f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}"
               f"?period1=0&period2={int(time.time())}&interval=1mo{j}").json()["chart"]["result"][0]
@@ -112,13 +115,15 @@ def yahoo(sym, justert=True):
     s = s[s > 0]
     s.index = s.index.to_period("M")
     s = s[~s.index.duplicated(keep="last")]
+    if valutakurs:
+        return s
     val = meta.get("currency") or "USD"
     if val not in FX:
         raise ValueError(f"valuta {val}")
     if FX[val]:
         fs, inv = FX[val]
         if fs not in _fx:
-            f = yahoo(fs, justert=False)
+            f = yahoo(fs, justert=False, valutakurs=True)
             _fx[fs] = (1.0 / f) if inv else f
         s = (s * _fx[fs].reindex(s.index).ffill()).dropna()
     if val == "GBp":
@@ -180,7 +185,7 @@ if VERDEN["SPY"] is not None:
     if verden is None:
         verden = spy
     else:
-        # SPY foer ACWI, skjoetet paa nivaa i foerste felles maaned
+        # SPY foer ACWI, skjoetet paa log-nivaa i foerste felles maaned
         f = verden.index[0]
         verden = pd.concat([spy[spy.index < f] * (verden[f] / spy[f]), verden])
 LW = np.log(verden) if verden is not None else None
