@@ -1,0 +1,316 @@
+{
+ "kjort": "2026-09-28 16:10:21",
+ "kilder": {
+  "norge": "Norway.Dat, kolonne Mkt"
+ },
+ "resultat": {
+  "regelen_alle": {
+   "1": {
+    "innslag": 3,
+    "episoder": 3,
+    "abs_median": 0.06962,
+    "S": 0.06152,
+    "S_pos": 3,
+    "p": 0.06447,
+    "mer_median": 0.06186,
+    "S_usa": 0.0107,
+    "S_usa_pos": 1
+   },
+   "2": {
+    "innslag": 3,
+    "episoder": 3,
+    "abs_median": 0.12449,
+    "S": 0.12698,
+    "S_pos": 3,
+    "p": 0.01399,
+    "mer_median": 0.10909,
+    "S_usa": 0.0443,
+    "S_usa_pos": 2
+   },
+   "3": {
+    "innslag": 3,
+    "episoder": 3,
+    "abs_median": 0.17964,
+    "S": 0.15782,
+    "S_pos": 3,
+    "p": 0.01299,
+    "mer_median": 0.1565,
+    "S_usa": 0.06897,
+    "S_usa_pos": 2
+   },
+   "6": {
+    "innslag": 3,
+    "episoder": 3,
+    "abs_median": 0.06546,
+    "S": 0.05404,
+    "S_pos": 2,
+    "p": 0.32284,
+    "mer_median": 0.01905,
+    "S_usa": -0.03806,
+    "S_usa_pos": 0
+   },
+   "12": {
+    "innslag": 3,
+    "episoder": 3,
+    "abs_median": -0.11854,
+    "S": 0.00478,
+    "S_pos": 1,
+    "p": 0.49025,
+    "mer_median": -0.21295,
+    "S_usa": -0.18273,
+    "S_usa_pos": 1
+   },
+   "24": {
+    "innslag": 3,
+    "episoder": 3,
+    "abs_median": 0.33187,
+    "S": 0.16272,
+    "S_pos": 2,
+    "p": 0.23438,
+    "mer_median": 0.14094,
+    "S_usa": -0.04181,
+    "S_usa_pos": 2
+   }
+  },
+  "regelen_nye": {
+   "1": {
+    "innslag": 2,
+    "episoder": 2,
+    "abs_median": 0.05408,
+    "S": 0.04633,
+    "S_pos": 2,
+    "p": 0.18041,
+    "mer_median": 0.04633,
+    "S_usa": 0.02998,
+    "S_usa_pos": 1
+   },
+   "2": {
+    "innslag": 2,
+    "episoder": 2,
+    "abs_median": 0.12337,
+    "S": 0.10797,
+    "S_pos": 2,
+    "p": 0.05997,
+    "mer_median": 0.10797,
+    "S_usa": 0.06715,
+    "S_usa_pos": 2
+   },
+   "3": {
+    "innslag": 2,
+    "episoder": 2,
+    "abs_median": 0.17709,
+    "S": 0.15396,
+    "S_pos": 2,
+    "p": 0.03348,
+    "mer_median": 0.15396,
+    "S_usa": 0.11218,
+    "S_usa_pos": 2
+   },
+   "6": {
+    "innslag": 2,
+    "episoder": 2,
+    "abs_median": 0.00524,
+    "S": -0.04117,
+    "S_pos": 1,
+    "p": 0.66017,
+    "mer_median": -0.04117,
+    "S_usa": -0.05281,
+    "S_usa_pos": 0
+   },
+   "12": {
+    "innslag": 2,
+    "episoder": 2,
+    "abs_median": -0.1479,
+    "S": -0.24231,
+    "S_pos": 0,
+    "p": 0.89055,
+    "mer_median": -0.24231,
+    "S_usa": -0.32102,
+    "S_usa_pos": 0
+   },
+   "24": {
+    "innslag": 2,
+    "episoder": 2,
+    "abs_median": 0.14495,
+    "S": -0.04598,
+    "S_pos": 1,
+    "p": 0.56172,
+    "mer_median": -0.04598,
+    "S_usa": -0.14874,
+    "S_usa_pos": 1
+   }
+  },
+  "en_alle": {
+   "1": {
+    "innslag": 5,
+    "episoder": 5,
+    "abs_median": -0.07311,
+    "S": -0.05172,
+    "S_pos": 1,
+    "p": 0.93203,
+    "mer_median": -0.08086,
+    "S_usa": -0.02384,
+    "S_usa_pos": 1
+   },
+   "2": {
+    "innslag": 5,
+    "episoder": 5,
+    "abs_median": -0.03456,
+    "S": -0.04616,
+    "S_pos": 0,
+    "p": 0.85257,
+    "mer_median": -0.04996,
+    "S_usa": -0.03326,
+    "S_usa_pos": 1
+   },
+   "3": {
+    "innslag": 5,
+    "episoder": 5,
+    "abs_median": 0.00339,
+    "S": -0.00979,
+    "S_pos": 2,
+    "p": 0.5992,
+    "mer_median": -0.01975,
+    "S_usa": -0.02612,
+    "S_usa_pos": 1
+   },
+   "6": {
+    "innslag": 5,
+    "episoder": 5,
+    "abs_median": -0.02146,
+    "S": -0.0274,
+    "S_pos": 2,
+    "p": 0.63718,
+    "mer_median": -0.06786,
+    "S_usa": -0.06012,
+    "S_usa_pos": 2
+   },
+   "12": {
+    "innslag": 5,
+    "episoder": 5,
+    "abs_median": -0.03776,
+    "S": -0.13052,
+    "S_pos": 1,
+    "p": 0.85507,
+    "mer_median": -0.13217,
+    "S_usa": -0.15279,
+    "S_usa_pos": 2
+   },
+   "24": {
+    "innslag": 5,
+    "episoder": 5,
+    "abs_median": 0.18356,
+    "S": 0.01385,
+    "S_pos": 2,
+    "p": 0.46027,
+    "mer_median": -0.00737,
+    "S_usa": -0.17021,
+    "S_usa_pos": 2
+   }
+  },
+  "en_nye": {
+   "1": {
+    "innslag": 3,
+    "episoder": 3,
+    "abs_median": -0.0744,
+    "S": -0.08653,
+    "S_pos": 0,
+    "p": 0.97451,
+    "mer_median": -0.08216,
+    "S_usa": -0.02969,
+    "S_usa_pos": 1
+   },
+   "2": {
+    "innslag": 3,
+    "episoder": 3,
+    "abs_median": -0.02276,
+    "S": -0.03304,
+    "S_pos": 0,
+    "p": 0.71864,
+    "mer_median": -0.03816,
+    "S_usa": -0.03663,
+    "S_usa_pos": 1
+   },
+   "3": {
+    "innslag": 3,
+    "episoder": 3,
+    "abs_median": 0.04914,
+    "S": 0.03626,
+    "S_pos": 2,
+    "p": 0.30935,
+    "mer_median": 0.026,
+    "S_usa": -0.01779,
+    "S_usa_pos": 1
+   },
+   "6": {
+    "innslag": 3,
+    "episoder": 3,
+    "abs_median": -0.02146,
+    "S": -0.01999,
+    "S_pos": 1,
+    "p": 0.58171,
+    "mer_median": -0.06786,
+    "S_usa": -0.08957,
+    "S_usa_pos": 1
+   },
+   "12": {
+    "innslag": 3,
+    "episoder": 3,
+    "abs_median": -0.03776,
+    "S": -0.04802,
+    "S_pos": 1,
+    "p": 0.64268,
+    "mer_median": -0.13217,
+    "S_usa": -0.16269,
+    "S_usa_pos": 1
+   },
+   "24": {
+    "innslag": 3,
+    "episoder": 3,
+    "abs_median": -0.03614,
+    "S": -0.02429,
+    "S_pos": 1,
+    "p": 0.53923,
+    "mer_median": -0.22707,
+    "S_usa": -0.23167,
+    "S_usa_pos": 1
+   }
+  }
+ },
+ "innslag": [
+  {
+   "land": "norge",
+   "t": "1992-02",
+   "h1": 0.06962,
+   "h2": 0.12449,
+   "h3": 0.17964,
+   "h6": -0.05498,
+   "h12": -0.11854,
+   "h24": 0.33187
+  },
+  {
+   "land": "norge",
+   "t": "1998-01",
+   "h1": 0.03855,
+   "h2": 0.12224,
+   "h3": 0.17455,
+   "h6": 0.06546,
+   "h12": -0.17726,
+   "h24": -0.04197
+  },
+  {
+   "land": "norge",
+   "t": "2020-03",
+   "h1": 0.09966,
+   "h2": 0.18041,
+   "h3": 0.18868,
+   "h6": 0.29086,
+   "h12": 0.59338,
+   "h24": 0.77103
+  }
+ ],
+ "bestaar": {
+  "12": false,
+  "24": false
+ }
+}
