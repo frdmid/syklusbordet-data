@@ -9,7 +9,7 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
-### 29.09.2026 12:00, Claude Code, uavhengig vurdering
+### 29.09.2026 11:55, Claude Code, uavhengig vurdering
 **Hva:** Resultat av `sonde_kjor_hypotese_t1`: hypotesen «kjøp én måned etter
 bunnsonen, selg tre måneder etter kjøpet» er **ikke støttet** etter regelen
 satt før kjøring. Bransjene før 2011-09, T+1 til T+4 mot det amerikanske
