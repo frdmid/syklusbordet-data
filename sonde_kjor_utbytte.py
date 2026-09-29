@@ -54,7 +54,9 @@ def serier(res):
     d = pd.DataFrame({"close": q, "adj": a if a else [np.nan] * len(q)}, index=idx).dropna(subset=["close"])
     d = d[~d.index.duplicated(keep="last")]
     div = pd.Series({pd.to_datetime(int(v["date"]), unit="s").normalize(): float(v["amount"])
-                     for v in ((res.get("events") or {}).get("dividends") or {}).values()}).sort_index()
+                     for v in ((res.get("events") or {}).get("dividends") or {}).values()}, dtype=float).sort_index()
+    if not len(div):
+        div = pd.Series(dtype=float, index=pd.DatetimeIndex([]))
     return d, div, (res.get("meta") or {}).get("currency")
 
 
