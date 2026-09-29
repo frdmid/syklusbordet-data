@@ -31,6 +31,8 @@ MIN_AAR = 4
 # ble et godt aar og porten slapp gjennom 30 av 32. Det relevante spoergsmaalet
 # for en bunnkjoepstrategi er om selskapet overlevde forrige bunn.
 PORT_KVARTALER = 8      # dokumentets egen terskel
+# Segmenter der netto gjeld over grensen stenger porten uansett kvartaler.
+GJELD_STRENG = {"oljeservice": 1.5}
 
 from instrumenter import INSTR, UTEN_HISTORIKK
 
@@ -347,6 +349,12 @@ for tk in sorted(AKSJER):
         port, hvorfor = "stengt", f"bare {kvartaler} kvartaler"
     if ngek is not None and ngek > 3 and port == "aapen":
         port, hvorfor = "trang", hvorfor + f", men netto gjeld {ngek}x egenkapital"
+    # Strengere gjeldskrav per segment (29.09.2026). Oljeservice doer av gjeld,
+    # ikke av kontantbrenning: Transocean og Nabors hadde aldri negativ drift
+    # hos SEC, men aksjonaerene ble nesten stroeket (sonde_kjor_oljeservice).
+    grense = min((GJELD_STRENG[s] for s in AKSJER[tk]["segmenter"] if s in GJELD_STRENG), default=None)
+    if grense is not None and ngek is not None and ngek > grense:
+        port, hvorfor = "stengt", hvorfor + f", men netto gjeld {ngek}x egenkapital (grense {grense} i segmentet)"
 
     SELSKAP[tk] = {"ticker": tk, "navn": AKSJER[tk]["navn"], "bors": AKSJER[tk]["bors"],
                    "segmenter": AKSJER[tk]["segmenter"], "port": port, "hvorfor": hvorfor,

@@ -205,6 +205,28 @@ INSTR = {
    "r 0,32  rm 0,31. Oppdrett, villfisk og videreforedling. Svakeste av de fire: uten september og oktober 2022 faller den til 0,29."),
   ("BAKKA.OL","Oslo","Bakkafrost","aksje",
    "r 0,39  rm 0,38. Færøyene og Skottland. Sterkeste paret, også kroner mot kroner (0,36).")],
+# Oljeservice kom inn 29.09.2026 som observasjonspanel uten flagg (Frodes
+# beslutning etter sonde_kjor_oljeservice). Papirene er valgt paa lang
+# kurshistorikk og lav gjeld, ikke paa korrelasjon mot prisserien, som ikke er
+# maalt. Riggselskapene (Transocean, Valaris, Noble, Seadrill, Borr) er holdt
+# utenfor: de er nye noteringer etter konkurs eller har falt 99 %, saa C og D
+# kan ikke maales paa dem. OIH og XES er amerikanske fond, som norske
+# privatpersoner normalt ikke kan kjoepe (PRIIPs); de staar for maaling.
+"oljeservice": [
+  ("OIH","NYSE","VanEck Oil Services ETF","ETF",
+   "Bredt oljeservicefond, 25 store selskaper. Kurser fra 2001."),
+  ("XES","NYSE","SPDR S&P Oil & Gas Equipment & Services","ETF",
+   "Tilnærmet likevektet, mer mindre selskaper og mer landbasert boring enn OIH. Kurser fra 2006."),
+  ("SLB","NYSE","SLB (Schlumberger)","aksje",
+   "Størst i verden. Aldri negativ driftskontantstrøm hos SEC siden 2007 (verste år 2020)."),
+  ("HAL","NYSE","Halliburton","aksje",
+   "Mest eksponert mot amerikansk skifer. Negativ drift i 2016."),
+  ("BKR","Nasdaq","Baker Hughes","aksje",
+   "Utstyr og gassteknologi, bredere enn ren oljeservice. Negativ drift i 2017."),
+  ("SUBC.OL","Oslo","Subsea 7","aksje",
+   "Offshore installasjon og subsea. Ikke hos SEC, så C må leses manuelt."),
+  ("TGS.OL","Oslo","TGS","aksje",
+   "Seismikk, etter sammenslåingen med PGS (2024). Ikke hos SEC, så C må leses manuelt.")],
 }
 
 

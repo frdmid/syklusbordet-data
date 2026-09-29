@@ -52,7 +52,10 @@ TEMA = {"kobber": "COPX", "gold": "GDX",
         "brent": "XOP", "wti": "XOP", "henryhub": "XOP", "ttf": "XOP",
         "urea": "MOO", "kalium": "MOO",
         "ship_capesize": "BDRY", "ship_kamsarmax": "BDRY",
-        "ship_ultramax": "BDRY", "ship_handysize": "BDRY"}
+        "ship_ultramax": "BDRY", "ship_handysize": "BDRY",
+        # Oljeservice 29.09.2026: IEZ og ikke OIH, fordi OIH og XES allerede
+        # staar som papirer og ellers ville telt to ganger.
+        "oljeservice": "IEZ"}
 
 
 # Kurver i stedet for et fond, der ingen ETF passer. Temaets D er da medianen

@@ -562,6 +562,68 @@ try:
 except Exception as e:
     note("laks", False, f"{type(e).__name__}: {str(e)[:70]}")
 
+print("\n2d. Oljeservice")
+# Observasjonspanel uten flagg, bygget som skipssegmentene (Frodes beslutning
+# 29.09.2026 etter sonde_kjor_oljeservice). Verdien er produsentprisen for
+# boring av olje- og gassbroenner (BLS via FRED, fra 1985), deflatert som
+# resten av bordet. Raten er industriproduksjonen for boring (Federal Reserve
+# via FRED, fra 1972), altsaa aktiviteten. Baker Hughes' riggtelling svarer
+# ikke fra Actions (403).
+#
+# Hvorfor ikke flagg: produsentprisen er kontraktspriser som beveger seg
+# tregt, og har hatt ett innslag i bunnsone siden 1985 (1992). Sonden fant
+# heller ikke noe moenster etter aktivitetsbunnene (to gode av fem siden 1999).
+# A regnes og vises, men setter ingen bunnsone eller oppsikt.
+OLJESERVICE_MERKNAD = (
+    "Observasjon, ikke flagg. Verdien er den amerikanske produsentprisen for boring av olje- og "
+    "gassbrønner (BLS), deflatert slik som resten av bordet. Det er kontraktspriser, så de beveger "
+    "seg tregere enn riggratene i markedet. Raten over grafen er aktiviteten: industriproduksjonen "
+    "for boring. Oljeservice følger oljen med 6 til 18 måneders etterslep og dør av gjeld, ikke av "
+    "kontantbrenning, så porten C er strengere her: netto gjeld over 1,5 ganger egenkapitalen stenger.")
+
+
+def fred_mnd(sid):
+    """FRED svarer ikke paa nettleser-agent (henger), men paa en vanlig."""
+    r = requests.get(f"https://fred.stlouisfed.org/graph/fredgraph.csv?id={sid}",
+                     headers={"User-Agent": "Syklusbordet frode@h-k.no"}, timeout=TIMEOUT)
+    r.raise_for_status()
+    d = pd.read_csv(io.StringIO(r.text))
+    d.columns = ["t", "v"]
+    d["v"] = pd.to_numeric(d["v"], errors="coerce")
+    d = d.dropna()
+    return pd.Series(d["v"].values, index=pd.PeriodIndex(d["t"].astype(str).str[:7], freq="M"))
+
+
+try:
+    legg_til("oljeservice", "Oljeservice (boring)", "Energi", "indeks 1985=100",
+             fred_mnd("PCU213111213111"), cpi,
+             "BLS produsentprisindeks PCU213111213111 via FRED",
+             "https://fred.stlouisfed.org/series/PCU213111213111", merknad=OLJESERVICE_MERKNAD)
+    if SEGMENTS and SEGMENTS[-1]["id"] == "oljeservice":
+        seg = SEGMENTS[-1]
+        for r in seg["series"]:
+            r["flagg"], r["oppsikt"] = False, False
+        sc = seg["scores"]
+        sc["flagg"], sc["oppsikt"], sc["months_in_zone"] = False, False, 0
+        sc["observasjon"] = True
+        sc["observasjon_grunn"] = seg["observasjon_grunn"] = ("Oljeservice har ikke flagg. Produsentprisen for boring har hatt ett "
+                                    "innslag i bunnsone siden 1985, og sonden fant ikke noe mønster etter "
+                                    "aktivitetsbunnene. A vises som informasjon.")
+        ip = fred_mnd("IPN213111N")
+        sis = ip.index[-1]
+        pct = lambda v, x: round(100.0 * float((v <= x).sum()) / len(v), 1)
+        seg["rate"] = {"navn": "Aktivitet, boring", "t": str(sis), "verdi": round(float(ip.iloc[-1]), 1),
+                       "enhet": "indeks 2017=100",
+                       "endr12_pst": None if (sis - 12) not in ip.index
+                       else round(100 * (float(ip.iloc[-1]) / float(ip[sis - 12]) - 1), 1),
+                       "pctl_alle": pct(ip, ip.iloc[-1]), "pctl_10aar": pct(ip.iloc[-120:], ip.iloc[-1]),
+                       "fra": str(ip.index[0]), "basis": "volumindeks, ikke deflatert",
+                       "kilde": "Federal Reserve, industriproduksjon IPN213111N via FRED"}
+        note("oljeservice", True, f"observasjon, A {sc['A']} detr {sc['Ad']}, aktivitet {seg['rate']['verdi']} "
+                                  f"per {sis} (persentil {seg['rate']['pctl_alle']})")
+except Exception as e:
+    note("oljeservice", False, f"{type(e).__name__}: {str(e)[:70]}")
+
 print("\n3. Metall, innsatsfaktorer og flerårige fra Pink Sheet")
 FLERAARIG_MERKNAD = (
     "Flerårig vekst. Tre til sju år fra planting til full bæring, så tilbudet "

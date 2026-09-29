@@ -9,6 +9,32 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 14:25, Claude Code
+**Hva:** Nytt segment `oljeservice` (Frodes beslutning), observasjon uten
+flagg, bygget i `priser.py` etter samme mønster som laks:
+- Verdi: BLS produsentpris for boring av olje- og gassbrønner
+  (PCU213111213111, fra 1985) via FRED, deflatert som resten. A 46,8,
+  detrendet 98,8, rullende 78,3. Flagg og oppsikt er alltid av
+  (`scores.observasjon`, med grunn i `scores.observasjon_grunn`).
+- Rate: industriproduksjon for boring (IPN213111N, fra 1972): 105,3 i august,
+  persentil 38, +9,2 % på tolv måneder.
+- Papirer: OIH, XES, SLB, HAL, BKR, SUBC.OL, TGS.OL. Riggselskapene er
+  utenfor (nye noteringer etter konkurs).
+- D mot IEZ (`kapitulasjon_d.TEMA`). Lokalt: segment 21,5, papirene 4 til 76.
+- C: `GJELD_STRENG = {"oljeservice": 1.5}` i `overlevelse_c.py`: netto
+  gjeld over 1,5 ganger egenkapitalen stenger porten for selskaper i
+  segmentet. Lokalt: SLB og BKR åpne, HAL stengt (5,2 kvartaler, bunnår
+  2016). Subsea 7 og TGS er ikke hos SEC; TGS ble ellers koblet til et
+  argentinsk gasselskap, men navnekontrollen stoppet det.
+- FRED svarer ikke på nettleser-agent, så `fred_mnd` bruker en vanlig.
+**Filer:** `priser.py`, `instrumenter.py`, `kapitulasjon_d.py`,
+`overlevelse_c.py`.
+**Den andre økten må vite:** Segmentet havner i `index.json`, så
+onsdagsjobben skriver det til dashbordet. Det logges også i flaggloggen, men
+får aldri tenkte kjøp. Subsea 7 og TGS kan legges i `c_manuell.json` hvis C
+skal måles for dem. Dashbordet får en forklaring og riktig tekst for
+observasjon og for aktivitet som rate.
+
 ### 29.09.2026 14:16, Claude Code
 **Hva:** Kvartalsvis innhenting kjørt etter Coworks commit 4ea249b
 (renteregel i `c_manuell.py`, feltet `renter_i_drift` for alle manuelt leste
