@@ -9,6 +9,20 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 14:01, Claude Code
+**Hva:** Ny sonde `sonde_kjor_oljeservice.py` (Frodes bestilling): grunnlag
+for et oljeservicesegment bygget som shippingsegmentene. Bygger ingenting.
+Sjekker prisserie og indikator (FRED: produsentpris for boring og for
+støttetjenester fra 1985, industriproduksjon for boring fra 1972; Baker Hughes
+svarer 403), 25 papirer på Yahoo, driftskontantstrøm hos SEC for C, og
+beskrivende avkastning mot SPY etter Brent-flagg, flagg i produsentprisen og
+en aktivitetsbunn definert før kjøring. Kjørt lokalt først; hovedfunn i
+svaret til Frode og i `sonder/sonde_kjor_oljeservice.txt` når Actions har
+kjørt.
+**Filer:** `sonde_kjor_oljeservice.py` (ny).
+**Den andre økten må vite:** Ingen segmenter eller tall på dashbordet er
+endret.
+
 ### 29.09.2026 13:14, Claude Code
 **Hva:** Manuelle tall kan nå erstatte SEC-tallene i C for utvalgte papirer
 (Frodes beslutning). Ny mengde `MANUELL_FORAN = {"VALE"}` i
