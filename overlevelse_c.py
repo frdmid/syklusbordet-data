@@ -42,6 +42,16 @@ from instrumenter import INSTR, UTEN_HISTORIKK
 # maales som foer. PRODFIX=0 slaar regelen av (for sonde_kjor_c_produksjon).
 # ticker: (foerste hele aar, kilde)
 PRODUKSJON_FRA = {
+    # Kandidater fra sonde_kjor_c_produksjon 29.09.2026. Bare Himalaya hadde
+    # bunnaar uten omsetning (2022: 0). ARLP, EQT, HSY, NAT, PANL og TNK ble
+    # flagget fordi omsetningsbegrepet mangler i bunnaaret hos SEC, men alle
+    # var i drift da (positiv drift eller omsetning i naboaarene), saa de
+    # staar som foer.
+    "HSHP.OL": (2024, "20-F for 2023, https://www.sec.gov/Archives/edgar/data/1959455/"
+                      "000195945524000021/hshp-20231231.htm: 'the first six vessels being "
+                      "delivered during the year ended December 31, 2023, and commencing "
+                      "operations shortly after their respective deliveries'. Drift startet "
+                      "i 2023, foerste hele aar er 2024."),
 }
 
 # Rangert per ledd. Foerste begrep med nok aarstall vinner, saa de mest

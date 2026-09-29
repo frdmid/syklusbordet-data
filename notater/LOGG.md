@@ -9,7 +9,34 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
-### 29.09.2026 12:57, Claude Code
+### 29.09.2026 12:56, Claude Code
+**Hva:** Produksjonsstart i SEC-delen av C (Frodes beslutning, samme regel som
+Coworks `c_manuell.py`). `sonde_kjor_c_produksjon` listet alle SEC-selskaper
+med bunnår og omsetning det året og siste år. Sju kandidater:
+- HSHP.OL: bunnår 2022, omsetning 0 mot 132 mill. USD i 2025. Reell kandidat.
+- ARLP (bunnår 2008), EQT (2007), HSY (2008), NAT (2013), PANL (2020) og TNK
+  (2021): flagget bare fordi omsetningsbegrepet mangler for bunnåret hos
+  SEC. Alle var i drift da (driften var positiv i bunnåret for ARLP, EQT, HSY
+  og PANL; NAT og TNK hadde omsetning i årene rundt). Ingen endring.
+Ingen andre selskaper hadde omsetning under ti prosent av siste år i bunnåret.
+Lagt inn: HSHP.OL fra 2024. Kilde: 20-F for 2023 (lenke i
+`PRODUKSJON_FRA` i `overlevelse_c.py`), "the first six vessels being
+delivered during the year ended December 31, 2023, and commencing operations
+shortly after". Driften startet i 2023, så første hele år er 2024.
+Utelatt: 2022 og 2023.
+Port før og etter: Himalaya går fra trang (89,6 kvartaler, men netto gjeld
+3,92 ganger egenkapitalen) til ikke målt, fordi bare 2024 og 2025 står
+igjen, og C krever minst fire år (samme som i `c_manuell.py`). Capesize går
+fra åpen 1 av 2 til åpen 1 av 1 (bare SBLK). Ingen andre selskaper endres.
+**Filer:** `overlevelse_c.py`, `sonder_ferdige.txt`.
+**Den andre økten må vite:** Himalaya havner i listen `utenfor_sec` i
+`c_overlevelse.json` selv om den finnes hos SEC; grunnen står i utskriften.
+Sonden fant også data som har sluttet å oppdateres hos SEC: Vale (drift
+2007 til 2011), Frontline (til 2021) og omsetningen for Century (til 2018).
+C for Vale og Frontline bygger altså på gamle år. Det er ikke rettet.
+`c_manuell.json` og `c_manuell.py` er ikke rørt.
+
+### 29.09.2026 12:52, Claude Code
 **Hva:** (1) Kvartalsvis innhenting kjørt på nytt etter Coworks commit 7799ea5
 (nye selskaper i `c_manuell.json` og regelen om produksjonsstart i
 `c_manuell.py`, ikke ført i loggen). Jernmalm er igjen 3/3 åpne (Vale,
