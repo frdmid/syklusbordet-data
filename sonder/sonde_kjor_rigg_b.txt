@@ -1,8 +1,9 @@
-Hopper over 44 ferdige sonder (sonder_ferdige.txt): sonde_kjor_b_dda, sonde_kjor_b_fmg, sonde_kjor_b_haleregel, sonde_kjor_b_jernmalm, sonde_kjor_b_kilder, sonde_kjor_backtest, sonde_kjor_backtest_lang, sonde_kjor_bdi, sonde_kjor_brasil, sonde_kjor_c_manuell, sonde_kjor_c_manuell2, sonde_kjor_c_manuell3, sonde_kjor_c_produksjon, sonde_kjor_c_rente, sonde_kjor_c_spleis, sonde_kjor_cot, sonde_kjor_cot_palme_sgx, sonde_kjor_cotr, sonde_kjor_d95, sonde_kjor_dadj, sonde_kjor_faktor, sonde_kjor_fearnleys_mal, sonde_kjor_fond, sonde_kjor_fond_norge, sonde_kjor_indikator, sonde_kjor_instrumenttest, sonde_kjor_kali_platina, sonde_kjor_kurve, sonde_kjor_laks, sonde_kjor_land, sonde_kjor_macrotrends, sonde_kjor_oljeservice, sonde_kjor_regel_foer2011, sonde_kjor_rigg, sonde_kjor_salg, sonde_kjor_sgx_cot, sonde_kjor_stockanalysis, sonde_kjor_terskel, sonde_kjor_timing, sonde_kjor_tio, sonde_kjor_uran, sonde_kjor_utbytte, sonde_kjor_utforsk_etf, sonde_kjor_vale
-
-Oppstarter: 1 sonde(r) funnet
-
-=== sonde_kjor_rigg_b ===
+sonde:   sonde_kjor_rigg_b
+kjort:   2026-09-29 12:53:19 UTC
+commit:  46ab04f
+status:  OK
+brukte:  12 sekunder
+--------------------------------------------------------------
 1. SELSKAPENE
 
    Helmerich & Payne                land    USD 2007-2025 (19 aar)  capex/avskr median 1.25  siste 0.68  [PaymentsToAcquirePropertyPlant / DepreciationDepletionAndAmorti]
@@ -133,9 +134,3 @@ Oppstarter: 1 sonde(r) funnet
    Tallene foelger IKKE kjent flaatehistorie paa alle punkter. Se over foer noe bygges.
 
    Siste B2 per segment: land 82 (2025), grunt 100 (2025), dyp 100 (2025), blandet 0 (2025)
-
---- skrevet til sonder/sonde_kjor_rigg_b.txt (12 s, kode 0)
-
-
-OPPSUMMERING
-   OK    sonde_kjor_rigg_b                           12 s  -> sonder/sonde_kjor_rigg_b.txt
