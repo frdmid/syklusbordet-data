@@ -9,6 +9,19 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 11:53, Claude Code, uavhengig vurdering
+**Hva:** Ny sonde som tester hypotesen «kjøp én måned etter bunnsonen, selg
+tre måneder etter kjøpet» på Ken French sine bransjer og land før 2011-09, der
+den ikke ble funnet (Frodes bestilling). Beslutningsregelen står i
+filhodet og er satt før kjøring: støttet hvis minst 80 % av episodene slår
+markedet og S > 0; svak støtte hvis S > 0, flertall positive og p ≤ 0,10;
+ellers ikke støttet. Land er bare beskrivende. Kjøres fra arbeidsgrenen via
+arbeidsflyten Sonder (ad hoc). Testet på syntetiske data før kjøring.
+**Filer:** `sonde_kjor_hypotese_t1.py` (ny). Utskrift kommer i
+`sonder/sonde_kjor_hypotese_t1.txt` og `sonder/hypotese_t1.json`.
+**Den andre økten må vite:** Sonden endrer ingenting på bordet eller i
+flaggloggen. Resultatet føres i et eget innslag.
+
 ### 29.09.2026 11:42, Claude Code, uavhengig vurdering
 **Hva:** Uavhengig, kritisk vurdering av modellen (A, bunnsonen, B, C, D),
 backtestene og flaggloggen, gjort av en økt som ikke var med på å lage dem.
