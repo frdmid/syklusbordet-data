@@ -9,6 +9,15 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 15:21, Claude Code
+**Hva:** Kvartalsvis og ukentlig innhenting kjørt. `b_rigg.json` skrevet av
+Actions (land B2 81,7, grunt 35,3, dyp 85,5; to selskaper hver i 2025).
+`segments/oljeservice.json` har feltet `rigg_b`. Dashbordet er publisert som
+versjon 46 med linjen «Tilbud B, rigger», og oljeservice er skrevet til
+databasen (versjon 2).
+**Filer:** Ingen i repoet; dashbordet og databasen.
+**Den andre økten må vite:** Ingenting.
+
 ### 29.09.2026 15:13, Claude Code
 **Hva:** B for rigger er i drift (Frodes beslutning), som informasjon i
 oljeservicepanelet. Ny modul `rigg_b.py` regner investeringer delt på
