@@ -26,10 +26,10 @@
 #     segment. Transocean er i praksis flytere fra 2009 og staar som ren.
 #
 # SVAKHETER (staar ogsaa i JSON-fila)
-#   Valaris er holdt utenfor fra 2021 (UTELAT_FRA), fordi avskrivningene
-#   etter en restrukturering faller (ny startbalanse) og forholdet da ser
-#   hoeyere ut enn investeringene tilsier. Offshore hviler derfor paa ett til
-#   to selskaper per segment etter 2021.
+#   Aar etter ny startbalanse holdes utenfor (UTELAT_FRA), fordi
+#   avskrivningene da faller og forholdet ser hoeyere ut enn investeringene
+#   tilsier. Offshore hviler derfor paa ett selskap per segment etter 2021,
+#   og reaktiveringer hos de restrukturerte selskapene kommer ikke med.
 # ---------------------------------------------------------------------------
 
 import base64, json, os, re, time
@@ -71,12 +71,17 @@ DDA = ["DepreciationDepletionAndAmortization", "DepreciationAndAmortization",
        "CostOfGoodsAndServicesSoldDepreciation", "CostOfServicesDepreciation",
        "DepreciationAndAmortisationExpense", "Depreciation", "DepreciationNonproduction",
        "DepreciationPropertyPlantAndEquipment"]
-# Segmenttall som holdes utenfor fra et gitt aar (Frodes beslutning
-# 29.09.2026). Valaris skrev riggene ned til nesten null ved konkursen i
-# 2020-2021, saa avskrivningene etterpaa er kunstig lave (15 flytere med 1,2
-# mrd. i bokfoert verdi hadde 60 mill. i avskrivninger i 2025, mot rundt 660
-# hos Transocean), og forholdet ser ut som kraftig vekst.
-UTELAT_FRA = {"Valaris": 2021}
+# Ny startbalanse etter konkurs (fresh start): alle aar fra og med
+# restruktureringsaaret holdes utenfor, rene selskaper og segmenttall likt
+# (Frodes beslutning 29.09.2026, regel A). Riggene skrives ned ved
+# restruktureringen, saa avskrivningene etterpaa er kunstig lave og forholdet
+# ser ut som vekst. Eksempel: Valaris' 15 flytere hadde 1,2 mrd. i bokfoert
+# verdi og 60 mill. i avskrivninger i 2025, mot rundt 660 hos Transocean.
+# Kilde for aarene: SECs fulltekstsoek etter "fresh start accounting" i
+# aarsrapportene og XBRL-begrepene FreshStart* (29.09.2026). Transocean, Borr,
+# Rowan, Ocean Rig og landselskapene hadde ingen treff.
+UTELAT_FRA = {"Valaris": 2021, "Diamond Offshore": 2021, "Pacific Drilling": 2018,
+              "Hercules Offshore": 2015, "Paragon Offshore": 2017}
 SEG_KLASSE = [("dyp", r"floater|deepwater|drillship|semisub|midwater|ultra"),
               ("grunt", r"jack.?up|shallow")]
 SEG_CAPEX = r":(SegmentExpenditureAdditionToLongLivedAssets|PaymentsToAcquirePropertyPlantAndEquipment|PaymentsToAcquireProductiveAssets|\w*CapitalExpenditure\w*)$"
@@ -129,7 +134,7 @@ def rene(note=print):
         ed, dd = _serie(f, DDA)
         aar = cx.index.intersection(dd.index) if ec == ed else pd.Index([])
         if len(aar):
-            aar = aar[[dd[a] >= 0.25 * dd[aar].median() for a in aar]]
+            aar = aar[[dd[a] >= 0.25 * dd[aar].median() and a < UTELAT_FRA.get(navn, 9999) for a in aar]]
         if len(aar) < 2:
             note(f"   {navn}: for faa aar"); continue
         data[cik] = {"navn": navn, "seg": seg, "enh": ec, "capex": cx[aar], "dda": dd[aar]}
@@ -241,8 +246,9 @@ def til_json(res):
     ut = {"oppdatert": str(pd.Timestamp.now("UTC"))[:19],
           "metode": "Investeringer delt paa avskrivninger fra SEC. B2 = klipp((1,4 - femaarssnitt) / 0,8 * 100, 0, 100). "
                     "Rene selskaper pluss segmenttall fra blandede. Informasjon, ikke flagg.",
-          "svakhet": "Valaris er holdt utenfor fra 2021: avskrivningene etter konkursen er ikke sammenlignbare. "
-                     "Etter 2021 hviler offshore derfor paa ett til to selskaper per segment.",
+          "svakhet": "Aar etter ny startbalanse (Valaris og Diamond fra 2021, Pacific Drilling fra 2018) er holdt "
+                     "utenfor: avskrivningene er ikke sammenlignbare. Etter 2021 hviler offshore paa ett selskap per "
+                     "segment, og reaktiveringer hos de restrukturerte kommer ikke med.",
           "segmenter": {}}
     navn = {"land": "Land", "grunt": "Grunt vann (jackups)", "dyp": "Dypt vann (flytere)"}
     for k, df in res.items():

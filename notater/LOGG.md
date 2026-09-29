@@ -9,6 +9,20 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 16:51, Claude Code
+**Hva:** Regel A for B for rigger (Frodes beslutning): alle år etter ny
+startbalanse holdes utenfor, ikke bare Valaris. `UTELAT_FRA` i `rigg_b.py`:
+Valaris 2021, Diamond 2021, Pacific Drilling 2018, Hercules 2015, Paragon
+2017. Kilde: SECs fulltekstsøk etter "fresh start accounting" i
+årsrapportene og XBRL-begrepene FreshStart*; Transocean, Borr, Rowan, Ocean
+Rig og landselskapene hadde ingen treff. Tallene kjøres og føres når test B
+er ferdig. Ny sonde `sonde_kjor_rigg_slitasje.py` (test B): beholder
+investeringene og bytter avskrivningene etter ny startbalanse med anslått
+slitasje (avskrivning per rigg før restruktureringen ganger riggtall).
+Kriteriet for å ta B i bruk står i fila, satt før kjøring.
+**Filer:** `rigg_b.py`, `sonde_kjor_rigg_slitasje.py` (ny).
+**Den andre økten må vite:** Ingenting er publisert ennå.
+
 ### 29.09.2026 15:44, Claude Code
 **Hva:** Kvartalsvis innhenting kjørt; `b_rigg.json` har nå grunt vann B2 100
 (Borr) og dypt vann B2 100 (Transocean), land 81,7. Dashbordet er publisert
