@@ -9,6 +9,20 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 11:29, Claude Code
+**Hva:** Sonde for posisjonstall (COT) til segmentene som mangler det. Bygger
+ingenting.
+**Filer:** `sonde_kjor_cotr.py` (ny), `sonder/sonde_kjor_cotr.txt`,
+`sonder_ferdige.txt`.
+**Den andre økten må vite:** CFTC har palmeolje (CME «USD Malaysian Crude
+Palm Oil Calendar», ukentlig fra mai 2022 til nå), nok til treårspersentil.
+Aluminium hos COMEX stoppet i juni 2026, og resten av CFTC-kontraktene for
+jernmalm, kull og TTF er nedlagt. Ingen CFTC-tall for nikkel, sink, bly,
+tinn eller uran. LME COTR svarer 403 (Cloudflare) fra GitHub Actions, så det
+kan ikke hentes automatisk derfra. ICE Futures Europe sine COT-filer
+(COTHist) har bare Brent, gasolje, kakao og lignende, ikke kull eller TTF.
+SGX sin COT-side for jernmalm er en JavaScript-app uten direkte filer.
+
 ### 29.09.2026 11:24, Claude Code
 **Hva:** CMB.TECH (CMBT, NYSE) tatt inn på tavlen for capesize, merket «ny
 sammensetning, ikke målt» (Frodes beslutning, alternativ 1). Holdes utenfor

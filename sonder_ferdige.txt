@@ -37,3 +37,4 @@ sonde_kjor_b_fmg
 sonde_kjor_faktor
 sonde_kjor_b_haleregel
 sonde_kjor_utbytte
+sonde_kjor_cotr
