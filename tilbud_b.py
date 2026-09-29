@@ -263,18 +263,20 @@ for metall, d in hentet.items():
         ant = ant[~ant.index.isin(tynne)]
     # Haleregelen, Frodes beslutning 29.09.2026, i tillegg til halvregelen og
     # bare for slutten av serien: det siste aaret telles foerst naar minst tre
-    # fjerdedeler av kurvens selskaper (rundet opp) har tall for det. Aar kuttes
+    # fjerdedeler av kurvens aktive selskaper (rundet opp) har tall for det. Aar kuttes
     # bakfra til det siste oppfyller kravet. Aar midt i serien foelger fortsatt
     # halvregelen. Bakgrunn: selskaper med avvikende regnskapsaar (FMG og CIA i
     # jernmalm, som slutter i juni og mars) gir et nytt aar lenge foer resten,
     # og da ble siste forhold et snitt av to selskaper i stedet for fire.
     # HALEREGEL=0 i miljoeet slaar den av, bare for sammenligning.
-    # HALEKRAV=alle: kravet regnes av alle selskaper i kurven. HALEKRAV=aktive:
-    # bare av selskaper med tall i minst ett av de tre siste aarene i serien, saa
-    # et selskap som har sluttet aa rapportere (HCC i kull) ikke kutter halen.
+    # Kravet regnes av de AKTIVE selskapene i kurven: de som har tall i minst
+    # ett av de tre siste aarene i serien (Frodes valg 29.09.2026). Ellers ville
+    # et selskap som har sluttet aa rapportere (HCC i kull fra 2022) kutte
+    # 2023 til 2025, samme feil som v4-regelen. HALEKRAV=alle gir kravet av
+    # alle selskaper i kurven, bare for sammenligning.
     siste3 = [a for a in cx.index if a > s.index[-1] - 3] if len(s) else []
     aktive = [c for c in cx.columns if cx.loc[siste3, c].notna().any()] if siste3 else list(cx.columns)
-    grunnlag = aktive if os.environ.get("HALEKRAV", "alle") == "aktive" else list(cx.columns)
+    grunnlag = aktive if os.environ.get("HALEKRAV", "aktive") != "alle" else list(cx.columns)
     krav = -(-3 * len(grunnlag) // 4)
     hale = []
     if os.environ.get("HALEREGEL", "1") != "0":

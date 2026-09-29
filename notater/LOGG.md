@@ -9,6 +9,27 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 10:22, Claude Code
+**Hva:** Haleregel for tilbudsskåren B (Frodes beslutning 29.09, bestilt fra
+Cowork). I tillegg til halvregelen, og bare for slutten av serien: siste år
+telles først når minst tre fjerdedeler (rundet opp) av kurvens aktive selskaper
+har tall. Aktive = selskaper med tall i minst ett av de tre siste årene i
+serien (Frodes valg av alternativ 1). År kuttes bakfra til kravet er oppfylt.
+Kuttene logges per metall som for halvregelen.
+**Filer:** `tilbud_b.py` (del 3), `sonde_kjor_b_haleregel.py` (ny),
+`sonder/sonde_kjor_b_haleregel.txt`, `sonder/b_haleregel.json`,
+`sonder_ferdige.txt`. `b_manuell.json` og `c_manuell.json` er ikke rørt.
+**Den andre økten må vite:** Før og etter, siste år per metall:
+jernmalm 2026 -> 2025, forhold 1,154 -> 1,593, B1 66,7 -> 50,0, B2 0,0 -> 0,0
+(haleregelen kutter 2026, der bare FMG og CIA har tall). Aluminium (2025,
+1,021, B1 5,9, B2 63,0), gull (2025, 1,189, 33,3, 32,0), kobber (2025, 1,87,
+36,8, 0,0), kull (2025, 0,986, 38,9, 48,6) og uran (2025, 1,181, 0,0, 73,0)
+er uendret. Alle år som står igjen har samme tall som før. Regelen slik den
+først var formulert (krav av alle selskaper) ville kuttet 2023 til 2025 for
+kull fordi HCC sluttet å rapportere i 2022 (B2 48,6 -> 91,9); derfor
+aktive selskaper. HALEREGEL=0 og HALEKRAV=alle i miljøet gir de gamle
+variantene, bare for sammenligning.
+
 ### 29.09.2026 10:09, Claude Code
 **Hva:** Faktorsonden kjørt. Avkastningen etter bunnflagget justert for marked,
 størrelse, verdi, lønnsomhet, investering, momentum og (bransjene) langsiktig
