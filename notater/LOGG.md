@@ -9,6 +9,28 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 13:11, Claude Code
+**Hva:** Tallene fra `sonde_kjor_c_spleis` (før og etter skjøting av begreper
+i C) og `sonde_kjor_vale`. Ingen porter endret.
+Frontline: tall til 2025 (før 2021). Kontanter 113 til 251 mill. USD, drift
+siste år 63 til 682, netto gjeld/EK 1,22 til 0,99, bunnår fortsatt 2013.
+Åpen før og etter.
+Vale: drift til 2021 (før 2011), bunnår 2009 til 2016, verste drift 7 136
+til 6 401 mill. USD, kontanter 5 832 til 7 372 (nå fra 2025), netto
+gjeld/EK 0,07 til 0,16. Åpen før og etter. Driften for 2022 til 2025 finnes
+ikke i SECs standardbegreper: Vale merker driftskontantstrømmen med et eget
+begrep, som SECs datasett ikke tar med. Standardbegrepet som går til 2025
+(drift før renter og skatt) er ikke brukt, fordi det måler noe annet.
+Andre selskaper, samme port før og etter: PANL får drift fra 2013 (bunnår
+2016, verste drift 19 mot 21), Hershey får nyere kontanter (588 til 926), og
+rentedekning eller netto gjeld/EK endres litt for AA, ARLP, CENX, EQT, GNK,
+NAT, TORM og UUUU fordi siste rente- eller balansetall nå er fra et nyere år.
+Skjøtingen er tatt inn på main.
+**Filer:** `overlevelse_c.py` (fra forrige innslag), `sonder_ferdige.txt`,
+`sonde_kjor_vale.py` (ny).
+**Den andre økten må vite:** `c_manuell.py` måler bare papirer som mangler
+SEC-tall, så Vale kan ikke leses manuelt uten en endring der.
+
 ### 29.09.2026 13:08, Claude Code
 **Hva:** Retting av utdaterte tall i C for selskaper som har byttet
 regnskapsstandard (Frodes bestilling: oppdaterte tall for Vale og Frontline).
