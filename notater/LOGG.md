@@ -9,6 +9,18 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 14:05, Claude Code
+**Hva:** Ukentlig innhenting kjørt manuelt igjen for å kontrollere flaggloggen
+og hel måned for olje før onsdag. Alt virket: `logg/regel_6040.csv` og
+`logg/dom.csv` er skrevet (begge "venter", ingen innslag ennå). Brent, WTI og
+Henry Hub har nå siste observasjon 2026-08, ikke den uferdige september. A for
+Brent gikk fra 18,0 til 32,6 og for WTI fra 24,9 til 30,7 av den grunn; ingen
+flagg endret, ingen nye hendelser. WTI sitt tomme d95-felt fra 25.09 ga ikke
+et falskt innslag.
+**Filer:** Ingen endret av økten; data skrevet av Actions.
+**Den andre økten må vite:** Oljesegmentene vil fra nå henge en måned etter
+når innhentingen skjer før månedsslutt. Det er meningen.
+
 ### 29.09.2026 13:35, Claude Code
 **Hva:** Tallene fra sondene for C, B og punkt 5.
 C (`sonder/sonde_kjor_c_rente.txt`), før og etter rentefiksen og
