@@ -1,8 +1,8 @@
 sonde:   sonde_kjor_b_fmg
-kjort:   2026-09-29 07:50:05 UTC
-commit:  4c20371
+kjort:   2026-09-29 08:08:36 UTC
+commit:  b49501c
 status:  OK
-brukte:  49 sekunder
+brukte:  55 sekunder
 --------------------------------------------------------------
 
 
@@ -3212,11 +3212,6 @@ brukte:  49 sekunder
 
 
 ==================== FY2008
-   200    9887 kB  PDF  https://www.annualreports.com/HostedData/AnnualReportArchive/F/ASX_FMG_2008.pdf
-   112 sider
-
-   ---- NOEKKELLINJER FY2008
-      s.71   Depreciation and amortisation expense   -> 3,162 | 30
-      s.71   (b) Depreciation and amortisation expense   -> 1,739
+   429       0 kB  ikke PDF  https://www.annualreports.com/HostedData/AnnualReportArchive/F/ASX_FMG_2008.pdf
 
 Send utskriften til Claude. Tallene leses av for haand til b_manuell.json.
