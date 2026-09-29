@@ -9,6 +9,21 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 10:09, Claude Code
+**Hva:** Faktorsonden kjørt. Avkastningen etter bunnflagget justert for marked,
+størrelse, verdi, lønnsomhet, investering, momentum og (bransjene) langsiktig
+reversering.
+**Filer:** `sonder/sonde_kjor_faktor.txt`, `sonder/faktor.json`,
+`sonder_ferdige.txt` (lagt til `sonde_kjor_faktor`).
+**Den andre økten må vite:** Papirene på tavlen: 12 mnd S +27,1 % rå,
++15,7 % etter faktorene (6 av 11 episoder, p 0,13). Etter regelen satt før
+kjøring har flagget «noe eget». Det som forklares, er nesten bare markedet
+(bidrag +17 prosentpoeng); verdi, momentum og reversering forklarer nesten
+ingenting. Bransjeporteføljene er negative etter faktorene både før og etter
+2011 (12 mnd minus 8,5 % før 2011). At papirene er positive mens bransjene ikke er
+det, peker mot utvalget av papirer (valgt 2026, overlevere) og ikke mot flagget.
+Ikke signifikant i noen av settene.
+
 ### 29.09.2026 10:04, Claude Code
 **Hva:** Flaggloggen utvidet (Frodes punkt 2). Kursloggen får utbytte per uke og
 valutakurs til dollar. Ukeloggen får B, B1, B2 og Ar per segment. Hypotesen om
