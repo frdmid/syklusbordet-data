@@ -9,7 +9,15 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
-### 29.09.2026 12:30, Claude Code
+### 29.09.2026 12:27, Claude Code
+**Hva:** Rettet klokkeslettene i de sju innslagene fra Claude Code i dag
+mellom 12.02 og 12.24. De var ført med anslåtte tider (12.05 til 14.05) i
+stedet for faktisk norsk tid. Nå følger de tidspunktene på commitene.
+Innholdet er ikke endret.
+**Filer:** `notater/LOGG.md`.
+**Den andre økten må vite:** Rekkefølgen er uendret.
+
+### 29.09.2026 12:24, Claude Code
 **Hva:** Kvartalsvis innhenting kjørt manuelt (Frodes beslutning), slik at
 rettelsene i C gjelder nå og ikke først i januar. Endringer i porten per
 segment: aluminium trang til åpen (AA åpen), bly trang til åpen (Nexa),
@@ -26,7 +34,7 @@ kjøringen onsdag 07.00 UTC. Jernmalm og TTF hviler nå på ett selskap hver i C
 Air Liquide, Heidelberg, Champion Iron og Labrador Iron Ore kan legges i
 `c_manuell.json` hvis de skal måles.
 
-### 29.09.2026 14:05, Claude Code
+### 29.09.2026 12:16, Claude Code
 **Hva:** Ukentlig innhenting kjørt manuelt igjen for å kontrollere flaggloggen
 og hel måned for olje før onsdag. Alt virket: `logg/regel_6040.csv` og
 `logg/dom.csv` er skrevet (begge "venter", ingen innslag ennå). Brent, WTI og
@@ -38,7 +46,7 @@ et falskt innslag.
 **Den andre økten må vite:** Oljesegmentene vil fra nå henge en måned etter
 når innhentingen skjer før månedsslutt. Det er meningen.
 
-### 29.09.2026 13:35, Claude Code
+### 29.09.2026 12:10, Claude Code
 **Hva:** Tallene fra sondene for C, B og punkt 5.
 C (`sonder/sonde_kjor_c_rente.txt`), før og etter rentefiksen og
 navnekontrollen: fire porter endret. AA trang til åpen (13,6 til 20,5
@@ -64,7 +72,7 @@ tavlens papirer. Det positive 3-månedersresultatet på papirene (+8,4 % mot
 eget snitt ved T+1) finnes ikke i bransjeporteføljene, verken før eller etter
 2011. Loggen framover står uendret som test, men forventningen bør være lav.
 
-### 29.09.2026 13:20, Claude Code
+### 29.09.2026 12:08, Claude Code
 **Hva:** (1) C: navnekontroll når børssuffikset strippes før oppslag hos SEC.
 Fire papirer var koblet til feil selskap siden C ble laget: Air Liquide
 (AI.PA) ble lest som C3.ai, Heidelberg Materials (HEI.DE) som HEICO, Labrador
@@ -82,7 +90,7 @@ skrevet før kjøring.
 og CIA.TO kan endre seg ved neste kvartalsvise kjøring. Tallene har vært feil
 til nå.
 
-### 29.09.2026 12:55, Claude Code
+### 29.09.2026 12:06, Claude Code
 **Hva:** Hullene i flaggloggen fra den uavhengige gjennomgangen er tettet, og
 Frodes praktiske salgsregel 60/40 er lagt inn som egen regel. Alt er skrevet
 ned før noe utfall finnes.
@@ -112,7 +120,7 @@ Hub kan flytte seg litt fordi den uferdige måneden ikke lenger telles med.
 Testet lokalt med oppdiktede kurser (pause, dobbeltpapir, dom); første ekte
 kjøring er onsdag.
 
-### 29.09.2026 12:25, Claude Code
+### 29.09.2026 12:03, Claude Code
 **Hva:** Rettet to feil fra den uavhengige gjennomgangen, med sonder som
 viser tallene før og etter. Tallene føres i et eget innslag når sondene har
 kjørt.
@@ -133,7 +141,7 @@ leste selskapene. Det er riktig bare hvis årsrapporten fører betalte renter
 under finansiering. Fører den dem under drift (vanlig i IFRS, IAS 7 tillater
 begge), telles renten to ganger der også. Cowork bør sjekke det per selskap.
 
-### 29.09.2026 12:05, Claude Code
+### 29.09.2026 12:02, Claude Code
 **Hva:** Rettet tre formuleringer i backtestnotatet etter den uavhengige
 gjennomgangen. Ingen tall endret. "Alle etter 2008" var feil (episodene 1991,
 1998 og 2000 er med). "Båret av 2009 og 2020" er nå "2008/09 og 2020".
