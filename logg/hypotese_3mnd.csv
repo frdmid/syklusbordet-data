@@ -1,1 +1,1 @@
-segment,ticker,flaggdato,status,inngang_dato,inngang_kurs,utgang_dato,utgang_kurs,valuta,utbytte,grunnlag,avk_pst,acwi_avk_pst,mot_acwi_pst
+episode,segment,ticker,flaggdato,status,inngang_dato,inngang_kurs,utgang_dato,utgang_kurs,valuta,utbytte,grunnlag,avk_pst,acwi_avk_pst,mot_acwi_pst
