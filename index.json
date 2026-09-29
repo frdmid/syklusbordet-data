@@ -1,5 +1,5 @@
 {
- "oppdatert": "2026-09-29 10:14:30",
+ "oppdatert": "2026-09-29 12:30:16",
  "segmenter": [
   "brent",
   "wti",
@@ -7,6 +7,7 @@
   "gold",
   "uran",
   "laks",
+  "oljeservice",
   "kobber",
   "nikkel",
   "aluminium",
@@ -79,6 +80,16 @@
    "kilde": "laks",
    "status": "OK",
    "detalj": "margin 1.37 (A 91.2), kostnad 2024 59.97 kr/kg, uke 2026-09-17 71.41 kr/kg"
+  },
+  {
+   "kilde": "segment oljeservice",
+   "status": "OK",
+   "detalj": "A=46.8 detr=98.8 rull=78.3   siste 2026-08"
+  },
+  {
+   "kilde": "oljeservice",
+   "status": "OK",
+   "detalj": "observasjon, A 46.8 detr 98.8, aktivitet 105.3 per 2026-08 (persentil 37.7)"
   },
   {
    "kilde": "Verdensbanken Pink Sheet",
@@ -183,7 +194,7 @@
   {
    "kilde": "instrumenter",
    "status": "OK",
-   "detalj": "17 av 17 segment fikk instrumentliste"
+   "detalj": "18 av 18 segment fikk instrumentliste"
   },
   {
    "kilde": "OWID etterspoersel",
@@ -193,12 +204,12 @@
   {
    "kilde": "kapitulasjon D",
    "status": "OK",
-   "detalj": "17 segment"
+   "detalj": "18 segment"
   },
   {
    "kilde": "overlevelsesport C",
    "status": "OK",
-   "detalj": "17 segment, 9 aapne"
+   "detalj": "18 segment, 12 aapne"
   },
   {
    "kilde": "tilbudsskaar B",
@@ -208,7 +219,7 @@
   {
    "kilde": "trendbekreftelse",
    "status": "OK",
-   "detalj": "17 segment"
+   "detalj": "18 segment"
   },
   {
    "kilde": "COT brent",
@@ -263,12 +274,12 @@
   {
    "kilde": "VIX",
    "status": "OK",
-   "detalj": "16.19 per 2026-09-29, persentil 40.0 (fra 1990-01) / 41.7 (10 aar)"
+   "detalj": "15.77 per 2026-09-29, persentil 36.4 (fra 1990-01) / 36.7 (10 aar)"
   },
   {
    "kilde": "DXY",
    "status": "OK",
-   "detalj": "101.468 per 2026-09-29, persentil 79.2 (fra 1985-01), 12 mnd 3.8 %"
+   "detalj": "101.283 per 2026-09-29, persentil 79.0 (fra 1985-01), 12 mnd 3.6 %"
   },
   {
    "kilde": "USD/NOK",
@@ -278,7 +289,7 @@
   {
    "kilde": "flagglogg",
    "status": "OK",
-   "detalj": "uke 2026-W40: 17 segmenter, 44 kurser, 0 hendelser, hypotese 3 mnd: 0 ferdige av 0, 60/40: 0 ferdige av 0; dom hypotese_3mnd venter, regel_6040 venter"
+   "detalj": "uke 2026-W40: 18 segmenter, 51 kurser, 0 hendelser, hypotese 3 mnd: 0 ferdige av 0, 60/40: 0 ferdige av 0; dom hypotese_3mnd venter, regel_6040 venter"
   }
  ]
 }
