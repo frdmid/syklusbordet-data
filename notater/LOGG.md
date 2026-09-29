@@ -9,6 +9,23 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 14:16, Claude Code
+**Hva:** Kvartalsvis innhenting kjørt etter Coworks commit 4ea249b
+(renteregel i `c_manuell.py`, feltet `renter_i_drift` for alle manuelt leste
+selskaper, og Vale i `c_manuell.json`; ikke ført i loggen av Cowork). Porten
+før (11.12 UTC) og etter (12.16 UTC):
+- DNO: trang til åpen. 10,1 til 24,5 kvartaler, rentedekning -0,7 til 0,3.
+  Betalte renter ligger i driften, så de ble tidligere trukket to ganger.
+- Brent: åpen 1 av 2 til åpen 2 av 2 (Aker BP og DNO).
+- Vale: åpen, uendret. Nå manuelle tall: drift 2007 til 2025, bunnår 2016 til
+  2015, netto gjeld/EK 0,16 til 0,30 (gjelden er nå langsiktige lån 2025 i
+  stedet for SEC-tallet fra 2022), rentedekning 5,9 til 5,5.
+- Champion Iron og Heidelberg: port uendret (åpen), rentedekning +1,0.
+- Aker BP, Air Liquide og Labrador: uendret (renter under finansiering eller
+  ingen renter).
+**Filer:** Ingen endret av Claude Code; `c_overlevelse.json` skrevet av Actions.
+**Den andre økten må vite:** Dashbordet får portene etter onsdagskjøringen.
+
 ### 29.09.2026 14:01, Claude Code
 **Hva:** Ny sonde `sonde_kjor_oljeservice.py` (Frodes bestilling): grunnlag
 for et oljeservicesegment bygget som shippingsegmentene. Bygger ingenting.
