@@ -26,9 +26,10 @@
 #     segment. Transocean er i praksis flytere fra 2009 og staar som ren.
 #
 # SVAKHETER (staar ogsaa i JSON-fila)
-#   Etter 2021 hviler offshore paa to selskaper per segment. Etter en
-#   restrukturering faller avskrivningene (ny startbalanse), og forholdet ser
-#   hoeyere ut enn investeringene tilsier (Valaris fra 2022).
+#   Valaris er holdt utenfor fra 2021 (UTELAT_FRA), fordi avskrivningene
+#   etter en restrukturering faller (ny startbalanse) og forholdet da ser
+#   hoeyere ut enn investeringene tilsier. Offshore hviler derfor paa ett til
+#   to selskaper per segment etter 2021.
 # ---------------------------------------------------------------------------
 
 import base64, json, os, re, time
@@ -70,6 +71,12 @@ DDA = ["DepreciationDepletionAndAmortization", "DepreciationAndAmortization",
        "CostOfGoodsAndServicesSoldDepreciation", "CostOfServicesDepreciation",
        "DepreciationAndAmortisationExpense", "Depreciation", "DepreciationNonproduction",
        "DepreciationPropertyPlantAndEquipment"]
+# Segmenttall som holdes utenfor fra et gitt aar (Frodes beslutning
+# 29.09.2026). Valaris skrev riggene ned til nesten null ved konkursen i
+# 2020-2021, saa avskrivningene etterpaa er kunstig lave (15 flytere med 1,2
+# mrd. i bokfoert verdi hadde 60 mill. i avskrivninger i 2025, mot rundt 660
+# hos Transocean), og forholdet ser ut som kraftig vekst.
+UTELAT_FRA = {"Valaris": 2021}
 SEG_KLASSE = [("dyp", r"floater|deepwater|drillship|semisub|midwater|ultra"),
               ("grunt", r"jack.?up|shallow")]
 SEG_CAPEX = r":(SegmentExpenditureAdditionToLongLivedAssets|PaymentsToAcquirePropertyPlantAndEquipment|PaymentsToAcquireProductiveAssets|\w*CapitalExpenditure\w*)$"
@@ -191,6 +198,8 @@ def segmenter(note=print):
                 k, aar, seg = ctx[m.group(2)]
                 funn.setdefault((k, aar), {}).setdefault(felt, {})[seg] = v
             for (k, aar), d in funn.items():
+                if aar >= UTELAT_FRA.get(navn, 9999):
+                    continue
                 if "capex" in d and "dda" in d:
                     ut[(k, cik, aar)] = {"navn": navn, "capex": sum(d["capex"].values()), "dda": sum(d["dda"].values())}
         note(f"   {navn}: segmenttall for {len({a for (_, c, a) in ut if c == cik})} aar")
@@ -232,8 +241,8 @@ def til_json(res):
     ut = {"oppdatert": str(pd.Timestamp.now("UTC"))[:19],
           "metode": "Investeringer delt paa avskrivninger fra SEC. B2 = klipp((1,4 - femaarssnitt) / 0,8 * 100, 0, 100). "
                     "Rene selskaper pluss segmenttall fra blandede. Informasjon, ikke flagg.",
-          "svakhet": "Etter 2021 hviler offshore paa to selskaper per segment. Etter en restrukturering faller "
-                     "avskrivningene, og forholdet ser hoeyere ut enn investeringene tilsier (Valaris fra 2022).",
+          "svakhet": "Valaris er holdt utenfor fra 2021: avskrivningene etter konkursen er ikke sammenlignbare. "
+                     "Etter 2021 hviler offshore derfor paa ett til to selskaper per segment.",
           "segmenter": {}}
     navn = {"land": "Land", "grunt": "Grunt vann (jackups)", "dyp": "Dypt vann (flytere)"}
     for k, df in res.items():

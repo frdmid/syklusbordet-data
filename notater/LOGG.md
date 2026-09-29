@@ -9,6 +9,17 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 15:41, Claude Code
+**Hva:** Valaris tatt ut av B for rigger fra 2021 (Frodes beslutning,
+`UTELAT_FRA` i `rigg_b.py`). Riggene ble skrevet ned ved konkursen, så
+avskrivningene er kunstig lave (flytere 2025: 60 mill. i avskrivninger på 1,2
+mrd. i bokført verdi). Før og etter, 2025: grunt vann B2 35 til 100 (forhold
+1,36 til 0,60, nå bare Borr), dypt vann B2 86 til 100 (0,37 til 0,19, nå bare
+Transocean). Land og årene før 2021 er uendret. Teksten på dashbordet er
+oppdatert.
+**Filer:** `rigg_b.py`.
+**Den andre økten må vite:** Offshore hviler nå på ett selskap per segment.
+
 ### 29.09.2026 15:21, Claude Code
 **Hva:** Kvartalsvis og ukentlig innhenting kjørt. `b_rigg.json` skrevet av
 Actions (land B2 81,7, grunt 35,3, dyp 85,5; to selskaper hver i 2025).
