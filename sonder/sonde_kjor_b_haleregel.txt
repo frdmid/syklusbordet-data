@@ -1,8 +1,9 @@
-Hopper over 32 ferdige sonder (sonder_ferdige.txt): sonde_kjor_b_fmg, sonde_kjor_b_jernmalm, sonde_kjor_b_kilder, sonde_kjor_backtest, sonde_kjor_backtest_lang, sonde_kjor_bdi, sonde_kjor_brasil, sonde_kjor_c_manuell, sonde_kjor_c_manuell2, sonde_kjor_c_manuell3, sonde_kjor_cot, sonde_kjor_d95, sonde_kjor_dadj, sonde_kjor_faktor, sonde_kjor_fearnleys_mal, sonde_kjor_fond, sonde_kjor_fond_norge, sonde_kjor_indikator, sonde_kjor_instrumenttest, sonde_kjor_kali_platina, sonde_kjor_kurve, sonde_kjor_laks, sonde_kjor_land, sonde_kjor_macrotrends, sonde_kjor_rigg, sonde_kjor_salg, sonde_kjor_stockanalysis, sonde_kjor_terskel, sonde_kjor_timing, sonde_kjor_tio, sonde_kjor_uran, sonde_kjor_utforsk_etf
-
-Oppstarter: 1 sonde(r) funnet
-
-=== sonde_kjor_b_haleregel ===
+sonde:   sonde_kjor_b_haleregel
+kjort:   2026-09-29 08:20:39 UTC
+commit:  908cafe
+status:  OK
+brukte:  42 sekunder
+--------------------------------------------------------------
 Utskrift fra tilbud_b.py med regelen, del 2b og 3:
 
 2b. Manuelt leste aarsrapporter
@@ -92,9 +93,3 @@ FORSKJELL I SISTE AAR
 KONTROLL: alle aar som staar igjen har samme forhold, B1 og B2 som foer
 
 lagret sonder/b_haleregel.json
-
---- skrevet til sonder/sonde_kjor_b_haleregel.txt (42 s, kode 0)
-
-
-OPPSUMMERING
-   OK    sonde_kjor_b_haleregel                      42 s  -> sonder/sonde_kjor_b_haleregel.txt
