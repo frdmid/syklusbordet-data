@@ -1,5 +1,5 @@
 {
- "oppdatert": "2026-09-29 12:30:16",
+ "oppdatert": "2026-09-29 13:19:12",
  "segmenter": [
   "brent",
   "wti",
@@ -269,17 +269,17 @@
   {
    "kilde": "kurveform",
    "status": "OK",
-   "detalj": "6 segmenter, rente 4.057000160217285, historikk brent 1 mnd, wti 1 mnd, henryhub 1 mnd, gold 1 mnd, kobber 1 mnd, kakao 1 mnd"
+   "detalj": "6 segmenter, rente 4.090000152587891, historikk brent 1 mnd, wti 1 mnd, henryhub 1 mnd, gold 1 mnd, kobber 1 mnd, kakao 1 mnd"
   },
   {
    "kilde": "VIX",
    "status": "OK",
-   "detalj": "15.77 per 2026-09-29, persentil 36.4 (fra 1990-01) / 36.7 (10 aar)"
+   "detalj": "15.88 per 2026-09-29, persentil 37.5 (fra 1990-01) / 38.3 (10 aar)"
   },
   {
    "kilde": "DXY",
    "status": "OK",
-   "detalj": "101.283 per 2026-09-29, persentil 79.0 (fra 1985-01), 12 mnd 3.6 %"
+   "detalj": "101.376 per 2026-09-29, persentil 79.2 (fra 1985-01), 12 mnd 3.7 %"
   },
   {
    "kilde": "USD/NOK",
