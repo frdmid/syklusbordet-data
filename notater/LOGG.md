@@ -9,6 +9,22 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 10:49, Claude Code
+**Hva:** Ny seksjon «Test-flagg» på dashbordet, rett under flerfaktorfond
+(Frodes beslutning). Første test-flagg: bunnsone og høy tilbudsskår, for uran
+og aluminium. Utløses når segmentet står i bunnsone (rå og detrendet A 80 eller
+mer) og B2 er 50 eller mer. Da vises et varsel i klartekst; ellers en linje per
+segment som sier hva som mangler. Ikke testet, og påvirker ikke bunnsonen.
+**Filer:** Dashbordet (artifact Syklusbordet, versjon 41). Ingen filer i repoet.
+**Den andre økten må vite:** Test-flaggene er en liste `TESTFLAGG` i
+dashbordets script, rett før `renderNaa`, og tegnes av `renderTest`, som
+kalles etter `renderFond`. Nye test-flagg legges til som nye elementer i
+listen (navn, segmenter, regel, bakgrunn, utlost, varsel, rolig). Seksjonen er
+`<section id="testflagg">` under `#fond`. Grensen B2 50 er valgt av Claude
+Code; si fra hvis Frode vil ha en annen. Flaggloggen logger allerede
+bunnsone og B per uke, så et utløst test-flagg kan etterprøves der.
+Bygg videre på versjon 41.
+
 ### 29.09.2026 10:38, Claude Code
 **Hva:** Kapitulasjon D og overlevelsesporten C i klartekst på dashbordet,
 samme grep som for B. Hvert panel får linjene «Kapitulasjon D:» og
