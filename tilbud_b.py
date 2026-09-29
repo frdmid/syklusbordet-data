@@ -21,7 +21,7 @@
 # mot sin egen elendige historikk. Persentilen alene skjulte nivået.
 # ---------------------------------------------------------------------------
 
-import base64, json, re, time
+import base64, json, os, re, time
 import numpy as np
 import pandas as pd
 import requests
@@ -245,7 +245,7 @@ except Exception as e:
     print(f"   FEIL {type(e).__name__}: {str(e)[:80]}")
 
 print("\n3. B1 relativt og B2 absolutt")
-ut = {}
+ut, KUTT = {}, {}
 for metall, d in hentet.items():
     cx = pd.DataFrame({k: v["capex"] for k, v in d.items()})
     dd = pd.DataFrame({k: v["dda"] for k, v in d.items()})
@@ -261,6 +261,24 @@ for metall, d in hentet.items():
         print(f"      kuttet {len(tynne)} år med under halve kurven: {tynne}")
         s = s[~s.index.isin(tynne)]
         ant = ant[~ant.index.isin(tynne)]
+    # Haleregelen, Frodes beslutning 29.09.2026, i tillegg til halvregelen og
+    # bare for slutten av serien: det siste aaret telles foerst naar minst tre
+    # fjerdedeler av kurvens selskaper (rundet opp) har tall for det. Aar kuttes
+    # bakfra til det siste oppfyller kravet. Aar midt i serien foelger fortsatt
+    # halvregelen. Bakgrunn: selskaper med avvikende regnskapsaar (FMG og CIA i
+    # jernmalm, som slutter i juni og mars) gir et nytt aar lenge foer resten,
+    # og da ble siste forhold et snitt av to selskaper i stedet for fire.
+    # HALEREGEL=0 i miljoeet slaar den av, bare for sammenligning.
+    krav = -(-3 * len(cx.columns) // 4)
+    hale = []
+    if os.environ.get("HALEREGEL", "1") != "0":
+        while len(s) and ant[s.index[-1]] < krav:
+            hale.append(int(s.index[-1]))
+            s, ant = s.iloc[:-1], ant.iloc[:-1]
+    if hale:
+        print(f"      kuttet {len(hale)} år i halen med under {krav} av {len(cx.columns)} selskaper: {sorted(hale)}")
+    KUTT[metall] = {"halvregel": tynne, "haleregel": sorted(hale), "krav_hale": krav,
+                    "selskaper_per_aar": {str(int(a)): int(n) for a, n in cx.notna().sum(axis=1).items()}}
     if len(s) < MIN_AAR:
         continue
     kurv = {int(a): sorted(cx.columns[cx.loc[a].notna()]) for a in cx.index if a in s.index}
@@ -327,6 +345,10 @@ for navn, u in [
         print(f"   {type(e).__name__:>18s}  {navn}   {str(e)[:40]}")
     time.sleep(0.6)
 
+
+if os.environ.get("B_UT"):
+    with open(os.environ["B_UT"], "w", encoding="utf-8") as f:
+        json.dump({"metaller": ut, "kutt": KUTT}, f, ensure_ascii=False)
 
 if GITHUB_TOKEN and ut:
     api = f"https://api.github.com/repos/{REPO}/contents/b_capex.json"
