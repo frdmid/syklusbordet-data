@@ -9,6 +9,33 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 11:01, Claude Code
+**Hva:** Kontroll av utbytte for alle papirene (Frodes bestilling), og retting
+av utbyttet i flaggloggen. Ny sonde `sonde_kjor_utbytte.py` sammenlignet
+Yahoo sitt rapporterte utbytte med det Yahoo selv har justert kursen for, og
+ettårs totalavkastning på tre måter, for 60 papirer.
+**Filer:** `flagglogg.py` (`siste_kurs`), `sonde_kjor_utbytte.py` (ny),
+`sonder/sonde_kjor_utbytte.txt`, `sonder_ferdige.txt`.
+**Den andre økten må vite:**
+1. Yahoo sitt rapporterte utbyttebeløp er i feil valuta eller enhet for ni
+   papirer: i dollar for FRO.OL, HAFNI.OL, HSHP.OL, OET.OL, 2020.OL og
+   TRMD-A.CO (kursen er i kroner), og i pund for GLEN.L, ATYM.L, MPE.L og
+   TMIP.L (kursen er i pence). Flaggloggen brukte beløpet direkte fra
+   29.09 og ville overvurdert utbyttet 7 til 100 ganger. Rettet før noe utbytte
+   var logget: utbyttet regnes nå av justeringen i adjclose, i kursens egen
+   valuta og enhet. Testet mot et konstruert tilfelle (1 USD blir 10 NOK).
+2. Backtestene og kapitulasjon D bruker adjclose, og den er riktig for alle
+   papirene unntatt 2020.OL. Små avvik (1 til 8 prosentpoeng over ett år for
+   papirer med høyt utbytte, som NAT, DHT, AKRBP og EQNR) skyldes at adjclose
+   reinvesterer utbyttet, ikke feil.
+3. 2020.OL (2020 Bulkers) har et kursfall på 97 % i april 2026 som ikke er
+   fanget av adjclose (ettårs totalavkastning minus 95 % justert, +10 % med kurs
+   og utbytte). Trolig en stor utdeling som Yahoo ikke har justert for. D for
+   papiret (95) og dermed D for capesize er sannsynligvis falsk. Ikke rettet;
+   venter på Frodes beslutning.
+4. Akkumulerende fond (IOGP.L, GDX.L, GJGB.L, SPGP.L, EXV6.DE) har ingen
+   utbytter, som ventet.
+
 ### 29.09.2026 10:54, Claude Code
 **Hva:** Kriterium for når test-flagget «Bunnsone og høy tilbudsskår» vurderes,
 skrevet ned før noe tilfelle (Frodes beslutning). Vurderes etter tre utløste

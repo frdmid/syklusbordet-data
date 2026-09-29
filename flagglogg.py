@@ -57,20 +57,45 @@ def ukenokkel(d):
 def siste_kurs(tk):
     """Siste dagskurs fra Yahoo, med utbytte siste maaned.
     Returnerer dict med kurs, valuta, kursdato og utbytte [(dato, beloep)],
-    eller kurs None."""
+    eller kurs None.
+
+    Utbyttet regnes i kursens egen valuta og enhet, ut fra hvor mye Yahoo selv
+    har justert kursen (adjclose) paa eksdagen. Det rapporterte beloepet
+    brukes ikke direkte: sonde_kjor_utbytte (29.09.2026) fant at det er i
+    dollar for papirer notert i kroner eller danske kroner (Frontline,
+    Hafnia, Himalaya, Okeanis, 2020 Bulkers, TORM) og i pund der kursen er i
+    pence (Glencore, Atalaya, M.P. Evans, Taylor Maritime). Justeringen i
+    adjclose var riktig for alle. Mangler adjclose rundt eksdagen, brukes det
+    rapporterte beloepet bare hvis kurs og utbytte har samme valuta."""
     tom = {"kurs": None, "valuta": None, "kursdato": None, "utbytte": []}
     try:
         r = requests.get(f"https://query1.finance.yahoo.com/v8/finance/chart/{tk}"
-                         "?range=1mo&interval=1d&events=div", headers=UA, timeout=25).json()["chart"]["result"][0]
+                         "?range=1mo&interval=1d&events=div%7Csplit&includeAdjustedClose=true",
+                         headers=UA, timeout=25).json()["chart"]["result"][0]
         q = r["indicators"]["quote"][0]["close"]
-        par = [(t, v) for t, v in zip(r["timestamp"], q) if v is not None]
-        if not par:
+        adj = ((r["indicators"].get("adjclose") or [{}])[0] or {}).get("adjclose") or [None] * len(q)
+        rader = [(t, v, a) for t, v, a in zip(r["timestamp"], q, adj) if v is not None]
+        if not rader:
             return tom
-        t, v = par[-1]
-        div = [(dt.datetime.utcfromtimestamp(int(d["date"])).strftime("%Y-%m-%d"), float(d["amount"]))
-               for d in ((r.get("events") or {}).get("dividends") or {}).values()]
-        return {"kurs": round(float(v), 4), "valuta": (r.get("meta") or {}).get("currency"),
-                "kursdato": dt.datetime.utcfromtimestamp(t).strftime("%Y-%m-%d"), "utbytte": sorted(div)}
+        t, v, _ = rader[-1]
+        dag = lambda x: dt.datetime.utcfromtimestamp(int(x)).strftime("%Y-%m-%d")
+        meta = r.get("meta") or {}
+        div = []
+        for d in ((r.get("events") or {}).get("dividends") or {}).values():
+            eks = dag(d["date"])
+            foer = [x for x in rader if dag(x[0]) < eks]
+            paa = [x for x in rader if dag(x[0]) >= eks]
+            beloep = None
+            if foer and paa and foer[-1][2] and paa[0][2]:
+                k0, k1 = foer[-1][2] / foer[-1][1], paa[0][2] / paa[0][1]
+                if k1 > k0:
+                    beloep = (1 - k0 / k1) * foer[-1][1]
+            if beloep is None and meta.get("currency") not in ("GBp",) and not tk.endswith((".OL", ".CO")):
+                beloep = float(d["amount"])
+            if beloep is not None:
+                div.append((eks, round(beloep, 6)))
+        return {"kurs": round(float(v), 4), "valuta": meta.get("currency"),
+                "kursdato": dag(t), "utbytte": sorted(div)}
     except Exception:
         return tom
 
