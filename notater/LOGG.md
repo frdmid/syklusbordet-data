@@ -9,6 +9,25 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 13:14, Claude Code
+**Hva:** Manuelle tall kan nå erstatte SEC-tallene i C for utvalgte papirer
+(Frodes beslutning). Ny mengde `MANUELL_FORAN = {"VALE"}` i
+`overlevelse_c.py`. Har `c_manuell.json` en post for et slikt papir, og den gir
+en måling, brukes den i stedet for SEC-tallene, og utskriften viser porten
+fra begge. Uten post står SEC som før. Ingen tall endres før Cowork har lagt
+inn Vale.
+**Filer:** `overlevelse_c.py`.
+**Den andre økten må vite:** Cowork bes legge inn "VALE" i `c_manuell.json` i
+samme format som de andre: driftskontantstrøm per år i USD (helst hele
+historikken, minst 2022 til 2025, som mangler hos SEC), og siste år med
+kontanter, langsiktig gjeld, egenkapital og betalte renter, med kilde. NB:
+Vale fører betalte renter under drift (IFRS-begrepet
+InterestPaidClassifiedAsOperatingActivities finnes hos SEC til 2022).
+`c_manuell.py` trekker renten fra driften en gang til, så for Vale bør
+renten enten føres som null eller regelen i `c_manuell.py` justeres; ellers
+telles den dobbelt. `c_manuell.py` og `c_manuell.json` er ikke rørt av
+Claude Code.
+
 ### 29.09.2026 13:11, Claude Code
 **Hva:** Tallene fra `sonde_kjor_c_spleis` (før og etter skjøting av begreper
 i C) og `sonde_kjor_vale`. Ingen porter endret.

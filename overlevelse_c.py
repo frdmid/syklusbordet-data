@@ -370,9 +370,21 @@ print("\n2b. Manuelt leste aarsrapporter (c_manuell.json, fra 28.09.2026)")
 # Papirer uten SEC-tall kan maales fra aarsrapportene, lest for haand. Samme
 # regnestykke og samme port, se c_manuell.py. Feiler noe her, staar papirene
 # som "ukjent" som foer, og resten av C paavirkes ikke.
+#
+# MANUELL_FORAN (Frodes beslutning 29.09.2026): papirer der de manuelle
+# tallene skal brukes foran SEC-tallene. Vale merker driftskontantstroemmen
+# med et eget begrep fra 2022, som SECs datasett ikke tar med, saa SEC-tallene
+# stopper i 2021 (se sonde_kjor_vale). Har c_manuell.json en post for papiret,
+# og den gir en maaling, erstatter den SEC-tallene. Ellers staar SEC som foer.
+MANUELL_FORAN = {"VALE"}
 try:
     import c_manuell
-    for tk, v in c_manuell.maal({t: a for t, a in AKSJER.items() if t not in SELSKAP}).items():
+    fil = json.load(open("c_manuell.json", encoding="utf-8")) if os.path.exists("c_manuell.json") else {}
+    foran = {t for t in MANUELL_FORAN if t in fil and t in AKSJER}
+    for tk, v in c_manuell.maal({t: a for t, a in AKSJER.items() if t not in SELSKAP or t in foran}).items():
+        if tk in SELSKAP:
+            print(f"   {tk:12s} manuelle tall brukes foran SEC ({SELSKAP[tk]['port']} fra SEC, "
+                  f"{v['port']} manuelt)")
         SELSKAP[tk] = v
         if tk in utenfor:
             utenfor.remove(tk)
