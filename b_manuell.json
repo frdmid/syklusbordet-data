@@ -1,0 +1,204 @@
+{
+ "_merknad": "Capex og avskrivninger for jernmalm, lest fra aarsrapporter og resultatrapporter 28.09.2026. Millioner i selskapets valuta. Regnskapsaaret merkes med aaret det slutter. Brukes av tilbud_b.py (2b).",
+ "jernmalm": {
+  "KIO": {
+   "navn": "Kumba Iron Ore",
+   "valuta": "ZAR",
+   "regnskapsaar": "desember",
+   "definisjon": "capex = kontantstroemmens investering i varige driftsmidler ('Capital expenditure' til 2010, 'Additions to property, plant and equipment' fra 2011), inkludert kapitalisert avdekking fra 2012 (IFRIC 20) og ikke foer. dda = avskrivning paa varige driftsmidler, fra 2019 med leieavtaler (bruksrett).",
+   "aar": {
+    "2007": {
+     "capex": 2119,
+     "dda": 228,
+     "kilde": "Kumba resultatbooklet/AFS B07/B08"
+    },
+    "2008": {
+     "capex": 2563,
+     "dda": 332,
+     "kilde": "Kumba resultatbooklet/AFS aar og aaret etter"
+    },
+    "2009": {
+     "capex": 3996,
+     "dda": 530,
+     "kilde": "Kumba resultatbooklet/AFS aar og aaret etter"
+    },
+    "2010": {
+     "capex": 4723,
+     "dda": 765,
+     "kilde": "Kumba resultatbooklet/AFS aar og aaret etter"
+    },
+    "2011": {
+     "capex": 5849,
+     "dda": 997,
+     "kilde": "Kumba resultatbooklet/AFS aar og aaret etter"
+    },
+    "2012": {
+     "capex": 5917,
+     "dda": 1535,
+     "kilde": "Kumba resultatbooklet/AFS B13 IFRIC 20-omarbeidet (opprinnelig 5 399 / 1 524)"
+    },
+    "2013": {
+     "capex": 6453,
+     "dda": 2039,
+     "kilde": "Kumba resultatbooklet/AFS aar og aaret etter"
+    },
+    "2014": {
+     "capex": 8477,
+     "dda": 2636,
+     "kilde": "Kumba resultatbooklet/AFS aar og aaret etter"
+    },
+    "2015": {
+     "capex": 6752,
+     "dda": 3323,
+     "kilde": "Kumba resultatbooklet/AFS B15, K15 (B16 note 8 lest 3 223, segmentnoten 3 323)"
+    },
+    "2016": {
+     "capex": 2353,
+     "dda": 3089,
+     "kilde": "Kumba resultatbooklet/AFS aar og aaret etter"
+    },
+    "2017": {
+     "capex": 3074,
+     "dda": 3014,
+     "kilde": "Kumba resultatbooklet/AFS aar og aaret etter"
+    },
+    "2018": {
+     "capex": 4463,
+     "dda": 4269,
+     "kilde": "Kumba resultatbooklet/AFS aar og aaret etter"
+    },
+    "2019": {
+     "capex": 5603,
+     "dda": 4538,
+     "kilde": "Kumba resultatbooklet/AFS aar og aaret etter"
+    },
+    "2020": {
+     "capex": 5746,
+     "dda": 4970,
+     "kilde": "Kumba resultatbooklet/AFS aar og aaret etter"
+    },
+    "2021": {
+     "capex": 6253,
+     "dda": 5050,
+     "kilde": "Kumba resultatbooklet/AFS aar og aaret etter"
+    },
+    "2022": {
+     "capex": 11084,
+     "dda": 5020,
+     "kilde": "Kumba resultatbooklet/AFS aar og aaret etter"
+    },
+    "2023": {
+     "capex": 9862,
+     "dda": 5005,
+     "kilde": "Kumba resultatbooklet/AFS aar og aaret etter"
+    },
+    "2024": {
+     "capex": 9673,
+     "dda": 5713,
+     "kilde": "Kumba resultatbooklet/AFS aar og aaret etter"
+    },
+    "2025": {
+     "capex": 10031,
+     "dda": 6165,
+     "kilde": "Kumba resultatbooklet/AFS aar og aaret etter"
+    }
+   }
+  },
+  "VALE_JM": {
+   "navn": "Vale, jernmalmsegmentet",
+   "valuta": "USD",
+   "regnskapsaar": "desember",
+   "definisjon": "capex = segmentets investeringer (vedlikehold pluss prosjekter) fra Vales 4Q-rapporter og segmentnoten; dda = segmentets avskrivninger. Segmentet het Ferrous Minerals til 2021 (med mangan og ferrolegeringer), Iron Solutions i 2022 og Iron Ore Solutions fra 2023. 2017 og 2021 som omarbeidet i rapporten aaret etter. 2010 til 2015 utelatt: annen capex-definisjon (tilgang varige driftsmidler) eller mangler.",
+   "aar": {
+    "2016": {
+     "capex": 3248,
+     "dda": 1616,
+     "kilde": "Vale 4Q-rapport 2016 og 2017"
+    },
+    "2017": {
+     "capex": 2680,
+     "dda": 1709,
+     "kilde": "Vale 4Q-rapport 2017 og 2018"
+    },
+    "2018": {
+     "capex": 2392,
+     "dda": 1672,
+     "kilde": "Vale 4Q-rapport 2018 og 2019"
+    },
+    "2019": {
+     "capex": 2070,
+     "dda": 2063,
+     "kilde": "Vale 4Q-rapport 2019 og 2020"
+    },
+    "2020": {
+     "capex": 2392,
+     "dda": 1768,
+     "kilde": "Vale 4Q-rapport 2020 og 2021"
+    },
+    "2021": {
+     "capex": 3012,
+     "dda": 1750,
+     "kilde": "Vale 4Q-rapport 2021 og 2022"
+    },
+    "2022": {
+     "capex": 3102,
+     "dda": 1890,
+     "kilde": "Vale 4Q-rapport 2022 og 2023"
+    },
+    "2023": {
+     "capex": 3758,
+     "dda": 1962,
+     "kilde": "Vale 4Q-rapport 2023 og 2024"
+    },
+    "2024": {
+     "capex": 3943,
+     "dda": 2107,
+     "kilde": "Vale 4Q-rapport 2024 og 2025"
+    },
+    "2025": {
+     "capex": 3852,
+     "dda": 2122,
+     "kilde": "Vale 4Q25-rapport"
+    }
+   }
+  },
+  "CIA": {
+   "navn": "Champion Iron",
+   "valuta": "CAD",
+   "regnskapsaar": "mars",
+   "definisjon": "capex = 'Purchase of property, plant and equipment' i kontantstroemmen; dda = 'Depreciation' i resultatregnskapet. Tusen CAD i rapportene, her millioner.",
+   "aar": {
+    "2021": {
+     "capex": 174.65,
+     "dda": 35.177,
+     "kilde": "Champion FS FY2021 og FY2022"
+    },
+    "2022": {
+     "capex": 519.322,
+     "dda": 43.929,
+     "kilde": "Champion FS FY2022 og FY2023"
+    },
+    "2023": {
+     "capex": 282.892,
+     "dda": 121.044,
+     "kilde": "Champion FS FY2023 og FY2024"
+    },
+    "2024": {
+     "capex": 328.144,
+     "dda": 123.584,
+     "kilde": "Champion FS FY2024 og FY2025"
+    },
+    "2025": {
+     "capex": 576.375,
+     "dda": 148.604,
+     "kilde": "Champion FS FY2025 og FY2026"
+    },
+    "2026": {
+     "capex": 395.427,
+     "dda": 180.284,
+     "kilde": "Champion FS FY2026"
+    }
+   }
+  }
+ }
+}

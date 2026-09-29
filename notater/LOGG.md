@@ -9,6 +9,40 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 09:50, Cowork
+**Hva:** (arbeidet ble gjort 28.09, pushet 29.09) Tilbudsskåren B for jernmalm fra årsrapporter, og DNO i
+overlevelsesporten C. Fortescue-sonde for B.
+**Filer:** `b_manuell.json` (ny: Kumba 2007 til 2025, Vales jernmalmsegment
+2016 til 2025, Champion FY2021 til FY2026), `c_manuell.json` (DNO lagt til),
+`sonde_kjor_b_fmg.py` (ny), `notater/2026-09-28_cowork_c_og_b.md`, `notater/LOGG.md`.
+**Den andre økten må vite:** Prøvekjørt B for jernmalm: ratio 1,88,
+femårssnitt 1,85, B1 20, B2 0, altså ingen tilbudsknapphet. Serien blir
+2016 til 2025 til Fortescue er inne, fordi tynne år kuttes. DNO prøvekjørt til
+trang (10,1 kvartaler, verste år 2015); 2008 og 2009 mangler. Tallene er lest
+via nettverktøy og kontrollert mot to rapporter der det gikk. Kan brukes i
+testen «flagget kombinert med B» når Fortescue er inne.
+
+### 28.09.2026 13:30, Cowork
+**Hva:** Overlevelsesporten C for papirer uten SEC-tall. Aker BP målt til åpen
+(23,0 kvartaler, verste år 2006), så Brent-porten er åpen.
+**Filer:** `c_manuell.py` (ny), `c_manuell.json` (ny), `overlevelse_c.py`
+(leser c_manuell), `sonde_kjor_c_manuell3.py` (ny), `sonder_ferdige.txt`
+(lagt til `sonde_kjor_fond_norge`).
+**Den andre økten må vite:** NewsWeb-vedlegg hentes med
+`https://api3.oslo.oslobors.no/v1/newsreader/attachment?messageId=..&attachmentId=..`.
+Driftsår i annen valuta regnes om med Norges Banks årssnitt.
+
+### 28.09.2026 12:30, Cowork
+**Hva:** WTI lagt til i det parallelle signalet detrendet A ≥ 95 (Frodes
+valg, ikke testet). Dashbord versjon 38: kortere fondsboks (de fem fondene
+nærmest flagg, med par og begrunnelse), Norge (Nordnet/KLP, målt på ENOR) i
+fondskartet.
+**Filer:** `priser.py` (D95_SEGMENTER), dashbordet (artifact, ikke i repoet).
+**Den andre økten må vite:** WTI holdes etter regelen fra desember 2025 til
+desember 2027, som Brent. Brent og WTI har 34 felles måneder over 95, så det
+er i praksis samme signal. Differansen Henry Hub mot TTF ble undersøkt og gir
+ikke et eget signal; ikke innført.
+
 ### 28.09.2026 23:30, Claude Code
 **Hva:** Felles logg og `CLAUDE.md` opprettet, formatert etter malen fra Cowork-økten.
 **Filer:** `notater/LOGG.md`, `CLAUDE.md`
