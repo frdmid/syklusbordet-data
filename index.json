@@ -1,5 +1,5 @@
 {
- "oppdatert": "2026-09-28 11:53:20",
+ "oppdatert": "2026-09-29 09:38:39",
  "segmenter": [
   "brent",
   "wti",
@@ -178,7 +178,7 @@
   {
    "kilde": "Yahoo totalt",
    "status": "OK",
-   "detalj": "23 av 23 symbol, 11 segment dekket"
+   "detalj": "22 av 22 symbol, 11 segment dekket"
   },
   {
    "kilde": "instrumenter",
@@ -203,7 +203,7 @@
   {
    "kilde": "tilbudsskaar B",
    "status": "OK",
-   "detalj": "5 segment fra b_capex.json"
+   "detalj": "6 segment fra b_capex.json"
   },
   {
    "kilde": "trendbekreftelse",
@@ -241,39 +241,44 @@
    "detalj": "2026-09-22, forvaltere -9.2 % av OI, persentil 3.8 (3 aar) / 8.2 (fra 2006), 1059 uker"
   },
   {
+   "kilde": "COT palmeolje",
+   "status": "OK",
+   "detalj": "2026-09-22, forvaltere -9.2 % av OI, persentil 3.2 (3 aar) / 2.0 (fra 2021), 245 uker"
+  },
+  {
    "kilde": "COT totalt",
    "status": "OK",
-   "detalj": "6 av 6 kontrakter"
+   "detalj": "7 av 7 kontrakter"
   },
   {
    "kilde": "fersk pris jernmalm",
    "status": "OK",
-   "detalj": "97.06 per 2026-09-25"
+   "detalj": "96.92 per 2026-09-28"
   },
   {
    "kilde": "kurveform",
    "status": "OK",
-   "detalj": "6 segmenter, rente 4.070000171661377, historikk brent 1 mnd, wti 1 mnd, henryhub 1 mnd, gold 1 mnd, kobber 1 mnd, kakao 1 mnd"
+   "detalj": "6 segmenter, rente 4.057000160217285, historikk brent 1 mnd, wti 1 mnd, henryhub 1 mnd, gold 1 mnd, kobber 1 mnd, kakao 1 mnd"
   },
   {
    "kilde": "VIX",
    "status": "OK",
-   "detalj": "16.27 per 2026-09-28, persentil 40.9 (fra 1990-01) / 43.3 (10 aar)"
+   "detalj": "16.1 per 2026-09-29, persentil 39.1 (fra 1990-01) / 40.8 (10 aar)"
   },
   {
    "kilde": "DXY",
    "status": "OK",
-   "detalj": "101.119 per 2026-09-28, persentil 78.2 (fra 1985-01), 12 mnd 3.4 %"
+   "detalj": "101.452 per 2026-09-29, persentil 79.2 (fra 1985-01), 12 mnd 3.8 %"
   },
   {
    "kilde": "USD/NOK",
    "status": "OK",
-   "detalj": "9.5063 per 2026-09-25, persentil 92.1 (fra 1971-01), 12 mnd -4.4 %"
+   "detalj": "9.5069 per 2026-09-28, persentil 92.1 (fra 1971-01), 12 mnd -4.4 %"
   },
   {
    "kilde": "flagglogg",
    "status": "OK",
-   "detalj": "uke 2026-W40: 17 segmenter, 43 kurser, 0 hendelser"
+   "detalj": "uke 2026-W40: 17 segmenter, 44 kurser, 0 hendelser, hypotese 3 mnd: 0 ferdige av 0"
   }
  ]
 }
