@@ -9,6 +9,24 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 13:20, Claude Code
+**Hva:** (1) C: navnekontroll når børssuffikset strippes før oppslag hos SEC.
+Fire papirer var koblet til feil selskap siden C ble laget: Air Liquide
+(AI.PA) ble lest som C3.ai, Heidelberg Materials (HEI.DE) som HEICO, Labrador
+Iron Ore Royalty (LIF.TO) som Life360 og Champion Iron (CIA.TO) som Citizens
+Inc. Nå må navnet hos SEC dele et ord med navnet på tavlen. De fire får
+"ukjent" fra SEC-delen, med mindre `c_manuell.json` har dem. Funnet i
+sonden for rentefiksen; ført her etter commit 5c381fa, som manglet innslag.
+(2) Ny sonde `sonde_kjor_regel_foer2011.py` (punkt 5): hypotesen T+1/3 mnd
+og regel 60/40 testet på Ken French-bransjer (og landene Norge og Australia)
+før 2011-09. Regler, mål og beslutningskriterium står i hodet av fila og er
+skrevet før kjøring.
+**Filer:** `overlevelse_c.py`, `sonde_kjor_regel_foer2011.py` (ny),
+`sonder_ferdige.txt` (b_dda ferdig).
+**Den andre økten må vite:** Porten for segmentene med AI.PA, HEI.DE, LIF.TO
+og CIA.TO kan endre seg ved neste kvartalsvise kjøring. Tallene har vært feil
+til nå.
+
 ### 29.09.2026 12:55, Claude Code
 **Hva:** Hullene i flaggloggen fra den uavhengige gjennomgangen er tettet, og
 Frodes praktiske salgsregel 60/40 er lagt inn som egen regel. Alt er skrevet
