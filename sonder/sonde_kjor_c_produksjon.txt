@@ -1,8 +1,9 @@
-Hopper over 40 ferdige sonder (sonder_ferdige.txt): sonde_kjor_b_dda, sonde_kjor_b_fmg, sonde_kjor_b_haleregel, sonde_kjor_b_jernmalm, sonde_kjor_b_kilder, sonde_kjor_backtest, sonde_kjor_backtest_lang, sonde_kjor_bdi, sonde_kjor_brasil, sonde_kjor_c_manuell, sonde_kjor_c_manuell2, sonde_kjor_c_manuell3, sonde_kjor_c_rente, sonde_kjor_cot, sonde_kjor_cot_palme_sgx, sonde_kjor_cotr, sonde_kjor_d95, sonde_kjor_dadj, sonde_kjor_faktor, sonde_kjor_fearnleys_mal, sonde_kjor_fond, sonde_kjor_fond_norge, sonde_kjor_indikator, sonde_kjor_instrumenttest, sonde_kjor_kali_platina, sonde_kjor_kurve, sonde_kjor_laks, sonde_kjor_land, sonde_kjor_macrotrends, sonde_kjor_regel_foer2011, sonde_kjor_rigg, sonde_kjor_salg, sonde_kjor_sgx_cot, sonde_kjor_stockanalysis, sonde_kjor_terskel, sonde_kjor_timing, sonde_kjor_tio, sonde_kjor_uran, sonde_kjor_utbytte, sonde_kjor_utforsk_etf
-
-Oppstarter: 1 sonde(r) funnet
-
-=== sonde_kjor_c_produksjon ===
+sonde:   sonde_kjor_c_produksjon
+kjort:   2026-09-29 10:55:46 UTC
+commit:  eaeae11
+status:  OK
+brukte:  138 sekunder
+--------------------------------------------------------------
 1 og 2. Bunnaar og omsetning, alle SEC-selskaper (manuelt leste er utelatt)
 
 papir      port    bunnaar    oms bunnaar      oms siste   andel  kandidat
@@ -137,9 +138,3 @@ VALE       aapen      2009       23,939 m       48,753 m    49 %
          ingen treff
       20-F innlevert 2026-03-13: https://www.sec.gov/Archives/edgar/data/1419945/000141994526000007/tnk-20251231.htm
          ingen treff
-
---- skrevet til sonder/sonde_kjor_c_produksjon.txt (138 s, kode 0)
-
-
-OPPSUMMERING
-   OK    sonde_kjor_c_produksjon                    138 s  -> sonder/sonde_kjor_c_produksjon.txt
