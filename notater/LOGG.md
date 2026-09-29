@@ -9,6 +9,13 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 10:52, Claude Code
+**Hva:** Grensen i test-flagget «Bunnsone og høy tilbudsskår» satt til B2 60
+(Frodes valg), ned fra 50 som Claude Code hadde valgt.
+**Filer:** Dashbordet (artifact Syklusbordet, versjon 42). Ingen filer i repoet.
+**Den andre økten må vite:** Grensen er konstanten `TEST_B2` rett over
+`TESTFLAGG`. Bygg videre på versjon 42.
+
 ### 29.09.2026 10:49, Claude Code
 **Hva:** Ny seksjon «Test-flagg» på dashbordet, rett under flerfaktorfond
 (Frodes beslutning). Første test-flagg: bunnsone og høy tilbudsskår, for uran
