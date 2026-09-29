@@ -822,7 +822,7 @@ except Exception as e:
 
 # Kontekstfeltene over grafen. Se signaler.py for hvorfor de ligger her.
 try:
-    from signaler import trend, cot_for_segmenter
+    from signaler import trend, cot_for_segmenter, KONTRAKTER
     n = 0
     for s in SEGMENTS:
         t = trend(s["series"])
@@ -833,7 +833,7 @@ try:
     for s in SEGMENTS:
         if s["id"] in cot:
             s["cot"] = cot[s["id"]]
-    note("COT totalt", len(cot) > 0, f"{len(cot)} av 6 kontrakter")
+    note("COT totalt", len(cot) > 0, f"{len(cot)} av {len(KONTRAKTER)} kontrakter")
 except Exception as e:
     note("signaler", False, f"{type(e).__name__}: {str(e)[:70]}")
 

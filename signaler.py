@@ -56,9 +56,10 @@ def trend(serie):
 # ========================================================================= COT
 #
 # CFTC Disaggregated, futures only, via Socrata. Ingen noekkel.
-# Samme seks kontrakter som feltet har vist siden det kom paa bordet.
-# LME-metallene, jernmalm, palmeolje, kull og skipssegmentene har ingen
-# tilsvarende rapport. Brent her er NYMEX sin Brent Last Day, ikke ICE-Brent,
+# De seks kontraktene feltet har vist siden det kom paa bordet, pluss
+# palmeolje fra 29.09.2026. LME-metallene, jernmalm, kull, TTF, uran og
+# skipssegmentene har ingen tilsvarende rapport som kan hentes automatisk
+# (LME svarer 403 fra GitHub, se sonder/sonde_kjor_cotr.txt). Brent her er NYMEX sin Brent Last Day, ikke ICE-Brent,
 # som CFTC ikke rapporterer. Den er mindre, men foelger samme pris.
 DATASETT = "https://publicreporting.cftc.gov/resource/72hh-3qpy.json"
 KONTRAKTER = {
@@ -68,6 +69,11 @@ KONTRAKTER = {
     "gold":     "088691",
     "kobber":   "085692",
     "kakao":    "073732",
+    # Palmeolje lagt til 29.09.2026 (Frodes valg): CME "USD Malaysian Crude
+    # Palm Oil Calendar", ukentlig hos CFTC fra september 2021 (sonde_kjor_cotr
+    # og sonde_kjor_cot_palme_sgx). Den eneste av de manglende segmentene der
+    # CFTC har en aktiv kontrakt.
+    "palmeolje": "037021",
 }
 UKER_3AAR = 156
 
