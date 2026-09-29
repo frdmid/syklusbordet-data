@@ -9,6 +9,23 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 12:30, Claude Code
+**Hva:** Kvartalsvis innhenting kjørt manuelt (Frodes beslutning), slik at
+rettelsene i C gjelder nå og ikke først i januar. Endringer i porten per
+segment: aluminium trang til åpen (AA åpen), bly trang til åpen (Nexa),
+suezmax trang til åpen (Frontline), VLCC 1/2 til 2/2 åpne, capesize uendret
+åpen (Himalaya stengt til trang). Jernmalm måles nå bare på Vale (1/1, åpen),
+fordi Champion Iron og Labrador Iron Ore var feil selskap. TTF måles bare på
+Equinor (1/1, åpen), fordi Air Liquide og Heidelberg var feil selskap. B er
+uendret: 2025 for alle seks metaller, samme forhold, B1 og B2 som før.
+2020.OL og CMBT er ute av C.
+**Filer:** Ingen endret av økten; `c_overlevelse.json` og `b_capex.json`
+skrevet av Actions.
+**Den andre økten må vite:** Dashbordet får de nye portene etter den ukentlige
+kjøringen onsdag 07.00 UTC. Jernmalm og TTF hviler nå på ett selskap hver i C.
+Air Liquide, Heidelberg, Champion Iron og Labrador Iron Ore kan legges i
+`c_manuell.json` hvis de skal måles.
+
 ### 29.09.2026 14:05, Claude Code
 **Hva:** Ukentlig innhenting kjørt manuelt igjen for å kontrollere flaggloggen
 og hel måned for olje før onsdag. Alt virket: `logg/regel_6040.csv` og
