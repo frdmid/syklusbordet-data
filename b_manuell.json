@@ -199,6 +199,89 @@
      "kilde": "Champion FS FY2026"
     }
    }
+  },
+  "FMG": {
+   "navn": "Fortescue",
+   "valuta": "USD",
+   "regnskapsaar": "juni",
+   "definisjon": "capex = 'Payments for property, plant and equipment', Fortescue pluss joint operations, i kontantstroemmen (uten depositum, oppkjoep og finansielle investeringer); dda = 'Depreciation and amortisation' for konsernet. Konsernet, ikke jernmalmsegmentet: fra FY2021 er Fortescue Energy med (segmentets investeringer og kapitalinnskudd 88 til 394 MUSD i aaret, avskrivninger 20 til 75), under ti prosent av totalen. Jernmalmsegmentets avskrivninger (FY2026 2 812 av 2 872) er kontrollert mot summen. FY2008 til FY2011 mangler: PDF-ene hadde ikke lesbar tekst.",
+   "aar": {
+    "2012": {
+     "capex": 6044,
+     "dda": 266,
+     "kilde": "Fortescue aarsrapport FY13 AR (sammenligningstall), kontantstroem s.91 og resultat"
+    },
+    "2013": {
+     "capex": 6355,
+     "dda": 463,
+     "kilde": "Fortescue aarsrapport FY13 AR s.91; FY14 AR s.128"
+    },
+    "2014": {
+     "capex": 1995,
+     "dda": 965,
+     "kilde": "Fortescue aarsrapport FY14 AR s.128; FY15 AR s.107 og s.111"
+    },
+    "2015": {
+     "capex": 849,
+     "dda": 1405,
+     "kilde": "Fortescue aarsrapport FY15 AR s.107/111; FY16 AR s.80/84"
+    },
+    "2016": {
+     "capex": 360,
+     "dda": 1244,
+     "kilde": "Fortescue aarsrapport FY16 AR s.80/84; FY17 AR s.66/70"
+    },
+    "2017": {
+     "capex": 729,
+     "dda": 1243,
+     "kilde": "Fortescue aarsrapport FY17 AR s.66/70; FY18 AR s.70/74"
+    },
+    "2018": {
+     "capex": 901,
+     "dda": 1277,
+     "kilde": "Fortescue aarsrapport FY18 AR s.70/74; FY19 AR s.75/79"
+    },
+    "2019": {
+     "capex": 1048,
+     "dda": 1196,
+     "kilde": "Fortescue aarsrapport FY19 AR s.75/79; FY20 AR s.79/83"
+    },
+    "2020": {
+     "capex": 1945,
+     "dda": 1400,
+     "kilde": "Fortescue aarsrapport FY20 AR s.79/83; FY21 AR s.81/85"
+    },
+    "2021": {
+     "capex": 3382,
+     "dda": 1366,
+     "kilde": "Fortescue aarsrapport FY21 AR s.81/85; FY22 AR s.87"
+    },
+    "2022": {
+     "capex": 2803,
+     "dda": 1528,
+     "kilde": "Fortescue aarsrapport FY22 AR s.87/43; FY23 AR s.114/118"
+    },
+    "2023": {
+     "capex": 2901,
+     "dda": 1744,
+     "kilde": "Fortescue aarsrapport FY23 AR s.114/118; FY24 AR s.158/162"
+    },
+    "2024": {
+     "capex": 2834,
+     "dda": 2144,
+     "kilde": "Fortescue aarsrapport FY24 AR s.158/162; FY25 AR s.175/178"
+    },
+    "2025": {
+     "capex": 3263,
+     "dda": 2506,
+     "kilde": "Fortescue aarsrapport FY25 AR s.175/178; FY26 AR s.192/195"
+    },
+    "2026": {
+     "capex": 3181,
+     "dda": 2872,
+     "kilde": "Fortescue aarsrapport FY26 AR s.192/195"
+    }
+   }
   }
  }
 }

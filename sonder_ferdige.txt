@@ -30,4 +30,8 @@ sonde_kjor_c_manuell3
 sonde_kjor_backtest
 sonde_kjor_backtest_lang
 sonde_kjor_land
+sonde_kjor_backtest
+sonde_kjor_backtest_lang
+sonde_kjor_land
+sonde_kjor_b_fmg
 sonde_kjor_faktor

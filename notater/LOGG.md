@@ -41,6 +41,22 @@ utbytte; kolonnen `grunnlag` sier hva som ble brukt. `siste_kurs` i
 `kurser_uke.csv` eller `flagg_uke.csv` på kolonneposisjon, må det sjekkes.
 Resultatet av faktorsonden føres i et eget innslag.
 
+### 29.09.2026 10:00, Cowork
+**Hva:** Fortescue lagt inn i tilbudsskåren B for jernmalm, lest fra
+`sonder/sonde_kjor_b_fmg.txt` (årsrapportene FY2012 til FY2026).
+**Filer:** `b_manuell.json` (FMG lagt til), `sonder_ferdige.txt` (lagt til
+`sonde_kjor_b_fmg`), `notater/LOGG.md`.
+**Den andre økten må vite:** Kvartalsvis kjøring 29.09 kl. 09:52 bekreftet B for
+jernmalm uten Fortescue: ratio 1,875 (2025), B1 20, B2 0, og DNO trang (10,1
+kvartaler). Med Fortescue (prøvekjørt) går serien 2012 til 2026 med fire selskaper.
+Fortescue er konsernet: Payments for PP&E (Fortescue pluss joint operations)
+mot Depreciation and amortisation, alle år kontrollert i to rapporter unntatt
+FY2012 og FY2026. Fortescue Energy er med fra FY2021 (under ti prosent). FY2008 til
+FY2011 mangler (ingen lesbar tekst i PDF-ene). NB: 2026 står med bare Fortescue og
+Champion (regnskapsår som slutter i 2026) og trekker siste ratio ned til 1,16,
+mot 1,60 for 2025 med alle fire. Regelen om at regnskapsåret merkes med året det
+slutter er uendret; en endring er Frodes valg.
+
 ### 29.09.2026 09:50, Cowork
 **Hva:** (arbeidet ble gjort 28.09, pushet 29.09) Tilbudsskåren B for jernmalm fra årsrapporter, og DNO i
 overlevelsesporten C. Fortescue-sonde for B.
