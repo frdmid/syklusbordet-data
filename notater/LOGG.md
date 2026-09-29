@@ -9,6 +9,23 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 10:04, Claude Code
+**Hva:** Flaggloggen utvidet (Frodes punkt 2). Kursloggen får utbytte per uke og
+valutakurs til dollar. Ukeloggen får B, B1, B2 og Ar per segment. Hypotesen om
+kjøp etter én måned og salg etter tre måles nå i dollar med utbytte, mot ACWI
+på samme måte. Ny sonde for faktorjustering (punkt 3) lagt inn og kjørt.
+**Filer:** `flagglogg.py`, `sonde_kjor_faktor.py` (ny). Fra neste onsdag får
+`logg/kurser_uke.csv` kolonnene `utbytte` og `usd_per_enhet`, og
+`logg/flagg_uke.csv` kolonnene `Ar`, `B`, `B1`, `B2`. `logg/hypotese_3mnd.csv`
+får `utbytte` og `grunnlag`.
+**Den andre økten må vite:** Målet for hypotesen er endret før noe utfall fantes
+(ingen rene innslag ennå). Kriteriet for bekreftet er uendret. Eldre kursrader
+mangler utbytte og valuta, og da faller målingen tilbake til egen valuta uten
+utbytte; kolonnen `grunnlag` sier hva som ble brukt. `siste_kurs` i
+`flagglogg.py` returnerer nå en dict, ikke en tuppel. Leser noe annet
+`kurser_uke.csv` eller `flagg_uke.csv` på kolonneposisjon, må det sjekkes.
+Resultatet av faktorsonden føres i et eget innslag.
+
 ### 29.09.2026 09:50, Cowork
 **Hva:** (arbeidet ble gjort 28.09, pushet 29.09) Tilbudsskåren B for jernmalm fra årsrapporter, og DNO i
 overlevelsesporten C. Fortescue-sonde for B.

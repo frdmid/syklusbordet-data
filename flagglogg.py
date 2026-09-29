@@ -36,9 +36,15 @@ import requests
 UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"}
 
-F_UKE = ["uke", "dato", "segment", "siste_obs", "A", "Ad", "D", "port", "trend",
-         "cot_pctl_3aar", "bunnsone", "oppsikt", "d95"]
-F_KURS = ["uke", "dato", "ticker", "segmenter", "kurs", "valuta", "kursdato"]
+# B, B1, B2 og Ar lagt til 29.09.2026 (Frodes beslutning), slik at kombinasjoner
+# som "flagg pluss B" eller "flagg pluss D" kan regnes framover paa loggede tall.
+F_UKE = ["uke", "dato", "segment", "siste_obs", "A", "Ad", "Ar", "B", "B1", "B2", "D", "port",
+         "trend", "cot_pctl_3aar", "bunnsone", "oppsikt", "d95"]
+# utbytte og usd_per_enhet lagt til 29.09.2026. utbytte er summen av utbytte
+# per aksje med eksdato etter forrige loggede kursdato for papiret og til og
+# med denne, i papirets valuta. usd_per_enhet er dollar per enhet av valutaen
+# samme dag (GBp er pence). Uten dem kan totalavkastning i en valuta ikke regnes.
+F_KURS = ["uke", "dato", "ticker", "segmenter", "kurs", "valuta", "kursdato", "utbytte", "usd_per_enhet"]
 F_HEND = ["uke", "dato", "segment", "hendelse", "ticker", "kurs", "valuta", "kursdato",
           "A", "Ad", "D", "port", "trend", "merknad"]
 
@@ -49,20 +55,35 @@ def ukenokkel(d):
 
 
 def siste_kurs(tk):
-    """Siste dagskurs fra Yahoo: (kurs, valuta, dato) eller (None, None, None)."""
+    """Siste dagskurs fra Yahoo, med utbytte siste maaned.
+    Returnerer dict med kurs, valuta, kursdato og utbytte [(dato, beloep)],
+    eller kurs None."""
+    tom = {"kurs": None, "valuta": None, "kursdato": None, "utbytte": []}
     try:
         r = requests.get(f"https://query1.finance.yahoo.com/v8/finance/chart/{tk}"
-                         "?range=10d&interval=1d", headers=UA, timeout=25).json()["chart"]["result"][0]
+                         "?range=1mo&interval=1d&events=div", headers=UA, timeout=25).json()["chart"]["result"][0]
         q = r["indicators"]["quote"][0]["close"]
-        ts = r["timestamp"]
-        par = [(t, v) for t, v in zip(ts, q) if v is not None]
+        par = [(t, v) for t, v in zip(r["timestamp"], q) if v is not None]
         if not par:
-            return None, None, None
+            return tom
         t, v = par[-1]
-        return round(float(v), 4), (r.get("meta") or {}).get("currency"), \
-            dt.datetime.utcfromtimestamp(t).strftime("%Y-%m-%d")
+        div = [(dt.datetime.utcfromtimestamp(int(d["date"])).strftime("%Y-%m-%d"), float(d["amount"]))
+               for d in ((r.get("events") or {}).get("dividends") or {}).values()]
+        return {"kurs": round(float(v), 4), "valuta": (r.get("meta") or {}).get("currency"),
+                "kursdato": dt.datetime.utcfromtimestamp(t).strftime("%Y-%m-%d"), "utbytte": sorted(div)}
     except Exception:
-        return None, None, None
+        return tom
+
+
+def usd_per(valuta, kursfunk=None):
+    """Dollar per enhet av valutaen, fra Yahoo. GBp er pence."""
+    if not valuta:
+        return None
+    if valuta == "USD":
+        return 1.0
+    grunn, deler = ("GBP", 100.0) if valuta == "GBp" else (valuta, 1.0)
+    k = (kursfunk or siste_kurs)(f"{grunn}USD=X")
+    return None if k["kurs"] is None else round(k["kurs"] / deler, 8)
 
 
 def les_csv(tekst):
@@ -98,10 +119,13 @@ def _b(x):
 #   Inngang:   foerste loggede ukekurs med kursdato minst 28 dager etter
 #              flaggdatoen.
 #   Utgang:    foerste loggede ukekurs med kursdato minst 91 dager etter inngang.
-#   Maal:      papirets avkastning minus ACWI (verdensindeksen, logget som
-#              referanse) i samme vindu. Papiret i egen valuta, ACWI i dollar,
-#              saa valutautslag inngaar. Kurser er siste omsetning, ikke
-#              justert for utbytte.
+#   Maal:      papirets totalavkastning minus ACWI (verdensindeksen, logget som
+#              referanse) i samme vindu, begge i dollar og med utbytte. Endret
+#              29.09.2026, foer noe utfall fantes: foerste versjon brukte kurs
+#              uten utbytte og papirets egen valuta. For kursrader logget foer
+#              29.09 mangler utbytte og valutakurs, og da faller maalingen
+#              tilbake til egen valuta uten utbytte. Kolonnen grunnlag sier hva
+#              som ble brukt.
 #   Med:       bare rene innslag (hendelse tenkt_kjoep). Ikke papirer som sto i
 #              sonen da loggen startet, og ikke d95.
 #   Bekreftet: naar minst fem episoder er ferdige (innslag med hoeyst seks
@@ -112,7 +136,7 @@ def _b(x):
 # ---------------------------------------------------------------------------
 REFERANSE = "ACWI"
 F_HYP = ["segment", "ticker", "flaggdato", "status", "inngang_dato", "inngang_kurs", "utgang_dato",
-         "utgang_kurs", "valuta", "avk_pst", "acwi_avk_pst", "mot_acwi_pst"]
+         "utgang_kurs", "valuta", "utbytte", "grunnlag", "avk_pst", "acwi_avk_pst", "mot_acwi_pst"]
 
 
 def _dato(x):
@@ -132,15 +156,34 @@ def hypotese_3mnd(hendelser, kurser, idag):
             k = float(k)
         except (TypeError, ValueError):
             continue
+        fx = r.get("usd_per_enhet")
+        try:
+            fx = float(fx) if fx not in (None, "") else None
+        except ValueError:
+            fx = None
+        try:
+            utb = float(r.get("utbytte")) if r.get("utbytte") not in (None, "") else None
+        except ValueError:
+            utb = None
         if d:
-            serie.setdefault(r["ticker"], {})[d] = (k, r.get("valuta"))
+            serie.setdefault(r["ticker"], {})[d] = (k, r.get("valuta"), fx, utb)
     serie = {tk: sorted(v.items()) for tk, v in serie.items()}
 
     def forste_etter(tk, grense):
-        for d, (k, v) in serie.get(tk, []):
+        for d, v in serie.get(tk, []):
             if d >= grense:
-                return d, k, v
+                return (d,) + v
         return None
+
+    def avkastning(tk, a, b):
+        """Fra rad a til rad b. I dollar med utbytte hvis alle rader har
+        valutakurs og utbyttefelt, ellers egen valuta uten utbytte."""
+        rader = [x for x in serie.get(tk, []) if a[0] < x[0] <= b[0]]
+        fullt = a[3] is not None and b[3] is not None and all(x[1][3] is not None for x in rader)
+        if fullt:
+            utb = sum(x[1][3] for x in rader)
+            return 100 * ((b[1] + utb) * b[3] / (a[1] * a[3]) - 1), utb, "dollar med utbytte"
+        return 100 * (b[1] / a[1] - 1), None, "egen valuta uten utbytte"
 
     ut = []
     for h in hendelser:
@@ -157,11 +200,13 @@ def hypotese_3mnd(hendelser, kurser, idag):
         uts = forste_etter(h["ticker"], inn[0] + dt.timedelta(days=91))
         if not uts:
             ut.append({**rad, "status": "aapen"}); continue
-        rad.update({"utgang_dato": str(uts[0]), "utgang_kurs": uts[1],
-                    "avk_pst": round(100 * (uts[1] / inn[1] - 1), 2)})
+        avk, utb, grunn = avkastning(h["ticker"], inn, uts)
+        rad.update({"utgang_dato": str(uts[0]), "utgang_kurs": uts[1], "grunnlag": grunn,
+                    "utbytte": "" if utb is None else round(utb, 6), "avk_pst": round(avk, 2)})
         ai, au = forste_etter(REFERANSE, inn[0]), forste_etter(REFERANSE, uts[0])
         if ai and au:
-            rad["acwi_avk_pst"] = round(100 * (au[1] / ai[1] - 1), 2)
+            aa, _, _ = avkastning(REFERANSE, ai, au)
+            rad["acwi_avk_pst"] = round(aa, 2)
             rad["mot_acwi_pst"] = round(rad["avk_pst"] - rad["acwi_avk_pst"], 2)
         ut.append({**rad, "status": "ferdig"})
     return ut
@@ -189,7 +234,8 @@ def oppdater(segmenter, les, skriv, note=print, idag=None, kursfunk=siste_kurs):
             continue
         sc = s.get("scores") or {}
         rad = {"uke": uke, "dato": dato, "segment": s["id"], "siste_obs": s.get("last_obs"),
-               "A": sc.get("A"), "Ad": sc.get("Ad"), "D": sc.get("D"), "port": sc.get("gate"),
+               "A": sc.get("A"), "Ad": sc.get("Ad"), "Ar": sc.get("Ar"), "B": sc.get("B"),
+               "B1": sc.get("B1"), "B2": sc.get("B2"), "D": sc.get("D"), "port": sc.get("gate"),
                "trend": (s.get("trend") or {}).get("signal"),
                "cot_pctl_3aar": (s.get("cot") or {}).get("mm_pctl_3aar"),
                "bunnsone": bool(sc.get("flagg")), "oppsikt": bool(sc.get("oppsikt")),
@@ -208,10 +254,26 @@ def oppdater(segmenter, les, skriv, note=print, idag=None, kursfunk=siste_kurs):
     for tk in sorted(papirer):
         kurs[tk] = kursfunk(tk)
         time.sleep(0.2)
-    nye_kurs = [{"uke": uke, "dato": dato, "ticker": tk, "segmenter": " ".join(sorted(p["segs"])),
-                 "kurs": kurs[tk][0], "valuta": kurs[tk][1], "kursdato": kurs[tk][2]}
-                for tk, p in sorted(papirer.items())]
-    mangler = [tk for tk in papirer if kurs[tk][0] is None]
+    # Utbytte telles fra dagen etter forrige loggede kursdato for papiret, saa
+    # ingenting telles to ganger og ingenting faller mellom to uker (Yahoo gir
+    # en maaned tilbake). Foerste gang et papir logges, telles bare denne uken.
+    sist_dato = {}
+    for r in gml_kurs:
+        if r.get("kursdato"):
+            sist_dato[r["ticker"]] = max(sist_dato.get(r["ticker"], ""), r["kursdato"])
+    fx = {}
+    for v in sorted({k["valuta"] for k in kurs.values() if k["valuta"]}):
+        fx[v] = usd_per(v, kursfunk)
+    nye_kurs = []
+    for tk, p in sorted(papirer.items()):
+        k = kurs[tk]
+        fra = sist_dato.get(tk) or (str(_dato(k["kursdato"]) - dt.timedelta(days=7)) if k["kursdato"] else "")
+        utb = sum(b for d, b in k["utbytte"] if fra < d <= (k["kursdato"] or ""))
+        nye_kurs.append({"uke": uke, "dato": dato, "ticker": tk, "segmenter": " ".join(sorted(p["segs"])),
+                         "kurs": k["kurs"], "valuta": k["valuta"], "kursdato": k["kursdato"],
+                         "utbytte": round(utb, 6) if k["kurs"] is not None else "",
+                         "usd_per_enhet": fx.get(k["valuta"]) if k["kurs"] is not None else ""})
+    mangler = [tk for tk in papirer if kurs[tk]["kurs"] is None]
 
     # ------------------------------------------------ hendelser
     nye_hend = []
@@ -243,7 +305,8 @@ def oppdater(segmenter, les, skriv, note=print, idag=None, kursfunk=siste_kurs):
                 for i in seg.get("instrumenter") or []:
                     if i.get("omvendt"):
                         continue
-                    k = kurs.get(i["ticker"], (None, None, None))
+                    k = kurs.get(i["ticker"]) or {"kurs": None, "valuta": None, "kursdato": None}
+                    k = (k["kurs"], k["valuta"], k["kursdato"])
                     nye_hend.append({**base, "hendelse": "tenkt_kjoep_d95" if parallell else "tenkt_kjoep",
                                      "ticker": i["ticker"],
                                      "kurs": k[0], "valuta": k[1], "kursdato": k[2],
