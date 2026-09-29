@@ -1,8 +1,9 @@
-Hopper over 33 ferdige sonder (sonder_ferdige.txt): sonde_kjor_b_fmg, sonde_kjor_b_haleregel, sonde_kjor_b_jernmalm, sonde_kjor_b_kilder, sonde_kjor_backtest, sonde_kjor_backtest_lang, sonde_kjor_bdi, sonde_kjor_brasil, sonde_kjor_c_manuell, sonde_kjor_c_manuell2, sonde_kjor_c_manuell3, sonde_kjor_cot, sonde_kjor_d95, sonde_kjor_dadj, sonde_kjor_faktor, sonde_kjor_fearnleys_mal, sonde_kjor_fond, sonde_kjor_fond_norge, sonde_kjor_indikator, sonde_kjor_instrumenttest, sonde_kjor_kali_platina, sonde_kjor_kurve, sonde_kjor_laks, sonde_kjor_land, sonde_kjor_macrotrends, sonde_kjor_rigg, sonde_kjor_salg, sonde_kjor_stockanalysis, sonde_kjor_terskel, sonde_kjor_timing, sonde_kjor_tio, sonde_kjor_uran, sonde_kjor_utforsk_etf
-
-Oppstarter: 1 sonde(r) funnet
-
-=== sonde_kjor_utbytte ===
+sonde:   sonde_kjor_utbytte
+kjort:   2026-09-29 09:00:02 UTC
+commit:  a16cd79
+status:  OK
+brukte:  40 sekunder
+--------------------------------------------------------------
 60 papirer
 
 papir      val  utb 3 aar   enhet yield 12m TR dag adj TR mnd adj TR kurs+utb  merknad
@@ -89,9 +90,3 @@ OPPSUMMERING
    TMIP.L     utbytte i annen enhet eller valuta enn kursen (x99.97); kurs+utbytte avviker +334.6 pp fra adjclose; urimelig hoey utbytteavkastning
    TRMD-A.CO  utbytte i annen enhet eller valuta enn kursen (x6.59); kurs+utbytte avviker +17.9 pp fra adjclose
    WCP.TO     kurs+utbytte avviker -2.4 pp fra adjclose
-
---- skrevet til sonder/sonde_kjor_utbytte.txt (40 s, kode 0)
-
-
-OPPSUMMERING
-   OK    sonde_kjor_utbytte                          40 s  -> sonder/sonde_kjor_utbytte.txt
