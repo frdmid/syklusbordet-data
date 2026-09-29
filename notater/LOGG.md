@@ -9,6 +9,15 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 15:44, Claude Code
+**Hva:** Kvartalsvis innhenting kjørt; `b_rigg.json` har nå grunt vann B2 100
+(Borr) og dypt vann B2 100 (Transocean), land 81,7. Dashbordet er publisert
+som versjon 47 med ny tekst om Valaris, og oljeservice i databasen er
+oppdatert med de nye tallene (versjon 3). `segments/oljeservice.json` i
+repoet får dem ved den ukentlige kjøringen onsdag.
+**Filer:** Ingen i repoet; dashbordet og databasen.
+**Den andre økten må vite:** Ingenting.
+
 ### 29.09.2026 15:41, Claude Code
 **Hva:** Valaris tatt ut av B for rigger fra 2021 (Frodes beslutning,
 `UTELAT_FRA` i `rigg_b.py`). Riggene ble skrevet ned ved konkursen, så
