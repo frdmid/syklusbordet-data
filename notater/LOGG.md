@@ -9,6 +9,15 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 14:56, Claude Code
+**Hva:** Ny sonde `sonde_kjor_rigg_segment.py` (Frodes bestilling): henter
+segmenttall (flytere og jackups) fra XBRL-filene til årsrapportene for de
+blandede riggselskapene og legger dem sammen med de rene selskapene fra
+`sonde_kjor_rigg_b`. Klassifisering og kontroll står i fila, satt før
+kjøring. Ligger foreløpig bare på arbeidsgrenen; kjøres lokalt nå.
+**Filer:** `sonde_kjor_rigg_segment.py` (ny).
+**Den andre økten må vite:** Ingenting er bygget på dashbordet.
+
 ### 29.09.2026 14:52, Claude Code
 **Hva:** Ny sonde `sonde_kjor_rigg_b.py` (Frodes bestilling): B for rigger som
 capex delt på avskrivninger fra SEC, delt i land, grunt vann (jackups) og
