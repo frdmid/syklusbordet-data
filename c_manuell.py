@@ -16,6 +16,13 @@
 #           gjeld / egenkapital under 1,5, trang: 8 til 16, stengt: under 8.
 #   netto gjeld over 3x egenkapital gjoer aapen til trang.
 #
+# Produksjonsstart (Frodes beslutning 29.09.2026): aar foer produksjonsstart
+# teller ikke. Et utviklingsselskap brenner penger fordi det bygger, ikke fordi
+# raavaren er i en bunn, og det sier ingenting om hvordan selskapet taaler en
+# syklisk bunn. Feltet "produksjon_fra" i c_manuell.json er det foerste hele
+# regnskapsaaret med produksjon; tidligere driftsaar utelates, med kilde i
+# feltet "produksjon_kilde". Aaret produksjonen startet midt i, teller ikke.
+#
 # Valuta: et forhold mellom to beloep maa ha samme valuta. Driftsaar i en annen
 # valuta enn de siste balansetallene regnes om med Norges Banks aarssnitt for
 # det aaret (snitt passer for en stroem over aaret). Mangler kursen for et
@@ -103,6 +110,12 @@ def maal(aksjer, sti="c_manuell.json", kurs=nok_per_enhet):
         except Exception as e:
             print(f"   {tk:12s} valutakurs mangler: {type(e).__name__} {str(e)[:60]}, hoppes over")
             continue
+        pf = d.get("produksjon_fra")
+        if pf is not None:
+            utelatt = [int(a) for a in drift.index if a < int(pf)]
+            drift = drift[drift.index >= int(pf)]
+            if utelatt:
+                print(f"   {tk:12s} aar foer produksjonsstart utelatt: {utelatt}")
         if len(drift) < 4 or s["aar"] not in drift.index:
             print(f"   {tk:12s} for faa driftsaar ({len(drift)}) eller siste aar mangler, hoppes over")
             continue
@@ -115,6 +128,7 @@ def maal(aksjer, sti="c_manuell.json", kurs=nok_per_enhet):
                   "kontanter_m": round(s["kontanter"], 1), "verste_drift_m": round(r["stress"], 1),
                   "drift_naa_m": round(r["naa"], 1), "rente_m": s.get("rente"), "valuta": val,
                   "aar": [int(drift.index[0]), int(drift.index[-1])],
+                  "produksjon_fra": pf,
                   "kilde": "manuelt lest aarsrapport: " + d.get("kilde", "")}
         print(f"   {tk:12s} {r['port']:7s} {r['hvorfor'][:38]:40s} bunnaar {r['bunnaar']} av "
               f"{len(drift)} aar, netto gjeld/EK {str(r['netto_gjeld_ek']):>6}  (manuelt)")

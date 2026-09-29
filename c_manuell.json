@@ -1,5 +1,5 @@
 {
- "_merknad": "Overlevelsesport C for papirer uten SEC-tall, lest for haand fra aarsrapportene. Beloep i millioner i rapportvalutaen. drift = kontantstroem fra driften (konsern). siste = balansen og betalte renter for siste regnskapsaar. Brukes av c_manuell.py fra overlevelse_c.py.",
+ "_merknad": "Overlevelsesport C for papirer uten SEC-tall, lest for haand fra aarsrapportene. Beloep i millioner i rapportvalutaen. drift = kontantstroem fra driften (konsern). siste = balansen og betalte renter for siste regnskapsaar. Brukes av c_manuell.py fra overlevelse_c.py. Feltet produksjon_fra (fra 29.09.2026): driftsaar foer dette aaret teller ikke.",
  "AKRBP.OL": {
   "kilde": "Aker BP, Det norske og Pertra (forgjengerne), aarsrapporter 2006 til 2025 fra akerbp.com, lest av sonde_kjor_c_manuell 25.09.2026 og kontrollert paa overlappende aar i to rapporter. 2019 mangler (2020-rapporten ga ingen lesbar oppstilling). Siste aar fra kvartalsrapporten Q4 2025: kontanter 2 344,1, betalte renter 394,8, drift 6 958,2 (lik aarsrapporten); balansen fra aarsrapporten 2025 s. 140: langsiktige obligasjoner 8 358,6, egenkapital 11 226,2. Finansielle investeringer 300,0 er ikke regnet som kontanter.",
   "drift": {
@@ -176,6 +176,364 @@
    "gjeld": 989.1,
    "egenkapital": 1328.5,
    "rente": 105.8
+  }
+ },
+ "CIA.TO": {
+  "kilde": "Champion Iron, aarsregnskap FY2014 til FY2026 fra championiron.com (regnskapsaar til 31. mars, merket med aaret det slutter), lest via nettverktoey 29.09.2026. FY2019 til FY2026 kontrollert mot to regnskap og summert linje for linje. Omarbeidede aar bruker siste regnskap: FY2021 624,419 (opprinnelig 623,476), FY2018 -131,649 (opprinnelig -101,131, forskuddsbetalinger flyttet fra investering til drift), FY2015 -5,435651 (opprinnelig -5,435652). FY2014 til FY2016 bare sikre paa totalnivaa. FY2014 til FY2018 er utviklingsaar foer og under gjenoppstarten av Bloom Lake. Siste aar FY2026 (31.03.2026, tusen CAD i regnskapet): kontanter 296 788, langsiktig gjeld 922 136 (uten leie), egenkapital 1 534 259, betalte renter 67 554.",
+  "drift": {
+   "2014": {
+    "drift": -5.219127,
+    "valuta": "CAD"
+   },
+   "2015": {
+    "drift": -5.435651,
+    "valuta": "CAD"
+   },
+   "2016": {
+    "drift": -3.835868,
+    "valuta": "CAD"
+   },
+   "2017": {
+    "drift": -20.089482,
+    "valuta": "CAD"
+   },
+   "2018": {
+    "drift": -131.649,
+    "valuta": "CAD"
+   },
+   "2019": {
+    "drift": 176.698,
+    "valuta": "CAD"
+   },
+   "2020": {
+    "drift": 309.567,
+    "valuta": "CAD"
+   },
+   "2021": {
+    "drift": 624.419,
+    "valuta": "CAD"
+   },
+   "2022": {
+    "drift": 470.435,
+    "valuta": "CAD"
+   },
+   "2023": {
+    "drift": 235.984,
+    "valuta": "CAD"
+   },
+   "2024": {
+    "drift": 474.585,
+    "valuta": "CAD"
+   },
+   "2025": {
+    "drift": 304.018,
+    "valuta": "CAD"
+   },
+   "2026": {
+    "drift": 435.931,
+    "valuta": "CAD"
+   }
+  },
+  "siste": {
+   "aar": 2026,
+   "valuta": "CAD",
+   "kontanter": 296.788,
+   "gjeld": 922.136,
+   "egenkapital": 1534.259,
+   "rente": 67.554
+  },
+  "produksjon_fra": 2019,
+  "produksjon_kilde": "Bloom Lake ble satt i drift igjen under Champion i februar 2018 (championiron.com/project/bloom-lake: 'successfully recommissioned the project on time and on budget in February 2018'). FY2018 (april 2017 til mars 2018) hadde to maaneder med oppstart; FY2019 er foerste hele regnskapsaar med produksjon. FY2014 til FY2017 var leting og utvikling."
+ },
+ "LIF.TO": {
+  "kilde": "Labrador Iron Ore Royalty, konsernets kontantstroem fra driften 2005 til 2025 fra aarsresultatmeldingene som gjengir hele regnskapet (labradorironore.com, newswire.ca), lest via nettverktoey 29.09.2026. Hver kolonne summert linje for linje og kontantavstemt aar for aar. 2005, 2012 og 2013 har bare en kilde. 2010 til 2012 er renter paa ansvarlige laan trukket i driften. Siste aar 2025 (tusen CAD): kontanter 14 568, ingen trukket gjeld (30 MCAD ubenyttet ramme), egenkapital 645 208, ingen rentekostnad.",
+  "drift": {
+   "2005": {
+    "drift": 72.706889,
+    "valuta": "CAD"
+   },
+   "2006": {
+    "drift": 60.018375,
+    "valuta": "CAD"
+   },
+   "2007": {
+    "drift": 67.198257,
+    "valuta": "CAD"
+   },
+   "2008": {
+    "drift": 186.191796,
+    "valuta": "CAD"
+   },
+   "2009": {
+    "drift": 42.407443,
+    "valuta": "CAD"
+   },
+   "2010": {
+    "drift": 155.920875,
+    "valuta": "CAD"
+   },
+   "2011": {
+    "drift": 121.934296,
+    "valuta": "CAD"
+   },
+   "2012": {
+    "drift": 51.473237,
+    "valuta": "CAD"
+   },
+   "2013": {
+    "drift": 121.690503,
+    "valuta": "CAD"
+   },
+   "2014": {
+    "drift": 113.541709,
+    "valuta": "CAD"
+   },
+   "2015": {
+    "drift": 59.907879,
+    "valuta": "CAD"
+   },
+   "2016": {
+    "drift": 63.473476,
+    "valuta": "CAD"
+   },
+   "2017": {
+    "drift": 166.961,
+    "valuta": "CAD"
+   },
+   "2018": {
+    "drift": 148.797,
+    "valuta": "CAD"
+   },
+   "2019": {
+    "drift": 224.564,
+    "valuta": "CAD"
+   },
+   "2020": {
+    "drift": 175.432,
+    "valuta": "CAD"
+   },
+   "2021": {
+    "drift": 402.422,
+    "valuta": "CAD"
+   },
+   "2022": {
+    "drift": 184.191,
+    "valuta": "CAD"
+   },
+   "2023": {
+    "drift": 152.488,
+    "valuta": "CAD"
+   },
+   "2024": {
+    "drift": 201.908,
+    "valuta": "CAD"
+   },
+   "2025": {
+    "drift": 97.068,
+    "valuta": "CAD"
+   }
+  },
+  "siste": {
+   "aar": 2025,
+   "valuta": "CAD",
+   "kontanter": 14.568,
+   "gjeld": 0.0,
+   "egenkapital": 645.208,
+   "rente": 0.0
+  }
+ },
+ "AI.PA": {
+  "kilde": "Air Liquide, 'Flux net de tresorerie genere par les activites operationnelles' 2005 til 2025 fra referansedokumentene, resultatmeldingene og ESEF-filene (AMF-arkivet og filings.xbrl.org), hvert aar likt i to kilder, lest 29.09.2026. Siste aar 2025 (MEUR): kontanter 3 962,0, langsiktige laan 10 030,0 (uten leie), egenkapital 26 947,2 (med minoritet), betalte netto finansrenter 177,7 (leierenter 50,3 ikke med, som for SEC-selskapene).",
+  "drift": {
+   "2005": {
+    "drift": 1720.1,
+    "valuta": "EUR"
+   },
+   "2006": {
+    "drift": 1766.7,
+    "valuta": "EUR"
+   },
+   "2007": {
+    "drift": 2102.1,
+    "valuta": "EUR"
+   },
+   "2008": {
+    "drift": 2292.9,
+    "valuta": "EUR"
+   },
+   "2009": {
+    "drift": 2451.8,
+    "valuta": "EUR"
+   },
+   "2010": {
+    "drift": 2419.9,
+    "valuta": "EUR"
+   },
+   "2011": {
+    "drift": 2425.8,
+    "valuta": "EUR"
+   },
+   "2012": {
+    "drift": 2708.5,
+    "valuta": "EUR"
+   },
+   "2013": {
+    "drift": 2802.7,
+    "valuta": "EUR"
+   },
+   "2014": {
+    "drift": 2829.6,
+    "valuta": "EUR"
+   },
+   "2015": {
+    "drift": 2832.4,
+    "valuta": "EUR"
+   },
+   "2016": {
+    "drift": 3696.5,
+    "valuta": "EUR"
+   },
+   "2017": {
+    "drift": 4254.0,
+    "valuta": "EUR"
+   },
+   "2018": {
+    "drift": 4716.4,
+    "valuta": "EUR"
+   },
+   "2019": {
+    "drift": 4712.2,
+    "valuta": "EUR"
+   },
+   "2020": {
+    "drift": 5205.7,
+    "valuta": "EUR"
+   },
+   "2021": {
+    "drift": 5570.7,
+    "valuta": "EUR"
+   },
+   "2022": {
+    "drift": 5810.1,
+    "valuta": "EUR"
+   },
+   "2023": {
+    "drift": 6263.0,
+    "valuta": "EUR"
+   },
+   "2024": {
+    "drift": 6322.2,
+    "valuta": "EUR"
+   },
+   "2025": {
+    "drift": 6518.4,
+    "valuta": "EUR"
+   }
+  },
+  "siste": {
+   "aar": 2025,
+   "valuta": "EUR",
+   "kontanter": 3962.0,
+   "gjeld": 10030.0,
+   "egenkapital": 26947.2,
+   "rente": 177.7
+  }
+ },
+ "HEI.DE": {
+  "kilde": "Heidelberg Materials (HeidelbergCement), kontantstroem fra driften for konsernet inkludert avviklet virksomhet 2005 til 2025, fra aarsrapportenes nokkeltall og Business Figures, hvert aar likt i minst to kilder unntatt 2005, lest 29.09.2026. Hele millioner til 2020. 2013 omarbeidet til 1 167 (opprinnelig 1 057). Siste aar 2025 (MEUR): kontanter 2 627,4, langsiktige obligasjoner 5 354,8 og banklaan 360,0 (sum 5 714,8, leie ligger i annen post og er ikke med), egenkapital 19 300,9 (med minoritet), betalte renter 356,2.",
+  "drift": {
+   "2005": {
+    "drift": 795,
+    "valuta": "EUR"
+   },
+   "2006": {
+    "drift": 1259,
+    "valuta": "EUR"
+   },
+   "2007": {
+    "drift": 1911,
+    "valuta": "EUR"
+   },
+   "2008": {
+    "drift": 1523,
+    "valuta": "EUR"
+   },
+   "2009": {
+    "drift": 1164,
+    "valuta": "EUR"
+   },
+   "2010": {
+    "drift": 1144,
+    "valuta": "EUR"
+   },
+   "2011": {
+    "drift": 1332,
+    "valuta": "EUR"
+   },
+   "2012": {
+    "drift": 1513,
+    "valuta": "EUR"
+   },
+   "2013": {
+    "drift": 1167,
+    "valuta": "EUR"
+   },
+   "2014": {
+    "drift": 1480,
+    "valuta": "EUR"
+   },
+   "2015": {
+    "drift": 1449,
+    "valuta": "EUR"
+   },
+   "2016": {
+    "drift": 1874,
+    "valuta": "EUR"
+   },
+   "2017": {
+    "drift": 2038,
+    "valuta": "EUR"
+   },
+   "2018": {
+    "drift": 1968,
+    "valuta": "EUR"
+   },
+   "2019": {
+    "drift": 2664,
+    "valuta": "EUR"
+   },
+   "2020": {
+    "drift": 3027,
+    "valuta": "EUR"
+   },
+   "2021": {
+    "drift": 2396.0,
+    "valuta": "EUR"
+   },
+   "2022": {
+    "drift": 2420.2,
+    "valuta": "EUR"
+   },
+   "2023": {
+    "drift": 3205.1,
+    "valuta": "EUR"
+   },
+   "2024": {
+    "drift": 3231.7,
+    "valuta": "EUR"
+   },
+   "2025": {
+    "drift": 3254.8,
+    "valuta": "EUR"
+   }
+  },
+  "siste": {
+   "aar": 2025,
+   "valuta": "EUR",
+   "kontanter": 2627.4,
+   "gjeld": 5714.8,
+   "egenkapital": 19300.9,
+   "rente": 356.2
   }
  }
 }
