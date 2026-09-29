@@ -1,0 +1,68 @@
+sonde:   sonde_kjor_b_haleregel
+kjort:   2026-09-29 08:13:50 UTC
+commit:  e91e569
+status:  OK
+brukte:  30 sekunder
+--------------------------------------------------------------
+Utskrift fra tilbud_b.py med regelen, del 2b og 3:
+
+2b. Manuelt leste aarsrapporter
+   jernmalm/KIO      19 aar 2007-2025  siste  1.63  median  2.03  ZAR  (manuelt lest)
+   jernmalm/VALE_JM  10 aar 2016-2025  siste  1.82  median  1.68  USD  (manuelt lest)
+   jernmalm/CIA       6 aar 2021-2026  siste  2.19  median  3.27  CAD  (manuelt lest)
+
+3. B1 relativt og B2 absolutt
+      kuttet 6 år med under halve kurven: [2010, 2011, 2012, 2013, 2014, 2015]
+
+   uran       3 selskaper, 10 år   kurvbytte [2018]
+      ratio 1.18  5-års snitt 0.816  B1=0.0  B2=73.0  9/10 år under 1,0
+      2018:0.17  2019:0.27  2020:0.37  2021:0.52  2022:0.80  2023:0.75  2024:0.82  2025:1.18
+
+   kobber     2 selskaper, 19 år   kurvbytte [2014]
+      ratio 1.87  5-års snitt 1.682  B1=36.8  B2=0.0  1/19 år under 1,0
+      2018:1.27  2019:1.54  2020:1.11  2021:1.07  2022:1.57  2023:2.01  2024:1.89  2025:1.87
+      kuttet 1 år med under halve kurven: [2008]
+
+   aluminium  3 selskaper, 17 år   kurvbytte [2014]
+      ratio 1.02  5-års snitt 0.896  B1=5.9  B2=63.0  15/17 år under 1,0
+      2018:0.64  2019:0.59  2020:0.53  2021:0.63  2022:0.89  2023:0.94  2024:1.00  2025:1.02
+      kuttet 1 år med under halve kurven: [2007]
+      kuttet 3 år i halen med under 3 av 3 selskaper: [2023, 2024, 2025]
+
+   kull       3 selskaper, 15 år   kurvbytte [2016]
+      ratio 1.01  5-års snitt 0.665  B1=26.7  B2=91.9  10/15 år under 1,0
+      2015:0.38  2016:0.27  2017:0.58  2018:0.60  2019:0.69  2020:0.51  2021:0.51  2022:1.01
+      kuttet 1 år med under halve kurven: [2026]
+
+   gull       4 selskaper, 18 år   kurvbytte [2012, 2013, 2016, 2017]
+      ratio 1.19  5-års snitt 1.144  B1=33.3  B2=32.0  8/18 år under 1,0
+      2018:0.88  2019:0.72  2020:0.58  2021:0.79  2022:1.07  2023:1.37  2024:1.31  2025:1.19
+      kuttet 10 år med under halve kurven: [2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2026]
+
+   jernmalm   3 selskaper, 10 år   kurvbytte [2021]
+      ratio 1.88  5-års snitt 1.85  B1=20.0  B2=0.0  0/10 år under 1,0
+      2018:1.37  2019:1.03  2020:1.32  2021:1.69  2022:1.87  2023:1.94  2024:1.88  2025:1.88
+
+
+
+
+KUTT PER METALL
+   aluminium  halvregel [2008]  haleregel []  (krav 3 selskaper; per aar siste fem: {'2021': 3, '2022': 3, '2023': 3, '2024': 3, '2025': 3})
+   gull       halvregel [2026]  haleregel []  (krav 3 selskaper; per aar siste fem: {'2022': 4, '2023': 4, '2024': 4, '2025': 4, '2026': 1})
+   jernmalm   halvregel [2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2026]  haleregel []  (krav 3 selskaper; per aar siste fem: {'2022': 3, '2023': 3, '2024': 3, '2025': 3, '2026': 1})
+   kobber     halvregel []  haleregel []  (krav 2 selskaper; per aar siste fem: {'2021': 2, '2022': 2, '2023': 2, '2024': 2, '2025': 2})
+   kull       halvregel [2007]  haleregel [2023, 2024, 2025]  (krav 3 selskaper; per aar siste fem: {'2021': 3, '2022': 3, '2023': 2, '2024': 2, '2025': 2})
+   uran       halvregel [2010, 2011, 2012, 2013, 2014, 2015]  haleregel []  (krav 3 selskaper; per aar siste fem: {'2021': 3, '2022': 3, '2023': 3, '2024': 3, '2025': 3})
+
+FORSKJELL I SISTE AAR
+   metall          siste aar          forhold             B1             B2
+   aluminium            2025            1.021            5.9           63.0
+   gull                 2025            1.189           33.3           32.0
+   jernmalm             2025            1.875           20.0            0.0
+   kobber               2025             1.87           36.8            0.0
+   kull         2025 -> 2022   0.986 -> 1.005   38.9 -> 26.7   48.6 -> 91.9
+   uran                 2025            1.181            0.0           73.0
+
+KONTROLL: alle aar som staar igjen har samme forhold, B1 og B2 som foer
+
+lagret sonder/b_haleregel.json

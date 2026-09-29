@@ -1,8 +1,8 @@
 sonde:   sonde_kjor_b_fmg
-kjort:   2026-09-29 08:08:36 UTC
-commit:  b49501c
+kjort:   2026-09-29 08:13:20 UTC
+commit:  e91e569
 status:  OK
-brukte:  55 sekunder
+brukte:  35 sekunder
 --------------------------------------------------------------
 
 
