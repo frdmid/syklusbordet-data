@@ -9,6 +9,28 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 14:52, Claude Code
+**Hva:** Ny sonde `sonde_kjor_rigg_b.py` (Frodes bestilling): B for rigger som
+capex delt på avskrivninger fra SEC, delt i land, grunt vann (jackups) og
+dypt vann (flytere). Bare rene selskaper teller; blandede vises for seg.
+Konkursrammede er med (CIK fra SECs liste over bransjekode 1381). Kjørt lokalt:
+- Dypt vann følger kjent historie på investeringene: forhold 1,64 i 2011 til
+  2014 og 0,49 i 2016 til 2021. Nedskrivningene besto ikke kontrollen, fordi
+  Transoceans nedskrivninger i XBRL blander inn goodwill. De kan ikke brukes.
+- Siste B2: land 82, grunt 100, dyp 100 (2025).
+- Dekningen er tynn: etter 2019 er dypt vann bare Transocean og grunt vann
+  bare Borr. Patterson-UTI, Diamond og Ocean Rig mangler standardbegreper for
+  avskrivninger eller capex.
+- De blandede selskapene (Valaris, Noble, Seadrill) er nå flertallet
+  offshore, og Valaris viser forhold over 2 i 2022 til 2024 fordi
+  avskrivningene falt etter konkursen (ny startbalanse). Det svekker
+  forholdet som mål rett etter en restrukturering.
+To feil i sonden rettet før tallene over, og skrevet i fila: goodwill ut av
+nedskrivningene, og år før riggene var i drift utelatt (Pacific Drilling
+2009 til 2011 hadde forhold over 500).
+**Filer:** `sonde_kjor_rigg_b.py` (ny).
+**Den andre økten må vite:** Ingenting er bygget på dashbordet.
+
 ### 29.09.2026 14:40, Cowork
 **Hva:** Etterført innslag for to Cowork-endringer som ble pushet uten innslag
 i dag (den siste er commit 4ea249b):
