@@ -269,15 +269,21 @@ for metall, d in hentet.items():
     # jernmalm, som slutter i juni og mars) gir et nytt aar lenge foer resten,
     # og da ble siste forhold et snitt av to selskaper i stedet for fire.
     # HALEREGEL=0 i miljoeet slaar den av, bare for sammenligning.
-    krav = -(-3 * len(cx.columns) // 4)
+    # HALEKRAV=alle: kravet regnes av alle selskaper i kurven. HALEKRAV=aktive:
+    # bare av selskaper med tall i minst ett av de tre siste aarene i serien, saa
+    # et selskap som har sluttet aa rapportere (HCC i kull) ikke kutter halen.
+    siste3 = [a for a in cx.index if a > s.index[-1] - 3] if len(s) else []
+    aktive = [c for c in cx.columns if cx.loc[siste3, c].notna().any()] if siste3 else list(cx.columns)
+    grunnlag = aktive if os.environ.get("HALEKRAV", "alle") == "aktive" else list(cx.columns)
+    krav = -(-3 * len(grunnlag) // 4)
     hale = []
     if os.environ.get("HALEREGEL", "1") != "0":
         while len(s) and ant[s.index[-1]] < krav:
             hale.append(int(s.index[-1]))
             s, ant = s.iloc[:-1], ant.iloc[:-1]
     if hale:
-        print(f"      kuttet {len(hale)} år i halen med under {krav} av {len(cx.columns)} selskaper: {sorted(hale)}")
-    KUTT[metall] = {"halvregel": tynne, "haleregel": sorted(hale), "krav_hale": krav,
+        print(f"      kuttet {len(hale)} år i halen med under {krav} av {len(grunnlag)} selskaper: {sorted(hale)}")
+    KUTT[metall] = {"halvregel": tynne, "haleregel": sorted(hale), "krav_hale": krav, "grunnlag_hale": sorted(grunnlag),
                     "selskaper_per_aar": {str(int(a)): int(n) for a, n in cx.notna().sum(axis=1).items()}}
     if len(s) < MIN_AAR:
         continue
