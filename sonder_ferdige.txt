@@ -44,3 +44,4 @@ sonde_kjor_b_dda
 sonde_kjor_c_rente
 sonde_kjor_regel_foer2011
 sonde_kjor_c_produksjon
+sonde_kjor_c_spleis
