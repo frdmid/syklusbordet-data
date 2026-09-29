@@ -142,6 +142,51 @@ def aarsserie(fakta, kandidater, slag, valuta=None):
     return None, None, None
 
 
+def aarsserie_spleis(fakta, kandidater, slag, valuta=None):
+    """Skjoeter begrepene sammen (29.09.2026). aarsserie tar foerste begrep med
+    nok aar. Selskaper som har byttet regnskapsstandard, har da sittet fast i
+    det gamle begrepet: Vale gikk fra US GAAP til IFRS i 2012 og Frontline i
+    2022, og C regnet paa kontanter og drift fra 2011 og 2021. Her gaar
+    begrepene i rangert rekkefoelge; det foerste som treffer bestemmer
+    valutaen, og de neste fyller bare inn aar som mangler. SPLEIS=0 gir den
+    gamle regelen."""
+    if os.environ.get("SPLEIS", "1") == "0":
+        return aarsserie(fakta, kandidater, slag, valuta)
+    samlet, brukt, enhet, per_aar = {}, [], valuta, {}
+    for begrep in kandidater:
+        d = fakta.get(begrep)
+        if not d:
+            continue
+        enheter = sorted(d.get("units", {}), key=lambda e: (e != (enhet or "USD"), e))
+        for enh in enheter:
+            if not re.match(r"^[A-Z]{3}$", enh) or (enhet and enh != enhet):
+                continue
+            pkt = d["units"][enh]
+            if slag == "strom":
+                aar = [p for p in pkt if p.get("form") in FORMER and p.get("fp") == "FY"
+                       and p.get("start") and p.get("end")
+                       and 330 <= (pd.Timestamp(p["end"]) - pd.Timestamp(p["start"])).days <= 400]
+            else:
+                aar = [p for p in pkt if p.get("form") in FORMER]
+            best = {}
+            for p in aar:
+                k = int(p["end"][:4])
+                if k not in best or p.get("accn", "") > best[k].get("accn", ""):
+                    best[k] = p
+            nye = {k: float(v["val"]) for k, v in best.items() if k not in samlet}
+            if nye:
+                samlet.update(nye)
+                per_aar.update({k: begrep for k in nye})
+                brukt.append(begrep)
+                enhet = enh
+            break
+    if len(samlet) < MIN_AAR:
+        return None, None, None
+    s = pd.Series(samlet).sort_index()
+    s.attrs["begrep"] = per_aar
+    return " + ".join(brukt), s, enhet
+
+
 print("1. SECs tickerliste")
 try:
     tick = hent("https://www.sec.gov/files/company_tickers.json", timeout=45).json()
@@ -216,7 +261,7 @@ for tk in sorted(AKSJER):
     for prov in (kandidatvaluta or [None]):
         v, se = {}, {}
         for ledd, (kand, slag) in LEDD.items():
-            b, sr, enh = aarsserie(fakta, kand, slag, valuta=prov)
+            b, sr, enh = aarsserie_spleis(fakta, kand, slag, valuta=prov)
             if b is not None:
                 v[ledd], se[ledd] = b, sr
         if "kontanter" in se and "drift" in se:
@@ -257,16 +302,23 @@ for tk in sorted(AKSJER):
     # InterestPaidClassifiedAsOperatingActivities, er renten i driften; ellers
     # trekkes den fra som foer. RENTEFIX=0 gir den gamle regnemaaten (for
     # sammenligning i sonde_kjor_c_rente).
-    drift_tak = tak_av.get(valgt.get("drift"), "us-gaap")
-    if os.environ.get("RENTEFIX", "1") == "0":
-        renter_i_drift, rentegrunn = False, "gammel regel"
-    elif drift_tak == "us-gaap":
-        renter_i_drift, rentegrunn = True, "us-gaap"
-    elif "InterestPaidClassifiedAsOperatingActivities" in fakta:
-        renter_i_drift, rentegrunn = True, "ifrs, renter i drift"
-    else:
-        renter_i_drift, rentegrunn = False, "ifrs, renter ikke i drift"
-    trekk = 0.0 if renter_i_drift else (rente or 0.0)
+    # Med skjoette serier kan aarene komme fra ulike standarder, saa det
+    # avgjoeres per aar ut fra begrepet aaret er lest fra.
+    per_aar = serier["drift"].attrs.get("begrep", {})
+
+    def renteregel(aar):
+        tak = tak_av.get(per_aar.get(aar, valgt.get("drift")), "us-gaap")
+        if os.environ.get("RENTEFIX", "1") == "0":
+            return False, "gammel regel"
+        if tak == "us-gaap":
+            return True, "us-gaap"
+        if "InterestPaidClassifiedAsOperatingActivities" in fakta:
+            return True, "ifrs, renter i drift"
+        return False, "ifrs, renter ikke i drift"
+    renter_i_drift, rentegrunn = renteregel(bunnaar)
+    renter_naa, grunn_naa = renteregel(int(drift.index[-1]))
+    if grunn_naa != rentegrunn:
+        rentegrunn += f" i {bunnaar}, {grunn_naa} i {int(drift.index[-1])}"
 
     # Fri kontantstrom etter renter. Er den positiv, finansierer selskapet seg
     # selv og kontantbeholdningen er irrelevant.
@@ -274,11 +326,11 @@ for tk in sorted(AKSJER):
     # Renten skal TREKKES FRA driften, ikke legges til brennraten. Foerste
     # versjon la den til, og da fikk Diamondback med 3,9 mrd i positiv drift
     # "1,7 kvartaler igjen". 14 av 34 selskaper var feilklassifisert.
-    def kv(ocf):
-        fri = ocf - trekk
+    def kv(ocf, i_drift):
+        fri = ocf - (0.0 if i_drift else (rente or 0.0))
         return None if fri >= 0 else round(kont / (-fri / 4), 1)
-    kvartaler = kv(stress)          # ved forrige syklusbunn
-    kvartaler_naa = kv(naa)         # ved dagens rate, dokumentets egen ordlyd
+    kvartaler = kv(stress, renter_i_drift)      # ved forrige syklusbunn
+    kvartaler_naa = kv(naa, renter_naa)         # ved dagens rate, dokumentets egen ordlyd
     # C2: netto gjeld mot egenkapital
     ngek = None if not ek or ek <= 0 or gjeld is None else round((gjeld - kont) / ek, 2)
     # C3: rentedekning i stresstilfellet

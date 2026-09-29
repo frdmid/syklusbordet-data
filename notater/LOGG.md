@@ -9,6 +9,21 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 13:08, Claude Code
+**Hva:** Retting av utdaterte tall i C for selskaper som har byttet
+regnskapsstandard (Frodes bestilling: oppdaterte tall for Vale og Frontline).
+C valgte første begrep med minst fire år. Vale gikk fra US GAAP til IFRS i
+2012 og Frontline i 2022, så C regnet på kontanter og drift fra 2011 og 2021.
+Nå skjøtes begrepene: det første i rangeringen bestemmer valutaen, og de
+neste fyller inn år som mangler (`aarsserie_spleis`). Renteregelen avgjøres
+per år ut fra hvilket begrep året er lest fra, for bunnåret og for siste år
+hver for seg. `SPLEIS=0` gir gammel regel. Ny sonde `sonde_kjor_c_spleis.py`
+viser før og etter for alle SEC-selskaper; tallene føres i neste innslag.
+Endringen går ikke til main før tallene er sett.
+**Filer:** `overlevelse_c.py`, `sonde_kjor_c_spleis.py` (ny).
+**Den andre økten må vite:** Skjøtingen kan også endre andre selskaper, der
+hull i ett begrep fylles fra et annet. Sonden viser hvilke.
+
 ### 29.09.2026 12:56, Claude Code
 **Hva:** Produksjonsstart i SEC-delen av C (Frodes beslutning, samme regel som
 Coworks `c_manuell.py`). `sonde_kjor_c_produksjon` listet alle SEC-selskaper
