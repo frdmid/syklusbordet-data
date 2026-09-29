@@ -1,5 +1,5 @@
 {
- "_merknad": "Overlevelsesport C for papirer uten SEC-tall, lest for haand fra aarsrapportene. Beloep i millioner i rapportvalutaen. drift = kontantstroem fra driften (konsern). siste = balansen og betalte renter for siste regnskapsaar. Brukes av c_manuell.py fra overlevelse_c.py. Feltet produksjon_fra (fra 29.09.2026): driftsaar foer dette aaret teller ikke.",
+ "_merknad": "Overlevelsesport C for papirer uten SEC-tall, lest for haand fra aarsrapportene. Beloep i millioner i rapportvalutaen. drift = kontantstroem fra driften (konsern). siste = balansen og betalte renter for siste regnskapsaar. Brukes av c_manuell.py fra overlevelse_c.py. Feltet produksjon_fra (fra 29.09.2026): driftsaar foer dette aaret teller ikke. Feltet renter_i_drift (fra 29.09.2026): true betyr at betalte renter allerede er trukket i driften og ikke trekkes fra igjen.",
  "AKRBP.OL": {
   "kilde": "Aker BP, Det norske og Pertra (forgjengerne), aarsrapporter 2006 til 2025 fra akerbp.com, lest av sonde_kjor_c_manuell 25.09.2026 og kontrollert paa overlappende aar i to rapporter. 2019 mangler (2020-rapporten ga ingen lesbar oppstilling). Siste aar fra kvartalsrapporten Q4 2025: kontanter 2 344,1, betalte renter 394,8, drift 6 958,2 (lik aarsrapporten); balansen fra aarsrapporten 2025 s. 140: langsiktige obligasjoner 8 358,6, egenkapital 11 226,2. Finansielle investeringer 300,0 er ikke regnet som kontanter.",
   "drift": {
@@ -87,7 +87,9 @@
    "gjeld": 8358.6,
    "egenkapital": 11226.2,
    "rente": 394.8
-  }
+  },
+  "renter_i_drift": false,
+  "renter_kilde": "Betalte renter under finansiering i ESEF 2024 (266,0 MUSD), bekreftet av Claude Code. Bunnaaret 2006 (Pertra) er ikke sjekket; porten er aapen uansett (verste drift -13,2 MUSD)."
  },
  "DNO.OL": {
   "kilde": "DNO, aarsrapporter 2007 til 2025 hentet fra Oslo Boers NewsWeb av sonde_kjor_c_manuell3 28.09.2026. 2020 til 2025 fra ESEF-filene (ifrs-full:CashFlowsFromUsedInOperatingActivities m.fl.), eldre aar fra konsernets kontantstroemoppstilling i PDF. NOK til og med 2012, USD fra 2013 (2013 som omregnet i 2014-rapporten). Omarbeidede aar bruker siste rapport: 2016 62,0 (2016-rapporten 61,2), 2020 406,2 (2020-rapporten 389,1). 2008 og 2009 mangler (konsernoppstillingen ble ikke skrevet ut). Faller et av dem under -121 MUSD, blir porten stengt i stedet for trang. Siste aar 2025 fra ESEF: kontanter 453,7, langsiktige laan 989,1, egenkapital 1 328,5, betalte renter 105,8.",
@@ -176,7 +178,9 @@
    "gjeld": 989.1,
    "egenkapital": 1328.5,
    "rente": 105.8
-  }
+  },
+  "renter_i_drift": true,
+  "renter_kilde": "Kontantstroemmen fra driften inneholder 'Interest paid' i konsernoppstillingen: 2015 (bunnaaret) -31,6 og 2014 -18,6 (aarsrapport 2015 s. 20, lest av Cowork fra sonde_kjor_c_manuell3), og ESEF 2020 til 2025 bruker InterestPaidClassifiedAsOperatingActivities (2024 53,7; Claude Code bekreftet ESEF 2024)."
  },
  "CIA.TO": {
   "kilde": "Champion Iron, aarsregnskap FY2014 til FY2026 fra championiron.com (regnskapsaar til 31. mars, merket med aaret det slutter), lest via nettverktoey 29.09.2026. FY2019 til FY2026 kontrollert mot to regnskap og summert linje for linje. Omarbeidede aar bruker siste regnskap: FY2021 624,419 (opprinnelig 623,476), FY2018 -131,649 (opprinnelig -101,131, forskuddsbetalinger flyttet fra investering til drift), FY2015 -5,435651 (opprinnelig -5,435652). FY2014 til FY2016 bare sikre paa totalnivaa. FY2014 til FY2018 er utviklingsaar foer og under gjenoppstarten av Bloom Lake. Siste aar FY2026 (31.03.2026, tusen CAD i regnskapet): kontanter 296 788, langsiktig gjeld 922 136 (uten leie), egenkapital 1 534 259, betalte renter 67 554.",
@@ -243,7 +247,9 @@
    "rente": 67.554
   },
   "produksjon_fra": 2019,
-  "produksjon_kilde": "Bloom Lake ble satt i drift igjen under Champion i februar 2018 (championiron.com/project/bloom-lake: 'successfully recommissioned the project on time and on budget in February 2018'). FY2018 (april 2017 til mars 2018) hadde to maaneder med oppstart; FY2019 er foerste hele regnskapsaar med produksjon. FY2014 til FY2017 var leting og utvikling."
+  "produksjon_kilde": "Bloom Lake ble satt i drift igjen under Champion i februar 2018 (championiron.com/project/bloom-lake: 'successfully recommissioned the project on time and on budget in February 2018'). FY2018 (april 2017 til mars 2018) hadde to maaneder med oppstart; FY2019 er foerste hele regnskapsaar med produksjon. FY2014 til FY2017 var leting og utvikling.",
+  "renter_i_drift": true,
+  "renter_kilde": "Driftsdelen starter med aarsresultatet (etter finanskostnader) uten tilbakefoering av renter, og finansieringsdelen har ingen rentelinje; 'Interest paid' staar bare som tilleggsopplysning (FY2025-regnskapet, championiron.com). Renten er dermed i driften."
  },
  "LIF.TO": {
   "kilde": "Labrador Iron Ore Royalty, konsernets kontantstroem fra driften 2005 til 2025 fra aarsresultatmeldingene som gjengir hele regnskapet (labradorironore.com, newswire.ca), lest via nettverktoey 29.09.2026. Hver kolonne summert linje for linje og kontantavstemt aar for aar. 2005, 2012 og 2013 har bare en kilde. 2010 til 2012 er renter paa ansvarlige laan trukket i driften. Siste aar 2025 (tusen CAD): kontanter 14 568, ingen trukket gjeld (30 MCAD ubenyttet ramme), egenkapital 645 208, ingen rentekostnad.",
@@ -340,7 +346,9 @@
    "gjeld": 0.0,
    "egenkapital": 645.208,
    "rente": 0.0
-  }
+  },
+  "renter_i_drift": false,
+  "renter_kilde": "Ingen rentekostnad eller betalte renter i 2025 (rente 0), saa klassifiseringen er uten betydning. 2010 til 2012 laa renter paa ansvarlige laan i driften."
  },
  "AI.PA": {
   "kilde": "Air Liquide, 'Flux net de tresorerie genere par les activites operationnelles' 2005 til 2025 fra referansedokumentene, resultatmeldingene og ESEF-filene (AMF-arkivet og filings.xbrl.org), hvert aar likt i to kilder, lest 29.09.2026. Siste aar 2025 (MEUR): kontanter 3 962,0, langsiktige laan 10 030,0 (uten leie), egenkapital 26 947,2 (med minoritet), betalte netto finansrenter 177,7 (leierenter 50,3 ikke med, som for SEC-selskapene).",
@@ -437,7 +445,9 @@
    "gjeld": 10030.0,
    "egenkapital": 26947.2,
    "rente": 177.7
-  }
+  },
+  "renter_i_drift": false,
+  "renter_kilde": "'Net financial interests paid' (177,7) staar under finansiering i kontantstroemmen 2025 (URD 2025 s. 200); ESEF 2024 finansiering (218,2), bekreftet av Claude Code. Bunnaaret 2005 er ikke sjekket; porten er aapen uansett (drift 1 720,1 mot rente 177,7)."
  },
  "HEI.DE": {
   "kilde": "Heidelberg Materials (HeidelbergCement), kontantstroem fra driften for konsernet inkludert avviklet virksomhet 2005 til 2025, fra aarsrapportenes nokkeltall og Business Figures, hvert aar likt i minst to kilder unntatt 2005, lest 29.09.2026. Hele millioner til 2020. 2013 omarbeidet til 1 167 (opprinnelig 1 057). Siste aar 2025 (MEUR): kontanter 2 627,4, langsiktige obligasjoner 5 354,8 og banklaan 360,0 (sum 5 714,8, leie ligger i annen post og er ikke med), egenkapital 19 300,9 (med minoritet), betalte renter 356,2.",
@@ -534,6 +544,99 @@
    "gjeld": 5714.8,
    "egenkapital": 19300.9,
    "rente": 356.2
-  }
+  },
+  "renter_i_drift": true,
+  "renter_kilde": "'Interest paid' (-356,2 i 2025, -354,8 i 2024) staar i driftsdelen, over 'Cash flow from operating activities' (Business Figures 2025, konsernets kontantstroem). Bunnaaret 2005 er ikke sjekket; porten er aapen uansett (drift 795 mot rente 356,2)."
+ },
+ "VALE": {
+  "kilde": "Vale, 20-F hos SEC (CIK 917851), lest av Claude Code 29.09.2026, lagt inn av Cowork. 2007 til 2011 US GAAP og 2016 til 2021 IFRS fra SECs XBRL-data (NetCashProvidedByUsedInOperatingActivities, CashFlowsFromUsedInOperatingActivities). 2012 fra 20-F 2014 (16 135, omarbeidet; XBRL fra 2013 sier 16 595). 2013 til 2015 fra 20-F 2015; 2013 og 2014 like i 20-F 2014. 2022 fra 20-F 2023 (11 485), 2023 til 2025 fra 20-F 2025; 2023 lik i begge, 2021 lik i 20-F 2021 og 2023. Cowork har kontrollert 2009 (7 136) og 2011 (24 496) mot SEC-delens tidligere lesing. Siste aar 2025: kontanter 7 372 og laan og finansiering langsiktig 17 616 (note 21) fra 20-F 2025, egenkapital totalt 34 350 fra XBRL (ifrs-full:Equity), betalte renter 1 000 (Payment of interest on loans, financing and other financial liabilities).",
+  "drift": {
+   "2007": {
+    "drift": 11012,
+    "valuta": "USD"
+   },
+   "2008": {
+    "drift": 17114,
+    "valuta": "USD"
+   },
+   "2009": {
+    "drift": 7136,
+    "valuta": "USD"
+   },
+   "2010": {
+    "drift": 19183,
+    "valuta": "USD"
+   },
+   "2011": {
+    "drift": 24496,
+    "valuta": "USD"
+   },
+   "2012": {
+    "drift": 16135,
+    "valuta": "USD"
+   },
+   "2013": {
+    "drift": 14792,
+    "valuta": "USD"
+   },
+   "2014": {
+    "drift": 12807,
+    "valuta": "USD"
+   },
+   "2015": {
+    "drift": 4491,
+    "valuta": "USD"
+   },
+   "2016": {
+    "drift": 6401,
+    "valuta": "USD"
+   },
+   "2017": {
+    "drift": 12450,
+    "valuta": "USD"
+   },
+   "2018": {
+    "drift": 12901,
+    "valuta": "USD"
+   },
+   "2019": {
+    "drift": 12110,
+    "valuta": "USD"
+   },
+   "2020": {
+    "drift": 14322,
+    "valuta": "USD"
+   },
+   "2021": {
+    "drift": 25679,
+    "valuta": "USD"
+   },
+   "2022": {
+    "drift": 11485,
+    "valuta": "USD"
+   },
+   "2023": {
+    "drift": 13165,
+    "valuta": "USD"
+   },
+   "2024": {
+    "drift": 9366,
+    "valuta": "USD"
+   },
+   "2025": {
+    "drift": 8801,
+    "valuta": "USD"
+   }
+  },
+  "siste": {
+   "aar": 2025,
+   "valuta": "USD",
+   "kontanter": 7372,
+   "gjeld": 17616,
+   "egenkapital": 34350,
+   "rente": 1000
+  },
+  "renter_i_drift": true,
+  "renter_kilde": "20-F 2025 og 20-F 2015: betalte renter staar i kontantstroem fra driften, ikke under finansiering (Claude Code). Under US GAAP (2007 til 2011) er renter alltid i driften."
  }
 }

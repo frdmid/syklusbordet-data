@@ -16,6 +16,15 @@
 #           gjeld / egenkapital under 1,5, trang: 8 til 16, stengt: under 8.
 #   netto gjeld over 3x egenkapital gjoer aapen til trang.
 #
+# Renter i driften (29.09.2026, samme regel som SEC-delen i overlevelse_c.py):
+# under IFRS kan betalte renter foeres under drift eller finansiering. Ligger de
+# under drift, er de allerede trukket i driftskontantstroemmen og skal ikke
+# trekkes fra en gang til. Feltet "renter_i_drift" (true/false) med kilde i
+# "renter_kilde" sier hvor selskapet foerer dem. "renter_i_drift_aar" kan
+# overstyre for enkeltaar ({"2006": false}). Regelen avgjoeres for bunnaaret og
+# for siste aar hver for seg. Mangler feltet, trekkes renten fra som foer, og
+# utskriften sier at klassifiseringen ikke er lest.
+#
 # Produksjonsstart (Frodes beslutning 29.09.2026): aar foer produksjonsstart
 # teller ikke. Et utviklingsselskap brenner penger fordi det bygger, ikke fordi
 # raavaren er i en bunn, og det sier ingenting om hvordan selskapet taaler en
@@ -63,16 +72,19 @@ def omregn(belop, fra, til, aar, kurs=nok_per_enhet):
     return nok if til == "NOK" else nok / float(kurs(til)[aar])
 
 
-def port_fra(kont, drift, gjeld, ek, rente):
-    """Samme regler som overlevelse_c.py. drift: pd.Series aar -> beloep."""
+def port_fra(kont, drift, gjeld, ek, rente, i_drift=lambda aar: False):
+    """Samme regler som overlevelse_c.py. drift: pd.Series aar -> beloep.
+    i_drift(aar) sier om betalte renter allerede er trukket i driften det aaret."""
     stress, naa, bunnaar = float(drift.min()), float(drift.iloc[-1]), int(drift.idxmin())
+    siste = int(drift.index[-1])
 
-    def kv(ocf):
-        fri = ocf - (rente or 0.0)
+    def kv(ocf, trukket):
+        fri = ocf - (0.0 if trukket else (rente or 0.0))
         return None if fri >= 0 else round(kont / (-fri / 4), 1)
-    kvartaler, kvartaler_naa = kv(stress), kv(naa)
+    kvartaler, kvartaler_naa = kv(stress, i_drift(bunnaar)), kv(naa, i_drift(siste))
     ngek = None if not ek or ek <= 0 or gjeld is None else round((gjeld - kont) / ek, 2)
-    dekning = None if not rente else round(stress / rente, 1)
+    # Dekning = drift foer renter delt paa renter.
+    dekning = None if not rente else round((stress + (rente if i_drift(bunnaar) else 0.0)) / rente, 1)
     if kvartaler is None:
         port, hvorfor = "aapen", f"positiv drift etter renter selv i {bunnaar}"
     elif kvartaler >= 16 and (ngek is None or ngek < 1.5):
@@ -85,6 +97,7 @@ def port_fra(kont, drift, gjeld, ek, rente):
         port, hvorfor = "trang", hvorfor + f", men netto gjeld {ngek}x egenkapital"
     return {"port": port, "hvorfor": hvorfor, "kvartaler": kvartaler, "kvartaler_naa": kvartaler_naa,
             "bunnaar": bunnaar, "netto_gjeld_ek": ngek, "rentedekning": dekning,
+            "renter_i_drift_bunnaar": i_drift(bunnaar), "renter_i_drift_siste": i_drift(siste),
             "stress": stress, "naa": naa}
 
 
@@ -119,7 +132,11 @@ def maal(aksjer, sti="c_manuell.json", kurs=nok_per_enhet):
         if len(drift) < 4 or s["aar"] not in drift.index:
             print(f"   {tk:12s} for faa driftsaar ({len(drift)}) eller siste aar mangler, hoppes over")
             continue
-        r = port_fra(s["kontanter"], drift, s.get("gjeld"), s.get("egenkapital"), s.get("rente"))
+        rid, unntak = d.get("renter_i_drift"), {int(a): bool(v) for a, v in (d.get("renter_i_drift_aar") or {}).items()}
+        if rid is None:
+            print(f"   {tk:12s} renter_i_drift mangler: klassifiseringen er ikke lest, renten trekkes fra som foer")
+        i_drift = lambda aar, rid=rid, unntak=unntak: unntak.get(int(aar), bool(rid))
+        r = port_fra(s["kontanter"], drift, s.get("gjeld"), s.get("egenkapital"), s.get("rente"), i_drift)
         ut[tk] = {"ticker": tk, "navn": aksjer[tk]["navn"], "bors": aksjer[tk]["bors"],
                   "segmenter": aksjer[tk]["segmenter"], "port": r["port"], "hvorfor": r["hvorfor"],
                   "kvartaler": r["kvartaler"], "kvartaler_naa": r["kvartaler_naa"],
@@ -129,7 +146,10 @@ def maal(aksjer, sti="c_manuell.json", kurs=nok_per_enhet):
                   "drift_naa_m": round(r["naa"], 1), "rente_m": s.get("rente"), "valuta": val,
                   "aar": [int(drift.index[0]), int(drift.index[-1])],
                   "produksjon_fra": pf,
+                  "renter_i_drift": rid, "renter_i_drift_bunnaar": r["renter_i_drift_bunnaar"],
+                  "renter_i_drift_siste": r["renter_i_drift_siste"],
                   "kilde": "manuelt lest aarsrapport: " + d.get("kilde", "")}
         print(f"   {tk:12s} {r['port']:7s} {r['hvorfor'][:38]:40s} bunnaar {r['bunnaar']} av "
-              f"{len(drift)} aar, netto gjeld/EK {str(r['netto_gjeld_ek']):>6}  (manuelt)")
+              f"{len(drift)} aar, netto gjeld/EK {str(r['netto_gjeld_ek']):>6}, "
+              f"renter i drift {'ja' if r['renter_i_drift_bunnaar'] else 'nei'}  (manuelt)")
     return ut
