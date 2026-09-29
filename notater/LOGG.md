@@ -9,6 +9,20 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 11:41, Claude Code
+**Hva:** Ukentlig innhenting kjørt manuelt 29.09 og kontrollert. Alt nytt fra
+28. og 29.09 virker: utbytte og dollarkurs i `logg/kurser_uke.csv`, B og Ar i
+`logg/flagg_uke.csv`, `logg/hypotese_3mnd.csv` opprettet (tom), COT for
+palmeolje (7 av 7 kontrakter), `B_forhold` og `B_aar` i segmentene,
+2020.OL ute av D, CMBT på tavlen for capesize og utenfor D og C.
+**Filer:** Ingen endret av denne økten; data skrevet av Actions.
+**Den andre økten må vite:** Retting av innslaget om CMBT kl. 11.24: CMBT
+logges ikke i flaggloggen, fordi flaggloggen hopper over skipssegmentene.
+`c_overlevelse.json` har fortsatt 2020.OL til den kvartalsvise kjøringen,
+men capesize-porten regnes bare av papirene på tavlen, så det påvirker ikke
+noe. D for capesize hviler nå på ett papir (SBLK, D 6,7) pluss BDRY, fordi
+HSHP.OL ikke har D-tall. Denne ukens linjer blir erstattet av onsdagens kjøring.
+
 ### 29.09.2026 11:34, Claude Code
 **Hva:** COT for palmeolje lagt inn (Frodes valg), og to forsøk på SGX sin
 COT for jernmalm. Palmeolje: CFTC-kontrakt 037021, CME «USD Malaysian Crude
