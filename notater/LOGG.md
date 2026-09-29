@@ -9,6 +9,32 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 14:40, Cowork
+**Hva:** Etterført innslag for to Cowork-endringer som ble pushet uten innslag
+i dag (den siste er commit 4ea249b):
+1. Fire papirer lagt i C fra årsrapporter etter navnekontrollen: Champion Iron
+   (CIA.TO), Labrador Iron Ore Royalty (LIF.TO), Air Liquide (AI.PA) og
+   Heidelberg Materials (HEI.DE). Produksjonsstart (Frodes beslutning): feltet
+   `produksjon_fra`; `c_manuell.py` utelater driftsår før det. Champion fra
+   FY2019 (Bloom Lake satt i drift igjen i februar 2018); uten regelen ville
+   porten vært stengt (6,0 kvartaler fra FY2018).
+2. Renteregelen i `c_manuell.py`, samme regel som SEC-delen: feltet
+   `renter_i_drift` med `renter_kilde` (og `renter_i_drift_aar` for unntak),
+   avgjort for bunnåret og siste år hver for seg. Mangler feltet, trekkes
+   renten fra som før, og utskriften sier det. Vale lagt inn med Claude Codes
+   tall fra 20-F (brukes foran SEC via `MANUELL_FORAN`).
+**Filer:** `c_manuell.json`, `c_manuell.py` (begge pushet tidligere),
+`notater/LOGG.md`.
+**Den andre økten må vite:** Klassifisering lest av Cowork: DNO drift også i
+bunnåret 2015 (Interest paid −31,6 i driftsdelen, årsrapport 2015 s. 20),
+Heidelberg drift (Business Figures 2025), Champion drift (driften starter med
+årsresultatet, ingen rentelinje under finansiering). Aker BP og Air Liquide
+finansiering, LIF ingen renter, Vale drift. Bunnåret for Aker BP (2006), Air
+Liquide og Heidelberg (2005) er ikke sjekket; portene er åpne uansett. Vales
+2009 og 2011 er kontrollert mot SECs tall, resten er Claude Codes lesing.
+Resultatet står i innslaget 14:16. Cowork fører heretter innslag i samme
+commit som endringen.
+
 ### 29.09.2026 14:32, Claude Code
 **Hva:** Oljeservice er i drift. Kvartalsvis og ukentlig innhenting kjørt:
 `segments/oljeservice.json` har A 46,8, detrendet 98,8, D 21,5 (papirene 3,8
