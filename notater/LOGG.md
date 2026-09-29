@@ -9,6 +9,21 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 10:38, Claude Code
+**Hva:** Kapitulasjon D og overlevelsesporten C i klartekst på dashbordet,
+samme grep som for B. Hvert panel får linjene «Kapitulasjon D:» og
+«Overlevelse C:», og oversikten får en kort merkelapp under D-måleren.
+D: 80 og over «gitt opp», 60 til 79 «langt nede», 30 til 59 «noe nede»,
+under 30 «ikke gitt opp». Teksten sier i tillegg om papirene spriker (30
+poeng eller mer mellom laveste og høyeste D), om grunnlaget er tynt (ett
+eller to papirer), og om alle papirene er omvendte. C forklarer porten og
+lister hvert målt papir med port og kvartaler, og hvilke som ikke er målt.
+**Filer:** Dashbordet (artifact Syklusbordet, versjon 40). Ingen filer i repoet.
+**Den andre økten må vite:** Nye funksjoner `dNivaa`, `dKort`, `dKlartekst`
+og `cKlartekst` ligger rett etter B-funksjonene, før `dTekst`. To nye linjer
+i panelhodet etter B-linjen, og D-cellen i oversikten har fått `.b-kort`.
+Bygg videre på versjon 40.
+
 ### 29.09.2026 10:34, Claude Code
 **Hva:** Tilbud B i klartekst på dashbordet (Frodes ønske). Hvert panel med B
 får en linje «Tilbud B:» som forklarer situasjonen nå, og oversikten får en
