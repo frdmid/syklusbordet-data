@@ -633,7 +633,7 @@ VEHICLES = {"brent": ["AKRBP.OL", "VAR.OL", "DNO.OL"], "kobber": ["FCX"],
             "aluminium": ["NHY.OL"], "urea": ["YAR.OL"],
             "laks": ["MOWI.OL", "SALM.OL", "LSG.OL"],
             "vlcc": ["FRO.OL", "DHT", "INSW"],
-            "torrlast": ["SBLK", "HSHP.OL", "CMBT", "2020.OL"],
+            "torrlast": ["SBLK", "HSHP.OL", "CMBT"],   # 2020.OL tatt ut 29.09.2026, se instrumenter.py
             "floater": ["RIG", "VAL", "NE"], "nikkel": ["IGO.AX", "NIC.AX"],
             "vlgc": ["BWLPG.OL"], "ttf": ["EQNR.OL"]}
 vehicle_px, dode = {}, []

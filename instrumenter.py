@@ -179,7 +179,10 @@ INSTR = {
   ("PANL","Nasdaq","Pangaea Logistics","aksje","Supramax og Ultramax med logistikkpaaslag.")],
 "ship_capesize": [
   ("HSHP.OL","Oslo","Himalaya Shipping","aksje","Rene Newcastlemax, alle paa indeksrelatert certeparti. Hoyeste beta."),
-  ("2020.OL","Oslo","2020 Bulkers","aksje","Samme modell, eldre flate. Maanedlig utbytte."),
+  # 2020 Bulkers (2020.OL) tatt ut 29.09.2026 (Frodes beslutning). Kursen hos
+  # Yahoo falt 97 % i april 2026 uten at adjclose fanget det, trolig en stor
+  # utdeling. Det ga falsk kapitulasjon (D 95) for papiret og for capesize.
+  # Se sonder/sonde_kjor_utbytte.txt. Kan tas inn igjen naar dataene er rettet.
   ("SBLK","Nasdaq","Star Bulk Carriers","aksje","Capesize som del av en bredere flate. Lavere beta, lavere risiko.")],
 "ship_handysize": [
   ("TMIP.L","London","Taylor Maritime","aksje","Handysize og Supramax, naermeste rene uttrykk."),

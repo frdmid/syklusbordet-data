@@ -9,6 +9,19 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 11:18, Claude Code
+**Hva:** 2020 Bulkers (2020.OL) tatt ut av tavlen for capesize og av
+vehikkellaget (Frodes beslutning). Kursen hos Yahoo falt 97 % i april 2026
+uten at adjclose fanget det, og det ga falsk kapitulasjon (D 95).
+**Filer:** `instrumenter.py` (linjen fjernet, begrunnelse i kommentar),
+`priser.py` (`VEHICLES["torrlast"]`). Arkivkopiene i
+`syklusbordet-automatisering_4/` og gamle sonder er ikke rørt.
+**Den andre økten må vite:** Capesize står nå med HSHP.OL og SBLK. D for
+papiret og for capesize, porten C og dashbordet oppdateres ved neste ukentlige
+kjøring (onsdag), fordi `kapitulasjon_d.py`, `bygg_shipping.py` og
+`flagglogg.py` leser instrumentlisten. Til da viser dashbordet fortsatt
+2020.OL. Kan tas inn igjen når kursdataene er rettet.
+
 ### 29.09.2026 11:01, Claude Code
 **Hva:** Kontroll av utbytte for alle papirene (Frodes bestilling), og retting
 av utbyttet i flaggloggen. Ny sonde `sonde_kjor_utbytte.py` sammenlignet
