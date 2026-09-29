@@ -9,6 +9,32 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 13:35, Claude Code
+**Hva:** Tallene fra sondene for C, B og punkt 5.
+C (`sonder/sonde_kjor_c_rente.txt`), før og etter rentefiksen og
+navnekontrollen: fire porter endret. AA trang til åpen (13,6 til 20,5
+kvartaler), Frontline trang til åpen (positiv drift etter renter), Nexa trang
+til åpen, Himalaya Shipping stengt til trang. BTU, CENX, GNK, NAT, SBLK og TNK
+fikk flere kvartaler uten portendring. AI.PA, HEI.DE, LIF.TO og CIA.TO er
+borte fra SEC-delen (feil selskap før). Rentedekningen stiger med 1,0 for alle
+der renten nå regnes som del av driften.
+B (`sonder/sonde_kjor_b_dda.txt`): ingen selskaper byttet nevner. Begrepet
+med nedskrivninger ble ikke valgt for noe SEC-selskap, så B er uendret
+(aluminium 1,021, gull 1,189, jernmalm 1,593, kobber 1,87, kull 0,986, uran
+1,181). Rettelsen er et vern, ikke en endring i dagens tall.
+Punkt 5 (`sonder/sonde_kjor_regel_foer2011.txt`), bransjene før 2011-09, 22
+innslag, 16 episoder, mot det amerikanske markedet:
+H3 (kjøp T+1, selg T+4): S -1,6 %, 9 av 16 positive, p 0,73. **Består ikke.**
+60/40 på 24 mnd: S -3,7 %, 9 av 16 positive, p 0,82. **Består ikke.**
+Også fra 2011-09 er bransjene negative (H3 S -1,6 %, 2 av 6). Norge før 2012:
+to innslag, H3 +3,7 % og +1,3 %, 60/40 24 mnd +2,8 % og -14,9 %.
+**Filer:** `sonder_ferdige.txt`, `notater/2026-09-28_backtest.md` (nytt
+tillegg).
+**Den andre økten må vite:** Den korte hypotesen har ikke støtte utenfor
+tavlens papirer. Det positive 3-månedersresultatet på papirene (+8,4 % mot
+eget snitt ved T+1) finnes ikke i bransjeporteføljene, verken før eller etter
+2011. Loggen framover står uendret som test, men forventningen bør være lav.
+
 ### 29.09.2026 13:20, Claude Code
 **Hva:** (1) C: navnekontroll når børssuffikset strippes før oppslag hos SEC.
 Fire papirer var koblet til feil selskap siden C ble laget: Air Liquide
