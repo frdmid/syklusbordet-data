@@ -811,6 +811,10 @@ try:
         s["scores"]["B1"] = d.get("B1_siste")
         s["scores"]["B2"] = d.get("B2_siste")
         s["scores"]["B"] = d.get("B2_siste")
+        # Forholdstallet og aaret bak B, til teksten dashbordet viser under B
+        # (lagt til 29.09.2026, Frodes oenske).
+        s["scores"]["B_forhold"] = d.get("ratio_siste")
+        s["scores"]["B_aar"] = (d.get("aar") or [None])[-1]
         n += 1
     note("tilbudsskaar B", True, f"{n} segment fra b_capex.json")
 except Exception as e:

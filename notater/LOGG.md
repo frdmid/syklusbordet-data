@@ -9,6 +9,23 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 10:34, Claude Code
+**Hva:** Tilbud B i klartekst på dashbordet (Frodes ønske). Hvert panel med B
+får en linje «Tilbud B:» som forklarer situasjonen nå, og oversikten får en
+kort merkelapp under B2-måleren (for eksempel «krymper, øker nå»). Teksten
+regnes i dashbordet av B2 (nivå), B1 (retning) og forholdstallet, så den
+følger med når B oppdateres. Grenser: B2 ≥ 75 krymper tydelig, ≥ 50 krymper,
+≥ 25 vedlikehold, ellers ingen knapphet. B1 ≥ 70 kutter videre, under 30 øker
+nå. Teksten sier alltid «Ikke testet som signal».
+**Filer:** Dashbordet (artifact Syklusbordet, versjon 39, bygd på versjon 38
+fra Cowork), `priser.py` (sender `B_forhold` og `B_aar` i `scores`).
+**Den andre økten må vite:** Dashbordet er endret på tre steder: CSS-klassene
+`.b-tekst` og `.b-kort`, funksjonene `bNivaa`, `bRetning`, `bKort` og
+`bTekst` rett før `dTekst`, og én linje i panelhodet og B2-cellen i
+oversikten. Bygg videre på versjon 39, ellers forsvinner endringen.
+Forholdstallet i teksten vises først når `priser.py` har kjørt på onsdag;
+til da står teksten uten det.
+
 ### 29.09.2026 10:22, Claude Code
 **Hva:** Haleregel for tilbudsskåren B (Frodes beslutning 29.09, bestilt fra
 Cowork). I tillegg til halvregelen, og bare for slutten av serien: siste år
