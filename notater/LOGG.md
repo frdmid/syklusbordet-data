@@ -9,6 +9,38 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 10:09, Claude Code
+**Hva:** Faktorsonden kjørt. Avkastningen etter bunnflagget justert for marked,
+størrelse, verdi, lønnsomhet, investering, momentum og (bransjene) langsiktig
+reversering.
+**Filer:** `sonder/sonde_kjor_faktor.txt`, `sonder/faktor.json`,
+`sonder_ferdige.txt` (lagt til `sonde_kjor_faktor`).
+**Den andre økten må vite:** Papirene på tavlen: 12 mnd S +27,1 % rå,
++15,7 % etter faktorene (6 av 11 episoder, p 0,13). Etter regelen satt før
+kjøring har flagget «noe eget». Det som forklares, er nesten bare markedet
+(bidrag +17 prosentpoeng); verdi, momentum og reversering forklarer nesten
+ingenting. Bransjeporteføljene er negative etter faktorene både før og etter
+2011 (12 mnd minus 8,5 % før 2011). At papirene er positive mens bransjene ikke er
+det, peker mot utvalget av papirer (valgt 2026, overlevere) og ikke mot flagget.
+Ikke signifikant i noen av settene.
+
+### 29.09.2026 10:04, Claude Code
+**Hva:** Flaggloggen utvidet (Frodes punkt 2). Kursloggen får utbytte per uke og
+valutakurs til dollar. Ukeloggen får B, B1, B2 og Ar per segment. Hypotesen om
+kjøp etter én måned og salg etter tre måles nå i dollar med utbytte, mot ACWI
+på samme måte. Ny sonde for faktorjustering (punkt 3) lagt inn og kjørt.
+**Filer:** `flagglogg.py`, `sonde_kjor_faktor.py` (ny). Fra neste onsdag får
+`logg/kurser_uke.csv` kolonnene `utbytte` og `usd_per_enhet`, og
+`logg/flagg_uke.csv` kolonnene `Ar`, `B`, `B1`, `B2`. `logg/hypotese_3mnd.csv`
+får `utbytte` og `grunnlag`.
+**Den andre økten må vite:** Målet for hypotesen er endret før noe utfall fantes
+(ingen rene innslag ennå). Kriteriet for bekreftet er uendret. Eldre kursrader
+mangler utbytte og valuta, og da faller målingen tilbake til egen valuta uten
+utbytte; kolonnen `grunnlag` sier hva som ble brukt. `siste_kurs` i
+`flagglogg.py` returnerer nå en dict, ikke en tuppel. Leser noe annet
+`kurser_uke.csv` eller `flagg_uke.csv` på kolonneposisjon, må det sjekkes.
+Resultatet av faktorsonden føres i et eget innslag.
+
 ### 29.09.2026 10:00, Cowork
 **Hva:** Fortescue lagt inn i tilbudsskåren B for jernmalm, lest fra
 `sonder/sonde_kjor_b_fmg.txt` (årsrapportene FY2012 til FY2026).
