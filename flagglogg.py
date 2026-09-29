@@ -42,7 +42,10 @@ UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
 
 # B, B1, B2 og Ar lagt til 29.09.2026 (Frodes beslutning), slik at kombinasjoner
 # som "flagg pluss B" eller "flagg pluss D" kan regnes framover paa loggede tall.
-F_UKE = ["uke", "dato", "segment", "siste_obs", "A", "Ad", "Ar", "B", "B1", "B2", "D", "port",
+# D_pap og B2_rigg lagt til 29.09.2026 for test-flagget "hoey B og kapitulerte
+# papirer": D for papirene alene (uten fondet) og hoeyeste B2 blant
+# riggsegmentene for oljeservice.
+F_UKE = ["uke", "dato", "segment", "siste_obs", "A", "Ad", "Ar", "B", "B1", "B2", "D", "D_pap", "B2_rigg", "port",
          "trend", "cot_pctl_3aar", "bunnsone", "oppsikt", "d95"]
 # utbytte og usd_per_enhet lagt til 29.09.2026. utbytte er summen av utbytte
 # per aksje med eksdato etter forrige loggede kursdato for papiret og til og
@@ -422,7 +425,11 @@ def oppdater(segmenter, les, skriv, note=print, idag=None, kursfunk=siste_kurs):
         sc = s.get("scores") or {}
         rad = {"uke": uke, "dato": dato, "segment": s["id"], "siste_obs": s.get("last_obs"),
                "A": sc.get("A"), "Ad": sc.get("Ad"), "Ar": sc.get("Ar"), "B": sc.get("B"),
-               "B1": sc.get("B1"), "B2": sc.get("B2"), "D": sc.get("D"), "port": sc.get("gate"),
+               "B1": sc.get("B1"), "B2": sc.get("B2"), "D": sc.get("D"),
+               "D_pap": (s.get("d_detalj") or {}).get("D_aksjer"),
+               "B2_rigg": max([v.get("B2_siste") for v in ((s.get("rigg_b") or {}).get("segmenter") or {}).values()
+                               if v.get("B2_siste") is not None], default=None),
+               "port": sc.get("gate"),
                "trend": (s.get("trend") or {}).get("signal"),
                "cot_pctl_3aar": (s.get("cot") or {}).get("mm_pctl_3aar"),
                "bunnsone": bool(sc.get("flagg")), "oppsikt": bool(sc.get("oppsikt")),

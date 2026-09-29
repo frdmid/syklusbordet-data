@@ -9,6 +9,20 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 21:49, Claude Code
+**Hva:** Nytt test-flagg på dashbordet (Frodes beslutning): «Høy tilbudsskår
+og kapitulerte papirer». Utløses når B2 er over 50 og D for papirene alene
+(`d_detalj.D_aksjer`, uten fondet) er 60 eller mer. Gjelder aluminium, gull,
+jernmalm, kobber, kull, uran og oljeservice (høyeste B2 blant
+riggsegmentene). Kriterium satt før noe tilfelle: vurderes etter tre
+tilfeller; støttet hvis papirene slår ACWI over tolv måneder i minst to av
+tre. Ingen segmenter utløser nå (høyest D for papirene: aluminium 45).
+Flaggloggen logger nå også `D_pap` og `B2_rigg` hver uke, så flagget kan
+etterprøves.
+**Filer:** `flagglogg.py`; dashbordet.
+**Den andre økten må vite:** `logg/flagg_uke.csv` får to nye kolonner fra
+onsdag.
+
 ### 29.09.2026 21:45, Claude Code
 **Hva:** Test av B2 og kapitulasjon D som kjøpssignal (Frodes bestilling),
 `sonde_kjor_b_signal.py`, regler og kriterium satt i fila før kjøring. Ni
