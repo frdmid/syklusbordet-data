@@ -9,6 +9,21 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 15:01, Claude Code
+**Hva:** `sonde_kjor_rigg_segment.py` kjørt lokalt og rettet. Segmenttall
+funnet for Valaris/Ensco (flytere og jackups 2009 til 2025, unntatt 2021, som
+er delt i to perioder av konkursen), Seadrill (2011 til 2021) og Rowan (2014
+til 2018). Noble, Transocean, Atwood, Pride og Vantage rapporterer ett
+segment. Kontrollen besto for begge: forhold 2011 til 2014 rundt 2,8, og
+2016 til 2021 0,41 (dyp) og 0,49 (grunt). Siste B2: dyp 84, grunt 35 (Borrs
+nybygg og Valaris' reaktiveringer). Rettet: Rowan ble talt to ganger i 2014
+til 2018; nå brukes segmenttallene når de finnes. Tidligere retting: bredere
+begreper for avskrivninger (Ensco brukte CostOfGoodsAndServicesSoldDepreciation)
+og riktig XBRL-fil for eldre rapporter. Sonden legges på main og kjøres i
+Actions for utskrift i `sonder/`.
+**Filer:** `sonde_kjor_rigg_segment.py`.
+**Den andre økten må vite:** Ingenting er bygget på dashbordet.
+
 ### 29.09.2026 14:56, Claude Code
 **Hva:** Ny sonde `sonde_kjor_rigg_segment.py` (Frodes bestilling): henter
 segmenttall (flytere og jackups) fra XBRL-filene til årsrapportene for de

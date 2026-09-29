@@ -180,18 +180,20 @@ print("\n\n3. SAMLET PER SEGMENT OG AAR (rene selskaper + segmenttall fra blande
 RES = {}
 for k in ("dyp", "grunt"):
     rader = {}
+    # Har et rent selskap segmenttall for et aar (Rowan 2014-2018), brukes
+    # segmenttallene og ikke hele selskapet, ellers telles boreskipene to ganger.
+    med_seg = {(BLANDET[c].split()[0], a) for (_, c, a) in SEG}
     for d in REN.values():
         if d["seg"] != k or d["enh"] != "USD":
             continue
         for a in d["capex"].index:
+            if (d["navn"].split()[0], int(a)) in med_seg:
+                continue
             r = rader.setdefault(int(a), {"capex": 0.0, "dda": 0.0, "n_ren": 0, "n_seg": 0, "forhold": []})
             r["capex"] += d["capex"][a]; r["dda"] += d["dda"][a]; r["n_ren"] += 1
             r["forhold"].append(d["capex"][a] / d["dda"][a])
     for (kk, cik, a), d in SEG.items():
         if kk != k or not d["dda"]:
-            continue
-        # Transocean og Rowan staar ogsaa som rene; ta ikke med segmenttall for dem to ganger
-        if any(v["navn"].split()[0] == BLANDET[cik].split()[0] and v["seg"] == k and a in v["capex"].index for v in REN.values()):
             continue
         r = rader.setdefault(int(a), {"capex": 0.0, "dda": 0.0, "n_ren": 0, "n_seg": 0, "forhold": []})
         r["capex"] += d["capex"]; r["dda"] += d["dda"]; r["n_seg"] += 1
