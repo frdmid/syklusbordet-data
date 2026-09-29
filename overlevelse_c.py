@@ -34,6 +34,16 @@ PORT_KVARTALER = 8      # dokumentets egen terskel
 
 from instrumenter import INSTR, UTEN_HISTORIKK
 
+# Produksjonsstart (Frodes beslutning 29.09.2026, samme regel som c_manuell.py):
+# aar foer produksjonsstart teller ikke. Et utviklingsselskap brenner penger
+# fordi det bygger, ikke fordi raavaren er i en bunn. Aaret er det foerste HELE
+# regnskapsaaret med produksjon; aaret produksjonen startet midt i, teller
+# ikke. Hvert aar har kilde. Selskaper uten sikker kilde staar ikke her og
+# maales som foer. PRODFIX=0 slaar regelen av (for sonde_kjor_c_produksjon).
+# ticker: (foerste hele aar, kilde)
+PRODUKSJON_FRA = {
+}
+
 # Rangert per ledd. Foerste begrep med nok aarstall vinner, saa de mest
 # spesifikke staar foerst. Balansepostene er oyeblikksverdier, stromspostene
 # aarlige.
@@ -164,7 +174,7 @@ for sid, rader in INSTR.items():
         AKSJER.setdefault(tk, {"navn": navn, "bors": bors, "segmenter": []})["segmenter"].append(sid)
 
 print(f"\n2. Regnskapstall for {len(AKSJER)} aksjer")
-SELSKAP, utenfor = {}, []
+SELSKAP, utenfor, DRIFT = {}, [], {}
 for tk in sorted(AKSJER):
     nk = secnavn(tk, AKSJER[tk]["navn"])
     if not nk:
@@ -212,6 +222,17 @@ for tk in sorted(AKSJER):
 
     kont = float(serier["kontanter"].iloc[-1])
     drift = serier["drift"]
+    DRIFT[tk] = {"valuta": val, "drift": {int(a): float(v) for a, v in drift.items()}}
+    pf = PRODUKSJON_FRA.get(tk, (None, None))[0] if os.environ.get("PRODFIX", "1") != "0" else None
+    if pf is not None:
+        utelatt = [int(a) for a in drift.index if a < pf]
+        drift = drift[drift.index >= pf]
+        if utelatt:
+            print(f"   {tk:12s} aar foer produksjonsstart {pf} utelatt: {utelatt}")
+        if len(drift) < MIN_AAR:
+            print(f"   {tk:12s} for faa driftsaar etter produksjonsstart ({len(drift)}), maales ikke")
+            utenfor.append(tk)
+            continue
     stress = float(drift.min())
     naa = float(drift.iloc[-1])
     bunnaar = int(drift.idxmin())
@@ -276,7 +297,9 @@ for tk in sorted(AKSJER):
                    "rente_musd": None if rente is None else round(rente / 1e6, 0),
                    "renter_i_drift": renter_i_drift, "rentegrunn": rentegrunn,
                    "aar": [int(drift.index[0]), int(drift.index[-1])],
-                   "begreper": valgt}
+                   "begreper": valgt,
+                   "produksjon_fra": pf,
+                   "produksjon_kilde": PRODUKSJON_FRA.get(tk, (None, None))[1] if pf else None}
     print(f"   {tk:12s} {port:7s} {hvorfor[:38]:40s} bunnaar {bunnaar} av "
           f"{len(drift)} aar, netto gjeld/EK {str(ngek):>6}")
     time.sleep(0.3)
@@ -297,7 +320,7 @@ except Exception as e:
 print(f"\n   {len(SELSKAP)} maalt, {len(utenfor)} uten SEC-tall: {', '.join(utenfor)}")
 
 if os.environ.get("C_UT"):
-    json.dump({"selskaper": SELSKAP, "utenfor": utenfor},
+    json.dump({"selskaper": SELSKAP, "utenfor": utenfor, "drift": DRIFT},
               open(os.environ["C_UT"], "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 
 print("\n3. Port per segment")

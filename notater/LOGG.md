@@ -9,6 +9,24 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 12:57, Claude Code
+**Hva:** (1) Kvartalsvis innhenting kjørt på nytt etter Coworks commit 7799ea5
+(nye selskaper i `c_manuell.json` og regelen om produksjonsstart i
+`c_manuell.py`, ikke ført i loggen). Jernmalm er igjen 3/3 åpne (Vale,
+Champion Iron, Labrador Iron Ore) og TTF 3/3 åpne (Equinor, Air Liquide,
+Heidelberg), nå med riktige selskaper lest manuelt. Champion Iron regnes fra
+2019 (produksjon_fra). (2) Mekanismen for produksjonsstart i SEC-delen er lagt
+inn i `overlevelse_c.py`: tabellen `PRODUKSJON_FRA` (ticker: første hele år,
+kilde), foreløpig tom, så ingen tall endres. År før utelates og skrives ut.
+Blir det færre enn fire driftsår igjen, måles selskapet ikke (som i
+`c_manuell.py`). `PRODFIX=0` slår regelen av. Ny sonde
+`sonde_kjor_c_produksjon.py` finner kandidatene (omsetning i bunnåret under
+ti prosent av siste år) og henter setninger om produksjonsstart fra
+årsrapportene hos SEC som kilde.
+**Filer:** `overlevelse_c.py`, `sonde_kjor_c_produksjon.py` (ny).
+**Den andre økten må vite:** `c_manuell.json` og `c_manuell.py` er ikke rørt.
+Tabellen fylles først når sonden har vist kilder.
+
 ### 29.09.2026 12:27, Claude Code
 **Hva:** Rettet klokkeslettene i de sju innslagene fra Claude Code i dag
 mellom 12.02 og 12.24. De var ført med anslåtte tider (12.05 til 14.05) i
