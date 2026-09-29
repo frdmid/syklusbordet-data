@@ -388,3 +388,15 @@ if GITHUB_TOKEN and ut:
 print("\n" + "=" * 72)
 print("Hoy B1 og hoy B2 samtidig er den ekte tilstanden: det investeres lite,")
 print("og det har det gjort lenge nok til at kapasitet faktisk forsvinner.")
+
+
+# B for rigger (29.09.2026): land, grunt og dypt vann, se rigg_b.py. Kjoeres
+# her fordi arbeidsflyten for kvartalet allerede kjoerer denne fila. Hoppes
+# over naar tilbud_b.py kjoeres av en sonde (B_UT satt). Feiler den, paavirkes
+# ikke B for metallene.
+if not os.environ.get("B_UT"):
+    try:
+        import rigg_b
+        rigg_b.kjor()
+    except Exception as e:
+        print(f"\nRigg B feilet: {type(e).__name__}: {str(e)[:100]}")

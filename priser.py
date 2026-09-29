@@ -619,6 +619,20 @@ try:
                        "pctl_alle": pct(ip, ip.iloc[-1]), "pctl_10aar": pct(ip.iloc[-120:], ip.iloc[-1]),
                        "fra": str(ip.index[0]), "basis": "volumindeks, ikke deflatert",
                        "kilde": "Federal Reserve, industriproduksjon IPN213111N via FRED"}
+        # Tilbudsskaaren B for rigger (rigg_b.py, kvartalsvis): land, grunt og
+        # dypt vann hver for seg. Informasjon, ikke flagg, og ikke scores.B.
+        try:
+            rb = requests.get(f"https://raw.githubusercontent.com/{REPO}/{BRANCH}/b_rigg.json",
+                              params={"cb": int(time.time())}, headers=UA, timeout=TIMEOUT)
+            if rb.status_code == 200:
+                j = rb.json()
+                seg["rigg_b"] = {"oppdatert": j.get("oppdatert"), "metode": j.get("metode"),
+                                 "svakhet": j.get("svakhet"),
+                                 "segmenter": {k: {f: v.get(f) for f in ("navn", "aar_siste", "B2_siste", "forhold_siste",
+                                                                         "snitt5_siste", "n_siste", "selskaper_siste")}
+                                               for k, v in (j.get("segmenter") or {}).items()}}
+        except Exception as e:
+            note("rigg B", False, f"{type(e).__name__}: {str(e)[:60]}")
         note("oljeservice", True, f"observasjon, A {sc['A']} detr {sc['Ad']}, aktivitet {seg['rate']['verdi']} "
                                   f"per {sis} (persentil {seg['rate']['pctl_alle']})")
 except Exception as e:

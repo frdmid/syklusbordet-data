@@ -9,6 +9,26 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 15:13, Claude Code
+**Hva:** B for rigger er i drift (Frodes beslutning), som informasjon i
+oljeservicepanelet. Ny modul `rigg_b.py` regner investeringer delt på
+avskrivninger for land, grunt vann (jackups) og dypt vann (flytere) hver for
+seg: rene selskaper fra SECs samlede data pluss segmenttall fra årsrapportene
+til Valaris, Seadrill og Rowan. Nytt fra sondene: Diamond (2007 til 2023)
+og Ocean Rig (2014 til 2017) er med etter at begrepene
+CostOfServicesDepreciation, CostOfGoodsAndServicesSoldDepreciation og
+PaymentsForProceedsFromProductiveAssets ble lagt til. Patterson-UTI er holdt
+utenfor, fordi selskapet fører avskrivninger og nedskrivninger samlet.
+Lokalt: land B2 82 (forhold 0,90 i 2025, 2 selskaper), grunt 35 (1,36, 2),
+dyp 86 (0,37, 2). Kjøres kvartalsvis fra slutten av `tilbud_b.py` (hoppes
+over når en sonde kjører den) og skriver `b_rigg.json`. `priser.py` legger
+tallene i `oljeservice.rigg_b`. Dashbordet viser en linje «Tilbud B,
+rigger» i panelet og et avsnitt i forklaringen.
+**Filer:** `rigg_b.py` (ny), `tilbud_b.py`, `priser.py`; `b_rigg.json` skrives
+av Actions.
+**Den andre økten må vite:** B for rigger står ikke i `scores.B` og ikke i
+oversikten. `tilbud_b.py` tar nå rundt ett minutt lenger.
+
 ### 29.09.2026 15:01, Claude Code
 **Hva:** `sonde_kjor_rigg_segment.py` kjørt lokalt og rettet. Segmenttall
 funnet for Valaris/Ensco (flytere og jackups 2009 til 2025, unntatt 2021, som
