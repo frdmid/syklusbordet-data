@@ -1,8 +1,9 @@
-Hopper over 34 ferdige sonder (sonder_ferdige.txt): sonde_kjor_b_fmg, sonde_kjor_b_haleregel, sonde_kjor_b_jernmalm, sonde_kjor_b_kilder, sonde_kjor_backtest, sonde_kjor_backtest_lang, sonde_kjor_bdi, sonde_kjor_brasil, sonde_kjor_c_manuell, sonde_kjor_c_manuell2, sonde_kjor_c_manuell3, sonde_kjor_cot, sonde_kjor_d95, sonde_kjor_dadj, sonde_kjor_faktor, sonde_kjor_fearnleys_mal, sonde_kjor_fond, sonde_kjor_fond_norge, sonde_kjor_indikator, sonde_kjor_instrumenttest, sonde_kjor_kali_platina, sonde_kjor_kurve, sonde_kjor_laks, sonde_kjor_land, sonde_kjor_macrotrends, sonde_kjor_rigg, sonde_kjor_salg, sonde_kjor_stockanalysis, sonde_kjor_terskel, sonde_kjor_timing, sonde_kjor_tio, sonde_kjor_uran, sonde_kjor_utbytte, sonde_kjor_utforsk_etf
-
-Oppstarter: 1 sonde(r) funnet
-
-=== sonde_kjor_cotr ===
+sonde:   sonde_kjor_cotr
+kjort:   2026-09-29 09:29:05 UTC
+commit:  55ae6be
+status:  OK
+brukte:  67 sekunder
+--------------------------------------------------------------
 1. CFTC (Socrata), markedsnavn som matcher
 
    Disaggregated futures  ALUMINIUM EURO PREM DUTY-PAID - COMMODITY EXCHANGE INC.      2020-09-29 til 2026-09-22  282 uker
@@ -113,9 +114,3 @@ Oppstarter: 1 sonde(r) funnet
       utdrag: {"errors":[{"message":"The persisted query loader must return query string or instance of GraphQL\\Language\\AST\\DocumentNode but got: null.","extensions":{"category":"request"}}]}
 
 Ferdig. Sonden bygger ingenting; den viser bare hva som kan hentes.
-
---- skrevet til sonder/sonde_kjor_cotr.txt (67 s, kode 0)
-
-
-OPPSUMMERING
-   OK    sonde_kjor_cotr                             67 s  -> sonder/sonde_kjor_cotr.txt
