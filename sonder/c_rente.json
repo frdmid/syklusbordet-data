@@ -33,37 +33,6 @@
     "rente": "InterestExpense"
    }
   },
-  "AI.PA": {
-   "ticker": "AI.PA",
-   "navn": "Air Liquide",
-   "bors": "Paris",
-   "segmenter": [
-    "ttf"
-   ],
-   "port": "stengt",
-   "hvorfor": "bare 1.4 kvartaler",
-   "kvartaler": 1.4,
-   "kvartaler_naa": 1.4,
-   "bunnaar": 2026,
-   "aar_historikk": 8,
-   "netto_gjeld_ek": null,
-   "rentedekning": null,
-   "kontanter_musd": 66.0,
-   "verste_drift_musd": -190.0,
-   "drift_naa_musd": -190.0,
-   "rente_musd": null,
-   "renter_i_drift": false,
-   "rentegrunn": "gammel regel",
-   "aar": [
-    2019,
-    2026
-   ],
-   "begreper": {
-    "kontanter": "CashAndCashEquivalentsAtCarryingValue",
-    "drift": "NetCashProvidedByUsedInOperatingActivities",
-    "egenkapital": "StockholdersEquity"
-   }
-  },
   "ARLP": {
    "ticker": "ARLP",
    "navn": "Alliance Resource Partners",
@@ -193,37 +162,6 @@
     "drift": "NetCashProvidedByUsedInOperatingActivities",
     "egenkapital": "StockholdersEquity",
     "rente": "InterestExpense"
-   }
-  },
-  "CIA.TO": {
-   "ticker": "CIA.TO",
-   "navn": "Champion Iron",
-   "bors": "Toronto",
-   "segmenter": [
-    "jernmalm"
-   ],
-   "port": "aapen",
-   "hvorfor": "positiv drift etter renter selv i 2025",
-   "kvartaler": null,
-   "kvartaler_naa": null,
-   "bunnaar": 2025,
-   "aar_historikk": 17,
-   "netto_gjeld_ek": null,
-   "rentedekning": null,
-   "kontanter_musd": 23.0,
-   "verste_drift_musd": 18.0,
-   "drift_naa_musd": 18.0,
-   "rente_musd": null,
-   "renter_i_drift": false,
-   "rentegrunn": "gammel regel",
-   "aar": [
-    2009,
-    2025
-   ],
-   "begreper": {
-    "kontanter": "CashAndCashEquivalentsAtCarryingValue",
-    "drift": "NetCashProvidedByUsedInOperatingActivities",
-    "egenkapital": "StockholdersEquity"
    }
   },
   "CVE.TO": {
@@ -459,39 +397,6 @@
     "rente": "InterestExpense"
    }
   },
-  "HEI.DE": {
-   "ticker": "HEI.DE",
-   "navn": "Heidelberg Materials",
-   "bors": "Xetra",
-   "segmenter": [
-    "ttf"
-   ],
-   "port": "trang",
-   "hvorfor": "9.8 kvartaler",
-   "kvartaler": 9.8,
-   "kvartaler_naa": null,
-   "bunnaar": 2008,
-   "aar_historikk": 16,
-   "netto_gjeld_ek": 0.47,
-   "rentedekning": 0.6,
-   "kontanter_musd": 140.0,
-   "verste_drift_musd": 73.0,
-   "drift_naa_musd": 934.0,
-   "rente_musd": 130.0,
-   "renter_i_drift": false,
-   "rentegrunn": "gammel regel",
-   "aar": [
-    2008,
-    2025
-   ],
-   "begreper": {
-    "kontanter": "CashAndCashEquivalentsAtCarryingValue",
-    "gjeld": "LongTermDebtAndCapitalLeaseObligations",
-    "drift": "NetCashProvidedByUsedInOperatingActivities",
-    "egenkapital": "StockholdersEquity",
-    "rente": "InterestExpenseDebt"
-   }
-  },
   "HSHP.OL": {
    "ticker": "HSHP.OL",
    "navn": "Himalaya Shipping",
@@ -556,38 +461,6 @@
     "drift": "NetCashProvidedByUsedInOperatingActivities",
     "egenkapital": "StockholdersEquity",
     "rente": "InterestExpense"
-   }
-  },
-  "LIF.TO": {
-   "ticker": "LIF.TO",
-   "navn": "Labrador Iron Ore Royalty",
-   "bors": "Toronto",
-   "segmenter": [
-    "jernmalm"
-   ],
-   "port": "aapen",
-   "hvorfor": "34.7 kvartaler",
-   "kvartaler": 34.7,
-   "kvartaler_naa": null,
-   "bunnaar": 2022,
-   "aar_historikk": 6,
-   "netto_gjeld_ek": null,
-   "rentedekning": null,
-   "kontanter_musd": 494.0,
-   "verste_drift_musd": -57.0,
-   "drift_naa_musd": 89.0,
-   "rente_musd": 0.0,
-   "renter_i_drift": false,
-   "rentegrunn": "gammel regel",
-   "aar": [
-    2020,
-    2025
-   ],
-   "begreper": {
-    "kontanter": "CashAndCashEquivalentsAtCarryingValue",
-    "drift": "NetCashProvidedByUsedInOperatingActivities",
-    "egenkapital": "StockholdersEquity",
-    "rente": "InterestPaidNet"
    }
   },
   "NAT": {
@@ -945,37 +818,6 @@
     "rente": "InterestExpense"
    }
   },
-  "AI.PA": {
-   "ticker": "AI.PA",
-   "navn": "Air Liquide",
-   "bors": "Paris",
-   "segmenter": [
-    "ttf"
-   ],
-   "port": "stengt",
-   "hvorfor": "bare 1.4 kvartaler",
-   "kvartaler": 1.4,
-   "kvartaler_naa": 1.4,
-   "bunnaar": 2026,
-   "aar_historikk": 8,
-   "netto_gjeld_ek": null,
-   "rentedekning": null,
-   "kontanter_musd": 66.0,
-   "verste_drift_musd": -190.0,
-   "drift_naa_musd": -190.0,
-   "rente_musd": null,
-   "renter_i_drift": true,
-   "rentegrunn": "us-gaap",
-   "aar": [
-    2019,
-    2026
-   ],
-   "begreper": {
-    "kontanter": "CashAndCashEquivalentsAtCarryingValue",
-    "drift": "NetCashProvidedByUsedInOperatingActivities",
-    "egenkapital": "StockholdersEquity"
-   }
-  },
   "ARLP": {
    "ticker": "ARLP",
    "navn": "Alliance Resource Partners",
@@ -1105,37 +947,6 @@
     "drift": "NetCashProvidedByUsedInOperatingActivities",
     "egenkapital": "StockholdersEquity",
     "rente": "InterestExpense"
-   }
-  },
-  "CIA.TO": {
-   "ticker": "CIA.TO",
-   "navn": "Champion Iron",
-   "bors": "Toronto",
-   "segmenter": [
-    "jernmalm"
-   ],
-   "port": "aapen",
-   "hvorfor": "positiv drift etter renter selv i 2025",
-   "kvartaler": null,
-   "kvartaler_naa": null,
-   "bunnaar": 2025,
-   "aar_historikk": 17,
-   "netto_gjeld_ek": null,
-   "rentedekning": null,
-   "kontanter_musd": 23.0,
-   "verste_drift_musd": 18.0,
-   "drift_naa_musd": 18.0,
-   "rente_musd": null,
-   "renter_i_drift": true,
-   "rentegrunn": "us-gaap",
-   "aar": [
-    2009,
-    2025
-   ],
-   "begreper": {
-    "kontanter": "CashAndCashEquivalentsAtCarryingValue",
-    "drift": "NetCashProvidedByUsedInOperatingActivities",
-    "egenkapital": "StockholdersEquity"
    }
   },
   "CVE.TO": {
@@ -1371,39 +1182,6 @@
     "rente": "InterestExpense"
    }
   },
-  "HEI.DE": {
-   "ticker": "HEI.DE",
-   "navn": "Heidelberg Materials",
-   "bors": "Xetra",
-   "segmenter": [
-    "ttf"
-   ],
-   "port": "aapen",
-   "hvorfor": "positiv drift etter renter selv i 2008",
-   "kvartaler": null,
-   "kvartaler_naa": null,
-   "bunnaar": 2008,
-   "aar_historikk": 16,
-   "netto_gjeld_ek": 0.47,
-   "rentedekning": 1.6,
-   "kontanter_musd": 140.0,
-   "verste_drift_musd": 73.0,
-   "drift_naa_musd": 934.0,
-   "rente_musd": 130.0,
-   "renter_i_drift": true,
-   "rentegrunn": "us-gaap",
-   "aar": [
-    2008,
-    2025
-   ],
-   "begreper": {
-    "kontanter": "CashAndCashEquivalentsAtCarryingValue",
-    "gjeld": "LongTermDebtAndCapitalLeaseObligations",
-    "drift": "NetCashProvidedByUsedInOperatingActivities",
-    "egenkapital": "StockholdersEquity",
-    "rente": "InterestExpenseDebt"
-   }
-  },
   "HSHP.OL": {
    "ticker": "HSHP.OL",
    "navn": "Himalaya Shipping",
@@ -1468,38 +1246,6 @@
     "drift": "NetCashProvidedByUsedInOperatingActivities",
     "egenkapital": "StockholdersEquity",
     "rente": "InterestExpense"
-   }
-  },
-  "LIF.TO": {
-   "ticker": "LIF.TO",
-   "navn": "Labrador Iron Ore Royalty",
-   "bors": "Toronto",
-   "segmenter": [
-    "jernmalm"
-   ],
-   "port": "aapen",
-   "hvorfor": "34.7 kvartaler",
-   "kvartaler": 34.7,
-   "kvartaler_naa": null,
-   "bunnaar": 2022,
-   "aar_historikk": 6,
-   "netto_gjeld_ek": null,
-   "rentedekning": null,
-   "kontanter_musd": 494.0,
-   "verste_drift_musd": -57.0,
-   "drift_naa_musd": 89.0,
-   "rente_musd": 0.0,
-   "renter_i_drift": true,
-   "rentegrunn": "us-gaap",
-   "aar": [
-    2020,
-    2025
-   ],
-   "begreper": {
-    "kontanter": "CashAndCashEquivalentsAtCarryingValue",
-    "drift": "NetCashProvidedByUsedInOperatingActivities",
-    "egenkapital": "StockholdersEquity",
-    "rente": "InterestPaidNet"
    }
   },
   "NAT": {

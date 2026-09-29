@@ -1,18 +1,16 @@
 sonde:   sonde_kjor_c_rente
-kjort:   2026-09-29 10:04:53 UTC
-commit:  1b749ac
+kjort:   2026-09-29 10:09:45 UTC
+commit:  510bc23
 status:  OK
-brukte:  24 sekunder
+brukte:  20 sekunder
 --------------------------------------------------------------
 papir      grunn                                   port       kvartaler          kv naa       dekning  rente musd
 AA         us-gaap                       trang -> aapen    13.6 -> 20.5            None  -2.0 -> -1.0  158.0
-AI.PA      us-gaap                               stengt             1.4             1.4          None  None
 AKRBP.OL   manuelt lest aarsrapport:              aapen            23.0            None          -0.0  394.8
 ARLP       us-gaap                                aapen            None            None    7.2 -> 8.2  36.0
 BTU        us-gaap                                aapen    23.8 -> 43.6            None  -1.2 -> -0.2  44.0
 CCJ        ifrs, renter ikke i drift              aapen            None            None           1.1  52.0
 CENX       us-gaap                               stengt      5.8 -> 7.8            None  -3.0 -> -2.0  23.0
-CIA.TO     us-gaap                                aapen            None            None          None  None
 CVE.TO     ifrs, renter i drift                   aapen    37.0 -> None            None    0.5 -> 1.5  569.0
 DHT        ifrs, renter i drift                   aapen            None            None    3.8 -> 4.8  14.0
 DNO.OL     manuelt lest aarsrapport:              trang            10.1            None          -0.7  105.8
@@ -21,10 +19,8 @@ EQT        us-gaap                                aapen            None         
 FRO.OL     us-gaap                       trang -> aapen    14.2 -> None            None    0.4 -> 1.4  55.0
 GNK        us-gaap                               stengt      3.4 -> 4.0            None  -6.4 -> -5.4  9.0
 HBM.TO     ifrs, renter ikke i drift              aapen            None            None           3.9  61.0
-HEI.DE     us-gaap                       trang -> aapen     9.8 -> None            None    0.6 -> 1.6  130.0
 HSHP.OL    us-gaap                      stengt -> trang     2.5 -> 89.6            None   -0.0 -> 1.0  50.0
 HSY        us-gaap                                aapen            None            None    2.3 -> 3.3  225.0
-LIF.TO     us-gaap                                aapen            34.7            None          None  0.0
 NAT        us-gaap                               stengt      2.4 -> 3.9    17.2 -> None  -1.5 -> -0.5  30.0
 NEXA       ifrs, renter i drift          trang -> aapen    11.2 -> None            None    0.4 -> 1.4  306.0
 PANL       us-gaap                                aapen            None            None    2.4 -> 3.4  9.0
@@ -34,6 +30,6 @@ TRMD-A.CO  ifrs, renter i drift                   aapen   324.0 -> None         
 UUUU       us-gaap                               stengt             2.9             2.9 -1657.0 -> -1656.0  0.0
 VALE       us-gaap                                aapen            None            None    5.4 -> 6.4  1311.0
 
-PORT ENDRET: AA trang -> aapen, FRO.OL trang -> aapen, HEI.DE trang -> aapen, HSHP.OL stengt -> trang, NEXA trang -> aapen
+PORT ENDRET: AA trang -> aapen, FRO.OL trang -> aapen, HSHP.OL stengt -> trang, NEXA trang -> aapen
 Manuelt leste selskaper (c_manuell) regnes likt foer og etter; fiksen gjelder bare SEC-tallene.
 lagret sonder/c_rente.json
