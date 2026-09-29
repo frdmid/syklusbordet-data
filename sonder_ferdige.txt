@@ -47,3 +47,4 @@ sonde_kjor_c_produksjon
 sonde_kjor_c_spleis
 sonde_kjor_vale
 sonde_kjor_oljeservice
+sonde_kjor_rigg_b
