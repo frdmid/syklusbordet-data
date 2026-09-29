@@ -1,25 +1,9 @@
-Hopper over 37 ferdige sonder (sonder_ferdige.txt): sonde_kjor_b_fmg, sonde_kjor_b_haleregel, sonde_kjor_b_jernmalm, sonde_kjor_b_kilder, sonde_kjor_backtest, sonde_kjor_backtest_lang, sonde_kjor_bdi, sonde_kjor_brasil, sonde_kjor_c_manuell, sonde_kjor_c_manuell2, sonde_kjor_c_manuell3, sonde_kjor_cot, sonde_kjor_cot_palme_sgx, sonde_kjor_cotr, sonde_kjor_d95, sonde_kjor_dadj, sonde_kjor_faktor, sonde_kjor_fearnleys_mal, sonde_kjor_fond, sonde_kjor_fond_norge, sonde_kjor_indikator, sonde_kjor_instrumenttest, sonde_kjor_kali_platina, sonde_kjor_kurve, sonde_kjor_laks, sonde_kjor_land, sonde_kjor_macrotrends, sonde_kjor_rigg, sonde_kjor_salg, sonde_kjor_sgx_cot, sonde_kjor_stockanalysis, sonde_kjor_terskel, sonde_kjor_timing, sonde_kjor_tio, sonde_kjor_uran, sonde_kjor_utbytte, sonde_kjor_utforsk_etf
-
-Oppstarter: 2 sonde(r) funnet
-
-=== sonde_kjor_b_dda ===
-1. SELSKAPER MED NY NEVNER
-   ingen selskaper endret
-
-2. PER METALL, SISTE AAR
-   metall          siste aar          forhold             B1             B2
-   aluminium            2025            1.021            5.9           63.0
-   gull                 2025            1.189           33.3           32.0
-   jernmalm             2025            1.593           50.0            0.0
-   kobber               2025             1.87           36.8            0.0
-   kull                 2025            0.986           38.9           48.6
-   uran                 2025            1.181            0.0           73.0
-
-lagret sonder/b_dda.json
-
---- skrevet til sonder/sonde_kjor_b_dda.txt (30 s, kode 0)
-
-=== sonde_kjor_c_rente ===
+sonde:   sonde_kjor_c_rente
+kjort:   2026-09-29 10:04:53 UTC
+commit:  1b749ac
+status:  OK
+brukte:  24 sekunder
+--------------------------------------------------------------
 papir      grunn                                   port       kvartaler          kv naa       dekning  rente musd
 AA         us-gaap                       trang -> aapen    13.6 -> 20.5            None  -2.0 -> -1.0  158.0
 AI.PA      us-gaap                               stengt             1.4             1.4          None  None
@@ -53,10 +37,3 @@ VALE       us-gaap                                aapen            None         
 PORT ENDRET: AA trang -> aapen, FRO.OL trang -> aapen, HEI.DE trang -> aapen, HSHP.OL stengt -> trang, NEXA trang -> aapen
 Manuelt leste selskaper (c_manuell) regnes likt foer og etter; fiksen gjelder bare SEC-tallene.
 lagret sonder/c_rente.json
-
---- skrevet til sonder/sonde_kjor_c_rente.txt (24 s, kode 0)
-
-
-OPPSUMMERING
-   OK    sonde_kjor_b_dda                            30 s  -> sonder/sonde_kjor_b_dda.txt
-   OK    sonde_kjor_c_rente                          24 s  -> sonder/sonde_kjor_c_rente.txt

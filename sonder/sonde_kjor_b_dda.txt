@@ -1,0 +1,19 @@
+sonde:   sonde_kjor_b_dda
+kjort:   2026-09-29 10:04:28 UTC
+commit:  1b749ac
+status:  OK
+brukte:  30 sekunder
+--------------------------------------------------------------
+1. SELSKAPER MED NY NEVNER
+   ingen selskaper endret
+
+2. PER METALL, SISTE AAR
+   metall          siste aar          forhold             B1             B2
+   aluminium            2025            1.021            5.9           63.0
+   gull                 2025            1.189           33.3           32.0
+   jernmalm             2025            1.593           50.0            0.0
+   kobber               2025             1.87           36.8            0.0
+   kull                 2025            0.986           38.9           48.6
+   uran                 2025            1.181            0.0           73.0
+
+lagret sonder/b_dda.json
