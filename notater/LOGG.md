@@ -9,6 +9,32 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 11:42, Claude Code, uavhengig vurdering
+**Hva:** Uavhengig, kritisk vurdering av modellen (A, bunnsonen, B, C, D),
+backtestene og flaggloggen, gjort av en økt som ikke var med på å lage dem.
+Ingen kode eller data er endret.
+**Filer:** `notater/2026-09-29_vurdering.md` (ny), `notater/LOGG.md`. Ligger på
+arbeidsgrenen `claude/uavhengig-vurdering-2026-09-29`, ikke på main.
+**Den andre økten må vite:**
+1. Bransjene uten overlevelsesskjevhet er negative ved 12 mnd også fra 2011-09
+   (S -3,7 %, 3 av 6, -9,4 % mot markedet). Uten 2008-09 og 2020 faller
+   papirenes S etter 12 mnd fra rundt +25 % til rundt +2 % (tilnærming regnet
+   fra `sonder/backtest.json`). Flagget har ikke vist verdi for aksjer.
+2. Tre formuleringer bør rettes: «alle etter 2008» i backtestnotatet (tre av
+   elleve episoder er før), «resultatet fra 2011 bæres av 2009 og 2020» her i
+   loggen 28.09 18:19, og «modellen hviler på 2011 til 2026».
+3. Flaggloggen har hull som bør tettes før første innslag: ingen tolv måneders
+   pause som i testene, papirer som tas av tavlen slutter å logges så tenkte
+   kjøp aldri lukkes (`flagglogg.py:272-277`), samme papir telles i flere
+   segmenter, og dommen regnes ikke i koden. Oljeflagget regnes på uferdig
+   måned (`priser.py:66`).
+4. Kriteriet fire av fem gir rundt 19 % falsk bekreftelse hvis flagget er
+   verdiløst, og test-flagget to av tre gir 50 %. Fem episoder tar trolig åtte
+   til ti år. Hypotesen T+1 med salg etter tre måneder kan testes nå på
+   bransjene og landene før 2011, der den ikke ble funnet.
+5. Kodefeil: C trekker renter fra driftskontantstrømmen, som under US GAAP
+   allerede er etter renter (`overlevelse_c.py:213-215`). Full liste i notatet.
+
 ### 29.09.2026 11:34, Claude Code
 **Hva:** COT for palmeolje lagt inn (Frodes valg), og to forsøk på SGX sin
 COT for jernmalm. Palmeolje: CFTC-kontrakt 037021, CME «USD Malaysian Crude
