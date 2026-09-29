@@ -9,6 +9,20 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 14:32, Claude Code
+**Hva:** Oljeservice er i drift. Kvartalsvis og ukentlig innhenting kjørt:
+`segments/oljeservice.json` har A 46,8, detrendet 98,8, D 21,5 (papirene 3,8
+til 75,5, IEZ 20,8), C åpen (SLB og BKR åpne, HAL stengt), aktivitet 105,3
+(persentil 37,7). Segmentet står i `index.json` (18 segmenter). Dokumentet er
+skrevet rett inn i dashbordets database (samlingen segments, versjon 1), så
+det vises før onsdagsjobben. Dashbordet er publisert som versjon 45: tittelen
+på merket «Observasjon» hentes fra `scores.observasjon_grunn` (laks-teksten
+står som reserve), raten skriver «av aktiviteten» for volumindekser, og
+forklaringen har et avsnitt om oljeservice.
+**Filer:** Ingen i repoet; dashbordet og databasen.
+**Den andre økten må vite:** Onsdagsjobben vil skrive oljeservice til
+databasen sammen med de andre, uten endringer i jobben.
+
 ### 29.09.2026 14:25, Claude Code
 **Hva:** Nytt segment `oljeservice` (Frodes beslutning), observasjon uten
 flagg, bygget i `priser.py` etter samme mønster som laks:
