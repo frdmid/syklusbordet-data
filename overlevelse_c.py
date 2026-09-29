@@ -126,14 +126,27 @@ print("1. SECs tickerliste")
 try:
     tick = hent("https://www.sec.gov/files/company_tickers.json", timeout=45).json()
     KART = {v["ticker"].upper(): str(v["cik_str"]).zfill(10) for v in tick.values()}
+    TITTEL = {v["ticker"].upper(): str(v.get("title", "")) for v in tick.values()}
     print(f"   {len(KART)} selskaper")
 except Exception as e:
     sys.exit(f"   SEC svarte ikke: {type(e).__name__} {e}")
 
 
-def secnavn(tk):
-    for k in (tk, re.sub(r"\.[A-Z]+$", "", tk), re.sub(r"-[A-Z]$", "", re.sub(r"\.[A-Z]+$", "", tk))):
+def _ord(s):
+    return {w for w in re.findall(r"[a-z0-9]+", s.lower()) if len(w) >= 3}
+
+
+def secnavn(tk, navn=""):
+    """Tickeren hos SEC. Uten boerssuffiks kan en annen tickers treffe:
+    fram til 29.09.2026 ble Air Liquide (AI.PA) lest som C3.ai, Heidelberg
+    Materials (HEI.DE) som HEICO, Labrador Iron Ore (LIF.TO) som Life360 og
+    Champion Iron (CIA.TO) som Citizens Inc. Naar suffikset er strippet,
+    maa navnet hos SEC dele minst ett ord med navnet paa tavlen."""
+    for i, k in enumerate((tk, re.sub(r"\.[A-Z]+$", "", tk), re.sub(r"-[A-Z]$", "", re.sub(r"\.[A-Z]+$", "", tk)))):
         if k.upper() in KART:
+            if i and k.upper() != tk.upper() and not (_ord(navn) & _ord(TITTEL.get(k.upper(), ""))):
+                print(f"   {tk:12s} {k.upper()} hos SEC er {TITTEL.get(k.upper())}, ikke {navn}; hoppet over")
+                return None
             return k.upper()
     return None
 
@@ -153,7 +166,7 @@ for sid, rader in INSTR.items():
 print(f"\n2. Regnskapstall for {len(AKSJER)} aksjer")
 SELSKAP, utenfor = {}, []
 for tk in sorted(AKSJER):
-    nk = secnavn(tk)
+    nk = secnavn(tk, AKSJER[tk]["navn"])
     if not nk:
         utenfor.append(tk)
         continue
