@@ -9,6 +9,27 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 21:45, Claude Code
+**Hva:** Test av B2 og kapitulasjon D som kjøpssignal (Frodes bestilling),
+`sonde_kjor_b_signal.py`, regler og kriterium satt i fila før kjøring. Ni
+segmenter (seks metaller, tre riggsegmenter), inngang i april året etter B,
+avkastning mot verdensindeksen, høy gruppe mot lav per inngangsår.
+Resultat på 12 mnd (avgjør), med sjansen for minst like mange positive år ved
+myntkast:
+- B2 over 50: positiv 8 av 14 år, snitt +3,1 pp; uten 2020-21 7 av 12,
+  +10,5 pp. Holder etter kriteriet, men svakt (myntkast 0,40).
+- D papirene 60+: 11 av 16, +22,1 pp; uten 2020-21 9 av 14, +11,7 pp. Holder
+  (myntkast 0,11). På 24 mnd snur det: 7 av 15, uten 2020-21 -8,0 pp.
+- D fondet 60+: 4 av 12. Holder ikke.
+- B2 over 50 og D papirene 60+: 9 av 13, +24,6 pp; uten 2020-21 7 av 11,
+  +19,5 pp. Holder (myntkast 0,13).
+Forbehold: 2012 til 2016 er høy B2 bare aluminium, og fra 2020 er lav B2
+bare kobber og jernmalm. B-kurvene og papirene er dagens overlevere.
+SHLF.OL (Shelf Drilling) fantes ikke på Yahoo.
+**Filer:** `sonde_kjor_b_signal.py` (ny), `sonder/sonde_kjor_b_signal.txt`,
+`sonder/b_signal.csv`, `sonder_ferdige.txt`.
+**Den andre økten må vite:** Ingenting på dashbordet er endret.
+
 ### 29.09.2026 16:59, Claude Code
 **Hva:** Dashbordet publisert som versjon 48 (tekst om anslått slitasje), og
 oljeservice i databasen oppdatert med B for rigger etter regel B (versjon 4).
