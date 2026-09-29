@@ -9,6 +9,12 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 16:59, Claude Code
+**Hva:** Dashbordet publisert som versjon 48 (tekst om anslått slitasje), og
+oljeservice i databasen oppdatert med B for rigger etter regel B (versjon 4).
+**Filer:** Ingen i repoet; dashbordet og databasen.
+**Den andre økten må vite:** Ingenting.
+
 ### 29.09.2026 16:58, Claude Code
 **Hva:** Test B (anslått slitasje) besto kriteriet satt før kjøring og er tatt
 i bruk i `rigg_b.py` (Frodes beslutning: gjør A, test B). Kontrollen på 33
