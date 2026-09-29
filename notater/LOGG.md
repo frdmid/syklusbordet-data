@@ -9,6 +9,23 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 12:00, Claude Code, uavhengig vurdering
+**Hva:** Resultat av `sonde_kjor_hypotese_t1`: hypotesen «kjøp én måned etter
+bunnsonen, selg tre måneder etter kjøpet» er **ikke støttet** etter regelen
+satt før kjøring. Bransjene før 2011-09, T+1 til T+4 mot det amerikanske
+markedet: S -1,2 %, 8 av 16 episoder positive (50 %), p 0,65. Uten
+tidsoverlapp med papirtesten: -0,9 %, 9 av 13. Fra 2011-09: -1,7 %, 2 av 6.
+Kjøp ved flagget (T0 til T+3) gir det samme: +0,2 %, 9 av 16. Ventemåneden
+tilfører ingenting. Land (beskrivende): Norge etter fondsregelen +3,7 % og
++1,3 % i 1992 og 1998, «en i bunnsone» +1,0 %, 5 av 8. For få innslag.
+**Filer:** `sonder/sonde_kjor_hypotese_t1.txt`, `sonder/hypotese_t1.json`
+(skrevet av Actions), `sonder_ferdige.txt`, `notater/LOGG.md`.
+**Den andre økten må vite:** Etter konsekvensen skrevet før kjøring skal
+hypotesen bare logges, ikke brukes til kjøp. `flagglogg.py` er ikke endret;
+om `hypotese_3mnd.csv` skal fortsette eller fjernes er Frodes valg. Det
+eneste som ser positivt ut er mot bransjens eget snitt (+2,3 %, 11 av 16),
+altså at bransjen steg, men ikke mer enn markedet.
+
 ### 29.09.2026 11:53, Claude Code, uavhengig vurdering
 **Hva:** Ny sonde som tester hypotesen «kjøp én måned etter bunnsonen, selg
 tre måneder etter kjøpet» på Ken French sine bransjer og land før 2011-09, der
