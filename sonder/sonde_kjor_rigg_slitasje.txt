@@ -1,0 +1,95 @@
+sonde:   sonde_kjor_rigg_slitasje
+kjort:   29.09.2026 lokalt i Claude Code (GitHub-tilkoblingen var nede)
+--------------------------------------------------------------
+1. RIGGTALL FRA AARSRAPPORTENE
+
+   Valaris            dyp 2011: 6, dyp 2012: 28, dyp 2013: 29, dyp 2014: 28, dyp 2015: 26, dyp 2016: 21, dyp 2017: 27, dyp 2018: 24, dyp 2019: 27, dyp 2020: 16, dyp 2021: 16, dyp 2022: 16, dyp 2023: 18, dyp 2024: 18, dyp 2025: 15, grunt 2011: 49, grunt 2012: 46, grunt 2013: 47, grunt 2014: 42, grunt 2015: 42, grunt 2016: 38, grunt 2017: 38, grunt 2018: 35, grunt 2019: 43, grunt 2020: 36, grunt 2021: 33, grunt 2022: 28, grunt 2023: 27, grunt 2024: 28, grunt 2025: 24
+   Diamond Offshore   alle 2012: 44, alle 2013: 45, alle 2014: 38, alle 2015: 32, alle 2016: 24, alle 2017: 17, alle 2018: 17, alle 2019: 15, alle 2020: 13, alle 2021: 12, alle 2022: 14, alle 2023: 13
+   Transocean         alle 2010: 139, alle 2011: 135, alle 2018: 50, alle 2019: 45, alle 2020: 38, alle 2021: 37, alle 2022: 38, alle 2023: 37, alle 2024: 34, alle 2025: 27
+   Borr Drilling      
+
+2. RAA DATA UTEN REGEL A
+
+3. KONTROLL AV ANSLAGET PAA RENE AAR (satt foer kjoering)
+
+   Valaris            dyp   2014: faktisk     358  anslag     572  feil  59.6 %
+   Valaris            dyp   2015: faktisk     382  anslag     301  feil  21.3 %
+   Valaris            dyp   2016: faktisk     304  anslag     275  feil   9.5 %
+   Valaris            dyp   2017: faktisk     297  anslag     378  feil  27.0 %
+   Valaris            dyp   2018: faktisk     312  anslag     322  feil   3.2 %
+   Valaris            dyp   2019: faktisk     362  anslag     346  feil   4.4 %
+   Valaris            dyp   2020: faktisk     263  anslag     200  feil  24.0 %
+   Valaris            grunt 2014: faktisk     171  anslag     138  feil  19.2 %
+   Valaris            grunt 2015: faktisk     176  anslag     147  feil  16.3 %
+   Valaris            grunt 2016: faktisk     124  anslag     144  feil  16.7 %
+   Valaris            grunt 2017: faktisk     132  anslag     146  feil  10.9 %
+   Valaris            grunt 2018: faktisk     153  anslag     127  feil  17.1 %
+   Valaris            grunt 2019: faktisk     203  anslag     159  feil  21.8 %
+   Valaris            grunt 2020: faktisk     217  anslag     151  feil  30.6 %
+   Diamond Offshore   dyp   2015: faktisk     493  anslag     315  feil  36.0 %
+   Diamond Offshore   dyp   2016: faktisk     382  anslag     288  feil  24.5 %
+   Diamond Offshore   dyp   2017: faktisk     349  anslag     246  feil  29.6 %
+   Diamond Offshore   dyp   2018: faktisk     332  anslag     294  feil  11.5 %
+   Diamond Offshore   dyp   2019: faktisk     356  anslag     280  feil  21.4 %
+   Diamond Offshore   dyp   2020: faktisk     320  anslag     276  feil  13.7 %
+   Transocean         dyp   2013: faktisk   1,109  anslag   1,070  feil   3.5 %
+   Transocean         dyp   2014: faktisk   1,129  anslag   1,113  feil   1.4 %
+   Transocean         dyp   2015: faktisk     963  anslag   1,120  feil  16.3 %
+   Transocean         dyp   2016: faktisk     893  anslag   1,067  feil  19.5 %
+   Transocean         dyp   2017: faktisk     832  anslag     995  feil  19.6 %
+   Transocean         dyp   2018: faktisk     818  anslag     332  feil  59.4 %
+   Transocean         dyp   2019: faktisk     855  anslag     437  feil  48.9 %
+   Transocean         dyp   2020: faktisk     781  anslag     526  feil  32.7 %
+   Transocean         dyp   2021: faktisk     742  anslag     690  feil   7.1 %
+   Transocean         dyp   2022: faktisk     735  anslag     755  feil   2.7 %
+   Transocean         dyp   2023: faktisk     744  anslag     739  feil   0.6 %
+   Transocean         dyp   2024: faktisk     739  anslag     674  feil   8.7 %
+   Transocean         dyp   2025: faktisk     659  anslag     551  feil  16.4 %
+
+   33 aar: median feil 17.1 % (krav 20), 80-persentil 28.6 % (krav 35) -> GODKJENT
+
+4. ANSLAATT SLITASJE FOR AAR ETTER NY STARTBALANSE
+
+   Valaris            dyp   2022: capex    153  faktisk avskr     50  anslaatt slitasje    228 (16 rigger x 14.3)
+   Valaris            dyp   2023: capex    562  faktisk avskr     56  anslaatt slitasje    257 (18 rigger x 14.3)
+   Valaris            dyp   2024: capex    240  faktisk avskr     58  anslaatt slitasje    257 (18 rigger x 14.3)
+   Valaris            dyp   2025: capex    145  faktisk avskr     60  anslaatt slitasje    214 (15 rigger x 14.3)
+   Valaris            grunt 2022: capex     54  faktisk avskr     36  anslaatt slitasje    141 (28 rigger x 5.0)
+   Valaris            grunt 2023: capex    132  faktisk avskr     40  anslaatt slitasje    136 (27 rigger x 5.0)
+   Valaris            grunt 2024: capex    213  faktisk avskr     45  anslaatt slitasje    141 (28 rigger x 5.0)
+   Valaris            grunt 2025: capex    192  faktisk avskr     59  anslaatt slitasje    121 (24 rigger x 5.0)
+   Diamond Offshore   dyp   2022: capex     60  faktisk avskr    103  anslaatt slitasje    317 (14 rigger x 22.6)
+   Diamond Offshore   dyp   2023: capex    131  faktisk avskr    111  anslaatt slitasje    294 (13 rigger x 22.6)
+
+5. B2 PER SEGMENT: REGEL A MOT B
+
+   GRUNT
+     aar  A forhold   A B2  A n |  B forhold   B B2  B n
+    2015       0.86      0    4 |       0.86      0    4
+    2016       0.44      0    4 |       0.44      0    4
+    2017       0.24     14    4 |       0.24     14    4
+    2018       0.95     68    3 |       0.95     68    3
+    2019       0.93     90    3 |       0.93     90    3
+    2020       0.27    100    3 |       0.27    100    3
+    2021       0.28    100    2 |       0.28    100    2
+    2022       0.70     97    1 |       0.52    100    2
+    2023       0.95     97    1 |       0.96    100    2
+    2024       0.42    100    1 |       0.98    100    2
+    2025       0.60    100    1 |       1.04     80    2
+
+   DYP
+     aar  A forhold   A B2  A n |  B forhold   B B2  B n
+    2015       1.83      0    7 |       1.83      0    7
+    2016       0.82      0    7 |       0.82      0    7
+    2017       0.44      0    8 |       0.44      0    8
+    2018       0.34      5    4 |       0.34      5    4
+    2019       0.48     77    4 |       0.48     77    4
+    2020       0.38    100    4 |       0.38    100    4
+    2021       0.31    100    2 |       0.31    100    2
+    2022       0.98    100    1 |       0.73    100    3
+    2023       0.57    100    1 |       0.87    100    3
+    2024       0.34    100    1 |       0.50    100    2
+    2025       0.19    100    1 |       0.31    100    2
+
+   Konklusjon etter kriteriet satt foer kjoering: B kan tas i bruk.
+exit 0

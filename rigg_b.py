@@ -123,7 +123,7 @@ def _serie(fakta, begreper):
     return enh_valgt, pd.Series(ut, dtype=float).sort_index()
 
 
-def rene(note=print):
+def rene(note=print, utelat=True):
     data = {}
     for cik, (navn, seg) in REN.items():
         r = _get(f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik}.json")
@@ -134,7 +134,8 @@ def rene(note=print):
         ed, dd = _serie(f, DDA)
         aar = cx.index.intersection(dd.index) if ec == ed else pd.Index([])
         if len(aar):
-            aar = aar[[dd[a] >= 0.25 * dd[aar].median() and a < UTELAT_FRA.get(navn, 9999) for a in aar]]
+            aar = aar[[dd[a] >= 0.25 * dd[aar].median() and (not utelat or a < UTELAT_FRA.get(navn, 9999))
+                       for a in aar]]
         if len(aar) < 2:
             note(f"   {navn}: for faa aar"); continue
         data[cik] = {"navn": navn, "seg": seg, "enh": ec, "capex": cx[aar], "dda": dd[aar]}
@@ -168,7 +169,7 @@ def _instans(cik, accn):
     return None if r is None or r.status_code != 200 else r.text
 
 
-def segmenter(note=print):
+def segmenter(note=print, utelat=True):
     """(klasse, cik, aar) -> {capex, dda}. Nyeste aarsrapport vinner."""
     ut = {}
     for cik, navn in BLANDET.items():
@@ -203,11 +204,92 @@ def segmenter(note=print):
                 k, aar, seg = ctx[m.group(2)]
                 funn.setdefault((k, aar), {}).setdefault(felt, {})[seg] = v
             for (k, aar), d in funn.items():
-                if aar >= UTELAT_FRA.get(navn, 9999):
+                if utelat and aar >= UTELAT_FRA.get(navn, 9999):
                     continue
                 if "capex" in d and "dda" in d:
                     ut[(k, cik, aar)] = {"navn": navn, "capex": sum(d["capex"].values()), "dda": sum(d["dda"].values())}
         note(f"   {navn}: segmenttall for {len({a for (_, c, a) in ut if c == cik})} aar")
+    return ut
+
+
+# ---------------------------------------------------------------------------
+# ANSLAATT SLITASJE (regel B, Frodes beslutning 29.09.2026 etter
+# sonde_kjor_rigg_slitasje). For aar etter ny startbalanse beholdes
+# investeringene, men avskrivningene byttes med avskrivning per rigg i de tre
+# siste rene aarene foer restruktureringen, ganget med riggtallet ved
+# aarsslutt. Kontrollen paa rene aar besto kriteriet satt foer kjoering
+# (median feil 17,1 %, krav 20; 80-persentil 28,6 %, krav 35; med bare
+# rapporterte riggtall 16,7 og 25,0). Uten riggtall (Pacific Drilling) gjelder
+# regel A: aarene holdes utenfor.
+RIGGTALL = {
+    "0000314808": ("Valaris", r":TotalNumberOfContractDrillingRigs$", True),
+    "0000949039": ("Diamond Offshore", r":NumberOfOffshoreRigsOwned$", False),
+}
+
+
+def riggtall(cik, moenster, per_segment):
+    """(klasse eller 'alle', aar) -> antall rigger ved aarsslutt."""
+    ut = {}
+    for dato, accn in _aarsrapporter(cik):
+        t = _instans(cik, accn)
+        time.sleep(0.15)
+        if not t:
+            continue
+        ctx = {}
+        for m in re.finditer(r"<(?:xbrli:)?context id=\"([^\"]+)\">(.*?)</(?:xbrli:)?context>", t, re.S):
+            b = m.group(2)
+            slutt = re.search(r"(?:instant|endDate)>([^<]+)<", b)
+            dims = dict(re.findall(r"<xbrldi:explicitMember dimension=\"([^\"]+)\">([^<]+)<", b))
+            if not slutt:
+                continue
+            if per_segment:
+                seg = dims.get("us-gaap:StatementBusinessSegmentsAxis")
+                andre = [d for d in dims if d not in ("us-gaap:StatementBusinessSegmentsAxis", "srt:ConsolidationItemsAxis")]
+                k = next((kl for kl, mo in SEG_KLASSE if seg and re.search(mo, seg, re.I)), None)
+                if k and not andre:
+                    ctx[m.group(1)] = (k, slutt.group(1))
+            elif not dims:
+                ctx[m.group(1)] = ("alle", slutt.group(1))
+        for m in re.finditer(r"<([A-Za-z0-9\-]+:[A-Za-z0-9_]+)\b[^>]*?contextRef=\"([^\"]+)\"[^>]*>([\d.]+)</\1>", t):
+            if m.group(2) in ctx and re.search(moenster, m.group(1)):
+                k, d = ctx[m.group(2)]
+                if d[5:] in ("12-31", "12-30"):
+                    ut[(k, int(d[:4]))] = float(m.group(3))
+    return ut
+
+
+def slitasje(ren_alle, seg_alle, note=print):
+    """(klasse, cik, aar) -> {navn, capex, dda (anslaatt), anslag: True}."""
+    ut = {}
+    for cik, (navn, mo, ps) in RIGGTALL.items():
+        grense = UTELAT_FRA.get(navn)
+        if not grense:
+            continue
+        rt = riggtall(cik, mo, ps)
+        for k in ("dyp", "grunt"):
+            if cik in ren_alle and ren_alle[cik]["seg"] == k:
+                cx, dd = ren_alle[cik]["capex"], ren_alle[cik]["dda"]
+            else:
+                rad = {a: v for (kk, c, a), v in seg_alle.items() if c == cik and kk == k}
+                if not rad:
+                    continue
+                cx = pd.Series({a: v["capex"] for a, v in rad.items()}).sort_index()
+                dd = pd.Series({a: v["dda"] for a, v in rad.items()}).sort_index()
+            kl = k if ps else "alle"
+
+            def n_rigg(a):
+                kj = sorted(x for (kk, x) in rt if kk == kl and x <= a)
+                return rt[(kl, kj[-1])] if kj else np.nan
+            per = [dd[a] / n_rigg(a) for a in (grense - 1, grense - 2, grense - 3)
+                   if a in dd.index and not np.isnan(n_rigg(a))]
+            if not per:
+                continue
+            pr = float(np.mean(per))
+            for a in cx.index:
+                if a >= grense and not np.isnan(n_rigg(a)):
+                    ut[(k, cik, int(a))] = {"navn": navn, "capex": float(cx[a]), "dda": pr * n_rigg(a), "anslag": True}
+                    note(f"   {navn} {k} {a}: slitasje anslaatt {pr * n_rigg(a) / 1e6:.0f} mill. "
+                         f"({n_rigg(a):.0f} rigger), faktisk avskrivning {float(dd.get(a, np.nan)) / 1e6:.0f}")
     return ut
 
 
@@ -231,7 +313,7 @@ def beregn(ren, seg):
                 continue
             r = rader.setdefault(int(a), {"capex": 0.0, "dda": 0.0, "selskaper": []})
             r["capex"] += d["capex"]; r["dda"] += d["dda"]
-            r["selskaper"].append(d["navn"] + " (segment)")
+            r["selskaper"].append(d["navn"] + (" (anslått slitasje)" if d.get("anslag") else " (segment)"))
         df = pd.DataFrame({a: {"capex": r["capex"], "dda": r["dda"], "n": len(r["selskaper"]),
                                "selskaper": ", ".join(sorted(set(r["selskaper"])))}
                            for a, r in rader.items() if r["dda"]}).T.sort_index()
@@ -246,9 +328,10 @@ def til_json(res):
     ut = {"oppdatert": str(pd.Timestamp.now("UTC"))[:19],
           "metode": "Investeringer delt paa avskrivninger fra SEC. B2 = klipp((1,4 - femaarssnitt) / 0,8 * 100, 0, 100). "
                     "Rene selskaper pluss segmenttall fra blandede. Informasjon, ikke flagg.",
-          "svakhet": "Aar etter ny startbalanse (Valaris og Diamond fra 2021, Pacific Drilling fra 2018) er holdt "
-                     "utenfor: avskrivningene er ikke sammenlignbare. Etter 2021 hviler offshore paa ett selskap per "
-                     "segment, og reaktiveringer hos de restrukturerte kommer ikke med.",
+          "svakhet": "Etter ny startbalanse (Valaris og Diamond fra 2021) er avskrivningene erstattet med anslaatt "
+                     "slitasje: avskrivning per rigg de tre siste aarene foer, ganger riggtallet. Anslaget bommet "
+                     "med 17 % i median paa rene aar. Pacific Drilling fra 2018 er holdt utenfor (ingen riggtall). "
+                     "Etter 2021 hviler offshore paa to selskaper per segment.",
           "segmenter": {}}
     navn = {"land": "Land", "grunt": "Grunt vann (jackups)", "dyp": "Dypt vann (flytere)"}
     for k, df in res.items():
@@ -268,9 +351,15 @@ def til_json(res):
 
 def kjor(note=print):
     note("Rigg B: rene selskaper")
-    ren = rene(note)
+    ren_alle = rene(note, utelat=False)
+    ren = {c: dict(d, capex=d["capex"][[a < UTELAT_FRA.get(d["navn"], 9999) for a in d["capex"].index]],
+                   dda=d["dda"][[a < UTELAT_FRA.get(d["navn"], 9999) for a in d["dda"].index]])
+           for c, d in ren_alle.items()}
     note("Rigg B: segmenttall fra blandede selskaper")
-    seg = segmenter(note)
+    seg_alle = segmenter(note, utelat=False)
+    seg = {k: v for k, v in seg_alle.items() if k[2] < UTELAT_FRA.get(v["navn"], 9999)}
+    note("Rigg B: anslaatt slitasje etter ny startbalanse")
+    seg.update(slitasje(ren_alle, seg_alle, note))
     res = beregn(ren, seg)
     ut = til_json(res)
     for k, v in ut["segmenter"].items():

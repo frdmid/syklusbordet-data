@@ -9,6 +9,26 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 16:58, Claude Code
+**Hva:** Test B (anslått slitasje) besto kriteriet satt før kjøring og er tatt
+i bruk i `rigg_b.py` (Frodes beslutning: gjør A, test B). Kontrollen på 33
+rene år: median feil 17,1 % (krav 20), 80-persentil 28,6 % (krav 35); med
+bare rapporterte riggtall 16,7 og 25,0 på 25 år. Regel A ligger i bunn: år
+etter ny startbalanse tas ut; for Valaris og Diamond fra 2021 legges
+investeringene inn igjen med anslått slitasje (avskrivning per rigg de tre
+siste rene årene ganger riggtall ved årsslutt, fra XBRL). Pacific Drilling
+fra 2018 er holdt utenfor (ingen riggtall).
+Tall 2025, bare A mot A pluss B: grunt vann B2 100 til 80 (forhold 0,60 til
+1,04; Borr og Valaris), dypt vann B2 100 til 100 (0,19 til 0,31; Transocean
+og Valaris). Land uendret (81,7). Valaris' anslåtte slitasje 2025: flytere
+214 mill. mot faktisk avskrivning 60, jackups 121 mot 59.
+`b_rigg.json` skrevet lokalt (GitHub-tilkoblingen var nede i Actions);
+kvartalskjøringen lager den på nytt. Utskriften av sonden er lagret i
+`sonder/sonde_kjor_rigg_slitasje.txt`.
+**Filer:** `rigg_b.py`, `b_rigg.json`, `sonder/sonde_kjor_rigg_slitasje.txt`,
+`sonder_ferdige.txt`.
+**Den andre økten må vite:** Dashbordteksten er oppdatert.
+
 ### 29.09.2026 16:51, Claude Code
 **Hva:** Regel A for B for rigger (Frodes beslutning): alle år etter ny
 startbalanse holdes utenfor, ikke bare Valaris. `UTELAT_FRA` i `rigg_b.py`:
