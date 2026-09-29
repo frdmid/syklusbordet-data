@@ -1,5 +1,5 @@
 {
- "oppdatert": "2026-09-29 09:38:39",
+ "oppdatert": "2026-09-29 10:14:30",
  "segmenter": [
   "brent",
   "wti",
@@ -38,17 +38,17 @@
   {
    "kilde": "segment brent",
    "status": "OK",
-   "detalj": "A=18.0 detr=42.1 rull=6.7   siste 2026-09"
+   "detalj": "A=32.6 detr=72.5 rull=35.8   siste 2026-08"
   },
   {
    "kilde": "segment wti",
    "status": "OK",
-   "detalj": "A=24.9 detr=50.7 rull=12.5   siste 2026-09"
+   "detalj": "A=30.7 detr=65.8 rull=29.2   siste 2026-08"
   },
   {
    "kilde": "segment henryhub",
    "status": "OK",
-   "detalj": "A=90.2 detr=58.4 rull=74.2 oppsikt  siste 2026-09"
+   "detalj": "A=90.4 detr=58.9 rull=75.0 oppsikt  siste 2026-08"
   },
   {
    "kilde": "avkorting gold",
@@ -263,12 +263,12 @@
   {
    "kilde": "VIX",
    "status": "OK",
-   "detalj": "16.1 per 2026-09-29, persentil 39.1 (fra 1990-01) / 40.8 (10 aar)"
+   "detalj": "16.19 per 2026-09-29, persentil 40.0 (fra 1990-01) / 41.7 (10 aar)"
   },
   {
    "kilde": "DXY",
    "status": "OK",
-   "detalj": "101.452 per 2026-09-29, persentil 79.2 (fra 1985-01), 12 mnd 3.8 %"
+   "detalj": "101.468 per 2026-09-29, persentil 79.2 (fra 1985-01), 12 mnd 3.8 %"
   },
   {
    "kilde": "USD/NOK",
@@ -278,7 +278,7 @@
   {
    "kilde": "flagglogg",
    "status": "OK",
-   "detalj": "uke 2026-W40: 17 segmenter, 44 kurser, 0 hendelser, hypotese 3 mnd: 0 ferdige av 0"
+   "detalj": "uke 2026-W40: 17 segmenter, 44 kurser, 0 hendelser, hypotese 3 mnd: 0 ferdige av 0, 60/40: 0 ferdige av 0; dom hypotese_3mnd venter, regel_6040 venter"
   }
  ]
 }
