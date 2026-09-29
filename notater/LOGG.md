@@ -9,6 +9,20 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 11:34, Claude Code
+**Hva:** COT for palmeolje lagt inn (Frodes valg), og to forsøk på SGX sin
+COT for jernmalm. Palmeolje: CFTC-kontrakt 037021, CME «USD Malaysian Crude
+Palm Oil Calendar», ukentlig fra september 2021; sonden ga et fullstendig felt.
+SGX: rapporten lastes av en app som henter filer via et GraphQL-grensesnitt
+med en skjult versjonsnøkkel; ingen fil eller adresse lot seg finne. Gitt opp.
+**Filer:** `signaler.py` (`KONTRAKTER["palmeolje"]`), `priser.py` (teller
+kontraktene i stedet for fast 6), `sonde_kjor_cot_palme_sgx.py` og
+`sonde_kjor_sgx_cot.py` (nye), `sonder_ferdige.txt`. Dashbordet versjon 44:
+forklaringsteksten om COT sier nå sju segmenter og hvorfor resten mangler.
+**Den andre økten må vite:** Palmeolje får COT-feltet fra onsdagens kjøring.
+Dashbordet trenger ingen annen endring; COT-feltet tegnes for alle segmenter
+som har det. Bygg videre på versjon 44.
+
 ### 29.09.2026 11:29, Claude Code
 **Hva:** Sonde for posisjonstall (COT) til segmentene som mangler det. Bygger
 ingenting.
