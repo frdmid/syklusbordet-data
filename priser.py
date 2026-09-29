@@ -52,8 +52,15 @@ def get(url, **kw):
 
 # ----------------------------------------------------------------- kildelesing
 
-def csv_series(url, monthly=False):
-    """To-kolonners CSV (dato, verdi) til månedsserie."""
+def csv_series(url, monthly=False, hel_maaned=False):
+    """To-kolonners CSV (dato, verdi) til månedsserie.
+
+    hel_maaned (29.09.2026, Frodes beslutning): for dagsserier kastes siste
+    maaned hvis den ikke er ferdig. Foer ble "siste dag saa langt" i en
+    paagaaende maaned behandlet som maanedsslutt, saa oljeflagget kunne slaa
+    inn og ut igjen midt i en maaned, og backtestene regnet paa hele maaneder.
+    Ferdig betyr at siste dato er senest to dager foer maanedens siste
+    virkedag."""
     d = pd.read_csv(io.StringIO(get(url).text))
     d = d.iloc[:, :2]
     d.columns = ["Date", "Value"]
@@ -65,6 +72,11 @@ def csv_series(url, monthly=False):
     d["Date"] = pd.to_datetime(d["Date"])
     s = d.set_index("Date")["Value"].resample("ME").last().dropna()
     s.index = s.index.to_period("M")
+    if hel_maaned and len(s):
+        sist = d["Date"].max()
+        slutt = sist + pd.offsets.BMonthEnd(0)
+        if sist < slutt - pd.Timedelta(days=2):
+            s = s.iloc[:-1]
     return s
 
 
@@ -466,7 +478,7 @@ AVKORT_MERKNAD = {
 
 for sid, navn, grp, enhet, sti, mnd in MIRRORS:
     try:
-        serie = csv_series(MIRROR + sti, monthly=mnd)
+        serie = csv_series(MIRROR + sti, monthly=mnd, hel_maaned=not mnd)
         if sid in AVKORT:
             foer = len(serie)
             serie = serie.loc[AVKORT[sid]:]

@@ -18,11 +18,15 @@
 #                   oppsikt, eller (Brent, fra 25.09.2026) inn i eller ut av det
 #                   parallelle signalet detrendet A >= 95 ("detrendet_ekstrem",
 #                   med tenkte kjoep merket "tenkt_kjoep_d95"). Inngang i bunnsone gir en tenkt kjoepslinje per
-#                   papir paa tavlen (ikke de omvendte), til siste kurs.
-#                   Salgslinjer kommer naar salgsregelen er vedtatt.
+#                   papir paa tavlen (ikke de omvendte), til siste kurs,
+#                   men bare ved et nytt innslag (se PAUSE under).
 #
 #   hypotese_3mnd.csv  (fra 28.09.2026) regnes paa nytt hver uke fra de to
 #                   over. Se HYPOTESE under.
+#   regel_6040.csv  (fra 29.09.2026) Frodes praktiske salgsregel, regnet paa
+#                   samme maate. Se REGEL 60/40 under.
+#   dom.csv         (fra 29.09.2026) episodene og dommen for begge reglene,
+#                   regnet i koden etter kriteriet som er skrevet ned her.
 #
 # Uken er noekkelen. Kjoeres innhentingen to ganger samme uke, erstattes ukens
 # linjer, saa loggen faar aldri dobbeltlinjer. Tidligere uker roeres aldri.
@@ -158,9 +162,13 @@ def _b(x):
 #              positiv i minst fire av fem, eller i minst 80 % hvis det er
 #              flere. Ellers forkastet. Grensen skal ikke flyttes etter at
 #              utfallene kommer.
+#              Presisert 29.09.2026, foer noe utfall fantes: dommen faelles
+#              paa de fem FOERSTE ferdige episodene og regnes i koden (dom.csv).
+#              "Eller 80 % hvis flere" gjelder ikke lenger; et fast maalepunkt
+#              hindrer at man venter paa et bedre tall. Se FELLES under.
 # ---------------------------------------------------------------------------
 REFERANSE = "ACWI"
-F_HYP = ["segment", "ticker", "flaggdato", "status", "inngang_dato", "inngang_kurs", "utgang_dato",
+F_HYP = ["episode", "segment", "ticker", "flaggdato", "status", "inngang_dato", "inngang_kurs", "utgang_dato",
          "utgang_kurs", "valuta", "utbytte", "grunnlag", "avk_pst", "acwi_avk_pst", "mot_acwi_pst"]
 
 
@@ -171,9 +179,52 @@ def _dato(x):
         return None
 
 
-def hypotese_3mnd(hendelser, kurser, idag):
-    """Regner hypotesefila fra hele hendelses- og kursloggen. Bare loggede
-    kurser brukes, saa ingenting kan hentes i ettertid."""
+# ---------------------------------------------------------------------------
+# REGEL 60/40, Frodes praktiske salgsregel, skrevet ned 29.09.2026 foer noe
+# utfall er kjent
+#
+#   Inngang:   som hypotesen, foerste loggede kurs minst 28 dager etter flagget.
+#   Salg:      60 % selges ved foerste loggede kurs minst 91 dager etter
+#              inngang. 40 % holdes og maales ved 365 og 730 dager.
+#   Maal:      0,6 x (papir minus ACWI, inngang til 3 mnd) + 0,4 x (papir minus
+#              ACWI, inngang til 12 eller 24 mnd), i dollar med utbytte.
+#              Salgsbeloepet regnes som kontanter uten avkastning; det er
+#              derfor maalt mot ACWI i samme vindu og ikke lagt sammen.
+#   Dom:       paa 24 mnd, med samme kriterium som hypotesen (under). Tallet
+#              paa 12 mnd vises underveis, men avgjoer ingenting.
+#
+# FELLES FOR BEGGE REGLENE (29.09.2026, etter den uavhengige gjennomgangen)
+#
+#   PAUSE:     et innslag er foerste bunnsonemaaned etter mer enn tolv
+#              maaneder uten flagg, som i backtestene. Sjekkes mot segmentets
+#              egen maanedsserie og mot flagg_uke.csv. Starter bunnsonen paa
+#              nytt innen tolv maaneder, logges bunnsone_start, men ingen
+#              tenkte kjoep.
+#   PAPIRENE:  fryses ved innslaget. Papirer som tas av tavlen etterpaa,
+#              logges videre i 26 maaneder, saa posisjonene kan lukkes.
+#   EPISODE:   innslag i alle segmenter med hoeyst seks maaneder (183 dager)
+#              mellom paafoelgende flaggdatoer. Et papir telles EN gang per
+#              episode (foerste flagg), selv om det staar i flere segmenter.
+#   FERDIG:    en episode er ferdig naar alle papirene har utgang for maalet,
+#              og det har gaatt minst 183 dager siden siste innslag i den.
+#   DOM:       fast maalepunkt: de FEM FOERSTE ferdige episodene, ikke flere.
+#              Bekreftet hvis episodens median mot ACWI er positiv i minst
+#              fire av fem. Forkastet saa snart to er negative. Merk: med
+#              fem episoder og null effekt (myntkast) er sjansen for
+#              "bekreftet" 6/32, rundt 19 %. Et bekreftet resultat er altsaa
+#              svakt bevis, et forkastet sterkere.
+# ---------------------------------------------------------------------------
+PAUSE_MND = 12
+KLYNGE_DAGER = 183
+HOLD_DAGER = 26 * 31
+DOM_EPISODER, DOM_KRAV = 5, 4
+F_6040 = ["episode", "segment", "ticker", "flaggdato", "status", "inngang_dato", "grunnlag",
+          "avk_3m_pst", "acwi_3m_pst", "avk_12m_pst", "acwi_12m_pst", "avk_24m_pst", "acwi_24m_pst",
+          "mot_acwi_12m_pst", "mot_acwi_24m_pst"]
+F_DOM = ["regel", "episode", "segmenter", "papirer", "ferdige", "status", "median_mot_acwi_pst", "dom"]
+
+
+def _kursserie(kurser):
     serie = {}
     for r in kurser:
         d, k = _dato(r.get("kursdato")), r.get("kurs")
@@ -192,49 +243,160 @@ def hypotese_3mnd(hendelser, kurser, idag):
             utb = None
         if d:
             serie.setdefault(r["ticker"], {})[d] = (k, r.get("valuta"), fx, utb)
-    serie = {tk: sorted(v.items()) for tk, v in serie.items()}
+    return {tk: sorted(v.items()) for tk, v in serie.items()}
 
-    def forste_etter(tk, grense):
-        for d, v in serie.get(tk, []):
-            if d >= grense:
-                return (d,) + v
+
+def _forste_etter(serie, tk, grense):
+    for d, v in serie.get(tk, []):
+        if d >= grense:
+            return (d,) + v
+    return None
+
+
+def _avkastning(serie, tk, a, b):
+    """Fra rad a til rad b. I dollar med utbytte hvis alle rader har
+    valutakurs og utbyttefelt, ellers egen valuta uten utbytte."""
+    rader = [x for x in serie.get(tk, []) if a[0] < x[0] <= b[0]]
+    fullt = a[3] is not None and b[3] is not None and all(x[1][3] is not None for x in rader)
+    if fullt:
+        utb = sum(x[1][3] for x in rader)
+        return 100 * ((b[1] + utb) * b[3] / (a[1] * a[3]) - 1), utb, "dollar med utbytte"
+    return 100 * (b[1] / a[1] - 1), None, "egen valuta uten utbytte"
+
+
+def _mot_acwi(serie, tk, inn, dager):
+    """Papirets og ACWIs avkastning fra inngang til foerste kurs minst
+    `dager` etter. None hvis utgangen ikke er naadd."""
+    uts = _forste_etter(serie, tk, inn[0] + dt.timedelta(days=dager))
+    if not uts:
         return None
+    avk, utb, grunn = _avkastning(serie, tk, inn, uts)
+    ai, au = _forste_etter(serie, REFERANSE, inn[0]), _forste_etter(serie, REFERANSE, uts[0])
+    aa = _avkastning(serie, REFERANSE, ai, au)[0] if ai and au and au[0] > ai[0] else None
+    return {"uts": uts, "avk": avk, "utb": utb, "grunnlag": grunn, "acwi": aa}
 
-    def avkastning(tk, a, b):
-        """Fra rad a til rad b. I dollar med utbytte hvis alle rader har
-        valutakurs og utbyttefelt, ellers egen valuta uten utbytte."""
-        rader = [x for x in serie.get(tk, []) if a[0] < x[0] <= b[0]]
-        fullt = a[3] is not None and b[3] is not None and all(x[1][3] is not None for x in rader)
-        if fullt:
-            utb = sum(x[1][3] for x in rader)
-            return 100 * ((b[1] + utb) * b[3] / (a[1] * a[3]) - 1), utb, "dollar med utbytte"
-        return 100 * (b[1] / a[1] - 1), None, "egen valuta uten utbytte"
 
+def innslag(hendelser):
+    """Rene innslag (tenkt_kjoep, ikke loggstart), med episode, og hvert
+    papir bare en gang per episode."""
+    rader = [h for h in hendelser if h.get("hendelse") == "tenkt_kjoep" and h.get("ticker")
+             and "sto allerede" not in str(h.get("merknad", "")) and _dato(h.get("dato"))]
+    rader.sort(key=lambda h: (h["dato"], h["segment"], h["ticker"]))
+    episode, forrige, ep = {}, None, None
+    for d in sorted({_dato(h["dato"]) for h in rader}):
+        if forrige is None or (d - forrige).days > KLYNGE_DAGER:
+            ep = str(d)
+        episode[d], forrige = ep, d
+    ut, sett = [], set()
+    for h in rader:
+        e = episode[_dato(h["dato"])]
+        if (e, h["ticker"]) in sett:
+            continue
+        sett.add((e, h["ticker"]))
+        ut.append({**h, "episode": e})
+    return ut
+
+
+def _median(xs):
+    xs = sorted(xs)
+    n = len(xs)
+    return None if not n else (xs[n // 2] if n % 2 else (xs[n // 2 - 1] + xs[n // 2]) / 2)
+
+
+def dom(regel, rader, felt, idag):
+    """Episodene og dommen for en regel. rader har episode, status og felt."""
+    eps = {}
+    for r in rader:
+        eps.setdefault(r["episode"], []).append(r)
+    ut, ferdige = [], []
+    for e in sorted(eps):
+        rr = eps[e]
+        siste = max(_dato(r["flaggdato"]) for r in rr)
+        verdier = [r[felt] for r in rr if r.get(felt) not in (None, "")]
+        klar = len(verdier) == len(rr) and (idag - siste).days >= KLYNGE_DAGER
+        med = _median(verdier) if klar else None
+        rad = {"regel": regel, "episode": e, "segmenter": " ".join(sorted({r["segment"] for r in rr})),
+               "papirer": len(rr), "ferdige": len(verdier), "status": "ferdig" if klar else "aapen",
+               "median_mot_acwi_pst": "" if med is None else round(med, 2), "dom": ""}
+        if klar:
+            ferdige.append(med)
+        ut.append(rad)
+    telt = ferdige[:DOM_EPISODER]
+    pos, neg = sum(1 for m in telt if m > 0), sum(1 for m in telt if m <= 0)
+    if pos >= DOM_KRAV:
+        d = "bekreftet"
+    elif neg > DOM_EPISODER - DOM_KRAV:
+        d = "forkastet"
+    else:
+        d = "venter"
+    ut.append({"regel": regel, "episode": "DOM", "papirer": sum(r["papirer"] for r in ut),
+               "ferdige": len(telt), "status": f"{pos} positive og {neg} negative av de {len(telt)} "
+               f"foerste ferdige episodene (dom ved {DOM_EPISODER}, krav {DOM_KRAV})", "dom": d})
+    return ut
+
+
+def hypotese_3mnd(hendelser, kurser, idag):
+    """Regner hypotesefila fra hele hendelses- og kursloggen. Bare loggede
+    kurser brukes, saa ingenting kan hentes i ettertid."""
+    serie = _kursserie(kurser)
     ut = []
-    for h in hendelser:
-        if h.get("hendelse") != "tenkt_kjoep" or not h.get("ticker"):
-            continue
-        if "sto allerede" in str(h.get("merknad", "")):   # ikke et rent innslag
-            continue
+    for h in innslag(hendelser):
         f0 = _dato(h.get("dato"))
-        rad = {"segment": h["segment"], "ticker": h["ticker"], "flaggdato": str(f0)}
-        inn = forste_etter(h["ticker"], f0 + dt.timedelta(days=28)) if f0 else None
+        rad = {"episode": h["episode"], "segment": h["segment"], "ticker": h["ticker"], "flaggdato": str(f0)}
+        inn = _forste_etter(serie, h["ticker"], f0 + dt.timedelta(days=28))
         if not inn:
             ut.append({**rad, "status": "venter_inngang"}); continue
         rad.update({"inngang_dato": str(inn[0]), "inngang_kurs": inn[1], "valuta": inn[2]})
-        uts = forste_etter(h["ticker"], inn[0] + dt.timedelta(days=91))
-        if not uts:
+        m = _mot_acwi(serie, h["ticker"], inn, 91)
+        if not m:
             ut.append({**rad, "status": "aapen"}); continue
-        avk, utb, grunn = avkastning(h["ticker"], inn, uts)
-        rad.update({"utgang_dato": str(uts[0]), "utgang_kurs": uts[1], "grunnlag": grunn,
-                    "utbytte": "" if utb is None else round(utb, 6), "avk_pst": round(avk, 2)})
-        ai, au = forste_etter(REFERANSE, inn[0]), forste_etter(REFERANSE, uts[0])
-        if ai and au:
-            aa, _, _ = avkastning(REFERANSE, ai, au)
-            rad["acwi_avk_pst"] = round(aa, 2)
+        rad.update({"utgang_dato": str(m["uts"][0]), "utgang_kurs": m["uts"][1], "grunnlag": m["grunnlag"],
+                    "utbytte": "" if m["utb"] is None else round(m["utb"], 6), "avk_pst": round(m["avk"], 2)})
+        if m["acwi"] is not None:
+            rad["acwi_avk_pst"] = round(m["acwi"], 2)
             rad["mot_acwi_pst"] = round(rad["avk_pst"] - rad["acwi_avk_pst"], 2)
         ut.append({**rad, "status": "ferdig"})
     return ut
+
+
+def regel_6040(hendelser, kurser, idag):
+    serie = _kursserie(kurser)
+    ut = []
+    for h in innslag(hendelser):
+        f0 = _dato(h.get("dato"))
+        rad = {"episode": h["episode"], "segment": h["segment"], "ticker": h["ticker"], "flaggdato": str(f0)}
+        inn = _forste_etter(serie, h["ticker"], f0 + dt.timedelta(days=28))
+        if not inn:
+            ut.append({**rad, "status": "venter_inngang"}); continue
+        rad["inngang_dato"] = str(inn[0])
+        ben = {n: _mot_acwi(serie, h["ticker"], inn, d) for n, d in (("3m", 91), ("12m", 365), ("24m", 730))}
+        for n, m in ben.items():
+            if m:
+                rad[f"avk_{n}_pst"] = round(m["avk"], 2)
+                rad[f"acwi_{n}_pst"] = "" if m["acwi"] is None else round(m["acwi"], 2)
+                rad["grunnlag"] = m["grunnlag"]
+        for n in ("12m", "24m"):
+            if all(ben[k] and ben[k]["acwi"] is not None for k in ("3m", n)):
+                rad[f"mot_acwi_{n}_pst"] = round(0.6 * (ben["3m"]["avk"] - ben["3m"]["acwi"])
+                                                 + 0.4 * (ben[n]["avk"] - ben[n]["acwi"]), 2)
+        rad["status"] = "ferdig" if rad.get("mot_acwi_24m_pst") not in (None, "") else "aapen"
+        ut.append(rad)
+    return ut
+
+
+def ny_innslag(seg, gml_uke, idag):
+    """PAUSE: er dette foerste bunnsonemaaned etter mer enn tolv uten flagg?
+    Returnerer (True, "") eller (False, grunn)."""
+    serie = seg.get("series") or []
+    tidligere = [r["t"] for r in serie[:-1][-PAUSE_MND:] if r.get("flagg")]
+    if tidligere:
+        return False, f"flagg i {tidligere[-1]}, innen {PAUSE_MND} mnd"
+    grense = str(idag - dt.timedelta(days=365))
+    uker = [r["dato"] for r in gml_uke if r["segment"] == seg["id"] and _b(r.get("bunnsone"))
+            and r.get("dato", "") >= grense]
+    if uker:
+        return False, f"bunnsone i loggen {max(uker)}, innen {PAUSE_MND} mnd"
+    return True, ""
 
 
 def oppdater(segmenter, les, skriv, note=print, idag=None, kursfunk=siste_kurs):
@@ -273,6 +435,12 @@ def oppdater(segmenter, les, skriv, note=print, idag=None, kursfunk=siste_kurs):
     for s in segmenter:
         for i in s.get("instrumenter") or []:
             papirer.setdefault(i["ticker"], {"segs": set(), "info": i})["segs"].add(s["id"])
+    # Papirene fryses ved innslaget: et papir med tenkt kjoep siste 26
+    # maaneder logges videre selv om det er tatt av tavlen.
+    grense = str(idag - dt.timedelta(days=HOLD_DAGER))
+    for h in gml_hend:
+        if str(h.get("hendelse", "")).startswith("tenkt_kjoep") and h.get("ticker") and h.get("dato", "") >= grense:
+            papirer.setdefault(h["ticker"], {"segs": set(), "info": {}})["segs"].add(h["segment"])
     # Verdensindeksen logges ved siden av, som maalestokk for hypotesen.
     papirer.setdefault(REFERANSE, {"segs": set(), "info": {}})["segs"].add("referanse")
     kurs = {}
@@ -310,13 +478,25 @@ def oppdater(segmenter, les, skriv, note=print, idag=None, kursfunk=siste_kurs):
                 continue
             naa = bool(r[felt])
             foer = _b(f.get(felt, "")) if f else None
-            if forste or f is None:
+            # Tomt felt forrige uke (d95 foer det ble logget for segmentet)
+            # betyr ukjent, ikke nei. Ellers ville WTI faatt et falskt innslag.
+            ukjent = f is not None and str(f.get(felt, "")) == ""
+            if forste or f is None or ukjent:
                 if naa:
                     hend, merk = f"{navn}_aktiv_ved_loggstart", "sto allerede i sonen da loggen startet, ikke et rent innslag"
                 else:
                     continue
             elif naa and not foer:
                 hend, merk = f"{navn}_start", ""
+                seg = next(s for s in segmenter if s["id"] == sid)
+                if navn == "bunnsone":
+                    ok, grunn = ny_innslag(seg, gml_uke, idag)
+                else:   # d95 har ingen maanedsserie; bare loggen
+                    ok = not any(x["segment"] == sid and _b(x.get(felt)) and
+                                 x.get("dato", "") >= str(idag - dt.timedelta(days=365)) for x in gml_uke)
+                    grunn = "" if ok else f"d95 i loggen innen {PAUSE_MND} mnd"
+                if not ok:
+                    merk = f"ikke nytt innslag: {grunn}; ingen tenkte kjoep"
             elif foer and not naa:
                 hend, merk = f"{navn}_slutt", ""
             else:
@@ -324,7 +504,8 @@ def oppdater(segmenter, les, skriv, note=print, idag=None, kursfunk=siste_kurs):
             base = {"uke": uke, "dato": dato, "segment": sid, "hendelse": hend, "A": r["A"],
                     "Ad": r["Ad"], "D": r["D"], "port": r["port"], "trend": r["trend"], "merknad": merk}
             nye_hend.append({**base, "ticker": "", "kurs": "", "valuta": "", "kursdato": ""})
-            if navn in ("bunnsone", "detrendet_ekstrem") and not hend.endswith("_slutt"):
+            if navn in ("bunnsone", "detrendet_ekstrem") and not hend.endswith("_slutt") \
+                    and not merk.startswith("ikke nytt innslag"):
                 parallell = navn == "detrendet_ekstrem"
                 seg = next(s for s in segmenter if s["id"] == sid)
                 for i in seg.get("instrumenter") or []:
@@ -344,8 +525,14 @@ def oppdater(segmenter, les, skriv, note=print, idag=None, kursfunk=siste_kurs):
     skriv("logg/hendelser.csv", skriv_csv(gml_hend + nye_hend, F_HEND))
     hyp = hypotese_3mnd(gml_hend + nye_hend, gml_kurs + nye_kurs, idag)
     skriv("logg/hypotese_3mnd.csv", skriv_csv(hyp, F_HYP))
+    r64 = regel_6040(gml_hend + nye_hend, gml_kurs + nye_kurs, idag)
+    skriv("logg/regel_6040.csv", skriv_csv(r64, F_6040))
+    dommer = dom("hypotese_3mnd", hyp, "mot_acwi_pst", idag) + dom("regel_6040", r64, "mot_acwi_24m_pst", idag)
+    skriv("logg/dom.csv", skriv_csv(dommer, F_DOM))
     note("flagglogg", True, f"uke {uke}: {len(nye_uke)} segmenter, {len(nye_kurs)} kurser"
          + (f" ({len(mangler)} uten kurs)" if mangler else "")
          + f", {sum(1 for h in nye_hend if h['ticker'] == '')} hendelser"
-         + f", hypotese 3 mnd: {sum(1 for h in hyp if h['status'] == 'ferdig')} ferdige av {len(hyp)}")
+         + f", hypotese 3 mnd: {sum(1 for h in hyp if h['status'] == 'ferdig')} ferdige av {len(hyp)}"
+         + f", 60/40: {sum(1 for h in r64 if h['status'] == 'ferdig')} ferdige av {len(r64)}"
+         + "; dom " + ", ".join(f"{d['regel']} {d['dom']}" for d in dommer if d["episode"] == "DOM"))
     return nye_uke, nye_kurs, nye_hend

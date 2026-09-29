@@ -9,6 +9,36 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 12:55, Claude Code
+**Hva:** Hullene i flaggloggen fra den uavhengige gjennomgangen er tettet, og
+Frodes praktiske salgsregel 60/40 er lagt inn som egen regel. Alt er skrevet
+ned før noe utfall finnes.
+1. Pause: tenkte kjøp logges bare ved et nytt innslag (første bunnsonemåned
+   etter mer enn tolv uten flagg), sjekket mot segmentets månedsserie og
+   `flagg_uke.csv`. En ny start innen tolv måneder logges som
+   `bunnsone_start` med merknad, uten tenkte kjøp.
+2. Papirene fryses ved innslaget: papirer med tenkt kjøp siste 26 måneder
+   logges videre selv om de tas av tavlen.
+3. Episoder (høyst 183 dager mellom flaggdatoer, på tvers av segmenter), og
+   hvert papir telles én gang per episode.
+4. Dommen regnes i koden og skrives til `logg/dom.csv`: de fem første ferdige
+   episodene, bekreftet ved minst fire av fem positive, forkastet så snart to
+   er negative. "Eller 80 % hvis flere" er tatt ut. Sjansen for "bekreftet"
+   ved null effekt er rundt 19 %.
+5. Tomt d95-felt forrige uke leses som ukjent, ikke nei (WTI).
+6. Regel 60/40: kjøp som hypotesen (T+1), selg 60 % etter 3 måneder, 40 %
+   måles ved 12 og 24 måneder. Mål: 0,6 x (papir minus ACWI, 3 mnd) + 0,4 x
+   (papir minus ACWI, 12 eller 24 mnd). Dom på 24 mnd. `logg/regel_6040.csv`.
+7. Oljeflagget på hele måneder: `priser.py` kaster siste måned for
+   dagsseriene (Brent, WTI, Henry Hub) hvis den ikke er ferdig. Siste
+   observasjon for disse vil derfor ofte være forrige måned.
+**Filer:** `flagglogg.py`, `priser.py`; nye loggfiler `logg/regel_6040.csv` og
+`logg/dom.csv` (skrives onsdag); `logg/hypotese_3mnd.csv` får kolonnen episode.
+**Den andre økten må vite:** A, flagg og persentiler for Brent, WTI og Henry
+Hub kan flytte seg litt fordi den uferdige måneden ikke lenger telles med.
+Testet lokalt med oppdiktede kurser (pause, dobbeltpapir, dom); første ekte
+kjøring er onsdag.
+
 ### 29.09.2026 12:25, Claude Code
 **Hva:** Rettet to feil fra den uavhengige gjennomgangen, med sonder som
 viser tallene før og etter. Tallene føres i et eget innslag når sondene har
