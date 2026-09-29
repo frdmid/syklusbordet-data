@@ -9,6 +9,19 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 12:05, Claude Code
+**Hva:** Rettet tre formuleringer i backtestnotatet etter den uavhengige
+gjennomgangen. Ingen tall endret. "Alle etter 2008" var feil (episodene 1991,
+1998 og 2000 er med). "Båret av 2009 og 2020" er nå "2008/09 og 2020".
+"Flagget er ikke tilbakevist" er erstattet med at flagget ikke har vist verdi
+for aksjer på data uten overlevelsesskjevhet. Innslaget 28.09 kl. 18.19 under
+sa "resultatet fra 2011 til 2026 bæres av 2009 og 2020"; det henger ikke
+sammen og skal leses som: papirresultatet (episoder 1991 til 2023) bæres av
+2008/09 og 2020.
+**Filer:** `notater/2026-09-28_backtest.md` (ny seksjon "Rettelser 29.09.2026").
+**Den andre økten må vite:** Bruk den nye konklusjonen hvis flagget omtales i
+dashbordet eller notater.
+
 ### 29.09.2026 11:41, Claude Code
 **Hva:** Ukentlig innhenting kjørt manuelt 29.09 og kontrollert. Alt nytt fra
 28. og 29.09 virker: utbytte og dollarkurs i `logg/kurser_uke.csv`, B og Ar i
