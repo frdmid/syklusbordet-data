@@ -1,8 +1,9 @@
-Hopper over 45 ferdige sonder (sonder_ferdige.txt): sonde_kjor_b_dda, sonde_kjor_b_fmg, sonde_kjor_b_haleregel, sonde_kjor_b_jernmalm, sonde_kjor_b_kilder, sonde_kjor_backtest, sonde_kjor_backtest_lang, sonde_kjor_bdi, sonde_kjor_brasil, sonde_kjor_c_manuell, sonde_kjor_c_manuell2, sonde_kjor_c_manuell3, sonde_kjor_c_produksjon, sonde_kjor_c_rente, sonde_kjor_c_spleis, sonde_kjor_cot, sonde_kjor_cot_palme_sgx, sonde_kjor_cotr, sonde_kjor_d95, sonde_kjor_dadj, sonde_kjor_faktor, sonde_kjor_fearnleys_mal, sonde_kjor_fond, sonde_kjor_fond_norge, sonde_kjor_indikator, sonde_kjor_instrumenttest, sonde_kjor_kali_platina, sonde_kjor_kurve, sonde_kjor_laks, sonde_kjor_land, sonde_kjor_macrotrends, sonde_kjor_oljeservice, sonde_kjor_regel_foer2011, sonde_kjor_rigg, sonde_kjor_rigg_b, sonde_kjor_salg, sonde_kjor_sgx_cot, sonde_kjor_stockanalysis, sonde_kjor_terskel, sonde_kjor_timing, sonde_kjor_tio, sonde_kjor_uran, sonde_kjor_utbytte, sonde_kjor_utforsk_etf, sonde_kjor_vale
-
-Oppstarter: 1 sonde(r) funnet
-
-=== sonde_kjor_rigg_segment ===
+sonde:   sonde_kjor_rigg_segment
+kjort:   2026-09-29 13:03:39 UTC
+commit:  cf0d843
+status:  OK
+brukte:  70 sekunder
+--------------------------------------------------------------
 1. SEGMENTTALL FRA DE BLANDEDE SELSKAPENE
 
    Valaris (Ensco): 18 aarsrapporter fra 2009
@@ -214,9 +215,3 @@ Oppstarter: 1 sonde(r) funnet
    grunt forhold 2011-2014 2.47 (krav over 1,2) ok; 2016-2021 0.52 (krav under 1,0) ok; selskaper per aar fra 2019: 2 til 3; siste B2 35
 
 lagret sonder/rigg_segment.json
-
---- skrevet til sonder/sonde_kjor_rigg_segment.txt (70 s, kode 0)
-
-
-OPPSUMMERING
-   OK    sonde_kjor_rigg_segment                     70 s  -> sonder/sonde_kjor_rigg_segment.txt
