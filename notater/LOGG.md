@@ -9,6 +9,27 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 12:25, Claude Code
+**Hva:** Rettet to feil fra den uavhengige gjennomgangen, med sonder som
+viser tallene før og etter. Tallene føres i et eget innslag når sondene har
+kjørt.
+C: renter ble trukket fra driftskontantstrømmen også for US GAAP-filere, der
+de allerede er trukket (dobbelttelling). Nå trekkes renter bare når driften
+er lest fra IFRS og selskapet ikke oppgir betalte renter under drift.
+Rentedekningen regnes nå på drift før renter. Nye felt per selskap:
+`renter_i_drift`, `rentegrunn`. `RENTEFIX=0` gir gammel regel.
+B: begrepet "avskrivninger og nedskrivninger" sto som nummer to i nevneren
+og vant over rene avskrivninger for IFRS-filere. Nedskrivninger kommer i
+bunnårene og trekker B ned. Nå er det nest siste utvei. `B_DDA=gammel` gir
+gammel rekkefølge.
+**Filer:** `overlevelse_c.py`, `tilbud_b.py`, `sonde_kjor_c_rente.py` (ny),
+`sonde_kjor_b_dda.py` (ny).
+**Den andre økten må vite:** `b_manuell.json` og `c_manuell.json` er ikke
+rørt. `c_manuell.py` trekker fortsatt renter fra driften for de manuelt
+leste selskapene. Det er riktig bare hvis årsrapporten fører betalte renter
+under finansiering. Fører den dem under drift (vanlig i IFRS, IAS 7 tillater
+begge), telles renten to ganger der også. Cowork bør sjekke det per selskap.
+
 ### 29.09.2026 12:05, Claude Code
 **Hva:** Rettet tre formuleringer i backtestnotatet etter den uavhengige
 gjennomgangen. Ingen tall endret. "Alle etter 2008" var feil (episodene 1991,

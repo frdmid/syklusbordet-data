@@ -163,9 +163,11 @@ for tk in sorted(AKSJER):
         print(f"   {tk:12s} FEIL {type(e).__name__} {str(e)[:40]}")
         utenfor.append(tk)
         continue
-    fakta = {}
+    fakta, tak_av = {}, {}
     for tak in ("us-gaap", "ifrs-full"):
-        fakta.update(cf.get("facts", {}).get(tak, {}))
+        f = cf.get("facts", {}).get(tak, {})
+        fakta.update(f)
+        tak_av.update({b: tak for b in f})
     # Driften bestemmer valutaen, og alle andre ledd maa leses i SAMME valuta
     # for at forholdstallene skal bety noe. Noen filere oppgir driften i to
     # valutaer men kontantbeholdningen i bare en, saa vi prover valutaene i
@@ -204,6 +206,24 @@ for tk in sorted(AKSJER):
     ek = float(serier["egenkapital"].iloc[-1]) if "egenkapital" in serier else None
     rente = abs(float(serier["rente"].iloc[-1])) if "rente" in serier else None
 
+    # Er renten allerede trukket i driftskontantstroemmen? (rettet 29.09.2026)
+    # Under US GAAP er betalte renter alltid en del av driften (ASC 230), saa
+    # aa trekke dem fra en gang til teller dem dobbelt. Under IFRS (IAS 7) kan
+    # selskapet velge drift eller finansiering. Viser selskapet
+    # InterestPaidClassifiedAsOperatingActivities, er renten i driften; ellers
+    # trekkes den fra som foer. RENTEFIX=0 gir den gamle regnemaaten (for
+    # sammenligning i sonde_kjor_c_rente).
+    drift_tak = tak_av.get(valgt.get("drift"), "us-gaap")
+    if os.environ.get("RENTEFIX", "1") == "0":
+        renter_i_drift, rentegrunn = False, "gammel regel"
+    elif drift_tak == "us-gaap":
+        renter_i_drift, rentegrunn = True, "us-gaap"
+    elif "InterestPaidClassifiedAsOperatingActivities" in fakta:
+        renter_i_drift, rentegrunn = True, "ifrs, renter i drift"
+    else:
+        renter_i_drift, rentegrunn = False, "ifrs, renter ikke i drift"
+    trekk = 0.0 if renter_i_drift else (rente or 0.0)
+
     # Fri kontantstrom etter renter. Er den positiv, finansierer selskapet seg
     # selv og kontantbeholdningen er irrelevant.
     #
@@ -211,14 +231,15 @@ for tk in sorted(AKSJER):
     # versjon la den til, og da fikk Diamondback med 3,9 mrd i positiv drift
     # "1,7 kvartaler igjen". 14 av 34 selskaper var feilklassifisert.
     def kv(ocf):
-        fri = ocf - (rente or 0.0)
+        fri = ocf - trekk
         return None if fri >= 0 else round(kont / (-fri / 4), 1)
     kvartaler = kv(stress)          # ved forrige syklusbunn
     kvartaler_naa = kv(naa)         # ved dagens rate, dokumentets egen ordlyd
     # C2: netto gjeld mot egenkapital
     ngek = None if not ek or ek <= 0 or gjeld is None else round((gjeld - kont) / ek, 2)
     # C3: rentedekning i stresstilfellet
-    dekning = None if not rente else round(stress / rente, 1)
+    # Dekning = drift foer renter delt paa renter.
+    dekning = None if not rente else round((stress + (rente if renter_i_drift else 0.0)) / rente, 1)
 
     if kvartaler is None:
         port, hvorfor = "aapen", f"positiv drift etter renter selv i {bunnaar}"
@@ -240,6 +261,7 @@ for tk in sorted(AKSJER):
                    "verste_drift_musd": round(stress / 1e6, 0),
                    "drift_naa_musd": round(naa / 1e6, 0),
                    "rente_musd": None if rente is None else round(rente / 1e6, 0),
+                   "renter_i_drift": renter_i_drift, "rentegrunn": rentegrunn,
                    "aar": [int(drift.index[0]), int(drift.index[-1])],
                    "begreper": valgt}
     print(f"   {tk:12s} {port:7s} {hvorfor[:38]:40s} bunnaar {bunnaar} av "
@@ -260,6 +282,10 @@ except Exception as e:
     print(f"   FEIL {type(e).__name__}: {str(e)[:100]}")
 
 print(f"\n   {len(SELSKAP)} maalt, {len(utenfor)} uten SEC-tall: {', '.join(utenfor)}")
+
+if os.environ.get("C_UT"):
+    json.dump({"selskaper": SELSKAP, "utenfor": utenfor},
+              open(os.environ["C_UT"], "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 
 print("\n3. Port per segment")
 SEG = {}
@@ -295,7 +321,8 @@ if GITHUB_TOKEN and SELSKAP:
                  "utenfor_sec": utenfor,
                  "merknad": ("C1 er hvor mange kvartaler kontantbeholdningen holder hvis "
                              "driftskontantstrommen blir like daarlig som sitt verste aar "
-                             "i hele historikken, etter renter. kvartaler_naa er det samme "
+                             "i hele historikken, etter renter (renter trekkes ikke to ganger: "
+                             "under US GAAP er de allerede i driften, se feltet rentegrunn). kvartaler_naa er det samme "
                              "ved siste aars drift. Under aatte kvartaler regnes "
                              "porten som stengt. Selskaper uten SEC-tall maales fra "
                              "aarsrapportene i c_manuell.json der de er lest (feltet kilde), "

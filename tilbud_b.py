@@ -75,14 +75,23 @@ CAPEX_RANG = [
     "PropertyPlantAndEquipmentAdditions",
     "PaymentsToAcquireMiningAssets",
 ]
+# Nedskrivninger skal ikke inn i nevneren (rettet 29.09.2026). Begrepet med
+# "ImpairmentLoss" er avskrivninger PLUSS nedskrivninger, og nedskrivningene
+# kommer nettopp i bunnaarene. Da blaases nevneren opp, forholdet faller og
+# B ser ut som et tilbudskutt som ikke har skjedd. Det sto som nummer to og
+# vant over de rene IFRS-begrepene. Naa er det nest siste utvei.
+# B_DDA=gammel gir den gamle rekkefoelgen (for sonde_kjor_b_dda).
 DDA_RANG = [
     "DepreciationDepletionAndAmortization",
-    "DepreciationAmortisationAndImpairmentLossReversalOfImpairmentLossRecognisedInProfitOrLoss",
     "DepreciationAndAmortisationExpense",
     "DepreciationAndAmortization",
     "DepreciationDepletionAndAmortizationExcludingAmortizationOfDeferredSalesCommissions",
+    "DepreciationAmortisationAndImpairmentLossReversalOfImpairmentLossRecognisedInProfitOrLoss",
     "DepreciationPropertyPlantAndEquipment",   # komponent, siste utvei
 ]
+if os.environ.get("B_DDA") == "gammel":
+    DDA_RANG.insert(1, DDA_RANG.pop(4))
+BEGREP = {}
 # Plausibilitetsvindu. Et gruveselskap som investerer tjue ganger sine egne
 # avskrivninger finnes ikke. Ligger medianen utenfor, er paret feil lest.
 RATIO_MIN, RATIO_MAKS = 0.15, 6.0
@@ -166,6 +175,8 @@ for metall, tickere in KURV.items():
                   f"{forkastet[:2]}")
         fel = r.index
         sett[tk] = {"ratio": r, "capex": capex[fel], "dda": dda[fel]}
+        BEGREP[tk] = {"metall": metall, "teller": bc, "nevner": bd,
+                      "ratio": {int(a): round(float(v), 3) for a, v in r.items()}}
         hentet.setdefault(metall, {})[tk] = sett[tk]
         print(f"   {tk:6s} {len(r):>2} år {r.index.min()}-{r.index.max()}  "
               f"siste {r.iloc[-1]:5.2f}  median {r.median():5.2f}  {enh:3s}")
@@ -356,7 +367,7 @@ for navn, u in [
 
 if os.environ.get("B_UT"):
     with open(os.environ["B_UT"], "w", encoding="utf-8") as f:
-        json.dump({"metaller": ut, "kutt": KUTT}, f, ensure_ascii=False)
+        json.dump({"metaller": ut, "kutt": KUTT, "begreper": BEGREP}, f, ensure_ascii=False)
 
 if GITHUB_TOKEN and ut:
     api = f"https://api.github.com/repos/{REPO}/contents/b_capex.json"
