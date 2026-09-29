@@ -1,8 +1,9 @@
-Hopper over 36 ferdige sonder (sonder_ferdige.txt): sonde_kjor_b_fmg, sonde_kjor_b_haleregel, sonde_kjor_b_jernmalm, sonde_kjor_b_kilder, sonde_kjor_backtest, sonde_kjor_backtest_lang, sonde_kjor_bdi, sonde_kjor_brasil, sonde_kjor_c_manuell, sonde_kjor_c_manuell2, sonde_kjor_c_manuell3, sonde_kjor_cot, sonde_kjor_cot_palme_sgx, sonde_kjor_cotr, sonde_kjor_d95, sonde_kjor_dadj, sonde_kjor_faktor, sonde_kjor_fearnleys_mal, sonde_kjor_fond, sonde_kjor_fond_norge, sonde_kjor_indikator, sonde_kjor_instrumenttest, sonde_kjor_kali_platina, sonde_kjor_kurve, sonde_kjor_laks, sonde_kjor_land, sonde_kjor_macrotrends, sonde_kjor_rigg, sonde_kjor_salg, sonde_kjor_stockanalysis, sonde_kjor_terskel, sonde_kjor_timing, sonde_kjor_tio, sonde_kjor_uran, sonde_kjor_utbytte, sonde_kjor_utforsk_etf
-
-Oppstarter: 1 sonde(r) funnet
-
-=== sonde_kjor_sgx_cot ===
+sonde:   sonde_kjor_sgx_cot
+kjort:   2026-09-29 09:33:31 UTC
+commit:  e17aaca
+status:  OK
+brukte:  16 sekunder
+--------------------------------------------------------------
 CMS-versjoner: ingen funnet
 fspFileType-verdier i skriptene: ['e', 'ecn', 'i', 'intercom_credit_rate', 'intracom_margin', 'margin_tiers', 'outright_margin', 'special_fixing', 't']
 Andre queryId-navn: ['fsp_files', 'we_chat_qr_validator']
@@ -13,9 +14,3 @@ Andre queryId-navn: ['fsp_files', 'we_chat_qr_validator']
 200     181 cot_reports                {"errors":[{"message":"The persisted query loader must return query string or instance of GraphQL\\Language\\AST\\DocumentNode but got: null.","extensions":{"category":"request"}}]}
 200     181 derivatives_cot            {"errors":[{"message":"The persisted query loader must return query string or instance of GraphQL\\Language\\AST\\DocumentNode but got: null.","extensions":{"category":"request"}}]}
 200     181 commitment_of_trader       {"errors":[{"message":"The persisted query loader must return query string or instance of GraphQL\\Language\\AST\\DocumentNode but got: null.","extensions":{"category":"request"}}]}
-
---- skrevet til sonder/sonde_kjor_sgx_cot.txt (16 s, kode 0)
-
-
-OPPSUMMERING
-   OK    sonde_kjor_sgx_cot                          16 s  -> sonder/sonde_kjor_sgx_cot.txt
