@@ -51,8 +51,11 @@ BLANDET = {
 }
 KLASSE = [("dyp", r"floater|deepwater|drillship|semisub|midwater|ultra"),
           ("grunt", r"jack.?up|shallow")]
-CAPEX = r"^(us-gaap:SegmentExpenditureAdditionToLongLivedAssets|us-gaap:PaymentsToAcquirePropertyPlantAndEquipment|us-gaap:PaymentsToAcquireProductiveAssets|[a-z]+:CapitalExpenditures?\w*|[a-z]+:\w*CapitalExpenditure\w*)$"
-DEP = r"^(us-gaap:DepreciationDepletionAndAmortization|us-gaap:DepreciationAndAmortization|us-gaap:Depreciation|us-gaap:DepreciationNonproduction|us-gaap:CostDepreciationAmortizationAndDepletion|[a-z]+:Depreciation\w*)$"
+# Begrepene varierer mellom selskaper og aar (Ensco brukte
+# CostOfGoodsAndServicesSoldDepreciation for segmentavskrivninger til 2019).
+# Derfor mønster paa lokalnavnet, ikke en fast liste.
+CAPEX = r":(SegmentExpenditureAdditionToLongLivedAssets|PaymentsToAcquirePropertyPlantAndEquipment|PaymentsToAcquireProductiveAssets|\w*CapitalExpenditure\w*)$"
+DEP = r":(?!\w*(Accumulated|Deferred|Tax|Accelerated))\w*Depreciation\w*$"
 
 
 def get(url, **kw):
@@ -89,7 +92,7 @@ def instans(cik, accn):
         return None
     navn = [x["name"] for x in r.json()["directory"]["item"]]
     kand = [n for n in navn if n.endswith("_htm.xml")] or \
-           [n for n in navn if n.endswith(".xml") and not re.search(r"_(cal|def|lab|pre)\.xml$|FilingSummary|MetaLinks", n)]
+           [n for n in navn if n.endswith(".xml") and not re.search(r"_(cal|def|lab|pre)\.xml$|FilingSummary|MetaLinks|defnref|^R\d+\.xml$", n)]
     if not kand:
         return None
     r = get(base + "/" + kand[0])
@@ -146,7 +149,7 @@ for cik, navn in BLANDET.items():
             k = klasse(medlem)
             if not k:
                 continue
-            felt = "capex" if re.match(CAPEX, navn_b) else "dda" if re.match(DEP, navn_b) else None
+            felt = "capex" if re.search(CAPEX, navn_b) else "dda" if re.search(DEP, navn_b) else None
             if not felt:
                 continue
             nk = (k, aar)
