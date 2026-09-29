@@ -38,3 +38,4 @@ sonde_kjor_faktor
 sonde_kjor_b_haleregel
 sonde_kjor_utbytte
 sonde_kjor_cotr
+sonde_kjor_cot_palme_sgx
