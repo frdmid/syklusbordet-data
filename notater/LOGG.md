@@ -9,6 +9,21 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 11:24, Claude Code
+**Hva:** CMB.TECH (CMBT, NYSE) tatt inn på tavlen for capesize, merket «ny
+sammensetning, ikke målt» (Frodes beslutning, alternativ 1). Holdes utenfor
+kapitulasjon D og overlevelsesporten C, fordi kurshistorikken hos Yahoo er
+Euronav (tankskip) og begge måles mot papirets egen historikk.
+**Filer:** `instrumenter.py` (ny linje under capesize, og ny ordbok
+`UTEN_HISTORIKK`), `kapitulasjon_d.py` og `overlevelse_c.py` (hopper over
+papirer i `UTEN_HISTORIKK`).
+**Den andre økten må vite:** `UTEN_HISTORIKK` i `instrumenter.py` er stedet
+for papirer der historikken tilhører et annet selskap. De vises på tavlen og
+logges i flaggloggen, men teller ikke i D eller C. Capesize har nå HSHP.OL,
+SBLK og CMBT; D og C for segmentet regnes av HSHP.OL og SBLK. Endringen
+slår inn på dashbordet etter onsdagens kjøring. CMBT sto fra før bare i
+`VEHICLES["torrlast"]` i `priser.py`, som referanse.
+
 ### 29.09.2026 11:18, Claude Code
 **Hva:** 2020 Bulkers (2020.OL) tatt ut av tavlen for capesize og av
 vehikkellaget (Frodes beslutning). Kursen hos Yahoo falt 97 % i april 2026

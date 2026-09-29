@@ -183,7 +183,11 @@ INSTR = {
   # Yahoo falt 97 % i april 2026 uten at adjclose fanget det, trolig en stor
   # utdeling. Det ga falsk kapitulasjon (D 95) for papiret og for capesize.
   # Se sonder/sonde_kjor_utbytte.txt. Kan tas inn igjen naar dataene er rettet.
-  ("SBLK","Nasdaq","Star Bulk Carriers","aksje","Capesize som del av en bredere flate. Lavere beta, lavere risiko.")],
+  ("SBLK","Nasdaq","Star Bulk Carriers","aksje","Capesize som del av en bredere flate. Lavere beta, lavere risiko."),
+  ("CMBT","NYSE","CMB.TECH","aksje",
+   "Ny sammensetning, ikke maalt. Stoerste noterte capesize-eier etter Golden Ocean (38 Newcastlemax og 37 capesize i januar 2026), "
+   "men ogsaa tankskip, kjemikalier, container og offshore. Kurshistorikken er Euronav, et tankrederi, saa korrelasjon, "
+   "kapitulasjon D og overlevelse C kan ikke maales ennaa og regnes ikke. Tatt inn 29.09.2026 etter Frodes beslutning.")],
 "ship_handysize": [
   ("TMIP.L","London","Taylor Maritime","aksje","Handysize og Supramax, naermeste rene uttrykk."),
   ("GNK","NYSE","Genco Shipping","aksje","Handysize-andel ved siden av storre skip."),
@@ -201,4 +205,13 @@ INSTR = {
    "r 0,32  rm 0,31. Oppdrett, villfisk og videreforedling. Svakeste av de fire: uten september og oktober 2022 faller den til 0,29."),
   ("BAKKA.OL","Oslo","Bakkafrost","aksje",
    "r 0,39  rm 0,38. Færøyene og Skottland. Sterkeste paret, også kroner mot kroner (0,36).")],
+}
+
+
+# Papirer paa tavlen der kurshistorikken tilhoerer et annet selskap enn det
+# som handles i dag. De vises og logges, men holdes utenfor kapitulasjon D
+# (kapitulasjon_d.py) og overlevelsesporten C (overlevelse_c.py), fordi
+# begge maales mot papirets egen historikk. Lagt til 29.09.2026.
+UTEN_HISTORIKK = {
+    "CMBT": "Kurshistorikken er Euronav (tankskip) fram til fusjonene med CMB.TECH (2024) og Golden Ocean (2025).",
 }

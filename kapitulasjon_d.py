@@ -42,7 +42,7 @@ FULLT_FALL = 30      # prosent fall som gir persentilen full vekt
 # en jevn oppgang D=63 av ren stoy. Skaaren dempes derfor med hvor stort
 # fallet faktisk er, med full vekt fra 30 prosent og nedover.
 
-from instrumenter import INSTR
+from instrumenter import INSTR, UTEN_HISTORIKK
 
 # Tema-ETF per segment. Bare der koblingen er forsvarlig. XME er bredt metall,
 # XOP olje og gass, MOO jordbruk, BDRY torrlast, GDX gull, COPX kobber.
@@ -140,6 +140,8 @@ print("1. Henter kurser")
 AKSJER = {}
 for sid, rader in INSTR.items():
     for tk, bors, navn, typ, kom in rader:
+        if tk in UTEN_HISTORIKK:   # historikken er et annet selskap, se instrumenter.py
+            continue
         AKSJER.setdefault(tk, {"navn": navn, "bors": bors, "typ": typ,
                                "segmenter": []})["segmenter"].append(sid)
 alle = (sorted(AKSJER) + sorted(v for v in set(TEMA.values()) if v not in KURVER)

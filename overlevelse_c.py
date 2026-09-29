@@ -32,7 +32,7 @@ MIN_AAR = 4
 # for en bunnkjoepstrategi er om selskapet overlevde forrige bunn.
 PORT_KVARTALER = 8      # dokumentets egen terskel
 
-from instrumenter import INSTR
+from instrumenter import INSTR, UTEN_HISTORIKK
 
 # Rangert per ledd. Foerste begrep med nok aarstall vinner, saa de mest
 # spesifikke staar foerst. Balansepostene er oyeblikksverdier, stromspostene
@@ -145,6 +145,8 @@ for sid, rader in INSTR.items():
         # UCITS-fondene er inne, og uten dette leter C etter Agnico-tall for
         # GDX.L.
         if typ.lower().startswith(("etc", "etf", "etn", "fond")):
+            continue
+        if tk in UTEN_HISTORIKK:   # historikken er et annet selskap, se instrumenter.py
             continue
         AKSJER.setdefault(tk, {"navn": navn, "bors": bors, "segmenter": []})["segmenter"].append(sid)
 
