@@ -16,10 +16,15 @@ for i in range(len(r["form"])):
 f = requests.get(f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik}.json", headers=UA, timeout=120).json()["facts"]
 for tak, begreper in f.items():
     for b, d in begreper.items():
-        if not any(k in b for k in ("OperatingActivities", "CashAndCashEquivalents", "Revenue")):
+        if not any(k.lower() in b.lower() for k in ("Operat", "CashAndCashEquivalents", "InterestPaid",
+                                                      "IncomeTaxesPaid", "Borrowings", "Equity")):
+            continue
+        if tak in ("us-gaap",):
             continue
         for enh, pkt in d["units"].items():
             siste = max(pkt, key=lambda p: p["end"])
             fy = [p for p in pkt if p.get("fp") == "FY"]
-            print(f"{tak:9s} {b[:60]:60s} {enh:4s} n={len(pkt):3d} siste slutt {siste['end']} "
+            if max(p["end"] for p in pkt) < "2022":
+                continue
+            print(f"{tak:9s} {b[:75]:75s} {enh:4s} n={len(pkt):3d} siste slutt {siste['end']} "
                   f"skjema {siste.get('form')} fp {siste.get('fp')}  FY-aar: {sorted({p['end'][:4] for p in fy})[-6:]}")
