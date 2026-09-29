@@ -9,6 +9,19 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.09.2026 10:54, Claude Code
+**Hva:** Kriterium for når test-flagget «Bunnsone og høy tilbudsskår» vurderes,
+skrevet ned før noe tilfelle (Frodes beslutning). Vurderes etter tre utløste
+tilfeller. Et tilfelle er første utløste måned etter mer enn tolv måneder uten,
+og tilfeller i ulike segmenter med høyst seks måneder mellom telles som ett.
+Støttet hvis tavlens papirer for segmentet, likt vektet, slår ACWI over tolv
+måneder fra utløsningen i minst to av tre tilfeller, i dollar med utbytte på
+kursene i flaggloggen. Ellers forkastet. Kriteriet skal ikke flyttes.
+**Filer:** Dashbordet (artifact Syklusbordet, versjon 43, feltet `kriterium`
+i `TESTFLAGG`, vist under regelen). Ingen filer i repoet.
+**Den andre økten må vite:** Dette innslaget er den bindende teksten for
+kriteriet. Dashbordet viser den samme. Bygg videre på versjon 43.
+
 ### 29.09.2026 10:52, Claude Code
 **Hva:** Grensen i test-flagget «Bunnsone og høy tilbudsskår» satt til B2 60
 (Frodes valg), ned fra 50 som Claude Code hadde valgt.
