@@ -350,3 +350,12 @@ for sid, nokkel in SKIP.items():
 print(f"\n{ut} segment skrevet, {feil} feilet")
 if feil and not ut:
     sys.exit("Ingen shipping-segment kunne bygges.")
+
+# Endringsboksen oeverst paa dashbordet (30.09.2026): sammenlign med forrige
+# ukes bilde. Dette er siste steg i den ukentlige innhentingen.
+if GITHUB_TOKEN:
+    try:
+        import endringer
+        endringer.uke()
+    except Exception as e:
+        print(f"   endringer feilet: {type(e).__name__}: {str(e)[:80]}")

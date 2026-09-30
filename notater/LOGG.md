@@ -9,6 +9,23 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 30.09.2026 08:03, Claude Code
+**Hva:** Endringsboks for dashbordet (Frodes bestilling). Ny modul
+`endringer.py`: hver ukekjøring lagrer et bilde av nøkkeltallene
+(`logg/endringer_snap.json`) og sammenligner med forrige ISO-ukes bilde; de
+ti største endringene og alle skifter (bunnsone, oppsikt, d95, port, trend)
+skrives til `endringer.json`. Kvartalskjøringen gjør det samme for C (kvartaler,
+netto gjeld/EK, port), B per metall og rigg-B. Priser og nivåer rangeres
+etter prosent, skårer etter poeng, forholdstall etter endring ganger 100.
+Kalles sist i `bygg_shipping.py` (uke) og sist i `overlevelse_c.py`
+(kvartal, ikke når en sonde kjører den). Første bilder er laget fra
+git-historikken: uke fra 28.09 11.23 UTC (eldste lagrede kjøring), kvartal
+fra 28.09 11.48 UTC mot 29.09 13.43 UTC.
+**Filer:** `endringer.py` (ny), `bygg_shipping.py`, `overlevelse_c.py`,
+`endringer.json` (ny), `logg/endringer_snap.json` (ny).
+**Den andre økten må vite:** Onsdagsjobben må skrive `endringer.json` til
+databasen (samlingen marked, dokumentet endringer); prompten er oppdatert.
+
 ### 29.09.2026 21:49, Claude Code
 **Hva:** Nytt test-flagg på dashbordet (Frodes beslutning): «Høy tilbudsskår
 og kapitulerte papirer». Utløses når B2 er over 50 og D for papirene alene

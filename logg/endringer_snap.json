@@ -1,0 +1,3490 @@
+{
+ "uke_forrige": {
+  "noekkel": "2026-09-28 (eldste lagrede)",
+  "dato": "2026-09-28 11:23:36",
+  "verdier": {
+   "brent|real": {
+    "segment": "Råolje (Brent)",
+    "felt": "Realpris",
+    "verdi": 114.89,
+    "skala": "nivaa"
+   },
+   "brent|A": {
+    "segment": "Råolje (Brent)",
+    "felt": "Prisnivå A",
+    "verdi": 18.0,
+    "skala": "poeng"
+   },
+   "brent|Ad": {
+    "segment": "Råolje (Brent)",
+    "felt": "A detrendet",
+    "verdi": 42.1,
+    "skala": "poeng"
+   },
+   "brent|D": {
+    "segment": "Råolje (Brent)",
+    "felt": "Kapitulasjon D",
+    "verdi": 2.4,
+    "skala": "poeng"
+   },
+   "brent|cot": {
+    "segment": "Råolje (Brent)",
+    "felt": "COT-persentil",
+    "verdi": 23.1,
+    "skala": "poeng"
+   },
+   "wti|real": {
+    "segment": "Råolje (WTI)",
+    "felt": "Realpris",
+    "verdi": 96.41,
+    "skala": "nivaa"
+   },
+   "wti|A": {
+    "segment": "Råolje (WTI)",
+    "felt": "Prisnivå A",
+    "verdi": 24.9,
+    "skala": "poeng"
+   },
+   "wti|Ad": {
+    "segment": "Råolje (WTI)",
+    "felt": "A detrendet",
+    "verdi": 50.7,
+    "skala": "poeng"
+   },
+   "wti|D": {
+    "segment": "Råolje (WTI)",
+    "felt": "Kapitulasjon D",
+    "verdi": 2.1,
+    "skala": "poeng"
+   },
+   "wti|cot": {
+    "segment": "Råolje (WTI)",
+    "felt": "COT-persentil",
+    "verdi": 51.3,
+    "skala": "poeng"
+   },
+   "henryhub|real": {
+    "segment": "Naturgass US (Henry Hub)",
+    "felt": "Realpris",
+    "verdi": 2.9,
+    "skala": "nivaa"
+   },
+   "henryhub|A": {
+    "segment": "Naturgass US (Henry Hub)",
+    "felt": "Prisnivå A",
+    "verdi": 90.2,
+    "skala": "poeng"
+   },
+   "henryhub|Ad": {
+    "segment": "Naturgass US (Henry Hub)",
+    "felt": "A detrendet",
+    "verdi": 58.4,
+    "skala": "poeng"
+   },
+   "henryhub|D": {
+    "segment": "Naturgass US (Henry Hub)",
+    "felt": "Kapitulasjon D",
+    "verdi": 26.3,
+    "skala": "poeng"
+   },
+   "henryhub|cot": {
+    "segment": "Naturgass US (Henry Hub)",
+    "felt": "COT-persentil",
+    "verdi": 53.2,
+    "skala": "poeng"
+   },
+   "gold|real": {
+    "segment": "Gull",
+    "felt": "Realpris",
+    "verdi": 4411.0,
+    "skala": "nivaa"
+   },
+   "gold|A": {
+    "segment": "Gull",
+    "felt": "Prisnivå A",
+    "verdi": 0.9,
+    "skala": "poeng"
+   },
+   "gold|Ad": {
+    "segment": "Gull",
+    "felt": "A detrendet",
+    "verdi": 3.2,
+    "skala": "poeng"
+   },
+   "gold|D": {
+    "segment": "Gull",
+    "felt": "Kapitulasjon D",
+    "verdi": 24.5,
+    "skala": "poeng"
+   },
+   "gold|cot": {
+    "segment": "Gull",
+    "felt": "COT-persentil",
+    "verdi": 60.9,
+    "skala": "poeng"
+   },
+   "uran|real": {
+    "segment": "Uran",
+    "felt": "Realpris",
+    "verdi": 89.68,
+    "skala": "nivaa"
+   },
+   "uran|A": {
+    "segment": "Uran",
+    "felt": "Prisnivå A",
+    "verdi": 7.8,
+    "skala": "poeng"
+   },
+   "uran|Ad": {
+    "segment": "Uran",
+    "felt": "A detrendet",
+    "verdi": 26.7,
+    "skala": "poeng"
+   },
+   "uran|D": {
+    "segment": "Uran",
+    "felt": "Kapitulasjon D",
+    "verdi": 20.7,
+    "skala": "poeng"
+   },
+   "laks|real": {
+    "segment": "Laks (sesongjustert)",
+    "felt": "Realpris",
+    "verdi": 8.6692,
+    "skala": "nivaa"
+   },
+   "laks|A": {
+    "segment": "Laks (sesongjustert)",
+    "felt": "Prisnivå A",
+    "verdi": 50.8,
+    "skala": "poeng"
+   },
+   "laks|Ad": {
+    "segment": "Laks (sesongjustert)",
+    "felt": "A detrendet",
+    "verdi": 65.7,
+    "skala": "poeng"
+   },
+   "laks|D": {
+    "segment": "Laks (sesongjustert)",
+    "felt": "Kapitulasjon D",
+    "verdi": 25.3,
+    "skala": "poeng"
+   },
+   "kobber|real": {
+    "segment": "Kobber",
+    "felt": "Realpris",
+    "verdi": 14326.0,
+    "skala": "nivaa"
+   },
+   "kobber|A": {
+    "segment": "Kobber",
+    "felt": "Prisnivå A",
+    "verdi": 4.5,
+    "skala": "poeng"
+   },
+   "kobber|Ad": {
+    "segment": "Kobber",
+    "felt": "A detrendet",
+    "verdi": 2.9,
+    "skala": "poeng"
+   },
+   "kobber|D": {
+    "segment": "Kobber",
+    "felt": "Kapitulasjon D",
+    "verdi": 3.1,
+    "skala": "poeng"
+   },
+   "kobber|cot": {
+    "segment": "Kobber",
+    "felt": "COT-persentil",
+    "verdi": 95.5,
+    "skala": "poeng"
+   },
+   "nikkel|real": {
+    "segment": "Nikkel",
+    "felt": "Realpris",
+    "verdi": 16751.0,
+    "skala": "nivaa"
+   },
+   "nikkel|A": {
+    "segment": "Nikkel",
+    "felt": "Prisnivå A",
+    "verdi": 58.9,
+    "skala": "poeng"
+   },
+   "nikkel|Ad": {
+    "segment": "Nikkel",
+    "felt": "A detrendet",
+    "verdi": 70.5,
+    "skala": "poeng"
+   },
+   "nikkel|D": {
+    "segment": "Nikkel",
+    "felt": "Kapitulasjon D",
+    "verdi": 11.5,
+    "skala": "poeng"
+   },
+   "aluminium|real": {
+    "segment": "Aluminium",
+    "felt": "Realpris",
+    "verdi": 3251.0,
+    "skala": "nivaa"
+   },
+   "aluminium|A": {
+    "segment": "Aluminium",
+    "felt": "Prisnivå A",
+    "verdi": 40.5,
+    "skala": "poeng"
+   },
+   "aluminium|Ad": {
+    "segment": "Aluminium",
+    "felt": "A detrendet",
+    "verdi": 10.5,
+    "skala": "poeng"
+   },
+   "aluminium|D": {
+    "segment": "Aluminium",
+    "felt": "Kapitulasjon D",
+    "verdi": 31.7,
+    "skala": "poeng"
+   },
+   "sink|real": {
+    "segment": "Sink",
+    "felt": "Realpris",
+    "verdi": 3875.0,
+    "skala": "nivaa"
+   },
+   "sink|A": {
+    "segment": "Sink",
+    "felt": "Prisnivå A",
+    "verdi": 13.6,
+    "skala": "poeng"
+   },
+   "sink|Ad": {
+    "segment": "Sink",
+    "felt": "A detrendet",
+    "verdi": 13.6,
+    "skala": "poeng"
+   },
+   "sink|D": {
+    "segment": "Sink",
+    "felt": "Kapitulasjon D",
+    "verdi": 11.5,
+    "skala": "poeng"
+   },
+   "bly|real": {
+    "segment": "Bly",
+    "felt": "Realpris",
+    "verdi": 1855.0,
+    "skala": "nivaa"
+   },
+   "bly|A": {
+    "segment": "Bly",
+    "felt": "Prisnivå A",
+    "verdi": 65.3,
+    "skala": "poeng"
+   },
+   "bly|Ad": {
+    "segment": "Bly",
+    "felt": "A detrendet",
+    "verdi": 62.0,
+    "skala": "poeng"
+   },
+   "bly|D": {
+    "segment": "Bly",
+    "felt": "Kapitulasjon D",
+    "verdi": 8.9,
+    "skala": "poeng"
+   },
+   "tinn|real": {
+    "segment": "Tinn",
+    "felt": "Realpris",
+    "verdi": 55385.0,
+    "skala": "nivaa"
+   },
+   "tinn|A": {
+    "segment": "Tinn",
+    "felt": "Prisnivå A",
+    "verdi": 6.9,
+    "skala": "poeng"
+   },
+   "tinn|Ad": {
+    "segment": "Tinn",
+    "felt": "A detrendet",
+    "verdi": 0.0,
+    "skala": "poeng"
+   },
+   "tinn|D": {
+    "segment": "Tinn",
+    "felt": "Kapitulasjon D",
+    "verdi": 11.5,
+    "skala": "poeng"
+   },
+   "jernmalm|real": {
+    "segment": "Jernmalm 62% Fe",
+    "felt": "Realpris",
+    "verdi": 96.3,
+    "skala": "nivaa"
+   },
+   "jernmalm|A": {
+    "segment": "Jernmalm 62% Fe",
+    "felt": "Prisnivå A",
+    "verdi": 81.5,
+    "skala": "poeng"
+   },
+   "jernmalm|Ad": {
+    "segment": "Jernmalm 62% Fe",
+    "felt": "A detrendet",
+    "verdi": 65.0,
+    "skala": "poeng"
+   },
+   "jernmalm|D": {
+    "segment": "Jernmalm 62% Fe",
+    "felt": "Kapitulasjon D",
+    "verdi": 40.8,
+    "skala": "poeng"
+   },
+   "kull|real": {
+    "segment": "Termisk kull (Australia)",
+    "felt": "Realpris",
+    "verdi": 135.2,
+    "skala": "nivaa"
+   },
+   "kull|A": {
+    "segment": "Termisk kull (Australia)",
+    "felt": "Prisnivå A",
+    "verdi": 30.3,
+    "skala": "poeng"
+   },
+   "kull|Ad": {
+    "segment": "Termisk kull (Australia)",
+    "felt": "A detrendet",
+    "verdi": 72.2,
+    "skala": "poeng"
+   },
+   "kull|D": {
+    "segment": "Termisk kull (Australia)",
+    "felt": "Kapitulasjon D",
+    "verdi": 13.4,
+    "skala": "poeng"
+   },
+   "ttf|real": {
+    "segment": "Naturgass Europa",
+    "felt": "Realpris",
+    "verdi": 21.11,
+    "skala": "nivaa"
+   },
+   "ttf|A": {
+    "segment": "Naturgass Europa",
+    "felt": "Prisnivå A",
+    "verdi": 7.5,
+    "skala": "poeng"
+   },
+   "ttf|Ad": {
+    "segment": "Naturgass Europa",
+    "felt": "A detrendet",
+    "verdi": 13.4,
+    "skala": "poeng"
+   },
+   "ttf|D": {
+    "segment": "Naturgass Europa",
+    "felt": "Kapitulasjon D",
+    "verdi": 3.4,
+    "skala": "poeng"
+   },
+   "kakao|real": {
+    "segment": "Kakao",
+    "felt": "Realpris",
+    "verdi": 5.95,
+    "skala": "nivaa"
+   },
+   "kakao|A": {
+    "segment": "Kakao",
+    "felt": "Prisnivå A",
+    "verdi": 18.0,
+    "skala": "poeng"
+   },
+   "kakao|Ad": {
+    "segment": "Kakao",
+    "felt": "A detrendet",
+    "verdi": 5.9,
+    "skala": "poeng"
+   },
+   "kakao|D": {
+    "segment": "Kakao",
+    "felt": "Kapitulasjon D",
+    "verdi": 47.8,
+    "skala": "poeng"
+   },
+   "kakao|cot": {
+    "segment": "Kakao",
+    "felt": "COT-persentil",
+    "verdi": 3.8,
+    "skala": "poeng"
+   },
+   "palmeolje|real": {
+    "segment": "Palmeolje",
+    "felt": "Realpris",
+    "verdi": 1117.0,
+    "skala": "nivaa"
+   },
+   "palmeolje|A": {
+    "segment": "Palmeolje",
+    "felt": "Prisnivå A",
+    "verdi": 59.9,
+    "skala": "poeng"
+   },
+   "palmeolje|Ad": {
+    "segment": "Palmeolje",
+    "felt": "A detrendet",
+    "verdi": 16.4,
+    "skala": "poeng"
+   },
+   "palmeolje|D": {
+    "segment": "Palmeolje",
+    "felt": "Kapitulasjon D",
+    "verdi": 3.2,
+    "skala": "poeng"
+   },
+   "ship_vlcc|real": {
+    "segment": "VLCC (5 år)",
+    "felt": "Realpris",
+    "verdi": 156.5,
+    "skala": "nivaa"
+   },
+   "ship_vlcc|D": {
+    "segment": "VLCC (5 år)",
+    "felt": "Kapitulasjon D",
+    "verdi": 0.0,
+    "skala": "poeng"
+   },
+   "ship_vlcc|A2": {
+    "segment": "VLCC (5 år)",
+    "felt": "Paritet A2",
+    "verdi": 1.211,
+    "skala": "forhold"
+   },
+   "ship_vlcc|rate": {
+    "segment": "VLCC (5 år)",
+    "felt": "TC 1 år",
+    "verdi": 151250.0,
+    "skala": "nivaa"
+   },
+   "ship_suezmax|real": {
+    "segment": "Suezmax (5 år)",
+    "felt": "Realpris",
+    "verdi": 105.5,
+    "skala": "nivaa"
+   },
+   "ship_suezmax|D": {
+    "segment": "Suezmax (5 år)",
+    "felt": "Kapitulasjon D",
+    "verdi": 0.0,
+    "skala": "poeng"
+   },
+   "ship_suezmax|A2": {
+    "segment": "Suezmax (5 år)",
+    "felt": "Paritet A2",
+    "verdi": 1.223,
+    "skala": "forhold"
+   },
+   "ship_suezmax|rate": {
+    "segment": "Suezmax (5 år)",
+    "felt": "TC 1 år",
+    "verdi": 113125.0,
+    "skala": "nivaa"
+   },
+   "ship_aframax|real": {
+    "segment": "Aframax/LR2 (5 år)",
+    "felt": "Realpris",
+    "verdi": 82.0,
+    "skala": "nivaa"
+   },
+   "ship_aframax|D": {
+    "segment": "Aframax/LR2 (5 år)",
+    "felt": "Kapitulasjon D",
+    "verdi": 10.4,
+    "skala": "poeng"
+   },
+   "ship_aframax|A2": {
+    "segment": "Aframax/LR2 (5 år)",
+    "felt": "Paritet A2",
+    "verdi": 1.119,
+    "skala": "forhold"
+   },
+   "ship_aframax|rate": {
+    "segment": "Aframax/LR2 (5 år)",
+    "felt": "TC 1 år",
+    "verdi": 67500.0,
+    "skala": "nivaa"
+   },
+   "ship_kamsarmax|real": {
+    "segment": "Kamsarmax (5 år)",
+    "felt": "Realpris",
+    "verdi": 41.0,
+    "skala": "nivaa"
+   },
+   "ship_kamsarmax|D": {
+    "segment": "Kamsarmax (5 år)",
+    "felt": "Kapitulasjon D",
+    "verdi": 12.6,
+    "skala": "poeng"
+   },
+   "ship_kamsarmax|A2": {
+    "segment": "Kamsarmax (5 år)",
+    "felt": "Paritet A2",
+    "verdi": 1.075,
+    "skala": "forhold"
+   },
+   "ship_kamsarmax|rate": {
+    "segment": "Kamsarmax (5 år)",
+    "felt": "Baltic Dry Index",
+    "verdi": 3410.0,
+    "skala": "nivaa"
+   },
+   "ship_ultramax|real": {
+    "segment": "Ultramax (5 år)",
+    "felt": "Realpris",
+    "verdi": 38.75,
+    "skala": "nivaa"
+   },
+   "ship_ultramax|D": {
+    "segment": "Ultramax (5 år)",
+    "felt": "Kapitulasjon D",
+    "verdi": 12.6,
+    "skala": "poeng"
+   },
+   "ship_ultramax|A2": {
+    "segment": "Ultramax (5 år)",
+    "felt": "Paritet A2",
+    "verdi": 1.088,
+    "skala": "forhold"
+   },
+   "ship_ultramax|rate": {
+    "segment": "Ultramax (5 år)",
+    "felt": "Baltic Dry Index",
+    "verdi": 3410.0,
+    "skala": "nivaa"
+   },
+   "ship_capesize|real": {
+    "segment": "Capesize (5 år)",
+    "felt": "Realpris",
+    "verdi": 72.5,
+    "skala": "nivaa"
+   },
+   "ship_capesize|D": {
+    "segment": "Capesize (5 år)",
+    "felt": "Kapitulasjon D",
+    "verdi": 43.8,
+    "skala": "poeng"
+   },
+   "ship_capesize|rate": {
+    "segment": "Capesize (5 år)",
+    "felt": "Baltic Dry Index",
+    "verdi": 3410.0,
+    "skala": "nivaa"
+   },
+   "ship_handysize|real": {
+    "segment": "Handysize (5 år)",
+    "felt": "Realpris",
+    "verdi": 31.0,
+    "skala": "nivaa"
+   },
+   "ship_handysize|D": {
+    "segment": "Handysize (5 år)",
+    "felt": "Kapitulasjon D",
+    "verdi": 11.7,
+    "skala": "poeng"
+   },
+   "ship_handysize|rate": {
+    "segment": "Handysize (5 år)",
+    "felt": "Baltic Dry Index",
+    "verdi": 3410.0,
+    "skala": "nivaa"
+   },
+   "marked|vix": {
+    "segment": "Marked",
+    "felt": "VIX",
+    "verdi": 16.36,
+    "skala": "nivaa"
+   },
+   "marked|dxy": {
+    "segment": "Marked",
+    "felt": "Dollar (DXY)",
+    "verdi": 101.167,
+    "skala": "nivaa"
+   },
+   "marked|usdnok": {
+    "segment": "Marked",
+    "felt": "USD/NOK",
+    "verdi": 9.5063,
+    "skala": "nivaa"
+   }
+  },
+  "skifter": {
+   "brent|flagg": {
+    "segment": "Råolje (Brent)",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "brent|oppsikt": {
+    "segment": "Råolje (Brent)",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "brent|d95": {
+    "segment": "Råolje (Brent)",
+    "felt": "Parallelt signal d95",
+    "verdi": false
+   },
+   "brent|port": {
+    "segment": "Råolje (Brent)",
+    "felt": "Port C",
+    "verdi": "ukjent"
+   },
+   "brent|trend": {
+    "segment": "Råolje (Brent)",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "wti|flagg": {
+    "segment": "Råolje (WTI)",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "wti|oppsikt": {
+    "segment": "Råolje (WTI)",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "wti|d95": {
+    "segment": "Råolje (WTI)",
+    "felt": "Parallelt signal d95",
+    "verdi": false
+   },
+   "wti|port": {
+    "segment": "Råolje (WTI)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "wti|trend": {
+    "segment": "Råolje (WTI)",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "henryhub|flagg": {
+    "segment": "Naturgass US (Henry Hub)",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "henryhub|oppsikt": {
+    "segment": "Naturgass US (Henry Hub)",
+    "felt": "Under oppsikt",
+    "verdi": true
+   },
+   "henryhub|port": {
+    "segment": "Naturgass US (Henry Hub)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "henryhub|trend": {
+    "segment": "Naturgass US (Henry Hub)",
+    "felt": "Trend",
+    "verdi": "nei"
+   },
+   "gold|flagg": {
+    "segment": "Gull",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "gold|oppsikt": {
+    "segment": "Gull",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "gold|port": {
+    "segment": "Gull",
+    "felt": "Port C",
+    "verdi": "uaktuell"
+   },
+   "gold|trend": {
+    "segment": "Gull",
+    "felt": "Trend",
+    "verdi": "begynnende"
+   },
+   "uran|flagg": {
+    "segment": "Uran",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "uran|oppsikt": {
+    "segment": "Uran",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "uran|port": {
+    "segment": "Uran",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "uran|trend": {
+    "segment": "Uran",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "laks|flagg": {
+    "segment": "Laks (sesongjustert)",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "laks|oppsikt": {
+    "segment": "Laks (sesongjustert)",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "laks|port": {
+    "segment": "Laks (sesongjustert)",
+    "felt": "Port C",
+    "verdi": "ukjent"
+   },
+   "laks|trend": {
+    "segment": "Laks (sesongjustert)",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "kobber|flagg": {
+    "segment": "Kobber",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "kobber|oppsikt": {
+    "segment": "Kobber",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "kobber|port": {
+    "segment": "Kobber",
+    "felt": "Port C",
+    "verdi": "ukjent"
+   },
+   "kobber|trend": {
+    "segment": "Kobber",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "nikkel|flagg": {
+    "segment": "Nikkel",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "nikkel|oppsikt": {
+    "segment": "Nikkel",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "nikkel|port": {
+    "segment": "Nikkel",
+    "felt": "Port C",
+    "verdi": "ukjent"
+   },
+   "nikkel|trend": {
+    "segment": "Nikkel",
+    "felt": "Trend",
+    "verdi": "begynnende"
+   },
+   "aluminium|flagg": {
+    "segment": "Aluminium",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "aluminium|oppsikt": {
+    "segment": "Aluminium",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "aluminium|port": {
+    "segment": "Aluminium",
+    "felt": "Port C",
+    "verdi": "trang"
+   },
+   "aluminium|trend": {
+    "segment": "Aluminium",
+    "felt": "Trend",
+    "verdi": "begynnende"
+   },
+   "sink|flagg": {
+    "segment": "Sink",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "sink|oppsikt": {
+    "segment": "Sink",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "sink|port": {
+    "segment": "Sink",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "sink|trend": {
+    "segment": "Sink",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "bly|flagg": {
+    "segment": "Bly",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "bly|oppsikt": {
+    "segment": "Bly",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "bly|port": {
+    "segment": "Bly",
+    "felt": "Port C",
+    "verdi": "trang"
+   },
+   "bly|trend": {
+    "segment": "Bly",
+    "felt": "Trend",
+    "verdi": "nei"
+   },
+   "tinn|flagg": {
+    "segment": "Tinn",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "tinn|oppsikt": {
+    "segment": "Tinn",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "tinn|port": {
+    "segment": "Tinn",
+    "felt": "Port C",
+    "verdi": "ukjent"
+   },
+   "tinn|trend": {
+    "segment": "Tinn",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "jernmalm|flagg": {
+    "segment": "Jernmalm 62% Fe",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "jernmalm|oppsikt": {
+    "segment": "Jernmalm 62% Fe",
+    "felt": "Under oppsikt",
+    "verdi": true
+   },
+   "jernmalm|port": {
+    "segment": "Jernmalm 62% Fe",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "jernmalm|trend": {
+    "segment": "Jernmalm 62% Fe",
+    "felt": "Trend",
+    "verdi": "nei"
+   },
+   "kull|flagg": {
+    "segment": "Termisk kull (Australia)",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "kull|oppsikt": {
+    "segment": "Termisk kull (Australia)",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "kull|port": {
+    "segment": "Termisk kull (Australia)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "kull|trend": {
+    "segment": "Termisk kull (Australia)",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "ttf|flagg": {
+    "segment": "Naturgass Europa",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "ttf|oppsikt": {
+    "segment": "Naturgass Europa",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "ttf|port": {
+    "segment": "Naturgass Europa",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "ttf|trend": {
+    "segment": "Naturgass Europa",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "kakao|flagg": {
+    "segment": "Kakao",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "kakao|oppsikt": {
+    "segment": "Kakao",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "kakao|port": {
+    "segment": "Kakao",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "kakao|trend": {
+    "segment": "Kakao",
+    "felt": "Trend",
+    "verdi": "begynnende"
+   },
+   "palmeolje|flagg": {
+    "segment": "Palmeolje",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "palmeolje|oppsikt": {
+    "segment": "Palmeolje",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "palmeolje|port": {
+    "segment": "Palmeolje",
+    "felt": "Port C",
+    "verdi": "ukjent"
+   },
+   "palmeolje|trend": {
+    "segment": "Palmeolje",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "ship_vlcc|flagg": {
+    "segment": "VLCC (5 år)",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "ship_vlcc|oppsikt": {
+    "segment": "VLCC (5 år)",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "ship_vlcc|port": {
+    "segment": "VLCC (5 år)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "ship_vlcc|trend": {
+    "segment": "VLCC (5 år)",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "ship_suezmax|flagg": {
+    "segment": "Suezmax (5 år)",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "ship_suezmax|oppsikt": {
+    "segment": "Suezmax (5 år)",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "ship_suezmax|port": {
+    "segment": "Suezmax (5 år)",
+    "felt": "Port C",
+    "verdi": "trang"
+   },
+   "ship_suezmax|trend": {
+    "segment": "Suezmax (5 år)",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "ship_aframax|flagg": {
+    "segment": "Aframax/LR2 (5 år)",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "ship_aframax|oppsikt": {
+    "segment": "Aframax/LR2 (5 år)",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "ship_aframax|port": {
+    "segment": "Aframax/LR2 (5 år)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "ship_aframax|trend": {
+    "segment": "Aframax/LR2 (5 år)",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "ship_kamsarmax|flagg": {
+    "segment": "Kamsarmax (5 år)",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "ship_kamsarmax|oppsikt": {
+    "segment": "Kamsarmax (5 år)",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "ship_kamsarmax|port": {
+    "segment": "Kamsarmax (5 år)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "ship_kamsarmax|trend": {
+    "segment": "Kamsarmax (5 år)",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "ship_ultramax|flagg": {
+    "segment": "Ultramax (5 år)",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "ship_ultramax|oppsikt": {
+    "segment": "Ultramax (5 år)",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "ship_ultramax|port": {
+    "segment": "Ultramax (5 år)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "ship_ultramax|trend": {
+    "segment": "Ultramax (5 år)",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "ship_capesize|flagg": {
+    "segment": "Capesize (5 år)",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "ship_capesize|oppsikt": {
+    "segment": "Capesize (5 år)",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "ship_capesize|port": {
+    "segment": "Capesize (5 år)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "ship_capesize|trend": {
+    "segment": "Capesize (5 år)",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "ship_handysize|flagg": {
+    "segment": "Handysize (5 år)",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "ship_handysize|oppsikt": {
+    "segment": "Handysize (5 år)",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "ship_handysize|port": {
+    "segment": "Handysize (5 år)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "ship_handysize|trend": {
+    "segment": "Handysize (5 år)",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   }
+  }
+ },
+ "uke": {
+  "noekkel": "2026-W40",
+  "dato": "2026-09-29 13:19:12",
+  "verdier": {
+   "brent|real": {
+    "segment": "Råolje (Brent)",
+    "felt": "Realpris",
+    "verdi": 89.75,
+    "skala": "nivaa"
+   },
+   "brent|A": {
+    "segment": "Råolje (Brent)",
+    "felt": "Prisnivå A",
+    "verdi": 32.6,
+    "skala": "poeng"
+   },
+   "brent|Ad": {
+    "segment": "Råolje (Brent)",
+    "felt": "A detrendet",
+    "verdi": 72.5,
+    "skala": "poeng"
+   },
+   "brent|D": {
+    "segment": "Råolje (Brent)",
+    "felt": "Kapitulasjon D",
+    "verdi": 3.3,
+    "skala": "poeng"
+   },
+   "brent|cot": {
+    "segment": "Råolje (Brent)",
+    "felt": "COT-persentil",
+    "verdi": 23.1,
+    "skala": "poeng"
+   },
+   "wti|real": {
+    "segment": "Råolje (WTI)",
+    "felt": "Realpris",
+    "verdi": 87.03,
+    "skala": "nivaa"
+   },
+   "wti|A": {
+    "segment": "Råolje (WTI)",
+    "felt": "Prisnivå A",
+    "verdi": 30.7,
+    "skala": "poeng"
+   },
+   "wti|Ad": {
+    "segment": "Råolje (WTI)",
+    "felt": "A detrendet",
+    "verdi": 65.8,
+    "skala": "poeng"
+   },
+   "wti|D": {
+    "segment": "Råolje (WTI)",
+    "felt": "Kapitulasjon D",
+    "verdi": 1.9,
+    "skala": "poeng"
+   },
+   "wti|cot": {
+    "segment": "Råolje (WTI)",
+    "felt": "COT-persentil",
+    "verdi": 51.3,
+    "skala": "poeng"
+   },
+   "henryhub|real": {
+    "segment": "Naturgass US (Henry Hub)",
+    "felt": "Realpris",
+    "verdi": 2.9,
+    "skala": "nivaa"
+   },
+   "henryhub|A": {
+    "segment": "Naturgass US (Henry Hub)",
+    "felt": "Prisnivå A",
+    "verdi": 90.4,
+    "skala": "poeng"
+   },
+   "henryhub|Ad": {
+    "segment": "Naturgass US (Henry Hub)",
+    "felt": "A detrendet",
+    "verdi": 58.9,
+    "skala": "poeng"
+   },
+   "henryhub|D": {
+    "segment": "Naturgass US (Henry Hub)",
+    "felt": "Kapitulasjon D",
+    "verdi": 29.2,
+    "skala": "poeng"
+   },
+   "henryhub|cot": {
+    "segment": "Naturgass US (Henry Hub)",
+    "felt": "COT-persentil",
+    "verdi": 53.2,
+    "skala": "poeng"
+   },
+   "gold|real": {
+    "segment": "Gull",
+    "felt": "Realpris",
+    "verdi": 4411.0,
+    "skala": "nivaa"
+   },
+   "gold|A": {
+    "segment": "Gull",
+    "felt": "Prisnivå A",
+    "verdi": 0.9,
+    "skala": "poeng"
+   },
+   "gold|Ad": {
+    "segment": "Gull",
+    "felt": "A detrendet",
+    "verdi": 3.2,
+    "skala": "poeng"
+   },
+   "gold|D": {
+    "segment": "Gull",
+    "felt": "Kapitulasjon D",
+    "verdi": 26.2,
+    "skala": "poeng"
+   },
+   "gold|cot": {
+    "segment": "Gull",
+    "felt": "COT-persentil",
+    "verdi": 60.9,
+    "skala": "poeng"
+   },
+   "uran|real": {
+    "segment": "Uran",
+    "felt": "Realpris",
+    "verdi": 89.68,
+    "skala": "nivaa"
+   },
+   "uran|A": {
+    "segment": "Uran",
+    "felt": "Prisnivå A",
+    "verdi": 7.8,
+    "skala": "poeng"
+   },
+   "uran|Ad": {
+    "segment": "Uran",
+    "felt": "A detrendet",
+    "verdi": 26.7,
+    "skala": "poeng"
+   },
+   "uran|D": {
+    "segment": "Uran",
+    "felt": "Kapitulasjon D",
+    "verdi": 21.7,
+    "skala": "poeng"
+   },
+   "laks|real": {
+    "segment": "Laks (sesongjustert)",
+    "felt": "Realpris",
+    "verdi": 8.6692,
+    "skala": "nivaa"
+   },
+   "laks|A": {
+    "segment": "Laks (sesongjustert)",
+    "felt": "Prisnivå A",
+    "verdi": 50.8,
+    "skala": "poeng"
+   },
+   "laks|Ad": {
+    "segment": "Laks (sesongjustert)",
+    "felt": "A detrendet",
+    "verdi": 65.7,
+    "skala": "poeng"
+   },
+   "laks|D": {
+    "segment": "Laks (sesongjustert)",
+    "felt": "Kapitulasjon D",
+    "verdi": 24.9,
+    "skala": "poeng"
+   },
+   "oljeservice|real": {
+    "segment": "Oljeservice (boring)",
+    "felt": "Realpris",
+    "verdi": 405.788,
+    "skala": "nivaa"
+   },
+   "oljeservice|A": {
+    "segment": "Oljeservice (boring)",
+    "felt": "Prisnivå A",
+    "verdi": 46.8,
+    "skala": "poeng"
+   },
+   "oljeservice|Ad": {
+    "segment": "Oljeservice (boring)",
+    "felt": "A detrendet",
+    "verdi": 98.8,
+    "skala": "poeng"
+   },
+   "oljeservice|D": {
+    "segment": "Oljeservice (boring)",
+    "felt": "Kapitulasjon D",
+    "verdi": 21.5,
+    "skala": "poeng"
+   },
+   "oljeservice|rate": {
+    "segment": "Oljeservice (boring)",
+    "felt": "Aktivitet, boring",
+    "verdi": 105.3,
+    "skala": "nivaa"
+   },
+   "kobber|real": {
+    "segment": "Kobber",
+    "felt": "Realpris",
+    "verdi": 14326.0,
+    "skala": "nivaa"
+   },
+   "kobber|A": {
+    "segment": "Kobber",
+    "felt": "Prisnivå A",
+    "verdi": 4.5,
+    "skala": "poeng"
+   },
+   "kobber|Ad": {
+    "segment": "Kobber",
+    "felt": "A detrendet",
+    "verdi": 2.9,
+    "skala": "poeng"
+   },
+   "kobber|D": {
+    "segment": "Kobber",
+    "felt": "Kapitulasjon D",
+    "verdi": 4.2,
+    "skala": "poeng"
+   },
+   "kobber|cot": {
+    "segment": "Kobber",
+    "felt": "COT-persentil",
+    "verdi": 95.5,
+    "skala": "poeng"
+   },
+   "nikkel|real": {
+    "segment": "Nikkel",
+    "felt": "Realpris",
+    "verdi": 16751.0,
+    "skala": "nivaa"
+   },
+   "nikkel|A": {
+    "segment": "Nikkel",
+    "felt": "Prisnivå A",
+    "verdi": 58.9,
+    "skala": "poeng"
+   },
+   "nikkel|Ad": {
+    "segment": "Nikkel",
+    "felt": "A detrendet",
+    "verdi": 70.5,
+    "skala": "poeng"
+   },
+   "nikkel|D": {
+    "segment": "Nikkel",
+    "felt": "Kapitulasjon D",
+    "verdi": 9.6,
+    "skala": "poeng"
+   },
+   "aluminium|real": {
+    "segment": "Aluminium",
+    "felt": "Realpris",
+    "verdi": 3251.0,
+    "skala": "nivaa"
+   },
+   "aluminium|A": {
+    "segment": "Aluminium",
+    "felt": "Prisnivå A",
+    "verdi": 40.5,
+    "skala": "poeng"
+   },
+   "aluminium|Ad": {
+    "segment": "Aluminium",
+    "felt": "A detrendet",
+    "verdi": 10.5,
+    "skala": "poeng"
+   },
+   "aluminium|D": {
+    "segment": "Aluminium",
+    "felt": "Kapitulasjon D",
+    "verdi": 32.8,
+    "skala": "poeng"
+   },
+   "sink|real": {
+    "segment": "Sink",
+    "felt": "Realpris",
+    "verdi": 3875.0,
+    "skala": "nivaa"
+   },
+   "sink|A": {
+    "segment": "Sink",
+    "felt": "Prisnivå A",
+    "verdi": 13.6,
+    "skala": "poeng"
+   },
+   "sink|Ad": {
+    "segment": "Sink",
+    "felt": "A detrendet",
+    "verdi": 13.6,
+    "skala": "poeng"
+   },
+   "sink|D": {
+    "segment": "Sink",
+    "felt": "Kapitulasjon D",
+    "verdi": 9.6,
+    "skala": "poeng"
+   },
+   "bly|real": {
+    "segment": "Bly",
+    "felt": "Realpris",
+    "verdi": 1855.0,
+    "skala": "nivaa"
+   },
+   "bly|A": {
+    "segment": "Bly",
+    "felt": "Prisnivå A",
+    "verdi": 65.3,
+    "skala": "poeng"
+   },
+   "bly|Ad": {
+    "segment": "Bly",
+    "felt": "A detrendet",
+    "verdi": 62.0,
+    "skala": "poeng"
+   },
+   "bly|D": {
+    "segment": "Bly",
+    "felt": "Kapitulasjon D",
+    "verdi": 10.1,
+    "skala": "poeng"
+   },
+   "tinn|real": {
+    "segment": "Tinn",
+    "felt": "Realpris",
+    "verdi": 55385.0,
+    "skala": "nivaa"
+   },
+   "tinn|A": {
+    "segment": "Tinn",
+    "felt": "Prisnivå A",
+    "verdi": 6.9,
+    "skala": "poeng"
+   },
+   "tinn|Ad": {
+    "segment": "Tinn",
+    "felt": "A detrendet",
+    "verdi": 0.0,
+    "skala": "poeng"
+   },
+   "tinn|D": {
+    "segment": "Tinn",
+    "felt": "Kapitulasjon D",
+    "verdi": 9.6,
+    "skala": "poeng"
+   },
+   "jernmalm|real": {
+    "segment": "Jernmalm 62% Fe",
+    "felt": "Realpris",
+    "verdi": 96.3,
+    "skala": "nivaa"
+   },
+   "jernmalm|A": {
+    "segment": "Jernmalm 62% Fe",
+    "felt": "Prisnivå A",
+    "verdi": 81.5,
+    "skala": "poeng"
+   },
+   "jernmalm|Ad": {
+    "segment": "Jernmalm 62% Fe",
+    "felt": "A detrendet",
+    "verdi": 65.0,
+    "skala": "poeng"
+   },
+   "jernmalm|D": {
+    "segment": "Jernmalm 62% Fe",
+    "felt": "Kapitulasjon D",
+    "verdi": 41.6,
+    "skala": "poeng"
+   },
+   "kull|real": {
+    "segment": "Termisk kull (Australia)",
+    "felt": "Realpris",
+    "verdi": 135.2,
+    "skala": "nivaa"
+   },
+   "kull|A": {
+    "segment": "Termisk kull (Australia)",
+    "felt": "Prisnivå A",
+    "verdi": 30.3,
+    "skala": "poeng"
+   },
+   "kull|Ad": {
+    "segment": "Termisk kull (Australia)",
+    "felt": "A detrendet",
+    "verdi": 72.2,
+    "skala": "poeng"
+   },
+   "kull|D": {
+    "segment": "Termisk kull (Australia)",
+    "felt": "Kapitulasjon D",
+    "verdi": 10.1,
+    "skala": "poeng"
+   },
+   "ttf|real": {
+    "segment": "Naturgass Europa",
+    "felt": "Realpris",
+    "verdi": 21.11,
+    "skala": "nivaa"
+   },
+   "ttf|A": {
+    "segment": "Naturgass Europa",
+    "felt": "Prisnivå A",
+    "verdi": 7.5,
+    "skala": "poeng"
+   },
+   "ttf|Ad": {
+    "segment": "Naturgass Europa",
+    "felt": "A detrendet",
+    "verdi": 13.4,
+    "skala": "poeng"
+   },
+   "ttf|D": {
+    "segment": "Naturgass Europa",
+    "felt": "Kapitulasjon D",
+    "verdi": 2.9,
+    "skala": "poeng"
+   },
+   "kakao|real": {
+    "segment": "Kakao",
+    "felt": "Realpris",
+    "verdi": 5.95,
+    "skala": "nivaa"
+   },
+   "kakao|A": {
+    "segment": "Kakao",
+    "felt": "Prisnivå A",
+    "verdi": 18.0,
+    "skala": "poeng"
+   },
+   "kakao|Ad": {
+    "segment": "Kakao",
+    "felt": "A detrendet",
+    "verdi": 5.9,
+    "skala": "poeng"
+   },
+   "kakao|D": {
+    "segment": "Kakao",
+    "felt": "Kapitulasjon D",
+    "verdi": 48.4,
+    "skala": "poeng"
+   },
+   "kakao|cot": {
+    "segment": "Kakao",
+    "felt": "COT-persentil",
+    "verdi": 3.8,
+    "skala": "poeng"
+   },
+   "palmeolje|real": {
+    "segment": "Palmeolje",
+    "felt": "Realpris",
+    "verdi": 1117.0,
+    "skala": "nivaa"
+   },
+   "palmeolje|A": {
+    "segment": "Palmeolje",
+    "felt": "Prisnivå A",
+    "verdi": 59.9,
+    "skala": "poeng"
+   },
+   "palmeolje|Ad": {
+    "segment": "Palmeolje",
+    "felt": "A detrendet",
+    "verdi": 16.4,
+    "skala": "poeng"
+   },
+   "palmeolje|D": {
+    "segment": "Palmeolje",
+    "felt": "Kapitulasjon D",
+    "verdi": 4.4,
+    "skala": "poeng"
+   },
+   "palmeolje|cot": {
+    "segment": "Palmeolje",
+    "felt": "COT-persentil",
+    "verdi": 3.2,
+    "skala": "poeng"
+   },
+   "ship_vlcc|real": {
+    "segment": "VLCC (5 år)",
+    "felt": "Realpris",
+    "verdi": 156.5,
+    "skala": "nivaa"
+   },
+   "ship_vlcc|D": {
+    "segment": "VLCC (5 år)",
+    "felt": "Kapitulasjon D",
+    "verdi": 0.0,
+    "skala": "poeng"
+   },
+   "ship_vlcc|A2": {
+    "segment": "VLCC (5 år)",
+    "felt": "Paritet A2",
+    "verdi": 1.211,
+    "skala": "forhold"
+   },
+   "ship_vlcc|rate": {
+    "segment": "VLCC (5 år)",
+    "felt": "TC 1 år",
+    "verdi": 151250.0,
+    "skala": "nivaa"
+   },
+   "ship_suezmax|real": {
+    "segment": "Suezmax (5 år)",
+    "felt": "Realpris",
+    "verdi": 105.5,
+    "skala": "nivaa"
+   },
+   "ship_suezmax|D": {
+    "segment": "Suezmax (5 år)",
+    "felt": "Kapitulasjon D",
+    "verdi": 0.0,
+    "skala": "poeng"
+   },
+   "ship_suezmax|A2": {
+    "segment": "Suezmax (5 år)",
+    "felt": "Paritet A2",
+    "verdi": 1.223,
+    "skala": "forhold"
+   },
+   "ship_suezmax|rate": {
+    "segment": "Suezmax (5 år)",
+    "felt": "TC 1 år",
+    "verdi": 113125.0,
+    "skala": "nivaa"
+   },
+   "ship_aframax|real": {
+    "segment": "Aframax/LR2 (5 år)",
+    "felt": "Realpris",
+    "verdi": 82.0,
+    "skala": "nivaa"
+   },
+   "ship_aframax|D": {
+    "segment": "Aframax/LR2 (5 år)",
+    "felt": "Kapitulasjon D",
+    "verdi": 0.0,
+    "skala": "poeng"
+   },
+   "ship_aframax|A2": {
+    "segment": "Aframax/LR2 (5 år)",
+    "felt": "Paritet A2",
+    "verdi": 1.119,
+    "skala": "forhold"
+   },
+   "ship_aframax|rate": {
+    "segment": "Aframax/LR2 (5 år)",
+    "felt": "TC 1 år",
+    "verdi": 67500.0,
+    "skala": "nivaa"
+   },
+   "ship_kamsarmax|real": {
+    "segment": "Kamsarmax (5 år)",
+    "felt": "Realpris",
+    "verdi": 41.0,
+    "skala": "nivaa"
+   },
+   "ship_kamsarmax|D": {
+    "segment": "Kamsarmax (5 år)",
+    "felt": "Kapitulasjon D",
+    "verdi": 12.8,
+    "skala": "poeng"
+   },
+   "ship_kamsarmax|A2": {
+    "segment": "Kamsarmax (5 år)",
+    "felt": "Paritet A2",
+    "verdi": 1.075,
+    "skala": "forhold"
+   },
+   "ship_kamsarmax|rate": {
+    "segment": "Kamsarmax (5 år)",
+    "felt": "Baltic Dry Index",
+    "verdi": 3410.0,
+    "skala": "nivaa"
+   },
+   "ship_ultramax|real": {
+    "segment": "Ultramax (5 år)",
+    "felt": "Realpris",
+    "verdi": 38.75,
+    "skala": "nivaa"
+   },
+   "ship_ultramax|D": {
+    "segment": "Ultramax (5 år)",
+    "felt": "Kapitulasjon D",
+    "verdi": 12.8,
+    "skala": "poeng"
+   },
+   "ship_ultramax|A2": {
+    "segment": "Ultramax (5 år)",
+    "felt": "Paritet A2",
+    "verdi": 1.088,
+    "skala": "forhold"
+   },
+   "ship_ultramax|rate": {
+    "segment": "Ultramax (5 år)",
+    "felt": "Baltic Dry Index",
+    "verdi": 3410.0,
+    "skala": "nivaa"
+   },
+   "ship_capesize|real": {
+    "segment": "Capesize (5 år)",
+    "felt": "Realpris",
+    "verdi": 72.5,
+    "skala": "nivaa"
+   },
+   "ship_capesize|D": {
+    "segment": "Capesize (5 år)",
+    "felt": "Kapitulasjon D",
+    "verdi": 14.8,
+    "skala": "poeng"
+   },
+   "ship_capesize|rate": {
+    "segment": "Capesize (5 år)",
+    "felt": "Baltic Dry Index",
+    "verdi": 3410.0,
+    "skala": "nivaa"
+   },
+   "ship_handysize|real": {
+    "segment": "Handysize (5 år)",
+    "felt": "Realpris",
+    "verdi": 31.0,
+    "skala": "nivaa"
+   },
+   "ship_handysize|D": {
+    "segment": "Handysize (5 år)",
+    "felt": "Kapitulasjon D",
+    "verdi": 12.2,
+    "skala": "poeng"
+   },
+   "ship_handysize|rate": {
+    "segment": "Handysize (5 år)",
+    "felt": "Baltic Dry Index",
+    "verdi": 3410.0,
+    "skala": "nivaa"
+   },
+   "marked|vix": {
+    "segment": "Marked",
+    "felt": "VIX",
+    "verdi": 15.88,
+    "skala": "nivaa"
+   },
+   "marked|dxy": {
+    "segment": "Marked",
+    "felt": "Dollar (DXY)",
+    "verdi": 101.376,
+    "skala": "nivaa"
+   },
+   "marked|usdnok": {
+    "segment": "Marked",
+    "felt": "USD/NOK",
+    "verdi": 9.5069,
+    "skala": "nivaa"
+   }
+  },
+  "skifter": {
+   "brent|flagg": {
+    "segment": "Råolje (Brent)",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "brent|oppsikt": {
+    "segment": "Råolje (Brent)",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "brent|d95": {
+    "segment": "Råolje (Brent)",
+    "felt": "Parallelt signal d95",
+    "verdi": false
+   },
+   "brent|port": {
+    "segment": "Råolje (Brent)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "brent|trend": {
+    "segment": "Råolje (Brent)",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "wti|flagg": {
+    "segment": "Råolje (WTI)",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "wti|oppsikt": {
+    "segment": "Råolje (WTI)",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "wti|d95": {
+    "segment": "Råolje (WTI)",
+    "felt": "Parallelt signal d95",
+    "verdi": false
+   },
+   "wti|port": {
+    "segment": "Råolje (WTI)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "wti|trend": {
+    "segment": "Råolje (WTI)",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "henryhub|flagg": {
+    "segment": "Naturgass US (Henry Hub)",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "henryhub|oppsikt": {
+    "segment": "Naturgass US (Henry Hub)",
+    "felt": "Under oppsikt",
+    "verdi": true
+   },
+   "henryhub|port": {
+    "segment": "Naturgass US (Henry Hub)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "henryhub|trend": {
+    "segment": "Naturgass US (Henry Hub)",
+    "felt": "Trend",
+    "verdi": "nei"
+   },
+   "gold|flagg": {
+    "segment": "Gull",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "gold|oppsikt": {
+    "segment": "Gull",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "gold|port": {
+    "segment": "Gull",
+    "felt": "Port C",
+    "verdi": "uaktuell"
+   },
+   "gold|trend": {
+    "segment": "Gull",
+    "felt": "Trend",
+    "verdi": "begynnende"
+   },
+   "uran|flagg": {
+    "segment": "Uran",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "uran|oppsikt": {
+    "segment": "Uran",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "uran|port": {
+    "segment": "Uran",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "uran|trend": {
+    "segment": "Uran",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "laks|flagg": {
+    "segment": "Laks (sesongjustert)",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "laks|oppsikt": {
+    "segment": "Laks (sesongjustert)",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "laks|port": {
+    "segment": "Laks (sesongjustert)",
+    "felt": "Port C",
+    "verdi": "ukjent"
+   },
+   "laks|trend": {
+    "segment": "Laks (sesongjustert)",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "oljeservice|flagg": {
+    "segment": "Oljeservice (boring)",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "oljeservice|oppsikt": {
+    "segment": "Oljeservice (boring)",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "oljeservice|port": {
+    "segment": "Oljeservice (boring)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "oljeservice|trend": {
+    "segment": "Oljeservice (boring)",
+    "felt": "Trend",
+    "verdi": "begynnende"
+   },
+   "kobber|flagg": {
+    "segment": "Kobber",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "kobber|oppsikt": {
+    "segment": "Kobber",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "kobber|port": {
+    "segment": "Kobber",
+    "felt": "Port C",
+    "verdi": "ukjent"
+   },
+   "kobber|trend": {
+    "segment": "Kobber",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "nikkel|flagg": {
+    "segment": "Nikkel",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "nikkel|oppsikt": {
+    "segment": "Nikkel",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "nikkel|port": {
+    "segment": "Nikkel",
+    "felt": "Port C",
+    "verdi": "ukjent"
+   },
+   "nikkel|trend": {
+    "segment": "Nikkel",
+    "felt": "Trend",
+    "verdi": "begynnende"
+   },
+   "aluminium|flagg": {
+    "segment": "Aluminium",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "aluminium|oppsikt": {
+    "segment": "Aluminium",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "aluminium|port": {
+    "segment": "Aluminium",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "aluminium|trend": {
+    "segment": "Aluminium",
+    "felt": "Trend",
+    "verdi": "begynnende"
+   },
+   "sink|flagg": {
+    "segment": "Sink",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "sink|oppsikt": {
+    "segment": "Sink",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "sink|port": {
+    "segment": "Sink",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "sink|trend": {
+    "segment": "Sink",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "bly|flagg": {
+    "segment": "Bly",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "bly|oppsikt": {
+    "segment": "Bly",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "bly|port": {
+    "segment": "Bly",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "bly|trend": {
+    "segment": "Bly",
+    "felt": "Trend",
+    "verdi": "nei"
+   },
+   "tinn|flagg": {
+    "segment": "Tinn",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "tinn|oppsikt": {
+    "segment": "Tinn",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "tinn|port": {
+    "segment": "Tinn",
+    "felt": "Port C",
+    "verdi": "ukjent"
+   },
+   "tinn|trend": {
+    "segment": "Tinn",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "jernmalm|flagg": {
+    "segment": "Jernmalm 62% Fe",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "jernmalm|oppsikt": {
+    "segment": "Jernmalm 62% Fe",
+    "felt": "Under oppsikt",
+    "verdi": true
+   },
+   "jernmalm|port": {
+    "segment": "Jernmalm 62% Fe",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "jernmalm|trend": {
+    "segment": "Jernmalm 62% Fe",
+    "felt": "Trend",
+    "verdi": "nei"
+   },
+   "kull|flagg": {
+    "segment": "Termisk kull (Australia)",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "kull|oppsikt": {
+    "segment": "Termisk kull (Australia)",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "kull|port": {
+    "segment": "Termisk kull (Australia)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "kull|trend": {
+    "segment": "Termisk kull (Australia)",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "ttf|flagg": {
+    "segment": "Naturgass Europa",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "ttf|oppsikt": {
+    "segment": "Naturgass Europa",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "ttf|port": {
+    "segment": "Naturgass Europa",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "ttf|trend": {
+    "segment": "Naturgass Europa",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "kakao|flagg": {
+    "segment": "Kakao",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "kakao|oppsikt": {
+    "segment": "Kakao",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "kakao|port": {
+    "segment": "Kakao",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "kakao|trend": {
+    "segment": "Kakao",
+    "felt": "Trend",
+    "verdi": "begynnende"
+   },
+   "palmeolje|flagg": {
+    "segment": "Palmeolje",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "palmeolje|oppsikt": {
+    "segment": "Palmeolje",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "palmeolje|port": {
+    "segment": "Palmeolje",
+    "felt": "Port C",
+    "verdi": "ukjent"
+   },
+   "palmeolje|trend": {
+    "segment": "Palmeolje",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "ship_vlcc|flagg": {
+    "segment": "VLCC (5 år)",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "ship_vlcc|oppsikt": {
+    "segment": "VLCC (5 år)",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "ship_vlcc|port": {
+    "segment": "VLCC (5 år)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "ship_vlcc|trend": {
+    "segment": "VLCC (5 år)",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "ship_suezmax|flagg": {
+    "segment": "Suezmax (5 år)",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "ship_suezmax|oppsikt": {
+    "segment": "Suezmax (5 år)",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "ship_suezmax|port": {
+    "segment": "Suezmax (5 år)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "ship_suezmax|trend": {
+    "segment": "Suezmax (5 år)",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "ship_aframax|flagg": {
+    "segment": "Aframax/LR2 (5 år)",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "ship_aframax|oppsikt": {
+    "segment": "Aframax/LR2 (5 år)",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "ship_aframax|port": {
+    "segment": "Aframax/LR2 (5 år)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "ship_aframax|trend": {
+    "segment": "Aframax/LR2 (5 år)",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "ship_kamsarmax|flagg": {
+    "segment": "Kamsarmax (5 år)",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "ship_kamsarmax|oppsikt": {
+    "segment": "Kamsarmax (5 år)",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "ship_kamsarmax|port": {
+    "segment": "Kamsarmax (5 år)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "ship_kamsarmax|trend": {
+    "segment": "Kamsarmax (5 år)",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "ship_ultramax|flagg": {
+    "segment": "Ultramax (5 år)",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "ship_ultramax|oppsikt": {
+    "segment": "Ultramax (5 år)",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "ship_ultramax|port": {
+    "segment": "Ultramax (5 år)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "ship_ultramax|trend": {
+    "segment": "Ultramax (5 år)",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "ship_capesize|flagg": {
+    "segment": "Capesize (5 år)",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "ship_capesize|oppsikt": {
+    "segment": "Capesize (5 år)",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "ship_capesize|port": {
+    "segment": "Capesize (5 år)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "ship_capesize|trend": {
+    "segment": "Capesize (5 år)",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   },
+   "ship_handysize|flagg": {
+    "segment": "Handysize (5 år)",
+    "felt": "Bunnsone",
+    "verdi": false
+   },
+   "ship_handysize|oppsikt": {
+    "segment": "Handysize (5 år)",
+    "felt": "Under oppsikt",
+    "verdi": false
+   },
+   "ship_handysize|port": {
+    "segment": "Handysize (5 år)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "ship_handysize|trend": {
+    "segment": "Handysize (5 år)",
+    "felt": "Trend",
+    "verdi": "bekreftet"
+   }
+  }
+ },
+ "kvartal_forrige": {
+  "noekkel": "2026-09-28",
+  "dato": "2026-09-28 11:48:19",
+  "verdier": {
+   "C|AA|kv": {
+    "segment": "Alcoa (AA)",
+    "felt": "C, kvartaler",
+    "verdi": 13.6,
+    "skala": "nivaa"
+   },
+   "C|AA|ngek": {
+    "segment": "Alcoa (AA)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.16,
+    "skala": "forhold"
+   },
+   "C|AI.PA|kv": {
+    "segment": "Air Liquide (AI.PA)",
+    "felt": "C, kvartaler",
+    "verdi": 1.4,
+    "skala": "nivaa"
+   },
+   "C|BTU|kv": {
+    "segment": "Peabody Energy (BTU)",
+    "felt": "C, kvartaler",
+    "verdi": 23.8,
+    "skala": "nivaa"
+   },
+   "C|BTU|ngek": {
+    "segment": "Peabody Energy (BTU)",
+    "felt": "Netto gjeld/EK",
+    "verdi": -0.07,
+    "skala": "forhold"
+   },
+   "C|CCJ|ngek": {
+    "segment": "Cameco (CCJ)",
+    "felt": "Netto gjeld/EK",
+    "verdi": -0.02,
+    "skala": "forhold"
+   },
+   "C|CENX|kv": {
+    "segment": "Century Aluminum (CENX)",
+    "felt": "C, kvartaler",
+    "verdi": 5.8,
+    "skala": "nivaa"
+   },
+   "C|CENX|ngek": {
+    "segment": "Century Aluminum (CENX)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.51,
+    "skala": "forhold"
+   },
+   "C|CVE.TO|kv": {
+    "segment": "Cenovus Energy (CVE.TO)",
+    "felt": "C, kvartaler",
+    "verdi": 37.0,
+    "skala": "nivaa"
+   },
+   "C|CVE.TO|ngek": {
+    "segment": "Cenovus Energy (CVE.TO)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.26,
+    "skala": "forhold"
+   },
+   "C|DHT|ngek": {
+    "segment": "DHT Holdings (DHT)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.27,
+    "skala": "forhold"
+   },
+   "C|EQNR.OL|ngek": {
+    "segment": "Equinor (EQNR.OL)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.46,
+    "skala": "forhold"
+   },
+   "C|EQT|ngek": {
+    "segment": "EQT Corporation (EQT)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.3,
+    "skala": "forhold"
+   },
+   "C|FRO.OL|kv": {
+    "segment": "Frontline (FRO.OL)",
+    "felt": "C, kvartaler",
+    "verdi": 14.2,
+    "skala": "nivaa"
+   },
+   "C|FRO.OL|ngek": {
+    "segment": "Frontline (FRO.OL)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 1.22,
+    "skala": "forhold"
+   },
+   "C|GNK|kv": {
+    "segment": "Genco Shipping (GNK)",
+    "felt": "C, kvartaler",
+    "verdi": 3.4,
+    "skala": "nivaa"
+   },
+   "C|GNK|ngek": {
+    "segment": "Genco Shipping (GNK)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.15,
+    "skala": "forhold"
+   },
+   "C|HBM.TO|ngek": {
+    "segment": "Hudbay Minerals (HBM.TO)",
+    "felt": "Netto gjeld/EK",
+    "verdi": -0.01,
+    "skala": "forhold"
+   },
+   "C|HEI.DE|kv": {
+    "segment": "Heidelberg Materials (HEI.DE)",
+    "felt": "C, kvartaler",
+    "verdi": 9.8,
+    "skala": "nivaa"
+   },
+   "C|HEI.DE|ngek": {
+    "segment": "Heidelberg Materials (HEI.DE)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.47,
+    "skala": "forhold"
+   },
+   "C|HSHP.OL|kv": {
+    "segment": "Himalaya Shipping (HSHP.OL)",
+    "felt": "C, kvartaler",
+    "verdi": 2.5,
+    "skala": "nivaa"
+   },
+   "C|HSHP.OL|ngek": {
+    "segment": "Himalaya Shipping (HSHP.OL)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 3.92,
+    "skala": "forhold"
+   },
+   "C|HSY|ngek": {
+    "segment": "Hershey (HSY)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.88,
+    "skala": "forhold"
+   },
+   "C|LIF.TO|kv": {
+    "segment": "Labrador Iron Ore Royalty (LIF.TO)",
+    "felt": "C, kvartaler",
+    "verdi": 34.7,
+    "skala": "nivaa"
+   },
+   "C|NAT|kv": {
+    "segment": "Nordic American Tankers (NAT)",
+    "felt": "C, kvartaler",
+    "verdi": 2.4,
+    "skala": "nivaa"
+   },
+   "C|NAT|ngek": {
+    "segment": "Nordic American Tankers (NAT)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.77,
+    "skala": "forhold"
+   },
+   "C|NEXA|kv": {
+    "segment": "Nexa Resources (NEXA)",
+    "felt": "C, kvartaler",
+    "verdi": 11.2,
+    "skala": "nivaa"
+   },
+   "C|NEXA|ngek": {
+    "segment": "Nexa Resources (NEXA)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 1.13,
+    "skala": "forhold"
+   },
+   "C|PANL|ngek": {
+    "segment": "Pangaea Logistics (PANL)",
+    "felt": "Netto gjeld/EK",
+    "verdi": -0.01,
+    "skala": "forhold"
+   },
+   "C|SBLK|kv": {
+    "segment": "Star Bulk Carriers (SBLK)",
+    "felt": "C, kvartaler",
+    "verdi": 18.7,
+    "skala": "nivaa"
+   },
+   "C|SBLK|ngek": {
+    "segment": "Star Bulk Carriers (SBLK)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.17,
+    "skala": "forhold"
+   },
+   "C|TNK|kv": {
+    "segment": "Teekay Tankers (TNK)",
+    "felt": "C, kvartaler",
+    "verdi": 30.1,
+    "skala": "nivaa"
+   },
+   "C|TNK|ngek": {
+    "segment": "Teekay Tankers (TNK)",
+    "felt": "Netto gjeld/EK",
+    "verdi": -0.41,
+    "skala": "forhold"
+   },
+   "C|TRMD-A.CO|kv": {
+    "segment": "TORM (TRMD-A.CO)",
+    "felt": "C, kvartaler",
+    "verdi": 324.0,
+    "skala": "nivaa"
+   },
+   "C|TRMD-A.CO|ngek": {
+    "segment": "TORM (TRMD-A.CO)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.25,
+    "skala": "forhold"
+   },
+   "C|UUUU|kv": {
+    "segment": "Energy Fuels (UUUU)",
+    "felt": "C, kvartaler",
+    "verdi": 2.9,
+    "skala": "nivaa"
+   },
+   "C|UUUU|ngek": {
+    "segment": "Energy Fuels (UUUU)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.9,
+    "skala": "forhold"
+   },
+   "C|VALE|ngek": {
+    "segment": "Vale (VALE)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.07,
+    "skala": "forhold"
+   },
+   "C|AKRBP.OL|kv": {
+    "segment": "Aker BP (AKRBP.OL)",
+    "felt": "C, kvartaler",
+    "verdi": 23.0,
+    "skala": "nivaa"
+   },
+   "C|AKRBP.OL|ngek": {
+    "segment": "Aker BP (AKRBP.OL)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.54,
+    "skala": "forhold"
+   },
+   "B|uran|B2": {
+    "segment": "Uran",
+    "felt": "Tilbud B2",
+    "verdi": 73.0,
+    "skala": "poeng"
+   },
+   "B|uran|ratio": {
+    "segment": "Uran",
+    "felt": "Capex/avskrivninger",
+    "verdi": 1.181,
+    "skala": "forhold"
+   },
+   "B|kobber|B2": {
+    "segment": "Kobber",
+    "felt": "Tilbud B2",
+    "verdi": 0.0,
+    "skala": "poeng"
+   },
+   "B|kobber|ratio": {
+    "segment": "Kobber",
+    "felt": "Capex/avskrivninger",
+    "verdi": 1.87,
+    "skala": "forhold"
+   },
+   "B|aluminium|B2": {
+    "segment": "Aluminium",
+    "felt": "Tilbud B2",
+    "verdi": 63.0,
+    "skala": "poeng"
+   },
+   "B|aluminium|ratio": {
+    "segment": "Aluminium",
+    "felt": "Capex/avskrivninger",
+    "verdi": 1.021,
+    "skala": "forhold"
+   },
+   "B|kull|B2": {
+    "segment": "Kull",
+    "felt": "Tilbud B2",
+    "verdi": 48.6,
+    "skala": "poeng"
+   },
+   "B|kull|ratio": {
+    "segment": "Kull",
+    "felt": "Capex/avskrivninger",
+    "verdi": 0.986,
+    "skala": "forhold"
+   },
+   "B|gull|B2": {
+    "segment": "Gull",
+    "felt": "Tilbud B2",
+    "verdi": 32.0,
+    "skala": "poeng"
+   },
+   "B|gull|ratio": {
+    "segment": "Gull",
+    "felt": "Capex/avskrivninger",
+    "verdi": 1.189,
+    "skala": "forhold"
+   }
+  },
+  "skifter": {
+   "C|AA|port": {
+    "segment": "Alcoa (AA)",
+    "felt": "Port C",
+    "verdi": "trang"
+   },
+   "C|AI.PA|port": {
+    "segment": "Air Liquide (AI.PA)",
+    "felt": "Port C",
+    "verdi": "stengt"
+   },
+   "C|ARLP|port": {
+    "segment": "Alliance Resource Partners (ARLP)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|BTU|port": {
+    "segment": "Peabody Energy (BTU)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|CCJ|port": {
+    "segment": "Cameco (CCJ)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|CENX|port": {
+    "segment": "Century Aluminum (CENX)",
+    "felt": "Port C",
+    "verdi": "stengt"
+   },
+   "C|CIA.TO|port": {
+    "segment": "Champion Iron (CIA.TO)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|CVE.TO|port": {
+    "segment": "Cenovus Energy (CVE.TO)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|DHT|port": {
+    "segment": "DHT Holdings (DHT)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|EQNR.OL|port": {
+    "segment": "Equinor (EQNR.OL)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|EQT|port": {
+    "segment": "EQT Corporation (EQT)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|FRO.OL|port": {
+    "segment": "Frontline (FRO.OL)",
+    "felt": "Port C",
+    "verdi": "trang"
+   },
+   "C|GNK|port": {
+    "segment": "Genco Shipping (GNK)",
+    "felt": "Port C",
+    "verdi": "stengt"
+   },
+   "C|HBM.TO|port": {
+    "segment": "Hudbay Minerals (HBM.TO)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|HEI.DE|port": {
+    "segment": "Heidelberg Materials (HEI.DE)",
+    "felt": "Port C",
+    "verdi": "trang"
+   },
+   "C|HSHP.OL|port": {
+    "segment": "Himalaya Shipping (HSHP.OL)",
+    "felt": "Port C",
+    "verdi": "stengt"
+   },
+   "C|HSY|port": {
+    "segment": "Hershey (HSY)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|LIF.TO|port": {
+    "segment": "Labrador Iron Ore Royalty (LIF.TO)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|NAT|port": {
+    "segment": "Nordic American Tankers (NAT)",
+    "felt": "Port C",
+    "verdi": "stengt"
+   },
+   "C|NEXA|port": {
+    "segment": "Nexa Resources (NEXA)",
+    "felt": "Port C",
+    "verdi": "trang"
+   },
+   "C|PANL|port": {
+    "segment": "Pangaea Logistics (PANL)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|SBLK|port": {
+    "segment": "Star Bulk Carriers (SBLK)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|TNK|port": {
+    "segment": "Teekay Tankers (TNK)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|TRMD-A.CO|port": {
+    "segment": "TORM (TRMD-A.CO)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|UUUU|port": {
+    "segment": "Energy Fuels (UUUU)",
+    "felt": "Port C",
+    "verdi": "stengt"
+   },
+   "C|VALE|port": {
+    "segment": "Vale (VALE)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|AKRBP.OL|port": {
+    "segment": "Aker BP (AKRBP.OL)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "Cseg|brent": {
+    "segment": "Brent",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|wti": {
+    "segment": "Wti",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|henryhub": {
+    "segment": "Henryhub",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|ttf": {
+    "segment": "Ttf",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|gold": {
+    "segment": "Gull",
+    "felt": "Port C for segmentet",
+    "verdi": "ukjent"
+   },
+   "Cseg|kobber": {
+    "segment": "Kobber",
+    "felt": "Port C for segmentet",
+    "verdi": "ukjent"
+   },
+   "Cseg|nikkel": {
+    "segment": "Nikkel",
+    "felt": "Port C for segmentet",
+    "verdi": "ukjent"
+   },
+   "Cseg|aluminium": {
+    "segment": "Aluminium",
+    "felt": "Port C for segmentet",
+    "verdi": "trang"
+   },
+   "Cseg|sink": {
+    "segment": "Sink",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|bly": {
+    "segment": "Bly",
+    "felt": "Port C for segmentet",
+    "verdi": "trang"
+   },
+   "Cseg|tinn": {
+    "segment": "Tinn",
+    "felt": "Port C for segmentet",
+    "verdi": "ukjent"
+   },
+   "Cseg|jernmalm": {
+    "segment": "Jernmalm",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|kull": {
+    "segment": "Kull",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|kakao": {
+    "segment": "Kakao",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|palmeolje": {
+    "segment": "Palmeolje",
+    "felt": "Port C for segmentet",
+    "verdi": "ukjent"
+   },
+   "Cseg|uran": {
+    "segment": "Uran",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|ship_vlcc": {
+    "segment": "Vlcc",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|ship_suezmax": {
+    "segment": "Suezmax",
+    "felt": "Port C for segmentet",
+    "verdi": "trang"
+   },
+   "Cseg|ship_aframax": {
+    "segment": "Aframax",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|ship_kamsarmax": {
+    "segment": "Kamsarmax",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|ship_ultramax": {
+    "segment": "Ultramax",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|ship_capesize": {
+    "segment": "Capesize",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|ship_handysize": {
+    "segment": "Handysize",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|laks": {
+    "segment": "Laks",
+    "felt": "Port C for segmentet",
+    "verdi": "ukjent"
+   }
+  }
+ },
+ "kvartal": {
+  "noekkel": "2026-09-29",
+  "dato": "2026-09-29 13:43:25",
+  "verdier": {
+   "C|AA|kv": {
+    "segment": "Alcoa (AA)",
+    "felt": "C, kvartaler",
+    "verdi": 20.5,
+    "skala": "nivaa"
+   },
+   "C|AA|ngek": {
+    "segment": "Alcoa (AA)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.14,
+    "skala": "forhold"
+   },
+   "C|BKR|kv": {
+    "segment": "Baker Hughes (BKR)",
+    "felt": "C, kvartaler",
+    "verdi": 18.6,
+    "skala": "nivaa"
+   },
+   "C|BKR|ngek": {
+    "segment": "Baker Hughes (BKR)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.09,
+    "skala": "forhold"
+   },
+   "C|BTU|kv": {
+    "segment": "Peabody Energy (BTU)",
+    "felt": "C, kvartaler",
+    "verdi": 43.6,
+    "skala": "nivaa"
+   },
+   "C|BTU|ngek": {
+    "segment": "Peabody Energy (BTU)",
+    "felt": "Netto gjeld/EK",
+    "verdi": -0.07,
+    "skala": "forhold"
+   },
+   "C|CCJ|ngek": {
+    "segment": "Cameco (CCJ)",
+    "felt": "Netto gjeld/EK",
+    "verdi": -0.02,
+    "skala": "forhold"
+   },
+   "C|CENX|kv": {
+    "segment": "Century Aluminum (CENX)",
+    "felt": "C, kvartaler",
+    "verdi": 7.8,
+    "skala": "nivaa"
+   },
+   "C|CENX|ngek": {
+    "segment": "Century Aluminum (CENX)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.51,
+    "skala": "forhold"
+   },
+   "C|CVE.TO|ngek": {
+    "segment": "Cenovus Energy (CVE.TO)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.26,
+    "skala": "forhold"
+   },
+   "C|DHT|ngek": {
+    "segment": "DHT Holdings (DHT)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.27,
+    "skala": "forhold"
+   },
+   "C|EQNR.OL|ngek": {
+    "segment": "Equinor (EQNR.OL)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.46,
+    "skala": "forhold"
+   },
+   "C|EQT|ngek": {
+    "segment": "EQT Corporation (EQT)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.3,
+    "skala": "forhold"
+   },
+   "C|FRO.OL|ngek": {
+    "segment": "Frontline (FRO.OL)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.99,
+    "skala": "forhold"
+   },
+   "C|GNK|kv": {
+    "segment": "Genco Shipping (GNK)",
+    "felt": "C, kvartaler",
+    "verdi": 4.0,
+    "skala": "nivaa"
+   },
+   "C|GNK|ngek": {
+    "segment": "Genco Shipping (GNK)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.15,
+    "skala": "forhold"
+   },
+   "C|HAL|kv": {
+    "segment": "Halliburton (HAL)",
+    "felt": "C, kvartaler",
+    "verdi": 5.2,
+    "skala": "nivaa"
+   },
+   "C|HAL|ngek": {
+    "segment": "Halliburton (HAL)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.47,
+    "skala": "forhold"
+   },
+   "C|HBM.TO|ngek": {
+    "segment": "Hudbay Minerals (HBM.TO)",
+    "felt": "Netto gjeld/EK",
+    "verdi": -0.01,
+    "skala": "forhold"
+   },
+   "C|HSY|ngek": {
+    "segment": "Hershey (HSY)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.81,
+    "skala": "forhold"
+   },
+   "C|NAT|kv": {
+    "segment": "Nordic American Tankers (NAT)",
+    "felt": "C, kvartaler",
+    "verdi": 3.9,
+    "skala": "nivaa"
+   },
+   "C|NAT|ngek": {
+    "segment": "Nordic American Tankers (NAT)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.77,
+    "skala": "forhold"
+   },
+   "C|NEXA|ngek": {
+    "segment": "Nexa Resources (NEXA)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 1.13,
+    "skala": "forhold"
+   },
+   "C|PANL|ngek": {
+    "segment": "Pangaea Logistics (PANL)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.34,
+    "skala": "forhold"
+   },
+   "C|SBLK|kv": {
+    "segment": "Star Bulk Carriers (SBLK)",
+    "felt": "C, kvartaler",
+    "verdi": 58.4,
+    "skala": "nivaa"
+   },
+   "C|SBLK|ngek": {
+    "segment": "Star Bulk Carriers (SBLK)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.17,
+    "skala": "forhold"
+   },
+   "C|SLB|ngek": {
+    "segment": "SLB (Schlumberger) (SLB)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.26,
+    "skala": "forhold"
+   },
+   "C|TNK|kv": {
+    "segment": "Teekay Tankers (TNK)",
+    "felt": "C, kvartaler",
+    "verdi": 31.0,
+    "skala": "nivaa"
+   },
+   "C|TNK|ngek": {
+    "segment": "Teekay Tankers (TNK)",
+    "felt": "Netto gjeld/EK",
+    "verdi": -0.41,
+    "skala": "forhold"
+   },
+   "C|TRMD-A.CO|ngek": {
+    "segment": "TORM (TRMD-A.CO)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.25,
+    "skala": "forhold"
+   },
+   "C|UUUU|kv": {
+    "segment": "Energy Fuels (UUUU)",
+    "felt": "C, kvartaler",
+    "verdi": 2.9,
+    "skala": "nivaa"
+   },
+   "C|UUUU|ngek": {
+    "segment": "Energy Fuels (UUUU)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.9,
+    "skala": "forhold"
+   },
+   "C|VALE|ngek": {
+    "segment": "Vale (VALE)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.3,
+    "skala": "forhold"
+   },
+   "C|AKRBP.OL|kv": {
+    "segment": "Aker BP (AKRBP.OL)",
+    "felt": "C, kvartaler",
+    "verdi": 23.0,
+    "skala": "nivaa"
+   },
+   "C|AKRBP.OL|ngek": {
+    "segment": "Aker BP (AKRBP.OL)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.54,
+    "skala": "forhold"
+   },
+   "C|DNO.OL|kv": {
+    "segment": "DNO (DNO.OL)",
+    "felt": "C, kvartaler",
+    "verdi": 24.5,
+    "skala": "nivaa"
+   },
+   "C|DNO.OL|ngek": {
+    "segment": "DNO (DNO.OL)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.4,
+    "skala": "forhold"
+   },
+   "C|CIA.TO|ngek": {
+    "segment": "Champion Iron (CIA.TO)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.41,
+    "skala": "forhold"
+   },
+   "C|LIF.TO|ngek": {
+    "segment": "Labrador Iron Ore Royalty (LIF.TO)",
+    "felt": "Netto gjeld/EK",
+    "verdi": -0.02,
+    "skala": "forhold"
+   },
+   "C|AI.PA|ngek": {
+    "segment": "Air Liquide (AI.PA)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.23,
+    "skala": "forhold"
+   },
+   "C|HEI.DE|ngek": {
+    "segment": "Heidelberg Materials (HEI.DE)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.16,
+    "skala": "forhold"
+   },
+   "B|uran|B2": {
+    "segment": "Uran",
+    "felt": "Tilbud B2",
+    "verdi": 73.0,
+    "skala": "poeng"
+   },
+   "B|uran|ratio": {
+    "segment": "Uran",
+    "felt": "Capex/avskrivninger",
+    "verdi": 1.181,
+    "skala": "forhold"
+   },
+   "B|kobber|B2": {
+    "segment": "Kobber",
+    "felt": "Tilbud B2",
+    "verdi": 0.0,
+    "skala": "poeng"
+   },
+   "B|kobber|ratio": {
+    "segment": "Kobber",
+    "felt": "Capex/avskrivninger",
+    "verdi": 1.87,
+    "skala": "forhold"
+   },
+   "B|aluminium|B2": {
+    "segment": "Aluminium",
+    "felt": "Tilbud B2",
+    "verdi": 63.0,
+    "skala": "poeng"
+   },
+   "B|aluminium|ratio": {
+    "segment": "Aluminium",
+    "felt": "Capex/avskrivninger",
+    "verdi": 1.021,
+    "skala": "forhold"
+   },
+   "B|kull|B2": {
+    "segment": "Kull",
+    "felt": "Tilbud B2",
+    "verdi": 48.6,
+    "skala": "poeng"
+   },
+   "B|kull|ratio": {
+    "segment": "Kull",
+    "felt": "Capex/avskrivninger",
+    "verdi": 0.986,
+    "skala": "forhold"
+   },
+   "B|gull|B2": {
+    "segment": "Gull",
+    "felt": "Tilbud B2",
+    "verdi": 32.0,
+    "skala": "poeng"
+   },
+   "B|gull|ratio": {
+    "segment": "Gull",
+    "felt": "Capex/avskrivninger",
+    "verdi": 1.189,
+    "skala": "forhold"
+   },
+   "B|jernmalm|B2": {
+    "segment": "Jernmalm",
+    "felt": "Tilbud B2",
+    "verdi": 0.0,
+    "skala": "poeng"
+   },
+   "B|jernmalm|ratio": {
+    "segment": "Jernmalm",
+    "felt": "Capex/avskrivninger",
+    "verdi": 1.593,
+    "skala": "forhold"
+   },
+   "R|land|B2": {
+    "segment": "Rigger, Land",
+    "felt": "Tilbud B2",
+    "verdi": 81.7,
+    "skala": "poeng"
+   },
+   "R|land|f": {
+    "segment": "Rigger, Land",
+    "felt": "Capex/avskrivninger",
+    "verdi": 0.897,
+    "skala": "forhold"
+   },
+   "R|grunt|B2": {
+    "segment": "Rigger, Grunt vann (jackups)",
+    "felt": "Tilbud B2",
+    "verdi": 80.3,
+    "skala": "poeng"
+   },
+   "R|grunt|f": {
+    "segment": "Rigger, Grunt vann (jackups)",
+    "felt": "Capex/avskrivninger",
+    "verdi": 1.041,
+    "skala": "forhold"
+   },
+   "R|dyp|B2": {
+    "segment": "Rigger, Dypt vann (flytere)",
+    "felt": "Tilbud B2",
+    "verdi": 100.0,
+    "skala": "poeng"
+   },
+   "R|dyp|f": {
+    "segment": "Rigger, Dypt vann (flytere)",
+    "felt": "Capex/avskrivninger",
+    "verdi": 0.307,
+    "skala": "forhold"
+   }
+  },
+  "skifter": {
+   "C|AA|port": {
+    "segment": "Alcoa (AA)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|ARLP|port": {
+    "segment": "Alliance Resource Partners (ARLP)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|BKR|port": {
+    "segment": "Baker Hughes (BKR)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|BTU|port": {
+    "segment": "Peabody Energy (BTU)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|CCJ|port": {
+    "segment": "Cameco (CCJ)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|CENX|port": {
+    "segment": "Century Aluminum (CENX)",
+    "felt": "Port C",
+    "verdi": "stengt"
+   },
+   "C|CVE.TO|port": {
+    "segment": "Cenovus Energy (CVE.TO)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|DHT|port": {
+    "segment": "DHT Holdings (DHT)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|EQNR.OL|port": {
+    "segment": "Equinor (EQNR.OL)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|EQT|port": {
+    "segment": "EQT Corporation (EQT)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|FRO.OL|port": {
+    "segment": "Frontline (FRO.OL)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|GNK|port": {
+    "segment": "Genco Shipping (GNK)",
+    "felt": "Port C",
+    "verdi": "stengt"
+   },
+   "C|HAL|port": {
+    "segment": "Halliburton (HAL)",
+    "felt": "Port C",
+    "verdi": "stengt"
+   },
+   "C|HBM.TO|port": {
+    "segment": "Hudbay Minerals (HBM.TO)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|HSY|port": {
+    "segment": "Hershey (HSY)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|NAT|port": {
+    "segment": "Nordic American Tankers (NAT)",
+    "felt": "Port C",
+    "verdi": "stengt"
+   },
+   "C|NEXA|port": {
+    "segment": "Nexa Resources (NEXA)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|PANL|port": {
+    "segment": "Pangaea Logistics (PANL)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|SBLK|port": {
+    "segment": "Star Bulk Carriers (SBLK)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|SLB|port": {
+    "segment": "SLB (Schlumberger) (SLB)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|TNK|port": {
+    "segment": "Teekay Tankers (TNK)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|TRMD-A.CO|port": {
+    "segment": "TORM (TRMD-A.CO)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|UUUU|port": {
+    "segment": "Energy Fuels (UUUU)",
+    "felt": "Port C",
+    "verdi": "stengt"
+   },
+   "C|VALE|port": {
+    "segment": "Vale (VALE)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|AKRBP.OL|port": {
+    "segment": "Aker BP (AKRBP.OL)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|DNO.OL|port": {
+    "segment": "DNO (DNO.OL)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|CIA.TO|port": {
+    "segment": "Champion Iron (CIA.TO)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|LIF.TO|port": {
+    "segment": "Labrador Iron Ore Royalty (LIF.TO)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|AI.PA|port": {
+    "segment": "Air Liquide (AI.PA)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|HEI.DE|port": {
+    "segment": "Heidelberg Materials (HEI.DE)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "Cseg|brent": {
+    "segment": "Brent",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|wti": {
+    "segment": "Wti",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|henryhub": {
+    "segment": "Henryhub",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|ttf": {
+    "segment": "Ttf",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|gold": {
+    "segment": "Gull",
+    "felt": "Port C for segmentet",
+    "verdi": "ukjent"
+   },
+   "Cseg|kobber": {
+    "segment": "Kobber",
+    "felt": "Port C for segmentet",
+    "verdi": "ukjent"
+   },
+   "Cseg|nikkel": {
+    "segment": "Nikkel",
+    "felt": "Port C for segmentet",
+    "verdi": "ukjent"
+   },
+   "Cseg|aluminium": {
+    "segment": "Aluminium",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|sink": {
+    "segment": "Sink",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|bly": {
+    "segment": "Bly",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|tinn": {
+    "segment": "Tinn",
+    "felt": "Port C for segmentet",
+    "verdi": "ukjent"
+   },
+   "Cseg|jernmalm": {
+    "segment": "Jernmalm",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|kull": {
+    "segment": "Kull",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|kakao": {
+    "segment": "Kakao",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|palmeolje": {
+    "segment": "Palmeolje",
+    "felt": "Port C for segmentet",
+    "verdi": "ukjent"
+   },
+   "Cseg|uran": {
+    "segment": "Uran",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|ship_vlcc": {
+    "segment": "Vlcc",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|ship_suezmax": {
+    "segment": "Suezmax",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|ship_aframax": {
+    "segment": "Aframax",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|ship_kamsarmax": {
+    "segment": "Kamsarmax",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|ship_ultramax": {
+    "segment": "Ultramax",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|ship_capesize": {
+    "segment": "Capesize",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|ship_handysize": {
+    "segment": "Handysize",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|laks": {
+    "segment": "Laks",
+    "felt": "Port C for segmentet",
+    "verdi": "ukjent"
+   },
+   "Cseg|oljeservice": {
+    "segment": "Oljeservice",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   }
+  }
+ }
+}

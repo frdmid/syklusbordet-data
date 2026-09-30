@@ -452,3 +452,12 @@ if GITHUB_TOKEN and SELSKAP:
     print(f"\n   publisert c_overlevelse.json ({len(SELSKAP)} selskaper, {len(SEG)} segmenter)")
 elif not GITHUB_TOKEN:
     print("\n   GITHUB_TOKEN mangler, ingenting publisert")
+
+# Endringsboksen for kvartalet (30.09.2026): sammenlign med forrige
+# kvartalskjoering. Hoppes over naar en sonde kjoerer fila (C_UT satt).
+if GITHUB_TOKEN and SELSKAP and not os.environ.get("C_UT"):
+    try:
+        import endringer
+        endringer.kvartal()
+    except Exception as e:
+        print(f"   endringer feilet: {type(e).__name__}: {str(e)[:80]}")

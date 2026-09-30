@@ -1,0 +1,275 @@
+{
+ "id": "endringer",
+ "uke": {
+  "forrige_dato": "2026-09-28 11:23:36",
+  "ny_dato": "2026-09-29 13:19:12",
+  "forrige": "2026-09-28 (eldste lagrede)",
+  "ny": "2026-W40",
+  "topp": [
+   {
+    "segment": "Råolje (Brent)",
+    "felt": "A detrendet",
+    "gammel": 42.1,
+    "ny": 72.5,
+    "endring_pst": 72.2,
+    "poeng": 30.4,
+    "vekt": 30.4
+   },
+   {
+    "segment": "Capesize (5 år)",
+    "felt": "Kapitulasjon D",
+    "gammel": 43.8,
+    "ny": 14.8,
+    "endring_pst": -66.2,
+    "poeng": -29.0,
+    "vekt": 29.0
+   },
+   {
+    "segment": "Råolje (Brent)",
+    "felt": "Realpris",
+    "gammel": 114.89,
+    "ny": 89.75,
+    "endring_pst": -21.9,
+    "poeng": null,
+    "vekt": 21.9
+   },
+   {
+    "segment": "Råolje (WTI)",
+    "felt": "A detrendet",
+    "gammel": 50.7,
+    "ny": 65.8,
+    "endring_pst": 29.8,
+    "poeng": 15.1,
+    "vekt": 15.1
+   },
+   {
+    "segment": "Råolje (Brent)",
+    "felt": "Prisnivå A",
+    "gammel": 18.0,
+    "ny": 32.6,
+    "endring_pst": 81.1,
+    "poeng": 14.6,
+    "vekt": 14.6
+   },
+   {
+    "segment": "Aframax/LR2 (5 år)",
+    "felt": "Kapitulasjon D",
+    "gammel": 10.4,
+    "ny": 0.0,
+    "endring_pst": -100.0,
+    "poeng": -10.4,
+    "vekt": 10.4
+   },
+   {
+    "segment": "Råolje (WTI)",
+    "felt": "Realpris",
+    "gammel": 96.41,
+    "ny": 87.03,
+    "endring_pst": -9.7,
+    "poeng": null,
+    "vekt": 9.7
+   },
+   {
+    "segment": "Råolje (WTI)",
+    "felt": "Prisnivå A",
+    "gammel": 24.9,
+    "ny": 30.7,
+    "endring_pst": 23.3,
+    "poeng": 5.8,
+    "vekt": 5.8
+   },
+   {
+    "segment": "Termisk kull (Australia)",
+    "felt": "Kapitulasjon D",
+    "gammel": 13.4,
+    "ny": 10.1,
+    "endring_pst": -24.6,
+    "poeng": -3.3,
+    "vekt": 3.3
+   },
+   {
+    "segment": "Naturgass US (Henry Hub)",
+    "felt": "Kapitulasjon D",
+    "gammel": 26.3,
+    "ny": 29.2,
+    "endring_pst": 11.0,
+    "poeng": 2.9,
+    "vekt": 2.9
+   }
+  ],
+  "skifter": [
+   {
+    "segment": "Råolje (Brent)",
+    "felt": "Port C",
+    "gammel": "ukjent",
+    "ny": "aapen"
+   },
+   {
+    "segment": "Aluminium",
+    "felt": "Port C",
+    "gammel": "trang",
+    "ny": "aapen"
+   },
+   {
+    "segment": "Bly",
+    "felt": "Port C",
+    "gammel": "trang",
+    "ny": "aapen"
+   },
+   {
+    "segment": "Suezmax (5 år)",
+    "felt": "Port C",
+    "gammel": "trang",
+    "ny": "aapen"
+   }
+  ]
+ },
+ "kvartal": {
+  "forrige_dato": "2026-09-28 11:48:19",
+  "ny_dato": "2026-09-29 13:43:25",
+  "forrige": "2026-09-28",
+  "ny": "2026-09-29",
+  "topp": [
+   {
+    "segment": "Star Bulk Carriers (SBLK)",
+    "felt": "C, kvartaler",
+    "gammel": 18.7,
+    "ny": 58.4,
+    "endring_pst": 212.3,
+    "poeng": null,
+    "vekt": 212.3
+   },
+   {
+    "segment": "Peabody Energy (BTU)",
+    "felt": "C, kvartaler",
+    "gammel": 23.8,
+    "ny": 43.6,
+    "endring_pst": 83.2,
+    "poeng": null,
+    "vekt": 83.2
+   },
+   {
+    "segment": "Nordic American Tankers (NAT)",
+    "felt": "C, kvartaler",
+    "gammel": 2.4,
+    "ny": 3.9,
+    "endring_pst": 62.5,
+    "poeng": null,
+    "vekt": 62.5
+   },
+   {
+    "segment": "Alcoa (AA)",
+    "felt": "C, kvartaler",
+    "gammel": 13.6,
+    "ny": 20.5,
+    "endring_pst": 50.7,
+    "poeng": null,
+    "vekt": 50.7
+   },
+   {
+    "segment": "Pangaea Logistics (PANL)",
+    "felt": "Netto gjeld/EK",
+    "gammel": -0.01,
+    "ny": 0.34,
+    "endring_pst": 3500.0,
+    "poeng": null,
+    "vekt": 35.0
+   },
+   {
+    "segment": "Century Aluminum (CENX)",
+    "felt": "C, kvartaler",
+    "gammel": 5.8,
+    "ny": 7.8,
+    "endring_pst": 34.5,
+    "poeng": null,
+    "vekt": 34.5
+   },
+   {
+    "segment": "Heidelberg Materials (HEI.DE)",
+    "felt": "Netto gjeld/EK",
+    "gammel": 0.47,
+    "ny": 0.16,
+    "endring_pst": -66.0,
+    "poeng": null,
+    "vekt": 31.0
+   },
+   {
+    "segment": "Frontline (FRO.OL)",
+    "felt": "Netto gjeld/EK",
+    "gammel": 1.22,
+    "ny": 0.99,
+    "endring_pst": -18.9,
+    "poeng": null,
+    "vekt": 23.0
+   },
+   {
+    "segment": "Vale (VALE)",
+    "felt": "Netto gjeld/EK",
+    "gammel": 0.07,
+    "ny": 0.3,
+    "endring_pst": 328.6,
+    "poeng": null,
+    "vekt": 23.0
+   },
+   {
+    "segment": "Genco Shipping (GNK)",
+    "felt": "C, kvartaler",
+    "gammel": 3.4,
+    "ny": 4.0,
+    "endring_pst": 17.6,
+    "poeng": null,
+    "vekt": 17.6
+   }
+  ],
+  "skifter": [
+   {
+    "segment": "Alcoa (AA)",
+    "felt": "Port C",
+    "gammel": "trang",
+    "ny": "aapen"
+   },
+   {
+    "segment": "Frontline (FRO.OL)",
+    "felt": "Port C",
+    "gammel": "trang",
+    "ny": "aapen"
+   },
+   {
+    "segment": "Nexa Resources (NEXA)",
+    "felt": "Port C",
+    "gammel": "trang",
+    "ny": "aapen"
+   },
+   {
+    "segment": "Air Liquide (AI.PA)",
+    "felt": "Port C",
+    "gammel": "stengt",
+    "ny": "aapen"
+   },
+   {
+    "segment": "Heidelberg Materials (HEI.DE)",
+    "felt": "Port C",
+    "gammel": "trang",
+    "ny": "aapen"
+   },
+   {
+    "segment": "Aluminium",
+    "felt": "Port C for segmentet",
+    "gammel": "trang",
+    "ny": "aapen"
+   },
+   {
+    "segment": "Bly",
+    "felt": "Port C for segmentet",
+    "gammel": "trang",
+    "ny": "aapen"
+   },
+   {
+    "segment": "Suezmax",
+    "felt": "Port C for segmentet",
+    "gammel": "trang",
+    "ny": "aapen"
+   }
+  ]
+ }
+}
