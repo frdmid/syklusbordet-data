@@ -9,6 +9,19 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 30.09.2026 10:36, Cowork
+**Hva:** Dashbordet versjon 53: korrelasjonsmatrise mellom A-skårene nederst
+(Frodes bestilling). Korrelasjon mellom månedlige endringer i A over de siste
+36 månedene, parvis på felles måneder, minst 24 par. Farge fra mørk rød (−1)
+til mørk grønn (+1), lite tall og pil for endringen mot matrisen en måned
+tidligere. Segmenter med bare kvartalsdata regnes på kvartalsendringer over
+tolv kvartaler og merkes k (ingen i dag). Skipssegmentene har ingen A og er
+utenfor. Kontekst, ikke testet. Bygget på versjon 52.
+**Filer:** ingen i repoet (dashbordet ligger som artifact).
+**Den andre økten må vite:** Funksjonene heter renderKorr, korrSerie, korrPar
+og kalles sist i render(). Kontrollert mot uavhengig utregning (Brent/WTI 0,94,
+Brent/TTF 0,57, HH/kobber 0,21).
+
 ### 30.09.2026 08:11, Claude Code
 **Hva:** Dashbordet versjon 52. Underteksten under overskriften Test-flagg er fjernet.
 **Filer:** ingen i repoet (dashbordet ligger som artifact).
