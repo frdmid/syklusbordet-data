@@ -1117,7 +1117,7 @@
  },
  "uke": {
   "noekkel": "2026-W40",
-  "dato": "2026-09-29 13:19:12",
+  "dato": "2026-09-30 06:29",
   "verdier": {
    "brent|real": {
     "segment": "Råolje (Brent)",
@@ -1140,7 +1140,7 @@
    "brent|D": {
     "segment": "Råolje (Brent)",
     "felt": "Kapitulasjon D",
-    "verdi": 3.3,
+    "verdi": 3.5,
     "skala": "poeng"
    },
    "brent|cot": {
@@ -1170,7 +1170,7 @@
    "wti|D": {
     "segment": "Råolje (WTI)",
     "felt": "Kapitulasjon D",
-    "verdi": 1.9,
+    "verdi": 2.6,
     "skala": "poeng"
    },
    "wti|cot": {
@@ -1200,7 +1200,7 @@
    "henryhub|D": {
     "segment": "Naturgass US (Henry Hub)",
     "felt": "Kapitulasjon D",
-    "verdi": 29.2,
+    "verdi": 32.4,
     "skala": "poeng"
    },
    "henryhub|cot": {
@@ -1230,7 +1230,7 @@
    "gold|D": {
     "segment": "Gull",
     "felt": "Kapitulasjon D",
-    "verdi": 26.2,
+    "verdi": 26.1,
     "skala": "poeng"
    },
    "gold|cot": {
@@ -1260,7 +1260,7 @@
    "uran|D": {
     "segment": "Uran",
     "felt": "Kapitulasjon D",
-    "verdi": 21.7,
+    "verdi": 21.8,
     "skala": "poeng"
    },
    "laks|real": {
@@ -1284,7 +1284,7 @@
    "laks|D": {
     "segment": "Laks (sesongjustert)",
     "felt": "Kapitulasjon D",
-    "verdi": 24.9,
+    "verdi": 25.2,
     "skala": "poeng"
    },
    "oljeservice|real": {
@@ -1308,7 +1308,7 @@
    "oljeservice|D": {
     "segment": "Oljeservice (boring)",
     "felt": "Kapitulasjon D",
-    "verdi": 21.5,
+    "verdi": 24.7,
     "skala": "poeng"
    },
    "oljeservice|rate": {
@@ -1338,7 +1338,7 @@
    "kobber|D": {
     "segment": "Kobber",
     "felt": "Kapitulasjon D",
-    "verdi": 4.2,
+    "verdi": 3.9,
     "skala": "poeng"
    },
    "kobber|cot": {
@@ -1368,7 +1368,7 @@
    "nikkel|D": {
     "segment": "Nikkel",
     "felt": "Kapitulasjon D",
-    "verdi": 9.6,
+    "verdi": 11.5,
     "skala": "poeng"
    },
    "aluminium|real": {
@@ -1392,7 +1392,7 @@
    "aluminium|D": {
     "segment": "Aluminium",
     "felt": "Kapitulasjon D",
-    "verdi": 32.8,
+    "verdi": 33.6,
     "skala": "poeng"
    },
    "sink|real": {
@@ -1416,7 +1416,7 @@
    "sink|D": {
     "segment": "Sink",
     "felt": "Kapitulasjon D",
-    "verdi": 9.6,
+    "verdi": 11.5,
     "skala": "poeng"
    },
    "bly|real": {
@@ -1440,7 +1440,7 @@
    "bly|D": {
     "segment": "Bly",
     "felt": "Kapitulasjon D",
-    "verdi": 10.1,
+    "verdi": 10.0,
     "skala": "poeng"
    },
    "tinn|real": {
@@ -1464,7 +1464,7 @@
    "tinn|D": {
     "segment": "Tinn",
     "felt": "Kapitulasjon D",
-    "verdi": 9.6,
+    "verdi": 11.5,
     "skala": "poeng"
    },
    "jernmalm|real": {
@@ -1488,7 +1488,7 @@
    "jernmalm|D": {
     "segment": "Jernmalm 62% Fe",
     "felt": "Kapitulasjon D",
-    "verdi": 41.6,
+    "verdi": 42.7,
     "skala": "poeng"
    },
    "kull|real": {
@@ -1512,7 +1512,7 @@
    "kull|D": {
     "segment": "Termisk kull (Australia)",
     "felt": "Kapitulasjon D",
-    "verdi": 10.1,
+    "verdi": 12.5,
     "skala": "poeng"
    },
    "ttf|real": {
@@ -1536,7 +1536,7 @@
    "ttf|D": {
     "segment": "Naturgass Europa",
     "felt": "Kapitulasjon D",
-    "verdi": 2.9,
+    "verdi": 3.4,
     "skala": "poeng"
    },
    "kakao|real": {
@@ -1560,7 +1560,7 @@
    "kakao|D": {
     "segment": "Kakao",
     "felt": "Kapitulasjon D",
-    "verdi": 48.4,
+    "verdi": 48.5,
     "skala": "poeng"
    },
    "kakao|cot": {
@@ -1590,7 +1590,7 @@
    "palmeolje|D": {
     "segment": "Palmeolje",
     "felt": "Kapitulasjon D",
-    "verdi": 4.4,
+    "verdi": 4.3,
     "skala": "poeng"
    },
    "palmeolje|cot": {
@@ -1680,7 +1680,7 @@
    "ship_kamsarmax|D": {
     "segment": "Kamsarmax (5 år)",
     "felt": "Kapitulasjon D",
-    "verdi": 12.8,
+    "verdi": 13.0,
     "skala": "poeng"
    },
    "ship_kamsarmax|A2": {
@@ -1704,7 +1704,7 @@
    "ship_ultramax|D": {
     "segment": "Ultramax (5 år)",
     "felt": "Kapitulasjon D",
-    "verdi": 12.8,
+    "verdi": 13.0,
     "skala": "poeng"
    },
    "ship_ultramax|A2": {
@@ -1728,7 +1728,7 @@
    "ship_capesize|D": {
     "segment": "Capesize (5 år)",
     "felt": "Kapitulasjon D",
-    "verdi": 14.8,
+    "verdi": 15.4,
     "skala": "poeng"
    },
    "ship_capesize|rate": {
@@ -1746,7 +1746,7 @@
    "ship_handysize|D": {
     "segment": "Handysize (5 år)",
     "felt": "Kapitulasjon D",
-    "verdi": 12.2,
+    "verdi": 12.4,
     "skala": "poeng"
    },
    "ship_handysize|rate": {
@@ -1758,19 +1758,19 @@
    "marked|vix": {
     "segment": "Marked",
     "felt": "VIX",
-    "verdi": 15.88,
+    "verdi": 16.04,
     "skala": "nivaa"
    },
    "marked|dxy": {
     "segment": "Marked",
     "felt": "Dollar (DXY)",
-    "verdi": 101.376,
+    "verdi": 101.274,
     "skala": "nivaa"
    },
    "marked|usdnok": {
     "segment": "Marked",
     "felt": "USD/NOK",
-    "verdi": 9.5069,
+    "verdi": 9.576,
     "skala": "nivaa"
    }
   },
