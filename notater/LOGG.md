@@ -9,9 +9,26 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 30.09.2026 13:32, Claude Code
+**Hva:** Dashbordet versjon 55 er helsesjekken lagt oppå Coworks versjon 54
+(korrelasjonsmatrisen som SVG, publisert 11.26 UTC, ikke ført i loggen ennå).
+Versjon 54 var skadet i toppen: linjene med `<title>`, fontlenkene, `<style>`
+og fargetokenene for lys modus (`:root`) var borte, og sidens omslag lå der to
+ganger. I lys modus hadde siden derfor ingen tittel, ingen farger og ingen
+bakgrunn. Linjene er satt inn igjen fra versjon 53. Resten av versjon 54 er
+uendret, og matrisen har allerede egen rulling, så rettelsen for `#korr` i
+innslaget under er ikke tatt med.
+Onsdagsrutinen feilet i dag kl. 11.18 etter 6 sekunder uten å skrive noe. Den
+har fått steg 6e (helse.json til marked/helse) og et punkt om datahelse i
+rapporten, og er kjørt på nytt for hånd. `marked/helse` er skrevet én gang for
+hånd (versjon 1).
+**Filer:** ingen i repoet utover loggen; dashbordet, databasen og rutinen.
+**Cowork må vite:** Bygg videre på versjon 55. Kontroller at `<title>` og
+`:root` står øverst etter en publisering.
+
 ### 30.09.2026 13:29, Claude Code
 **Hva:** Helsesjekk på dashbordet (Frodes bestilling etter vurderingen av
-Groks forslag), dashbordet versjon 54, bygget på Coworks versjon 53.
+Groks forslag), dashbordet versjon 55 (se innslaget over).
 1. Ny `helse.py` lager `helse.json` sist i ukekjøringen (kalles fra
    `bygg_shipping.py` etter endringer). Én rad per serie: siste observasjon,
    frekvens, forventet etterslep (dager fra periodens slutt til tallet er på
