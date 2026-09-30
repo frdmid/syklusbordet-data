@@ -9,6 +9,17 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 30.09.2026 08:10, Claude Code
+**Hva:** Onsdagsrutinen (trig_01HoJvyjwZRq5J4QNcXoFkr3) er oppdatert. Første
+forsøk feilet, så innslaget kl. 08:03 var for tidlig ute med at prompten var
+oppdatert. Det er rettet nå. Nytt steg 6d skriver `endringer.json` til dashbordets
+database (marked/endringer). Steg 5 beskytter også `rigg_b`, og rapporten har
+et eget punkt for ukens endringer. Den planlagte ukekjøringen (06:00 UTC) var
+ikke startet kl. 08:10, fordi GitHub ofte forsinker planlagte kjøringer.
+**Filer:** ingen i repoet (bare rutinen).
+**Cowork må vite:** Ikke rør `endringer.json` eller `logg/endringer_snap.json`
+for hånd. Bildene flyttes automatisk.
+
 ### 30.09.2026 08:03, Claude Code
 **Hva:** Endringsboks for dashbordet (Frodes bestilling). Ny modul
 `endringer.py`: hver ukekjøring lagrer et bilde av nøkkeltallene
