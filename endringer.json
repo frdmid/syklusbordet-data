@@ -2,7 +2,7 @@
  "id": "endringer",
  "uke": {
   "forrige_dato": "2026-09-28 11:23:36",
-  "ny_dato": "2026-09-29 13:19:12",
+  "ny_dato": "2026-09-30 06:29",
   "forrige": "2026-09-28 (eldste lagrede)",
   "ny": "2026-W40",
   "topp": [
@@ -19,10 +19,10 @@
     "segment": "Capesize (5 år)",
     "felt": "Kapitulasjon D",
     "gammel": 43.8,
-    "ny": 14.8,
-    "endring_pst": -66.2,
-    "poeng": -29.0,
-    "vekt": 29.0
+    "ny": 15.4,
+    "endring_pst": -64.8,
+    "poeng": -28.4,
+    "vekt": 28.4
    },
    {
     "segment": "Råolje (Brent)",
@@ -70,6 +70,15 @@
     "vekt": 9.7
    },
    {
+    "segment": "Naturgass US (Henry Hub)",
+    "felt": "Kapitulasjon D",
+    "gammel": 26.3,
+    "ny": 32.4,
+    "endring_pst": 23.2,
+    "poeng": 6.1,
+    "vekt": 6.1
+   },
+   {
     "segment": "Råolje (WTI)",
     "felt": "Prisnivå A",
     "gammel": 24.9,
@@ -79,22 +88,13 @@
     "vekt": 5.8
    },
    {
-    "segment": "Termisk kull (Australia)",
-    "felt": "Kapitulasjon D",
-    "gammel": 13.4,
-    "ny": 10.1,
-    "endring_pst": -24.6,
-    "poeng": -3.3,
-    "vekt": 3.3
-   },
-   {
-    "segment": "Naturgass US (Henry Hub)",
-    "felt": "Kapitulasjon D",
-    "gammel": 26.3,
-    "ny": 29.2,
-    "endring_pst": 11.0,
-    "poeng": 2.9,
-    "vekt": 2.9
+    "segment": "Marked",
+    "felt": "VIX",
+    "gammel": 16.36,
+    "ny": 16.04,
+    "endring_pst": -2.0,
+    "poeng": null,
+    "vekt": 2.0
    }
   ],
   "skifter": [
