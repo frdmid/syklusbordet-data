@@ -9,6 +9,13 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 30.09.2026 08:11, Claude Code
+**Hva:** Dashbordet versjon 51. I test-flagg-seksjonen er teksten under
+«Når det vurderes» gjort om til en utfellbar lenke, på samme måte som
+«Bakgrunn». Vurderingskriteriet er ikke endret.
+**Filer:** ingen i repoet (dashbordet ligger som artifact).
+**Cowork må vite:** Ingenting.
+
 ### 30.09.2026 08:10, Claude Code
 **Hva:** Onsdagsrutinen (trig_01HoJvyjwZRq5J4QNcXoFkr3) er oppdatert. Første
 forsøk feilet, så innslaget kl. 08:03 var for tidlig ute med at prompten var
