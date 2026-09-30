@@ -359,3 +359,12 @@ if GITHUB_TOKEN:
         endringer.uke()
     except Exception as e:
         print(f"   endringer feilet: {type(e).__name__}: {str(e)[:80]}")
+
+# Helsesjekken paa dashbordet (30.09.2026): siste observasjon per serie og
+# alderen paa de manuelle postene. Status regnes paa dashbordet.
+if GITHUB_TOKEN:
+    try:
+        import helse
+        helse.kjor()
+    except Exception as e:
+        print(f"   helse feilet: {type(e).__name__}: {str(e)[:80]}")

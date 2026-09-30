@@ -9,6 +9,43 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 30.09.2026 13:29, Claude Code
+**Hva:** Helsesjekk på dashbordet (Frodes bestilling etter vurderingen av
+Groks forslag), dashbordet versjon 54, bygget på Coworks versjon 53.
+1. Ny `helse.py` lager `helse.json` sist i ukekjøringen (kalles fra
+   `bygg_shipping.py` etter endringer). Én rad per serie: siste observasjon,
+   frekvens, forventet etterslep (dager fra periodens slutt til tallet er på
+   bordet, onsdagsinnhentingen regnet med) og periodens slutt. Status regnes
+   på dashbordet mot dagens dato: grønn til forventet dato pluss 3 dager, gul
+   til pluss 7, rød over det. Da blir alt gult og rødt også hvis selve
+   innhentingen stopper. Etterslepene står i toppen av `helse.py` (Pink Sheet
+   14, speilene 10, FRED 24, KPI-speilet 45, COT 9, Fearnleys 7, daglige kurser
+   2, kvartalsvis 5, OWID 300 og laksekostnad 350). FEIL i loggen i
+   `index.json` blir røde rader.
+2. `c_manuell.json` og `b_manuell.json` leses, ikke endres: én rad per selskap,
+   rød når siste regnskapsår sluttet for mer enn 15 måneder siden.
+   Regnskapsårets slutt fra feltet `regnskapsaar` (B) eller «31. <måned>» i
+   `kilde` (C, gir mars for CIA.TO), ellers desember.
+3. Kort varsel helt øverst bare når noe er gult eller rødt, hele tabellen
+   nederst (Datahelse) med kolonnen Automatisk/Manuell. I dag er alle 58 rader
+   grønne, så varselet vises ikke.
+4. «24 av 43 aksjer» i forklaringen og varselboksen regnes nå fra
+   instrumentene i databasen (aksjer med port åpen eller stengt): 30 av 54 i
+   dag. Teksten nevner også at noen selskaper er lest for hånd.
+5. `shipping.py` arkiverer hver Fearnleys-rapport den laster ned som PDF i
+   `arkiv/fearnleys/<dato>.pdf` (rundt 450 kB). Rapporter som allerede er lest,
+   arkiveres ikke bakover, men de 41 som ikke kunne leses lastes ned på nytt
+   hver uke og blir derfor arkivert ved neste kjøring (rundt 18 MB én gang).
+   Ingen andre råfiler arkiveres.
+Også: korrelasjonstabellen fra versjon 53 gjorde hele siden bredere enn
+skjermen (1395 px på 1200). `#korr` har fått overflow-x:auto.
+**Filer:** `helse.py` (ny), `helse.json` (ny), `bygg_shipping.py`,
+`shipping.py`; dashbordet.
+**Cowork må vite:** Onsdagsrutinen skriver `helse.json` til databasen
+(samlingen marked, dokumentet helse). Når du fører inn et nytt regnskapsår i
+`c_manuell.json` eller `b_manuell.json`, går raden grønn neste onsdag. Et nytt
+selskap i C med annet regnskapsår enn desember bør ha «31. <måned>» i `kilde`.
+
 ### 30.09.2026 10:36, Cowork
 **Hva:** Dashbordet versjon 53: korrelasjonsmatrise mellom A-skårene nederst
 (Frodes bestilling). Korrelasjon mellom månedlige endringer i A over de siste

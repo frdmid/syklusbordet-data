@@ -210,6 +210,39 @@ def push(sti, tekst):
     requests.put(api, headers=h, json=body, timeout=90).raise_for_status()
 
 
+# Arkiv (30.09.2026): Fearnleys-rapportene er den eneste kilden bordet ikke
+# kan hente paa nytt hvis Hellenic Shipping News fjerner dem. Hver rapport
+# som lastes ned, lagres som PDF i arkiv/fearnleys/<dato>.pdf, ogsaa de som
+# ikke kunne leses, saa leseren kan forbedres senere. Rapporter som allerede
+# er lest, er ikke arkivert bakover (rundt 450 kB per uke). Andre raafiler
+# arkiveres ikke, fordi de kan hentes paa nytt.
+ARKIV = "arkiv/fearnleys"
+
+
+def arkiverte():
+    if not GITHUB_TOKEN:
+        return set()
+    h = {"Authorization": f"Bearer {GITHUB_TOKEN}", "Accept": "application/vnd.github+json"}
+    r = requests.get(f"https://api.github.com/repos/{REPO}/contents/{ARKIV}", headers=h,
+                     params={"ref": BRANCH}, timeout=30)
+    return {f["name"] for f in r.json()} if r.status_code == 200 else set()
+
+
+def arkiver(dato, innhold, har):
+    navn = f"{dato}.pdf"
+    if not GITHUB_TOKEN or navn in har:
+        return
+    api = f"https://api.github.com/repos/{REPO}/contents/{ARKIV}/{navn}"
+    h = {"Authorization": f"Bearer {GITHUB_TOKEN}", "Accept": "application/vnd.github+json"}
+    body = {"message": f"arkiv Fearnleys {dato}", "branch": BRANCH,
+            "content": base64.b64encode(innhold).decode()}
+    try:
+        requests.put(api, headers=h, json=body, timeout=90).raise_for_status()
+        har.add(navn)
+    except Exception as e:
+        print(f"   arkiv {dato} feilet: {type(e).__name__}")
+
+
 # =========================================================== kjoring
 
 print("1. Katalog og tidligere arbeid")
@@ -222,10 +255,13 @@ print(f"   {len(hatt)} datoer allerede hentet")
 print(f"   {len(nye)} gjenstår\n")
 
 print("2. Henter og parser")
+har_arkiv = arkiverte()
 rader, maler, feil = list(gammelt["rader"]), Counter(), []
 for n, (dato, url) in enumerate(sorted(nye.items())[:MAKS], 1):
     try:
         b = requests.get(url, headers=UA, timeout=120).content
+        if b[:4] == b"%PDF":
+            arkiver(dato, b, har_arkiv)
         with pdfplumber.open(io.BytesIO(b)) as pdf:
             t = "\n".join((s.extract_text() or "") for s in pdf.pages)
         mal, felt = les(t)
