@@ -1,5 +1,5 @@
 {
- "oppdatert": "2026-09-29 13:19:12",
+ "oppdatert": "2026-09-30 06:27:07",
  "segmenter": [
   "brent",
   "wti",
@@ -79,7 +79,7 @@
   {
    "kilde": "laks",
    "status": "OK",
-   "detalj": "margin 1.37 (A 91.2), kostnad 2024 59.97 kr/kg, uke 2026-09-17 71.41 kr/kg"
+   "detalj": "margin 1.386 (A 89.6), kostnad 2024 59.97 kr/kg, uke 2026-09-24 73.59 kr/kg"
   },
   {
    "kilde": "segment oljeservice",
@@ -264,27 +264,27 @@
   {
    "kilde": "fersk pris jernmalm",
    "status": "OK",
-   "detalj": "96.92 per 2026-09-28"
+   "detalj": "96.73 per 2026-09-29"
   },
   {
    "kilde": "kurveform",
    "status": "OK",
-   "detalj": "6 segmenter, rente 4.090000152587891, historikk brent 1 mnd, wti 1 mnd, henryhub 1 mnd, gold 1 mnd, kobber 1 mnd, kakao 1 mnd"
+   "detalj": "6 segmenter, rente 4.065000057220459, historikk brent 1 mnd, wti 1 mnd, henryhub 1 mnd, gold 1 mnd, kobber 1 mnd, kakao 1 mnd"
   },
   {
    "kilde": "VIX",
    "status": "OK",
-   "detalj": "15.88 per 2026-09-29, persentil 37.5 (fra 1990-01) / 38.3 (10 aar)"
+   "detalj": "16.04 per 2026-09-29, persentil 38.4 (fra 1990-01) / 40.0 (10 aar)"
   },
   {
    "kilde": "DXY",
    "status": "OK",
-   "detalj": "101.376 per 2026-09-29, persentil 79.2 (fra 1985-01), 12 mnd 3.7 %"
+   "detalj": "101.274 per 2026-09-30, persentil 79.0 (fra 1985-01), 12 mnd 3.6 %"
   },
   {
    "kilde": "USD/NOK",
    "status": "OK",
-   "detalj": "9.5069 per 2026-09-28, persentil 92.1 (fra 1971-01), 12 mnd -4.4 %"
+   "detalj": "9.576 per 2026-09-29, persentil 92.4 (fra 1971-01), 12 mnd -3.7 %"
   },
   {
    "kilde": "flagglogg",
