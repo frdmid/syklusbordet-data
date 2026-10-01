@@ -2926,7 +2926,7 @@
  },
  "kvartal": {
   "noekkel": "2026-10-01",
-  "dato": "2026-10-01 10:31",
+  "dato": "2026-10-01 10:39",
   "verdier": {
    "C|AA|kv": {
     "segment": "Alcoa (AA)",
@@ -3173,12 +3173,6 @@
     "felt": "Netto gjeld/EK",
     "verdi": 0.16,
     "skala": "forhold"
-   },
-   "C|GLEN.L|kv": {
-    "segment": "Glencore (GLEN.L)",
-    "felt": "C, kvartaler",
-    "verdi": 3.9,
-    "skala": "nivaa"
    },
    "C|GLEN.L|ngek": {
     "segment": "Glencore (GLEN.L)",
@@ -3497,7 +3491,7 @@
    "C|GLEN.L|port": {
     "segment": "Glencore (GLEN.L)",
     "felt": "Port C",
-    "verdi": "stengt"
+    "verdi": "aapen"
    },
    "C|CS.TO|port": {
     "segment": "Capstone Copper (CS.TO)",
@@ -3557,7 +3551,7 @@
    "Cseg|nikkel": {
     "segment": "Nikkel",
     "felt": "Port C for segmentet",
-    "verdi": "stengt"
+    "verdi": "aapen"
    },
    "Cseg|aluminium": {
     "segment": "Aluminium",
@@ -3577,7 +3571,7 @@
    "Cseg|tinn": {
     "segment": "Tinn",
     "felt": "Port C for segmentet",
-    "verdi": "stengt"
+    "verdi": "aapen"
    },
    "Cseg|jernmalm": {
     "segment": "Jernmalm",
