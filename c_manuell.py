@@ -32,6 +32,12 @@
 # regnskapsaaret med produksjon; tidligere driftsaar utelates, med kilde i
 # feltet "produksjon_kilde". Aaret produksjonen startet midt i, teller ikke.
 #
+# Dagens selskapsform (Frodes beslutning 01.10.2026): aar foer en fusjon som
+# endret selskapet vesentlig, teller ikke. Feltet "selskap_fra" er det foerste
+# hele regnskapsaaret i dagens form, med kilde i "selskap_kilde". Aaret
+# fusjonen ble fullfoert midt i, teller ikke. Brukes bare der det er satt per
+# selskap. Foerste gang: Glencore fra 2014 (Xstrata kjoept mai 2013).
+#
 # Valuta: et forhold mellom to beloep maa ha samme valuta. Driftsaar i en annen
 # valuta enn de siste balansetallene regnes om med Norges Banks aarssnitt for
 # det aaret (snitt passer for en stroem over aaret). Mangler kursen for et
@@ -135,6 +141,12 @@ def maal(aksjer, sti="c_manuell.json", kurs=nok_per_enhet):
             drift = drift[drift.index >= int(pf)]
             if utelatt:
                 print(f"   {tk:12s} aar foer produksjonsstart utelatt: {utelatt}")
+        sf = d.get("selskap_fra")
+        if sf is not None:
+            utelatt = [int(a) for a in drift.index if a < int(sf)]
+            drift = drift[drift.index >= int(sf)]
+            if utelatt:
+                print(f"   {tk:12s} aar foer dagens selskapsform utelatt: {utelatt}")
         if len(drift) < 4 or s["aar"] not in drift.index:
             print(f"   {tk:12s} for faa driftsaar ({len(drift)}) eller siste aar mangler, hoppes over")
             continue
@@ -152,6 +164,7 @@ def maal(aksjer, sti="c_manuell.json", kurs=nok_per_enhet):
                   "drift_naa_m": round(r["naa"], 1), "rente_m": s.get("rente"), "valuta": val,
                   "aar": [int(drift.index[0]), int(drift.index[-1])],
                   "produksjon_fra": pf,
+                  "selskap_fra": sf,
                   "renter_i_drift": rid, "renter_i_drift_bunnaar": r["renter_i_drift_bunnaar"],
                   "renter_i_drift_siste": r["renter_i_drift_siste"],
                   "kilde": "manuelt lest aarsrapport: " + d.get("kilde", "")}

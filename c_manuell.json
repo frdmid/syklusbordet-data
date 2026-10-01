@@ -1,5 +1,5 @@
 {
- "_merknad": "Overlevelsesport C for papirer uten SEC-tall, lest for haand fra aarsrapportene. Beloep i millioner i rapportvalutaen. drift = kontantstroem fra driften (konsern). siste = balansen og betalte renter for siste regnskapsaar. Brukes av c_manuell.py fra overlevelse_c.py. Feltet produksjon_fra (fra 29.09.2026): driftsaar foer dette aaret teller ikke. Feltet renter_i_drift (fra 29.09.2026): true betyr at betalte renter allerede er trukket i driften og ikke trekkes fra igjen.",
+ "_merknad": "Overlevelsesport C for papirer uten SEC-tall, lest for haand fra aarsrapportene. Beloep i millioner i rapportvalutaen. drift = kontantstroem fra driften (konsern). siste = balansen og betalte renter for siste regnskapsaar. Brukes av c_manuell.py fra overlevelse_c.py. Feltet produksjon_fra (fra 29.09.2026): driftsaar foer dette aaret teller ikke. Feltet renter_i_drift (fra 29.09.2026): true betyr at betalte renter allerede er trukket i driften og ikke trekkes fra igjen. Feltet selskap_fra (fra 01.10.2026): driftsaar foer dagens selskapsform (foerste hele aar etter en vesentlig fusjon) teller ikke.",
  "AKRBP.OL": {
   "kilde": "Aker BP, Det norske og Pertra (forgjengerne), aarsrapporter 2006 til 2025 fra akerbp.com, lest av sonde_kjor_c_manuell 25.09.2026 og kontrollert paa overlappende aar i to rapporter. 2019 mangler (2020-rapporten ga ingen lesbar oppstilling). Siste aar fra kvartalsrapporten Q4 2025: kontanter 2 344,1, betalte renter 394,8, drift 6 958,2 (lik aarsrapporten); balansen fra aarsrapporten 2025 s. 140: langsiktige obligasjoner 8 358,6, egenkapital 11 226,2. Finansielle investeringer 300,0 er ikke regnet som kontanter.",
   "drift": {
@@ -724,7 +724,9 @@
    "rente": 2478.0
   },
   "renter_i_drift": true,
-  "renter_kilde": "'Interest paid' staar under driften i konsernets kontantstroemoppstilling alle aar, ogsaa 2009 (-827, prospektet s. 195) og 2025 (-2 478, aarsrapport 2025)."
+  "renter_kilde": "'Interest paid' staar under driften i konsernets kontantstroemoppstilling alle aar, ogsaa 2009 (-827, prospektet s. 195) og 2025 (-2 478, aarsrapport 2025).",
+  "selskap_fra": 2014,
+  "selskap_kilde": "Glencore kjoepte Xstrata, fullfoert 2. mai 2013. 2014 er foerste hele regnskapsaar i dagens form. 2008 til 2013 utelates (Frodes beslutning 01.10.2026). 2009 (-3 010) og 2011 (-343) var Glencore foer Xstrata med arbeidskapital i handelsvirksomheten som driver."
  },
  "CS.TO": {
   "kilde": "Capstone Copper (tidligere Capstone Mining), aarsregnskap 2008 til 2010 og 2015 til 2025 fra SEDAR/selskapets sider (regnskapsaar til 31. desember, tusen USD i regnskapet), lest 30.09.2026. 2008 er Minto (Sherwood Copper, kommersiell produksjon oktober 2007), foerste hele produksjonsaar. 2011 til 2014 mangler (regnskapene ble ikke lest). 2021 inneholder et streaming-forskudd paa 180 000. Siste aar 2025: kontanter 304 192, langsiktig gjeld uten leie 1 013 950, egenkapital 3 831 605, betalte renter og finansieringskostnader 98 903.",

@@ -9,6 +9,120 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 01.10.2026 12:34, Cowork
+**Hva:** Ny regel i C (Frodes beslutning): år før en fusjon som endret
+selskapet vesentlig, teller ikke. Nytt felt `selskap_fra` i
+`c_manuell.json` er det første hele regnskapsåret i dagens form, med kilde i
+`selskap_kilde`. Feltet brukes bare der det er satt per selskap, på samme
+måte som `produksjon_fra`. Første gang: Glencore fra 2014 (Xstrata kjøpt
+2. mai 2013). 2008 til 2013 utelates. Prøvekjørt: GLEN.L går fra stengt
+(3,9 kvartaler, 2009) til åpen (positiv drift etter renter selv i 2020,
+12 år, netto gjeld/EK 0,68). De andre tolv gir samme resultat som før.
+Ved neste kvartalskjøring går nikkel fra stengt til åpen (Glencore åpen,
+Eramet stengt), og tinn fra stengt til åpen. Sink får 2 av 2 åpne og kull
+3 av 3.
+Loggen: Frodes commit «Update LOGG.md» 01.10 kl. 12:29 la en eldre versjon
+av loggen på main. Claude Codes innslag 30.09 kl. 13:29 og 13:32 og Coworks
+innslag 01.10 kl. 12:27 forsvant. De er lagt inn igjen her, uendret.
+Sannsynlig årsak er at repoet ligger i en OneDrive-mappe, og at OneDrive
+skrev tilbake en eldre kopi av filen.
+**Filer:** `c_manuell.json`, `c_manuell.py`, loggen.
+**Den andre økten må vite:** Kjør «Kvartalsvis tilbudsskaar» etter push.
+Sjekk at innslagene dine fra 30.09 står i loggen.
+
+### 01.10.2026 12:27, Cowork
+**Hva:** Laget 30.09, pushet 01.10 før loggen var ført. C for seks
+selskaper uten SEC-tall (punkt 1.1 fra vurderingen av Groks forslag), lagt
+inn i `c_manuell.json`. Prøvekjørt med Norges Banks kurser. De sju som alt lå inne, gir samme resultat som før.
+- GLEN.L: stengt, 3,9 kvartaler. Verste år er 2009 (−3 010 MUSD, prospektet
+  fra 2011), og tallet skyldes økt arbeidskapital i handelen. Netto gjeld/EK
+  er 0,68. Glencore er med i nikkel, sink, tinn og kull.
+- CS.TO: åpen, 16,6 kvartaler, verste år 2015 etter renter. 2011 til 2014
+  mangler.
+- ATYM.L: åpen, positiv drift. `produksjon_fra` er 2017 (kommersiell
+  produksjon fra 1. februar 2016). 2010 til 2012 mangler, men gjelder årene
+  før produksjonsstart.
+- ERA.PA: stengt, 7,3 kvartaler. Verste år er 2025 (−313 MEUR).
+- MPE.L: åpen, positiv drift. 2006 til 2009 er på omarbeidet grunnlag.
+- RE.L: stengt, 2,9 kvartaler. Verste år er 2018 (−25,9 MUSD).
+Alle seks har regnskapsår til 31. desember. Renter i driften: Glencore,
+Atalaya, Eramet, M.P. Evans og REA. For Capstone ligger rentene under
+finansiering i 2015 og 2025 og i driften i 2008 (`renter_i_drift_aar`).
+Segmentporten ved neste kvartalskjøring:
+- kobber går fra ukjent til åpen (CS.TO, ATYM.L).
+- nikkel går fra ukjent til stengt (ERA.PA, GLEN.L).
+- tinn går fra ukjent til stengt (bare GLEN.L).
+- palmeolje går fra ukjent til åpen (MPE.L åpen, RE.L stengt).
+- sink og kull er fortsatt åpne.
+Rettelse i `c_manuell.py`: `port_fra` velger nå verste år etter at renten
+er trukket fra, der renten ikke alt ligger i driften. Med lik
+renteklassifisering alle år blir valget det samme som før. Bare Capstone
+har unntak per år. Uten rettelsen ville 2008 blitt valgt, og porten ville
+vist positiv drift, selv om 2015 etter renter er svakere.
+Om dashbordet versjon 54: toppen av filen var skadet da jeg publiserte (se
+Claude Codes innslag 13:32). Jeg bygger
+videre på 55 og sjekker `<title>` og `:root` etter hver publisering.
+**Filer:** `c_manuell.json`, `c_manuell.py`, loggen.
+**Den andre økten må vite:** Kjør «Kvartalsvis tilbudsskaar» etter push.
+Glencore stengt hviler på 2009 alene. Uten 2008 til 2010 blir verste år
+2011 (−343), og porten blir åpen med 34 kvartaler. Frode avgjør om årene
+før Xstrata-fusjonen skal telle. Til han har avgjort det, gjelder hele
+historikken.
+
+### 30.09.2026 13:32, Claude Code
+**Hva:** Dashbordet versjon 55 er helsesjekken lagt oppå Coworks versjon 54
+(korrelasjonsmatrisen som SVG, publisert 11.26 UTC, ikke ført i loggen ennå).
+Versjon 54 var skadet i toppen: linjene med `<title>`, fontlenkene, `<style>`
+og fargetokenene for lys modus (`:root`) var borte, og sidens omslag lå der to
+ganger. I lys modus hadde siden derfor ingen tittel, ingen farger og ingen
+bakgrunn. Linjene er satt inn igjen fra versjon 53. Resten av versjon 54 er
+uendret, og matrisen har allerede egen rulling, så rettelsen for `#korr` i
+innslaget under er ikke tatt med.
+Onsdagsrutinen feilet i dag kl. 11.18 etter 6 sekunder uten å skrive noe. Den
+har fått steg 6e (helse.json til marked/helse) og et punkt om datahelse i
+rapporten, og er kjørt på nytt for hånd. `marked/helse` er skrevet én gang for
+hånd (versjon 1).
+**Filer:** ingen i repoet utover loggen; dashbordet, databasen og rutinen.
+**Cowork må vite:** Bygg videre på versjon 55. Kontroller at `<title>` og
+`:root` står øverst etter en publisering.
+
+### 30.09.2026 13:29, Claude Code
+**Hva:** Helsesjekk på dashbordet (Frodes bestilling etter vurderingen av
+Groks forslag), dashbordet versjon 55 (se innslaget over).
+1. Ny `helse.py` lager `helse.json` sist i ukekjøringen (kalles fra
+   `bygg_shipping.py` etter endringer). Én rad per serie: siste observasjon,
+   frekvens, forventet etterslep (dager fra periodens slutt til tallet er på
+   bordet, onsdagsinnhentingen regnet med) og periodens slutt. Status regnes
+   på dashbordet mot dagens dato: grønn til forventet dato pluss 3 dager, gul
+   til pluss 7, rød over det. Da blir alt gult og rødt også hvis selve
+   innhentingen stopper. Etterslepene står i toppen av `helse.py` (Pink Sheet
+   14, speilene 10, FRED 24, KPI-speilet 45, COT 9, Fearnleys 7, daglige kurser
+   2, kvartalsvis 5, OWID 300 og laksekostnad 350). FEIL i loggen i
+   `index.json` blir røde rader.
+2. `c_manuell.json` og `b_manuell.json` leses, ikke endres: én rad per selskap,
+   rød når siste regnskapsår sluttet for mer enn 15 måneder siden.
+   Regnskapsårets slutt fra feltet `regnskapsaar` (B) eller «31. <måned>» i
+   `kilde` (C, gir mars for CIA.TO), ellers desember.
+3. Kort varsel helt øverst bare når noe er gult eller rødt, hele tabellen
+   nederst (Datahelse) med kolonnen Automatisk/Manuell. I dag er alle 58 rader
+   grønne, så varselet vises ikke.
+4. «24 av 43 aksjer» i forklaringen og varselboksen regnes nå fra
+   instrumentene i databasen (aksjer med port åpen eller stengt): 30 av 54 i
+   dag. Teksten nevner også at noen selskaper er lest for hånd.
+5. `shipping.py` arkiverer hver Fearnleys-rapport den laster ned som PDF i
+   `arkiv/fearnleys/<dato>.pdf` (rundt 450 kB). Rapporter som allerede er lest,
+   arkiveres ikke bakover, men de 41 som ikke kunne leses lastes ned på nytt
+   hver uke og blir derfor arkivert ved neste kjøring (rundt 18 MB én gang).
+   Ingen andre råfiler arkiveres.
+Også: korrelasjonstabellen fra versjon 53 gjorde hele siden bredere enn
+skjermen (1395 px på 1200). `#korr` har fått overflow-x:auto.
+**Filer:** `helse.py` (ny), `helse.json` (ny), `bygg_shipping.py`,
+`shipping.py`; dashbordet.
+**Cowork må vite:** Onsdagsrutinen skriver `helse.json` til databasen
+(samlingen marked, dokumentet helse). Når du fører inn et nytt regnskapsår i
+`c_manuell.json` eller `b_manuell.json`, går raden grønn neste onsdag. Et nytt
+selskap i C med annet regnskapsår enn desember bør ha «31. <måned>» i `kilde`.
+
 ### 30.09.2026 10:36, Cowork
 **Hva:** Dashbordet versjon 53: korrelasjonsmatrise mellom A-skårene nederst
 (Frodes bestilling). Korrelasjon mellom månedlige endringer i A over de siste
