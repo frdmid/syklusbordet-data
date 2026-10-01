@@ -2288,569 +2288,6 @@
   }
  },
  "kvartal_forrige": {
-  "noekkel": "2026-09-28",
-  "dato": "2026-09-28 11:48:19",
-  "verdier": {
-   "C|AA|kv": {
-    "segment": "Alcoa (AA)",
-    "felt": "C, kvartaler",
-    "verdi": 13.6,
-    "skala": "nivaa"
-   },
-   "C|AA|ngek": {
-    "segment": "Alcoa (AA)",
-    "felt": "Netto gjeld/EK",
-    "verdi": 0.16,
-    "skala": "forhold"
-   },
-   "C|AI.PA|kv": {
-    "segment": "Air Liquide (AI.PA)",
-    "felt": "C, kvartaler",
-    "verdi": 1.4,
-    "skala": "nivaa"
-   },
-   "C|BTU|kv": {
-    "segment": "Peabody Energy (BTU)",
-    "felt": "C, kvartaler",
-    "verdi": 23.8,
-    "skala": "nivaa"
-   },
-   "C|BTU|ngek": {
-    "segment": "Peabody Energy (BTU)",
-    "felt": "Netto gjeld/EK",
-    "verdi": -0.07,
-    "skala": "forhold"
-   },
-   "C|CCJ|ngek": {
-    "segment": "Cameco (CCJ)",
-    "felt": "Netto gjeld/EK",
-    "verdi": -0.02,
-    "skala": "forhold"
-   },
-   "C|CENX|kv": {
-    "segment": "Century Aluminum (CENX)",
-    "felt": "C, kvartaler",
-    "verdi": 5.8,
-    "skala": "nivaa"
-   },
-   "C|CENX|ngek": {
-    "segment": "Century Aluminum (CENX)",
-    "felt": "Netto gjeld/EK",
-    "verdi": 0.51,
-    "skala": "forhold"
-   },
-   "C|CVE.TO|kv": {
-    "segment": "Cenovus Energy (CVE.TO)",
-    "felt": "C, kvartaler",
-    "verdi": 37.0,
-    "skala": "nivaa"
-   },
-   "C|CVE.TO|ngek": {
-    "segment": "Cenovus Energy (CVE.TO)",
-    "felt": "Netto gjeld/EK",
-    "verdi": 0.26,
-    "skala": "forhold"
-   },
-   "C|DHT|ngek": {
-    "segment": "DHT Holdings (DHT)",
-    "felt": "Netto gjeld/EK",
-    "verdi": 0.27,
-    "skala": "forhold"
-   },
-   "C|EQNR.OL|ngek": {
-    "segment": "Equinor (EQNR.OL)",
-    "felt": "Netto gjeld/EK",
-    "verdi": 0.46,
-    "skala": "forhold"
-   },
-   "C|EQT|ngek": {
-    "segment": "EQT Corporation (EQT)",
-    "felt": "Netto gjeld/EK",
-    "verdi": 0.3,
-    "skala": "forhold"
-   },
-   "C|FRO.OL|kv": {
-    "segment": "Frontline (FRO.OL)",
-    "felt": "C, kvartaler",
-    "verdi": 14.2,
-    "skala": "nivaa"
-   },
-   "C|FRO.OL|ngek": {
-    "segment": "Frontline (FRO.OL)",
-    "felt": "Netto gjeld/EK",
-    "verdi": 1.22,
-    "skala": "forhold"
-   },
-   "C|GNK|kv": {
-    "segment": "Genco Shipping (GNK)",
-    "felt": "C, kvartaler",
-    "verdi": 3.4,
-    "skala": "nivaa"
-   },
-   "C|GNK|ngek": {
-    "segment": "Genco Shipping (GNK)",
-    "felt": "Netto gjeld/EK",
-    "verdi": 0.15,
-    "skala": "forhold"
-   },
-   "C|HBM.TO|ngek": {
-    "segment": "Hudbay Minerals (HBM.TO)",
-    "felt": "Netto gjeld/EK",
-    "verdi": -0.01,
-    "skala": "forhold"
-   },
-   "C|HEI.DE|kv": {
-    "segment": "Heidelberg Materials (HEI.DE)",
-    "felt": "C, kvartaler",
-    "verdi": 9.8,
-    "skala": "nivaa"
-   },
-   "C|HEI.DE|ngek": {
-    "segment": "Heidelberg Materials (HEI.DE)",
-    "felt": "Netto gjeld/EK",
-    "verdi": 0.47,
-    "skala": "forhold"
-   },
-   "C|HSHP.OL|kv": {
-    "segment": "Himalaya Shipping (HSHP.OL)",
-    "felt": "C, kvartaler",
-    "verdi": 2.5,
-    "skala": "nivaa"
-   },
-   "C|HSHP.OL|ngek": {
-    "segment": "Himalaya Shipping (HSHP.OL)",
-    "felt": "Netto gjeld/EK",
-    "verdi": 3.92,
-    "skala": "forhold"
-   },
-   "C|HSY|ngek": {
-    "segment": "Hershey (HSY)",
-    "felt": "Netto gjeld/EK",
-    "verdi": 0.88,
-    "skala": "forhold"
-   },
-   "C|LIF.TO|kv": {
-    "segment": "Labrador Iron Ore Royalty (LIF.TO)",
-    "felt": "C, kvartaler",
-    "verdi": 34.7,
-    "skala": "nivaa"
-   },
-   "C|NAT|kv": {
-    "segment": "Nordic American Tankers (NAT)",
-    "felt": "C, kvartaler",
-    "verdi": 2.4,
-    "skala": "nivaa"
-   },
-   "C|NAT|ngek": {
-    "segment": "Nordic American Tankers (NAT)",
-    "felt": "Netto gjeld/EK",
-    "verdi": 0.77,
-    "skala": "forhold"
-   },
-   "C|NEXA|kv": {
-    "segment": "Nexa Resources (NEXA)",
-    "felt": "C, kvartaler",
-    "verdi": 11.2,
-    "skala": "nivaa"
-   },
-   "C|NEXA|ngek": {
-    "segment": "Nexa Resources (NEXA)",
-    "felt": "Netto gjeld/EK",
-    "verdi": 1.13,
-    "skala": "forhold"
-   },
-   "C|PANL|ngek": {
-    "segment": "Pangaea Logistics (PANL)",
-    "felt": "Netto gjeld/EK",
-    "verdi": -0.01,
-    "skala": "forhold"
-   },
-   "C|SBLK|kv": {
-    "segment": "Star Bulk Carriers (SBLK)",
-    "felt": "C, kvartaler",
-    "verdi": 18.7,
-    "skala": "nivaa"
-   },
-   "C|SBLK|ngek": {
-    "segment": "Star Bulk Carriers (SBLK)",
-    "felt": "Netto gjeld/EK",
-    "verdi": 0.17,
-    "skala": "forhold"
-   },
-   "C|TNK|kv": {
-    "segment": "Teekay Tankers (TNK)",
-    "felt": "C, kvartaler",
-    "verdi": 30.1,
-    "skala": "nivaa"
-   },
-   "C|TNK|ngek": {
-    "segment": "Teekay Tankers (TNK)",
-    "felt": "Netto gjeld/EK",
-    "verdi": -0.41,
-    "skala": "forhold"
-   },
-   "C|TRMD-A.CO|kv": {
-    "segment": "TORM (TRMD-A.CO)",
-    "felt": "C, kvartaler",
-    "verdi": 324.0,
-    "skala": "nivaa"
-   },
-   "C|TRMD-A.CO|ngek": {
-    "segment": "TORM (TRMD-A.CO)",
-    "felt": "Netto gjeld/EK",
-    "verdi": 0.25,
-    "skala": "forhold"
-   },
-   "C|UUUU|kv": {
-    "segment": "Energy Fuels (UUUU)",
-    "felt": "C, kvartaler",
-    "verdi": 2.9,
-    "skala": "nivaa"
-   },
-   "C|UUUU|ngek": {
-    "segment": "Energy Fuels (UUUU)",
-    "felt": "Netto gjeld/EK",
-    "verdi": 0.9,
-    "skala": "forhold"
-   },
-   "C|VALE|ngek": {
-    "segment": "Vale (VALE)",
-    "felt": "Netto gjeld/EK",
-    "verdi": 0.07,
-    "skala": "forhold"
-   },
-   "C|AKRBP.OL|kv": {
-    "segment": "Aker BP (AKRBP.OL)",
-    "felt": "C, kvartaler",
-    "verdi": 23.0,
-    "skala": "nivaa"
-   },
-   "C|AKRBP.OL|ngek": {
-    "segment": "Aker BP (AKRBP.OL)",
-    "felt": "Netto gjeld/EK",
-    "verdi": 0.54,
-    "skala": "forhold"
-   },
-   "B|uran|B2": {
-    "segment": "Uran",
-    "felt": "Tilbud B2",
-    "verdi": 73.0,
-    "skala": "poeng"
-   },
-   "B|uran|ratio": {
-    "segment": "Uran",
-    "felt": "Capex/avskrivninger",
-    "verdi": 1.181,
-    "skala": "forhold"
-   },
-   "B|kobber|B2": {
-    "segment": "Kobber",
-    "felt": "Tilbud B2",
-    "verdi": 0.0,
-    "skala": "poeng"
-   },
-   "B|kobber|ratio": {
-    "segment": "Kobber",
-    "felt": "Capex/avskrivninger",
-    "verdi": 1.87,
-    "skala": "forhold"
-   },
-   "B|aluminium|B2": {
-    "segment": "Aluminium",
-    "felt": "Tilbud B2",
-    "verdi": 63.0,
-    "skala": "poeng"
-   },
-   "B|aluminium|ratio": {
-    "segment": "Aluminium",
-    "felt": "Capex/avskrivninger",
-    "verdi": 1.021,
-    "skala": "forhold"
-   },
-   "B|kull|B2": {
-    "segment": "Kull",
-    "felt": "Tilbud B2",
-    "verdi": 48.6,
-    "skala": "poeng"
-   },
-   "B|kull|ratio": {
-    "segment": "Kull",
-    "felt": "Capex/avskrivninger",
-    "verdi": 0.986,
-    "skala": "forhold"
-   },
-   "B|gull|B2": {
-    "segment": "Gull",
-    "felt": "Tilbud B2",
-    "verdi": 32.0,
-    "skala": "poeng"
-   },
-   "B|gull|ratio": {
-    "segment": "Gull",
-    "felt": "Capex/avskrivninger",
-    "verdi": 1.189,
-    "skala": "forhold"
-   }
-  },
-  "skifter": {
-   "C|AA|port": {
-    "segment": "Alcoa (AA)",
-    "felt": "Port C",
-    "verdi": "trang"
-   },
-   "C|AI.PA|port": {
-    "segment": "Air Liquide (AI.PA)",
-    "felt": "Port C",
-    "verdi": "stengt"
-   },
-   "C|ARLP|port": {
-    "segment": "Alliance Resource Partners (ARLP)",
-    "felt": "Port C",
-    "verdi": "aapen"
-   },
-   "C|BTU|port": {
-    "segment": "Peabody Energy (BTU)",
-    "felt": "Port C",
-    "verdi": "aapen"
-   },
-   "C|CCJ|port": {
-    "segment": "Cameco (CCJ)",
-    "felt": "Port C",
-    "verdi": "aapen"
-   },
-   "C|CENX|port": {
-    "segment": "Century Aluminum (CENX)",
-    "felt": "Port C",
-    "verdi": "stengt"
-   },
-   "C|CIA.TO|port": {
-    "segment": "Champion Iron (CIA.TO)",
-    "felt": "Port C",
-    "verdi": "aapen"
-   },
-   "C|CVE.TO|port": {
-    "segment": "Cenovus Energy (CVE.TO)",
-    "felt": "Port C",
-    "verdi": "aapen"
-   },
-   "C|DHT|port": {
-    "segment": "DHT Holdings (DHT)",
-    "felt": "Port C",
-    "verdi": "aapen"
-   },
-   "C|EQNR.OL|port": {
-    "segment": "Equinor (EQNR.OL)",
-    "felt": "Port C",
-    "verdi": "aapen"
-   },
-   "C|EQT|port": {
-    "segment": "EQT Corporation (EQT)",
-    "felt": "Port C",
-    "verdi": "aapen"
-   },
-   "C|FRO.OL|port": {
-    "segment": "Frontline (FRO.OL)",
-    "felt": "Port C",
-    "verdi": "trang"
-   },
-   "C|GNK|port": {
-    "segment": "Genco Shipping (GNK)",
-    "felt": "Port C",
-    "verdi": "stengt"
-   },
-   "C|HBM.TO|port": {
-    "segment": "Hudbay Minerals (HBM.TO)",
-    "felt": "Port C",
-    "verdi": "aapen"
-   },
-   "C|HEI.DE|port": {
-    "segment": "Heidelberg Materials (HEI.DE)",
-    "felt": "Port C",
-    "verdi": "trang"
-   },
-   "C|HSHP.OL|port": {
-    "segment": "Himalaya Shipping (HSHP.OL)",
-    "felt": "Port C",
-    "verdi": "stengt"
-   },
-   "C|HSY|port": {
-    "segment": "Hershey (HSY)",
-    "felt": "Port C",
-    "verdi": "aapen"
-   },
-   "C|LIF.TO|port": {
-    "segment": "Labrador Iron Ore Royalty (LIF.TO)",
-    "felt": "Port C",
-    "verdi": "aapen"
-   },
-   "C|NAT|port": {
-    "segment": "Nordic American Tankers (NAT)",
-    "felt": "Port C",
-    "verdi": "stengt"
-   },
-   "C|NEXA|port": {
-    "segment": "Nexa Resources (NEXA)",
-    "felt": "Port C",
-    "verdi": "trang"
-   },
-   "C|PANL|port": {
-    "segment": "Pangaea Logistics (PANL)",
-    "felt": "Port C",
-    "verdi": "aapen"
-   },
-   "C|SBLK|port": {
-    "segment": "Star Bulk Carriers (SBLK)",
-    "felt": "Port C",
-    "verdi": "aapen"
-   },
-   "C|TNK|port": {
-    "segment": "Teekay Tankers (TNK)",
-    "felt": "Port C",
-    "verdi": "aapen"
-   },
-   "C|TRMD-A.CO|port": {
-    "segment": "TORM (TRMD-A.CO)",
-    "felt": "Port C",
-    "verdi": "aapen"
-   },
-   "C|UUUU|port": {
-    "segment": "Energy Fuels (UUUU)",
-    "felt": "Port C",
-    "verdi": "stengt"
-   },
-   "C|VALE|port": {
-    "segment": "Vale (VALE)",
-    "felt": "Port C",
-    "verdi": "aapen"
-   },
-   "C|AKRBP.OL|port": {
-    "segment": "Aker BP (AKRBP.OL)",
-    "felt": "Port C",
-    "verdi": "aapen"
-   },
-   "Cseg|brent": {
-    "segment": "Brent",
-    "felt": "Port C for segmentet",
-    "verdi": "aapen"
-   },
-   "Cseg|wti": {
-    "segment": "Wti",
-    "felt": "Port C for segmentet",
-    "verdi": "aapen"
-   },
-   "Cseg|henryhub": {
-    "segment": "Henryhub",
-    "felt": "Port C for segmentet",
-    "verdi": "aapen"
-   },
-   "Cseg|ttf": {
-    "segment": "Ttf",
-    "felt": "Port C for segmentet",
-    "verdi": "aapen"
-   },
-   "Cseg|gold": {
-    "segment": "Gull",
-    "felt": "Port C for segmentet",
-    "verdi": "ukjent"
-   },
-   "Cseg|kobber": {
-    "segment": "Kobber",
-    "felt": "Port C for segmentet",
-    "verdi": "ukjent"
-   },
-   "Cseg|nikkel": {
-    "segment": "Nikkel",
-    "felt": "Port C for segmentet",
-    "verdi": "ukjent"
-   },
-   "Cseg|aluminium": {
-    "segment": "Aluminium",
-    "felt": "Port C for segmentet",
-    "verdi": "trang"
-   },
-   "Cseg|sink": {
-    "segment": "Sink",
-    "felt": "Port C for segmentet",
-    "verdi": "aapen"
-   },
-   "Cseg|bly": {
-    "segment": "Bly",
-    "felt": "Port C for segmentet",
-    "verdi": "trang"
-   },
-   "Cseg|tinn": {
-    "segment": "Tinn",
-    "felt": "Port C for segmentet",
-    "verdi": "ukjent"
-   },
-   "Cseg|jernmalm": {
-    "segment": "Jernmalm",
-    "felt": "Port C for segmentet",
-    "verdi": "aapen"
-   },
-   "Cseg|kull": {
-    "segment": "Kull",
-    "felt": "Port C for segmentet",
-    "verdi": "aapen"
-   },
-   "Cseg|kakao": {
-    "segment": "Kakao",
-    "felt": "Port C for segmentet",
-    "verdi": "aapen"
-   },
-   "Cseg|palmeolje": {
-    "segment": "Palmeolje",
-    "felt": "Port C for segmentet",
-    "verdi": "ukjent"
-   },
-   "Cseg|uran": {
-    "segment": "Uran",
-    "felt": "Port C for segmentet",
-    "verdi": "aapen"
-   },
-   "Cseg|ship_vlcc": {
-    "segment": "Vlcc",
-    "felt": "Port C for segmentet",
-    "verdi": "aapen"
-   },
-   "Cseg|ship_suezmax": {
-    "segment": "Suezmax",
-    "felt": "Port C for segmentet",
-    "verdi": "trang"
-   },
-   "Cseg|ship_aframax": {
-    "segment": "Aframax",
-    "felt": "Port C for segmentet",
-    "verdi": "aapen"
-   },
-   "Cseg|ship_kamsarmax": {
-    "segment": "Kamsarmax",
-    "felt": "Port C for segmentet",
-    "verdi": "aapen"
-   },
-   "Cseg|ship_ultramax": {
-    "segment": "Ultramax",
-    "felt": "Port C for segmentet",
-    "verdi": "aapen"
-   },
-   "Cseg|ship_capesize": {
-    "segment": "Capesize",
-    "felt": "Port C for segmentet",
-    "verdi": "aapen"
-   },
-   "Cseg|ship_handysize": {
-    "segment": "Handysize",
-    "felt": "Port C for segmentet",
-    "verdi": "aapen"
-   },
-   "Cseg|laks": {
-    "segment": "Laks",
-    "felt": "Port C for segmentet",
-    "verdi": "ukjent"
-   }
-  }
- },
- "kvartal": {
   "noekkel": "2026-09-29",
   "dato": "2026-09-29 13:43:25",
   "verdier": {
@@ -3434,6 +2871,733 @@
     "segment": "Palmeolje",
     "felt": "Port C for segmentet",
     "verdi": "ukjent"
+   },
+   "Cseg|uran": {
+    "segment": "Uran",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|ship_vlcc": {
+    "segment": "Vlcc",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|ship_suezmax": {
+    "segment": "Suezmax",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|ship_aframax": {
+    "segment": "Aframax",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|ship_kamsarmax": {
+    "segment": "Kamsarmax",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|ship_ultramax": {
+    "segment": "Ultramax",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|ship_capesize": {
+    "segment": "Capesize",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|ship_handysize": {
+    "segment": "Handysize",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|laks": {
+    "segment": "Laks",
+    "felt": "Port C for segmentet",
+    "verdi": "ukjent"
+   },
+   "Cseg|oljeservice": {
+    "segment": "Oljeservice",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   }
+  }
+ },
+ "kvartal": {
+  "noekkel": "2026-10-01",
+  "dato": "2026-10-01 10:31",
+  "verdier": {
+   "C|AA|kv": {
+    "segment": "Alcoa (AA)",
+    "felt": "C, kvartaler",
+    "verdi": 20.5,
+    "skala": "nivaa"
+   },
+   "C|AA|ngek": {
+    "segment": "Alcoa (AA)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.14,
+    "skala": "forhold"
+   },
+   "C|BKR|kv": {
+    "segment": "Baker Hughes (BKR)",
+    "felt": "C, kvartaler",
+    "verdi": 18.6,
+    "skala": "nivaa"
+   },
+   "C|BKR|ngek": {
+    "segment": "Baker Hughes (BKR)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.09,
+    "skala": "forhold"
+   },
+   "C|BTU|kv": {
+    "segment": "Peabody Energy (BTU)",
+    "felt": "C, kvartaler",
+    "verdi": 43.6,
+    "skala": "nivaa"
+   },
+   "C|BTU|ngek": {
+    "segment": "Peabody Energy (BTU)",
+    "felt": "Netto gjeld/EK",
+    "verdi": -0.07,
+    "skala": "forhold"
+   },
+   "C|CCJ|ngek": {
+    "segment": "Cameco (CCJ)",
+    "felt": "Netto gjeld/EK",
+    "verdi": -0.02,
+    "skala": "forhold"
+   },
+   "C|CENX|kv": {
+    "segment": "Century Aluminum (CENX)",
+    "felt": "C, kvartaler",
+    "verdi": 7.8,
+    "skala": "nivaa"
+   },
+   "C|CENX|ngek": {
+    "segment": "Century Aluminum (CENX)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.51,
+    "skala": "forhold"
+   },
+   "C|CVE.TO|ngek": {
+    "segment": "Cenovus Energy (CVE.TO)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.26,
+    "skala": "forhold"
+   },
+   "C|DHT|ngek": {
+    "segment": "DHT Holdings (DHT)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.27,
+    "skala": "forhold"
+   },
+   "C|EQNR.OL|ngek": {
+    "segment": "Equinor (EQNR.OL)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.46,
+    "skala": "forhold"
+   },
+   "C|EQT|ngek": {
+    "segment": "EQT Corporation (EQT)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.3,
+    "skala": "forhold"
+   },
+   "C|FRO.OL|ngek": {
+    "segment": "Frontline (FRO.OL)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.99,
+    "skala": "forhold"
+   },
+   "C|GNK|kv": {
+    "segment": "Genco Shipping (GNK)",
+    "felt": "C, kvartaler",
+    "verdi": 4.0,
+    "skala": "nivaa"
+   },
+   "C|GNK|ngek": {
+    "segment": "Genco Shipping (GNK)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.15,
+    "skala": "forhold"
+   },
+   "C|HAL|kv": {
+    "segment": "Halliburton (HAL)",
+    "felt": "C, kvartaler",
+    "verdi": 5.2,
+    "skala": "nivaa"
+   },
+   "C|HAL|ngek": {
+    "segment": "Halliburton (HAL)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.47,
+    "skala": "forhold"
+   },
+   "C|HBM.TO|ngek": {
+    "segment": "Hudbay Minerals (HBM.TO)",
+    "felt": "Netto gjeld/EK",
+    "verdi": -0.01,
+    "skala": "forhold"
+   },
+   "C|HSY|ngek": {
+    "segment": "Hershey (HSY)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.81,
+    "skala": "forhold"
+   },
+   "C|NAT|kv": {
+    "segment": "Nordic American Tankers (NAT)",
+    "felt": "C, kvartaler",
+    "verdi": 3.9,
+    "skala": "nivaa"
+   },
+   "C|NAT|ngek": {
+    "segment": "Nordic American Tankers (NAT)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.77,
+    "skala": "forhold"
+   },
+   "C|NEXA|ngek": {
+    "segment": "Nexa Resources (NEXA)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 1.13,
+    "skala": "forhold"
+   },
+   "C|PANL|ngek": {
+    "segment": "Pangaea Logistics (PANL)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.34,
+    "skala": "forhold"
+   },
+   "C|SBLK|kv": {
+    "segment": "Star Bulk Carriers (SBLK)",
+    "felt": "C, kvartaler",
+    "verdi": 58.4,
+    "skala": "nivaa"
+   },
+   "C|SBLK|ngek": {
+    "segment": "Star Bulk Carriers (SBLK)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.17,
+    "skala": "forhold"
+   },
+   "C|SLB|ngek": {
+    "segment": "SLB (Schlumberger) (SLB)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.26,
+    "skala": "forhold"
+   },
+   "C|TNK|kv": {
+    "segment": "Teekay Tankers (TNK)",
+    "felt": "C, kvartaler",
+    "verdi": 31.0,
+    "skala": "nivaa"
+   },
+   "C|TNK|ngek": {
+    "segment": "Teekay Tankers (TNK)",
+    "felt": "Netto gjeld/EK",
+    "verdi": -0.41,
+    "skala": "forhold"
+   },
+   "C|TRMD-A.CO|ngek": {
+    "segment": "TORM (TRMD-A.CO)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.25,
+    "skala": "forhold"
+   },
+   "C|UUUU|kv": {
+    "segment": "Energy Fuels (UUUU)",
+    "felt": "C, kvartaler",
+    "verdi": 2.9,
+    "skala": "nivaa"
+   },
+   "C|UUUU|ngek": {
+    "segment": "Energy Fuels (UUUU)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.9,
+    "skala": "forhold"
+   },
+   "C|VALE|ngek": {
+    "segment": "Vale (VALE)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.3,
+    "skala": "forhold"
+   },
+   "C|AKRBP.OL|kv": {
+    "segment": "Aker BP (AKRBP.OL)",
+    "felt": "C, kvartaler",
+    "verdi": 23.0,
+    "skala": "nivaa"
+   },
+   "C|AKRBP.OL|ngek": {
+    "segment": "Aker BP (AKRBP.OL)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.54,
+    "skala": "forhold"
+   },
+   "C|DNO.OL|kv": {
+    "segment": "DNO (DNO.OL)",
+    "felt": "C, kvartaler",
+    "verdi": 24.5,
+    "skala": "nivaa"
+   },
+   "C|DNO.OL|ngek": {
+    "segment": "DNO (DNO.OL)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.4,
+    "skala": "forhold"
+   },
+   "C|CIA.TO|ngek": {
+    "segment": "Champion Iron (CIA.TO)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.41,
+    "skala": "forhold"
+   },
+   "C|LIF.TO|ngek": {
+    "segment": "Labrador Iron Ore Royalty (LIF.TO)",
+    "felt": "Netto gjeld/EK",
+    "verdi": -0.02,
+    "skala": "forhold"
+   },
+   "C|AI.PA|ngek": {
+    "segment": "Air Liquide (AI.PA)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.23,
+    "skala": "forhold"
+   },
+   "C|HEI.DE|ngek": {
+    "segment": "Heidelberg Materials (HEI.DE)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.16,
+    "skala": "forhold"
+   },
+   "C|GLEN.L|kv": {
+    "segment": "Glencore (GLEN.L)",
+    "felt": "C, kvartaler",
+    "verdi": 3.9,
+    "skala": "nivaa"
+   },
+   "C|GLEN.L|ngek": {
+    "segment": "Glencore (GLEN.L)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.68,
+    "skala": "forhold"
+   },
+   "C|CS.TO|kv": {
+    "segment": "Capstone Copper (CS.TO)",
+    "felt": "C, kvartaler",
+    "verdi": 16.6,
+    "skala": "nivaa"
+   },
+   "C|CS.TO|ngek": {
+    "segment": "Capstone Copper (CS.TO)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.19,
+    "skala": "forhold"
+   },
+   "C|ATYM.L|ngek": {
+    "segment": "Atalaya Mining (ATYM.L)",
+    "felt": "Netto gjeld/EK",
+    "verdi": -0.27,
+    "skala": "forhold"
+   },
+   "C|ERA.PA|kv": {
+    "segment": "Eramet (ERA.PA)",
+    "felt": "C, kvartaler",
+    "verdi": 7.3,
+    "skala": "nivaa"
+   },
+   "C|ERA.PA|ngek": {
+    "segment": "Eramet (ERA.PA)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.94,
+    "skala": "forhold"
+   },
+   "C|MPE.L|ngek": {
+    "segment": "M.P. Evans Group (MPE.L)",
+    "felt": "Netto gjeld/EK",
+    "verdi": -0.14,
+    "skala": "forhold"
+   },
+   "C|RE.L|kv": {
+    "segment": "REA Holdings (RE.L)",
+    "felt": "C, kvartaler",
+    "verdi": 2.9,
+    "skala": "nivaa"
+   },
+   "C|RE.L|ngek": {
+    "segment": "REA Holdings (RE.L)",
+    "felt": "Netto gjeld/EK",
+    "verdi": 0.41,
+    "skala": "forhold"
+   },
+   "B|uran|B2": {
+    "segment": "Uran",
+    "felt": "Tilbud B2",
+    "verdi": 73.0,
+    "skala": "poeng"
+   },
+   "B|uran|ratio": {
+    "segment": "Uran",
+    "felt": "Capex/avskrivninger",
+    "verdi": 1.181,
+    "skala": "forhold"
+   },
+   "B|kobber|B2": {
+    "segment": "Kobber",
+    "felt": "Tilbud B2",
+    "verdi": 0.0,
+    "skala": "poeng"
+   },
+   "B|kobber|ratio": {
+    "segment": "Kobber",
+    "felt": "Capex/avskrivninger",
+    "verdi": 1.87,
+    "skala": "forhold"
+   },
+   "B|aluminium|B2": {
+    "segment": "Aluminium",
+    "felt": "Tilbud B2",
+    "verdi": 63.0,
+    "skala": "poeng"
+   },
+   "B|aluminium|ratio": {
+    "segment": "Aluminium",
+    "felt": "Capex/avskrivninger",
+    "verdi": 1.021,
+    "skala": "forhold"
+   },
+   "B|kull|B2": {
+    "segment": "Kull",
+    "felt": "Tilbud B2",
+    "verdi": 48.6,
+    "skala": "poeng"
+   },
+   "B|kull|ratio": {
+    "segment": "Kull",
+    "felt": "Capex/avskrivninger",
+    "verdi": 0.986,
+    "skala": "forhold"
+   },
+   "B|gull|B2": {
+    "segment": "Gull",
+    "felt": "Tilbud B2",
+    "verdi": 32.0,
+    "skala": "poeng"
+   },
+   "B|gull|ratio": {
+    "segment": "Gull",
+    "felt": "Capex/avskrivninger",
+    "verdi": 1.189,
+    "skala": "forhold"
+   },
+   "B|jernmalm|B2": {
+    "segment": "Jernmalm",
+    "felt": "Tilbud B2",
+    "verdi": 0.0,
+    "skala": "poeng"
+   },
+   "B|jernmalm|ratio": {
+    "segment": "Jernmalm",
+    "felt": "Capex/avskrivninger",
+    "verdi": 1.593,
+    "skala": "forhold"
+   },
+   "R|land|B2": {
+    "segment": "Rigger, Land",
+    "felt": "Tilbud B2",
+    "verdi": 81.7,
+    "skala": "poeng"
+   },
+   "R|land|f": {
+    "segment": "Rigger, Land",
+    "felt": "Capex/avskrivninger",
+    "verdi": 0.897,
+    "skala": "forhold"
+   },
+   "R|grunt|B2": {
+    "segment": "Rigger, Grunt vann (jackups)",
+    "felt": "Tilbud B2",
+    "verdi": 80.3,
+    "skala": "poeng"
+   },
+   "R|grunt|f": {
+    "segment": "Rigger, Grunt vann (jackups)",
+    "felt": "Capex/avskrivninger",
+    "verdi": 1.041,
+    "skala": "forhold"
+   },
+   "R|dyp|B2": {
+    "segment": "Rigger, Dypt vann (flytere)",
+    "felt": "Tilbud B2",
+    "verdi": 100.0,
+    "skala": "poeng"
+   },
+   "R|dyp|f": {
+    "segment": "Rigger, Dypt vann (flytere)",
+    "felt": "Capex/avskrivninger",
+    "verdi": 0.307,
+    "skala": "forhold"
+   }
+  },
+  "skifter": {
+   "C|AA|port": {
+    "segment": "Alcoa (AA)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|ARLP|port": {
+    "segment": "Alliance Resource Partners (ARLP)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|BKR|port": {
+    "segment": "Baker Hughes (BKR)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|BTU|port": {
+    "segment": "Peabody Energy (BTU)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|CCJ|port": {
+    "segment": "Cameco (CCJ)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|CENX|port": {
+    "segment": "Century Aluminum (CENX)",
+    "felt": "Port C",
+    "verdi": "stengt"
+   },
+   "C|CVE.TO|port": {
+    "segment": "Cenovus Energy (CVE.TO)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|DHT|port": {
+    "segment": "DHT Holdings (DHT)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|EQNR.OL|port": {
+    "segment": "Equinor (EQNR.OL)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|EQT|port": {
+    "segment": "EQT Corporation (EQT)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|FRO.OL|port": {
+    "segment": "Frontline (FRO.OL)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|GNK|port": {
+    "segment": "Genco Shipping (GNK)",
+    "felt": "Port C",
+    "verdi": "stengt"
+   },
+   "C|HAL|port": {
+    "segment": "Halliburton (HAL)",
+    "felt": "Port C",
+    "verdi": "stengt"
+   },
+   "C|HBM.TO|port": {
+    "segment": "Hudbay Minerals (HBM.TO)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|HSY|port": {
+    "segment": "Hershey (HSY)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|NAT|port": {
+    "segment": "Nordic American Tankers (NAT)",
+    "felt": "Port C",
+    "verdi": "stengt"
+   },
+   "C|NEXA|port": {
+    "segment": "Nexa Resources (NEXA)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|PANL|port": {
+    "segment": "Pangaea Logistics (PANL)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|SBLK|port": {
+    "segment": "Star Bulk Carriers (SBLK)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|SLB|port": {
+    "segment": "SLB (Schlumberger) (SLB)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|TNK|port": {
+    "segment": "Teekay Tankers (TNK)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|TRMD-A.CO|port": {
+    "segment": "TORM (TRMD-A.CO)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|UUUU|port": {
+    "segment": "Energy Fuels (UUUU)",
+    "felt": "Port C",
+    "verdi": "stengt"
+   },
+   "C|VALE|port": {
+    "segment": "Vale (VALE)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|AKRBP.OL|port": {
+    "segment": "Aker BP (AKRBP.OL)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|DNO.OL|port": {
+    "segment": "DNO (DNO.OL)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|CIA.TO|port": {
+    "segment": "Champion Iron (CIA.TO)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|LIF.TO|port": {
+    "segment": "Labrador Iron Ore Royalty (LIF.TO)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|AI.PA|port": {
+    "segment": "Air Liquide (AI.PA)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|HEI.DE|port": {
+    "segment": "Heidelberg Materials (HEI.DE)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|GLEN.L|port": {
+    "segment": "Glencore (GLEN.L)",
+    "felt": "Port C",
+    "verdi": "stengt"
+   },
+   "C|CS.TO|port": {
+    "segment": "Capstone Copper (CS.TO)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|ATYM.L|port": {
+    "segment": "Atalaya Mining (ATYM.L)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|ERA.PA|port": {
+    "segment": "Eramet (ERA.PA)",
+    "felt": "Port C",
+    "verdi": "stengt"
+   },
+   "C|MPE.L|port": {
+    "segment": "M.P. Evans Group (MPE.L)",
+    "felt": "Port C",
+    "verdi": "aapen"
+   },
+   "C|RE.L|port": {
+    "segment": "REA Holdings (RE.L)",
+    "felt": "Port C",
+    "verdi": "stengt"
+   },
+   "Cseg|brent": {
+    "segment": "Brent",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|wti": {
+    "segment": "Wti",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|henryhub": {
+    "segment": "Henryhub",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|ttf": {
+    "segment": "Ttf",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|gold": {
+    "segment": "Gull",
+    "felt": "Port C for segmentet",
+    "verdi": "ukjent"
+   },
+   "Cseg|kobber": {
+    "segment": "Kobber",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|nikkel": {
+    "segment": "Nikkel",
+    "felt": "Port C for segmentet",
+    "verdi": "stengt"
+   },
+   "Cseg|aluminium": {
+    "segment": "Aluminium",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|sink": {
+    "segment": "Sink",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|bly": {
+    "segment": "Bly",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|tinn": {
+    "segment": "Tinn",
+    "felt": "Port C for segmentet",
+    "verdi": "stengt"
+   },
+   "Cseg|jernmalm": {
+    "segment": "Jernmalm",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|kull": {
+    "segment": "Kull",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|kakao": {
+    "segment": "Kakao",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
+   },
+   "Cseg|palmeolje": {
+    "segment": "Palmeolje",
+    "felt": "Port C for segmentet",
+    "verdi": "aapen"
    },
    "Cseg|uran": {
     "segment": "Uran",

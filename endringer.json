@@ -125,149 +125,34 @@
   ]
  },
  "kvartal": {
-  "forrige_dato": "2026-09-28 11:48:19",
-  "ny_dato": "2026-09-29 13:43:25",
-  "forrige": "2026-09-28",
-  "ny": "2026-09-29",
-  "topp": [
-   {
-    "segment": "Star Bulk Carriers (SBLK)",
-    "felt": "C, kvartaler",
-    "gammel": 18.7,
-    "ny": 58.4,
-    "endring_pst": 212.3,
-    "poeng": null,
-    "vekt": 212.3
-   },
-   {
-    "segment": "Peabody Energy (BTU)",
-    "felt": "C, kvartaler",
-    "gammel": 23.8,
-    "ny": 43.6,
-    "endring_pst": 83.2,
-    "poeng": null,
-    "vekt": 83.2
-   },
-   {
-    "segment": "Nordic American Tankers (NAT)",
-    "felt": "C, kvartaler",
-    "gammel": 2.4,
-    "ny": 3.9,
-    "endring_pst": 62.5,
-    "poeng": null,
-    "vekt": 62.5
-   },
-   {
-    "segment": "Alcoa (AA)",
-    "felt": "C, kvartaler",
-    "gammel": 13.6,
-    "ny": 20.5,
-    "endring_pst": 50.7,
-    "poeng": null,
-    "vekt": 50.7
-   },
-   {
-    "segment": "Pangaea Logistics (PANL)",
-    "felt": "Netto gjeld/EK",
-    "gammel": -0.01,
-    "ny": 0.34,
-    "endring_pst": 3500.0,
-    "poeng": null,
-    "vekt": 35.0
-   },
-   {
-    "segment": "Century Aluminum (CENX)",
-    "felt": "C, kvartaler",
-    "gammel": 5.8,
-    "ny": 7.8,
-    "endring_pst": 34.5,
-    "poeng": null,
-    "vekt": 34.5
-   },
-   {
-    "segment": "Heidelberg Materials (HEI.DE)",
-    "felt": "Netto gjeld/EK",
-    "gammel": 0.47,
-    "ny": 0.16,
-    "endring_pst": -66.0,
-    "poeng": null,
-    "vekt": 31.0
-   },
-   {
-    "segment": "Frontline (FRO.OL)",
-    "felt": "Netto gjeld/EK",
-    "gammel": 1.22,
-    "ny": 0.99,
-    "endring_pst": -18.9,
-    "poeng": null,
-    "vekt": 23.0
-   },
-   {
-    "segment": "Vale (VALE)",
-    "felt": "Netto gjeld/EK",
-    "gammel": 0.07,
-    "ny": 0.3,
-    "endring_pst": 328.6,
-    "poeng": null,
-    "vekt": 23.0
-   },
-   {
-    "segment": "Genco Shipping (GNK)",
-    "felt": "C, kvartaler",
-    "gammel": 3.4,
-    "ny": 4.0,
-    "endring_pst": 17.6,
-    "poeng": null,
-    "vekt": 17.6
-   }
-  ],
+  "forrige_dato": "2026-09-29 13:43:25",
+  "ny_dato": "2026-10-01 10:31",
+  "forrige": "2026-09-29",
+  "ny": "2026-10-01",
+  "topp": [],
   "skifter": [
    {
-    "segment": "Alcoa (AA)",
-    "felt": "Port C",
-    "gammel": "trang",
-    "ny": "aapen"
-   },
-   {
-    "segment": "Frontline (FRO.OL)",
-    "felt": "Port C",
-    "gammel": "trang",
-    "ny": "aapen"
-   },
-   {
-    "segment": "Nexa Resources (NEXA)",
-    "felt": "Port C",
-    "gammel": "trang",
-    "ny": "aapen"
-   },
-   {
-    "segment": "Air Liquide (AI.PA)",
-    "felt": "Port C",
-    "gammel": "stengt",
-    "ny": "aapen"
-   },
-   {
-    "segment": "Heidelberg Materials (HEI.DE)",
-    "felt": "Port C",
-    "gammel": "trang",
-    "ny": "aapen"
-   },
-   {
-    "segment": "Aluminium",
+    "segment": "Kobber",
     "felt": "Port C for segmentet",
-    "gammel": "trang",
+    "gammel": "ukjent",
     "ny": "aapen"
    },
    {
-    "segment": "Bly",
+    "segment": "Nikkel",
     "felt": "Port C for segmentet",
-    "gammel": "trang",
-    "ny": "aapen"
+    "gammel": "ukjent",
+    "ny": "stengt"
    },
    {
-    "segment": "Suezmax",
+    "segment": "Tinn",
     "felt": "Port C for segmentet",
-    "gammel": "trang",
+    "gammel": "ukjent",
+    "ny": "stengt"
+   },
+   {
+    "segment": "Palmeolje",
+    "felt": "Port C for segmentet",
+    "gammel": "ukjent",
     "ny": "aapen"
    }
   ]
