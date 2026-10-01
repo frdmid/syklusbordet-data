@@ -75,7 +75,13 @@ def omregn(belop, fra, til, aar, kurs=nok_per_enhet):
 def port_fra(kont, drift, gjeld, ek, rente, i_drift=lambda aar: False):
     """Samme regler som overlevelse_c.py. drift: pd.Series aar -> beloep.
     i_drift(aar) sier om betalte renter allerede er trukket i driften det aaret."""
-    stress, naa, bunnaar = float(drift.min()), float(drift.iloc[-1]), int(drift.idxmin())
+    # Verste aar velges etter renter (30.09.2026). Naar renteklassifiseringen
+    # varierer mellom aar (renter_i_drift_aar), kan laveste drift foer renter
+    # vaere et annet aar enn laveste drift etter renter. Med lik klassifisering
+    # alle aar blir valget det samme som foer.
+    etter = pd.Series({a: float(v) - (0.0 if i_drift(a) else (rente or 0.0)) for a, v in drift.items()})
+    bunnaar = int(etter.idxmin())
+    stress, naa = float(drift[bunnaar]), float(drift.iloc[-1])
     siste = int(drift.index[-1])
 
     def kv(ocf, trukket):
