@@ -7,3 +7,4 @@
   og hva den andre økten må vite. Et eget notat i `notater/` skal også ha en
   linje i loggen. Automatiske commits fra GitHub Actions føres ikke.
 - Skriv på norsk. Ingen tankestrek i tekst.
+- Les også `notater/OVERLEVERING.md`.

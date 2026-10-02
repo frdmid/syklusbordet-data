@@ -9,6 +9,14 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 02.10.2026 09:09, Cowork
+**Hva:** Ny linje sist i `CLAUDE.md`: «Les også `notater/OVERLEVERING.md`.»
+(Frodes bestilling, slik Claude Codes innslag 09:03 ba om.) Innslaget
+01.10 kl. 12:58 under var skrevet lokalt, men ikke pushet før Claude Codes
+innslag kom på main. Det er lagt inn igjen her, på sin plass etter tid.
+**Filer:** `CLAUDE.md`, loggen.
+**Den andre økten må vite:** Ingenting nytt utover linjen i `CLAUDE.md`.
+
 ### 02.10.2026 09:03, Claude Code
 **Hva:** Nytt notat `notater/OVERLEVERING.md` (Frodes bestilling), slik at en
 ny Code-økt kan ta over prosjektet: hva skårene er, hvem som eier hva, hvordan
@@ -20,6 +28,22 @@ igjen, og at OneDrive-feilen 01.10 bare rammet loggen, ikke koden.
 **Den andre økten må vite:** Frode eller Cowork bør legge én linje i
 `CLAUDE.md`: «Les også `notater/OVERLEVERING.md`.» Claude Code kan ikke endre
 den fila. Hold notatet oppdatert når noe i det endrer seg.
+
+### 01.10.2026 12:58, Cowork
+**Hva:** Dashbordet versjon 56 og 57. Versjon 56 la inn en egen
+korrelasjonsmatrise for detrendet A under standardmatrisen. Frode valgte
+etter en gjennomgang å beholde bare standardmatrisen, og versjon 57 tar den
+detrendede ut igjen. Grunnen: for de fleste par skiller de to matrisene seg
+mindre enn usikkerheten med 36 måneder (rundt ±0,10). Kobber/nikkel er 0,66
+for A og 0,65 for detrendet A. Der de skiller seg, som Brent/TTF med 0,57
+mot 0,40, skyldes det hvor bratt skåren reagerer der prisen ligger i
+fordelingen, ikke en annen sammenheng i markedet. Realprisen gir 0,52.
+Begge versjonene er bygget uten sidens omslag. Toppen er kontrollert etter
+publisering: `<title>` og `:root` står der.
+**Filer:** ingen i repoet (dashbordet ligger som artifact).
+**Den andre økten må vite:** `renderKorr(segs, felt, elId)` og
+`korrSerie(s, felt)` tar fortsatt et felt, men kallet bruker bare "A".
+Seksjonen `korr-d` finnes ikke lenger.
 
 ### 01.10.2026 12:34, Cowork
 **Hva:** Ny regel i C (Frodes beslutning): år før en fusjon som endret
