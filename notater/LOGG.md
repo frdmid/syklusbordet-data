@@ -9,6 +9,18 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 02.10.2026 09:03, Claude Code
+**Hva:** Nytt notat `notater/OVERLEVERING.md` (Frodes bestilling), slik at en
+ny Code-økt kan ta over prosjektet: hva skårene er, hvem som eier hva, hvordan
+uken og kvartalet går, dashbordets adresse og database, rutinen, viktige
+filer, fallgruver (blant annet OneDrive og toppen av dashbordet) og åpne
+punkter. Kontrollert at innslagene fra 30.09 kl. 13:29 og 13:32 står i loggen
+igjen, og at OneDrive-feilen 01.10 bare rammet loggen, ikke koden.
+**Filer:** `notater/OVERLEVERING.md` (ny).
+**Den andre økten må vite:** Frode eller Cowork bør legge én linje i
+`CLAUDE.md`: «Les også `notater/OVERLEVERING.md`.» Claude Code kan ikke endre
+den fila. Hold notatet oppdatert når noe i det endrer seg.
+
 ### 01.10.2026 12:34, Cowork
 **Hva:** Ny regel i C (Frodes beslutning): år før en fusjon som endret
 selskapet vesentlig, teller ikke. Nytt felt `selskap_fra` i
