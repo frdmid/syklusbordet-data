@@ -9,6 +9,18 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 02.10.2026 09:19, Claude Code
+**Hva:** Frodes arbeidskopi av repoet er flyttet ut av OneDrive (Frodes
+beslutning). Ny klone fra GitHub i `C:\Users\FrodeMidjo\kode\syklusbordet-data`.
+Den gamle kopien under `OneDrive ... \Skrivebord\Syklusbordet_linket` var lik
+main og hadde ingen filer som ikke lå i repoet. Den skal ikke brukes mer, og
+døpes om så ingen skriver dit ved et uhell. Grunnen er at OneDrive
+synkroniserer `.git` og kan legge tilbake eldre filer, slik det trolig skjedde
+med loggen 01.10. Fallgruven i `OVERLEVERING.md` er oppdatert.
+**Filer:** `notater/OVERLEVERING.md`, loggen.
+**Den andre økten må vite:** Bruker Cowork en lokal mappe, skal den være den
+nye, ikke OneDrive-mappa. GitHub er fasit som før.
+
 ### 02.10.2026 09:09, Cowork
 **Hva:** Ny linje sist i `CLAUDE.md`: «Les også `notater/OVERLEVERING.md`.»
 (Frodes bestilling, slik Claude Codes innslag 09:03 ba om.) Innslaget

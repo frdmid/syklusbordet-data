@@ -98,9 +98,13 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 
 - **Loggen:** før dato og klokkeslett fra `TZ=Europe/Oslo date`, ikke anslå.
   Innslaget skal i samme commit som endringen. Ingen tankestrek i tekst.
-- **OneDrive:** Frodes kopi av repoet ligger i en OneDrive-mappe. 01.10 la en
-  commit fra Frode en eldre `LOGG.md` på main, og tre innslag forsvant (Cowork
-  satte dem inn igjen). Se etter at egne innslag fortsatt står.
+- **Lokal kopi:** Fra 02.10 ligger Frodes arbeidskopi i
+  `C:\Users\FrodeMidjo\kode\syklusbordet-data`, utenfor OneDrive. Den gamle
+  kopien i OneDrive (under `Skrivebord\Syklusbordet_linket`) skal ikke brukes.
+  01.10 la en commit derfra en eldre `LOGG.md` på main, og tre innslag
+  forsvant. Se likevel etter at egne innslag fortsatt står.
+- **Git på Frodes maskin:** ikke i PATH. Bruk den som følger med GitHub
+  Desktop: `%LOCALAPPDATA%\GitHubDesktop\app-<versjon>\resources\app\git\cmd\git.exe`.
 - **Push:** `git pull origin main` før arbeid; push til main og til egen
   gren, med nye forsøk (2, 4, 8, 16 s) ved nettverksfeil eller 503.
 - **raw.githubusercontent** cacher; bruk `?cb=$RANDOM` og
