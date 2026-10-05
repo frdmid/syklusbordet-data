@@ -9,6 +9,14 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 05.10.2026 16:57, Claude Code
+**Hva:** `code_commit` for Champion v1.0 er nå
+2bd2f8c2c188c45575102096248fde343ea94090 (commiten med Frodes avgjørelser),
+ført inn i config og register. Kodefilene der er kontrollert mot hashene i
+config. `specification_hash` er uendret (633c2216...).
+**Filer:** `config/champion_v1_0.json`, `shadow/model_registry.csv`, loggen.
+**Den andre økten må vite:** Ingenting nytt.
+
 ### 05.10.2026 16:56, Claude Code
 **Hva:** Frodes avgjørelser om Shadow-OOS lagt inn før start, og Champion v1.0
 frosset på nytt (ny `specification_hash` 633c2216..., `effective_from` fortsatt
