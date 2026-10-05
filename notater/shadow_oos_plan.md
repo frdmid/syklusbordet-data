@@ -231,9 +231,9 @@ Lagt inn i koden og i config før start:
 7. **26 måneder er nok.** 36-månedersutfallet og modningshendelsen er tatt
    ut. Sekundære horisonter er 3, 6 og 12 måneder.
 
-Punkt 4 (trang og fond) og punkt 6 (måling i NOK) er Claude Codes lesing av
-avgjørelsene. Er de feil, må det sies før 07.10.2026 kl. 06:00 UTC; etter det
-er en endring en Challenger.
+Punkt 4 (trang og fond) og punkt 6 (måling i NOK) var Claude Codes lesing av
+avgjørelsene. Frode bekreftet begge 05.10.2026. En endring etter start er en
+Challenger.
 
 8. **Challengere logges som egne grener** ved siden av Champion (se avsnitt
    8 under).

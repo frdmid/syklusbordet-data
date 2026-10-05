@@ -9,6 +9,14 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 05.10.2026 21:17, Claude Code
+**Hva:** Frode har bekreftet de to punktene i Shadow-OOS som var Claude Codes
+lesing: papirer med C trang, og fond, regnes som kjøpbare, og avkastning
+måles i NOK. Champion v1.0 står uendret (`specification_hash` 9e2cef1f...)
+og starter ved ukekjøringen 07.10.2026.
+**Filer:** `notater/shadow_oos_plan.md`, loggen.
+**Den andre økten må vite:** Ingenting står åpent før start.
+
 ### 05.10.2026 17:10, Claude Code
 **Hva:** `code_commit` for Champion v1.0 er nå
 6e5ff9756b3675b1853d0ff845f8d6bb8f2af788, ført inn i config og register.
