@@ -9,6 +9,15 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 05.10.2026 16:48, Claude Code
+**Hva:** `code_commit` for Champion v1.0 ført inn i `config/champion_v1_0.json`
+og `shadow/model_registry.csv`: 0800ece179d8e74ccb3250abeb8289221a657c9c, der
+de 16 kodefilene ligger slik de er hashet (kontrollert mot git-arkivet).
+`specification_hash` er uendret (03a41a16...), siden commiten står utenfor
+det som hashes.
+**Filer:** `config/champion_v1_0.json`, `shadow/model_registry.csv`, loggen.
+**Den andre økten må vite:** Ingenting nytt.
+
 ### 05.10.2026 16:46, Claude Code
 **Hva:** Shadow-OOS fase 1 (Frodes bestilling, planlagt kjøring), etter
 dokumentet «Shadow-OOS-oppsett for Syklusdashboard». Champion v1.0 (A-modellen
