@@ -9,6 +9,20 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 05.10.2026 17:08, Claude Code
+**Hva:** To referanser for Champion v1.0 (Frodes ønske): OSEBX og MSCI
+World, rapportert side om side uten at én er fasit. MSCI World måles med
+iShares Core MSCI World UCITS (`IWDA.L`, akkumulerende i USD, så utbyttet
+ligger i kursen); Yahoos MSCI World-indeks er bare en prisindeks. Begge
+hentes hver uke og står i snapshotet med dollarkurs. Avkastning måles i NOK.
+Champion fryst på nytt (`specification_hash` 9e2cef1f...), fortsatt fra
+07.10.2026. 16 tester besto; ekte kjøring ga OSEBX 2067,06 NOK og IWDA
+146,97 USD.
+**Filer:** `shadow_oos.py`, `test_shadow_oos.py`, `config/champion_v1_0.json`,
+`shadow/model_registry.csv`, `notater/shadow_oos_plan.md`,
+`notater/OVERLEVERING.md`, loggen.
+**Den andre økten må vite:** `code_commit` føres inn i neste commit.
+
 ### 05.10.2026 17:07, Claude Code
 **Hva:** Challengere som egne grener i Shadow-OOS (Frodes beslutning), lagt
 inn før start så Champion aldri må endres for en ny Challenger:

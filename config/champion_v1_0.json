@@ -101,8 +101,13 @@
   },
   "posisjonsstoerrelse": "ikke del av testen",
   "benchmark": {
-   "indeks": "OSEBX, Oslo Boers hovedindeks (Yahoo OSEBX.OL), totalavkastningsindeks i NOK, logget i snapshotet hver uke (level=benchmark)",
-   "valuta": "avkastning maales i NOK: papirer i annen valuta regnes om med valutakursene i snapshotet, med utbytte",
+   "indekser": {
+    "OSEBX.OL": "OSEBX, Oslo Boers hovedindeks, totalavkastningsindeks i NOK",
+    "IWDA.L": "MSCI World, iShares Core MSCI World UCITS (akkumulerende, utbytte reinvestert), i USD"
+   },
+   "rolle": "begge rapporteres side om side; ingen av dem alene er den riktige avkastningen (punkt 10)",
+   "logging": "begge logges i snapshotet hver uke (level=benchmark) med valutakurs",
+   "valuta": "avkastning maales i NOK: papirer og MSCI World regnes om med valutakursene i snapshotet, med utbytte",
    "merknad": "Frodes beslutning 05.10.2026. ACWI logges videre av flagglogg, men er ikke Championens referanse"
   },
   "kodeendringer": "endret regelkode etter start gir en Challenger med egen startdato. Champion v1.0 endres aldri; snapshot skrevet med endret kode merkes code_changed (Frodes beslutning 05.10.2026)",
@@ -129,13 +134,13 @@
    "shipping.py": "65bfa8e2c75323b062c02b83471b77ef3cc2db6cbcb1e307282bf18678116531",
    "bygg_shipping.py": "16abf492a95880d318b63d3b206905f29b3fa8a6df6724a8b10c5c71c098eb86",
    "helse.py": "c46c5e910abd90ad9e8d27369205724159905cf86cf9eda142d2272ad413aabe",
-   "shadow_oos.py": "c7380bd7cfdfd0728a6a303f8c3ea661fe759dd08dce8d5046adae72ed84ee13"
+   "shadow_oos.py": "8d31b571599012e1c98c689bc299cef0b62bed0cf7fe18907879f91d2c69f92b"
   }
  },
  "metadata": {
   "code_commit": null,
   "code_commit_merknad": "commiten der config og kodefilene over ligger slik de er hashet",
   "notes": "Fase 1 av Shadow-OOS. Se notater/shadow_oos_plan.md.",
-  "specification_hash": "88942503ada39d2d1495bcaa47d87433611c26eaa7c68c181cf1a2ab51e9504d"
+  "specification_hash": "9e2cef1f21ab54dd3638a6a2cf3f546b6c5e1e903d30468267e2e953a6ea0262"
  }
 }

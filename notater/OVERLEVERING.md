@@ -124,7 +124,7 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
   `code_changed` i snapshotet fra uken etter. Frodes regel: endret regelkode
   gir en Challenger med egen startdato, Champion v1.0 endres aldri. Si fra i
   loggen hva endringen er. Uken i shadow går fra onsdag til tirsdag, og
-  referanseindeksen er OSEBX.
+  referansene er OSEBX og MSCI World (`IWDA.L`), side om side.
 - Ting som kan se ut som feil, men ikke er det: uran har ingen
   instrumenter før uransonden er kjørt; real lik nom de siste månedene i
   shipping (deflatoren slutter før serien).

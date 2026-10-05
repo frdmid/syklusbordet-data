@@ -25,8 +25,9 @@ def _lager():
 
 
 def _osebx(tk):
-    return {"kurs": 2067.06, "valuta": "NOK", "kursdato": "2026-10-05", "utbytte": []} if tk == "OSEBX.OL" \
-        else {"kurs": 0.1, "valuta": "USD", "kursdato": "2026-10-05", "utbytte": []}
+    kurs = {"OSEBX.OL": (2067.06, "NOK"), "IWDA.L": (146.98, "USD"), "NOKUSD=X": (0.1043, "USD")}
+    k, v = kurs.get(tk, (None, None))
+    return {"kurs": k, "valuta": v, "kursdato": "2026-10-05", "utbytte": []}
 
 
 def _kjor(lager, d, kl="06:40:00", oppdatert=None):
@@ -150,8 +151,10 @@ def test_null_er_ikke_null():
     assert all(r["strong_candidate"] == "" for r in seg.values())
     assert seg["ship_vlcc"]["A_raw"] == ""
     assert "S" in seg["brent"]["missing_fields"]
-    ref = [r for r in rader if r["level"] == "benchmark"]
-    assert len(ref) == 1 and ref[0]["instrument"] == "OSEBX.OL" and ref[0]["currency"] == "NOK"
+    ref = {r["instrument"]: r for r in rader if r["level"] == "benchmark"}
+    assert sorted(ref) == ["IWDA.L", "OSEBX.OL"]
+    assert ref["OSEBX.OL"]["currency"] == "NOK" and ref["IWDA.L"]["currency"] == "USD"
+    assert ref["IWDA.L"]["instrument_price"] == "146.98"
 
 
 def test_c_stengt_er_ikke_kjoepbar():

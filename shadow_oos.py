@@ -79,12 +79,16 @@ KODEFILER = ["priser.py", "signaler.py", "instrumenter.py", "uran_kilde.py", "la
 #               neste onsdag.
 #   C           papirer med C stengt er ikke kjoepbare; ukjent er kjoepbar.
 #   klynge      regnes fra klyngens foerste inngang (183 dager), ikke kjedet.
-#   referanse   OSEBX (Oslo Boers hovedindeks, totalavkastning i NOK).
+#   referanse   to referanser, begge rapporteres og ingen alene er fasit:
+#               OSEBX (Oslo Boers hovedindeks, totalavkastning i NOK) og
+#               MSCI World (IWDA.L, akkumulerende UCITS-fond i USD, saa
+#               kursen inkluderer utbytte).
 #   holdetid    26 maaneder er nok: 36 maaneder er ute.
 HORISONTER = [3, 6, 12, 24]              # modningshendelser, maaneder
 LOGG_MND = 26                            # papirer fra innganger logges saa lenge, som flagglogg.HOLD_DAGER
 KLYNGE_DAGER = 183
-REFERANSE = "OSEBX.OL"
+REFERANSER = {"OSEBX.OL": "Oslo Boers hovedindeks (OSEBX)",
+              "IWDA.L": "MSCI World (iShares Core MSCI World UCITS, akkumulerende)"}
 UKEDAG_START = 2                         # onsdag
 
 F_REGISTER = ["model_id", "created_at", "effective_from", "parent_model", "status", "specification_hash",
@@ -421,9 +425,13 @@ def lag_konfig(rot, code_commit, created_at="2026-10-05", effective_from="2026-1
                                                       "ukjent er kjoepbar)",
                                "investable_signal": "minst ett kjoepbart papir paa signaldatoen"},
             "posisjonsstoerrelse": "ikke del av testen",
-            "benchmark": {"indeks": "OSEBX, Oslo Boers hovedindeks (Yahoo OSEBX.OL), totalavkastningsindeks i "
-                                    "NOK, logget i snapshotet hver uke (level=benchmark)",
-                          "valuta": "avkastning maales i NOK: papirer i annen valuta regnes om med "
+            "benchmark": {"indekser": {"OSEBX.OL": "OSEBX, Oslo Boers hovedindeks, totalavkastningsindeks i NOK",
+                                       "IWDA.L": "MSCI World, iShares Core MSCI World UCITS (akkumulerende, "
+                                                 "utbytte reinvestert), i USD"},
+                          "rolle": "begge rapporteres side om side; ingen av dem alene er den riktige "
+                                   "avkastningen (punkt 10)",
+                          "logging": "begge logges i snapshotet hver uke (level=benchmark) med valutakurs",
+                          "valuta": "avkastning maales i NOK: papirer og MSCI World regnes om med "
                                     "valutakursene i snapshotet, med utbytte",
                           "merknad": "Frodes beslutning 05.10.2026. ACWI logges videre av flagglogg, men er "
                                      "ikke Championens referanse"},
@@ -553,14 +561,16 @@ def bygg_snapshot(inn, snapshot_date, created_at, run_id, kode_avvik, aapne_inng
         for (sg, tk) in sorted(aapne_innganger or []):
             if sg == sid and tk not in paa_tavla:
                 rader.append(_papirrad(basis, seg, s, {"ticker": tk}, kurs.get(tk), dato, on_dashboard=False))
-    # Referanseindeksen (OSEBX), logget hver uke ved siden av papirene.
-    r = inn.get("referanse") or {}
-    rader.append({**basis, "snapshot_id": f"{MODELL}|{dato}|_referanse|{REFERANSE}", "segment": "_referanse",
-                  "instrument": REFERANSE, "level": "benchmark", "company_name": "Oslo Boers hovedindeks (OSEBX)",
-                  "exchange": "Oslo", "currency": r.get("valuta"), "instrument_type": "indeks",
-                  "instrument_price": tall(r.get("kurs")), "price_date": r.get("kursdato"),
-                  "usd_per_unit": tall(r.get("usd_per_enhet")), "observation_date": r.get("kursdato"),
-                  "missing_fields": [] if r.get("kurs") is not None else ["instrument_price"]})
+    # Referansene (OSEBX og MSCI World), logget hver uke ved siden av papirene.
+    for tk, navn in REFERANSER.items():
+        r = (inn.get("referanse") or {}).get(tk) or {}
+        rader.append({**basis, "snapshot_id": f"{MODELL}|{dato}|_referanse|{tk}", "segment": "_referanse",
+                      "instrument": tk, "level": "benchmark", "company_name": navn,
+                      "exchange": "Oslo" if tk.endswith(".OL") else "London", "currency": r.get("valuta"),
+                      "instrument_type": "indeks" if tk.endswith(".OL") else "ETF",
+                      "instrument_price": tall(r.get("kurs")), "price_date": r.get("kursdato"),
+                      "usd_per_unit": tall(r.get("usd_per_enhet")), "observation_date": r.get("kursdato"),
+                      "missing_fields": [] if r.get("kurs") is not None else ["instrument_price"]})
     return rader
 
 
@@ -868,15 +878,16 @@ def kjor(lager, rot=None, naa=None, run_event=None, code_commit=None, note=print
     flagg_uke = [r for r in fra_csv(ft) if r.get("uke") != logguke]
     ref = {}
     if eksisterer_ikke:
-        try:
-            import flagglogg
-            kf = kursfunk or flagglogg.siste_kurs
-            ref = kf(REFERANSE)
-            ref["usd_per_enhet"] = flagglogg.usd_per(ref.get("valuta"), kf)
-        except Exception as e:
-            varsler.append(f"{REFERANSE} ikke hentet ({type(e).__name__})")
-        if ref.get("kurs") is None:
-            varsler.append(f"{REFERANSE} mangler kurs")
+        import flagglogg
+        kf = kursfunk or flagglogg.siste_kurs
+        for tk in REFERANSER:
+            try:
+                ref[tk] = kf(tk)
+                ref[tk]["usd_per_enhet"] = flagglogg.usd_per(ref[tk].get("valuta"), kf)
+            except Exception as e:
+                varsler.append(f"{tk} ikke hentet ({type(e).__name__})")
+            if (ref.get(tk) or {}).get("kurs") is None:
+                varsler.append(f"{tk} mangler kurs")
     inn = {"index": idx, "segmenter": segmenter, "kurser": kurser, "helse": jles("helse.json"), "referanse": ref,
            "c": {"oppdatert": (jles("c_overlevelse.json") or {}).get("oppdatert")},
            "d": {"oppdatert": (jles("d_kapitulasjon.json") or {}).get("oppdatert")}}

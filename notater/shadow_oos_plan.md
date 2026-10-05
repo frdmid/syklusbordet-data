@@ -71,10 +71,10 @@ Koden ligger i `shadow_oos.py`, testene i `test_shadow_oos.py`.
 segmentrad (`level=segment`, tomt `instrument`) og én rad per papir på tavlen
 (`level=instrument`). Feltnavnene følger dokumentet (4.1 til 4.5), slik at
 koblingen er direkte. NULL er tom celle, aldri 0. Sannhetsverdier er
-`true`/`false`. I tillegg én rad for referanseindeksen OSEBX
-(`level=benchmark`), hentet fra Yahoo (`OSEBX.OL`) med kroner per dollar.
-Første snapshot mot dagens data: 104 rader (18 råvaresegmenter, 7
-skipssegmenter, 78 papirrader og OSEBX), rundt 45 kB per uke.
+`true`/`false`. I tillegg én rad for hver referanse, OSEBX og MSCI World
+(`level=benchmark`), hentet fra Yahoo (`OSEBX.OL` og `IWDA.L`) med dollarkurs.
+Første snapshot mot dagens data: 105 rader (18 råvaresegmenter, 7
+skipssegmenter, 78 papirrader og to referanser), rundt 45 kB per uke.
 
 Et papir er kjøpbart (`instrument_eligible`) når det står på tavlen, ikke har
 omvendt eksponering, og C ikke er stengt. C ukjent, trang, åpen og uaktuell
@@ -163,7 +163,7 @@ Tester (`python test_shadow_oos.py`, kjørt lokalt 05.10, alle 16 besto):
   plassen til onsdag, og ingenting skrives før onsdagens oppdatering,
 - C stengt er ikke kjøpbar, C ukjent er kjøpbar,
 - makroklynger regnes fra klyngens første inngang,
-- OSEBX står i snapshotet,
+- OSEBX og MSCI World står i snapshotet,
 - ny kjøring samme uke med endrede tall endrer ikke snapshotet,
 - neste uke gir ny fil, og den gamle er byte for byte lik,
 - et manipulert gammelt snapshot og en slettet hendelseslinje oppdages,
@@ -221,10 +221,13 @@ Lagt inn i koden og i config før start:
    utelukket.
 5. **Makroklynger regnes fra klyngens første inngang** (183 dager), ikke
    kjedet.
-6. **Referanseindeksen er OSEBX.** Avkastning måles i NOK med utbytte; papirer
-   i annen valuta regnes om med valutakursene i snapshotet. OSEBX er selv en
-   totalavkastningsindeks. ACWI logges videre av flaggloggen, men er ikke
-   Championens referanse.
+6. **To referanser: OSEBX og MSCI World.** Begge rapporteres side om side, og
+   ingen av dem alene er fasit (punkt 10). OSEBX er selv en
+   totalavkastningsindeks. MSCI World måles med iShares Core MSCI World UCITS
+   (`IWDA.L`, akkumulerende i USD, så utbyttet ligger i kursen); indeksen på
+   Yahoo er bare en prisindeks. Avkastning måles i NOK med utbytte, og
+   papirer og MSCI World regnes om med valutakursene i snapshotet. ACWI
+   logges videre av flaggloggen, men er ikke Championens referanse.
 7. **26 måneder er nok.** 36-månedersutfallet og modningshendelsen er tatt
    ut. Sekundære horisonter er 3, 6 og 12 måneder.
 
