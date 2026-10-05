@@ -368,3 +368,12 @@ if GITHUB_TOKEN:
         helse.kjor()
     except Exception as e:
         print(f"   helse feilet: {type(e).__name__}: {str(e)[:80]}")
+
+# Shadow-OOS (05.10.2026): ukens frosne snapshot for Champion v1.0, bare
+# tillegg. Sist, etter at alle tallene er skrevet. Se shadow_oos.py.
+if GITHUB_TOKEN:
+    try:
+        import shadow_oos
+        shadow_oos.kjor_actions()
+    except Exception as e:
+        print(f"   shadow feilet: {type(e).__name__}: {str(e)[:80]}")

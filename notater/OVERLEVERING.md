@@ -39,8 +39,8 @@ loggen. Regler og terskler settes før kjøring og flyttes ikke etterpå.
 1. **GitHub Actions, `ukentlig.yml`**, onsdag 06:00 UTC:
    `kapitulasjon_d.py` → `priser.py` (alle prissegmenter, COT, kurve, VIX,
    dollar, kaller `flagglogg.py`) → `shipping.py` (Fearnleys, arkiverer PDF)
-   → `bygg_shipping.py`, som til slutt kaller `endringer.uke()` og
-   `helse.kjor()`. Skriptene skriver til repoet gjennom GitHub-API med
+   → `bygg_shipping.py`, som til slutt kaller `endringer.uke()`,
+   `helse.kjor()` og `shadow_oos.kjor_actions()` (Shadow-OOS fra 07.10.2026). Skriptene skriver til repoet gjennom GitHub-API med
    `GITHUB_TOKEN`; commits heter «oppdatert ...» og føres ikke i loggen.
 2. **Rutinen `trig_01HoJvyjwZRq5J4QNcXoFkr3`** («Syklusbordet: oppdater
    dashbordet fra GitHub»), onsdag rundt 09:16 UTC: henter filene fra repoet
@@ -93,6 +93,10 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 | `overlevelse_c.py` | C fra SEC, bruker `c_manuell.py` for resten |
 | `endringer.py` | Endringsboksen, bilder i `logg/endringer_snap.json` |
 | `helse.py` | Datahelse, etterslep per kilde står i toppen |
+| `shadow_oos.py` | Shadow-OOS: ukens frosne snapshot, hendelser og manifest i `shadow/`, bare tillegg. Plan og spørsmål i `notater/shadow_oos_plan.md` |
+| `test_shadow_oos.py` | Testene for shadow (`python test_shadow_oos.py`, lokalt, skriver ikke til repoet) |
+| `config/champion_v1_0.json` | Frosne regler for Champion v1.0 og sha256 for de 16 kodefilene |
+| `shadow/` | `model_registry.csv`, `snapshots/`, `inndata/`, `shadow_events.csv`, `shadow_outcomes.csv` (tom), `correction_log.csv`, `run_manifest.csv` |
 
 ## Fallgruver
 
@@ -112,6 +116,10 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 - **FRED** henger med nettleser-UA; bruk `User-Agent: Syklusbordet`.
 - **SEC** krever en User-Agent med kontaktinfo.
 - Nettilgang i Code-økten er åpen for SEC, Yahoo, FRED og selskapenes sider.
+- **Shadow-OOS:** filene i `shadow/` og `config/champion_v1_0.json` rettes
+  aldri for hånd. En feil føres i `shadow/correction_log.csv` (ny linje,
+  originalen står). Endringer i en av de 16 kodefilene i config merkes som
+  `code_changed` i snapshotet fra uken etter; si fra i loggen hva endringen er.
 - Ting som kan se ut som feil, men ikke er det: uran har ingen
   instrumenter før uransonden er kjørt; real lik nom de siste månedene i
   shipping (deflatoren slutter før serien).
@@ -122,6 +130,9 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
   Kan regnes i koden på samme måte som C-tellingen.
 - Forslag om en ekstra rutine torsdag som kjører onsdagsrutinen på nytt hvis
   databasen ikke har ukens tall. Ikke bestilt.
+- 07.10: første Shadow-OOS-snapshot (uke 2026-W41). Sjekk
+  `shadow/run_manifest.csv` etterpå. Frodes spørsmål står i
+  `notater/shadow_oos_plan.md`, avsnitt 7.
 - 07.10: første ukekjøring med Fearnleys-arkivet (rundt 18 MB første gang,
   de 41 rapportene som ikke kan leses) og helse.json fra arbeidsflyten.
 - Neste kvartalskjøring: nikkel og tinn ventes å gå fra stengt til åpen etter

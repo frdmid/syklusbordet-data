@@ -1,0 +1,136 @@
+{
+ "model": {
+  "id": "champion_v1_0",
+  "status": "champion",
+  "created_at": "2026-10-05",
+  "effective_from": "2026-10-07",
+  "parent_model": null,
+  "data_schema_version": 1
+ },
+ "spesifikasjon": {
+  "omfang": "Champion v1.0 er A-modellen slik koden er 05.10.2026. B, C, D og kontekst logges som data, men styrer ikke signalet. Alle terskler og definisjoner er de som staar i kodefilene under, med hashene i kodefiler.",
+  "A": {
+   "A_raw": "scores.A: persentil av log realpris mot hele egen historikk, punkt i tid (priser.build_segment, expanding_pct), minst 60 mnd",
+   "A_detrended": "scores.Ad: samme mot egen trend (expanding_pct_detrend)",
+   "A_rolling": "scores.Ar: rullende ti aar, vises, inngaar ikke i flagget",
+   "A_anchor": "scores.A2: paritet mot kostnadsanker, bare skipssegmentene",
+   "deflator": "amerikansk KPI (cpi_kopi.csv og reservekjeden i priser.py)"
+  },
+  "bunnsone": {
+   "A_raw_min": 80,
+   "A_detrended_min": 80,
+   "felt": "scores.flagg",
+   "observasjonssegmenter": "laks og oljeservice har aldri flagg (scores.observasjon)",
+   "skipssegmenter": "ingen A og ingen bunnsone"
+  },
+  "watch": {
+   "regel": "scores.oppsikt: A_raw >= 80 og ikke bunnsone"
+  },
+  "strong_candidate": {
+   "definert": false,
+   "merknad": "finnes ikke i dagens kode, logges som NULL"
+  },
+  "d95": {
+   "segmenter": [
+    "brent",
+    "wti"
+   ],
+   "A_detrended_min": 95,
+   "felt": "scores.flagg_d95",
+   "rolle": "separat eksperimentelt signal, ikke testet, egne hendelser"
+  },
+  "B": {
+   "felt": "scores.B",
+   "definisjon": "B2 siste aar fra b_capex.json (tilbud_b.py), bare metallene som har B; rigger (rigg_b.py) er kontekst for oljeservice (B_rigg_max)",
+   "beslutningsvariabel": false
+  },
+  "C": {
+   "felt": "scores.gate",
+   "definisjon": "overlevelse_c.py og c_manuell.py: kvartaler kontantene holder i verste aar, under 8 stengt, oljeservice stengt ved netto gjeld over 1,5 x EK. Segmentet er aapent hvis minst ett maalt papir paa tavlen er aapent, ellers trang, ellers stengt; fond gir uaktuell (priser.py)",
+   "beslutningsvariabel": false,
+   "exit_ved_C_stenging": "C_forced_exit registreres separat og endrer ikke hovedutfallet"
+  },
+  "D": {
+   "felt": "scores.D",
+   "definisjon": "kapitulasjon_d.py: median av papirenes D vektet mot temaets kursfall",
+   "beslutningsvariabel": false
+  },
+  "S": {
+   "operativ": false,
+   "formel_i_dokumentet": "S = 100 * a^0.4 * b^0.4 * d^0.2",
+   "merknad": "S regnes ikke i dagens kode (scores.S er alltid tom) og logges som NULL. Champion S faar egen startdato naar S er definert i koden, og arver ikke startdatoen til A."
+  },
+  "kontekst": {
+   "trend": "signaler.trend, ikke beslutningsvariabel",
+   "cot": "signaler.cot_for_segmenter, ikke beslutningsvariabel",
+   "kurve": "kurve_innhent og signaler.kurveform, ikke beslutningsvariabel",
+   "inventory": "finnes ikke, NULL",
+   "supply_metric": "finnes ikke, NULL"
+  },
+  "ny_episode": {
+   "regel": "foerste bunnsone etter mer enn 12 maaneder uten flagg: segmentets maanedsserie og logg/flagg_uke.csv (flagglogg.ny_innslag), og ingen bunnsone i shadow_events.csv siste 365 dager. Bunnsone som staar ved oppstart er ikke en ny episode.",
+   "pause_mnd": 12,
+   "d95": "ingen d95 i logg/flagg_uke.csv eller shadow_events.csv siste 365 dager"
+  },
+  "makroklynge": {
+   "regel": "hypotetiske innganger med hoeyst 183 dager mellom paafoelgende datoer er samme klynge, paa tvers av segmenter",
+   "dager": 183
+  },
+  "holdetid": {
+   "primaer_mnd": 24,
+   "sekundaer_mnd": [
+    3,
+    6,
+    12,
+    36
+   ],
+   "modningshendelser_mnd": [
+    3,
+    6,
+    12,
+    24,
+    36
+   ],
+   "inngang": "signaldatoen: kursen i snapshotet den uken (T0)",
+   "primaert_utfall": "24 maaneders avkastning fra foerste signal i en ny episode"
+  },
+  "instrumentvalg": {
+   "univers": "papirene paa tavlen for segmentet paa signaldatoen (instrumenter.py), fryses i snapshotet",
+   "instrument_eligible": "paa tavlen og ikke omvendt eksponering",
+   "C_i_universet": "C registreres per papir. Om stengt eller ukjent C utelukker papiret, er ikke avgjort (se plan); investable_signal er derfor NULL i fase 1."
+  },
+  "posisjonsstoerrelse": "ikke del av testen",
+  "benchmark": "ikke fastsatt i fase 1; fastsettes i en egen evalueringsspesifikasjon foer foerste utfall er modent (se plan)",
+  "datakvalitet": {
+   "data_stale": "helse.status gul eller roed for segmentets egne rader, innhenting, kpi, C og B, eller FEIL i index.json"
+  },
+  "skrivemaate": {
+   "NULL": "tom celle, aldri 0",
+   "en_per_uke": "foerste kjoering i ISO-uken skriver snapshotet; senere kjoeringer samme uke skriver det ikke paa nytt"
+  },
+  "kodefiler": {
+   "priser.py": "45018bedca543a3f2f3c9bb5d857d78cf52e2f489842d0f96e3c883a4e21b03d",
+   "signaler.py": "d5fed8857c97f3bafc258f78e2e8967e2de0a3752591203df34c89f90a2b6ccf",
+   "instrumenter.py": "32513beca9612c9288ea8713be4a674b9acaa84d062205d1dc1f14f171dfb339",
+   "uran_kilde.py": "a3856f70774195ed35b743eab54f3df4f441d914e866dfda7914fa91accf4d4b",
+   "laks_innhent.py": "0a28b5c4732c99a28309f64f832d5700f060f4d4187e8507c7f6240647abfeda",
+   "kurve_innhent.py": "edfeab594a5eff36ac6356df3f1157e11c0d74942081a3718f928a95c93a6dab",
+   "flagglogg.py": "28f0bd36c5d1c74f752612eb9529b208734888cf7064dd65bfe6e86e5de1a51c",
+   "kapitulasjon_d.py": "dbd231b78feee16e756be7dc9180e2943cbb772508527c60c334cda3c3029bd0",
+   "overlevelse_c.py": "b3bd5ed2d3ba0b3b79fe5ce4eb3e548d4db072bc4ee1dc536a94e4e0edaf499f",
+   "c_manuell.py": "38f9119f963944501f3b51998b8652c00eba7c1f53c5cf73db51caf8cfb8e5ca",
+   "tilbud_b.py": "e918cd7d2b68f8cf7c93921d38dc846e233b8fa308b10f3b002a6b9e601d95ed",
+   "rigg_b.py": "3616366a02a1e887e1d5307c0dd5631e5ffb9c9f76d06d78b125729f55d36c08",
+   "shipping.py": "65bfa8e2c75323b062c02b83471b77ef3cc2db6cbcb1e307282bf18678116531",
+   "bygg_shipping.py": "16abf492a95880d318b63d3b206905f29b3fa8a6df6724a8b10c5c71c098eb86",
+   "helse.py": "c46c5e910abd90ad9e8d27369205724159905cf86cf9eda142d2272ad413aabe",
+   "shadow_oos.py": "3af2fd4a5b291c88703318f3cf8c5858374f5a9c065e8d6a71601d94f543fefd"
+  }
+ },
+ "metadata": {
+  "code_commit": null,
+  "code_commit_merknad": "commiten der config og kodefilene over ligger slik de er hashet",
+  "notes": "Fase 1 av Shadow-OOS. Se notater/shadow_oos_plan.md.",
+  "specification_hash": "03a41a1604d3687a0643f7f3c0e82d7e76f3fa297d782f5f5be93759eb799854"
+ }
+}

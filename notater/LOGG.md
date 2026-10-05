@@ -9,6 +9,35 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 05.10.2026 16:46, Claude Code
+**Hva:** Shadow-OOS fase 1 (Frodes bestilling, planlagt kjøring), etter
+dokumentet «Shadow-OOS-oppsett for Syklusdashboard». Champion v1.0 (A-modellen
+slik koden er i dag) er frosset med `effective_from` 07.10.2026, første
+ordinære ukekjøring etter 30.09 (dokumentet bruker 05.10 som eksempel). Ny
+modul `shadow_oos.py`, kalt sist i `bygg_shipping.py`, skriver hver uke ett
+snapshot per segment og papir (`shadow/snapshots/champion_v1_0/<uke>.csv`),
+inndata med git-blob-sha, hendelser, og en manifestlinje med hash og
+hashkjede. Alt er bare tillegg: snapshotet opprettes én gang per ISO-uke og
+endres aldri, og hver kjøring kontrollerer de gamle mot hashene. Config har
+reglene og sha256 for de 16 kodefilene; endret kode merkes `code_changed`.
+S regnes ikke i dagens kode og står som NULL, sterk kandidat finnes ikke.
+12-månedersregelen og episodene gjenbrukes fra `flagglogg.py`, og
+flaggloggen er ikke endret. `shadow_outcomes.csv` og `correction_log.csv` er
+tomme. Testet lokalt mot dagens data (ti tester, alle besto): første snapshot
+103 rader og to hendelser (oppsikt ved start for Henry Hub og jernmalm).
+Dashbordet er ikke endret. Plan, filformat og Frodes spørsmål i
+`notater/shadow_oos_plan.md`.
+**Filer:** `shadow_oos.py` (ny), `test_shadow_oos.py` (ny),
+`config/champion_v1_0.json` (ny), `shadow/` (ny: `model_registry.csv`,
+`shadow_outcomes.csv`, `correction_log.csv`), `bygg_shipping.py`,
+`notater/shadow_oos_plan.md` (ny), `notater/OVERLEVERING.md`.
+**Den andre økten må vite:** Rør aldri filene i `shadow/` eller config for
+hånd; feil føres i `correction_log.csv`. Endringer i `c_manuell.py` og de
+andre 15 kodefilene i config synes nå som `code_changed` i shadow; skriv i
+loggen hva som ble endret og hvorfor. `code_commit` føres inn i registeret i
+neste commit. Frode må svare på spørsmål 1 til 3 i planen før 07.10 kl. 06:00
+UTC.
+
 ### 02.10.2026 09:19, Claude Code
 **Hva:** Frodes arbeidskopi av repoet er flyttet ut av OneDrive (Frodes
 beslutning). Ny klone fra GitHub i `C:\Users\FrodeMidjo\kode\syklusbordet-data`.

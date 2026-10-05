@@ -1,0 +1,1 @@
+event_id,model_version,segment,instrument,portfolio_id,signal_date,horizon,maturity_date,commodity_return,instrument_return,portfolio_return,benchmark_return,excess_return,factor_adjusted_return,max_drawdown,max_adverse_excursion,max_favorable_excursion,share_dilution,capital_raise,restructuring,delisting,bankruptcy,outcome_status,calculated_at
