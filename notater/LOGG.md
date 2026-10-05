@@ -9,6 +9,14 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 05.10.2026 17:10, Claude Code
+**Hva:** `code_commit` for Champion v1.0 er nå
+6e5ff9756b3675b1853d0ff845f8d6bb8f2af788, ført inn i config og register.
+Kodefilene der er kontrollert mot hashene i config. `specification_hash` er
+uendret (9e2cef1f...).
+**Filer:** `config/champion_v1_0.json`, `shadow/model_registry.csv`, loggen.
+**Den andre økten må vite:** Ingenting nytt.
+
 ### 05.10.2026 17:08, Claude Code
 **Hva:** To referanser for Champion v1.0 (Frodes ønske): OSEBX og MSCI
 World, rapportert side om side uten at én er fasit. MSCI World måles med

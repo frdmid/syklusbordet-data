@@ -138,7 +138,7 @@
   }
  },
  "metadata": {
-  "code_commit": null,
+  "code_commit": "6e5ff9756b3675b1853d0ff845f8d6bb8f2af788",
   "code_commit_merknad": "commiten der config og kodefilene over ligger slik de er hashet",
   "notes": "Fase 1 av Shadow-OOS. Se notater/shadow_oos_plan.md.",
   "specification_hash": "9e2cef1f21ab54dd3638a6a2cf3f546b6c5e1e903d30468267e2e953a6ea0262"
