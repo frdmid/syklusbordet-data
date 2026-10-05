@@ -10,8 +10,8 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 ---
 
 ### 05.10.2026 21:32, Claude Code
-**Hva:** Ryddet: tre `__pycache__/*.pyc`-filer som kom med i commit 7e879de
-er fjernet fra repoet, og ny `.gitignore` holder `__pycache__/` og `*.pyc`
+**Hva:** Ryddet: fire `__pycache__/*.pyc`-filer (tre fra commit 7e879de og
+en eldre fra `flagglogg.py`) er fjernet fra repoet, og ny `.gitignore` holder `__pycache__/` og `*.pyc`
 utenfor. Ingen kode er endret, og Champion v1.0 er urørt.
 **Filer:** `.gitignore` (ny), `__pycache__/` (fjernet), loggen.
 **Den andre økten må vite:** Ingenting.
