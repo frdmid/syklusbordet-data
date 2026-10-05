@@ -9,6 +9,13 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 05.10.2026 21:32, Claude Code
+**Hva:** Ryddet: tre `__pycache__/*.pyc`-filer som kom med i commit 7e879de
+er fjernet fra repoet, og ny `.gitignore` holder `__pycache__/` og `*.pyc`
+utenfor. Ingen kode er endret, og Champion v1.0 er urørt.
+**Filer:** `.gitignore` (ny), `__pycache__/` (fjernet), loggen.
+**Den andre økten må vite:** Ingenting.
+
 ### 05.10.2026 21:21, Claude Code
 **Hva:** Ny regel fra Frode, ført i `OVERLEVERING.md` under Hvem eier hva:
 ingen økt får opprette konto, registrere seg, be om demo eller prøve, eller
