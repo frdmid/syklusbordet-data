@@ -9,6 +9,14 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 05.10.2026 21:21, Claude Code
+**Hva:** Ny regel fra Frode, ført i `OVERLEVERING.md` under Hvem eier hva:
+ingen økt får opprette konto, registrere seg, be om demo eller prøve, eller
+melde Frode på noen tjeneste. Nye tjenester foreslås, og Frode oppretter
+kontoen selv.
+**Filer:** `notater/OVERLEVERING.md`, loggen.
+**Den andre økten må vite:** Regelen gjelder også Cowork.
+
 ### 05.10.2026 21:17, Claude Code
 **Hva:** Frode har bekreftet de to punktene i Shadow-OOS som var Claude Codes
 lesing: papirer med C trang, og fond, regnes som kjøpbare, og avkastning

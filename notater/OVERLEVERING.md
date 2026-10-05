@@ -33,6 +33,10 @@ loggen. Regler og terskler settes før kjøring og flyttes ikke etterpå.
   Frode eller Cowork.
 - Arbeidsflytfilene i `.github/workflows/` kan ikke endres herfra. Nye steg
   kalles derfor sist i et eksisterende skript (se under).
+- **Ingen kontoer:** ingen økt får opprette konto, registrere seg, be om demo
+  eller prøve, eller melde Frode på noen tjeneste (Frodes regel 05.10.2026).
+  Trengs en ny kilde med innlogging eller API-nøkkel, foreslå den, og la
+  Frode opprette kontoen selv.
 
 ## Slik går en uke (helt automatisk)
 
