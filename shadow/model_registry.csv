@@ -1,2 +1,2 @@
 model_id,created_at,effective_from,parent_model,status,specification_hash,code_commit,data_schema_version,config_file,notes
-champion_v1_0,2026-10-05,2026-10-07,,champion,03a41a1604d3687a0643f7f3c0e82d7e76f3fa297d782f5f5be93759eb799854,0800ece179d8e74ccb3250abeb8289221a657c9c,1,config/champion_v1_0.json,A-modellen frosset; S ikke operativ og ikke startet
+champion_v1_0,2026-10-05,2026-10-07,,champion,633c2216287dba9e910858a10c766c671f0ae9f3a53892e51d9a033d7a079d4c,,1,config/champion_v1_0.json,A-modellen frosset; S ikke operativ og ikke startet

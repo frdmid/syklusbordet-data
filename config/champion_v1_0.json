@@ -73,7 +73,7 @@
    "d95": "ingen d95 i logg/flagg_uke.csv eller shadow_events.csv siste 365 dager"
   },
   "makroklynge": {
-   "regel": "hypotetiske innganger med hoeyst 183 dager mellom paafoelgende datoer er samme klynge, paa tvers av segmenter",
+   "regel": "en hypotetisk inngang hoerer til siste klynge hvis den kommer hoeyst 183 dager etter klyngens foerste inngang, ellers starter en ny klynge; paa tvers av segmenter (Frodes beslutning 05.10.2026)",
    "dager": 183
   },
   "holdetid": {
@@ -81,32 +81,37 @@
    "sekundaer_mnd": [
     3,
     6,
-    12,
-    36
+    12
    ],
    "modningshendelser_mnd": [
     3,
     6,
     12,
-    24,
-    36
+    24
    ],
+   "papirer_logges_mnd": 26,
    "inngang": "signaldatoen: kursen i snapshotet den uken (T0)",
-   "primaert_utfall": "24 maaneders avkastning fra foerste signal i en ny episode"
+   "primaert_utfall": "24 maaneders avkastning fra foerste signal i en ny episode",
+   "merknad": "36 maaneder er tatt ut; 26 maaneders logging er nok (Frodes beslutning 05.10.2026)"
   },
   "instrumentvalg": {
    "univers": "papirene paa tavlen for segmentet paa signaldatoen (instrumenter.py), fryses i snapshotet",
-   "instrument_eligible": "paa tavlen og ikke omvendt eksponering",
-   "C_i_universet": "C registreres per papir. Om stengt eller ukjent C utelukker papiret, er ikke avgjort (se plan); investable_signal er derfor NULL i fase 1."
+   "instrument_eligible": "paa tavlen, ikke omvendt eksponering, og C ikke stengt. C ukjent, trang, aapen og uaktuell (fond) er kjoepbare (Frodes beslutning 05.10.2026: stengt er ikke kjoepbar, ukjent er kjoepbar)",
+   "investable_signal": "minst ett kjoepbart papir paa signaldatoen"
   },
   "posisjonsstoerrelse": "ikke del av testen",
-  "benchmark": "ikke fastsatt i fase 1; fastsettes i en egen evalueringsspesifikasjon foer foerste utfall er modent (se plan)",
+  "benchmark": {
+   "indeks": "OSEBX, Oslo Boers hovedindeks (Yahoo OSEBX.OL), totalavkastningsindeks i NOK, logget i snapshotet hver uke (level=benchmark)",
+   "valuta": "avkastning maales i NOK: papirer i annen valuta regnes om med valutakursene i snapshotet, med utbytte",
+   "merknad": "Frodes beslutning 05.10.2026. ACWI logges videre av flagglogg, men er ikke Championens referanse"
+  },
+  "kodeendringer": "endret regelkode etter start gir en Challenger med egen startdato. Champion v1.0 endres aldri; snapshot skrevet med endret kode merkes code_changed (Frodes beslutning 05.10.2026)",
   "datakvalitet": {
    "data_stale": "helse.status gul eller roed for segmentets egne rader, innhenting, kpi, C og B, eller FEIL i index.json"
   },
   "skrivemaate": {
    "NULL": "tom celle, aldri 0",
-   "en_per_uke": "foerste kjoering i ISO-uken skriver snapshotet; senere kjoeringer samme uke skriver det ikke paa nytt"
+   "en_per_uke": "uken gaar fra onsdag til tirsdag. Foerste kjoering etter onsdagens oppdatering (index.json oppdatert onsdag eller senere) skriver snapshotet; senere kjoeringer samme uke skriver det ikke paa nytt, og en kjoering foer oppdateringen skriver ingenting (Frodes beslutning 05.10.2026)"
   },
   "kodefiler": {
    "priser.py": "45018bedca543a3f2f3c9bb5d857d78cf52e2f489842d0f96e3c883a4e21b03d",
@@ -124,13 +129,13 @@
    "shipping.py": "65bfa8e2c75323b062c02b83471b77ef3cc2db6cbcb1e307282bf18678116531",
    "bygg_shipping.py": "16abf492a95880d318b63d3b206905f29b3fa8a6df6724a8b10c5c71c098eb86",
    "helse.py": "c46c5e910abd90ad9e8d27369205724159905cf86cf9eda142d2272ad413aabe",
-   "shadow_oos.py": "3af2fd4a5b291c88703318f3cf8c5858374f5a9c065e8d6a71601d94f543fefd"
+   "shadow_oos.py": "14c7005df4cd1307439f9c0b06f9eb23b6ec1b14a97d38c4dba1a46d72f7bd1a"
   }
  },
  "metadata": {
-  "code_commit": "0800ece179d8e74ccb3250abeb8289221a657c9c",
+  "code_commit": null,
   "code_commit_merknad": "commiten der config og kodefilene over ligger slik de er hashet",
   "notes": "Fase 1 av Shadow-OOS. Se notater/shadow_oos_plan.md.",
-  "specification_hash": "03a41a1604d3687a0643f7f3c0e82d7e76f3fa297d782f5f5be93759eb799854"
+  "specification_hash": "633c2216287dba9e910858a10c766c671f0ae9f3a53892e51d9a033d7a079d4c"
  }
 }

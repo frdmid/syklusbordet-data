@@ -24,8 +24,17 @@ def _lager():
     return so.LokalLager(ROT, tempfile.mkdtemp(prefix="shadow_test_"))
 
 
-def _kjor(lager, d, kl="06:40:00"):
-    return so.kjor(lager, ROT, naa=_naa(d, kl), run_event="test", note=lambda *a: None)
+def _osebx(tk):
+    return {"kurs": 2067.06, "valuta": "NOK", "kursdato": "2026-10-05", "utbytte": []} if tk == "OSEBX.OL" \
+        else {"kurs": 0.1, "valuta": "USD", "kursdato": "2026-10-05", "utbytte": []}
+
+
+def _kjor(lager, d, kl="06:40:00", oppdatert=None):
+    """Kjoerer som om prisinnhentingen gikk samme dag (eller paa `oppdatert`)."""
+    idx = json.loads(_les(lager, "index.json"))
+    idx["oppdatert"] = f"{oppdatert or d} 06:27:00"
+    lager._skriv("index.json", json.dumps(idx, ensure_ascii=False))
+    return so.kjor(lager, ROT, naa=_naa(d, kl), run_event="test", note=lambda *a: None, kursfunk=_osebx)
 
 
 def _les(lager, sti):
@@ -43,6 +52,30 @@ def test_ikke_foer_start():
     assert _kjor(l, "2026-10-06") is None
     assert l.liste(so.SNAP_MAPPE) == []
     assert _les(l, so.MANIFEST) is None
+
+
+def test_uken_starter_onsdag():
+    assert so.periodenokkel(dt.date(2026, 10, 7)) == "2026-W41"      # onsdag
+    assert so.periodenokkel(dt.date(2026, 10, 12)) == "2026-W41"     # mandag etter
+    assert so.periodenokkel(dt.date(2026, 10, 13)) == "2026-W41"     # tirsdag etter
+    assert so.periodenokkel(dt.date(2026, 10, 14)) == "2026-W42"
+    l = _lager()
+    assert _kjor(l, "2026-10-07") == "ok"
+    # kjoering for haand mandag tar ikke plassen til onsdag 14.10
+    assert _kjor(l, "2026-10-12", "10:00:00", oppdatert="2026-10-12") == "hoppet_over"
+    assert _kjor(l, "2026-10-14") == "ok"
+    assert l.liste(so.SNAP_MAPPE) == ["2026-W41.csv", "2026-W42.csv"]
+
+
+def test_venter_paa_onsdagsoppdateringen():
+    l = _lager()
+    # onsdag, men prisene er fra forrige uke: ingenting skrives
+    assert _kjor(l, "2026-10-07", "05:00:00", oppdatert="2026-09-30") == "venter"
+    assert l.liste(so.SNAP_MAPPE) == []
+    assert _kjor(l, "2026-10-07") == "ok"
+    man = so.fra_csv(_les(l, so.MANIFEST))
+    assert [m["status"] for m in man] == ["venter_paa_onsdagsoppdatering", "ok"]
+    assert so.kontroller(l) == []
 
 
 def test_snapshots_are_immutable():
@@ -117,6 +150,20 @@ def test_null_er_ikke_null():
     assert all(r["strong_candidate"] == "" for r in seg.values())
     assert seg["ship_vlcc"]["A_raw"] == ""
     assert "S" in seg["brent"]["missing_fields"]
+    ref = [r for r in rader if r["level"] == "benchmark"]
+    assert len(ref) == 1 and ref[0]["instrument"] == "OSEBX.OL" and ref[0]["currency"] == "NOK"
+
+
+def test_c_stengt_er_ikke_kjoepbar():
+    l = _lager()
+    _kjor(l, "2026-10-07")
+    for r in so.fra_csv(_les(l, f"{so.SNAP_MAPPE}/2026-W41.csv")):
+        if r["level"] != "instrument":
+            continue
+        if r["C_status"] == "stengt":
+            assert r["instrument_eligible"] == "false" and r["reason_if_not_eligible"] == "C stengt"
+        elif r["inverse"] == "false":
+            assert r["instrument_eligible"] == "true", r["snapshot_id"]      # ogsaa ukjent C
 
 
 def test_reproduserbar():
@@ -166,8 +213,31 @@ def test_bunnsone_episode_og_c_exit():
     assert ("2026-11-04", "bottom_zone_reentry_no_new_episode") in ev
     assert sum(1 for x in h if x["event"] == "hypothetical_entry") == 1
     e = next(x for x in h if x["event"] == "hypothetical_entry")
-    assert e["macro_cluster_id"] == "cluster_2026_10" and e["investable_signal"] == ""
-    assert int(e["n_instruments"]) >= 1
+    assert e["macro_cluster_id"] == "cluster_2026_10" and e["investable_signal"] == "true"
+    assert int(e["n_instruments"]) >= int(e["n_eligible"]) >= 1
+    assert so.kontroller(l) == []
+
+
+def test_klynge_regnes_fra_foerste_inngang():
+    """Innganger dag 0, 147 og 287: kjedet ville gitt én klynge (140 dager
+    mellom de to siste). Regelen fra klyngens foerste inngang gir to."""
+    l = _lager()
+    _kjor(l, "2026-10-07")
+
+    def flagg(paa):
+        def fn(d):
+            d["scores"].update(flagg=paa, oppsikt=False)
+            d["series"][-1]["flagg"] = paa
+        return fn
+    for sid, inn, ut in (("nikkel", "2026-10-14", "2026-10-21"), ("sink", "2027-03-10", "2027-03-17"),
+                         ("kakao", "2027-07-28", "2027-08-04")):
+        _endre_segment(l, sid, flagg(True))
+        _kjor(l, inn)
+        _endre_segment(l, sid, flagg(False))
+        _kjor(l, ut)
+    e = {x["segment"]: x["macro_cluster_id"] for x in so.fra_csv(_les(l, so.HENDELSER))
+         if x["event"] == "hypothetical_entry"}
+    assert e == {"nikkel": "cluster_2026_10", "sink": "cluster_2026_10", "kakao": "cluster_2027_07"}, e
     assert so.kontroller(l) == []
 
 

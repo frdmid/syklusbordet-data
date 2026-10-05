@@ -71,8 +71,14 @@ Koden ligger i `shadow_oos.py`, testene i `test_shadow_oos.py`.
 segmentrad (`level=segment`, tomt `instrument`) og én rad per papir på tavlen
 (`level=instrument`). Feltnavnene følger dokumentet (4.1 til 4.5), slik at
 koblingen er direkte. NULL er tom celle, aldri 0. Sannhetsverdier er
-`true`/`false`. Første snapshot mot dagens data: 103 rader (18 råvaresegmenter,
-7 skipssegmenter, 78 papirrader), rundt 45 kB per uke.
+`true`/`false`. I tillegg én rad for referanseindeksen OSEBX
+(`level=benchmark`), hentet fra Yahoo (`OSEBX.OL`) med kroner per dollar.
+Første snapshot mot dagens data: 104 rader (18 råvaresegmenter, 7
+skipssegmenter, 78 papirrader og OSEBX), rundt 45 kB per uke.
+
+Et papir er kjøpbart (`instrument_eligible`) når det står på tavlen, ikke har
+omvendt eksponering, og C ikke er stengt. C ukjent, trang, åpen og uaktuell
+(fond) er kjøpbare. Med dagens tall er sju papirer utelukket av C stengt.
 
 Felter som ikke finnes i dagens kode, står som NULL: `S`, `strong_candidate`,
 `inventory`, `supply_metric`, `shares_outstanding`, `market_cap`,
@@ -83,11 +89,16 @@ var tilgjengelig da vi leste det.
 `C_open/C_tight/C_closed/C_unknown/C_not_applicable` når segmentets port endres,
 `hypothetical_entry` ved ny episode, `hypothetical_entry_d95` for d95,
 `*_reentry_no_new_episode` når regelen sier nei, `C_forced_exit` per papir når C
-stenger etter inngang (innen 24 mnd), og `3m/6m/12m/24m/36m_maturity`.
+stenger etter inngang (innen 24 mnd), og `3m/6m/12m/24m_maturity`.
 Tilstander som står allerede ved første snapshot, får `*_active_at_start` og er
 ikke en ny episode (samme regel som flaggloggen). Ved inngang lagres
-`macro_cluster_id`, `commodity_signal=true` og antall papirer per C-tilstand.
-`investable_signal` er NULL til Frode har avgjort spørsmål 1 under.
+`macro_cluster_id`, `commodity_signal=true`, antall papirer per C-tilstand,
+antall kjøpbare (`n_eligible`) og `investable_signal` (minst ett kjøpbart
+papir). Er råvaren flagget uten kjøpbare papirer, er det et resultat
+(`investable_signal=false`), ikke manglende data.
+
+**Makroklynge:** en inngang hører til siste klynge hvis den kommer høyst 183
+dager etter klyngens første inngang. Ellers starter en ny klynge.
 
 ## 3. Hvor i ukekjøringen
 
@@ -103,12 +114,19 @@ Rekkefølgen i én kjøring:
    ikke ukens snapshot: klokken skal gå, avviket skal synes.
 3. Sammenlign kodefilene med hashene i config. Endret kode merkes i
    `code_changed` i snapshotet og manifestet.
-4. Finnes ukens snapshot fra før: skriv en manifestlinje
-   `hoppet_over_uke_finnes` og stopp. Første kjøring i ISO-uken vinner.
-5. Ellers: les inndata, skriv inndatafilen og snapshotet (bare opprett).
-6. Regn hendelsene fra det lagrede snapshotet og forrige snapshot, og legg dem
+4. Uken går fra onsdag til tirsdag og har navnet til onsdagens ISO-uke. Finnes
+   ukens snapshot fra før: skriv en manifestlinje `hoppet_over_uke_finnes` og
+   stopp.
+5. Er prisinnhentingen ikke kjørt siden onsdag (`oppdatert` i `index.json`
+   før onsdag): skriv `venter_paa_onsdagsoppdatering` og stopp, så plassen
+   står åpen. Første kjøring etter onsdagens oppdatering teller. En kjøring
+   for hånd mandag eller tirsdag hører til forrige onsdags uke og tar ikke
+   plassen til neste.
+6. Ellers: les inndata, hent OSEBX, skriv inndatafilen og snapshotet (bare
+   opprett).
+7. Regn hendelsene fra det lagrede snapshotet og forrige snapshot, og legg dem
    til.
-7. Skriv manifestlinjen med hash av snapshotet, inndatafilen og
+8. Skriv manifestlinjen med hash av snapshotet, inndatafilen og
    hendelsesloggen, og en hashkjede.
 
 Avbrytes en kjøring etter at snapshotet er skrevet, regner neste kjøring samme
@@ -134,9 +152,14 @@ Kontrolleres hver uke (`kontroller`), og kan kjøres for hånd med
 - at hendelsesloggen begynner med nøyaktig det den var etter hver kjøring,
 - at config stemmer med `specification_hash` i registeret.
 
-Tester (`python test_shadow_oos.py`, kjørt lokalt 05.10, alle ti besto):
+Tester (`python test_shadow_oos.py`, kjørt lokalt 05.10, alle 14 besto):
 
 - ingenting skrives før 07.10,
+- uken går fra onsdag til tirsdag, en kjøring for hånd mandag tar ikke
+  plassen til onsdag, og ingenting skrives før onsdagens oppdatering,
+- C stengt er ikke kjøpbar, C ukjent er kjøpbar,
+- makroklynger regnes fra klyngens første inngang,
+- OSEBX står i snapshotet,
 - ny kjøring samme uke med endrede tall endrer ikke snapshotet,
 - neste uke gir ny fil, og den gamle er byte for byte lik,
 - et manipulert gammelt snapshot og en slettet hendelseslinje oppdages,
@@ -170,62 +193,54 @@ versjon hver uke brukte.
 
 - `shadow_outcomes` regnes ikke (fase 2). Filen er tom.
 - Instrumentuniverset fryses alt i snapshotet på signaldatoen, og papirer
-  som tas av tavlen etter en inngang logges videre i 37 måneder. Aksjetall og
+  som tas av tavlen etter en inngang logges videre i 26 måneder. Aksjetall og
   markedsverdi hentes ikke (fase 3).
 - Ingen C-evaluering, Challengers, faktorer, placeboer eller LIVE OOS-side.
 - Rådata (Pink Sheet, EIA, Fearnleys og så videre) arkiveres ikke. Inndatafilen
   peker på de bearbeidede filene i git, som kan hentes fram med blob-sha.
 - Ingen `research_log`.
 
-## 7. Spørsmål Frode må avgjøre
+## 7. Frodes avgjørelser 05.10.2026
 
-**Før 07.10.2026 kl. 06:00 UTC** (det som fryses; etter dette er en endring en
-Challenger med ny startdato):
+Lagt inn i koden og i config før start:
 
-1. **Er det frosne riktig?** Særlig: inngang til kursen på signaldatoen (T0),
-   S som NULL til S finnes i koden, ingen sterk kandidat, og
-   12-månedersregelen slik flaggloggen har den, pluss shadow-loggens egne
-   hendelser. Det mest konservative er valgt der dokumentet og koden kunne
-   leses ulikt.
-2. **Flere kjøringer samme uke:** første kjøring i ISO-uken vinner, også en
-   kjøring for hånd. Er det greit?
-3. **Kodeendringer etter start:** I dag skrives snapshotet uansett, med
-   `code_changed`. Hva skal skje når regelkoden endres, for eksempel når
-   Cowork endrer `c_manuell.py`, eller ved en feilretting i `priser.py`?
-   Forslag: feilretting føres i `correction_log` og Champion fortsetter; en
-   endret regel gjør Champion til «v1.0 med kjent avvik fra dato X», og den nye
-   regelen blir Challenger. Cowork må vite at endringer i disse filene nå
-   synes i shadow.
+1. **Det frosne er godkjent:** inngang til kursen på signaldatoen (T0), S som
+   NULL til S finnes i koden, ingen sterk kandidat, og 12-månedersregelen
+   slik flaggloggen har den, pluss shadow-loggens egne hendelser.
+2. **Første kjøring etter onsdagsoppdateringen teller.** Uken går fra onsdag
+   til tirsdag. Er prisene ikke oppdatert siden onsdag, skrives ingenting.
+3. **Endret regelkode gir en Challenger med egen startdato.** Champion v1.0
+   endres aldri. Snapshot skrevet med endret kode merkes `code_changed`, så
+   avviket synes til Challengeren er registrert.
+4. **C stengt er ikke kjøpbar, C ukjent er kjøpbar.** Trang, åpen og
+   uaktuell (fond) er også regnet som kjøpbare, siden bare stengt ble
+   utelukket.
+5. **Makroklynger regnes fra klyngens første inngang** (183 dager), ikke
+   kjedet.
+6. **Referanseindeksen er OSEBX.** Avkastning måles i NOK med utbytte; papirer
+   i annen valuta regnes om med valutakursene i snapshotet. OSEBX er selv en
+   totalavkastningsindeks. ACWI logges videre av flaggloggen, men er ikke
+   Championens referanse.
+7. **26 måneder er nok.** 36-månedersutfallet og modningshendelsen er tatt
+   ut. Sekundære horisonter er 3, 6 og 12 måneder.
 
-**Før første signal** (data lagres uansett, men valget må tas før utfallene
-er kjent):
+Punkt 4 (trang og fond) og punkt 6 (måling i NOK) er Claude Codes lesing av
+avgjørelsene. Er de feil, må det sies før 07.10.2026 kl. 06:00 UTC; etter det
+er en endring en Challenger.
 
-4. **C i universet:** Skal papirer med C stengt eller ukjent være med i P1 og
-   telle for `investable_signal`? Flaggloggens tenkte kjøp tar med alle
-   papirer på tavlen; `overlevelse_c.py` kaller C en port for papiret. Derfor
-   er `investable_signal` NULL og antallet per C-tilstand lagret.
-5. **Makroklynger:** kjedet regel (høyst 183 dager mellom påfølgende
-   innganger, som flaggloggen) er valgt. Dokumentet kan også leses som
-   «innen seks måneder fra klyngens første signal».
+## 8. Åpne punkter, senere
 
-**Før første utfall modnes** (tidligst tre måneder etter første signal):
-
-6. **Benchmark:** ACWI i dollar med utbytte, som flaggloggen allerede logger?
-   Og hvordan «samtidige produsenter» og faktorjustering skal måles. Skal
-   fastsettes i en egen, versjonert evalueringsspesifikasjon.
-7. **36 måneder:** Flaggloggen logger kursen for et papir i 26 måneder etter
-   tenkt kjøp. 36-månedersutfallet krever lengre logging. Det er en endring i
-   `flagglogg.py` (en fryst fil) og bør gjøres som avtalt feilretting.
-
-**Senere:**
-
-8. Skal rådata arkiveres (punkt 28)? Det krever endringer i innhentingen og
+1. Hvordan en Challenger registreres og kjøres parallelt (fase 5). Til det
+   finnes, er `code_changed` merket som eneste spor av en regelendring.
+2. «Samtidige produsenter» og faktorjustering (benchmark 2 og 3), før første
+   utfall modnes.
+3. Skal rådata arkiveres (punkt 28)? Det krever endringer i innhentingen og
    noen MB per uke.
-9. Skal onsdagsrutinen og helsesjekken på dashbordet vise status fra
+4. Skal onsdagsrutinen og helsesjekken på dashbordet vise status fra
    `run_manifest.csv` (integritetsavvik, kodeendring)?
-10. Champion S: egen startdato når S er definert i koden.
+5. Champion S: egen startdato når S er definert i koden.
 
-## 8. Slik sjekkes det etter 07.10
+## 9. Slik sjekkes det etter 07.10
 
 - `shadow/run_manifest.csv` på GitHub skal ha en linje med status `ok` og
   `iso_week` 2026-W41, og `shadow/snapshots/champion_v1_0/2026-W41.csv` skal

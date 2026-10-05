@@ -119,7 +119,10 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 - **Shadow-OOS:** filene i `shadow/` og `config/champion_v1_0.json` rettes
   aldri for hånd. En feil føres i `shadow/correction_log.csv` (ny linje,
   originalen står). Endringer i en av de 16 kodefilene i config merkes som
-  `code_changed` i snapshotet fra uken etter; si fra i loggen hva endringen er.
+  `code_changed` i snapshotet fra uken etter. Frodes regel: endret regelkode
+  gir en Challenger med egen startdato, Champion v1.0 endres aldri. Si fra i
+  loggen hva endringen er. Uken i shadow går fra onsdag til tirsdag, og
+  referanseindeksen er OSEBX.
 - Ting som kan se ut som feil, men ikke er det: uran har ingen
   instrumenter før uransonden er kjørt; real lik nom de siste månedene i
   shipping (deflatoren slutter før serien).
@@ -131,8 +134,8 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 - Forslag om en ekstra rutine torsdag som kjører onsdagsrutinen på nytt hvis
   databasen ikke har ukens tall. Ikke bestilt.
 - 07.10: første Shadow-OOS-snapshot (uke 2026-W41). Sjekk
-  `shadow/run_manifest.csv` etterpå. Frodes spørsmål står i
-  `notater/shadow_oos_plan.md`, avsnitt 7.
+  `shadow/run_manifest.csv` etterpå. Frodes avgjørelser står i
+  `notater/shadow_oos_plan.md`, avsnitt 7, og åpne punkter i avsnitt 8.
 - 07.10: første ukekjøring med Fearnleys-arkivet (rundt 18 MB første gang,
   de 41 rapportene som ikke kan leses) og helse.json fra arbeidsflyten.
 - Neste kvartalskjøring: nikkel og tinn ventes å gå fra stengt til åpen etter

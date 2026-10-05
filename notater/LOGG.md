@@ -9,6 +9,32 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 05.10.2026 16:56, Claude Code
+**Hva:** Frodes avgjørelser om Shadow-OOS lagt inn før start, og Champion v1.0
+frosset på nytt (ny `specification_hash` 633c2216..., `effective_from` fortsatt
+07.10.2026):
+1. Det frosne er godkjent.
+2. Første kjøring etter onsdagsoppdateringen teller: uken går fra onsdag til
+   tirsdag, og er `index.json` ikke oppdatert siden onsdag, skrives ingenting
+   (`venter_paa_onsdagsoppdatering`).
+3. Endret regelkode gir en Challenger med egen startdato; Champion endres
+   aldri.
+4. C stengt er ikke kjøpbar, C ukjent er kjøpbar (trang og fond regnet som
+   kjøpbare). `investable_signal` regnes nå: minst ett kjøpbart papir. Sju
+   papirer er utelukket med dagens tall.
+5. Makroklynger regnes fra klyngens første inngang (183 dager).
+6. Referanseindeksen er OSEBX, hentet hver uke og lagret i snapshotet; måles
+   i NOK med utbytte.
+7. 26 måneder er nok: 36 måneder er tatt ut.
+Testene utvidet til 14, alle besto. En kjøring mot ekte data med ekte
+OSEBX-kurs ga 104 rader.
+**Filer:** `shadow_oos.py`, `test_shadow_oos.py`, `config/champion_v1_0.json`,
+`shadow/model_registry.csv`, `notater/shadow_oos_plan.md`,
+`notater/OVERLEVERING.md`, loggen.
+**Den andre økten må vite:** `code_commit` føres inn i neste commit. Trang og
+fond som kjøpbare, og måling i NOK, er Claude Codes lesing; Frode må si fra
+før 07.10 kl. 06:00 UTC hvis det er feil.
+
 ### 05.10.2026 16:48, Claude Code
 **Hva:** `code_commit` for Champion v1.0 ført inn i `config/champion_v1_0.json`
 og `shadow/model_registry.csv`: 0800ece179d8e74ccb3250abeb8289221a657c9c, der

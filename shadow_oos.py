@@ -16,8 +16,10 @@
 #   config/champion_v1_0.json             frosne regler, kodefilenes hash
 #   shadow/model_registry.csv             en linje per modell
 #   shadow/snapshots/champion_v1_0/<uke>.csv
-#                                         ukens bilde, segment x papir. Skrives
-#                                         EN gang per ISO-uke og aldri igjen.
+#                                         ukens bilde, segment x papir, pluss
+#                                         OSEBX. Skrives EN gang per uke (onsdag
+#                                         til tirsdag, oppkalt etter onsdagens
+#                                         ISO-uke) og aldri igjen.
 #   shadow/inndata/champion_v1_0/<uke>.json
 #                                         git-blob-sha for hver inndatafil, saa
 #                                         snapshotet kan kobles til tallene bak
@@ -62,14 +64,27 @@ SKIP = ["ship_vlcc", "ship_suezmax", "ship_aframax", "ship_kamsarmax", "ship_ult
 # Koden som bestemmer tallene i snapshotet. Hashen av hver fil fryses i
 # config. Avviker en fil senere, merkes kjoeringen (code_changed) i
 # snapshotet og manifestet. Snapshotet skrives likevel: klokken skal ikke
-# stoppe, men avviket skal synes. Se plan, spoersmaal om kodeendringer.
+# stoppe, men avviket skal synes. Frodes beslutning 05.10.2026: endret
+# regelkode gir en Challenger med egen startdato; Champion endres ikke.
 KODEFILER = ["priser.py", "signaler.py", "instrumenter.py", "uran_kilde.py", "laks_innhent.py",
              "kurve_innhent.py", "flagglogg.py", "kapitulasjon_d.py", "overlevelse_c.py",
              "c_manuell.py", "tilbud_b.py", "rigg_b.py", "shipping.py", "bygg_shipping.py",
              "helse.py", "shadow_oos.py"]
 
-HORISONTER = [3, 6, 12, 24, 36]          # modningshendelser, maaneder
-KLYNGE_DAGER = 183                       # som flagglogg.KLYNGE_DAGER
+# Frodes beslutninger 05.10.2026, foer start:
+#   uke         snapshotet for en uke er foerste kjoering etter onsdagens
+#               oppdatering. Perioden gaar fra onsdag til tirsdag, saa en
+#               kjoering for haand mandag eller tirsdag tar ikke plassen til
+#               neste onsdag.
+#   C           papirer med C stengt er ikke kjoepbare; ukjent er kjoepbar.
+#   klynge      regnes fra klyngens foerste inngang (183 dager), ikke kjedet.
+#   referanse   OSEBX (Oslo Boers hovedindeks, totalavkastning i NOK).
+#   holdetid    26 maaneder er nok: 36 maaneder er ute.
+HORISONTER = [3, 6, 12, 24]              # modningshendelser, maaneder
+LOGG_MND = 26                            # papirer fra innganger logges saa lenge, som flagglogg.HOLD_DAGER
+KLYNGE_DAGER = 183
+REFERANSE = "OSEBX.OL"
+UKEDAG_START = 2                         # onsdag
 
 F_REGISTER = ["model_id", "created_at", "effective_from", "parent_model", "status", "specification_hash",
               "code_commit", "data_schema_version", "config_file", "notes"]
@@ -99,7 +114,8 @@ F_SNAP = [
 
 F_EVENT = ["event_id", "model_version", "event_date", "iso_week", "segment", "instrument", "event",
            "snapshot_id", "run_id", "episode_id", "new_episode", "macro_cluster_id", "commodity_signal",
-           "investable_signal", "A_raw", "A_detrended", "B", "C", "D", "S", "n_instruments", "n_C_open",
+           "investable_signal", "A_raw", "A_detrended", "B", "C", "D", "S", "n_instruments", "n_eligible",
+           "n_C_open",
            "n_C_tight", "n_C_closed", "n_C_unknown", "n_C_not_applicable", "ref_event_id", "maturity_date",
            "note"]
 
@@ -148,6 +164,11 @@ def kanonisk(obj):
 def ukenokkel(d):
     y, w, _ = d.isocalendar()
     return f"{y}-W{w:02d}"
+
+
+def periodenokkel(d):
+    """Shadow-uken: ISO-uken til siste onsdag paa eller foer d."""
+    return ukenokkel(d - dt.timedelta(days=(d.weekday() - UKEDAG_START) % 7))
 
 
 def pluss_mnd(d, n):
@@ -381,25 +402,41 @@ def lag_konfig(rot, code_commit, created_at="2026-10-05", effective_from="2026-1
                                     "oppstart er ikke en ny episode.",
                            "pause_mnd": 12,
                            "d95": "ingen d95 i logg/flagg_uke.csv eller shadow_events.csv siste 365 dager"},
-            "makroklynge": {"regel": "hypotetiske innganger med hoeyst 183 dager mellom paafoelgende "
-                                     "datoer er samme klynge, paa tvers av segmenter", "dager": KLYNGE_DAGER},
-            "holdetid": {"primaer_mnd": 24, "sekundaer_mnd": [3, 6, 12, 36],
+            "makroklynge": {"regel": "en hypotetisk inngang hoerer til siste klynge hvis den kommer hoeyst 183 "
+                                     "dager etter klyngens foerste inngang, ellers starter en ny klynge; paa "
+                                     "tvers av segmenter (Frodes beslutning 05.10.2026)", "dager": KLYNGE_DAGER},
+            "holdetid": {"primaer_mnd": 24, "sekundaer_mnd": [3, 6, 12],
                          "modningshendelser_mnd": HORISONTER,
+                         "papirer_logges_mnd": LOGG_MND,
                          "inngang": "signaldatoen: kursen i snapshotet den uken (T0)",
-                         "primaert_utfall": "24 maaneders avkastning fra foerste signal i en ny episode"},
+                         "primaert_utfall": "24 maaneders avkastning fra foerste signal i en ny episode",
+                         "merknad": "36 maaneder er tatt ut; 26 maaneders logging er nok (Frodes beslutning "
+                                    "05.10.2026)"},
             "instrumentvalg": {"univers": "papirene paa tavlen for segmentet paa signaldatoen "
                                           "(instrumenter.py), fryses i snapshotet",
-                               "instrument_eligible": "paa tavlen og ikke omvendt eksponering",
-                               "C_i_universet": "C registreres per papir. Om stengt eller ukjent C utelukker "
-                                                "papiret, er ikke avgjort (se plan); investable_signal er "
-                                                "derfor NULL i fase 1."},
+                               "instrument_eligible": "paa tavlen, ikke omvendt eksponering, og C ikke stengt. "
+                                                      "C ukjent, trang, aapen og uaktuell (fond) er kjoepbare "
+                                                      "(Frodes beslutning 05.10.2026: stengt er ikke kjoepbar, "
+                                                      "ukjent er kjoepbar)",
+                               "investable_signal": "minst ett kjoepbart papir paa signaldatoen"},
             "posisjonsstoerrelse": "ikke del av testen",
-            "benchmark": "ikke fastsatt i fase 1; fastsettes i en egen evalueringsspesifikasjon foer foerste "
-                         "utfall er modent (se plan)",
+            "benchmark": {"indeks": "OSEBX, Oslo Boers hovedindeks (Yahoo OSEBX.OL), totalavkastningsindeks i "
+                                    "NOK, logget i snapshotet hver uke (level=benchmark)",
+                          "valuta": "avkastning maales i NOK: papirer i annen valuta regnes om med "
+                                    "valutakursene i snapshotet, med utbytte",
+                          "merknad": "Frodes beslutning 05.10.2026. ACWI logges videre av flagglogg, men er "
+                                     "ikke Championens referanse"},
+            "kodeendringer": "endret regelkode etter start gir en Challenger med egen startdato. Champion v1.0 "
+                             "endres aldri; snapshot skrevet med endret kode merkes code_changed (Frodes "
+                             "beslutning 05.10.2026)",
             "datakvalitet": {"data_stale": "helse.status gul eller roed for segmentets egne rader, "
                                            "innhenting, kpi, C og B, eller FEIL i index.json"},
-            "skrivemaate": {"NULL": "tom celle, aldri 0", "en_per_uke": "foerste kjoering i ISO-uken skriver "
-                            "snapshotet; senere kjoeringer samme uke skriver det ikke paa nytt"},
+            "skrivemaate": {"NULL": "tom celle, aldri 0",
+                            "en_per_uke": "uken gaar fra onsdag til tirsdag. Foerste kjoering etter onsdagens "
+                                          "oppdatering (index.json oppdatert onsdag eller senere) skriver "
+                                          "snapshotet; senere kjoeringer samme uke skriver det ikke paa nytt, "
+                                          "og en kjoering foer oppdateringen skriver ingenting (Frodes "
+                                          "beslutning 05.10.2026)"},
             "kodefiler": kodehasher(rot),
         },
         "metadata": {"code_commit": code_commit,
@@ -462,7 +499,7 @@ def bygg_snapshot(inn, snapshot_date, created_at, run_id, kode_avvik, aapne_inng
     kurser (rader for uken), helse, c, b, d (de tre siste bare oppdatert).
     aapne_innganger: {(segment, ticker)} som skal logges selv om papiret er
     tatt av tavlen. Returnerer radene."""
-    dato, uke = snapshot_date.isoformat(), ukenokkel(snapshot_date)
+    dato, uke = snapshot_date.isoformat(), periodenokkel(snapshot_date)
     kurs = {r["ticker"]: r for r in inn.get("kurser") or []}
     hs = _helsestatus(inn.get("helse"), snapshot_date)
     felles = [k for k in ("innhenting", "kpi", "c_overlevelse", "b_capex", "b_rigg") if hs.get(k) in ("gul", "rod")]
@@ -515,13 +552,22 @@ def bygg_snapshot(inn, snapshot_date, created_at, run_id, kode_avvik, aapne_inng
         for (sg, tk) in sorted(aapne_innganger or []):
             if sg == sid and tk not in paa_tavla:
                 rader.append(_papirrad(basis, seg, s, {"ticker": tk}, kurs.get(tk), dato, on_dashboard=False))
+    # Referanseindeksen (OSEBX), logget hver uke ved siden av papirene.
+    r = inn.get("referanse") or {}
+    rader.append({**basis, "snapshot_id": f"{MODELL}|{dato}|_referanse|{REFERANSE}", "segment": "_referanse",
+                  "instrument": REFERANSE, "level": "benchmark", "company_name": "Oslo Boers hovedindeks (OSEBX)",
+                  "exchange": "Oslo", "currency": r.get("valuta"), "instrument_type": "indeks",
+                  "instrument_price": tall(r.get("kurs")), "price_date": r.get("kursdato"),
+                  "usd_per_unit": tall(r.get("usd_per_enhet")), "observation_date": r.get("kursdato"),
+                  "missing_fields": [] if r.get("kurs") is not None else ["instrument_price"]})
     return rader
 
 
 def _papirrad(basis, seg, s, i, k, dato, on_dashboard):
     tk, k = i["ticker"], k or {}
     omvendt = bool(i.get("omvendt"))
-    eligible = on_dashboard and not omvendt
+    c_stengt = i.get("port") == "stengt"
+    eligible = on_dashboard and not omvendt and not c_stengt
     return {**basis, "snapshot_id": f"{MODELL}|{dato}|{s['id']}|{tk}", "segment": s["id"], "instrument": tk,
             "level": "instrument",
             "C": seg["C"], "survival_gate": seg["survival_gate"], "bottom_zone": seg["bottom_zone"],
@@ -534,8 +580,9 @@ def _papirrad(basis, seg, s, i, k, dato, on_dashboard):
             "residual_correlation": _komm(i.get("kommentar"), "rm"),
             "inverse": omvendt if on_dashboard else None, "tradeable": i.get("handlbar"),
             "on_dashboard": on_dashboard, "instrument_eligible": eligible,
-            "reason_if_not_eligible": None if eligible else ("omvendt eksponering" if on_dashboard
-                                                             else "tatt av tavlen etter inngang"),
+            "reason_if_not_eligible": None if eligible else (
+                "tatt av tavlen etter inngang" if not on_dashboard else
+                "omvendt eksponering" if omvendt else "C stengt"),
             "C_status": i.get("port"), "C_score": i.get("kvartaler"), "C_bottom_year": i.get("bunnaar"),
             "C_years": i.get("aar_historikk"), "D_instrument": i.get("D"), "drawdown_pct": i.get("fall_pst"),
             "shares_outstanding": None, "market_cap": None,
@@ -550,12 +597,17 @@ def _segrader(rader):
 
 
 def _n_c(rader, sid):
-    pap = [r for r in rader if r["level"] == "instrument" and r["segment"] == sid and sann(r["instrument_eligible"])]
+    """Papirene paa tavlen med riktig eksponering, fordelt paa C. Kjoepbare
+    er alle unntatt C stengt (Frodes beslutning 05.10.2026)."""
+    pap = [r for r in rader if r["level"] == "instrument" and r["segment"] == sid and sann(r["on_dashboard"])
+           and not sann(r["inverse"])]
     n = {k: 0 for k in C_HENDELSE}
     for r in pap:
         n[r["C_status"] if r["C_status"] in n else ("uaktuell" if str(r["instrument_type"]).lower().startswith(
             ("etf", "etc", "etn", "fond")) else "ukjent")] += 1
-    return {"n_instruments": len(pap), "n_C_open": n["aapen"], "n_C_tight": n["trang"], "n_C_closed": n["stengt"],
+    kjoepbare = sum(1 for r in pap if sann(r["instrument_eligible"]))
+    return {"n_instruments": len(pap), "n_eligible": kjoepbare, "investable_signal": kjoepbare > 0,
+            "n_C_open": n["aapen"], "n_C_tight": n["trang"], "n_C_closed": n["stengt"],
             "n_C_unknown": n["ukjent"], "n_C_not_applicable": n["uaktuell"]}
 
 
@@ -565,7 +617,7 @@ def finn_hendelser(naa, forrige, gamle_hend, segmenter, flagg_uke, snapshot_date
     pausesjekken). flagg_uke: logg/flagg_uke.csv uten inneværende uke.
     snaps_for(iso_week) -> rader for et tidligere snapshot."""
     from flagglogg import ny_innslag
-    dato, uke = snapshot_date.isoformat(), ukenokkel(snapshot_date)
+    dato, uke = snapshot_date.isoformat(), periodenokkel(snapshot_date)
     run_id = naa[0]["run_id"] if naa else ""
     ns, fs = _segrader(naa), _segrader(forrige or [])
     ut, finnes = [], {h["event_id"] for h in gamle_hend}
@@ -619,16 +671,21 @@ def finn_hendelser(naa, forrige, gamle_hend, segmenter, flagg_uke, snapshot_date
                 inng = "hypothetical_entry" if navn == "bottom_zone" else "hypothetical_entry_d95"
                 klynge = None
                 if navn == "bottom_zone":
+                    # Klyngen regnes fra dens foerste inngang (Frodes beslutning
+                    # 05.10.2026): en inngang hoerer til siste klynge hvis den
+                    # kommer hoeyst 183 dager etter klyngens foerste inngang.
                     tidl = sorted((h for h in gamle_hend + ut if h["event"] == "hypothetical_entry"),
                                   key=lambda h: h["event_date"])
-                    if tidl and (snapshot_date - _dato(tidl[-1]["event_date"])).days <= KLYNGE_DAGER:
-                        klynge = tidl[-1]["macro_cluster_id"]
+                    siste = tidl[-1]["macro_cluster_id"] if tidl else None
+                    foerst = min((_dato(h["event_date"]) for h in tidl if h["macro_cluster_id"] == siste),
+                                 default=None)
+                    if foerst and (snapshot_date - foerst).days <= KLYNGE_DAGER:
+                        klynge = siste
                     else:
                         klynge = f"cluster_{snapshot_date.year}_{snapshot_date.month:02d}"
                 hend(sid, inng, episode_id=f"{sid}|{dato}", new_episode=True, macro_cluster_id=klynge,
-                     commodity_signal=True, investable_signal=None, **_n_c(naa, sid),
-                     note="univers frosset i snapshotet samme uke; investable_signal avventer Frodes "
-                          "avgjoerelse om C")
+                     commodity_signal=True, **_n_c(naa, sid),
+                     note="univers frosset i snapshotet samme uke; kjoepbare er papirer uten C stengt")
             elif navn == "bottom_zone" and v and g:
                 hend(sid, "bottom_zone_continue")
             elif g and not v:
@@ -662,10 +719,10 @@ def finn_hendelser(naa, forrige, gamle_hend, segmenter, flagg_uke, snapshot_date
 
 
 def aapne_innganger(gamle_hend, snapshot_date, snaps_for):
-    """Papirer i universet til innganger de siste 37 maanedene."""
+    """Papirer i universet til innganger de siste 26 maanedene."""
     ut = set()
     for h in gamle_hend:
-        if h["event"] != "hypothetical_entry" or snapshot_date > pluss_mnd(_dato(h["event_date"]), 37):
+        if h["event"] != "hypothetical_entry" or snapshot_date > pluss_mnd(_dato(h["event_date"]), LOGG_MND):
             continue
         for r in snaps_for(h["iso_week"]):
             if r["level"] == "instrument" and r["segment"] == h["segment"] and sann(r["instrument_eligible"]):
@@ -718,12 +775,15 @@ def kodeavvik(konfig, rot):
 
 
 # ------------------------------------------------------------------ kjoering
-def kjor(lager, rot=None, naa=None, run_event=None, code_commit=None, note=print):
-    """Hele den ukentlige kjoeringen. naa: tidspunkt (UTC), standard naa."""
+def kjor(lager, rot=None, naa=None, run_event=None, code_commit=None, note=print, kursfunk=None):
+    """Hele den ukentlige kjoeringen. naa: tidspunkt (UTC), standard naa.
+    kursfunk(ticker) -> dict som flagglogg.siste_kurs (byttes ut i testene)."""
     rot = rot or os.path.dirname(os.path.abspath(__file__))
     naa = naa or dt.datetime.now(dt.timezone.utc)
     snapshot_date, started = naa.date(), naa.strftime("%Y-%m-%d %H:%M:%S")
-    uke = ukenokkel(snapshot_date)
+    uke = periodenokkel(snapshot_date)             # shadow-uken, fra onsdag
+    logguke = ukenokkel(snapshot_date)             # flaggloggens ISO-uke
+    onsdag = snapshot_date - dt.timedelta(days=(snapshot_date.weekday() - UKEDAG_START) % 7)
     konfig = json.loads(lager.les(KONFIG)[0])
     eff = dt.date.fromisoformat(konfig["model"]["effective_from"])
     if snapshot_date < eff:
@@ -763,6 +823,23 @@ def kjor(lager, rot=None, naa=None, run_event=None, code_commit=None, note=print
         return cache[w]
 
     idx = jles("index.json") or {}
+    # Foerste kjoering ETTER onsdagens oppdatering teller (Frodes beslutning
+    # 05.10.2026). Har prisinnhentingen ikke kjoert siden onsdag, skrives
+    # ingenting, og plassen staar aapen for neste kjoering samme periode.
+    oppd = _dato(idx.get("oppdatert"))
+    eksisterer_ikke = lager.les(snapsti)[0] is None
+    if eksisterer_ikke:
+        if not oppd or oppd < onsdag:
+            _manifest(lager, man, {"run_id": run_id, "run_date": snapshot_date, "iso_week": uke,
+                                   "model_version": MODELL, "run_event": run_event, "code_commit": code_commit,
+                                   "configuration_hash": konfig["metadata"]["specification_hash"],
+                                   "specification_ok": spes_ok, "code_changed": avvik or False,
+                                   "started_at": started, "completed_at": started,
+                                   "status": "venter_paa_onsdagsoppdatering",
+                                   "warnings": varsler + [f"index.json oppdatert {idx.get('oppdatert')}, foer {onsdag}"],
+                                   "errors": feil})
+            note(f"   shadow: prisene er ikke oppdatert siden {onsdag}, ingenting skrevet")
+            return "venter"
     segmenter = []
     for sid in list(idx.get("segmenter") or []) + SKIP:
         d = jles(f"segments/{sid}.json")
@@ -772,13 +849,24 @@ def kjor(lager, rot=None, naa=None, run_event=None, code_commit=None, note=print
             varsler.append(f"segments/{sid}.json mangler")
     kt, ksha = lager.les("logg/kurser_uke.csv")
     lest["logg/kurser_uke.csv"] = ksha
-    kurser = [r for r in fra_csv(kt) if r.get("uke") == uke]
+    kurser = [r for r in fra_csv(kt) if r.get("uke") == logguke]
     if not kurser:
-        varsler.append(f"ingen kurser for {uke} i logg/kurser_uke.csv")
+        varsler.append(f"ingen kurser for {logguke} i logg/kurser_uke.csv")
     ft, fsha = lager.les("logg/flagg_uke.csv")
     lest["logg/flagg_uke.csv"] = fsha
-    flagg_uke = [r for r in fra_csv(ft) if r.get("uke") != uke]
-    inn = {"index": idx, "segmenter": segmenter, "kurser": kurser, "helse": jles("helse.json"),
+    flagg_uke = [r for r in fra_csv(ft) if r.get("uke") != logguke]
+    ref = {}
+    if eksisterer_ikke:
+        try:
+            import flagglogg
+            kf = kursfunk or flagglogg.siste_kurs
+            ref = kf(REFERANSE)
+            ref["usd_per_enhet"] = flagglogg.usd_per(ref.get("valuta"), kf)
+        except Exception as e:
+            varsler.append(f"{REFERANSE} ikke hentet ({type(e).__name__})")
+        if ref.get("kurs") is None:
+            varsler.append(f"{REFERANSE} mangler kurs")
+    inn = {"index": idx, "segmenter": segmenter, "kurser": kurser, "helse": jles("helse.json"), "referanse": ref,
            "c": {"oppdatert": (jles("c_overlevelse.json") or {}).get("oppdatert")},
            "d": {"oppdatert": (jles("d_kapitulasjon.json") or {}).get("oppdatert")}}
     for sti in ("b_capex.json", "b_rigg.json", "c_manuell.json", "b_manuell.json", KONFIG):
