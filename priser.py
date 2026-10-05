@@ -37,6 +37,11 @@ UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
 MIN_HIST, CHART_MONTHS = 60, 180
 MIRROR = "https://raw.githubusercontent.com/datasets/"
 LOG, SEGMENTS = [], []
+# Hele maanedsserien per segment (nominell og real), skrevet til
+# serier/priser_mnd.csv hver uke (05.10.2026, foer Shadow-OOS starter).
+# Segmentfilene har bare de siste CHART_MONTHS; en Challenger med en annen
+# A-definisjon trenger hele historikken slik den var kjent den uken.
+HELE_SERIER = {}
 
 
 def note(kilde, ok, detalj=""):
@@ -218,6 +223,7 @@ def build_segment(seg_id, name, group, unit, nom, cpi, note_txt, source, url):
     nom = nom.dropna().sort_index()
     real = (nom * (cpi.dropna().iloc[-1] / cpi.reindex(nom.index).ffill())).dropna()
     nom = nom.reindex(real.index)
+    HELE_SERIER[seg_id] = (nom, real)
     lr = np.log(real.values)
     A  = (1 - expanding_pct(lr)) * 100      # raa: mot hele egen historikk
     Ad = expanding_pct_detrend(lr)          # detrendet: mot trenden
@@ -1086,6 +1092,13 @@ if GITHUB_TOKEN and SEGMENTS:
             push("dollar.json", json.dumps(DOLLAR, ensure_ascii=False))
         except Exception as e:
             note("push dollar.json", False, str(e)[:70])
+    if HELE_SERIER:
+        try:
+            push("serier/priser_mnd.csv", "segment,t,nom,real\n" + "".join(
+                f"{sid},{p},{round(float(n), 6)},{round(float(r), 6)}\n"
+                for sid, (nom_, real_) in HELE_SERIER.items() for p, n, r in zip(real_.index, nom_.values, real_.values)))
+        except Exception as e:
+            note("push serier/priser_mnd.csv", False, str(e)[:70])
     for navn, obj in [("indicators.json", indicators), ("vehicles.json", vehicle_px)]:
         try:
             push(navn, json.dumps(obj, ensure_ascii=False))

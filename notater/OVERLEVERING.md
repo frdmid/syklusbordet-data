@@ -94,6 +94,8 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 | `endringer.py` | Endringsboksen, bilder i `logg/endringer_snap.json` |
 | `helse.py` | Datahelse, etterslep per kilde står i toppen |
 | `shadow_oos.py` | Shadow-OOS: ukens frosne snapshot, hendelser og manifest i `shadow/`, bare tillegg. Plan og spørsmål i `notater/shadow_oos_plan.md` |
+| `shadow_challenger.py` | Challengere: registrering (`registrer <spesifikasjon.json>`) og ukentlig kjøring som egne grener. Regler i `challengers/<id>.py`, config i `config/challengers/`. Ikke frosset med Champion |
+| `serier/priser_mnd.csv` | Hele månedsserien (nominell og real) per råvaresegment, skrevet av `priser.py` hver uke, til Challengere |
 | `test_shadow_oos.py` | Testene for shadow (`python test_shadow_oos.py`, lokalt, skriver ikke til repoet) |
 | `config/champion_v1_0.json` | Frosne regler for Champion v1.0 og sha256 for de 16 kodefilene |
 | `shadow/` | `model_registry.csv`, `snapshots/`, `inndata/`, `shadow_events.csv`, `shadow_outcomes.csv` (tom), `correction_log.csv`, `run_manifest.csv` |
@@ -135,7 +137,9 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
   databasen ikke har ukens tall. Ikke bestilt.
 - 07.10: første Shadow-OOS-snapshot (uke 2026-W41). Sjekk
   `shadow/run_manifest.csv` etterpå. Frodes avgjørelser står i
-  `notater/shadow_oos_plan.md`, avsnitt 7, og åpne punkter i avsnitt 8.
+  `notater/shadow_oos_plan.md`, avsnitt 7, Challengere i avsnitt 8 og åpne
+  punkter i avsnitt 9. Onsdagsrutinen skal ikke vise shadow-status; si fra
+  til Frode i den aktive prosjektchatten når noe må avgjøres.
 - 07.10: første ukekjøring med Fearnleys-arkivet (rundt 18 MB første gang,
   de 41 rapportene som ikke kan leses) og helse.json fra arbeidsflyten.
 - Neste kvartalskjøring: nikkel og tinn ventes å gå fra stengt til åpen etter

@@ -152,7 +152,11 @@ Kontrolleres hver uke (`kontroller`), og kan kjøres for hånd med
 - at hendelsesloggen begynner med nøyaktig det den var etter hver kjøring,
 - at config stemmer med `specification_hash` i registeret.
 
-Tester (`python test_shadow_oos.py`, kjørt lokalt 05.10, alle 14 besto):
+Tester (`python test_shadow_oos.py`, kjørt lokalt 05.10, alle 16 besto):
+
+- en Challenger registreres bare med startdato en onsdag frem i tid og bare
+  én gang, logges i egen gren fra startdatoen, gir egne hendelser uten å
+  røre Champion, og en feil i den rammer ikke Champion,
 
 - ingenting skrives før 07.10,
 - uken går fra onsdag til tirsdag, en kjøring for hånd mandag tar ikke
@@ -228,19 +232,52 @@ Punkt 4 (trang og fond) og punkt 6 (måling i NOK) er Claude Codes lesing av
 avgjørelsene. Er de feil, må det sies før 07.10.2026 kl. 06:00 UTC; etter det
 er en endring en Challenger.
 
-## 8. Åpne punkter, senere
+8. **Challengere logges som egne grener** ved siden av Champion (se avsnitt
+   8 under).
+9. **S logges separat når og hvis den blir aktiv.** S er ikke det viktigste.
+10. **Onsdagsrutinen skal ikke vise status fra shadow.** Claude Code sier fra
+    i den aktive prosjektchatten når noe må avgjøres; ellers spør Frode selv.
 
-1. Hvordan en Challenger registreres og kjøres parallelt (fase 5). Til det
-   finnes, er `code_changed` merket som eneste spor av en regelendring.
-2. «Samtidige produsenter» og faktorjustering (benchmark 2 og 3), før første
+## 8. Challengere
+
+Bygget før start, slik at Champion aldri trenger endres for å legge til en
+Challenger:
+
+- **Kroksted:** `shadow_oos.kjor_challengere` kaller `shadow_challenger.py`
+  etter at Champion er skrevet. `shadow_challenger.py` og Challenger-koden er
+  ikke med i Championens frosne kodefiler.
+- **Registrering** (punkt 33): regelen skrives i `challengers/<id>.py` med
+  funksjonen `snapshot(champion_rader, kontekst)`, og en spesifikasjon med
+  hypotese, endrede og uendrede variabler, primært utfall, forventet retning,
+  beslutningsregel og startdato. `python shadow_challenger.py registrer
+  <spesifikasjon.json>` lager `config/challengers/<id>.json` med hash av
+  regelen og koden, og en linje i registeret. Startdatoen må være en onsdag
+  etter registreringen. Samme id kan ikke registreres to ganger; en endret
+  regel er en ny Challenger.
+- **Kjøring:** egne snapshots i `shadow/snapshots/<id>/`, hendelser i den
+  felles hendelsesloggen (`model_version` skiller), egen manifestlinje og
+  egen hashkjede. Samme hendelsesregler som Champion, og en Challenger kan ha
+  sin egen regel for ny episode. Feiler en Challenger, rammes ikke Champion.
+- **To typer:** avledede Challengere regner en ny regel av ukens
+  Champion-snapshot (terskler, C som tall, B som krav, en formel for S). Nye
+  beregninger av A kan bruke hele prisserien, som `priser.py` nå skriver til
+  `serier/priser_mnd.csv` hver uke (nominell og real, alle måneder, alle
+  råvaresegmenter). Versjonen hver uke brukte, står i inndatafilen. Nye
+  beregninger av C eller D trenger tilsvarende data senere.
+- **Regel for den levende koden:** en ny regel skrives som Challenger, ikke
+  inn i den levende koden. Bare feilrettinger går inn i den levende koden, og
+  de merkes `code_changed` og føres i `correction_log.csv`.
+
+## 9. Åpne punkter, senere
+
+1. «Samtidige produsenter» og faktorjustering (benchmark 2 og 3), før første
    utfall modnes.
-3. Skal rådata arkiveres (punkt 28)? Det krever endringer i innhentingen og
+2. Skal rådata arkiveres (punkt 28)? Det krever endringer i innhentingen og
    noen MB per uke.
-4. Skal onsdagsrutinen og helsesjekken på dashbordet vise status fra
-   `run_manifest.csv` (integritetsavvik, kodeendring)?
-5. Champion S: egen startdato når S er definert i koden.
+3. Skipssegmentene har ingen full prisserie i `serier/`; rådataene ligger i
+   `shipping.json`.
 
-## 9. Slik sjekkes det etter 07.10
+## 10. Slik sjekkes det etter 07.10
 
 - `shadow/run_manifest.csv` på GitHub skal ha en linje med status `ok` og
   `iso_week` 2026-W41, og `shadow/snapshots/champion_v1_0/2026-W41.csv` skal

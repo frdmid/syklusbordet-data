@@ -9,6 +9,32 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 05.10.2026 17:07, Claude Code
+**Hva:** Challengere som egne grener i Shadow-OOS (Frodes beslutning), lagt
+inn før start så Champion aldri må endres for en ny Challenger:
+1. Kroksted `shadow_oos.kjor_challengere`: kaller `shadow_challenger.py`
+   etter at Champion er skrevet. Feil der rammer ikke Champion.
+2. Ny `shadow_challenger.py` (ikke frosset): registrering med hypotese,
+   endrede og uendrede variabler, primært utfall, retning, beslutningsregel
+   og startdato (en onsdag frem i tid), og ukentlig kjøring med egne
+   snapshots, egne hendelser i den felles loggen, egen manifestlinje og
+   egen hashkjede. Regler skrives i `challengers/<id>.py`.
+3. Hendelser og kontroll i `shadow_oos.py` er gjort modellnøytrale.
+4. `priser.py` skriver hele månedsserien (nominell og real) per
+   råvaresegment til `serier/priser_mnd.csv` hver uke, til Challengere som
+   regner A på nytt. Ingen tall på bordet er endret; kjørt lokalt uten
+   feil (18 serier, 303 kB, siste verdi lik segmentfilene).
+Champion fryst på nytt (`specification_hash` 88942503...), fortsatt fra
+07.10.2026. Testene utvidet til 16, alle besto. Også ført: S logges
+separat når og hvis den blir aktiv, og onsdagsrutinen skal ikke vise
+shadow-status (Frodes beslutninger).
+**Filer:** `shadow_challenger.py` (ny), `shadow_oos.py`, `priser.py`,
+`test_shadow_oos.py`, `config/champion_v1_0.json`,
+`shadow/model_registry.csv`, `notater/shadow_oos_plan.md`,
+`notater/OVERLEVERING.md`, loggen.
+**Den andre økten må vite:** En ny regel skal skrives som Challenger, ikke
+inn i den levende koden. `code_commit` føres inn i neste commit.
+
 ### 05.10.2026 16:57, Claude Code
 **Hva:** `code_commit` for Champion v1.0 er nå
 2bd2f8c2c188c45575102096248fde343ea94090 (commiten med Frodes avgjørelser),

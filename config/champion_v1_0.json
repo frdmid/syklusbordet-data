@@ -114,7 +114,7 @@
    "en_per_uke": "uken gaar fra onsdag til tirsdag. Foerste kjoering etter onsdagens oppdatering (index.json oppdatert onsdag eller senere) skriver snapshotet; senere kjoeringer samme uke skriver det ikke paa nytt, og en kjoering foer oppdateringen skriver ingenting (Frodes beslutning 05.10.2026)"
   },
   "kodefiler": {
-   "priser.py": "45018bedca543a3f2f3c9bb5d857d78cf52e2f489842d0f96e3c883a4e21b03d",
+   "priser.py": "2ba04583e21fa141c9f56bced1e2ad8926e62cb0e8a4f0d12f76ee70a9402634",
    "signaler.py": "d5fed8857c97f3bafc258f78e2e8967e2de0a3752591203df34c89f90a2b6ccf",
    "instrumenter.py": "32513beca9612c9288ea8713be4a674b9acaa84d062205d1dc1f14f171dfb339",
    "uran_kilde.py": "a3856f70774195ed35b743eab54f3df4f441d914e866dfda7914fa91accf4d4b",
@@ -129,13 +129,13 @@
    "shipping.py": "65bfa8e2c75323b062c02b83471b77ef3cc2db6cbcb1e307282bf18678116531",
    "bygg_shipping.py": "16abf492a95880d318b63d3b206905f29b3fa8a6df6724a8b10c5c71c098eb86",
    "helse.py": "c46c5e910abd90ad9e8d27369205724159905cf86cf9eda142d2272ad413aabe",
-   "shadow_oos.py": "14c7005df4cd1307439f9c0b06f9eb23b6ec1b14a97d38c4dba1a46d72f7bd1a"
+   "shadow_oos.py": "c7380bd7cfdfd0728a6a303f8c3ea661fe759dd08dce8d5046adae72ed84ee13"
   }
  },
  "metadata": {
-  "code_commit": "2bd2f8c2c188c45575102096248fde343ea94090",
+  "code_commit": null,
   "code_commit_merknad": "commiten der config og kodefilene over ligger slik de er hashet",
   "notes": "Fase 1 av Shadow-OOS. Se notater/shadow_oos_plan.md.",
-  "specification_hash": "633c2216287dba9e910858a10c766c671f0ae9f3a53892e51d9a033d7a079d4c"
+  "specification_hash": "88942503ada39d2d1495bcaa47d87433611c26eaa7c68c181cf1a2ab51e9504d"
  }
 }

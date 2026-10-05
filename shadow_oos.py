@@ -52,6 +52,7 @@ HENDELSER = "shadow/shadow_events.csv"
 UTFALL = "shadow/shadow_outcomes.csv"
 RETTELSER = "shadow/correction_log.csv"
 MANIFEST = "shadow/run_manifest.csv"
+SERIER = "serier/priser_mnd.csv"            # hele maanedsserien per segment, skrevet av priser.py
 SNAP_MAPPE = f"shadow/snapshots/{MODELL}"
 INNDATA_MAPPE = f"shadow/inndata/{MODELL}"
 SCHEMA = 1
@@ -344,9 +345,9 @@ def legg_til_rader(lager, sti, felt, nye):
 
 
 # ------------------------------------------------------------------ konfig
-def kodehasher(rot):
+def kodehasher(rot, filer=None):
     ut = {}
-    for f in KODEFILER:
+    for f in filer or KODEFILER:
         p = os.path.join(rot, f)
         ut[f] = hashlib.sha256(lf(open(p, "rb").read())).hexdigest() if os.path.exists(p) else None
     return ut
@@ -611,12 +612,17 @@ def _n_c(rader, sid):
             "n_C_unknown": n["ukjent"], "n_C_not_applicable": n["uaktuell"]}
 
 
-def finn_hendelser(naa, forrige, gamle_hend, segmenter, flagg_uke, snapshot_date, snaps_for):
+def finn_hendelser(naa, forrige, gamle_hend, segmenter, flagg_uke, snapshot_date, snaps_for, modell=MODELL,
+                   ny_innslag=None):
     """naa og forrige: snapshotrader (strenger, som lest fra CSV). gamle_hend:
-    tidligere hendelser. segmenter: {id: segment-dict} (maanedsserien til
-    pausesjekken). flagg_uke: logg/flagg_uke.csv uten inneværende uke.
-    snaps_for(iso_week) -> rader for et tidligere snapshot."""
-    from flagglogg import ny_innslag
+    tidligere hendelser (alle modeller; bare modellens egne brukes).
+    segmenter: {id: segment-dict} (maanedsserien til pausesjekken). flagg_uke:
+    logg/flagg_uke.csv uten inneværende uke. snaps_for(iso_week) -> rader for
+    et tidligere snapshot av samme modell. modell og ny_innslag lar en
+    Challenger bruke de samme reglene for hendelser (shadow_challenger.py)."""
+    if ny_innslag is None:
+        from flagglogg import ny_innslag
+    gamle_hend = [h for h in gamle_hend if h.get("model_version", modell) == modell]
     dato, uke = snapshot_date.isoformat(), periodenokkel(snapshot_date)
     run_id = naa[0]["run_id"] if naa else ""
     ns, fs = _segrader(naa), _segrader(forrige or [])
@@ -624,9 +630,9 @@ def finn_hendelser(naa, forrige, gamle_hend, segmenter, flagg_uke, snapshot_date
 
     def hend(sid, navn, instrument=None, **kw):
         r = ns[sid]
-        e = {"event_id": f"{MODELL}|{dato}|{sid}|{instrument or '-'}|{navn}", "model_version": MODELL,
+        e = {"event_id": f"{modell}|{dato}|{sid}|{instrument or '-'}|{navn}", "model_version": modell,
              "event_date": dato, "iso_week": uke, "segment": sid, "instrument": instrument, "event": navn,
-             "snapshot_id": f"{MODELL}|{dato}|{sid}|{instrument or '-'}", "run_id": run_id,
+             "snapshot_id": f"{modell}|{dato}|{sid}|{instrument or '-'}", "run_id": run_id,
              "A_raw": r["A_raw"], "A_detrended": r["A_detrended"], "B": r["B"], "C": r["C"], "D": r["D"],
              "S": r["S"], **kw}
         if e["event_id"] not in finnes:
@@ -718,10 +724,12 @@ def finn_hendelser(naa, forrige, gamle_hend, segmenter, flagg_uke, snapshot_date
     return ut
 
 
-def aapne_innganger(gamle_hend, snapshot_date, snaps_for):
+def aapne_innganger(gamle_hend, snapshot_date, snaps_for, modell=MODELL):
     """Papirer i universet til innganger de siste 26 maanedene."""
     ut = set()
     for h in gamle_hend:
+        if h.get("model_version", modell) != modell:
+            continue
         if h["event"] != "hypothetical_entry" or snapshot_date > pluss_mnd(_dato(h["event_date"]), LOGG_MND):
             continue
         for r in snaps_for(h["iso_week"]):
@@ -731,22 +739,23 @@ def aapne_innganger(gamle_hend, snapshot_date, snaps_for):
 
 
 # ------------------------------------------------------------------ kontroll
-def kontroller(lager):
+def kontroller(lager, modell=MODELL, konfigsti=KONFIG):
     """Punkt 46: ingen gamle snapshots er endret. Sjekker hvert snapshot og
     hver inndatafil mot hashen i manifestet, hashkjeden, at hendelsesloggen
     begynner med det den var etter hver kjoering, og config mot registeret.
+    Hver modell har sin egen hashkjede i det felles manifestet.
     Returnerer en liste med avvik (tom er bra)."""
     avvik = []
     man = fra_csv(lager.les(MANIFEST)[0])
     hend_tekst = lager.les(HENDELSER)[0] or ""
     kjede = ""
     for m in man:
-        if m["status"] not in ("ok", "ok_gjenopptatt"):
+        if m["status"] not in ("ok", "ok_gjenopptatt") or m["model_version"] != modell:
             continue
         t = lager.les(m["snapshot_file"])[0]
         if t is None or sha256(t) != m["snapshot_sha256"]:
             avvik.append(f"snapshot endret eller borte: {m['snapshot_file']}")
-        ti = lager.les(f"{INNDATA_MAPPE}/{m['iso_week']}.json")[0]
+        ti = lager.les(m["raw_data_manifest"])[0]
         if ti is None or sha256(ti) != m["inndata_sha256"]:
             avvik.append(f"inndata endret eller borte: {m['iso_week']}")
         kjede = sha256(kjede + m["snapshot_sha256"] + m["inndata_sha256"] + m["events_sha256_after"])
@@ -756,12 +765,12 @@ def kontroller(lager):
         prefiks = "".join(hend_tekst.splitlines(keepends=True)[:n + 1]) if n else ""
         if n and sha256(prefiks) != m["events_sha256_after"]:
             avvik.append(f"hendelser endret foer {m['run_id']}")
-    kt, rt = lager.les(KONFIG)[0], lager.les(REGISTER)[0]
+    kt, rt = lager.les(konfigsti)[0], lager.les(REGISTER)[0]
     if kt is None or rt is None:
         avvik.append("config eller register mangler")
     else:
         k = json.loads(kt)
-        reg = {r["model_id"]: r for r in fra_csv(rt)}.get(MODELL)
+        reg = {r["model_id"]: r for r in fra_csv(rt)}.get(modell)
         h = spesifikasjonshash(k)
         if h != k["metadata"]["specification_hash"] or not reg or reg["specification_hash"] != h:
             avvik.append("config stemmer ikke med specification_hash i registeret")
@@ -770,7 +779,7 @@ def kontroller(lager):
 
 def kodeavvik(konfig, rot):
     frosset = konfig["spesifikasjon"]["kodefiler"]
-    naa = kodehasher(rot)
+    naa = kodehasher(rot, list(frosset))
     return sorted(f for f in frosset if naa.get(f) != frosset[f])
 
 
@@ -798,7 +807,8 @@ def kjor(lager, rot=None, naa=None, run_event=None, code_commit=None, note=print
 
     snapsti, innsti = f"{SNAP_MAPPE}/{uke}.csv", f"{INNDATA_MAPPE}/{uke}.json"
     man = fra_csv(lager.les(MANIFEST)[0])
-    if any(m["iso_week"] == uke and m["status"] in ("ok", "ok_gjenopptatt") for m in man):
+    if any(m["iso_week"] == uke and m["status"] in ("ok", "ok_gjenopptatt") and m["model_version"] == MODELL
+           for m in man):
         _manifest(lager, man, {"run_id": run_id, "run_date": snapshot_date, "iso_week": uke,
                                "model_version": MODELL, "run_event": run_event, "code_commit": code_commit,
                                "configuration_hash": konfig["metadata"]["specification_hash"],
@@ -806,6 +816,7 @@ def kjor(lager, rot=None, naa=None, run_event=None, code_commit=None, note=print
                                "completed_at": started, "status": "hoppet_over_uke_finnes",
                                "warnings": varsler, "errors": feil})
         note(f"   shadow: snapshot for {uke} finnes, ikke skrevet paa nytt")
+        kjor_challengere(lager, rot, naa, note)
         return "hoppet_over"
 
     def jles(sti):
@@ -869,7 +880,7 @@ def kjor(lager, rot=None, naa=None, run_event=None, code_commit=None, note=print
     inn = {"index": idx, "segmenter": segmenter, "kurser": kurser, "helse": jles("helse.json"), "referanse": ref,
            "c": {"oppdatert": (jles("c_overlevelse.json") or {}).get("oppdatert")},
            "d": {"oppdatert": (jles("d_kapitulasjon.json") or {}).get("oppdatert")}}
-    for sti in ("b_capex.json", "b_rigg.json", "c_manuell.json", "b_manuell.json", KONFIG):
+    for sti in ("b_capex.json", "b_rigg.json", "c_manuell.json", "b_manuell.json", KONFIG, SERIER):
         lest[sti] = lager.les(sti)[1]
 
     status = "ok"
@@ -904,7 +915,8 @@ def kjor(lager, rot=None, naa=None, run_event=None, code_commit=None, note=print
         h["run_id"] = run_id
     hend_ny = legg_til_rader(lager, HENDELSER, F_EVENT, nye)
     n_hend = len(hend_ny.splitlines()) - 1
-    kjede_forrige = next((m["chain_sha256"] for m in reversed(man) if m["status"] in ("ok", "ok_gjenopptatt")), "")
+    kjede_forrige = next((m["chain_sha256"] for m in reversed(man) if m["status"] in ("ok", "ok_gjenopptatt")
+                          and m["model_version"] == MODELL), "")
     s_sha, i_sha, h_sha = sha256(snaptekst), sha256(inndata), sha256(hend_ny)
     _manifest(lager, man, {
         "run_id": run_id, "run_date": snapshot_date, "iso_week": uke, "model_version": MODELL,
@@ -917,11 +929,33 @@ def kjor(lager, rot=None, naa=None, run_event=None, code_commit=None, note=print
         "chain_sha256": sha256(kjede_forrige + s_sha + i_sha + h_sha), "warnings": varsler, "errors": feil})
     note(f"   shadow: {uke} {len(lagret)} rader, {len(nye)} hendelser"
          + (f", {len(feil)} integritetsavvik" if feil else "") + (f", kode endret: {', '.join(avvik)}" if avvik else ""))
+    kjor_challengere(lager, rot, naa, note)
     return status
 
 
 def _manifest(lager, man, rad):
     legg_til_rader(lager, MANIFEST, F_MANIFEST, [rad])
+
+
+def kjor_challengere(lager, rot, naa, note=print):
+    """Kroksted for Challengere (Frodes beslutning 05.10.2026, lagt inn foer
+    start). Kjoerer shadow_challenger.kjor(lager, rot, naa, note) hvis filen
+    finnes. Challenger-koden ligger utenfor Championens kodefiler, saa nye
+    Challengere endrer aldri Champion. Kalles etter at Champion er skrevet
+    (punkt 27: Champion foerst, saa Challengere), og en feil her rammer ikke
+    Champion."""
+    p = os.path.join(rot, "shadow_challenger.py")
+    if not os.path.exists(p):
+        return None
+    try:
+        import importlib.util
+        spes = importlib.util.spec_from_file_location("shadow_challenger", p)
+        mod = importlib.util.module_from_spec(spes)
+        spes.loader.exec_module(mod)
+        return mod.kjor(lager, rot, naa, note)
+    except Exception as e:
+        note(f"   shadow challengere feilet: {type(e).__name__}: {str(e)[:80]}")
+        return None
 
 
 def kjor_actions(note=print):

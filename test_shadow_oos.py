@@ -252,6 +252,74 @@ def test_kodeendring_merkes():
     assert so.kodeavvik(k, tmp) == ["priser.py"]
 
 
+TERSKEL75 = '''
+def snapshot(champion_rader, kontekst):
+    ut = []
+    for r in champion_rader:
+        r = dict(r)
+        if r["level"] == "segment" and r["observation_only"] != "true" and r["A_raw"] and r["A_detrended"]:
+            bz = float(r["A_raw"]) >= 75 and float(r["A_detrended"]) >= 75
+            r["bottom_zone"] = bz
+            r["watch"] = float(r["A_raw"]) >= 75 and not bz
+        ut.append(r)
+    return ut
+'''
+
+
+def _challenger(l, kode=TERSKEL75, eff="2026-10-14", cid="challenger_test_terskel75"):
+    import shadow_challenger as sc
+    p = os.path.join(tempfile.mkdtemp(prefix="shadow_ch_"), "regel.py")
+    open(p, "w", encoding="utf-8").write(kode)
+    spes = {"id": cid, "effective_from": eff, "hypothesis": "lavere terskel gir flere og like gode episoder",
+            "changed_variables": ["bunnsone terskel 75"], "unchanged_variables": ["alt annet"],
+            "primary_endpoint": "24m", "expected_direction": "lik eller hoeyere", "decision_rule": "test",
+            "modul": p}
+    return sc.registrer(ROT, spes, dt.date(2026, 10, 5), l)
+
+
+def test_challenger_egen_gren():
+    import shadow_challenger as sc
+    l = _lager()
+    k = _challenger(l)
+    for eff in ("2026-10-15", "2026-09-30"):            # torsdag, og en onsdag som har vaert
+        try:
+            _challenger(l, eff=eff, cid="challenger_x")
+            assert False, f"skulle feilet for {eff}"
+        except ValueError:
+            pass
+    try:
+        _challenger(l)
+        assert False, "samme id to ganger"
+    except so.FinnesAllerede:
+        pass
+    _kjor(l, "2026-10-07")
+    assert l.liste("shadow/snapshots/challenger_test_terskel75") == []        # foer startdato
+    champ = _les(l, f"{so.SNAP_MAPPE}/2026-W41.csv")
+    _kjor(l, "2026-10-14")
+    assert l.liste("shadow/snapshots/challenger_test_terskel75") == ["2026-W42.csv"]
+    assert _les(l, f"{so.SNAP_MAPPE}/2026-W41.csv") == champ
+
+    def lav(d):
+        d["scores"].update(A=77.0, Ad=78.0, flagg=False, oppsikt=False)
+    _endre_segment(l, "nikkel", lav)
+    _kjor(l, "2026-10-21")
+    h = so.fra_csv(_les(l, so.HENDELSER))
+    ch = {(x["segment"], x["event"]) for x in h if x["model_version"] == k["model"]["id"]}
+    cp = {(x["segment"], x["event"]) for x in h if x["model_version"] == so.MODELL}
+    assert ("nikkel", "hypothetical_entry") in ch and ("nikkel", "hypothetical_entry") not in cp
+    assert so.kontroller(l) == []
+    assert so.kontroller(l, modell=k["model"]["id"], konfigsti=f"{sc.MAPPE}/{k['model']['id']}.json") == []
+
+
+def test_challenger_feil_rammer_ikke_champion():
+    l = _lager()
+    _challenger(l, kode="def snapshot(r, k):\n    raise RuntimeError('feil i regelen')\n")
+    _kjor(l, "2026-10-07")
+    assert _kjor(l, "2026-10-14") == "ok"
+    assert l.liste(so.SNAP_MAPPE) == ["2026-W41.csv", "2026-W42.csv"]
+    assert so.kontroller(l) == []
+
+
 def test_config_og_register():
     l = so.LokalLager(ROT, ROT)
     k = json.loads(_les(l, so.KONFIG))
