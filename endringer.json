@@ -1,125 +1,137 @@
 {
  "id": "endringer",
  "uke": {
-  "forrige_dato": "2026-09-28 11:23:36",
-  "ny_dato": "2026-09-30 06:29",
-  "forrige": "2026-09-28 (eldste lagrede)",
-  "ny": "2026-W40",
+  "forrige_dato": "2026-09-30 06:29",
+  "ny_dato": "2026-10-07 06:30",
+  "forrige": "2026-W40",
+  "ny": "2026-W41",
   "topp": [
+   {
+    "segment": "Naturgass US (Henry Hub)",
+    "felt": "COT-persentil",
+    "gammel": 53.2,
+    "ny": 10.3,
+    "endring_pst": -80.6,
+    "poeng": -42.9,
+    "vekt": 42.9
+   },
    {
     "segment": "Råolje (Brent)",
     "felt": "A detrendet",
-    "gammel": 42.1,
-    "ny": 72.5,
-    "endring_pst": 72.2,
-    "poeng": 30.4,
-    "vekt": 30.4
-   },
-   {
-    "segment": "Capesize (5 år)",
-    "felt": "Kapitulasjon D",
-    "gammel": 43.8,
-    "ny": 15.4,
-    "endring_pst": -64.8,
-    "poeng": -28.4,
-    "vekt": 28.4
+    "gammel": 72.5,
+    "ny": 44.0,
+    "endring_pst": -39.3,
+    "poeng": -28.5,
+    "vekt": 28.5
    },
    {
     "segment": "Råolje (Brent)",
     "felt": "Realpris",
-    "gammel": 114.89,
-    "ny": 89.75,
-    "endring_pst": -21.9,
+    "gammel": 89.75,
+    "ny": 113.96,
+    "endring_pst": 27.0,
     "poeng": null,
-    "vekt": 21.9
+    "vekt": 27.0
    },
    {
     "segment": "Råolje (WTI)",
-    "felt": "A detrendet",
-    "gammel": 50.7,
-    "ny": 65.8,
-    "endring_pst": 29.8,
-    "poeng": 15.1,
-    "vekt": 15.1
+    "felt": "COT-persentil",
+    "gammel": 51.3,
+    "ny": 30.8,
+    "endring_pst": -40.0,
+    "poeng": -20.5,
+    "vekt": 20.5
+   },
+   {
+    "segment": "Naturgass Europa",
+    "felt": "Realpris",
+    "gammel": 21.11,
+    "ny": 25.42,
+    "endring_pst": 20.4,
+    "poeng": null,
+    "vekt": 20.4
    },
    {
     "segment": "Råolje (Brent)",
     "felt": "Prisnivå A",
-    "gammel": 18.0,
-    "ny": 32.6,
-    "endring_pst": 81.1,
-    "poeng": 14.6,
-    "vekt": 14.6
-   },
-   {
-    "segment": "Aframax/LR2 (5 år)",
-    "felt": "Kapitulasjon D",
-    "gammel": 10.4,
-    "ny": 0.0,
-    "endring_pst": -100.0,
-    "poeng": -10.4,
-    "vekt": 10.4
+    "gammel": 32.6,
+    "ny": 18.2,
+    "endring_pst": -44.2,
+    "poeng": -14.4,
+    "vekt": 14.4
    },
    {
     "segment": "Råolje (WTI)",
-    "felt": "Realpris",
-    "gammel": 96.41,
-    "ny": 87.03,
-    "endring_pst": -9.7,
-    "poeng": null,
-    "vekt": 9.7
+    "felt": "A detrendet",
+    "gammel": 65.8,
+    "ny": 52.4,
+    "endring_pst": -20.4,
+    "poeng": -13.4,
+    "vekt": 13.4
    },
    {
     "segment": "Naturgass US (Henry Hub)",
     "felt": "Kapitulasjon D",
-    "gammel": 26.3,
-    "ny": 32.4,
-    "endring_pst": 23.2,
-    "poeng": 6.1,
-    "vekt": 6.1
+    "gammel": 32.4,
+    "ny": 19.9,
+    "endring_pst": -38.6,
+    "poeng": -12.5,
+    "vekt": 12.5
    },
    {
     "segment": "Råolje (WTI)",
-    "felt": "Prisnivå A",
-    "gammel": 24.9,
-    "ny": 30.7,
-    "endring_pst": 23.3,
-    "poeng": 5.8,
-    "vekt": 5.8
+    "felt": "Realpris",
+    "gammel": 87.03,
+    "ny": 96.16,
+    "endring_pst": 10.5,
+    "poeng": null,
+    "vekt": 10.5
    },
    {
-    "segment": "Marked",
-    "felt": "VIX",
-    "gammel": 16.36,
-    "ny": 16.04,
-    "endring_pst": -2.0,
-    "poeng": null,
-    "vekt": 2.0
+    "segment": "Naturgass US (Henry Hub)",
+    "felt": "A detrendet",
+    "gammel": 58.9,
+    "ny": 48.9,
+    "endring_pst": -17.0,
+    "poeng": -10.0,
+    "vekt": 10.0
    }
   ],
   "skifter": [
    {
-    "segment": "Råolje (Brent)",
+    "segment": "Laks (sesongjustert)",
+    "felt": "Trend",
+    "gammel": "bekreftet",
+    "ny": "begynnende"
+   },
+   {
+    "segment": "Kobber",
     "felt": "Port C",
     "gammel": "ukjent",
     "ny": "aapen"
    },
    {
-    "segment": "Aluminium",
+    "segment": "Nikkel",
     "felt": "Port C",
-    "gammel": "trang",
+    "gammel": "ukjent",
     "ny": "aapen"
    },
    {
-    "segment": "Bly",
+    "segment": "Tinn",
     "felt": "Port C",
-    "gammel": "trang",
+    "gammel": "ukjent",
     "ny": "aapen"
    },
    {
-    "segment": "Suezmax (5 år)",
+    "segment": "Jernmalm 62% Fe",
+    "felt": "Under oppsikt",
+    "gammel": true,
+    "ny": false
+   },
+   {
+    "segment": "Palmeolje",
     "felt": "Port C",
-    "gammel": "trang",
+    "gammel": "ukjent",
     "ny": "aapen"
    }
   ]
