@@ -1,6 +1,6 @@
 {
  "id": "helse",
- "laget": "2026-09-30 11:27",
+ "laget": "2026-10-07 06:30",
  "rader": [
   {
    "id": "innhenting",
@@ -9,8 +9,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 2,
-   "siste": "2026-09-30 06:27",
-   "slutt": "2026-09-30"
+   "siste": "2026-10-07 06:26",
+   "slutt": "2026-10-07"
   },
   {
    "id": "kpi",
@@ -19,8 +19,8 @@
    "type": "auto",
    "frekvens": "mnd",
    "etterslep": 45,
-   "siste": "2026-07",
-   "slutt": "2026-07-31"
+   "siste": "2026-08",
+   "slutt": "2026-08-31"
   },
   {
    "id": "brent",
@@ -29,8 +29,8 @@
    "type": "auto",
    "frekvens": "mnd",
    "etterslep": 10,
-   "siste": "2026-08",
-   "slutt": "2026-08-31"
+   "siste": "2026-09",
+   "slutt": "2026-09-30"
   },
   {
    "id": "wti",
@@ -39,8 +39,8 @@
    "type": "auto",
    "frekvens": "mnd",
    "etterslep": 10,
-   "siste": "2026-08",
-   "slutt": "2026-08-31"
+   "siste": "2026-09",
+   "slutt": "2026-09-30"
   },
   {
    "id": "henryhub",
@@ -49,8 +49,8 @@
    "type": "auto",
    "frekvens": "mnd",
    "etterslep": 10,
-   "siste": "2026-08",
-   "slutt": "2026-08-31"
+   "siste": "2026-09",
+   "slutt": "2026-09-30"
   },
   {
    "id": "gold",
@@ -59,8 +59,8 @@
    "type": "auto",
    "frekvens": "mnd",
    "etterslep": 10,
-   "siste": "2026-08",
-   "slutt": "2026-08-31"
+   "siste": "2026-09",
+   "slutt": "2026-09-30"
   },
   {
    "id": "uran",
@@ -69,8 +69,8 @@
    "type": "auto",
    "frekvens": "mnd",
    "etterslep": 14,
-   "siste": "2026-08",
-   "slutt": "2026-08-31"
+   "siste": "2026-09",
+   "slutt": "2026-09-30"
   },
   {
    "id": "laks",
@@ -79,8 +79,8 @@
    "type": "auto",
    "frekvens": "mnd",
    "etterslep": 14,
-   "siste": "2026-08",
-   "slutt": "2026-08-31"
+   "siste": "2026-09",
+   "slutt": "2026-09-30"
   },
   {
    "id": "laks_uke",
@@ -89,8 +89,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 7,
-   "siste": "2026-09-24",
-   "slutt": "2026-09-24"
+   "siste": "2026-10-01",
+   "slutt": "2026-10-01"
   },
   {
    "id": "laks_kost",
@@ -129,8 +129,8 @@
    "type": "auto",
    "frekvens": "mnd",
    "etterslep": 14,
-   "siste": "2026-08",
-   "slutt": "2026-08-31"
+   "siste": "2026-09",
+   "slutt": "2026-09-30"
   },
   {
    "id": "nikkel",
@@ -139,8 +139,8 @@
    "type": "auto",
    "frekvens": "mnd",
    "etterslep": 14,
-   "siste": "2026-08",
-   "slutt": "2026-08-31"
+   "siste": "2026-09",
+   "slutt": "2026-09-30"
   },
   {
    "id": "aluminium",
@@ -149,8 +149,8 @@
    "type": "auto",
    "frekvens": "mnd",
    "etterslep": 14,
-   "siste": "2026-08",
-   "slutt": "2026-08-31"
+   "siste": "2026-09",
+   "slutt": "2026-09-30"
   },
   {
    "id": "sink",
@@ -159,8 +159,8 @@
    "type": "auto",
    "frekvens": "mnd",
    "etterslep": 14,
-   "siste": "2026-08",
-   "slutt": "2026-08-31"
+   "siste": "2026-09",
+   "slutt": "2026-09-30"
   },
   {
    "id": "bly",
@@ -169,8 +169,8 @@
    "type": "auto",
    "frekvens": "mnd",
    "etterslep": 14,
-   "siste": "2026-08",
-   "slutt": "2026-08-31"
+   "siste": "2026-09",
+   "slutt": "2026-09-30"
   },
   {
    "id": "tinn",
@@ -179,8 +179,8 @@
    "type": "auto",
    "frekvens": "mnd",
    "etterslep": 14,
-   "siste": "2026-08",
-   "slutt": "2026-08-31"
+   "siste": "2026-09",
+   "slutt": "2026-09-30"
   },
   {
    "id": "jernmalm",
@@ -189,8 +189,8 @@
    "type": "auto",
    "frekvens": "mnd",
    "etterslep": 14,
-   "siste": "2026-08",
-   "slutt": "2026-08-31"
+   "siste": "2026-09",
+   "slutt": "2026-09-30"
   },
   {
    "id": "jernmalm_fersk",
@@ -199,8 +199,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 2,
-   "siste": "2026-09-29",
-   "slutt": "2026-09-29"
+   "siste": "2026-10-06",
+   "slutt": "2026-10-06"
   },
   {
    "id": "kull",
@@ -209,8 +209,8 @@
    "type": "auto",
    "frekvens": "mnd",
    "etterslep": 14,
-   "siste": "2026-08",
-   "slutt": "2026-08-31"
+   "siste": "2026-09",
+   "slutt": "2026-09-30"
   },
   {
    "id": "ttf",
@@ -219,8 +219,8 @@
    "type": "auto",
    "frekvens": "mnd",
    "etterslep": 14,
-   "siste": "2026-08",
-   "slutt": "2026-08-31"
+   "siste": "2026-09",
+   "slutt": "2026-09-30"
   },
   {
    "id": "kakao",
@@ -229,8 +229,8 @@
    "type": "auto",
    "frekvens": "mnd",
    "etterslep": 14,
-   "siste": "2026-08",
-   "slutt": "2026-08-31"
+   "siste": "2026-09",
+   "slutt": "2026-09-30"
   },
   {
    "id": "palmeolje",
@@ -239,8 +239,8 @@
    "type": "auto",
    "frekvens": "mnd",
    "etterslep": 14,
-   "siste": "2026-08",
-   "slutt": "2026-08-31"
+   "siste": "2026-09",
+   "slutt": "2026-09-30"
   },
   {
    "id": "brent_cot",
@@ -249,8 +249,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 9,
-   "siste": "2026-09-22",
-   "slutt": "2026-09-22"
+   "siste": "2026-09-29",
+   "slutt": "2026-09-29"
   },
   {
    "id": "wti_cot",
@@ -259,8 +259,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 9,
-   "siste": "2026-09-22",
-   "slutt": "2026-09-22"
+   "siste": "2026-09-29",
+   "slutt": "2026-09-29"
   },
   {
    "id": "henryhub_cot",
@@ -269,8 +269,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 9,
-   "siste": "2026-09-22",
-   "slutt": "2026-09-22"
+   "siste": "2026-09-29",
+   "slutt": "2026-09-29"
   },
   {
    "id": "gold_cot",
@@ -279,8 +279,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 9,
-   "siste": "2026-09-22",
-   "slutt": "2026-09-22"
+   "siste": "2026-09-29",
+   "slutt": "2026-09-29"
   },
   {
    "id": "kobber_cot",
@@ -289,8 +289,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 9,
-   "siste": "2026-09-22",
-   "slutt": "2026-09-22"
+   "siste": "2026-09-29",
+   "slutt": "2026-09-29"
   },
   {
    "id": "kakao_cot",
@@ -299,8 +299,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 9,
-   "siste": "2026-09-22",
-   "slutt": "2026-09-22"
+   "siste": "2026-09-29",
+   "slutt": "2026-09-29"
   },
   {
    "id": "palmeolje_cot",
@@ -309,8 +309,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 9,
-   "siste": "2026-09-22",
-   "slutt": "2026-09-22"
+   "siste": "2026-09-29",
+   "slutt": "2026-09-29"
   },
   {
    "id": "brent_kurve",
@@ -319,8 +319,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 2,
-   "siste": "2026-09-30",
-   "slutt": "2026-09-30"
+   "siste": "2026-10-07",
+   "slutt": "2026-10-07"
   },
   {
    "id": "wti_kurve",
@@ -329,8 +329,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 2,
-   "siste": "2026-09-30",
-   "slutt": "2026-09-30"
+   "siste": "2026-10-07",
+   "slutt": "2026-10-07"
   },
   {
    "id": "henryhub_kurve",
@@ -339,8 +339,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 2,
-   "siste": "2026-09-30",
-   "slutt": "2026-09-30"
+   "siste": "2026-10-07",
+   "slutt": "2026-10-07"
   },
   {
    "id": "gold_kurve",
@@ -349,8 +349,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 2,
-   "siste": "2026-09-30",
-   "slutt": "2026-09-30"
+   "siste": "2026-10-07",
+   "slutt": "2026-10-07"
   },
   {
    "id": "kobber_kurve",
@@ -359,8 +359,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 2,
-   "siste": "2026-09-30",
-   "slutt": "2026-09-30"
+   "siste": "2026-10-07",
+   "slutt": "2026-10-07"
   },
   {
    "id": "kakao_kurve",
@@ -369,8 +369,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 2,
-   "siste": "2026-09-29",
-   "slutt": "2026-09-29"
+   "siste": "2026-10-06",
+   "slutt": "2026-10-06"
   },
   {
    "id": "uran_fut",
@@ -389,8 +389,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 7,
-   "siste": "2026-09-24",
-   "slutt": "2026-09-24"
+   "siste": "2026-09-30",
+   "slutt": "2026-09-30"
   },
   {
    "id": "bdi",
@@ -410,8 +410,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 2,
-   "siste": "2026-09-29",
-   "slutt": "2026-09-29"
+   "siste": "2026-10-06",
+   "slutt": "2026-10-06"
   },
   {
    "id": "dxy",
@@ -420,8 +420,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 2,
-   "siste": "2026-09-30",
-   "slutt": "2026-09-30"
+   "siste": "2026-10-07",
+   "slutt": "2026-10-07"
   },
   {
    "id": "usdnok",
@@ -430,8 +430,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 2,
-   "siste": "2026-09-29",
-   "slutt": "2026-09-29"
+   "siste": "2026-10-06",
+   "slutt": "2026-10-06"
   },
   {
    "id": "owid",
@@ -451,8 +451,8 @@
    "type": "auto",
    "frekvens": "kvartal",
    "etterslep": 5,
-   "siste": "2026-09-29",
-   "slutt": "2026-09-29"
+   "siste": "2026-10-01",
+   "slutt": "2026-10-01"
   },
   {
    "id": "b_capex",
@@ -461,8 +461,8 @@
    "type": "auto",
    "frekvens": "kvartal",
    "etterslep": 5,
-   "siste": "2026-09-29",
-   "slutt": "2026-09-29"
+   "siste": "2026-10-01",
+   "slutt": "2026-10-01"
   },
   {
    "id": "b_rigg",
@@ -471,8 +471,8 @@
    "type": "auto",
    "frekvens": "kvartal",
    "etterslep": 5,
-   "siste": "2026-09-29",
-   "slutt": "2026-09-29"
+   "siste": "2026-10-01",
+   "slutt": "2026-10-01"
   },
   {
    "id": "c_AKRBP.OL",
@@ -531,6 +531,60 @@
   {
    "id": "c_VALE",
    "navn": "VALE, overlevelse C",
+   "kilde": "c_manuell.json",
+   "type": "manuell",
+   "siste": "regnskapsår 2025",
+   "slutt": "2025-12-31",
+   "grense": "2027-03-31"
+  },
+  {
+   "id": "c_GLEN.L",
+   "navn": "GLEN.L, overlevelse C",
+   "kilde": "c_manuell.json",
+   "type": "manuell",
+   "siste": "regnskapsår 2025",
+   "slutt": "2025-12-31",
+   "grense": "2027-03-31"
+  },
+  {
+   "id": "c_CS.TO",
+   "navn": "CS.TO, overlevelse C",
+   "kilde": "c_manuell.json",
+   "type": "manuell",
+   "siste": "regnskapsår 2025",
+   "slutt": "2025-12-31",
+   "grense": "2027-03-31"
+  },
+  {
+   "id": "c_ATYM.L",
+   "navn": "ATYM.L, overlevelse C",
+   "kilde": "c_manuell.json",
+   "type": "manuell",
+   "siste": "regnskapsår 2025",
+   "slutt": "2025-12-31",
+   "grense": "2027-03-31"
+  },
+  {
+   "id": "c_ERA.PA",
+   "navn": "ERA.PA, overlevelse C",
+   "kilde": "c_manuell.json",
+   "type": "manuell",
+   "siste": "regnskapsår 2025",
+   "slutt": "2025-12-31",
+   "grense": "2027-03-31"
+  },
+  {
+   "id": "c_MPE.L",
+   "navn": "MPE.L, overlevelse C",
+   "kilde": "c_manuell.json",
+   "type": "manuell",
+   "siste": "regnskapsår 2025",
+   "slutt": "2025-12-31",
+   "grense": "2027-03-31"
+  },
+  {
+   "id": "c_RE.L",
+   "navn": "RE.L, overlevelse C",
    "kilde": "c_manuell.json",
    "type": "manuell",
    "siste": "regnskapsår 2025",
