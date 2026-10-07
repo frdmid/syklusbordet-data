@@ -69,7 +69,7 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 ## Dashbordet
 
 - Adresse: https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF (siste versjon
-  60 per 07.10; Cowork kan ha publisert senere).
+  61 per 07.10; Cowork kan ha publisert senere).
 - **Omslaget:** filen som Artifact `read` lagrer, begynner med vertens omslag
   (`<!doctype html><html><head><meta charset=utf8>...<body>`) og slutter med
   `</body></html>`. Ta bort begge før publisering, ellers kommer omslaget to
@@ -78,7 +78,9 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
   nettleserpanelet (konsoll, og `scrollWidth` lik bredden ved 390 px).
 - Database: samlingen `segments` (ett dokument per segment, id lik
   segmentets id, inkludert `ship_*`) og samlingen `marked` med dokumentene
-  `vix`, `dollar`, `endringer`, `helse` og `gass_b` (fra 07.10).
+  `vix`, `dollar`, `endringer`, `helse`, `gass_b` og `laks_biomasse` (de to
+  siste fra 07.10, skrevet av Challengeren for gass og av `kontekst_laks.py`,
+  som `shadow_challenger.kjor` kaller hver uke).
 - **Kildekoden finnes bare i selve dashbordet.** Les alltid siste versjon med
   Artifact `read` før du endrer noe, og bygg på den. Ellers overskrives den
   andre øktens arbeid.

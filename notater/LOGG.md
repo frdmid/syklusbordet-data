@@ -9,6 +9,29 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 07.10.2026 22:32, Claude Code
+**Hva:** Biomasse for laks på dashbordet (Frodes bestilling): kurven over endringen
+i stående biomasse står i laks-panelet der kurveformen sto (laks har ingen
+terminkurve). Kontekst, ikke skår.
+1. Ny `kontekst_laks.py` skriver `laks_biomasse.json`: endringen i biomasse
+   (snitt 3 mnd mot samme måneder året før), tonn, og de siste 60 månedene.
+   Kilde Fiskeridirektoratet, uten konto. Første fil laget lokalt i dag
+   (2026-08: +2,6 %).
+2. `shadow_challenger.kjor` kaller `kontekst_laks.kjor` sist hver uke. Feil der
+   rammer ingenting annet. Ingen Challenger-kode og ingen frosne filer er rørt.
+   `KONTEKST_AV=1` slår kallet av; `test_shadow_oos.py` setter den, så testene
+   ikke henter fra nettet. 16 tester består.
+3. Onsdagsrutinen har nytt steg 6g (marked/laks_biomasse) og en linje i
+   rapporten. Bare teksten endret, resten kontrollert urørt.
+4. marked/laks_biomasse skrevet for hånd én gang (versjon 1).
+5. Dashbordet versjon 61: feltet «Biomasse i sjøen · Norge» med kurve, tall og
+   forklaring. Testet lokalt med ekte data, toppen kontrollert etter
+   publisering.
+**Filer:** `kontekst_laks.py` (ny), `laks_biomasse.json` (ny),
+`shadow_challenger.py`, `test_shadow_oos.py`, `notater/OVERLEVERING.md`,
+loggen; rutinen, databasen og dashbordet.
+**Den andre økten må vite:** Bygg videre på versjon 61.
+
 ### 07.10.2026 22:27, Claude Code
 **Hva:** B for gass i drift (Frodes beslutning), som Challenger og som kontekst
 på dashbordet:

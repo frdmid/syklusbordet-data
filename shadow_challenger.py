@@ -108,6 +108,17 @@ def kjor(lager, rot, naa, note=print):
         except Exception as e:
             ut[f[:-5]] = f"feil: {type(e).__name__}"
             note(f"   challenger {f[:-5]} feilet: {type(e).__name__}: {str(e)[:80]}")
+    # Kontekst til dashbordet (07.10.2026), ikke shadow-data og ingen modell:
+    # laks_biomasse.json fra kontekst_laks.py. En feil her rammer ingenting annet.
+    try:
+        p = os.path.join(rot, "kontekst_laks.py")
+        if os.path.exists(p) and not os.environ.get("KONTEKST_AV"):
+            spes = importlib.util.spec_from_file_location("kontekst_laks", p)
+            kl = importlib.util.module_from_spec(spes)
+            spes.loader.exec_module(kl)
+            kl.kjor(lager, note)
+    except Exception as e:
+        note(f"   kontekst feilet: {type(e).__name__}: {str(e)[:80]}")
     return ut
 
 

@@ -10,6 +10,7 @@
 import datetime as dt
 import json, os, shutil, tempfile
 
+os.environ["KONTEKST_AV"] = "1"     # ingen nettkall til kontekstfilene i testene (07.10.2026)
 import shadow_oos as so
 
 ROT = os.path.dirname(os.path.abspath(__file__))
