@@ -69,7 +69,13 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 ## Dashbordet
 
 - Adresse: https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF (siste versjon
-  55 per 30.09; Cowork kan ha publisert senere).
+  58 per 07.10; Cowork kan ha publisert senere).
+- **Omslaget:** filen som Artifact `read` lagrer, begynner med vertens omslag
+  (`<!doctype html><html><head><meta charset=utf8>...<body>`) og slutter med
+  `</body></html>`. Ta bort begge før publisering, ellers kommer omslaget to
+  ganger. Filen som publiseres skal begynne med `<title>Syklusbordet</title>`.
+- Uten Playwright: server filen med `python -m http.server` og test i
+  nettleserpanelet (konsoll, og `scrollWidth` lik bredden ved 390 px).
 - Database: samlingen `segments` (ett dokument per segment, id lik
   segmentets id, inkludert `ship_*`) og samlingen `marked` med dokumentene
   `vix`, `dollar`, `endringer` og `helse`.
@@ -133,20 +139,27 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
   instrumenter før uransonden er kjørt; real lik nom de siste månedene i
   shipping (deflatoren slutter før serien).
 
-## Åpne punkter per 02.10.2026
+- **KPI med basisår 2015:** Eurostat (HICP), ECB og SSB (03013) har ikke data
+  etter desember 2025 i de gamle seriene. Nye sonder og Challengere bør ikke
+  hvile på dem; trend eller nye serier med basisår 2025.
+
+## Åpne punkter per 07.10.2026
 
 - Varselboksen sier «B er målt for fem»; det er seks metaller pluss rigger.
   Kan regnes i koden på samme måte som C-tellingen.
 - Forslag om en ekstra rutine torsdag som kjører onsdagsrutinen på nytt hvis
   databasen ikke har ukens tall. Ikke bestilt.
-- 07.10: første Shadow-OOS-snapshot (uke 2026-W41). Sjekk
-  `shadow/run_manifest.csv` etterpå. Frodes avgjørelser står i
-  `notater/shadow_oos_plan.md`, avsnitt 7, Challengere i avsnitt 8 og åpne
-  punkter i avsnitt 9. Onsdagsrutinen skal ikke vise shadow-status; si fra
-  til Frode i den aktive prosjektchatten når noe må avgjøres.
-- 07.10: første ukekjøring med Fearnleys-arkivet (rundt 18 MB første gang,
-  de 41 rapportene som ikke kan leses) og helse.json fra arbeidsflyten.
-- Neste kvartalskjøring: nikkel og tinn ventes å gå fra stengt til åpen etter
-  Coworks Glencore-regel 01.10.
+- Shadow-OOS gikk 07.10 (Champion v1.0, uke 2026-W41, 105 rader). Frodes
+  avgjørelser står i `notater/shadow_oos_plan.md`. Onsdagsrutinen skal ikke
+  vise shadow-status; si fra til Frode i den aktive prosjektchatten når noe må
+  avgjøres.
+- 14.10: første kjøring av `challenger_laks_tilbud_v1` (laks: A_pris i EUR 70
+  eller mer og biomasse lavere enn året før). Sjekk `shadow/run_manifest.csv`
+  og `shadow/snapshots/challenger_laks_tilbud_v1/`.
+- B for Henry Hub: `sonde_kjor_b_gass` besto kriteriet, men B1 måler mest
+  overgangen til kapitaldisiplin. Frode har ikke avgjort om den skal bli
+  Challenger.
+- Laks: valuta tilførte ingenting til A, smoltutsett varsler ikke slakt,
+  biomasse gjør det. Se loggen 07.10.
 - Parallelt signal for Brent og WTI (detrendet A 95 eller mer) holdes etter
   regelen fra desember 2025 til desember 2027.

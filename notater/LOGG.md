@@ -9,6 +9,35 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 07.10.2026 22:02, Claude Code
+**Hva:** Dashbordet versjon 58 (Frodes bestilling): valutaeksponering ved hvert
+papir notert i Oslo, som kontekst og ikke testet, og et avsnitt i forklaringen.
+Konstanten `VALUTA` i skriptet merker 14 papirer: **drift** (inntekter i
+USD/EUR, kostnader i NOK: SALM, LSG, MOWI, NHY, EQNR, AKRBP) og **omregning**
+(virksomheten i annen valuta: BAKKA, DNO, FRO, HAFNI, HSHP, OET, SUBC, TGS).
+Merket står som `valuta: drift` eller `valuta: omregning` etter navnet, og en
+setning står i kommentaren. Ingen tall, ingen skår; Frode følger kursene selv.
+`instrumenter.py` er ikke rørt (frosset i Champion). Testet lokalt: ingen feil
+i konsollen, ingen sidevis rulling ved 390 px. Etter publisering: `<title>` og
+`:root` står øverst, omslaget én gang.
+Også: `OVERLEVERING.md` oppdatert (versjon 58, omslaget, KPI med basisår 2015
+stoppet desember 2025, åpne punkter per 07.10).
+
+**Samlet for Cowork, dette har Claude Code gjort 07.10** (detaljer i
+innslagene under):
+1. Sjekket ukekjøringen: data, Fearnleys-arkiv, første Shadow-OOS-snapshot
+   (W41), databasen, nikkel og tinn åpen port. Alt i orden.
+2. Sonder, ingen endring på bordet: `sonde_kjor_b_gass` (B for Henry Hub),
+   `sonde_kjor_laks_valuta` (valuta gir ikke noe til A for laks),
+   `sonde_kjor_smolt` (smolt varsler ikke slakt), `sonde_kjor_biomasse`
+   (biomasse varsler slakt).
+3. Første Challenger, `challenger_laks_tilbud_v1`, fra 14.10.
+4. Dashbordet versjon 58 med valutaeksponering.
+5. Frodes regel 05.10 gjelder fortsatt: ingen økt oppretter kontoer.
+**Filer:** `notater/OVERLEVERING.md`, loggen; dashbordet.
+**Den andre økten må vite:** Bygg videre på versjon 58. Fjern vertens omslag
+fra filen fra Artifact `read` før publisering (se `OVERLEVERING.md`).
+
 ### 07.10.2026 21:54, Claude Code
 **Hva:** Første Challenger registrert (Frodes beslutning):
 `challenger_laks_tilbud_v1`, fra onsdag 14.10.2026, `specification_hash`
