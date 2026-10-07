@@ -69,7 +69,7 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 ## Dashbordet
 
 - Adresse: https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF (siste versjon
-  58 per 07.10; Cowork kan ha publisert senere).
+  59 per 07.10; Cowork kan ha publisert senere).
 - **Omslaget:** filen som Artifact `read` lagrer, begynner med vertens omslag
   (`<!doctype html><html><head><meta charset=utf8>...<body>`) og slutter med
   `</body></html>`. Ta bort begge før publisering, ellers kommer omslaget to

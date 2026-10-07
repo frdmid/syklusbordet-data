@@ -9,6 +9,18 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 07.10.2026 22:05, Claude Code
+**Hva:** Dashbordet versjon 59 (Frodes ønske): merkene for valutaeksponering er
+byttet ut. «NOK» i grønt for papirer med markant fordel ved svak krone (SALM,
+LSG, MOWI, NHY, EQNR, AKRBP), «NOK» i rødt for papirer der svak krone bare gir
+ekstra kostnad (ingen på bordet i dag), og «NOK nøytral» i grått der
+resultatet ikke påvirkes vesentlig (BAKKA, DNO, FRO, HAFNI, HSHP, OET, SUBC,
+TGS). Kategorien `kostnad` finnes i `NOK_MERKE` i skriptet til et papir som
+trenger den. Forklaringen er oppdatert. Testet lokalt, og toppen kontrollert
+etter publisering.
+**Filer:** ingen i repoet utover loggen; dashbordet.
+**Den andre økten må vite:** Bygg videre på versjon 59.
+
 ### 07.10.2026 22:02, Claude Code
 **Hva:** Dashbordet versjon 58 (Frodes bestilling): valutaeksponering ved hvert
 papir notert i Oslo, som kontekst og ikke testet, og et avsnitt i forklaringen.
