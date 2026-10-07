@@ -9,6 +9,27 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 07.10.2026 22:10, Claude Code
+**Hva:** Ny sonde `sonde_kjor_gass_tilbud.py` (Frodes bestilling): måler B for
+gass tilbudet, og er produksjonsveksten et brukbart tilbudsmål for Henry Hub?
+Mekanismen testes, ikke papirene eller prisen framover. Kriterier satt før
+kjøring. Data: B fra `sonde_kjor_b_gass`, EIAs tørrgassproduksjon (historikksiden,
+uten konto), Henry Hub fra datasets.
+Resultat: begge holder ikke.
+- K1, B varsler tilbudet: forholdet i år t mot produksjonsveksten i t+1 +0,26,
+  i t+2 -0,09 (n 15 til 16, krav 0,30).
+- K2, produksjonen svarer på prisen: +0,21 ved 12 mnd, +0,20 ved 18, -0,04 ved
+  24 (krav 0,30); uten overlapp +0,22, n 27.
+Produksjonen i USA vokste nesten hvert år uansett investeringer hos
+gassprodusentene og uansett pris. Trolig fordi assosiert gass fra oljeboring
+(Permian) og effektivitet styrer tilbudet. Etter regelen bygges verken B for
+gass eller et flagg på produksjonsveksten. Henry Hub står som før (A i
+Champion). I dag: produksjon +4,7 % over 12 mnd.
+**Filer:** `sonde_kjor_gass_tilbud.py` (ny), `sonder/sonde_kjor_gass_tilbud.txt`,
+`sonder_ferdige.txt`, `notater/OVERLEVERING.md`, loggen.
+**Den andre økten må vite:** B for gass er avsluttet. Ingenting på dashbordet
+er endret.
+
 ### 07.10.2026 22:05, Claude Code
 **Hva:** Dashbordet versjon 59 (Frodes ønske): merkene for valutaeksponering er
 byttet ut. «NOK» i grønt for papirer med markant fordel ved svak krone (SALM,

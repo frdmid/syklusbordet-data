@@ -1,0 +1,49 @@
+1. DATA
+
+   B for gass fra sonde_kjor_b_gass: 2009 til 2025, siste forhold 1.09
+   EIA toerrgass: 1997-01 til 2026-07, siste 3.52 Tcf i maaneden
+   Henry Hub: 1997-01 til 2026-08
+
+   Aar: forhold (B), produksjonsvekst samme aar, aaret etter, to aar etter
+   2009:  2.61     +2.3 %   +3.4 %   +7.4 %
+   2010:  3.36     +3.4 %   +7.4 %   +4.9 %
+   2011:  3.49     +7.4 %   +4.9 %   +0.7 %
+   2012:  2.91     +4.9 %   +0.7 %   +7.0 %
+   2013:  2.80     +0.7 %   +7.0 %   +4.5 %
+   2014:  3.05     +7.0 %   +4.5 %   -1.7 %
+   2015:  1.76     +4.5 %   -1.7 %   +2.8 %
+   2016:  1.61     -1.7 %   +2.8 %  +12.6 %
+   2017:  2.02     +2.8 %  +12.6 %  +10.2 %
+   2018:  1.87    +12.6 %  +10.2 %   -0.3 %
+   2019:  1.23    +10.2 %   -0.3 %   +2.1 %
+   2020:  1.08     -0.3 %   +2.1 %   +5.0 %
+   2021:  0.98     +2.1 %   +5.0 %   +3.9 %
+   2022:  1.31     +5.0 %   +3.9 %   +0.2 %
+   2023:  1.51     +3.9 %   +0.2 %   +4.1 %
+   2024:  1.11     +0.2 %   +4.1 %         
+   2025:  1.09     +4.1 %                  
+
+
+2. TEST 1: B VARSLER TILBUDET (aarstall, ingen overlapp)
+
+   forhold aar t mot vekst aar t+1: korrelasjon +0.26 (n 16)
+      (B1 mot vekst t+1: -0.33, n 11; forventet negativ)
+   forhold aar t mot vekst aar t+2: korrelasjon -0.09 (n 15)
+      (B1 mot vekst t+2: +0.41, n 10; forventet negativ)
+   K1 hoeyeste +0.26 ved t+1 (krav 0,30) -> HOLDER IKKE
+
+
+3. TEST 2: PRODUKSJONEN SVARER PAA PRISEN
+
+   prisendring 12 mnd ved t mot produksjonsvekst ved t+12: korrelasjon +0.21 (n 331, overlappende)
+   prisendring 12 mnd ved t mot produksjonsvekst ved t+18: korrelasjon +0.20 (n 325, overlappende)
+   prisendring 12 mnd ved t mot produksjonsvekst ved t+24: korrelasjon -0.04 (n 319, overlappende)
+   K2 hoeyeste +0.21 ved L = 12 (krav 0,30) -> HOLDER IKKE
+   kontroll uten overlapp (desember, pris aar t mot produksjon aar t+1): +0.22, n 27, samme fortegn 63 %
+
+
+4. I DAG
+
+   produksjon siste 12 mnd til 2026-07: +4.7 % fra aaret foer; Henry Hub 2026-08 2.78 USD, -5 log-% over 12 mnd
+
+   Oppsummering: K1 False (B varsler tilbudet), K2 False (produksjonen svarer paa prisen)

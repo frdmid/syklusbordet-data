@@ -156,9 +156,10 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 - 14.10: første kjøring av `challenger_laks_tilbud_v1` (laks: A_pris i EUR 70
   eller mer og biomasse lavere enn året før). Sjekk `shadow/run_manifest.csv`
   og `shadow/snapshots/challenger_laks_tilbud_v1/`.
-- B for Henry Hub: `sonde_kjor_b_gass` besto kriteriet, men B1 måler mest
-  overgangen til kapitaldisiplin. Frode har ikke avgjort om den skal bli
-  Challenger.
+- B for Henry Hub er avsluttet: `sonde_kjor_gass_tilbud` viste at verken
+  investeringene hos gassprodusentene eller prisen varsler produksjonen i USA
+  (assosiert gass fra oljeboring styrer mye). Ingen B og intet tilbudsflagg
+  for gass.
 - Laks: valuta tilførte ingenting til A, smoltutsett varsler ikke slakt,
   biomasse gjør det. Se loggen 07.10.
 - Parallelt signal for Brent og WTI (detrendet A 95 eller mer) holdes etter
