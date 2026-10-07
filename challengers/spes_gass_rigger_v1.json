@@ -1,0 +1,14 @@
+{
+ "id": "challenger_gass_rigger_v1",
+ "effective_from": "2026-10-14",
+ "hypothesis": "Når Henry Hub ligger lavt (A og detrendet A 80 eller mer) samtidig som riggene i gassbassengene Appalachia og Haynesville faller fra året før, gir Henry Hub-papirene høyere avkastning de neste 24 månedene enn ellers. Krympende boring varsler lavere produksjon om et år (sonde_kjor_gass_rigger 07.10.2026), og det skal sammen med lav pris varsle en bunn.",
+ "changed_variables": ["bottom_zone for henryhub: Championens A >= 80 og Ad >= 80 OG gassrigger lavere enn året før", "B for henryhub: B_gass, persentil av fallet i gassrigger (Champion: ingen B)"],
+ "unchanged_variables": ["alle andre segmenter", "watch for henryhub", "papirene i henryhub", "regel for ny episode (12 mnd)", "holdetid og primært utfall (24 mnd)", "referanser OSEBX og MSCI World (IWDA.L)", "måling i NOK"],
+ "primary_endpoint": "Avkastning i NOK for Henry Hub-papirene 24 måneder etter hypothetical_entry, mot OSEBX, og mot Championens innganger for henryhub i samme periode.",
+ "expected_direction": "høyere",
+ "decision_rule": "Ingen konklusjon før minst tre nye episoder har modnet på 24 måneder. Støttet hvis papirene slår OSEBX i minst to av tre (eller tilsvarende andel ved flere), og medianen er positiv. Ellers forkastet. Vurderes også uten beste episode. B_gass som tall vurderes for seg: rangerer B_gass utfallet innen Championens innganger for henryhub (punkt 16)?",
+ "modul": "challengers/gass_rigger.py",
+ "data": "EIA Drilling Productivity Report, arkiv (dpr-data.xlsx) og STEO tabell 10a (STEO_m.xlsx), rigger per basseng. Ingen konto eller nøkkel.",
+ "evidence_type_before_start": "IN_SAMPLE: sonde_kjor_gass_rigger (07.10.2026) for mekanismen rigger til produksjon. Flagget er ikke testet mot papirene historisk, med vilje.",
+ "notes": "Frodes beslutning 07.10.2026. Skriver også gass_b.json til dashbordet (kontekst)."
+}

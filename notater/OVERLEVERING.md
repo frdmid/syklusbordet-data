@@ -69,7 +69,7 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 ## Dashbordet
 
 - Adresse: https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF (siste versjon
-  59 per 07.10; Cowork kan ha publisert senere).
+  60 per 07.10; Cowork kan ha publisert senere).
 - **Omslaget:** filen som Artifact `read` lagrer, begynner med vertens omslag
   (`<!doctype html><html><head><meta charset=utf8>...<body>`) og slutter med
   `</body></html>`. Ta bort begge før publisering, ellers kommer omslaget to
@@ -78,7 +78,7 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
   nettleserpanelet (konsoll, og `scrollWidth` lik bredden ved 390 px).
 - Database: samlingen `segments` (ett dokument per segment, id lik
   segmentets id, inkludert `ship_*`) og samlingen `marked` med dokumentene
-  `vix`, `dollar`, `endringer` og `helse`.
+  `vix`, `dollar`, `endringer`, `helse` og `gass_b` (fra 07.10).
 - **Kildekoden finnes bare i selve dashbordet.** Les alltid siste versjon med
   Artifact `read` før du endrer noe, og bygg på den. Ellers overskrives den
   andre øktens arbeid.
@@ -156,11 +156,12 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 - 14.10: første kjøring av `challenger_laks_tilbud_v1` (laks: A_pris i EUR 70
   eller mer og biomasse lavere enn året før). Sjekk `shadow/run_manifest.csv`
   og `shadow/snapshots/challenger_laks_tilbud_v1/`.
-- B for Henry Hub: regnskapstallene (`sonde_kjor_b_gass`,
-  `sonde_kjor_gass_tilbud`) varsler ikke produksjonen, men riggene i
-  gassbassengene gjør det (`sonde_kjor_gass_rigger`: +0,76 ved 12 mnd, +0,74
-  uten overlapp). Kilde: EIA DPR-arkiv og STEO tabell 10a, uten konto. Frode
-  har ikke avgjort om riggmålet skal bli Challenger.
+- B for Henry Hub: riggene i gassbassengene varsler produksjonen
+  (`sonde_kjor_gass_rigger`), regnskapstallene gjør det ikke. I drift fra
+  07.10 som `challenger_gass_rigger_v1` (fra 14.10), `gass_b.json` (skrevet av
+  Challengeren hver uke), steg 6f i onsdagsrutinen (marked/gass_b) og linjen
+  «Tilbud B, gass» i Henry Hub-panelet. 14.10: sjekk at begge Challengerne
+  kjørte og at `gass_b.json` ble oppdatert.
 - Laks: valuta tilførte ingenting til A, smoltutsett varsler ikke slakt,
   biomasse gjør det. Se loggen 07.10.
 - Parallelt signal for Brent og WTI (detrendet A 95 eller mer) holdes etter

@@ -9,6 +9,36 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 07.10.2026 22:27, Claude Code
+**Hva:** B for gass i drift (Frodes beslutning), som Challenger og som kontekst
+på dashbordet:
+1. Challenger `challenger_gass_rigger_v1`, fra onsdag 14.10.2026,
+   `specification_hash` babac69c.... Regel i `challengers/gass_rigger.py`:
+   for henryhub er B persentilen av fallet i gassrigger (Appalachia og
+   Haynesville, snitt 3 mnd, endring 12 mnd, EIA DPR-arkiv og STEO 10a, uten
+   prognosen), og bottom_zone er Championens A 80 eller mer og Ad 80 eller mer
+   OG riggene lavere enn året før. Watch og papirer er Championens. Primært
+   utfall 24 mnd mot OSEBX; beslutning etter minst tre modne episoder. Rådata
+   lagres i `shadow/raadata/<id>/`. Prøvekjørt lokalt som 14.10 sammen med
+   laks-Challengeren: 4 rader, B 23, rigger +22,4 %, ingen bunnsone, andre
+   kjøring hoppet over, kontrollen uten avvik. 16 tester består.
+2. `gass_b.json` (ny) i repoet: kontekst til dashbordet. Skrives hver uke av
+   Challengeren fra 14.10 (lager.erstatt, ikke shadow-data); første versjon
+   laget lokalt i dag.
+3. Onsdagsrutinen (trig_01HoJvyjwZRq5J4QNcXoFkr3) har nytt steg 6f: skriver
+   `gass_b.json` til marked/gass_b, og en linje om B for gass i rapporten.
+   Bare teksten er endret; resten av rutinen er kontrollert urørt.
+4. marked/gass_b skrevet for hånd én gang (versjon 1).
+5. Dashbordet versjon 60: linjen «Tilbud B, gass (rigger)» i Henry Hub-panelet
+   (fra marked/gass_b) og et avsnitt i forklaringen. Testet lokalt, toppen
+   kontrollert etter publisering.
+**Filer:** `challengers/gass_rigger.py` (ny), `challengers/spes_gass_rigger_v1.json`
+(ny), `config/challengers/challenger_gass_rigger_v1.json` (ny), `gass_b.json`
+(ny), `shadow/model_registry.csv`, `notater/OVERLEVERING.md`, loggen; rutinen,
+databasen og dashbordet.
+**Den andre økten må vite:** Bygg videre på versjon 60. Ikke rør filene til
+Challengeren eller `gass_b.json` for hånd.
+
 ### 07.10.2026 22:20, Claude Code
 **Hva:** Ny sonde `sonde_kjor_gass_rigger.py` (Frodes bestilling): kan
 boreaktiviteten fra EIA brukes som tilbudsmål B for Henry Hub? Data uten konto:
