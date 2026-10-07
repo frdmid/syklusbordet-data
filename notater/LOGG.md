@@ -9,6 +9,15 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 07.10.2026 10:10, Claude Code
+**Hva:** Rettet testoppsettet i `test_shadow_oos.py` (commit 17456e7). Etter
+første ekte kjøring (2026-W41) leste testene repoets egne filer i `shadow/`
+og fem av 16 feilet. Testlageret ser nå ikke shadow-utdata fra repoet, så
+hver test starter fra tom logg. Alle 16 består. Ingen frosne kodefiler er
+endret, og Champion v1.0 er urørt. Loggen ført i egen commit etterpå.
+**Filer:** `test_shadow_oos.py`, loggen.
+**Den andre økten må vite:** Ingenting.
+
 ### 05.10.2026 21:32, Claude Code
 **Hva:** Ryddet: fire `__pycache__/*.pyc`-filer (tre fra commit 7e879de og
 en eldre fra `flagglogg.py`) er fjernet fra repoet, og ny `.gitignore` holder `__pycache__/` og `*.pyc`
