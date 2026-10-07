@@ -9,6 +9,21 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 07.10.2026 21:45, Claude Code
+**Hva:** Ny datasonde `sonde_kjor_biomasse.py` (Frodes bestilling): varsler
+stående biomasse slakten for norsk laks? Samme kilde og samme krav (0,30) som
+smoltsonden, forsinkelser 6, 9 og 12 mnd satt før kjøring. Ikke blind:
+årstallene var sett i smoltutskriften. Ser ikke på papirene eller prisen.
+Resultat: K2 holder (+0,88 ved 6 mnd, +0,79 ved 9, +0,50 ved 12). Tallet ved 6
+mnd er delvis mekanisk, fordi slakten over 12 mnd da overlapper perioden
+biomassen er målt i. Den rene kontrollen uten overlapp (biomasse i desember mot
+slakt året etter) gir +0,72, n 19, samme fortegn i 89 % av årene. Biomasse er
+et brukbart tilbudsmål for Norge. I dag: biomasse +2,6 %, slakt +3,2 %.
+**Filer:** `sonde_kjor_biomasse.py` (ny), `sonder/sonde_kjor_biomasse.txt`,
+`sonder_ferdige.txt`, loggen.
+**Den andre økten må vite:** Ingenting på dashbordet er endret. Et flagg på
+biomasse er ikke definert eller testet mot papirene.
+
 ### 07.10.2026 20:47, Claude Code
 **Hva:** Ny datasonde `sonde_kjor_smolt.py` (Frodes bestilling): grunnlag for et
 tilbudsflagg for norsk laks fra Fiskeridirektoratets biomassestatistikk

@@ -54,3 +54,4 @@ sonde_kjor_b_signal
 sonde_kjor_b_gass
 sonde_kjor_laks_valuta
 sonde_kjor_smolt
+sonde_kjor_biomasse

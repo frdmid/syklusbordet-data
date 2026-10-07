@@ -1,0 +1,39 @@
+1. DATA
+
+   laks, Norge: 2005-01 til 2026-08
+
+2. K2: BIOMASSE VARSLER SLAKT (maanedlig, overlappende)
+
+   L =  6 mnd: korrelasjon +0.88 (n 237)
+   L =  9 mnd: korrelasjon +0.79 (n 237)
+   L = 12 mnd: korrelasjon +0.50 (n 234)
+   K2 hoeyeste +0.88 ved L = 6 (krav 0,30) -> HOLDER
+
+3. K2b: ETT PUNKT PER AAR (biomasse desember mot slakt aaret etter)
+
+   2006: biomasse des +20.4 %  ->  slakt 2007 +22.5 %
+   2007: biomasse des  +4.8 %  ->  slakt 2008  +0.9 %
+   2008: biomasse des  +8.4 %  ->  slakt 2009 +16.9 %
+   2009: biomasse des +17.0 %  ->  slakt 2010  +6.7 %
+   2010: biomasse des  +1.6 %  ->  slakt 2011  +9.1 %
+   2011: biomasse des  +9.5 %  ->  slakt 2012 +18.8 %
+   2012: biomasse des  +3.7 %  ->  slakt 2013  -4.4 %
+   2013: biomasse des  +2.5 %  ->  slakt 2014  +7.4 %
+   2014: biomasse des  +4.7 %  ->  slakt 2015  +1.3 %
+   2015: biomasse des  -5.1 %  ->  slakt 2016  -4.6 %
+   2016: biomasse des  +2.6 %  ->  slakt 2017  +4.8 %
+   2017: biomasse des  +7.7 %  ->  slakt 2018  +3.4 %
+   2018: biomasse des  +2.1 %  ->  slakt 2019  +6.5 %
+   2019: biomasse des  -0.2 %  ->  slakt 2020  +2.3 %
+   2020: biomasse des +10.6 %  ->  slakt 2021 +11.8 %
+   2021: biomasse des  -3.0 %  ->  slakt 2022  -1.2 %
+   2022: biomasse des  -2.7 %  ->  slakt 2023  -1.2 %
+   2023: biomasse des  +1.3 %  ->  slakt 2024  +1.7 %
+   2024: biomasse des  +5.2 %  ->  slakt 2025 +11.9 %
+   K2b korrelasjon +0.72, n 19, samme fortegn i 89 % av aarene
+
+4. I DAG
+
+   2026-08: biomasse (snitt 3 mnd) 885 tusen tonn, +2.6 % fra aaret foer; slakt siste 12 mnd +3.2 %
+
+   Oppsummering: K2 True (beste L 6), K2b +0.72 (n 19)
