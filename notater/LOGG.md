@@ -9,6 +9,36 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 07.10.2026 22:20, Claude Code
+**Hva:** Ny sonde `sonde_kjor_gass_rigger.py` (Frodes bestilling): kan
+boreaktiviteten fra EIA brukes som tilbudsmål B for Henry Hub? Data uten konto:
+EIAs arkiv fra Drilling Productivity Report (rigger per basseng 2007 til 2024),
+DUC-arkivet (2014 til 2024) og STEO tabell 10a (2022 og senere, prognosen
+kuttet bort), skjøtet i 2022 (rigger identiske i overlappen). Mekanismen
+testes mot EIAs tørrgassproduksjon, ikke papirene eller prisen framover.
+Kriterier satt før kjøring, tallene ikke sett før.
+Resultat:
+- T1, rigger i Appalachia og Haynesville (endring 12 mnd) mot
+  produksjonsveksten senere: +0,48 / +0,76 / +0,52 ved 6 / 12 / 18 mnd; uten
+  overlapp +0,74 (n 17). HOLDER.
+- T2, samme pluss Permian: +0,74 ved 12 mnd, uten overlapp +0,70. HOLDER, men
+  ikke bedre enn T1. Forklaringen i innslaget 22:10 (assosiert gass) får
+  dermed ikke støtte; gassriggene alene varsler tilbudet.
+- T3, tapping av brønnbanken: fortegnet er motsatt av forventet (+0,36 til
+  +0,63). HOLDER IKKE. DUC-nivåene i STEO avviker fra arkivet (Appalachia 790
+  mot 553 i overlappen).
+- Beskrivende: gassriggene svarer på prisen med 3 til 6 mnd etterslep (+0,57
+  til +0,63). Kjeden pris til rigger til produksjon forklarer hvorfor pris rett
+  mot produksjon ga bare +0,21.
+I dag: rigger i gassbassengene +22 % fra året før (Appalachia 35, Haynesville
+63), som varsler mer produksjon de neste 12 mnd, altså ikke et tilbudskutt.
+Etter regelen kan riggmålet defineres som B for gass og bli Challenger. Frode
+avgjør; ingenting er registrert.
+**Filer:** `sonde_kjor_gass_rigger.py` (ny), `sonder/sonde_kjor_gass_rigger.txt`,
+`sonder_ferdige.txt`, `notater/OVERLEVERING.md`, loggen.
+**Den andre økten må vite:** B for gass er ikke avsluttet likevel: regnskapstall
+feilet, riggtall holder. Ingenting på dashbordet er endret.
+
 ### 07.10.2026 22:10, Claude Code
 **Hva:** Ny sonde `sonde_kjor_gass_tilbud.py` (Frodes bestilling): måler B for
 gass tilbudet, og er produksjonsveksten et brukbart tilbudsmål for Henry Hub?

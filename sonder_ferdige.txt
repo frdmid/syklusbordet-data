@@ -56,3 +56,4 @@ sonde_kjor_laks_valuta
 sonde_kjor_smolt
 sonde_kjor_biomasse
 sonde_kjor_gass_tilbud
+sonde_kjor_gass_rigger
