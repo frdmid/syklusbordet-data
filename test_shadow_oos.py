@@ -20,8 +20,32 @@ def _naa(d, kl="06:40:00"):
     return dt.datetime.fromisoformat(f"{d} {kl}").replace(tzinfo=UTC)
 
 
+# Det shadow selv skriver, leses aldri fra repoet: der ligger de ekte
+# kjoeringene fra 07.10.2026, og testene skal starte fra tom logg.
+SKJULT = (so.HENDELSER, so.UTFALL, so.MANIFEST, "shadow/snapshots/", "shadow/inndata/")
+
+
+def _skjult(sti):
+    sti = sti.replace("\\", "/")
+    return any(sti == s or (s.endswith("/") and (sti + "/").startswith(s)) for s in SKJULT)
+
+
+class TestLager(so.LokalLager):
+    """Som LokalLager, men ser ikke repoets egne shadow-utdata."""
+
+    def _sti(self, sti):
+        u = os.path.join(self.ut, sti)
+        return u if os.path.exists(u) or _skjult(sti) else os.path.join(self.inn, sti)
+
+    def liste(self, mappe):
+        if not _skjult(mappe):
+            return super().liste(mappe)
+        p = os.path.join(self.ut, mappe)
+        return sorted(f for f in os.listdir(p) if os.path.isfile(os.path.join(p, f))) if os.path.isdir(p) else []
+
+
 def _lager():
-    return so.LokalLager(ROT, tempfile.mkdtemp(prefix="shadow_test_"))
+    return TestLager(ROT, tempfile.mkdtemp(prefix="shadow_test_"))
 
 
 def _osebx(tk):
