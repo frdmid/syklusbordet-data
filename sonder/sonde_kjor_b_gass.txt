@@ -1,4 +1,4 @@
-﻿1. SELSKAPENE
+1. SELSKAPENE
 
    EQT                          teller SEC: EQT CORPORATION                2009-2025  forhold median 2.75 siste 0.88  [PaymentsToAcquireProductiveAssets+ / DepreciationDepletionAndAmortizati]
    Range Resources              teller SEC: RANGE RESOURCES CORP           2009-2025  forhold median 1.57 siste 1.57  [PaymentsToAcquireOilAndGasProperty / DepreciationDepletionAndAmortizati]

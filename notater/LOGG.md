@@ -9,6 +9,27 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 07.10.2026 17:52, Claude Code
+**Hva:** Ny sonde `sonde_kjor_laks_valuta.py` (Frodes bestilling): A for norsk
+laks som kompositt av realpris i EUR og realkursen for kronen mot en
+laksekurv (75 % EUR, 25 % USD), A = 100 x a_pris^(1-w) x a_valuta^w, og test
+av vektene w = 0, 0,25, 0,5, 0,75 og 1 mot norske laksepapirer (SalMar,
+Lerøy, Grieg, Måsøval) 24 måneder fram. Vekter, terskel og beslutningsregel
+satt i fila før kjøring. Kjørt lokalt, data fra 2010-12.
+Resultat: ingen vekt viser informasjon etter korreksjon for fem tester (p
+0,09 til 0,10, krav 0,02). Innenfor hver halvdel av perioden er pris alene
+(w = 0) best, og valuta senker rho i begge (B3: nei). Ved A over 80 gir
+kompositten bare én episode (2011). Vekt 0,5 står etter regelen, men laks får
+ikke flagg fra denne sonden. Mot OSEBX stiger rho med valutavekten (0,38 ved
+w = 1); det skyldes trolig at OSEBX og kronen begge følger oljen, ikke laksen.
+I dag: a_pris 30, a_valuta 15, margin-A 91. Marginen er lav fordi kostnaden
+steg (log +0,48 fra 2021 til 2024), mens prisen i EUR (+0,33) og svakere krone
+(+0,13) trakk opp.
+Også: BOM fjernet fra `sonder/sonde_kjor_b_gass.txt`.
+**Filer:** `sonde_kjor_laks_valuta.py` (ny), `sonder/sonde_kjor_laks_valuta.txt`,
+`sonder/sonde_kjor_b_gass.txt`, `sonder_ferdige.txt`, loggen.
+**Den andre økten må vite:** Ingenting på dashbordet er endret.
+
 ### 07.10.2026 17:39, Claude Code
 **Hva:** Ny sonde `sonde_kjor_b_gass.py` (Frodes bestilling): finnes en B for
 Henry Hub? Investeringer delt på avskrivninger fra SEC for amerikanske

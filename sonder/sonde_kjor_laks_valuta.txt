@@ -1,0 +1,71 @@
+1. DATA
+
+   laksepris (sesongjustert, NOK) 2006-01 til 2026-09
+   EURNOK 1999-01 til 2026-09, siste 10.800
+   USDNOK 1995-01 til 2026-09, siste 9.382
+   HICP euroomraadet  1996-01 til 2025-12
+   KPI Norge          1979-01 til 2025-12
+   KPI USA            1913-01 til 2026-08
+   (KPI som slutter foer 2026-09, er forlenget flatt; utgjoer mindre enn 1 % i realkursen)
+   SALM.OL  2007-05 til 2026-10
+   LSG.OL   2002-09 til 2026-10
+   GSF.OL   2007-06 til 2026-10
+   MAS.OL   2021-06 til 2026-10
+   OSEBX    2013-03 til 2026-10
+
+
+2. DELSKAARENE
+
+   a_pris og a_valuta regnes fra 2010-12 (60 maaneder historikk kreves)
+   korrelasjon mellom a_pris og a_valuta: 0.33
+
+
+3. UTFALL
+
+   kurv fra 2007-05, antall papirer per aar: 2004:1, 2007:3, 2010:3, 2013:3, 2016:3, 2019:3, 2022:4, 2025:4
+
+
+4. T1 OG T3: INFORMASJON UTEN TERSKEL (kurv 24 mnd, rangkorrelasjon)
+
+   felles periode med utfall: 2010-12 til 2026-09, halvdelene deles ved 2018-11
+
+   kompositt         rho      p    n | rho 1. halvdel rho 2. halvdel | rho mer24 rho kurv12
+   w=0.0           0.285  0.102  190 |          0.656          0.401 |     0.021      0.276
+   w=0.25          0.376  0.088  190 |          0.612          0.382 |     0.164      0.292
+   w=0.5           0.403  0.090  190 |          0.514          0.307 |     0.299      0.285
+   w=0.75          0.421  0.090  190 |          0.385          0.190 |     0.378      0.242
+   w=1.0           0.396  0.094  190 |          0.215          0.041 |     0.384      0.165
+   margin-A (ref)  0.133  0.271  190 |          0.558          0.349 |    -0.169      0.141
+
+
+5. T2: EPISODER VED A >= 80 (fast terskel, pause 12 mnd)
+
+   w=0.0          1 episoder, 1 med fasit, median kurv 24 mnd +144%
+                  2011-09 +144%
+   w=0.25         1 episoder, 1 med fasit, median kurv 24 mnd +144%
+                  2011-09 +144%
+   w=0.5          1 episoder, 1 med fasit, median kurv 24 mnd +64%
+                  2011-08 +64%
+   w=0.75         1 episoder, 1 med fasit, median kurv 24 mnd +64%
+                  2011-08 +64%
+   w=1.0          1 episoder, 1 med fasit, median kurv 24 mnd -25%
+                  2010-12 -25%
+   margin-A (ref) 4 episoder, 4 med fasit, median kurv 24 mnd +21%, uten en og en +4% til +41%
+                  2011-07 +41%, 2015-04 +107%, 2020-11 -13%, 2024-12 +4%
+
+
+6. BESLUTNING (regelen satt foer kjoering)
+
+   B1 informativ (p <= 0.02): ingen
+   B2 vekt: w = 0.5  (standard, ingen annen vekt oppfylte kravet)
+   B3 valuta tilfoerer noe (w=0,5 over w=0 i begge halvdeler): nei  (0.514/0.307 mot 0.656/0.401)
+   Ingen kompositt viste informasjon etter B1. Laks faar ikke flagg fra denne sonden.
+
+
+7. I DAG
+
+   2026-09: a_pris 30, a_valuta 15, A(w=0.0) 30, A(w=0.25) 25, A(w=0.5) 21, A(w=0.75) 18, A(w=1.0) 15, margin-A 91
+   EURNOK 10.80, realpris 5.87 (EUR/kg i HICP-2015-kroner)
+
+   Hvorfor marginen er lav: endring 2021 til 2024 i log
+     laksepris i EUR +0.325, EURNOK (svak krone hjelper) +0.134, kostnad +0.481  -> margin -0.021
