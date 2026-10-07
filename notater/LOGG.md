@@ -9,6 +9,27 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 07.10.2026 17:39, Claude Code
+**Hva:** Ny sonde `sonde_kjor_b_gass.py` (Frodes bestilling): finnes en B for
+Henry Hub? Investeringer delt på avskrivninger fra SEC for amerikanske
+gassprodusenter, med vinduer per selskap og kontroll satt før kjøring. Bygger
+ingenting; `tilbud_b.py` er frosset i Champion v1.0, så en B for gass kan bare
+bli Challenger. Kjørt lokalt. To lesefeil rettet etter første kjøring og
+skrevet i fila, kriteriet uendret: kjøp av arealer
+(`PaymentsToAcquireOilAndGasProperty`) var lest som investeringer, og
+navnekontrollen for Cabot lette etter «CABOT», men SEC-navnet er nå Coterra.
+Resultat: K1 til K3 holder (forhold 3,12 i 2010 til 2014, 1,61 i 2016, 1,08 i
+2020 mot 1,23 i 2019). K4 (nedskrivninger) holder så vidt ikke (121 % mot krav
+124 %). 2025: forhold 1,09, B1 82, B2 25, fem selskaper.
+Forbehold: B1 har ligget mellom 67 og 92 hvert år siden 2015, fordi
+skifergassboomen 2009 til 2014 dominerer historikken. B1 måler derfor i stor
+grad overgangen til kapitaldisiplin, ikke bare syklusen. Gulfport falt ut
+(bare arealkjøp i XBRL), og Chesapeake og Coterra fra 2021 teller ikke.
+**Filer:** `sonde_kjor_b_gass.py` (ny), `sonder/sonde_kjor_b_gass.txt`,
+`sonder_ferdige.txt`, loggen.
+**Den andre økten må vite:** Ingenting på dashbordet er endret. Frode avgjør om
+B for gass skal registreres som Challenger.
+
 ### 07.10.2026 10:10, Claude Code
 **Hva:** Rettet testoppsettet i `test_shadow_oos.py` (commit 17456e7). Etter
 første ekte kjøring (2026-W41) leste testene repoets egne filer i `shadow/`

@@ -1,0 +1,57 @@
+﻿1. SELSKAPENE
+
+   EQT                          teller SEC: EQT CORPORATION                2009-2025  forhold median 2.75 siste 0.88  [PaymentsToAcquireProductiveAssets+ / DepreciationDepletionAndAmortizati]
+   Range Resources              teller SEC: RANGE RESOURCES CORP           2009-2025  forhold median 1.57 siste 1.57  [PaymentsToAcquireOilAndGasProperty / DepreciationDepletionAndAmortizati]
+   Antero Resources             teller SEC: ANTERO RESOURCES Corp          2011-2025  forhold median 1.53 siste 0.91  [PaymentsToExploreAndDevelopOilAndG / DepreciationDepletionAndAmortizati]
+   CNX Resources                teller SEC: CNX Resources Corporation      2018-2025  forhold median 1.17 siste 0.86  [PaymentsToAcquirePropertyPlantAndE / DepreciationDepletionAndAmortizati]
+   Southwestern Energy          teller SEC: SOUTHWESTERN ENERGY COMPANY    2009-2023  forhold median 2.33 siste 1.66  [PaymentsToAcquireProductiveAssets / DepreciationDepletionAndAmortizati]
+   Cabot Oil & Gas              teller SEC: COTERRA ENERGY INC.            2009-2020  forhold median 1.89 siste 1.46  [PaymentsToExploreAndDevelopOilAndG / DepreciationDepletionAndAmortizati]
+   Gulfport Energy              mangler capex
+   Comstock Resources           teller SEC: COMSTOCK RESOURCES, INC.       2016-2025  forhold median 1.47 siste 2.10  [PaymentsToAcquirePropertyPlantAndE / DepreciationDepletionAndAmortizati]
+   Chesapeake / Expand Energy   vises  SEC: EXPAND ENERGY Corp             2009-2025  forhold median 1.22 siste 0.92  [PaymentsToExploreAndDevelopOilAndG / DepreciationDepletionAndAmortizati]
+   Coterra (fra 2021)           vises  SEC: COTERRA ENERGY INC.            2021-2025  forhold median 1.04 siste 0.97  [PaymentsToExploreAndDevelopOilAndG / DepreciationDepletionAndAmortizati]
+
+   Per selskap og aar (capex/avskrivninger, nedskrivninger i % av avskrivningene i parentes):
+                                       2009        2010        2011        2012        2013        2014        2015        2016        2017        2018        2019        2020        2021        2022        2023        2024        2025
+   EQT                           4.92 (  0)  4.61 (  0)  4.26 (  0)  2.89 (  0)  2.75 (  2)  4.27 ( 42)  2.86 ( 15)  3.12 (  0)  2.86 (  0)  1.91 (191)  1.04 (111)  0.75 ( 32)  0.63 ( 17)  0.84 ( 23)  1.17 (  6)  1.04 (  5)  0.88 (  2)
+   Range Resources               1.33 (  0)  2.66 (171)  3.52 ( 11)  3.12 (  7)  2.32 (  2)  2.07 (  5)  0.88 ( 50)  0.82 (  8)  1.67 (  9)  1.46 (  3)  0.42 ( 67)  0.86 ( 17)  1.08 (  0)  1.29 (  0)  1.63 (  0)  1.59 (  0)  1.57 (  0)
+   Antero Resources                                      9.47 ( 20)  8.20 ( 13)  6.91 (  5)  5.18 (  3)  2.33 ( 15)  1.64 ( 20)  1.55 ( 22)  1.53 ( 57)  1.37 (195)  0.96 ( 97)  0.81 ( 12)  1.09 ( 21)  1.29 (  7)  0.81 (  6)  0.91 (  4)
+   CNX Resources                                                                                                                             2.26 (  0)  2.35 ( 64)  0.97 ( 12)  0.90 (  0)  1.23 (  0)  1.57 (  0)  1.11 (  0)  0.86 (  0)
+   Southwestern Energy           3.61 (184)  3.51 (  0)  3.10 (  0)  2.60 (239)  2.74 (  0)  2.17 (  0)  1.65 (636)  1.36 (532)  2.52 (  0)  2.30 ( 31)  2.33 (  3)  2.51 (793)  1.89 (  1)  1.80 (  0)  1.66 (131)                        
+   Cabot Oil & Gas               0.20 (  7)  2.62 ( 13)  2.60 (  0)  2.06 (  0)  1.84 (  0)  2.34 (122)  1.54 ( 18)  0.64 ( 74)  1.34 ( 85)  2.14 (  0)  1.94 (  0)  1.46 (  0)                                                            
+   Comstock Resources                                                                                                0.41 ( 19)  1.46 ( 36)              1.76 (  0)  1.22 (  0)  1.47 (  0)  2.18 (  0)  2.34 (  0)  1.38 (  0)  2.10 (  5)
+   Chesapeake / Expand Energy    2.21 (689)  3.25 (  0)  3.88 (  2)  3.18 (118)  1.93 ( 19)  1.57 (  3)  1.39 (  9)  1.17 (273)  1.25 ( 48)  1.06 (  8)  1.00 (  0)  1.04 (778)              1.04 (  0)  1.20 (  0)  0.90 (  0)  0.92 (  1)
+   Coterra (fra 2021)                                                                                                                                                            1.04 (  0)  1.04 (  0)  1.27 (  0)  0.95 (  0)  0.97 (  0)
+
+
+2. GASS SAMLET (bare selskaper som teller)
+
+     aar   n  capex mUSD  avskr mUSD  forhold  median  nedskr %    B1    B2
+    2009   4       3,151       1,208     2.61    2.47        77            
+    2010   4       4,910       1,463     3.36    3.09        35            
+    2011   5       6,139       1,758     3.49    3.52         3           0
+    2012   5       6,742       2,320     2.91    2.89        86           0
+    2013   5       7,924       2,825     2.80    2.74         1           0
+    2014   5      10,100       3,311     3.05    2.34        33    33     0
+    2015   5       7,780       4,415     1.76    1.65       179    86     0
+    2016   6       5,488       3,401     1.61    1.09        88    88     0
+    2017   6       7,422       3,681     2.02    1.61        21    67     0
+    2018   6       8,749       4,670     1.87    2.03        80    70     0
+    2019   7       7,110       5,760     1.23    1.76        86    91     0
+    2020   7       4,737       4,396     1.08    0.97        97    92     0
+    2021   6       4,239       4,314     0.98    0.99         9    92     0
+    2022   6       6,386       4,859     1.31    1.26        11    71    13
+    2023   6       7,830       5,178     1.51    1.60        36    67    22
+    2024   5       5,077       4,564     1.11    1.11         3    81    25
+    2025   5       5,400       4,936     1.09    0.91         2    82    25
+
+
+3. KONTROLL MOT KJENT HISTORIE (satt foer kjoering)
+
+   K1 forhold 2010-2014: 3.12 (krav over 1,3) -> ok
+   K2 forhold 2016: 1.61 mot 2012-2014 2.92 (krav hoyst 2.04) -> ok
+   K3 forhold 2020: 1.08 mot 2019 1.23 (krav lavere) -> ok
+   K4 nedskrivninger 2015-16 og 2020: 121 % mot 62 % 2017-2019 (krav minst dobbelt) -> IKKE
+
+   K1 til K3 holder. B1 for gass kan foreslaas som Challenger.
+   Siste aar 2025: forhold 1.09, B1 82, B2 25, 5 selskaper
