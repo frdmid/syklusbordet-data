@@ -1,0 +1,14 @@
+{
+ "id": "challenger_laks_tilbud_v1",
+ "effective_from": "2026-10-14",
+ "hypothesis": "Når eksportprisen for laks i EUR ligger lavt mot trenden (A_pris >= 70) samtidig som stående biomasse i Norge krymper (dB < 0), gir norske laksepapirer (SalMar, Lerøy) høyere avkastning de neste 24 månedene enn ellers. Lav pris og krympende tilbud skal sammen varsle en bunn; lav margin alene gjorde det ikke (laksesonden 25.09.2026).",
+ "changed_variables": ["bottom_zone for laks: A_pris EUR >= 70 og dB < 0 (Champion: laks har aldri flagg)", "watch for laks: A_pris EUR >= 70", "kjøpbare papirer i laks: bare SALM.OL og LSG.OL"],
+ "unchanged_variables": ["alle andre segmenter", "regel for ny episode (12 mnd)", "holdetid og primært utfall (24 mnd)", "referanser OSEBX og MSCI World (IWDA.L)", "måling i NOK"],
+ "primary_endpoint": "Avkastning i NOK for likt vektet SALM.OL og LSG.OL 24 måneder etter hypothetical_entry, mot OSEBX og mot samme papirer i måneder uten signal.",
+ "expected_direction": "høyere",
+ "decision_rule": "Ingen konklusjon før minst tre nye episoder har modnet på 24 måneder. Støttet hvis papirene slår OSEBX i minst to av tre (eller tilsvarende andel ved flere), og medianen er positiv. Ellers forkastet. Vurderes også uten beste episode.",
+ "modul": "challengers/laks_tilbud.py",
+ "data": "Fiskeridirektoratets biomassestatistikk (BIOSTAT-LAKS-FLK), Norges Bank EXR (USDNOK, EURNOK), segments/laks.json (sesongjustert pris i USD). Ingen konto eller nøkkel.",
+ "evidence_type_before_start": "IN_SAMPLE: sonde_kjor_biomasse, sonde_kjor_laks_valuta (07.10.2026). Flagget er ikke testet mot papirene historisk, med vilje.",
+ "notes": "Frodes beslutning 07.10.2026. A_pris uten KPI: Eurostat, ECB og SSB sluttet å oppdatere KPI-seriene med basisår 2015 i desember 2025."
+}

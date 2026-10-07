@@ -9,6 +9,29 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 07.10.2026 21:54, Claude Code
+**Hva:** Første Challenger registrert (Frodes beslutning):
+`challenger_laks_tilbud_v1`, fra onsdag 14.10.2026, `specification_hash`
+8713be83.... Regel i `challengers/laks_tilbud.py`: for laks er watch A_pris
+70 eller mer, og bottom_zone A_pris 70 eller mer OG biomasse (snitt 3 mnd)
+lavere enn året før. A_pris er persentil av nominell EUR-pris med trenden
+trukket ut punkt-i-tid (samme metode som Ad), uten KPI, fordi Eurostat, ECB og
+SSB stoppet KPI-seriene med basisår 2015 i desember 2025. Bare SalMar og Lerøy
+er kjøpbare. Primært utfall 24 mnd mot OSEBX; beslutning etter minst tre
+modne episoder. Rådata lagres hver uke i `shadow/raadata/<id>/`. Ikke testet
+mot papirene historisk, med vilje.
+Prøvekjørt lokalt som 14.10: 5 rader, A_pris 64,4, biomasse +2,6 %, ingen
+signal, andre kjøring samme uke hoppet over, kontrollen uten avvik.
+Rettet `test_shadow_oos.py`: testlageret skjuler nå også
+`config/challengers/` og `shadow/raadata/`, ellers kjørte testene den ekte
+Challengeren med nettkall når de spolte fram til 14.10 (1 av 16 feilet). Alle
+16 består. Ingen frosne filer er endret.
+**Filer:** `challengers/laks_tilbud.py` (ny), `challengers/spes_laks_tilbud_v1.json`
+(ny), `config/challengers/challenger_laks_tilbud_v1.json` (ny),
+`shadow/model_registry.csv`, `test_shadow_oos.py`, loggen.
+**Den andre økten må vite:** Ikke rør filene til Challengeren. En endret regel
+er en ny Challenger.
+
 ### 07.10.2026 21:45, Claude Code
 **Hva:** Ny datasonde `sonde_kjor_biomasse.py` (Frodes bestilling): varsler
 stående biomasse slakten for norsk laks? Samme kilde og samme krav (0,30) som

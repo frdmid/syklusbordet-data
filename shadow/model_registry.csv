@@ -1,2 +1,3 @@
 model_id,created_at,effective_from,parent_model,status,specification_hash,code_commit,data_schema_version,config_file,notes
 champion_v1_0,2026-10-05,2026-10-07,,champion,9e2cef1f21ab54dd3638a6a2cf3f546b6c5e1e903d30468267e2e953a6ea0262,6e5ff9756b3675b1853d0ff845f8d6bb8f2af788,1,config/champion_v1_0.json,A-modellen frosset; S ikke operativ og ikke startet
+challenger_laks_tilbud_v1,2026-10-07,2026-10-14,champion_v1_0,challenger,8713be83bee828710060efdbdffedff31939cff1bc2a074187c4da5e6f14685a,,1,config/challengers/challenger_laks_tilbud_v1.json,"Frodes beslutning 07.10.2026. A_pris uten KPI: Eurostat, ECB og SSB sluttet å oppdatere KPI-seriene med basisår 2015 i desember 2025."

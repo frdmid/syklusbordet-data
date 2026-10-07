@@ -22,7 +22,10 @@ def _naa(d, kl="06:40:00"):
 
 # Det shadow selv skriver, leses aldri fra repoet: der ligger de ekte
 # kjoeringene fra 07.10.2026, og testene skal starte fra tom logg.
-SKJULT = (so.HENDELSER, so.UTFALL, so.MANIFEST, "shadow/snapshots/", "shadow/inndata/")
+# Ekte Challengere i repoet holdes ogsaa utenfor (rettet 07.10.2026): ellers
+# kjoerer testene dem naar de spoler fram til deres startdato, med nettkall.
+SKJULT = (so.HENDELSER, so.UTFALL, so.MANIFEST, "shadow/snapshots/", "shadow/inndata/",
+          "config/challengers/", "shadow/raadata/")
 
 
 def _skjult(sti):
