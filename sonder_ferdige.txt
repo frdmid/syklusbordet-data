@@ -53,3 +53,4 @@ sonde_kjor_rigg_slitasje
 sonde_kjor_b_signal
 sonde_kjor_b_gass
 sonde_kjor_laks_valuta
+sonde_kjor_smolt

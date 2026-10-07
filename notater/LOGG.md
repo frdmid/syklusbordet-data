@@ -9,6 +9,22 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 07.10.2026 20:47, Claude Code
+**Hva:** Ny datasonde `sonde_kjor_smolt.py` (Frodes bestilling): grunnlag for et
+tilbudsflagg for norsk laks fra Fiskeridirektoratets biomassestatistikk
+(utsett av smolt, slakt, biomasse og dødfisk per måned fra 2005, summert til
+Norge). Ser ikke på papirene eller prisen framover. Kriterier satt før
+kjøring. Kjørt lokalt.
+Resultat: K1 (21,6 år data) holder, K3 (siste måned 2026-08) holder, K2 holder
+ikke: endringen i utsett varsler endringen i slakt svakt (korrelasjon +0,22
+ved 12 mnd, +0,06 ved 18, +0,09 ved 24; krav 0,30). Eksempel: utsett falt 10 og
+8 % i 2023 og 2024, men slakt steg 12 % i 2025. Etter kriteriet bygges ikke et
+flagg på smoltutsett. I dag: utsett siste 12 mnd -3,9 %, slakt +3,2 %,
+biomasse +2,8 %.
+**Filer:** `sonde_kjor_smolt.py` (ny), `sonder/sonde_kjor_smolt.txt`,
+`sonder_ferdige.txt`, loggen.
+**Den andre økten må vite:** Ingenting på dashbordet er endret.
+
 ### 07.10.2026 17:52, Claude Code
 **Hva:** Ny sonde `sonde_kjor_laks_valuta.py` (Frodes bestilling): A for norsk
 laks som kompositt av realpris i EUR og realkursen for kronen mot en
