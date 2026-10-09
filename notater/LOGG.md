@@ -9,6 +9,25 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 09.10.2026 16:18, Claude Code
+**Hva:** Sonde for G&Rs salgssignal i edelmetaller, når sølv tar igjen gull
+(Frodes bestilling etter Q2 2026-brevet). Regler og kriterier satt i fila før
+kjøring: sølv slår gull med minst 40 prosentpoeng over seks måneder, gull opp
+minst 25 % over 24 måneder, og sølv lå etter før rykket. Månedssnitt fra
+Pink Sheet, signaler fra 1971-08.
+Resultat: **holder ikke.**
+- (a) Regelen finner 4 av G&Rs 5 episoder (1974-02, 2010-12, 2020-09,
+  2026-01), men ikke 1979.
+- (b) Gull 12 måneder etter: +20 %, +18 % og −8 %. Median +18 % mot +13 %
+  i basismånedene (gull i oppgang), så signalet sier ikke at gull faller.
+- (c) Med terskel 30 og 50 holder det heller ikke.
+Til opplysning, avgjør ikke: gullaksjene falt i alle tre tilfellene med data
+(^XAU −9 og −3 %, GDX −16 og −24 %; 2011-03 med terskel 50: −26 og −17 %).
+Det er tre tilfeller og kan være tilfeldig.
+**Filer:** `sonde_kjor_solv_signal.py` (ny), `sonder/sonde_kjor_solv_signal.txt`,
+`sonder_ferdige.txt`.
+**Den andre økten må vite:** Ingenting på dashbordet er endret.
+
 ### 09.10.2026 10:34, Claude Code
 **Hva:** Frodes beslutning: backupen er Notion og GitHub sammen. Notion-kopien
 alene dekker ikke historikken i `shadow/`, `logg/`, datafilene, Fearnleys-
