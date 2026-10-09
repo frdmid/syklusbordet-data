@@ -9,6 +9,15 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 09.10.2026 10:34, Claude Code
+**Hva:** Frodes beslutning: backupen er Notion og GitHub sammen. Notion-kopien
+alene dekker ikke historikken i `shadow/`, `logg/`, datafilene, Fearnleys-
+arkivet eller git-historikken; den ligger hos GitHub. Ingen git-pakke legges i
+Notion.
+**Filer:** loggen.
+**Den andre økten må vite:** GitHub-repoet er den eneste kopien av
+Shadow-OOS-historikken. Ikke slett eller skriv om historikken der.
+
 ### 09.10.2026 10:26, Claude Code
 **Hva:** Sikkerhetskopi før en mulig flytting fra Claude Pro til Enterprise
 (Frodes bestilling). Ved en slik flytting følger ikke publiserte artifacts og
