@@ -57,3 +57,5 @@ sonde_kjor_smolt
 sonde_kjor_biomasse
 sonde_kjor_gass_tilbud
 sonde_kjor_gass_rigger
+sonde_kjor_oslo_univers
+sonde_kjor_oslo_askaar

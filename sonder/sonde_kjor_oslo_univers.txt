@@ -1,0 +1,45 @@
+=== FLAGG ===
+
+   Euronext-listen: 295 papirer (Oslo Børs 198, Euronext Growth Oslo 87, Euronext Expand Oslo 10)
+   med minst to aars kurser hos Yahoo: 267
+   handelsdager med minst 20 aksjer: 2000-01-04 til 2026-10-09
+
+
+3. TESTENE
+
+   tester: 3416 (1d 626, 1m 626, 3m 625, 6m 624, 12m 464, 24m 451)
+   p under 0,05: 183 (ventet ved tilfeldighet rundt 170)
+   FDR q <= 0.1: 4, robuste: 2, |z|>3: 19 (ventet ved normalfordeling rundt 9)
+
+
+4. PLACEBO: tilfeldige flaggdatoer, samme antall episoder per signal
+
+   runde 1: robuste per horisont 1d 0, 1m 0, 3m 2, 6m 0, 12m 0, 24m 0
+   runde 2: robuste per horisont 1d 3, 1m 0, 3m 3, 6m 2, 12m 3, 24m 1
+   runde 3: robuste per horisont 1d 4, 1m 6, 3m 3, 6m 0, 12m 1, 24m 2
+   runde 4: robuste per horisont 1d 0, 1m 2, 3m 1, 6m 0, 12m 0, 24m 0
+   runde 5: robuste per horisont 1d 2, 1m 0, 3m 0, 6m 0, 12m 0, 24m 1
+   runde 6: robuste per horisont 1d 7, 1m 1, 3m 0, 6m 0, 12m 0, 24m 0
+   runde 7: robuste per horisont 1d 2, 1m 1, 3m 1, 6m 1, 12m 0, 24m 1
+   runde 8: robuste per horisont 1d 2, 1m 0, 3m 0, 6m 0, 12m 0, 24m 0
+   runde 9: robuste per horisont 1d 5, 1m 1, 3m 1, 6m 1, 12m 0, 24m 0
+   runde 10: robuste per horisont 1d 2, 1m 4, 3m 3, 6m 0, 12m 0, 24m 0
+
+
+5. RESULTAT PER HORISONT
+
+   1d: 626 tester, robuste 1, placebo 2.7 +/- 2.1 -> ikke over placebo
+      WWI      WILH. WILHELMSEN A         brent:d95            n 3  merav.   +4.8 % (tilfeldig  +0.0 %)  p 0.000 q 0.020 
+
+   1m: 626 tester, robuste 0, placebo 1.5 +/- 1.9 -> ikke over placebo
+
+   3m: 625 tester, robuste 0, placebo 1.4 +/- 1.2 -> ikke over placebo
+
+   6m: 624 tester, robuste 1, placebo 0.4 +/- 0.7 -> ikke over placebo
+      SOFF     SOLSTAD OFFSHORE           aluminium:bunnsone   n 3  merav.  -85.5 % (tilfeldig  -8.7 %)  p 0.000 q 0.007 
+
+   12m: 464 tester, robuste 0, placebo 0.4 +/- 0.9 -> ikke over placebo
+
+   24m: 451 tester, robuste 0, placebo 0.5 +/- 0.7 -> ikke over placebo
+
+   Alle tester lagret i sonder/oslo_univers.csv

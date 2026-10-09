@@ -1,0 +1,24 @@
+=== A-SKAAR ===
+
+3. TESTENE
+
+   ekte skaarer: 46152 tester, p<0,05 3545, |z|>3 73, |z|>4 0, q<=0,10 0, robuste 0
+   placebo (skaarer forskjoevet 120 mnd): 44146 tester, p<0,05 3303, |z|>3 99, |z|>4 1, q<=0,10 0, robuste 0
+
+4. RESULTAT PER HORISONT
+
+   1d: robuste 0 (positive 0), placebo 0;  |z|>3 ekte 11 av 8568, placebo 14 av 8244
+
+   1m: robuste 0 (positive 0), placebo 0;  |z|>3 ekte 10 av 8568, placebo 24 av 8244
+
+   3m: robuste 0 (positive 0), placebo 0;  |z|>3 ekte 8 av 8424, placebo 17 av 8104
+
+   6m: robuste 0 (positive 0), placebo 0;  |z|>3 ekte 6 av 7956, placebo 11 av 7660
+
+   12m: robuste 0 (positive 0), placebo 0;  |z|>3 ekte 10 av 6696, placebo 14 av 6290
+
+   24m: robuste 0 (positive 0), placebo 0;  |z|>3 ekte 28 av 5940, placebo 19 av 5604
+
+   Alle tester lagret i sonder/oslo_askaar.csv
+
+[exited with code 0]

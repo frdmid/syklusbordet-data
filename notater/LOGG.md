@@ -9,6 +9,38 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 09.10.2026 10:13, Claude Code
+**Hva:** Flaggene og A-skårene mot hele universet av aksjer på Oslo Børs
+(Frodes bestilling): finnes sammenhenger vi ikke har funnet? To sonder, regler
+satt før kjøring, kjørt lokalt. Univers: Euronext-listen for Oslo (Oslo Børs,
+Expand, Growth), 267 aksjer med minst to års kurser hos Yahoo (bare dagens
+noterte: overlevelsesskjevhet). Mål: meravkastning mot likevektet univers ved
+1 dag, 1, 3, 6, 12 og 24 mnd. Flagg og skårer punkt-i-tid fra
+`serier/priser_mnd.csv` med funksjonene i `priser.py`.
+1. `sonde_kjor_oslo_univers.py` (flagg: bunnsone, og d95 for Brent og WTI;
+   minst 3 episoder): 3 416 tester, 183 med p under 0,05 (ventet rundt 170),
+   4 med FDR q 0,10 eller lavere, 2 robuste (Wilh. Wilhelmsen 1 dag etter
+   Brent d95, n 3; Solstad Offshore 6 mnd etter aluminium, n 3, som er
+   restruktureringene). Placebo med tilfeldige flaggdatoer ga like mange eller
+   flere robuste funn (1 dag: 2,7 i snitt). Ingen horisont over placebo.
+2. `sonde_kjor_oslo_askaar.py` (A og detrendet A som tall, 36 skårer,
+   rangkorrelasjon mot meravkastningen, blokkbootstrap): 46 152 tester, 0 med
+   FDR q 0,10 eller lavere, 0 robuste. |z| over 3: 73 i ekte data mot 99 i
+   placebo (skårene forskjøvet 120 mnd).
+Rettet etter første kjøring, kriteriene uendret og skrevet i filene: p var
+talt fra 300 og 1000 trekk, og minste mulige p var for stor til at FDR noen
+gang kunne slå inn. Nå regnes p fra normalhalen til nullen (z).
+Konklusjon: ingen sammenhenger utover det tilfeldighet gir, verken for
+flaggene eller skårene, på noen horisont. Flaggene har for få episoder (1 til
+5 per signal) til å gi styrke per aksje.
+**Filer:** `sonde_kjor_oslo_univers.py` (ny), `sonde_kjor_oslo_askaar.py` (ny),
+`sonder/sonde_kjor_oslo_univers.txt`, `sonder/sonde_kjor_oslo_askaar.txt`,
+`sonder/oslo_univers.csv`, `sonder/oslo_askaar.csv.gz`, `sonder_ferdige.txt`,
+loggen.
+**Den andre økten må vite:** Ingenting på dashbordet er endret. NB: flaggsonden
+regner flagg for laks som for de andre segmentene (Champion gir laks aldri
+flagg).
+
 ### 09.10.2026 09:55, Claude Code
 **Hva:** Oppsummering til Cowork av arbeidet 07.10 kveld (detaljer i
 innslagene under), og testen 08.10.
