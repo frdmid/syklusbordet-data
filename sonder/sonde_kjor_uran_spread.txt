@@ -1,0 +1,30 @@
+Data: 1996-04 til 2026-09, 366 mnd; CCJ med 12 mnd etter: 355
+Spread i dag (2026-09): -7.1 %  (spot 89.63, kontrakt 96.5)
+Fordeling av spread: 10-pst -30 %, median -11 %, 90-pst +0 %
+
+1. RANGKORRELASJON PAA IKKE-OVERLAPPENDE UTVALG (a)
+   +0.22 +0.31 +0.38 +0.41 +0.23 +0.16 +0.15 +0.02 +0.00 -0.10 +0.05 +0.20
+   median +0.18, negative 1 av 12 -> ikke ok
+
+2. GRUPPER, CCJ OVER SPY 12 MND (b)
+   hele perioden          terskel -10 %: lav 197 mnd median   -12 % | spread>=0  41 mnd median    +1 % | diff   -14 pp (spot 12 mnd: +2 % mot +4 %) -> ikke ok
+
+3. PLATAA OG PERIODE (c)
+   hele perioden          terskel -5 %: lav 251 mnd median   -10 % | spread>=0  41 mnd median    +1 % | diff   -11 pp (spot 12 mnd: +3 % mot +4 %) -> ikke ok
+   hele perioden          terskel -15 %: lav 156 mnd median   -12 % | spread>=0  41 mnd median    +1 % | diff   -14 pp (spot 12 mnd: +4 % mot +4 %) -> ikke ok
+   fra 2010               terskel -10 %: lav 131 mnd median   -18 % | spread>=0  24 mnd median    +1 % | diff   -19 pp (spot 12 mnd: +1 % mot +0 %) -> ikke ok
+
+4. TIL OPPLYSNING: URA OG URNM (avgjoer ikke)
+   URA: spread <= -10 %: 121 mnd median -23 %; spread >= 0: 24 mnd median -12 %
+   URNM: spread <= -10 %: 18 mnd median +67 %; spread >= 0: 23 mnd median -16 %
+
+5. EPISODER: maaneder med spread <= -10 % etter minst 12 mnd uten
+   1997-04: spread -11 %, CCJ over SPY 12 mnd -42 %
+   1998-09: spread -11 %, CCJ over SPY 12 mnd -23 %
+   2004-08: spread -15 %, CCJ over SPY 12 mnd +120 %
+   2007-09: spread -11 %, CCJ over SPY 12 mnd -29 %
+   2025-01: spread -14 %, CCJ over SPY 12 mnd +134 %
+
+6. AVGJOERELSE (kriterier satt foer kjoering)
+   (a) ikke ok, (b) ikke ok, (c) ikke ok
+   -> IKKE STOETTET

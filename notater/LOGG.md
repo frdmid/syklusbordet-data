@@ -9,6 +9,26 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 09.10.2026 16:23, Claude Code
+**Hva:** Sonde for spotpris mot langsiktig kontraktspris i uran som signal
+for uranaksjene (G&R, Q2 2026), før et mulig felt på dashbordet. Kriterier
+satt i fila før kjøring. Data fra Cameco (kontraktspris fra 1996-03), utfall
+CCJ over SPY 12 måneder fram, 355 måneder.
+Resultat: **ikke støttet**, og tegnet går mot påstanden over hele perioden.
+- (a) Rangkorrelasjon på ikke-overlappende utvalg: median +0,18, bare 1 av
+  12 negative (krav: −0,20 eller lavere).
+- (b) Spread −10 % eller lavere: CCJ median −12 % mot SPY; spread 0 eller
+  høyere: +1 %. Altså 14 pp *verre* når spot ligger under kontrakt.
+- (c) Samme retning med −5 %, −15 % og fra 2010 (−19 pp).
+Spread under kontrakt er det vanlige (median −11 %); det følger
+bjørnemarkeder, ikke spekulanter som har gitt opp. Signalet virker bare i
+URNM-perioden fra 2019 (+67 % mot −16 %, 18 og 23 måneder), som er perioden
+G&R henter eksemplene fra. Spread i dag: −7 % (spot 89,63, kontrakt 96,5).
+**Filer:** `sonde_kjor_uran_spread.py` (ny), `sonder/sonde_kjor_uran_spread.txt`,
+`sonder_ferdige.txt`.
+**Den andre økten må vite:** Ikke lagt inn som felt. Ingenting på dashbordet
+er endret.
+
 ### 09.10.2026 16:18, Claude Code
 **Hva:** Sonde for G&Rs salgssignal i edelmetaller, når sølv tar igjen gull
 (Frodes bestilling etter Q2 2026-brevet). Regler og kriterier satt i fila før
