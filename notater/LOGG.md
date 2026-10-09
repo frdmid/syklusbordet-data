@@ -9,6 +9,23 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 09.10.2026 10:18, Claude Code
+**Hva:** De 20 sterkeste resultatene fra `sonde_kjor_oslo_askaar` (A og
+detrendet A mot Oslo Børs), på Frodes spørsmål. Ingen var nær godkjenning:
+laveste q på noen horisont var 0,45 (krav 0,10). Topp fem etter p: LifeCare mot
+bly Ad 24 mnd (rho -0,81), Mowi mot Henry Hub A 1 dag (+0,23), Prosafe mot
+Brent Ad 24 mnd (-0,73, snur mellom halvdelene), Pioneer Property mot WTI Ad
+3 mnd (-0,40), Arendals Fossekompani mot kull A 24 mnd (+0,62). Listen er
+dominert av par uten økonomisk mekanisme (LifeCare/bly, Entra/gull,
+Byggma/kull, Vistin Pharma/sink, Tomra/bly), ingen er papirer på bordet for
+sitt segment, og antallet med |z| over 3 (73) er under det tilfeldighet gir
+(rundt 125; placebo 99). Korrelasjonene på 24 mnd er overlappende og bygger
+på få uavhengige perioder. Anbefaling: ingen følges opp eller registreres som
+Challenger.
+**Filer:** loggen.
+**Den andre økten må vite:** Ingenting nytt å gjøre. Hele tabellen ligger i
+`sonder/oslo_askaar.csv.gz` (sortér på p).
+
 ### 09.10.2026 10:13, Claude Code
 **Hva:** Flaggene og A-skårene mot hele universet av aksjer på Oslo Børs
 (Frodes bestilling): finnes sammenhenger vi ikke har funnet? To sonder, regler
