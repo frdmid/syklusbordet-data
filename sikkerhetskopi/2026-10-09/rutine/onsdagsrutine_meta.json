@@ -1,0 +1,27 @@
+{
+ "id": "trig_01HoJvyjwZRq5J4QNcXoFkr3",
+ "navn": "Syklusbordet: oppdater dashbordet fra GitHub",
+ "cron_utc": "0 9 * * 3",
+ "modell": "claude-opus-5",
+ "tillatelser": "auto",
+ "aktiv": true,
+ "koblinger": [
+  "Google_Drive",
+  "Claude_Docs",
+  "Notion",
+  "Microsoft_365",
+  "lastminute_com",
+  "Claude_Code_Remote",
+  "Strava",
+  "Kiwi_com",
+  "Expedia"
+ ],
+ "varsling": {
+  "channel": {
+   "email": true,
+   "push": false
+  }
+ },
+ "opprettet": "2026-09-21T17:40:16.569080Z",
+ "merknad": "Skyrutine i claude.ai (Cowork). Følger ikke med ved flytting til Enterprise; lag den på nytt fra prompten. Koblingen som trengs er Claude_Docs/artifact-databasen; resten er kontoens standardkoblinger."
+}

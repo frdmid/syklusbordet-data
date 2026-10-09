@@ -1,0 +1,68 @@
+Ukentlig oppdatering av Syklusbordet. Kjør dette selv, uten å stille spørsmål. Svar på norsk.
+
+BAKGRUNN
+Syklusbordet er et dashbord som følger hvor lavt hvert sykliske segment ligger mot sin egen realprishistorikk. Det er publisert som artifact på https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF og leser dataene sine fra sin egen database (samlingen "segments", ett dokument per segment, dokument-id = segmentets id, og samlingen "marked" med dokumentene "vix", "dollar", "endringer", "helse", "gass_b" og "laks_biomasse").
+
+Dataene produseres av en GitHub Actions-arbeidsflyt i det offentlige repoet frdmid/syklusbordet-data, som kjører onsdag 06:00 UTC. Din jobb er kun å flytte dem fra repoet inn i databasen. Du skal IKKE publisere siden på nytt: siden leser databasen ved innlasting, så en databaseskriving er nok.
+
+VIKTIG OM CACHE
+raw.githubusercontent serverer cachede kopier. Bruk alltid en tilfeldig spørrestreng OG no-cache-header, ellers risikerer du å skrive gammelt innhold over nytt:
+  curl -sS -H 'Cache-Control: no-cache' "https://raw.githubusercontent.com/frdmid/syklusbordet-data/main/FIL?cb=$RANDOM"
+
+SLIK GJØR DU DET
+1. Hent index.json fra repoet (med cache-brekk). Den inneholder "oppdatert" og listen "segmenter", pluss en logg. Sjekk at "oppdatert" er fra de siste 8 dagene. Er den eldre, har arbeidsflyten ikke kjørt: skriv ingenting, og rapporter det.
+
+2. Last ned segments/<id>.json for hver id i listen, pluss segments/ship_vlcc.json, ship_suezmax, ship_aframax, ship_kamsarmax, ship_ultramax, ship_capesize og ship_handysize. Lagre dem som filer i arbeidsmappen. Ikke skriv innholdet til skjerm, filene er store.
+
+3. Valider hver fil før du bruker den. Alle krav må være oppfylt:
+   - "series" finnes og har minst 6 punkter, og "last_obs" finnes
+   - "instrumenter" finnes og er en ikke-tom liste
+   - for prissegmentene (alt som ikke starter med ship_): scores.A, scores.Ad og scores.Ar er tall
+   - for ship_-segmentene: MINST ETT punkt i series har "real" forskjellig fra "nom". Ikke se på det siste punktet alene: deflatoren slutter et par måneder før seriens slutt, så de siste punktene har real lik nom helt korrekt. Det første punktet er den sikre testen.
+   - for "laks" i tillegg: scores.observasjon er sann, scores.flagg er usann, og feltet "laks" finnes med tallet "margin"
+   En fil som ikke består: hopp over den, la det gamle dokumentet stå, og nevn det i rapporten med hvilket krav som sviktet.
+
+   Kravet om "instrumenter" er en sperre med hensikt. Databasen inneholder felter som en eldre versjon av innhentingsskriptet ikke skrev: instrumentlister, etterspørselstall fra OWID og tilbudsskåren B. Skriver du en fil uten dem, slettes de fra dashbordet uten at noen ser det. Mangler "instrumenter" i alle filene, betyr det at arbeidsflyten kjører gammel kode: skriv ingenting og si fra.
+
+   Unntak som er ventet: segmentet "uran" har ingen instrumenter før uransonden er kjørt og instrumenter.py er oppdatert. Filen hoppes da over etter regelen over, og dokumentet som ligger i databasen blir stående. Nevn det i én linje, ikke som feil.
+
+4. Les dagens dokumenter fra databasen med ArtifactData, action "list", collection "segments", og bruk out_dir så innholdet havner i filer og ikke i konteksten. Noter versjonsnummeret for hvert dokument. Et segment som ikke finnes i databasen fra før skrives uten if_version.
+
+5. Kontroller at ingen av de validerte filene mister innhold mot dokumentet som ligger der fra før. For hvert segment: har det gamle dokumentet "ettersp", tall i scores.B2, "cot", "trend", "rate" eller "rigg_b", mens den nye filen mangler dem, skal du legge de gamle verdiene inn i den nye filen før du skriver. Skriv i rapporten hvilke segmenter og hvilke felt det gjaldt, siden det betyr at arbeidsflyten ikke gjør jobben sin. "cot" og "trend" regnes fra 30. september 2026 av arbeidsflyten selv (signaler.py), "rate" av bygg_shipping.py, og "rigg_b" (oljeservice) av priser.py. Mangler de, er det en feil i kjøringen, ikke noe som skal skjules.
+
+6. Skriv filene til databasen med ArtifactData, action "batch", med op "set", collection "segments", doc_id = segmentets id, file_path = filen, og if_version = versjonen du leste i punkt 4. Maks 50 skrivinger per batch. Feiler en batch på versjonskonflikt, les på nytt og prøv igjen én gang.
+
+6b. VIX. Hent marked.json fra repoet (med cache-brekk). Krav: "id" er "vix", "verdi" er et tall, og "t" er en dato fra de siste 10 dagene. Består den, skriv den med ArtifactData, action "set", collection "marked", doc_id "vix", file_path = filen (les først eksisterende dokument med "get" og bruk versjonen som if_version hvis det finnes). Består den ikke, eller mangler fila, la det gamle stå og nevn det i én linje.
+
+6c. Dollaren. Hent dollar.json fra repoet (med cache-brekk). Krav: "id" er "dollar", og minst ett av feltene "dxy" og "usdnok" finnes med "verdi" som tall og "t" som en dato fra de siste 10 dagene. Består den, skriv den med ArtifactData, action "set", collection "marked", doc_id "dollar", file_path = filen (les først eksisterende dokument med "get" og bruk versjonen som if_version hvis det finnes). Består den ikke, eller mangler fila (den finnes først etter at priser.py fra 26.09.2026 er pushet), la det gamle stå og nevn det i én linje.
+
+6d. Endringer (fra 30.09.2026, boksen øverst på dashbordet). Hent endringer.json fra repoet (med cache-brekk). Krav: "id" er "endringer", og feltet "uke" finnes med "ny_dato". Består den, skriv den med ArtifactData, action "set", collection "marked", doc_id "endringer", file_path = filen (les først eksisterende dokument med "get" og bruk versjonen som if_version hvis det finnes). Består den ikke, eller mangler fila, la det gamle stå og nevn det i én linje.
+
+6e. Helse (fra 30.09.2026, varselet øverst og tabellen Datahelse nederst). Hent helse.json fra repoet (med cache-brekk). Krav: "id" er "helse", og "rader" er en ikke-tom liste. Består den, skriv den med ArtifactData, action "set", collection "marked", doc_id "helse", file_path = filen (les først eksisterende dokument med "get" og bruk versjonen som if_version hvis det finnes). Består den ikke, eller mangler fila, la det gamle stå og nevn det i én linje. Dashbordet regner status selv mot dagens dato; regelen står i toppen av helse.py i repoet.
+
+6f. B for gass (fra 07.10.2026, linjen «Tilbud B, gass» i Henry Hub-panelet). Hent gass_b.json fra repoet (med cache-brekk). Krav: "id" er "gass_b", "endring_12m_logpst" er et tall, "B" er et tall eller null, og "laget" er en dato fra de siste 10 dagene. Består den, skriv den med ArtifactData, action "set", collection "marked", doc_id "gass_b", file_path = filen (les først eksisterende dokument med "get" og bruk versjonen som if_version hvis det finnes). Består den ikke, eller mangler fila, la det gamle stå og nevn det i én linje. Fila skrives av Challengeren challenger_gass_rigger_v1 i Shadow-OOS fra 14.10.2026; den er kontekst, ikke en skår i Champion.
+
+6g. Biomasse for laks (fra 07.10.2026, feltet «Biomasse i sjøen» i laks-panelet). Hent laks_biomasse.json fra repoet (med cache-brekk). Krav: "id" er "laks_biomasse", "dB" er et tall, "serie" er en ikke-tom liste, og "laget" er en dato fra de siste 10 dagene. Består den, skriv den med ArtifactData, action "set", collection "marked", doc_id "laks_biomasse", file_path = filen (les først eksisterende dokument med "get" og bruk versjonen som if_version hvis det finnes). Består den ikke, eller mangler fila, la det gamle stå og nevn det i én linje. Fila skrives av kontekst_laks.py hver uke fra 14.10.2026; den er kontekst, ikke en skår.
+
+7. Rapporter kort, på norsk, i denne formen:
+   - dato i index.json og hvor mange segmenter som ble skrevet
+   - endringer siden forrige uke: forrige og ny dato (uke.forrige_dato og uke.ny_dato i endringer.json), alle skifter (uke.skifter) og de tre største endringene (uke.topp) med gammelt tall, nytt tall og endring i prosent
+   - datahelse: regn status for radene i helse.json etter regelen i toppen av helse.py (automatiske: grønn til slutten av neste periode pluss etterslep pluss 3 dager, gul til pluss 7, rød over; manuelle: rød når dagens dato er etter "grense"; rader med "status" beholder den). List de gule og røde med navn og siste observasjon, eller skriv at alle er grønne
+   - en tabell med segment, A, Ad, Ar, B2, D og siste observasjon, sortert med høyeste A øverst
+   - hvilke segmenter som står i bunnsone (scores.flagg er sann) og hvilke som står under oppsikt (scores.oppsikt er sann)
+   - Brent og WTI, parallelt signal (Frodes valg, ikke testet; WTI fra 28.09.2026): står scores.flagg_d95 som sann for hver av dem, altså detrendet A 95 eller mer? Si ja eller nei med detrendet A per segment. Begge holdes etter regelen fra desember 2025 til desember 2027.
+   - for segmentene med COT: forvalternes persentil mot tre år (cot.mm_pctl_3aar), og merk dem som ligger på 10 eller lavere eller 90 eller høyere
+   - laks (observasjon, aldri flagg): margin (laks.margin), margin-A (laks.A_margin), siste uke og kilopris (laks.uke, laks.uke_nok_kg), og om kostnadstallet er ferskt (laks.kost_fersk)
+   - VIX: verdi, dato og persentil (pctl_alle), eller at den ikke ble skrevet
+   - dollaren: DXY og USD/NOK med verdi, persentil (pctl_alle) og endring over 12 måneder (endring_12m_pst), eller at den ikke ble skrevet
+   - B for gass: B, endringen i gassrigger over 12 mnd (endring_12m_logpst) og måneden (mnd), eller at den ikke ble skrevet
+   - biomasse for laks: endringen fra året før (dB) og måneden (mnd), eller at den ikke ble skrevet
+   - jernmalm: kurveform (form, front_neste, front_pris og front_mot_siste_pst hvis feltet "kurve" finnes) og D med tema (d_detalj.tema_navn), siden kurven og kurven i D er nye fra 30.09.2026
+   - deflatoren: hvilken kilde som ble brukt og om linjen "deflator, kontroll mot BLS" sto som OK
+   - flaggloggen: om loggen i index.json har en linje "flagglogg" med status OK, og hva den sier. Mangler linjen eller står den som FEIL, si det tydelig: da skrives ikke loggen over flagg framover.
+   - kurveform: om loggen har en linje "kurveform" med status OK, og hvor mange måneder historikk hvert segment har
+   - alt som feilet eller måtte lappes i punkt 5, med årsak
+   Ikke lim inn rådata. Ikke foreslå oppfølgingsspørsmål. Ikke bruk tankestrek.
+
+HVIS NOE ER GALT
+Svarer ikke raw.githubusercontent, eller mangler index.json: skriv ingenting og si hva som skjedde. Det er alltid bedre å la forrige ukes tall stå enn å skrive noe halvt. Loggen i index.json har et felt per kilde med status OK eller FEIL: ta med de som feilet i rapporten, det er slik vi oppdager at en datakilde har falt bort. Linjer i loggen om at uran eller BDI er mer enn noen måneder gammel betyr at kopien i repoet (uran_reserve.csv eller bdi.json) må forlenges: ta dem med i rapporten.

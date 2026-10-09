@@ -9,6 +9,29 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 09.10.2026 10:26, Claude Code
+**Hva:** Sikkerhetskopi før en mulig flytting fra Claude Pro til Enterprise
+(Frodes bestilling). Ved en slik flytting følger ikke publiserte artifacts og
+skyrutiner med, og kildekoden til dashbordet fantes bare i artifacten.
+1. Ny mappe `sikkerhetskopi/2026-10-09/` i repoet (39 filer, 2,5 MB):
+   dashbordet versjon 61 (slik verten serverer det, og uten omslag klar til
+   publisering), hele databasen (25 dokumenter i `segments`, 6 i `marked`),
+   onsdagsrutinens tekst og innstillinger, de lokale planlagte oppgavene,
+   README med gjenoppretting, og sha256 for hver fil.
+2. Notion (privat side, Frodes arbeidsområde): «Syklusbordet:
+   prosjektbeskrivelse og sikkerhetskopi» med full prosjektbeskrivelse
+   (skårer, eierskap, uken, Shadow-OOS med Champion og Challengere, funn,
+   kilder, fallgruver, gjenoppretting) og mappen «Sikkerhetskopi 2026-10-09»
+   med fire filer: kildekoden (116 filer, zip), databasen (zip), rutinene
+   (zip) og dashbordet som HTML.
+   Side: https://app.notion.com/p/3f465d3cd345811bb369f8b16f3f0068
+Ikke med: egne skills i claude.ai må Frode eksportere selv; koblinger må
+kobles til på nytt etter en flytting.
+**Filer:** `sikkerhetskopi/2026-10-09/` (ny), loggen; Notion.
+**Den andre økten må vite:** Hvis dashbordet eller rutinen endres etter
+09.10, er kopien utdatert. Ta en ny kopi før selve flyttingen. Anbefalt valg
+ved flytting: «behold begge kontoene» til alt er satt opp på nytt.
+
 ### 09.10.2026 10:18, Claude Code
 **Hva:** De 20 sterkeste resultatene fra `sonde_kjor_oslo_askaar` (A og
 detrendet A mot Oslo Børs), på Frodes spørsmål. Ingen var nær godkjenning:

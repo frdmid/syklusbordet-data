@@ -1,0 +1,172 @@
+{
+  "id": "endringer",
+  "kvartal": {
+    "forrige": "2026-09-29",
+    "forrige_dato": "2026-09-29 13:43:25",
+    "ny": "2026-10-01",
+    "ny_dato": "2026-10-01 10:39",
+    "skifter": [
+      {
+        "felt": "Port C for segmentet",
+        "gammel": "ukjent",
+        "ny": "aapen",
+        "segment": "Kobber"
+      },
+      {
+        "felt": "Port C for segmentet",
+        "gammel": "ukjent",
+        "ny": "aapen",
+        "segment": "Nikkel"
+      },
+      {
+        "felt": "Port C for segmentet",
+        "gammel": "ukjent",
+        "ny": "aapen",
+        "segment": "Tinn"
+      },
+      {
+        "felt": "Port C for segmentet",
+        "gammel": "ukjent",
+        "ny": "aapen",
+        "segment": "Palmeolje"
+      }
+    ],
+    "topp": []
+  },
+  "uke": {
+    "forrige": "2026-W40",
+    "forrige_dato": "2026-09-30 06:29",
+    "ny": "2026-W41",
+    "ny_dato": "2026-10-07 06:30",
+    "skifter": [
+      {
+        "felt": "Trend",
+        "gammel": "bekreftet",
+        "ny": "begynnende",
+        "segment": "Laks (sesongjustert)"
+      },
+      {
+        "felt": "Port C",
+        "gammel": "ukjent",
+        "ny": "aapen",
+        "segment": "Kobber"
+      },
+      {
+        "felt": "Port C",
+        "gammel": "ukjent",
+        "ny": "aapen",
+        "segment": "Nikkel"
+      },
+      {
+        "felt": "Port C",
+        "gammel": "ukjent",
+        "ny": "aapen",
+        "segment": "Tinn"
+      },
+      {
+        "felt": "Under oppsikt",
+        "gammel": true,
+        "ny": false,
+        "segment": "Jernmalm 62% Fe"
+      },
+      {
+        "felt": "Port C",
+        "gammel": "ukjent",
+        "ny": "aapen",
+        "segment": "Palmeolje"
+      }
+    ],
+    "topp": [
+      {
+        "endring_pst": -80.6,
+        "felt": "COT-persentil",
+        "gammel": 53.2,
+        "ny": 10.3,
+        "poeng": -42.9,
+        "segment": "Naturgass US (Henry Hub)",
+        "vekt": 42.9
+      },
+      {
+        "endring_pst": -39.3,
+        "felt": "A detrendet",
+        "gammel": 72.5,
+        "ny": 44,
+        "poeng": -28.5,
+        "segment": "Råolje (Brent)",
+        "vekt": 28.5
+      },
+      {
+        "endring_pst": 27,
+        "felt": "Realpris",
+        "gammel": 89.75,
+        "ny": 113.96,
+        "poeng": null,
+        "segment": "Råolje (Brent)",
+        "vekt": 27
+      },
+      {
+        "endring_pst": -40,
+        "felt": "COT-persentil",
+        "gammel": 51.3,
+        "ny": 30.8,
+        "poeng": -20.5,
+        "segment": "Råolje (WTI)",
+        "vekt": 20.5
+      },
+      {
+        "endring_pst": 20.4,
+        "felt": "Realpris",
+        "gammel": 21.11,
+        "ny": 25.42,
+        "poeng": null,
+        "segment": "Naturgass Europa",
+        "vekt": 20.4
+      },
+      {
+        "endring_pst": -44.2,
+        "felt": "Prisnivå A",
+        "gammel": 32.6,
+        "ny": 18.2,
+        "poeng": -14.4,
+        "segment": "Råolje (Brent)",
+        "vekt": 14.4
+      },
+      {
+        "endring_pst": -20.4,
+        "felt": "A detrendet",
+        "gammel": 65.8,
+        "ny": 52.4,
+        "poeng": -13.4,
+        "segment": "Råolje (WTI)",
+        "vekt": 13.4
+      },
+      {
+        "endring_pst": -38.6,
+        "felt": "Kapitulasjon D",
+        "gammel": 32.4,
+        "ny": 19.9,
+        "poeng": -12.5,
+        "segment": "Naturgass US (Henry Hub)",
+        "vekt": 12.5
+      },
+      {
+        "endring_pst": 10.5,
+        "felt": "Realpris",
+        "gammel": 87.03,
+        "ny": 96.16,
+        "poeng": null,
+        "segment": "Råolje (WTI)",
+        "vekt": 10.5
+      },
+      {
+        "endring_pst": -17,
+        "felt": "A detrendet",
+        "gammel": 58.9,
+        "ny": 48.9,
+        "poeng": -10,
+        "segment": "Naturgass US (Henry Hub)",
+        "vekt": 10
+      }
+    ]
+  }
+}

@@ -1,0 +1,631 @@
+{
+  "id": "helse",
+  "laget": "2026-10-07 06:30",
+  "rader": [
+    {
+      "etterslep": 2,
+      "frekvens": "uke",
+      "id": "innhenting",
+      "kilde": "GitHub Actions",
+      "navn": "Ukentlig innhenting",
+      "siste": "2026-10-07 06:26",
+      "slutt": "2026-10-07",
+      "type": "auto"
+    },
+    {
+      "etterslep": 45,
+      "frekvens": "mnd",
+      "id": "kpi",
+      "kilde": "BLS via GitHub-speil cpi-us",
+      "navn": "Deflator (amerikansk KPI)",
+      "siste": "2026-08",
+      "slutt": "2026-08-31",
+      "type": "auto"
+    },
+    {
+      "etterslep": 10,
+      "frekvens": "mnd",
+      "id": "brent",
+      "kilde": "EIA/LBMA via datasets-speil",
+      "navn": "Råolje (Brent)",
+      "siste": "2026-09",
+      "slutt": "2026-09-30",
+      "type": "auto"
+    },
+    {
+      "etterslep": 10,
+      "frekvens": "mnd",
+      "id": "wti",
+      "kilde": "EIA/LBMA via datasets-speil",
+      "navn": "Råolje (WTI)",
+      "siste": "2026-09",
+      "slutt": "2026-09-30",
+      "type": "auto"
+    },
+    {
+      "etterslep": 10,
+      "frekvens": "mnd",
+      "id": "henryhub",
+      "kilde": "EIA/LBMA via datasets-speil",
+      "navn": "Naturgass US (Henry Hub)",
+      "siste": "2026-09",
+      "slutt": "2026-09-30",
+      "type": "auto"
+    },
+    {
+      "etterslep": 10,
+      "frekvens": "mnd",
+      "id": "gold",
+      "kilde": "EIA/LBMA via datasets-speil",
+      "navn": "Gull",
+      "siste": "2026-09",
+      "slutt": "2026-09-30",
+      "type": "auto"
+    },
+    {
+      "etterslep": 14,
+      "frekvens": "mnd",
+      "id": "uran",
+      "kilde": "Cameco",
+      "navn": "Uran",
+      "siste": "2026-09",
+      "slutt": "2026-09-30",
+      "type": "auto"
+    },
+    {
+      "etterslep": 14,
+      "frekvens": "mnd",
+      "id": "laks",
+      "kilde": "SSB",
+      "navn": "Laks (sesongjustert)",
+      "siste": "2026-09",
+      "slutt": "2026-09-30",
+      "type": "auto"
+    },
+    {
+      "etterslep": 7,
+      "frekvens": "uke",
+      "id": "laks_uke",
+      "kilde": "SSB",
+      "navn": "Laks, ukepris",
+      "siste": "2026-10-01",
+      "slutt": "2026-10-01",
+      "type": "auto"
+    },
+    {
+      "etterslep": 350,
+      "frekvens": "aar",
+      "id": "laks_kost",
+      "kilde": "Fiskeridirektoratet",
+      "navn": "Laks, produksjonskostnad",
+      "siste": "2024",
+      "slutt": "2024-12-31",
+      "type": "auto"
+    },
+    {
+      "etterslep": 24,
+      "frekvens": "mnd",
+      "id": "oljeservice",
+      "kilde": "BLS via FRED",
+      "navn": "Oljeservice (boring)",
+      "siste": "2026-08",
+      "slutt": "2026-08-31",
+      "type": "auto"
+    },
+    {
+      "etterslep": 24,
+      "frekvens": "mnd",
+      "id": "oljeservice_akt",
+      "kilde": "Fed via FRED",
+      "navn": "Oljeservice (boring), aktivitet",
+      "siste": "2026-08",
+      "slutt": "2026-08-31",
+      "type": "auto"
+    },
+    {
+      "etterslep": 14,
+      "frekvens": "mnd",
+      "id": "kobber",
+      "kilde": "Verdensbanken Pink Sheet",
+      "navn": "Kobber",
+      "siste": "2026-09",
+      "slutt": "2026-09-30",
+      "type": "auto"
+    },
+    {
+      "etterslep": 14,
+      "frekvens": "mnd",
+      "id": "nikkel",
+      "kilde": "Verdensbanken Pink Sheet",
+      "navn": "Nikkel",
+      "siste": "2026-09",
+      "slutt": "2026-09-30",
+      "type": "auto"
+    },
+    {
+      "etterslep": 14,
+      "frekvens": "mnd",
+      "id": "aluminium",
+      "kilde": "Verdensbanken Pink Sheet",
+      "navn": "Aluminium",
+      "siste": "2026-09",
+      "slutt": "2026-09-30",
+      "type": "auto"
+    },
+    {
+      "etterslep": 14,
+      "frekvens": "mnd",
+      "id": "sink",
+      "kilde": "Verdensbanken Pink Sheet",
+      "navn": "Sink",
+      "siste": "2026-09",
+      "slutt": "2026-09-30",
+      "type": "auto"
+    },
+    {
+      "etterslep": 14,
+      "frekvens": "mnd",
+      "id": "bly",
+      "kilde": "Verdensbanken Pink Sheet",
+      "navn": "Bly",
+      "siste": "2026-09",
+      "slutt": "2026-09-30",
+      "type": "auto"
+    },
+    {
+      "etterslep": 14,
+      "frekvens": "mnd",
+      "id": "tinn",
+      "kilde": "Verdensbanken Pink Sheet",
+      "navn": "Tinn",
+      "siste": "2026-09",
+      "slutt": "2026-09-30",
+      "type": "auto"
+    },
+    {
+      "etterslep": 14,
+      "frekvens": "mnd",
+      "id": "jernmalm",
+      "kilde": "Verdensbanken Pink Sheet",
+      "navn": "Jernmalm 62% Fe",
+      "siste": "2026-09",
+      "slutt": "2026-09-30",
+      "type": "auto"
+    },
+    {
+      "etterslep": 2,
+      "frekvens": "uke",
+      "id": "jernmalm_fersk",
+      "kilde": "Yahoo",
+      "navn": "Jernmalm 62% Fe, fersk pris",
+      "siste": "2026-10-06",
+      "slutt": "2026-10-06",
+      "type": "auto"
+    },
+    {
+      "etterslep": 14,
+      "frekvens": "mnd",
+      "id": "kull",
+      "kilde": "Verdensbanken Pink Sheet",
+      "navn": "Termisk kull (Australia)",
+      "siste": "2026-09",
+      "slutt": "2026-09-30",
+      "type": "auto"
+    },
+    {
+      "etterslep": 14,
+      "frekvens": "mnd",
+      "id": "ttf",
+      "kilde": "Verdensbanken Pink Sheet",
+      "navn": "Naturgass Europa",
+      "siste": "2026-09",
+      "slutt": "2026-09-30",
+      "type": "auto"
+    },
+    {
+      "etterslep": 14,
+      "frekvens": "mnd",
+      "id": "kakao",
+      "kilde": "Verdensbanken Pink Sheet",
+      "navn": "Kakao",
+      "siste": "2026-09",
+      "slutt": "2026-09-30",
+      "type": "auto"
+    },
+    {
+      "etterslep": 14,
+      "frekvens": "mnd",
+      "id": "palmeolje",
+      "kilde": "Verdensbanken Pink Sheet",
+      "navn": "Palmeolje",
+      "siste": "2026-09",
+      "slutt": "2026-09-30",
+      "type": "auto"
+    },
+    {
+      "etterslep": 9,
+      "frekvens": "uke",
+      "id": "brent_cot",
+      "kilde": "CFTC",
+      "navn": "Råolje (Brent), COT",
+      "siste": "2026-09-29",
+      "slutt": "2026-09-29",
+      "type": "auto"
+    },
+    {
+      "etterslep": 9,
+      "frekvens": "uke",
+      "id": "wti_cot",
+      "kilde": "CFTC",
+      "navn": "Råolje (WTI), COT",
+      "siste": "2026-09-29",
+      "slutt": "2026-09-29",
+      "type": "auto"
+    },
+    {
+      "etterslep": 9,
+      "frekvens": "uke",
+      "id": "henryhub_cot",
+      "kilde": "CFTC",
+      "navn": "Naturgass US (Henry Hub), COT",
+      "siste": "2026-09-29",
+      "slutt": "2026-09-29",
+      "type": "auto"
+    },
+    {
+      "etterslep": 9,
+      "frekvens": "uke",
+      "id": "gold_cot",
+      "kilde": "CFTC",
+      "navn": "Gull, COT",
+      "siste": "2026-09-29",
+      "slutt": "2026-09-29",
+      "type": "auto"
+    },
+    {
+      "etterslep": 9,
+      "frekvens": "uke",
+      "id": "kobber_cot",
+      "kilde": "CFTC",
+      "navn": "Kobber, COT",
+      "siste": "2026-09-29",
+      "slutt": "2026-09-29",
+      "type": "auto"
+    },
+    {
+      "etterslep": 9,
+      "frekvens": "uke",
+      "id": "kakao_cot",
+      "kilde": "CFTC",
+      "navn": "Kakao, COT",
+      "siste": "2026-09-29",
+      "slutt": "2026-09-29",
+      "type": "auto"
+    },
+    {
+      "etterslep": 9,
+      "frekvens": "uke",
+      "id": "palmeolje_cot",
+      "kilde": "CFTC",
+      "navn": "Palmeolje, COT",
+      "siste": "2026-09-29",
+      "slutt": "2026-09-29",
+      "type": "auto"
+    },
+    {
+      "etterslep": 2,
+      "frekvens": "uke",
+      "id": "brent_kurve",
+      "kilde": "Yahoo",
+      "navn": "Råolje (Brent), kurveform",
+      "siste": "2026-10-07",
+      "slutt": "2026-10-07",
+      "type": "auto"
+    },
+    {
+      "etterslep": 2,
+      "frekvens": "uke",
+      "id": "wti_kurve",
+      "kilde": "Yahoo",
+      "navn": "Råolje (WTI), kurveform",
+      "siste": "2026-10-07",
+      "slutt": "2026-10-07",
+      "type": "auto"
+    },
+    {
+      "etterslep": 2,
+      "frekvens": "uke",
+      "id": "henryhub_kurve",
+      "kilde": "Yahoo",
+      "navn": "Naturgass US (Henry Hub), kurveform",
+      "siste": "2026-10-07",
+      "slutt": "2026-10-07",
+      "type": "auto"
+    },
+    {
+      "etterslep": 2,
+      "frekvens": "uke",
+      "id": "gold_kurve",
+      "kilde": "Yahoo",
+      "navn": "Gull, kurveform",
+      "siste": "2026-10-07",
+      "slutt": "2026-10-07",
+      "type": "auto"
+    },
+    {
+      "etterslep": 2,
+      "frekvens": "uke",
+      "id": "kobber_kurve",
+      "kilde": "Yahoo",
+      "navn": "Kobber, kurveform",
+      "siste": "2026-10-07",
+      "slutt": "2026-10-07",
+      "type": "auto"
+    },
+    {
+      "etterslep": 2,
+      "frekvens": "uke",
+      "id": "kakao_kurve",
+      "kilde": "Yahoo",
+      "navn": "Kakao, kurveform",
+      "siste": "2026-10-06",
+      "slutt": "2026-10-06",
+      "type": "auto"
+    },
+    {
+      "etterslep": 5,
+      "frekvens": "uke",
+      "id": "uran_fut",
+      "kilde": "UxC via Cameco",
+      "navn": "Uran, futures (kontroll)",
+      "siste": "2026-09-20",
+      "slutt": "2026-09-20",
+      "type": "auto"
+    },
+    {
+      "etterslep": 7,
+      "frekvens": "uke",
+      "id": "fearnleys",
+      "kilde": "Fearnleys via Hellenic Shipping News",
+      "navn": "Skip, Fearnleys ukerapport",
+      "siste": "2026-09-30",
+      "slutt": "2026-09-30",
+      "type": "auto"
+    },
+    {
+      "etterslep": 7,
+      "frekvens": "mnd",
+      "id": "bdi",
+      "kilde": "Baltic Exchange",
+      "merknad": "Maaneden fylles fortloepende, saa stopp oppdages foerst etter neste maanedsslutt.",
+      "navn": "Baltic Dry Index",
+      "siste": "2026-09",
+      "slutt": "2026-09-30",
+      "type": "auto"
+    },
+    {
+      "etterslep": 2,
+      "frekvens": "uke",
+      "id": "vix",
+      "kilde": "Cboe via Yahoo",
+      "navn": "VIX",
+      "siste": "2026-10-06",
+      "slutt": "2026-10-06",
+      "type": "auto"
+    },
+    {
+      "etterslep": 2,
+      "frekvens": "uke",
+      "id": "dxy",
+      "kilde": "ICE via Yahoo",
+      "navn": "Dollar (DXY)",
+      "siste": "2026-10-07",
+      "slutt": "2026-10-07",
+      "type": "auto"
+    },
+    {
+      "etterslep": 2,
+      "frekvens": "uke",
+      "id": "usdnok",
+      "kilde": "Norges Bank",
+      "navn": "USD/NOK",
+      "siste": "2026-10-06",
+      "slutt": "2026-10-06",
+      "type": "auto"
+    },
+    {
+      "etterslep": 300,
+      "frekvens": "aar",
+      "id": "owid",
+      "kilde": "Our World in Data",
+      "merknad": "Publiseringstidspunktet er usikkert.",
+      "navn": "Etterspørsel (OWID)",
+      "siste": "2024",
+      "slutt": "2024-12-31",
+      "type": "auto"
+    },
+    {
+      "etterslep": 5,
+      "frekvens": "kvartal",
+      "id": "c_overlevelse",
+      "kilde": "Kvartalsvis innhenting",
+      "navn": "Overlevelsesport C (SEC)",
+      "siste": "2026-10-01",
+      "slutt": "2026-10-01",
+      "type": "auto"
+    },
+    {
+      "etterslep": 5,
+      "frekvens": "kvartal",
+      "id": "b_capex",
+      "kilde": "Kvartalsvis innhenting",
+      "navn": "Tilbud B, metaller (SEC)",
+      "siste": "2026-10-01",
+      "slutt": "2026-10-01",
+      "type": "auto"
+    },
+    {
+      "etterslep": 5,
+      "frekvens": "kvartal",
+      "id": "b_rigg",
+      "kilde": "Kvartalsvis innhenting",
+      "navn": "Tilbud B, rigger (SEC)",
+      "siste": "2026-10-01",
+      "slutt": "2026-10-01",
+      "type": "auto"
+    },
+    {
+      "grense": "2027-03-31",
+      "id": "c_AKRBP.OL",
+      "kilde": "c_manuell.json",
+      "navn": "AKRBP.OL, overlevelse C",
+      "siste": "regnskapsår 2025",
+      "slutt": "2025-12-31",
+      "type": "manuell"
+    },
+    {
+      "grense": "2027-03-31",
+      "id": "c_DNO.OL",
+      "kilde": "c_manuell.json",
+      "navn": "DNO.OL, overlevelse C",
+      "siste": "regnskapsår 2025",
+      "slutt": "2025-12-31",
+      "type": "manuell"
+    },
+    {
+      "grense": "2027-06-30",
+      "id": "c_CIA.TO",
+      "kilde": "c_manuell.json",
+      "navn": "CIA.TO, overlevelse C",
+      "siste": "regnskapsår 2026 (til mars)",
+      "slutt": "2026-03-31",
+      "type": "manuell"
+    },
+    {
+      "grense": "2027-03-31",
+      "id": "c_LIF.TO",
+      "kilde": "c_manuell.json",
+      "navn": "LIF.TO, overlevelse C",
+      "siste": "regnskapsår 2025",
+      "slutt": "2025-12-31",
+      "type": "manuell"
+    },
+    {
+      "grense": "2027-03-31",
+      "id": "c_AI.PA",
+      "kilde": "c_manuell.json",
+      "navn": "AI.PA, overlevelse C",
+      "siste": "regnskapsår 2025",
+      "slutt": "2025-12-31",
+      "type": "manuell"
+    },
+    {
+      "grense": "2027-03-31",
+      "id": "c_HEI.DE",
+      "kilde": "c_manuell.json",
+      "navn": "HEI.DE, overlevelse C",
+      "siste": "regnskapsår 2025",
+      "slutt": "2025-12-31",
+      "type": "manuell"
+    },
+    {
+      "grense": "2027-03-31",
+      "id": "c_VALE",
+      "kilde": "c_manuell.json",
+      "navn": "VALE, overlevelse C",
+      "siste": "regnskapsår 2025",
+      "slutt": "2025-12-31",
+      "type": "manuell"
+    },
+    {
+      "grense": "2027-03-31",
+      "id": "c_GLEN.L",
+      "kilde": "c_manuell.json",
+      "navn": "GLEN.L, overlevelse C",
+      "siste": "regnskapsår 2025",
+      "slutt": "2025-12-31",
+      "type": "manuell"
+    },
+    {
+      "grense": "2027-03-31",
+      "id": "c_CS.TO",
+      "kilde": "c_manuell.json",
+      "navn": "CS.TO, overlevelse C",
+      "siste": "regnskapsår 2025",
+      "slutt": "2025-12-31",
+      "type": "manuell"
+    },
+    {
+      "grense": "2027-03-31",
+      "id": "c_ATYM.L",
+      "kilde": "c_manuell.json",
+      "navn": "ATYM.L, overlevelse C",
+      "siste": "regnskapsår 2025",
+      "slutt": "2025-12-31",
+      "type": "manuell"
+    },
+    {
+      "grense": "2027-03-31",
+      "id": "c_ERA.PA",
+      "kilde": "c_manuell.json",
+      "navn": "ERA.PA, overlevelse C",
+      "siste": "regnskapsår 2025",
+      "slutt": "2025-12-31",
+      "type": "manuell"
+    },
+    {
+      "grense": "2027-03-31",
+      "id": "c_MPE.L",
+      "kilde": "c_manuell.json",
+      "navn": "MPE.L, overlevelse C",
+      "siste": "regnskapsår 2025",
+      "slutt": "2025-12-31",
+      "type": "manuell"
+    },
+    {
+      "grense": "2027-03-31",
+      "id": "c_RE.L",
+      "kilde": "c_manuell.json",
+      "navn": "RE.L, overlevelse C",
+      "siste": "regnskapsår 2025",
+      "slutt": "2025-12-31",
+      "type": "manuell"
+    },
+    {
+      "grense": "2027-03-31",
+      "id": "b_KIO",
+      "kilde": "b_manuell.json",
+      "navn": "Kumba Iron Ore, tilbud B",
+      "siste": "regnskapsår 2025",
+      "slutt": "2025-12-31",
+      "type": "manuell"
+    },
+    {
+      "grense": "2027-03-31",
+      "id": "b_VALE_JM",
+      "kilde": "b_manuell.json",
+      "navn": "Vale, jernmalmsegmentet, tilbud B",
+      "siste": "regnskapsår 2025",
+      "slutt": "2025-12-31",
+      "type": "manuell"
+    },
+    {
+      "grense": "2027-06-30",
+      "id": "b_CIA",
+      "kilde": "b_manuell.json",
+      "navn": "Champion Iron, tilbud B",
+      "siste": "regnskapsår 2026 (til mars)",
+      "slutt": "2026-03-31",
+      "type": "manuell"
+    },
+    {
+      "grense": "2027-09-30",
+      "id": "b_FMG",
+      "kilde": "b_manuell.json",
+      "navn": "Fortescue, tilbud B",
+      "siste": "regnskapsår 2026 (til juni)",
+      "slutt": "2026-06-30",
+      "type": "manuell"
+    }
+  ]
+}
