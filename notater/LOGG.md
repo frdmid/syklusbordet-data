@@ -9,6 +9,41 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 09.10.2026 09:55, Claude Code
+**Hva:** Oppsummering til Cowork av arbeidet 07.10 kveld (detaljer i
+innslagene under), og testen 08.10.
+1. **B for gass:** regnskapstallene (capex delt på avskrivninger) og prisen
+   varsler ikke gassproduksjonen i USA, men riggene i Appalachia og
+   Haynesville gjør det (+0,76 mot produksjonen 12 mnd senere, +0,74 uten
+   overlapp). Registrert som `challenger_gass_rigger_v1` fra 14.10: B for
+   henryhub er persentilen av fallet i gassrigger, bunnsone er Championens A og
+   Ad 80 eller mer OG riggene lavere enn året før. I dag: B 23, rigger +22 %.
+2. **Laks:** `challenger_laks_tilbud_v1` fra 14.10 (A_pris i EUR 70 eller mer
+   og biomasse lavere enn året før). Biomassen vises nå som kurve i
+   laks-panelet (feltet der kurveformen sto). I dag: +2,6 %.
+3. **Dashbordet versjon 61:** NOK-merker ved Oslo-papirene (grønt = fordel ved
+   svak krone, NOK nøytral = resultatet påvirkes ikke vesentlig), linjen
+   «Tilbud B, gass (rigger)» i Henry Hub-panelet, og «Biomasse i sjøen» i
+   laks-panelet.
+4. **Onsdagsrutinen** har nye steg 6f (marked/gass_b) og 6g
+   (marked/laks_biomasse), og to linjer i rapporten. Resten er urørt.
+5. **Ukentlig:** Challengerne kjører fra `shadow_challenger.kjor`, og
+   `kontekst_laks.py` skriver `laks_biomasse.json` sist i samme kjøring.
+   `gass_b.json` skrives av gass-Challengeren.
+6. **Test 08.10:** 16 av 16 shadow-tester består, kontrollen av Champion og
+   begge Challengere er uten avvik, og en prøvekjøring som 14.10 i en
+   midlertidig mappe ga snapshot for begge Challengerne, begge kontekstfilene,
+   og «hoppet over» ved andre kjøring samme uke. Databasen har marked/gass_b
+   og marked/laks_biomasse. Ikke testet: nettkallene til EIA og
+   Fiskeridirektoratet fra GitHub Actions.
+**Filer:** loggen.
+**Den andre økten må vite:** 14.10 er første ekte kjøring av begge
+Challengerne og kontekstfilene. Sjekk `shadow/run_manifest.csv` (to linjer med
+`ok` for challenger_*), at `gass_b.json` og `laks_biomasse.json` har
+`laget` 2026-10-14, og at rutinens rapport har linjene om B for gass og
+biomasse. Bygg videre på dashbordet versjon 61. Ikke rør Challenger-filene;
+en endret regel er en ny Challenger.
+
 ### 07.10.2026 22:32, Claude Code
 **Hva:** Biomasse for laks på dashbordet (Frodes bestilling): kurven over endringen
 i stående biomasse står i laks-panelet der kurveformen sto (laks har ingen
