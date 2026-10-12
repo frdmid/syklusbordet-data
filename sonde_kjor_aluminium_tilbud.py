@@ -35,7 +35,10 @@
 import numpy as np
 import pandas as pd
 
-FIL = "data_manuelt/iai_primaeraluminium_2026-10-12.csv"
+# Flyttet 12.10.2026: IAIs vilkaar tillater bare personlig bruk, ikke
+# videreformidling, og repoet er offentlig. Fila ligger lokalt hos Frode i
+# data_privat/ (ignorert av git) og skal aldri inn i repoet.
+FIL = "data_privat/iai_primaeraluminium_2026-10-12.csv"
 L_MND = [6, 12, 18]
 TAK = 45_000            # tusen tonn per aar
 
