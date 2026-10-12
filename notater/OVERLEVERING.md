@@ -69,7 +69,7 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 ## Dashbordet
 
 - Adresse: https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF (siste versjon
-  61 per 07.10; Cowork kan ha publisert senere).
+  62 per 12.10; Cowork kan ha publisert senere).
 - **Omslaget:** filen som Artifact `read` lagrer, begynner med vertens omslag
   (`<!doctype html><html><head><meta charset=utf8>...<body>`) og slutter med
   `</body></html>`. Ta bort begge før publisering, ellers kommer omslaget to
@@ -80,7 +80,9 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
   segmentets id, inkludert `ship_*`) og samlingen `marked` med dokumentene
   `vix`, `dollar`, `endringer`, `helse`, `gass_b` og `laks_biomasse` (de to
   siste fra 07.10, skrevet av Challengeren for gass og av `kontekst_laks.py`,
-  som `shadow_challenger.kjor` kaller hver uke).
+  som `shadow_challenger.kjor` kaller hver uke), og `alu_tilbud` (fra 12.10,
+  skrevet for hånd månedlig med `alu_tilbud_privat.py` fra IAI-fila i
+  `data_privat/`).
 - **Kildekoden finnes bare i selve dashbordet.** Les alltid siste versjon med
   Artifact `read` før du endrer noe, og bygg på den. Ellers overskrives den
   andre øktens arbeid.
@@ -141,6 +143,10 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
   instrumenter før uransonden er kjørt; real lik nom de siste månedene i
   shipping (deflatoren slutter før serien).
 
+- **Repoet er offentlig.** Data med vilkår om personlig bruk (IAI) skal aldri
+  inn i repoet; de ligger i `data_privat/` (ignorert av git) og går bare til
+  det private dashbordet.
+- **Python** ligger ikke i PATH på Frodes maskin; bruk `py`.
 - **KPI med basisår 2015:** Eurostat (HICP), ECB og SSB (03013) har ikke data
   etter desember 2025 i de gamle seriene. Nye sonder og Challengere bør ikke
   hvile på dem; trend eller nye serier med basisår 2025.

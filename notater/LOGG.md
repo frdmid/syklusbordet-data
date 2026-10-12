@@ -9,6 +9,32 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 12.10.2026 15:28, Claude Code
+**Hva:** IAI-tallene ut av det offentlige repoet, og produksjonen av aluminium
+utenfor Kina inn i det private dashbordet (Frodes beslutning).
+1. IAIs vilkår tillater bare personlig, ikke-kommersiell bruk og ingen
+   videreformidling. Repoet er offentlig, så
+   `data_manuelt/iai_primaeraluminium_2026-10-12.csv` er fjernet (den ligger
+   fortsatt i git-historikken fra commit 9a22b7b; historikken er ikke skrevet
+   om). Fila ligger nå lokalt hos Frode i `data_privat/`, som er lagt til i
+   `.gitignore`. `sonde_kjor_aluminium_tilbud.py` peker dit.
+2. Ingen Challenger for aluminium: Challengere kjører i Actions fra det
+   offentlige repoet, og alt de bruker blir offentlig.
+3. Ny `alu_tilbud_privat.py` (bare kode): lager `data_privat/alu_tilbud.json`
+   fra IAI-fila (produksjon utenfor Kina, vekst 12 mnd, siste 60 mnd, Kina mot
+   taket). Skrevet for hånd til marked/alu_tilbud (versjon 1). Oppdateres for
+   hånd månedlig: Frode laster ned CSV fra IAI, så kjøres skriptet og
+   dokumentet skrives. Onsdagsrutinen rører det ikke.
+4. Dashbordet versjon 62: feltet «Produksjon utenfor Kina» i aluminiumspanelet
+   på kurveformens plass (kurve, -4,4 %, 25,9 mill. tonn, Kina 100 % av taket),
+   og et avsnitt i forklaringen. Testet lokalt, toppen kontrollert etter
+   publisering.
+**Filer:** `.gitignore`, `sonde_kjor_aluminium_tilbud.py`, `alu_tilbud_privat.py`
+(ny), `data_manuelt/iai_primaeraluminium_2026-10-12.csv` (fjernet),
+`notater/OVERLEVERING.md`, loggen; databasen og dashbordet.
+**Den andre økten må vite:** Legg aldri IAI-tall i repoet. Bygg videre på
+dashbordet versjon 62.
+
 ### 12.10.2026 15:21, Claude Code
 **Hva:** Ny sonde `sonde_kjor_aluminium_tilbud.py` (Frodes bestilling): er
 primærproduksjonen av aluminium utenfor Kina et brukbart tilbudsmål? Dagens
