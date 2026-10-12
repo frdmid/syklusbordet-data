@@ -1,0 +1,14 @@
+{
+ "id": "challenger_olje_rigger_v1",
+ "effective_from": "2026-10-14",
+ "hypothesis": "Når Brent eller WTI ligger lavt (A og detrendet A 80 eller mer) samtidig som oljeriggene i Permian, Eagle Ford og Bakken er færre enn året før, gir oljepapirene høyere avkastning de neste 24 månedene enn ellers. Krympende boring varsler lavere amerikansk produksjon om et år (sonde_kjor_b_mekanisme 12.10.2026), og det skal sammen med lav pris varsle en bunn.",
+ "changed_variables": ["bottom_zone for brent og wti: Championens A >= 80 og Ad >= 80 OG oljerigger lavere enn året før", "B for brent og wti: B_olje, persentil av fallet i oljerigger (Champion: ingen B)"],
+ "unchanged_variables": ["alle andre segmenter", "watch, d95 og papirene for brent og wti", "regel for ny episode (12 mnd)", "holdetid og primært utfall (24 mnd)", "referanser OSEBX og MSCI World (IWDA.L)", "måling i NOK"],
+ "primary_endpoint": "Avkastning i NOK for papirene i brent og wti 24 måneder etter hypothetical_entry, mot OSEBX, og mot Championens innganger for brent og wti i samme periode.",
+ "expected_direction": "høyere",
+ "decision_rule": "Ingen konklusjon før minst tre nye episoder har modnet på 24 måneder (brent og wti i samme klynge telles som én). Støttet hvis papirene slår OSEBX i minst to av tre (eller tilsvarende andel ved flere), og medianen er positiv. Ellers forkastet. Vurderes også uten beste episode. B_olje som tall vurderes for seg: rangerer B_olje utfallet innen Championens innganger for brent og wti (punkt 16)?",
+ "modul": "challengers/olje_rigger.py",
+ "data": "EIA Drilling Productivity Report, arkiv (dpr-data.xlsx) og STEO tabell 10a (STEO_m.xlsx), rigger per basseng. Ingen konto eller nøkkel.",
+ "evidence_type_before_start": "IN_SAMPLE: sonde_kjor_b_mekanisme (12.10.2026) for mekanismen rigger til produksjon. Flagget er ikke testet mot papirene historisk, med vilje.",
+ "notes": "Frodes beslutning 12.10.2026."
+}

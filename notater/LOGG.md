@@ -9,6 +9,26 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 12.10.2026 15:15, Claude Code
+**Hva:** Challenger `challenger_olje_rigger_v1` registrert (Frodes beslutning),
+fra onsdag 14.10.2026, `specification_hash` 55107143.... Regel i
+`challengers/olje_rigger.py`: for brent og wti er B persentilen av fallet i
+oljerigger (Permian, Eagle Ford, Bakken; snitt 3 mnd, endring 12 mnd; EIA
+DPR-arkiv og STEO 10a uten prognosen), og bottom_zone er Championens A og Ad
+80 eller mer OG riggene lavere enn året før. Watch, d95 og papirer er
+Championens. Primært utfall 24 mnd mot OSEBX; brent og wti i samme klynge
+telles som én episode. Rådata i `shadow/raadata/<id>/`. Ikke lagt inn på
+dashbordet. Prøvekjørt lokalt som 14.10 sammen med de to andre: 8 rader,
+B 50,5, rigger -0,2 %, ingen bunnsone, andre kjøring hoppet over, kontrollen
+uten avvik. 16 tester består.
+Frodes beslutning: B for metallene står som den er på bordet (se innslaget
+15:10).
+**Filer:** `challengers/olje_rigger.py` (ny), `challengers/spes_olje_rigger_v1.json`
+(ny), `config/challengers/challenger_olje_rigger_v1.json` (ny),
+`shadow/model_registry.csv`, loggen.
+**Den andre økten må vite:** 14.10 starter tre Challengere. Manifestet skal ha
+tre linjer med `ok` for challenger_*.
+
 ### 12.10.2026 15:10, Claude Code
 **Hva:** Ny sonde `sonde_kjor_b_mekanisme.py` (Frodes bestilling): måler B
 tilbudet? Mekanismen testes, ikke papirene eller prisen framover. Kriterier
