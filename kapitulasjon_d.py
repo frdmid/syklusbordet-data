@@ -88,12 +88,25 @@ def dagskurs(sym):
     men Leroey 94,7 til 41,3, Nestle 98,9 til 48,2, Champion Iron 99,2 til
     49,6, og kakao som segment 95,9 til 48,2. D skal maale om markedet har
     gitt opp, og da er totalavkastningen riktig maal. Byttet godkjent av Frode
-    25.09.2026. Mangler adjclose, brukes close, og det logges."""
+    25.09.2026. Mangler adjclose, brukes close, og det logges.
+
+    Rettet 12.10.2026 (implementasjonsfeil, Frodes godkjenning): med
+    range=max svarer Yahoo ikke med dagskurser, men med maaneds-, kvartals-
+    eller ukeskurser. Da ble "200-dagers snitt" et snitt over 200 maaneder
+    eller kvartaler, og femaarstoppen en topp over 15 aar for papirer med
+    kvartalskurser. Eksplisitt period1/period2 gir dagskurser. Se
+    sonde_kjor_d_dekomponering og shadow/correction_log.csv."""
     r = requests.get(f"https://query1.finance.yahoo.com/v8/finance/chart/{sym}",
-                     params={"range": "max", "interval": "1d", "events": "div,split"},
-                     headers=UA, timeout=30)
+                     params={"period1": 0, "period2": int(time.time()), "interval": "1d",
+                             "events": "div,split"},
+                     headers=UA, timeout=60)
     r.raise_for_status()
     res = r.json()["chart"]["result"][0]
+    gran = (res.get("meta") or {}).get("dataGranularity")
+    if gran != "1d":
+        # Vakt (12.10.2026): D krever dagskurser. Et annet svar gjoer D2 og
+        # femaarstoppen meningsloese, saa papiret hoppes over og det logges.
+        raise ValueError(f"Yahoo svarte med {gran}, ikke dagskurser")
     tz = (res.get("meta") or {}).get("exchangeTimezoneName") or "UTC"
     idx = pd.to_datetime(res["timestamp"], unit="s", utc=True).tz_convert(tz)
     idx = idx.normalize().tz_localize(None)

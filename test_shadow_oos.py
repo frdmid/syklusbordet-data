@@ -49,7 +49,19 @@ class TestLager(so.LokalLager):
 
 
 def _lager():
-    return TestLager(ROT, tempfile.mkdtemp(prefix="shadow_test_"))
+    """Testlageret faar sin egen Champion-config med start 07.10.2026 (samme
+    regler og kode som i repoet), saa testdatoene staar fast uansett hvilken
+    Champion som er i drift (12.10.2026: v1.1 fra 14.10)."""
+    ut = tempfile.mkdtemp(prefix="shadow_test_")
+    l = TestLager(ROT, ut)
+    k = so.lag_konfig(ROT, "test", created_at="2026-10-05", effective_from="2026-10-07")
+    l._skriv(so.KONFIG, json.dumps(k, ensure_ascii=False, indent=1) + "\n")
+    l._skriv(so.REGISTER, so.til_csv([{"model_id": so.MODELL, "created_at": "2026-10-05",
+                                       "effective_from": "2026-10-07", "parent_model": None, "status": "champion",
+                                       "specification_hash": k["metadata"]["specification_hash"],
+                                       "code_commit": "test", "data_schema_version": so.SCHEMA,
+                                       "config_file": so.KONFIG, "notes": "test"}], so.F_REGISTER))
+    return l
 
 
 def _osebx(tk):
@@ -124,7 +136,7 @@ def test_snapshots_are_immutable():
     man = so.fra_csv(_les(l, so.MANIFEST))
     assert [m["status"] for m in man] == ["ok", "hoppet_over_uke_finnes", "ok"]
     # manipulert gammelt snapshot skal oppdages
-    l._skriv(sti, foer.replace("champion_v1_0", "champion_v1_1", 1))
+    l._skriv(sti, foer.replace(so.MODELL, "champion_vX", 1))
     assert any("snapshot endret" in a for a in so.kontroller(l))
 
 
@@ -355,9 +367,11 @@ def test_config_og_register():
     l = so.LokalLager(ROT, ROT)
     k = json.loads(_les(l, so.KONFIG))
     assert so.spesifikasjonshash(k) == k["metadata"]["specification_hash"]
-    reg = so.fra_csv(_les(l, so.REGISTER))
-    assert reg[0]["specification_hash"] == k["metadata"]["specification_hash"]
-    assert k["model"]["effective_from"] == "2026-10-07"
+    reg = {r["model_id"]: r for r in so.fra_csv(_les(l, so.REGISTER))}
+    assert reg[so.MODELL]["specification_hash"] == k["metadata"]["specification_hash"]
+    assert k["model"]["effective_from"] == "2026-10-14" and k["model"]["parent_model"] == "champion_v1_0"
+    assert "champion_v1_0" in reg                      # forrige Champion staar i registeret
+    assert not so.kodeavvik(k, ROT), "frosne kodefiler avviker fra config"
 
 
 if __name__ == "__main__":

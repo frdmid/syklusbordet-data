@@ -1,6 +1,13 @@
 # ---------------------------------------------------------------------------
-# shadow_oos: ekte fremoverlogg for Champion v1.0 (Frodes bestilling 05.10.2026,
+# shadow_oos: ekte fremoverlogg for Champion (Frodes bestilling 05.10.2026,
 # etter dokumentet "Shadow-OOS-oppsett for Syklusdashboard", fase 1)
+#
+# CHAMPION v1.1 fra 14.10.2026 (Frodes beslutning 12.10.2026). Champion v1.0
+# (07.10.2026) hentet kursene til D med range=max, og Yahoo svarte da med
+# maaneds- eller kvartalskurser i stedet for dagskurser. D var dermed feil.
+# v1.1 har de samme reglene, med rettet kapitulasjon_d.py og nye hasher.
+# v1.0 skriver ingenting mer; uke 2026-W41 staar urort, og D-verdiene der er
+# ført i shadow/correction_log.csv med original og rettet verdi.
 #
 # Hvorfor: nesten all evidens bordet hviler paa er historikk som allerede er
 # sett og brukt til aa lage reglene. Den eneste uavhengige testen er aa fryse
@@ -45,7 +52,8 @@ import datetime as dt
 import requests
 
 REPO, BRANCH = "frdmid/syklusbordet-data", "main"
-MODELL = "champion_v1_0"
+MODELL = "champion_v1_1"
+FORRIGE = "champion_v1_0"                  # erstattet 14.10.2026, se toppen
 KONFIG = f"config/{MODELL}.json"
 REGISTER = "shadow/model_registry.csv"
 HENDELSER = "shadow/shadow_events.csv"
@@ -361,14 +369,16 @@ def spesifikasjonshash(konfig):
     return sha256(kanonisk({"model": konfig["model"], "spesifikasjon": konfig["spesifikasjon"]}))
 
 
-def lag_konfig(rot, code_commit, created_at="2026-10-05", effective_from="2026-10-07"):
+def lag_konfig(rot, code_commit, created_at="2026-10-12", effective_from="2026-10-14", parent=FORRIGE):
     k = {
         "model": {"id": MODELL, "status": "champion", "created_at": created_at, "effective_from": effective_from,
-                  "parent_model": None, "data_schema_version": SCHEMA},
+                  "parent_model": parent, "data_schema_version": SCHEMA},
         "spesifikasjon": {
-            "omfang": "Champion v1.0 er A-modellen slik koden er 05.10.2026. B, C, D og kontekst logges som "
-                      "data, men styrer ikke signalet. Alle terskler og definisjoner er de som staar i "
-                      "kodefilene under, med hashene i kodefiler.",
+            "omfang": "Champion v1.1 er A-modellen med de samme reglene som Champion v1.0 (05.10.2026). Eneste "
+                      "endring: kapitulasjon_d.py henter dagskurser (period1/period2) i stedet for range=max, "
+                      "som ga maaneds- eller kvartalskurser og feil D (implementasjonsfeil, funnet 12.10.2026). "
+                      "B, C, D og kontekst logges som data, men styrer ikke signalet. Alle terskler og "
+                      "definisjoner er de som staar i kodefilene under, med hashene i kodefiler.",
             "A": {"A_raw": "scores.A: persentil av log realpris mot hele egen historikk, punkt i tid "
                            "(priser.build_segment, expanding_pct), minst 60 mnd",
                   "A_detrended": "scores.Ad: samme mot egen trend (expanding_pct_detrend)",
@@ -435,9 +445,10 @@ def lag_konfig(rot, code_commit, created_at="2026-10-05", effective_from="2026-1
                                     "valutakursene i snapshotet, med utbytte",
                           "merknad": "Frodes beslutning 05.10.2026. ACWI logges videre av flagglogg, men er "
                                      "ikke Championens referanse"},
-            "kodeendringer": "endret regelkode etter start gir en Challenger med egen startdato. Champion v1.0 "
+            "kodeendringer": "endret regelkode etter start gir en Challenger med egen startdato. Champion v1.1 "
                              "endres aldri; snapshot skrevet med endret kode merkes code_changed (Frodes "
-                             "beslutning 05.10.2026)",
+                             "beslutning 05.10.2026). En implementasjonsfeil som gjoer dataene feil, kan gi "
+                             "en ny Champion fra en ny dato (Frodes beslutning 12.10.2026, v1.0 til v1.1)",
             "datakvalitet": {"data_stale": "helse.status gul eller roed for segmentets egne rader, "
                                            "innhenting, kpi, C og B, eller FEIL i index.json"},
             "skrivemaate": {"NULL": "tom celle, aldri 0",
@@ -464,19 +475,32 @@ def frys(rot, code_commit, erstatt=False, idag=None):
     if idag >= dt.date.fromisoformat(k["model"]["effective_from"]):
         raise RuntimeError("Champion er i drift; config og register kan ikke lages paa nytt")
     pk, pr = os.path.join(rot, KONFIG), os.path.join(rot, REGISTER)
-    if (os.path.exists(pk) or os.path.exists(pr)) and not erstatt:
-        raise RuntimeError("config eller register finnes; bruk --erstatt-foer-start")
+    if os.path.exists(pk) and not erstatt:
+        raise RuntimeError("config finnes; bruk --erstatt-foer-start")
     os.makedirs(os.path.dirname(pk), exist_ok=True)
     os.makedirs(os.path.dirname(pr), exist_ok=True)
     with open(pk, "wb") as f:
         f.write((json.dumps(k, ensure_ascii=False, indent=1) + "\n").encode("utf-8"))
     m = k["model"]
-    with open(pr, "wb") as f:
-        f.write(til_csv([{"model_id": m["id"], "created_at": m["created_at"], "effective_from": m["effective_from"],
-                          "parent_model": m["parent_model"], "status": m["status"],
-                          "specification_hash": k["metadata"]["specification_hash"], "code_commit": code_commit,
-                          "data_schema_version": SCHEMA, "config_file": KONFIG,
-                          "notes": "A-modellen frosset; S ikke operativ og ikke startet"}], F_REGISTER).encode("utf-8"))
+    rad = {"model_id": m["id"], "created_at": m["created_at"], "effective_from": m["effective_from"],
+           "parent_model": m["parent_model"], "status": m["status"],
+           "specification_hash": k["metadata"]["specification_hash"], "code_commit": code_commit,
+           "data_schema_version": SCHEMA, "config_file": KONFIG,
+           "notes": "A-modellen frosset; S ikke operativ og ikke startet"
+                    + (f"; erstatter {m['parent_model']} (feil kursdata i D)" if m["parent_model"] else "")}
+    # Registeret er bare tillegg (12.10.2026): en ny Champion legges til som en
+    # ny linje; tidligere modeller staar. Finnes modellen fra foer (erstatt foer
+    # start), erstattes bare dens egen linje.
+    if os.path.exists(pr):
+        alle = fra_csv(open(pr, "rb").read().decode("utf-8"))
+        if any(r["model_id"] == m["id"] for r in alle):
+            with open(pr, "wb") as f:
+                f.write(til_csv([r for r in alle if r["model_id"] != m["id"]] + [rad], F_REGISTER).encode("utf-8"))
+        else:
+            legg_til_rader(LokalLager(rot, rot), REGISTER, F_REGISTER, [rad])
+    else:
+        with open(pr, "wb") as f:
+            f.write(til_csv([rad], F_REGISTER).encode("utf-8"))
     for sti, felt in ((UTFALL, F_OUTCOME), (RETTELSER, F_RETTELSE)):
         p = os.path.join(rot, sti)
         if not os.path.exists(p):

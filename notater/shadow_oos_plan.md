@@ -214,7 +214,11 @@ Lagt inn i koden og i config før start:
 2. **Første kjøring etter onsdagsoppdateringen teller.** Uken går fra onsdag
    til tirsdag. Er prisene ikke oppdatert siden onsdag, skrives ingenting.
 3. **Endret regelkode gir en Challenger med egen startdato.** Champion v1.0
-   endres aldri. Snapshot skrevet med endret kode merkes `code_changed`, så
+   endres aldri. Unntak (Frode 12.10.2026): en implementasjonsfeil som gjør
+   dataene feil gir en ny Championversjon. D hentet måneds- og kvartalskurser
+   i stedet for dagskurser; Champion v1.1 (`config/champion_v1_1.json`)
+   gjelder fra 14.10.2026, v1.0 har bare W41, og feilene der står i
+   `shadow/correction_log.csv`. Snapshot skrevet med endret kode merkes `code_changed`, så
    avviket synes til Challengeren er registrert.
 4. **C stengt er ikke kjøpbar, C ukjent er kjøpbar.** Trang, åpen og
    uaktuell (fond) er også regnet som kjøpbare, siden bare stengt ble

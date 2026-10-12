@@ -9,6 +9,51 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 12.10.2026 15:50, Claude Code
+**Hva:** Feilen i D rettet, Champion startet på nytt som v1.1, og
+`sonde_kjor_b_signal` kjørt på nytt med dagskurser (Frodes bestilling: «Rett
+og kjør sonden ... OK å starte champion på nytt»).
+1. **`kapitulasjon_d.py`:** `dagskurs()` henter med `period1`/`period2` i
+   stedet for `range=max`, og stopper med feil hvis Yahoo ikke svarer med
+   dagskurser (`dataGranularity` må være `1d`). Formlene er uendret. Lokal
+   kjøring: 73 av 73 papirer med dagskurser. D endres for de fleste
+   segmentene når Actions kjører onsdag 14.10 (dashbordet får de nye tallene
+   da).
+2. **Champion v1.1** (`config/champion_v1_1.json`, frosset 12.10, gjelder fra
+   14.10, `parent_model` champion_v1_0). Reglene er de samme; bare
+   kodefilen for D er ny. `shadow_oos.py` skriver nå til
+   `shadow/snapshots/champion_v1_1/`. Champion v1.0 har ett snapshot
+   (2026-W41) som står urørt; de feile D-verdiene der (164 felt: D,
+   D_papers, D_instrument, drawdown_pct) er ført i
+   `shadow/correction_log.csv` med originalen og rettet verdi. Valget om å
+   starte på nytt i stedet for å la v1.0 gå med `code_changed` for alltid er
+   Frodes. De tre Challengerne står fortsatt med `parent_model`
+   champion_v1_0 i registeret (append-only), men leser Champions rader fra
+   v1.1 fra 14.10; reglene er de samme.
+3. **`sonde_kjor_b_signal_v2.py`** (kopi av sonden fra 29.09, bare
+   kurshentingen endret, kriteriet uendret). Resultat på 12 mnd: B2 over 50
+   holder fortsatt (8 av 14 år, +3,8 pp; uten 2020-21 +10,4 pp). **D for
+   papirene 60+ holder ikke lenger** (6 av 13, uten 2020-21 snitt -6,3 pp;
+   var «holder»). D for fondet 60+ holder nå (7 av 10, +20,9 pp; var «holder
+   ikke»), men faller på 24 mnd. **B2 og D papirene sammen holder ikke
+   lenger** (5 av 8 år, uten 2020-21 3 av 6). Utdata
+   `sonder/sonde_kjor_b_signal_v2.txt` og `sonder/b_signal_v2.csv`.
+4. Tester tilpasset (`test_shadow_oos.py`, 0 feil).
+
+**Filer:** `kapitulasjon_d.py`, `shadow_oos.py`, `test_shadow_oos.py`,
+`config/champion_v1_1.json`, `shadow/model_registry.csv`,
+`shadow/correction_log.csv`, `sonde_kjor_b_signal_v2.py`, `sonder/`,
+`sonder_ferdige.txt`, `notater/OVERLEVERING.md`, `notater/shadow_oos_plan.md`.
+
+**Cowork må vite:** Test-flagget (B2 og D for papirene) bygget på
+konklusjonen fra den feile sonden; med dagskurser holder det ikke. Det står
+uendret til Frode avgjør. D på dashbordet hopper 14.10 (f.eks. oljeservice
+ned, laks og jernmalm opp); det er rettelsen, ikke markedet. 14.10:
+`shadow/run_manifest.csv` skal ha champion_v1_1 ok og tre challenger ok, og
+`shadow/snapshots/champion_v1_1/2026-W42.csv` skal finnes. Grenen
+`forbered-privat-repo` er laget fra eldre main og har gammel
+`kapitulasjon_d.py`; flett main inn før den tas i bruk.
+
 ### 12.10.2026 15:40, Claude Code
 **Hva:** Ny sonde `sonde_kjor_d_dekomponering.py` (Frodes spørsmål: hvorfor
 varierer D så mye mellom papirene i samme segment?). Beskrivende, ingen

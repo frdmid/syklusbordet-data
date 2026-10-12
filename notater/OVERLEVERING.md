@@ -111,7 +111,7 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 | `shadow_challenger.py` | Challengere: registrering (`registrer <spesifikasjon.json>`) og ukentlig kjøring som egne grener. Regler i `challengers/<id>.py`, config i `config/challengers/`. Ikke frosset med Champion |
 | `serier/priser_mnd.csv` | Hele månedsserien (nominell og real) per råvaresegment, skrevet av `priser.py` hver uke, til Challengere |
 | `test_shadow_oos.py` | Testene for shadow (`python test_shadow_oos.py`, lokalt, skriver ikke til repoet) |
-| `config/champion_v1_0.json` | Frosne regler for Champion v1.0 og sha256 for de 16 kodefilene |
+| `config/champion_v1_1.json` | Frosne regler for Champion v1.1 (fra 14.10.2026) og sha256 for de 16 kodefilene. `config/champion_v1_0.json` er v1.0, avløst fordi D hadde feil kursdata |
 | `shadow/` | `model_registry.csv`, `snapshots/`, `inndata/`, `shadow_events.csv`, `shadow_outcomes.csv` (tom), `correction_log.csv`, `run_manifest.csv` |
 
 ## Fallgruver
@@ -132,11 +132,12 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 - **FRED** henger med nettleser-UA; bruk `User-Agent: Syklusbordet`.
 - **SEC** krever en User-Agent med kontaktinfo.
 - Nettilgang i Code-økten er åpen for SEC, Yahoo, FRED og selskapenes sider.
-- **Shadow-OOS:** filene i `shadow/` og `config/champion_v1_0.json` rettes
+- **Shadow-OOS:** filene i `shadow/` og `config/champion_*.json` rettes
   aldri for hånd. En feil føres i `shadow/correction_log.csv` (ny linje,
   originalen står). Endringer i en av de 16 kodefilene i config merkes som
   `code_changed` i snapshotet fra uken etter. Frodes regel: endret regelkode
-  gir en Challenger med egen startdato, Champion v1.0 endres aldri. Si fra i
+  gir en Challenger med egen startdato, en frosset Champion endres aldri
+  (unntak: implementasjonsfeil, da ny Championversjon, slik v1.1). Si fra i
   loggen hva endringen er. Uken i shadow går fra onsdag til tirsdag, og
   referansene er OSEBX og MSCI World (`IWDA.L`), side om side.
 - Ting som kan se ut som feil, men ikke er det: uran har ingen
@@ -157,6 +158,10 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
   Kan regnes i koden på samme måte som C-tellingen.
 - Forslag om en ekstra rutine torsdag som kjører onsdagsrutinen på nytt hvis
   databasen ikke har ukens tall. Ikke bestilt.
+- Champion v1.1 gjelder fra 14.10.2026 (D rettet til dagskurser 12.10; v1.0
+  har bare W41, feilene der står i `shadow/correction_log.csv`). Test-flagget
+  (B2 og D papirer) holder ikke med dagskurser (`sonde_kjor_b_signal_v2`);
+  Frode avgjør hva som skjer med det.
 - Shadow-OOS gikk 07.10 (Champion v1.0, uke 2026-W41, 105 rader). Frodes
   avgjørelser står i `notater/shadow_oos_plan.md`. Onsdagsrutinen skal ikke
   vise shadow-status; si fra til Frode i den aktive prosjektchatten når noe må
