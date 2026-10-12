@@ -1,0 +1,30 @@
+TEST 1. B FOR OLJE FRA OLJERIGGER
+
+   Permian    DPR 2007-01-2024-04, STEO til 2026-08; overlapp n 28, snitt 331.0 mot 330.9
+   Eagle Ford DPR 2007-01-2024-04, STEO til 2026-08; overlapp n 28, snitt 65.3 mot 65.3
+   Bakken     DPR 2007-01-2024-04, STEO til 2026-08; overlapp n 28, snitt 36.2 mot 36.1
+   raaolje USA (EIA MCRFPUS2): 1920-01 til 2026-07
+   rigger t mot produksjonsvekst t+6: +0.42 (n 215, overlappende)
+   rigger t mot produksjonsvekst t+12: +0.51 (n 209, overlappende)
+   rigger t mot produksjonsvekst t+18: +0.43 (n 203, overlappende)
+   uten overlapp (des aar t mot vekst aar t+1): +0.57, n 17
+   K1: +0.51 ved L = 12 -> HOLDER
+   beskrivende, WTI-endring mot riggendring L mnd senere: L 3: +0.76, L 6: +0.78, L 9: +0.53, L 12: +0.25
+   i dag: rigger 349 (2026-08), endring 12 mnd -0.2 log-%; produksjon 2026-07 +2.5 log-% over 12 mnd
+
+
+TEST 2. VARSLER B FOR METALLENE GRUVEPRODUKSJONEN?
+
+   kobber     B 2007-2025, produksjon (Copper) 1900-2024
+      M1 t+1 +0.38 (n 17), t+2 +0.19 (n 16), t+3 +0.31 (n 15);  M2 -0.21 (n 13)  -> BESTAAR
+   gull       B 2008-2025, produksjon (Gold) 1900-2024
+      M1 t+1 +0.46 (n 16), t+2 +0.21 (n 15), t+3 +0.18 (n 14);  M2 +0.65 (n 12)  -> BESTAAR
+   jernmalm   B 2012-2025, produksjon (Iron ore (crude ore)) 1904-2024
+      M1 t+1 +0.55 (n 12), t+2 +0.29 (n 11), t+3 -0.06 (n 10);  M2 +0.19 (n 8)  -> BESTAAR
+   kull       B 2008-2025, produksjon (Coal) 1970-2023
+      M1 t+1 +0.35 (n 15), t+2 +0.05 (n 14), t+3 -0.18 (n 13);  M2 -0.43 (n 11)  -> BESTAAR
+   aluminium  B 2009-2025, produksjon (Bauxite) 1900-2024
+      M1 t+1 -0.37 (n 15), t+2 +0.20 (n 14), t+3 -0.31 (n 13);  M2 +0.02 (n 11)  -> BESTAAR IKKE
+   uran: ingen produksjonsserie hos OWID, bare 10 aar B; ikke testet
+
+   Oppsummering: K1 olje True; metaller {'kobber': True, 'gull': True, 'jernmalm': True, 'kull': True, 'aluminium': False}

@@ -61,3 +61,4 @@ sonde_kjor_oslo_univers
 sonde_kjor_oslo_askaar
 sonde_kjor_solv_signal
 sonde_kjor_uran_spread
+sonde_kjor_b_mekanisme
