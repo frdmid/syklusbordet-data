@@ -1,0 +1,24 @@
+1. DATA
+
+   IAI 1999-01 til 2026-08, 332 maaneder
+   utenfor Kina siste 12 mnd: 25.9 mill. tonn; Kina 44.9; Kinas andel 63 %
+
+2. TEST 1: SVARER PRODUKSJONEN UTENFOR KINA PAA PRISEN?
+
+   utenfor Kina: prisendring t mot produksjonsvekst t+6: +0.46 (n 309, overlappende)
+   utenfor Kina: prisendring t mot produksjonsvekst t+12: +0.46 (n 309, overlappende)
+   utenfor Kina: prisendring t mot produksjonsvekst t+18: +0.11 (n 309, overlappende)
+   utenfor Kina: uten overlapp (des aar t mot produksjon aar t+1): +0.54, n 26, samme fortegn 62 %
+   TEST 1: +0.46 ved L = 12 -> HOLDER
+
+3. BESKRIVENDE
+
+   Kina: prisendring t mot produksjonsvekst t+6: +0.27 (n 309, overlappende)
+   Kina: prisendring t mot produksjonsvekst t+12: +0.03 (n 309, overlappende)
+   Kina: prisendring t mot produksjonsvekst t+18: -0.10 (n 309, overlappende)
+   Kina: uten overlapp (des aar t mot produksjon aar t+1): +0.34, n 26, samme fortegn 58 %
+   Kina siste 12 mnd: 44.9 mill. tonn, 100 % av taket paa 45
+   utenfor Kina, vekst siste 12 mnd (2026-08): -4.4 log-%
+   aar med fall utenfor Kina (des mot des): 2001 -3.1 %, 2009 -9.2 %, 2012 -3.1 %, 2013 -0.7 %, 2014 -0.6 %, 2020 -0.5 %, 2022 -0.9 %, 2025 -0.1 %
+
+   Oppsummering: Test 1 True

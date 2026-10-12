@@ -9,6 +9,27 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 12.10.2026 15:21, Claude Code
+**Hva:** Ny sonde `sonde_kjor_aluminium_tilbud.py` (Frodes bestilling): er
+primærproduksjonen av aluminium utenfor Kina et brukbart tilbudsmål? Dagens
+B for aluminium (capex/avskrivninger hos AA, CENX, KALU) varslet ikke
+produksjonen. Kriterier satt før kjøring.
+Data: IAI primærproduksjon per region og måned 1999-01 til 2026-08, lastet ned
+som CSV fra international-aluminium.org med sidens egen eksportknapp (Frodes
+godkjenning, ingen konto), lagret i `data_manuelt/iai_primaeraluminium_2026-10-12.csv`.
+Resultat: TEST 1 HOLDER. Prisendringen over 12 mnd mot vekst i produksjonen
+utenfor Kina: +0,46 ved 6 og 12 mnd, +0,11 ved 18; uten overlapp +0,54 (n 26).
+Kina svarer svakere (+0,27 / +0,03 / -0,10). Kina er ved taket: 44,9 mill. tonn
+siste 12 mnd (100 % av 45). Utenfor Kina faller produksjonen nå: -4,4 % over 12
+mnd (Afrika og GCC ned i 2026).
+Merk: IAI-tallene finnes bare via nettsidens graf (CSV-knapp, eller et API med
+en nøkkel som ligger i sidens kode). Automatisk ukentlig innhenting er ikke
+avklart; den krever Frodes beslutning.
+**Filer:** `sonde_kjor_aluminium_tilbud.py` (ny), `sonder/sonde_kjor_aluminium_tilbud.txt`,
+`data_manuelt/iai_primaeraluminium_2026-10-12.csv` (ny), `sonder_ferdige.txt`, loggen.
+**Den andre økten må vite:** Ingenting på dashbordet er endret. B for
+aluminium på bordet står som før (Frodes beslutning).
+
 ### 12.10.2026 15:15, Claude Code
 **Hva:** Challenger `challenger_olje_rigger_v1` registrert (Frodes beslutning),
 fra onsdag 14.10.2026, `specification_hash` 55107143.... Regel i
