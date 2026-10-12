@@ -1,0 +1,90 @@
+1. DATAKONTROLL: HVA YAHOO SVARER MED range=max
+
+   granularitet med range=max: 3mo 8, 1mo 48, 1wk 4
+   D med dagskurser mot dagens D: median endring 6.7 poeng, over 20 poeng: 11
+      SLB        oljeservice  (3mo)  D  75.9 ->  16.4   fall -36.6 -> -17.3 %
+      HAL        oljeservice  (3mo)  D  73.6 ->  22.6   fall -39.1 -> -21.3 %
+      RE.L       palmeolje    (3mo)  D  87.4 ->  42.8   fall -84.7 -> -37.7 %
+      BAKKA.OL   laks         (1mo)  D  48.4 ->  92.5   fall -39.2 -> -39.8 %
+      LSG.OL     laks         (1mo)  D  42.4 ->  82.8   fall -39.3 -> -39.9 %
+      HSY        kakao        (3mo)  D  45.9 ->  84.1   fall -31.9 -> -35.1 %
+      CIA.TO     jernmalm     (1mo)  D  49.6 ->  86.7   fall -57.1 -> -60.5 %
+      LIF.TO     jernmalm     (1mo)  D  36.5 ->  73.3   fall -28.5 -> -31.3 %
+      NESN.SW    kakao        (1mo)  D  49.0 ->  78.0   fall -31.8 -> -31.1 %
+      BTU        kull         (1mo)  D  13.2 ->  37.4   fall -27.3 -> -27.3 %
+      CCJ        uran         (1mo)  D  16.7 ->  40.6   fall -24.6 -> -30.2 %
+      TGS.OL     oljeservice  (1mo)  D  24.2 ->   4.3   fall -11.6 -> -9.3 %
+      UUUU       uran         (1mo)  D  45.7 ->  26.7   fall -49.8 -> -56.7 %
+      SALM.OL    laks         (1mo)  D   7.6 ->  26.3   fall -8.6 -> -13.2 %
+      AA         aluminium    (3mo)  D  77.5 ->  60.3   fall -49.7 -> -51.6 %
+
+
+2. DEKOMPONERING, SISTE 24 MND (log-%, dagskurser)
+
+   aluminium
+      AA         D  60.3  totalt  +10.5  = raavare  +30.2 (beta +1.30)  + marked  +81.8  + rest -101.5   rest-andel  48 %
+      NHY.OL     D  49.9  totalt  +25.7  = raavare  +19.2 (beta +0.83)  + marked  +27.9  + rest  -21.4   rest-andel  31 %
+      CENX       D  42.0  totalt  +79.6  = raavare  +35.6 (beta +1.54)  + marked  +76.6  + rest  -32.6   rest-andel  23 %
+   brent
+      IOGP.L     D   1.4  totalt  +28.5  = raavare  +12.1 (beta +0.31)  + marked  +27.1  + rest  -10.6   rest-andel  21 %
+      DNO.OL     D   1.1  totalt  +71.0  = raavare  +21.1 (beta +0.54)  + marked  +27.6  + rest  +22.3   rest-andel  31 %
+      AKRBP.OL   D   0.2  totalt  +60.6  = raavare  +12.5 (beta +0.32)  + marked  +19.2  + rest  +28.9   rest-andel  48 %
+   gold
+      GJGB.L     D  42.1  totalt  +91.9  = raavare  +67.4 (beta +1.47)  + marked  +22.3  + rest   +2.2   rest-andel   2 %
+      GDX.L      D  32.3  totalt  +82.4  = raavare  +76.2 (beta +1.66)  + marked  +21.8  + rest  -15.6   rest-andel  14 %
+      SPGP.L     D  17.9  totalt  +85.2  = raavare  +66.8 (beta +1.46)  + marked  +12.9  + rest   +5.5   rest-andel   6 %
+   henryhub
+      EQT        D  35.0  totalt  +30.7  = raavare   +3.6 (beta +0.30)  + marked  +20.9  + rest   +6.1   rest-andel  20 %
+      BIR.TO     D  33.0  totalt  +13.6  = raavare   +3.6 (beta +0.30)  + marked  +41.3  + rest  -31.3   rest-andel  41 %
+      TOU.TO     D   2.3  totalt   +5.8  = raavare   +2.8 (beta +0.23)  + marked  +24.5  + rest  -21.5   rest-andel  44 %
+   jernmalm
+      CIA.TO     D  86.7  totalt  -74.2  = raavare   -0.5 (beta +0.57)  + marked  +42.0  + rest -115.7   rest-andel  73 %
+      LIF.TO     D  73.3  totalt  -18.7  = raavare   -0.3 (beta +0.37)  + marked  +24.3  + rest  -42.6   rest-andel  63 %
+      VALE       D  22.1  totalt  +29.9  = raavare   -0.4 (beta +0.46)  + marked  +32.6  + rest   -2.3   rest-andel   6 %
+   kakao
+      HSY        D  84.1  totalt  -13.4  = raavare   +1.4 (beta -0.09)  + marked  +11.5  + rest  -26.2   rest-andel  67 %
+      BARN.SW    D  81.7  totalt  -30.9  = raavare   -0.9 (beta +0.06)  + marked   +9.6  + rest  -39.6   rest-andel  79 %
+      NESN.SW    D  78.0  totalt   -3.6  = raavare   +0.8 (beta -0.05)  + marked  +11.3  + rest  -15.7   rest-andel  56 %
+   kobber
+      CS.TO      D  11.3  totalt  +28.9  = raavare  +65.2 (beta +1.68)  + marked  +41.0  + rest  -77.2   rest-andel  42 %
+      EXV6.DE    D   1.3  totalt  +38.5  = raavare  +17.6 (beta +0.45)  + marked  +23.6  + rest   -2.8   rest-andel   6 %
+      ATYM.L     D   1.0  totalt  +98.6  = raavare  +43.9 (beta +1.13)  + marked  +45.9  + rest   +8.8   rest-andel   9 %
+   kull
+      BTU        D  37.4  totalt   -5.7  = raavare   -0.3 (beta +0.49)  + marked  +46.2  + rest  -51.6   rest-andel  53 %
+      ARLP       D   9.9  totalt  +16.8  = raavare   -0.2 (beta +0.33)  + marked  +46.8  + rest  -29.8   rest-andel  39 %
+   laks
+      BAKKA.OL   D  92.5  totalt  -29.0  = raavare   +2.3 (beta +0.48)  + marked  +18.8  + rest  -50.2   rest-andel  70 %
+      LSG.OL     D  82.8  totalt   -0.7  = raavare   +1.9 (beta +0.38)  + marked  +24.6  + rest  -27.1   rest-andel  51 %
+      SALM.OL    D  26.3  totalt  +10.2  = raavare   +1.9 (beta +0.39)  + marked  +24.6  + rest  -16.3   rest-andel  38 %
+      MOWI.OL    D  25.8  totalt  +13.8  = raavare   +2.0 (beta +0.40)  + marked  +26.9  + rest  -15.1   rest-andel  34 %
+   nikkel
+      ERA.PA     D  67.5  totalt  -44.3  = raavare   -3.3 (beta +0.73)  + marked  +29.9  + rest  -70.9   rest-andel  68 %
+      GLEN.L     D   0.2  totalt  +26.1  = raavare   -2.1 (beta +0.47)  + marked  +34.9  + rest   -6.6   rest-andel  15 %
+   oljeservice
+      HAL        D  22.6  totalt  +21.9  = raavare  -16.1 (beta +2.92)  + marked  +86.8  + rest  -48.7   rest-andel  32 %
+      BKR        D  17.3  totalt  +62.9  = raavare   -9.0 (beta +1.63)  + marked  +59.3  + rest  +12.6   rest-andel  16 %
+      SLB        D  16.4  totalt  +36.7  = raavare  -17.0 (beta +3.08)  + marked  +70.6  + rest  -16.9   rest-andel  16 %
+      OIH        D   6.8  totalt  +40.1  = raavare  -14.6 (beta +2.65)  + marked  +79.6  + rest  -24.8   rest-andel  21 %
+      XES        D   5.0  totalt  +37.6  = raavare  -13.7 (beta +2.48)  + marked  +80.2  + rest  -28.9   rest-andel  24 %
+      TGS.OL     D   4.3  totalt  +23.8  = raavare  -11.3 (beta +2.04)  + marked  +42.1  + rest   -7.0   rest-andel  12 %
+      SUBC.OL    D   0.0  totalt  +73.1  = raavare  -11.4 (beta +2.07)  + marked  +55.2  + rest  +29.3   rest-andel  31 %
+   palmeolje
+      RE.L       D  42.8  totalt  +33.0  = raavare   +7.5 (beta +0.61)  + marked   +0.3  + rest  +25.2   rest-andel  76 %
+      ISAG.L     D   9.4  totalt  +19.2  = raavare   +1.9 (beta +0.15)  + marked  +24.7  + rest   -7.3   rest-andel  22 %
+      MPE.L      D   6.2  totalt  +79.6  = raavare   +4.5 (beta +0.37)  + marked  +20.1  + rest  +55.0   rest-andel  69 %
+   sink
+      BOL.ST     D  29.7  totalt  +42.2  = raavare  +16.7 (beta +0.58)  + marked  +21.3  + rest   +4.2   rest-andel  10 %
+      HBM.TO     D   2.6  totalt +112.0  = raavare  +20.6 (beta +0.71)  + marked  +48.9  + rest  +42.6   rest-andel  38 %
+   ttf
+      HEI.DE     D  69.9  totalt  +41.0  = raavare   -7.0 (beta -0.10)  + marked  +41.2  + rest   +6.8   rest-andel  12 %
+      AI.PA      D   5.7  totalt  +12.1  = raavare   -3.6 (beta -0.05)  + marked  +21.4  + rest   -5.7   rest-andel  19 %
+      EQNR.OL    D   0.0  totalt  +54.2  = raavare   +8.7 (beta +0.12)  + marked   +8.5  + rest  +37.1   rest-andel  68 %
+   uran
+      CCJ        D  40.6  totalt  +60.0  = raavare   +2.1 (beta +0.75)  + marked  +29.6  + rest  +28.3   rest-andel  47 %
+      UUUU       D  26.7  totalt  +69.8  = raavare   +3.3 (beta +1.17)  + marked  +49.9  + rest  +16.5   rest-andel  24 %
+      U-UN.TO    D   8.9  totalt   +1.6  = raavare   +2.5 (beta +0.86)  + marked   +2.9  + rest   -3.8   rest-andel  41 %
+   wti
+      CVE.TO     D   0.0  totalt  +73.2  = raavare  +23.8 (beta +0.87)  + marked  +32.1  + rest  +17.2   rest-andel  24 %
+      WCP.TO     D   0.0  totalt  +68.2  = raavare  +22.1 (beta +0.80)  + marked  +38.2  + rest   +7.9   rest-andel  12 %
+
+   median rest-andel 31 %; lagret sonder/d_dekomponering.csv

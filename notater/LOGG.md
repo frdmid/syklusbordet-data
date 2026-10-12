@@ -9,6 +9,34 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 12.10.2026 15:40, Claude Code
+**Hva:** Ny sonde `sonde_kjor_d_dekomponering.py` (Frodes spørsmål: hvorfor
+varierer D så mye mellom papirene i samme segment?). Beskrivende, ingen
+kriterier. Kjørt lokalt.
+1. **Feil i dataene for D funnet.** `kapitulasjon_d.py` henter kurser med
+   `range=max` og `interval=1d`. Yahoo svarer da med månedskurser (48
+   papirer), kvartalskurser (8: AA, SLB, HAL, BKR, EQT, HSY, RE.L, MPE.L) eller
+   ukeskurser (4), ikke dagskurser. «200-dagers snitt» blir dermed et snitt
+   over 200 måneder eller kvartaler, og femårstoppen for kvartalspapirene en
+   topp over 15 år. Med `period1`/`period2` gir Yahoo dagskurser. D regnet på
+   nytt med dagskurser og de samme funksjonene: median endring 6,7 poeng, 11
+   papirer over 20 poeng (SLB 76 til 16, HAL 74 til 23, RE.L 87 til 43, AA
+   78 til 60, BAKKA 48 til 93, LSG 42 til 83, HSY 46 til 84, CIA 50 til 87,
+   LIF 37 til 73, NESN 49 til 78, CCJ 17 til 41). Feilen har trolig vært der
+   siden D ble laget; D i Champion v1.0 (kontekst, ikke beslutningsvariabel),
+   test-flagget (B2 og D for papirene) og `sonde_kjor_b_signal` bygger på den.
+   **Ikke rettet:** `kapitulasjon_d.py` er frosset i Champion; Frode avgjør.
+2. **Dekomponering** av de siste 24 mnd (dagskurser) i råvare, marked (ACWI)
+   og rest, med betaer fra 60 mnd før vinduet. Median rest-andel 31 %. Der
+   D er høy, er fallet i hovedsak selskapsspesifikt: CIA.TO 73 %, LIF.TO 63 %,
+   BAKKA 70 %, LSG 51 %, ERA.PA 68 %, BARN.SW 79 %, HSY 67 %, NESN 56 %,
+   BTU 53 %. Papirer som følger råvaren (gullgruver, oljeprodusenter,
+   kobberfond) har lav rest.
+**Filer:** `sonde_kjor_d_dekomponering.py` (ny), `sonder/sonde_kjor_d_dekomponering.txt`,
+`sonder/d_dekomponering.csv`, `sonder_ferdige.txt`, loggen.
+**Den andre økten må vite:** D på bordet er feil til `kapitulasjon_d.py` er
+rettet. Ikke bygg nye regler på D før det.
+
 ### 12.10.2026 15:33, Claude Code
 **Hva:** Privat repo forberedt uten endring i drift (Frodes bestilling; han
 venter med å gjøre repoet privat). Alt ligger på grenen
