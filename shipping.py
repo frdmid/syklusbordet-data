@@ -188,7 +188,8 @@ def katalog():
 
 def eksisterende():
     try:
-        r = requests.get(f"{RAW}/shipping.json", timeout=30)
+        import repo_les        # virker ogsaa naar repoet er privat
+        r = repo_les.hent("shipping.json")
         if r.status_code == 200:
             return r.json()
     except Exception:

@@ -88,18 +88,21 @@ def maaned(url, snitt=False):
 
 
 def hent_uran(repo_raw, note=print):
-    """repo_raw: https://raw.githubusercontent.com/<repo>/<branch>/
+    """repo_raw: enten https://raw.githubusercontent.com/<repo>/<branch>/ eller
+    en funksjon sti -> tekst (repo_les.tekst, virker ogsaa for privat repo).
     Returnerer (serie, kildetekst) eller (None, grunn)."""
+    import io
+    les = (lambda sti: io.StringIO(repo_raw(sti))) if callable(repo_raw) else (lambda sti: repo_raw + sti)
     try:
         s = cameco_spot()
     except Exception as e:
         return None, f"Cameco: {type(e).__name__}: {str(e)[:70]}"
     try:
-        imf = maaned(repo_raw + "uran_reserve.csv")
+        imf = maaned(les("uran_reserve.csv"))
     except Exception as e:
         return None, f"IMF-kopien til kontroll: {type(e).__name__}"
     try:
-        fut = maaned(repo_raw + "uran_futures_uke.csv", snitt=True)
+        fut = maaned(les("uran_futures_uke.csv"), snitt=True)
     except Exception:
         fut = None
     ok, tekst = kontroll(s, imf, fut)

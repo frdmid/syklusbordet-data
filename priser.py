@@ -22,6 +22,7 @@ import base64, io, json, re, time, warnings
 import numpy as np
 import pandas as pd
 import requests
+import repo_les        # repofiler via API med GITHUB_TOKEN; virker ogsaa naar repoet er privat
 
 warnings.filterwarnings("ignore")
 try:
@@ -395,8 +396,7 @@ def oecd_cpi():
     return s
 
 def kopi_cpi():
-    t = requests.get(f"https://raw.githubusercontent.com/{REPO}/{BRANCH}/cpi_kopi.csv",
-                     params={"cb": int(time.time())}, headers=UA, timeout=30)
+    t = repo_les.hent("cpi_kopi.csv")
     t.raise_for_status()
     d = pd.read_csv(io.StringIO(t.text))
     return pd.Series(d["kpi"].values, index=pd.PeriodIndex(d["mnd"].astype(str), freq="M"))
@@ -513,7 +513,7 @@ URAN_MERKNAD = (
     "begge retninger.")
 try:
     from uran_kilde import hent_uran, CAMECO
-    serie, kilde = hent_uran(f"https://raw.githubusercontent.com/{REPO}/{BRANCH}/", note)
+    serie, kilde = hent_uran(repo_les.tekst, note)
     if serie is None:
         note("uran", False, kilde + ". Segmentet er utelatt denne uken")
     else:
@@ -546,8 +546,7 @@ LAKS_MERKNAD = (
 try:
     import laks_innhent
     def _les_raw(sti):
-        r = requests.get(f"https://raw.githubusercontent.com/{REPO}/{BRANCH}/{sti}",
-                         params={"cb": int(time.time())}, headers=UA, timeout=30)
+        r = repo_les.hent(sti)
         return r.text if r.status_code == 200 else None
     LAKS = laks_innhent.hent(get, yahoo_monthly, les=_les_raw, note=note)
     legg_til("laks", "Laks (sesongjustert)", "Sjømat", "USD/kg", LAKS["usd_just"], cpi,
@@ -628,8 +627,7 @@ try:
         # Tilbudsskaaren B for rigger (rigg_b.py, kvartalsvis): land, grunt og
         # dypt vann hver for seg. Informasjon, ikke flagg, og ikke scores.B.
         try:
-            rb = requests.get(f"https://raw.githubusercontent.com/{REPO}/{BRANCH}/b_rigg.json",
-                              params={"cb": int(time.time())}, headers=UA, timeout=TIMEOUT)
+            rb = repo_les.hent("b_rigg.json", timeout=TIMEOUT)
             if rb.status_code == 200:
                 j = rb.json()
                 seg["rigg_b"] = {"oppdatert": j.get("oppdatert"), "metode": j.get("metode"),
@@ -807,8 +805,7 @@ except Exception as e:
     note("OWID etterspoersel", False, f"{type(e).__name__}: {str(e)[:70]}")
 
 try:
-    kap = get(f"https://raw.githubusercontent.com/{REPO}/{BRANCH}/d_kapitulasjon.json"
-              f"?cb={int(time.time())}").json()
+    kap = json.loads(repo_les.tekst("d_kapitulasjon.json"))
     segd = kap.get("segmenter", {})
     papir = kap.get("papirer", {})
     n = 0
@@ -829,8 +826,7 @@ except Exception as e:
     note("kapitulasjon D", False, f"{type(e).__name__}: {str(e)[:70]}")
 
 try:
-    c = get(f"https://raw.githubusercontent.com/{REPO}/{BRANCH}/c_overlevelse.json"
-            f"?cb={int(time.time())}").json()
+    c = json.loads(repo_les.tekst("c_overlevelse.json"))
     segporter = c.get("segmenter", {})
     selskap = c.get("selskaper", {})
     n = 0
@@ -886,8 +882,7 @@ except Exception as e:
     note("overlevelsesport C", False, f"{type(e).__name__}: {str(e)[:70]}")
 
 try:
-    b = get(f"https://raw.githubusercontent.com/{REPO}/{BRANCH}/b_capex.json"
-            f"?cb={int(time.time())}").json()
+    b = json.loads(repo_les.tekst("b_capex.json"))
     # b_capex.json bruker metallnavn, segmentene bruker id. De er ikke alltid
     # de samme: gull heter "gold" som segment. Uten denne oversettelsen ville
     # gull mistet tilbudsskaaren sin stille.

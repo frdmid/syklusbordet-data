@@ -223,8 +223,8 @@ def fx_aarssnitt(valuta):
 
 print("\n2b. Manuelt leste aarsrapporter")
 try:
-    rm = requests.get(f"https://raw.githubusercontent.com/{REPO}/{BRANCH}/b_manuell.json"
-                      f"?cb={int(time.time())}", timeout=30)
+    import repo_les        # virker ogsaa naar repoet er privat
+    rm = repo_les.hent("b_manuell.json")
     MAN = rm.json() if rm.status_code == 200 else {}
     if not MAN:
         print("   b_manuell.json finnes ikke ennaa")
