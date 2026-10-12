@@ -9,6 +9,31 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 12.10.2026 15:10, Claude Code
+**Hva:** Ny sonde `sonde_kjor_b_mekanisme.py` (Frodes bestilling): måler B
+tilbudet? Mekanismen testes, ikke papirene eller prisen framover. Kriterier
+satt før kjøring. Kjørt lokalt (Python heter nå `py` på Frodes maskin).
+Sonden ble pushet i commit abed86a uten dette innslaget; ført her etterpå.
+1. **B for olje fra oljerigger** (Permian, Eagle Ford, Bakken; EIA DPR-arkiv
+   og STEO 10a, skjøten identisk i overlappen) mot amerikansk råoljeproduksjon:
+   +0,42 / +0,51 / +0,43 ved 6 / 12 / 18 mnd, uten overlapp +0,57 (n 17).
+   HOLDER. Riggene svarer på WTI med 3 til 6 mnd etterslep (+0,76 til +0,78).
+   I dag: 349 rigger, uendret fra året før; produksjon +2,5 %.
+2. **Dagens B for metallene mot verdens gruveproduksjon** (OWID, USGS og BGS):
+   kobber, gull, jernmalm og kull består formelt, aluminium (bauksitt som
+   tilnærming) består ikke, uran testes ikke (ingen serie). Forbehold: alle
+   unntatt gull består bare på ett års etterslep, som er for kort for nye
+   gruver og trolig viser felles konjunktur, ikke kapasitet. Med det riktige
+   etterslepet (femårssnitt mot vekst over tre år) er kobber -0,21, kull -0,43,
+   jernmalm +0,19 og gull +0,65. Med 8 til 17 år er alt svakt bevis.
+   Rettet etter første kjøring: jernmalm brukte jerninnhold, som hos OWID bare
+   finnes fra 2020; byttet til råmalm (fra 1904) på grunn av datamangel.
+   Kriteriet er uendret.
+**Filer:** `sonde_kjor_b_mekanisme.py` (ny), `sonder/sonde_kjor_b_mekanisme.txt`,
+`sonder_ferdige.txt`, loggen.
+**Den andre økten må vite:** Ingenting på dashbordet er endret. Frode avgjør om
+B for olje skal bli Challenger, og hvordan B for metallene skal merkes.
+
 ### 09.10.2026 16:23, Claude Code
 **Hva:** Sonde for spotpris mot langsiktig kontraktspris i uran som signal
 for uranaksjene (G&R, Q2 2026), før et mulig felt på dashbordet. Kriterier
