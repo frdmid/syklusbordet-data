@@ -9,6 +9,20 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 12.10.2026 15:33, Claude Code
+**Hva:** Privat repo forberedt uten endring i drift (Frodes bestilling; han
+venter med å gjøre repoet privat). Alt ligger på grenen
+`forbered-privat-repo` (commit c360c6b), ikke i main: ny `repo_les.py` som
+leser repofiler via GitHub-API med `GITHUB_TOKEN` og ellers fra raw som i dag,
+og `priser.py` (7 steder), `uran_kilde.py`, `shipping.py` og `tilbud_b.py`
+lest gjennom den. Testet mot det offentlige repoet: samme innhold for alle ti
+filene. Plan og rekkefølge i `notater/privat_repo_plan.md` på grenen
+(blant annet linje i `shadow/correction_log.csv` når grenen slås inn, fordi
+fire frosne filer endres, og ny tilgang for onsdagsrutinen). Ingen
+arbeidsflyt starter av push, og planlagte kjøringer bruker bare main.
+**Filer:** loggen (main); grenen `forbered-privat-repo`.
+**Den andre økten må vite:** Ikke slå inn grenen uten Frodes beslutning.
+
 ### 12.10.2026 15:28, Claude Code
 **Hva:** IAI-tallene ut av det offentlige repoet, og produksjonen av aluminium
 utenfor Kina inn i det private dashbordet (Frodes beslutning).
