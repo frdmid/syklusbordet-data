@@ -24,8 +24,9 @@ Kriteriene ble satt før kjøringen og står i toppen av fila.
    +0,14 (WTI, detrendet A; p 0,006, samme fortegn i begge halvdeler, men
    under 0,30), -0,05 og -0,03 for Henry Hub.
 3. **Hendelser:** WTI i bunnsonen med krympende contango: A falt 20 poeng
-   eller mer innen 12 mnd i 79 % mot 50 %, men bare 2 episoder (1998 og
-   2015 til 2016), så det holder ikke. Resten under 15 pp.
+   eller mer innen 12 mnd i 79 % mot 50 %, men bare 2 episoder (1993 til
+   1996 og 1998 til 1999, ingen etter 2000), så det holder ikke. Resten
+   under 15 pp.
 Konklusjon: kurven beskriver samme stramhet som A, men varsler ikke at A
 snur. Kurveformen blir stående som kontekst på bordet.
 
