@@ -9,6 +9,25 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 13.10.2026 08:42, Claude Code
+**Hva:** Ny sonde `sonde_kjor_kurve_papirer.py` (Frodes bestilling: kurven
+mot papirene for WTI og Henry Hub). Papirene på bordet (WTI: CVE.TO, WCP.TO,
+IOGP.L; Henry Hub: BIR.TO, TOU.TO, EQT), likevektet kurv, meravkastning mot
+SPY de neste 6 og 12 mnd, dagskurser. Kurven fra EIA (K4 mot K1, til april
+2024), Henry Hub sesongrenset. To signaler, begge renset for prisendringen
+siste 3 mnd: helningen og endringen i helning siste 3 mnd. Forventet
+negativt (contango, svakere papirer). Kriteriene satt før kjøring, i toppen
+av fila. Overlapp 2002 til 2024 (WTI) og 1999 til 2024 (gass).
+**Resultat: holder ikke, ingen av de fire testene.** Korrelasjonen for
+kurven på 12 mnd er +0,07 og +0,16 (WTI), +0,14 og +0,08 (gass), altså
+feil fortegn. For gass peker alt svakt motsatt vei (contango, litt bedre
+papirer de neste 12 mnd; TOU.TO og XOP rundt +0,25), men det var ikke
+hypotesen og er ikke sikkert (tosidig p rundt 0,2 for kurven).
+**Filer:** `sonde_kjor_kurve_papirer.py`, `sonder/sonde_kjor_kurve_papirer.txt`,
+`sonder/kurve_papirer.csv`, `sonder_ferdige.txt`.
+**Cowork må vite:** Ingen endring på bordet. Kurven er heller ikke et varsel
+for papirene på olje og gass.
+
 ### 13.10.2026 08:35, Claude Code
 **Hva:** Ny sonde `sonde_kjor_kurve_a.py` (Frodes spørsmål: forklarer
 terminkurven A, og varsler endringer i kurven at A snur?). WTI og Henry Hub,

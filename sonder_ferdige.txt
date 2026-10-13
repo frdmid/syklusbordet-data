@@ -66,3 +66,4 @@ sonde_kjor_aluminium_tilbud
 sonde_kjor_d_dekomponering
 sonde_kjor_b_signal_v2
 sonde_kjor_kurve_a
+sonde_kjor_kurve_papirer
