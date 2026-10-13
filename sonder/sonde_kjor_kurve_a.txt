@@ -1,0 +1,53 @@
+
+==================== wti
+   periode 1990-12 til 2024-04, 401 mnd. Andel contango 50 %
+
+   Test 1, samtidig (Spearman)
+      H mot A : +0.10
+      H mot Ad: +0.35
+      H mot endring i pris siste 3 mnd (dH3 mot dP3): -0.72  (det som renses bort)
+
+   Test 2, varsel: renset endring i H siste 3 mnd mot endring i A framover
+      A   6 mnd: r +0.01 (urenset -0.05), halvdeler +0.05 / -0.01, ikke-overlapp +0.06 (n 67), p 0.437
+      A  12 mnd: r +0.03 (urenset -0.03), halvdeler +0.07 / +0.01, ikke-overlapp -0.06 (n 34), p 0.299
+      Ad  6 mnd: r +0.11 (urenset -0.01), halvdeler +0.15 / +0.09, ikke-overlapp +0.08 (n 67), p 0.058
+      Ad 12 mnd: r +0.14 (urenset +0.02), halvdeler +0.16 / +0.17, ikke-overlapp +0.06 (n 34), p 0.006
+
+   Test 3, hendelser (A raa)
+      bunn: A 80+ og contango krymper, A faller 20+ innen 12 mnd:
+         79 % av 24 hendelsesmnd (2 episoder) mot 50 % av 30 kontrollmnd, forskjell +29 pp; halvdeler +33 / +nan pp -> holder ikke
+      topp: A 20 eller lavere og backwardation svekkes, A stiger 20+ innen 12 mnd:
+         27 % av 75 hendelsesmnd (4 episoder) mot 25 % av 80 kontrollmnd, forskjell +2 pp; halvdeler -20 / +17 pp -> holder ikke
+
+==================== henryhub
+   periode 2001-12 til 2024-04, 268 mnd. Andel contango 57 % (sesongrenset H)
+
+   Test 1, samtidig (Spearman)
+      H mot A : +0.22
+      H mot Ad: +0.53
+      H mot endring i pris siste 3 mnd (dH3 mot dP3): -0.55  (det som renses bort)
+
+   Test 2, varsel: renset endring i H siste 3 mnd mot endring i A framover
+      A   6 mnd: r -0.12 (urenset -0.13), halvdeler -0.17 / -0.07, ikke-overlapp -0.21 (n 45), p 0.983
+      A  12 mnd: r -0.05 (urenset -0.12), halvdeler -0.05 / -0.05, ikke-overlapp +0.25 (n 23), p 0.894
+      Ad  6 mnd: r -0.08 (urenset -0.15), halvdeler -0.06 / -0.10, ikke-overlapp -0.20 (n 45), p 0.898
+      Ad 12 mnd: r -0.03 (urenset -0.14), halvdeler +0.02 / -0.10, ikke-overlapp +0.25 (n 23), p 0.825
+
+   Test 3, hendelser (A raa)
+      bunn: A 80+ og contango krymper, A faller 20+ innen 12 mnd:
+         57 % av 46 hendelsesmnd (3 episoder) mot 46 % av 39 kontrollmnd, forskjell +10 pp; halvdeler +25 / +6 pp -> holder ikke
+      topp: A 20 eller lavere og backwardation svekkes, A stiger 20+ innen 12 mnd:
+         59 % av 17 hendelsesmnd (1 episoder) mot 58 % av 38 kontrollmnd, forskjell +1 pp; halvdeler +3 / +nan pp -> holder ikke
+
+
+AVGJOERELSE (12 mnd)
+
+   wti       Ad: r +0.14, p 0.006, BH ja -> holder ikke
+   wti       A : r +0.03, p 0.299, BH nei -> holder ikke
+   henryhub  Ad: r -0.03, p 0.825, BH nei -> holder ikke
+   henryhub  A : r -0.05, p 0.894, BH nei -> holder ikke
+
+   wti: test 2 (varsel) HOLDER IKKE; test 3 bunn holder ikke, topp holder ikke
+   henryhub: test 2 (varsel) HOLDER IKKE; test 3 bunn holder ikke, topp holder ikke
+
+Lagret sonder/kurve_a.csv

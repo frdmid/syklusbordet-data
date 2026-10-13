@@ -9,6 +9,33 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 13.10.2026 08:35, Claude Code
+**Hva:** Ny sonde `sonde_kjor_kurve_a.py` (Frodes spørsmål: forklarer
+terminkurven A, og varsler endringer i kurven at A snur?). WTI og Henry Hub,
+EIA kontrakt 1 og 4 til april 2024 (WTI fra 1990, Henry Hub fra 2001 når A
+finnes). Helning K4 mot K1; Henry Hub sesongrenset med bare tidligere år.
+Kriteriene ble satt før kjøringen og står i toppen av fila.
+1. **Samtidig:** kurven henger sammen med detrendet A (Spearman WTI +0,35,
+   Henry Hub +0,53; contango når prisen er lav mot trenden), svakt med rå A
+   (+0,10 og +0,22). Kurven følger prisen: endringen i helning mot
+   prisendringen siste 3 mnd er -0,72 for WTI og -0,55 for gass.
+2. **Varsel (avgjørende test): holder ikke for noen av dem.** Renset for
+   prisendringen er korrelasjonen mot endringen i A om 12 mnd +0,03 (WTI, A),
+   +0,14 (WTI, detrendet A; p 0,006, samme fortegn i begge halvdeler, men
+   under 0,30), -0,05 og -0,03 for Henry Hub.
+3. **Hendelser:** WTI i bunnsonen med krympende contango: A falt 20 poeng
+   eller mer innen 12 mnd i 79 % mot 50 %, men bare 2 episoder (1998 og
+   2015 til 2016), så det holder ikke. Resten under 15 pp.
+Konklusjon: kurven beskriver samme stramhet som A, men varsler ikke at A
+snur. Kurveformen blir stående som kontekst på bordet.
+
+**Filer:** `sonde_kjor_kurve_a.py`, `sonder/sonde_kjor_kurve_a.txt`,
+`sonder/kurve_a.csv`, `sonder_ferdige.txt`.
+
+**Cowork må vite:** Ingen endring på bordet. Ikke foreslå kurven som varsel
+for A for olje eller gass uten nye data; svakt hint for WTI og detrendet A
+(r +0,14) er notert, ikke brukt.
+
 ### 12.10.2026 15:50, Claude Code
 **Hva:** Feilen i D rettet, Champion startet på nytt som v1.1, og
 `sonde_kjor_b_signal` kjørt på nytt med dagskurser (Frodes bestilling: «Rett
