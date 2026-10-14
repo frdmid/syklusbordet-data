@@ -9,6 +9,27 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 14.10.2026 11:40, Claude Code
+**Hva:** Ny sonde `sonde_kjor_a_terskel.py` (Frodes spørsmål: er A 80 for
+rigid på tvers av råvarer?). Tre måter å tilpasse terskelen (A og Ad begge
+på T eller mer) mot felles 80: V1 grupper (energi, metall, jordbruk), V2 T ut
+fra halveringstiden til realprisen mot trenden (ett fritt tall), V3 krymping
+(egen beste T trukket mot 80 med vekt n / (n + 4), n = episoder). 18
+råvaresegmenter, realprisen selv som utfall (papirene har for kort
+historikk), tilpasset på én side av 2006 og testet på den andre, begge veier.
+Kriteriene satt før kjøring, i toppen av fila.
+**Resultat: ingen av de tre holder.** Alle tre gir høyere samlet mål enn 80
+i de fleste retninger (24 mnd: V1 +54 og +40 mot +50 og +29, V3 +53 og +34),
+men gevinsten sitter i få råvarer (nikkel, sink, aluminium, kobber) og
+kriteriet om bedre i flertallet av råvarene med annen T feiler overalt.
+Mange råvarer har ingen måneder i sonen i testdelen og teller likt. V3 er
+nærmest: aldri verre i retning 1 (3 bedre, 0 verre, 6 likt), 5 bedre og 1
+verre i retning 2. Merk at målet belønner at sonen slår til oftere, så
+lavere T vinner lett; gruppene valgte 60 nesten overalt.
+**Filer:** `sonde_kjor_a_terskel.py`, `sonder/sonde_kjor_a_terskel.txt`,
+`sonder/a_terskel.csv`, `sonder_ferdige.txt`.
+**Cowork må vite:** A 80 står felles. Ingen Challenger registrert.
+
 ### 14.10.2026 11:26, Claude Code
 **Hva:** Sjekk etter første kjøring av Champion v1.1 og onsdagsrutinen 14.10.
 Alt i orden.
