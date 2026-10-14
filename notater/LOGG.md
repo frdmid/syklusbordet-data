@@ -9,6 +9,14 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 14.10.2026 09:13, Claude Code
+**Hva:** Kvartalsvis tilbudsskår kjørt for hånd (Frodes bestilling), kjøring
+38526646131, uten feil. Ingen tall endret mot 01.10: B for metallene
+(`b_capex.json`), B for riggene (`b_rigg.json`, land 81,7, grunt 80,3, dyp
+100) og C (`c_overlevelse.json`, 36 selskaper) er like; bare tidsstempelet
+er nytt. Endringsboksen: 0 tall, 0 skifter.
+**Cowork må vite:** Ingenting nytt på bordet fra denne kjøringen.
+
 ### 13.10.2026 08:42, Claude Code
 **Hva:** Ny sonde `sonde_kjor_kurve_papirer.py` (Frodes bestilling: kurven
 mot papirene for WTI og Henry Hub). Papirene på bordet (WTI: CVE.TO, WCP.TO,
