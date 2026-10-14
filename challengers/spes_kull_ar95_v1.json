@@ -1,0 +1,14 @@
+{
+ "id": "challenger_kull_ar95_v1",
+ "effective_from": "2026-10-21",
+ "hypothesis": "For kull er rullende A (siste ti år) 95 eller mer sammen med detrendet A 80 eller mer et bedre bunnflagg enn Championens rå A og detrendet A 80. Rå A for kull måles mot en serie fra 2000 med lave priser i starten og ekstreme topper i 2008 og 2022, og slår derfor nesten aldri til.",
+ "changed_variables": ["bottom_zone for kull: A_rolling >= 95 og A_detrended >= 80 (Champion: A_raw >= 80 og A_detrended >= 80)"],
+ "unchanged_variables": ["alle andre segmenter", "watch, B, C, D, d95 og papirene for kull", "regel for ny episode (12 mnd)", "holdetid og primært utfall (24 mnd)", "referanser OSEBX og MSCI World (IWDA.L)", "måling i NOK"],
+ "primary_endpoint": "Avkastning i NOK for papirene i kull 24 måneder etter hypothetical_entry, mot OSEBX, og mot Championens innganger for kull i samme periode.",
+ "expected_direction": "høyere",
+ "decision_rule": "Ingen konklusjon før minst to nye episoder har modnet på 24 måneder. Støttet hvis papirene slår OSEBX i begge (eller minst to av tre ved flere) og medianen er positiv. Ellers forkastet. Bommer flagget på en bunn som Championen eller en senere vurdering fanger, noteres det.",
+ "modul": "challengers/kull_ar95.py",
+ "data": "Ingen egne data. Championens A_rolling og A_detrended for kull (Verdensbanken, australsk termisk kull, realpris fra 2000).",
+ "evidence_type_before_start": "IN_SAMPLE: sonde_kjor_kull_flagg (14.10.2026), to episoder (2015-10 og 2020-05). Terskelen 95 er valgt etter å ha sett dataene og er ikke testet som regel.",
+ "notes": "Frodes beslutning 14.10.2026. Vises på dashbordet i kullpanelet."
+}

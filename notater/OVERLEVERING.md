@@ -161,6 +161,10 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
   `challenger_gass_rigger_v1` (`gass_b.json`, linjen i Henry Hub-panelet),
   `challenger_laks_tilbud_v1` (biomasse) og aluminium utenfor Kina (bare
   privat dashbord, IAI). Alle tre Challengerne kjører fra 14.10.
+- `challenger_kull_ar95_v1` fra 21.10.2026 (Frodes valg, ikke testet som
+  regel): bunnsone for kull = rullende A 95 og detrendet A 80. Vises i
+  kullpanelet (dashbordet v63). 21.10: sjekk at manifestet har fire
+  Challengere ok.
 - Kvartalsvis tilbudsskår kjørt for hånd 14.10: ingen tall endret mot 01.10
   (ingen nye årsregnskap). Neste planlagte kjøring 5. november.
 - Terminkurven er testet mot A og mot papirene for WTI og Henry Hub (13.10,

@@ -9,6 +9,26 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 14.10.2026 11:51, Claude Code
+**Hva:** `challenger_kull_ar95_v1` registrert fra 21.10.2026 (Frodes
+beslutning): bunnsone for kull er Championens rullende A (siste ti år) 95
+eller mer OG detrendet A 80 eller mer. Alt annet er Championens. Ingen egne
+data; bruker `A_rolling` og `A_detrended` fra Champion-raden. Bakgrunn
+`sonde_kjor_kull_flagg` (in-sample, to episoder: 2015-10 +54 % og 2020-05
++183 % på 24 mnd); terskelen 95 er valgt etter å ha sett dataene og er ikke
+testet som regel, som d95 for Brent og WTI. Beslutningsregel: ingen
+konklusjon før to nye episoder har modnet. Prøvekjørt på Champion W42: 4
+rader, kull ikke i sonen (Ar 32,5, Ad 65,7). Kontrollen uten avvik, 16
+tester består.
+Dashbordet versjon 63: linjen «Kull, rullende A 95» i kullpanelet, regnet
+fra `scores.Ar` og `scores.Ad` i databasen (ingen ny fil, ingen endring i
+onsdagsrutinen). I dag kreves realpris under 76,5 USD (147 nå).
+**Filer:** `challengers/kull_ar95.py`, `challengers/spes_kull_ar95_v1.json`,
+`config/challengers/challenger_kull_ar95_v1.json`, `shadow/model_registry.csv`,
+`notater/OVERLEVERING.md`.
+**Cowork må vite:** 21.10 skal manifestet ha fire Challengere ok.
+Kull-linjen på dashbordet er ikke en del av Championens flagg.
+
 ### 14.10.2026 11:45, Claude Code
 **Hva:** Ny sonde `sonde_kjor_kull_flagg.py` (Frodes bestilling: krymping på
 kull og andre måter å lage bunnflagget for kull). Beskrivende, ingen
