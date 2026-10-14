@@ -100,36 +100,11 @@
   "skifter": []
  },
  "kvartal": {
-  "forrige_dato": "2026-09-29 13:43:25",
-  "ny_dato": "2026-10-01 10:39",
-  "forrige": "2026-09-29",
-  "ny": "2026-10-01",
+  "forrige_dato": "2026-10-01 10:39",
+  "ny_dato": "2026-10-14 07:12",
+  "forrige": "2026-10-01",
+  "ny": "2026-10-14",
   "topp": [],
-  "skifter": [
-   {
-    "segment": "Kobber",
-    "felt": "Port C for segmentet",
-    "gammel": "ukjent",
-    "ny": "aapen"
-   },
-   {
-    "segment": "Nikkel",
-    "felt": "Port C for segmentet",
-    "gammel": "ukjent",
-    "ny": "aapen"
-   },
-   {
-    "segment": "Tinn",
-    "felt": "Port C for segmentet",
-    "gammel": "ukjent",
-    "ny": "aapen"
-   },
-   {
-    "segment": "Palmeolje",
-    "felt": "Port C for segmentet",
-    "gammel": "ukjent",
-    "ny": "aapen"
-   }
-  ]
+  "skifter": []
  }
 }
