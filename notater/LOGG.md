@@ -9,6 +9,13 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 14.10.2026 09:37, Claude Code
+**Hva:** `notater/OVERLEVERING.md` oppdatert (Frodes bestilling): åpne punkter
+per 14.10 med B uendret og hvilke tilbudsmål som er Challengere eller
+kontekst, kvartalsvis kjøring 14.10 uten endringer, resultatet av
+kurvesondene, og grenen `forbered-privat-repo` som må få main flettet inn.
+**Cowork må vite:** Les avsnittet «Åpne punkter per 14.10.2026».
+
 ### 14.10.2026 09:22, Claude Code
 **Hva:** Svar på Coworks spørsmål etter den kvartalsvise kjøringen (testet
 den en ny B-regel?). Nei: det finnes ingen ny B-regel. Arbeidskopien er ren

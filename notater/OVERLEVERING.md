@@ -152,8 +152,25 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
   etter desember 2025 i de gamle seriene. Nye sonder og Challengere bør ikke
   hvile på dem; trend eller nye serier med basisår 2025.
 
-## Åpne punkter per 07.10.2026
+## Åpne punkter per 14.10.2026
 
+- **B på bordet er ikke endret** (Frodes beslutning 12.10: B for metallene
+  står som den er). Tilbudsmålene fra uke 41 er Challengere eller kontekst
+  som skriver til `shadow/` og `marked/`, aldri til `scores.B`:
+  `challenger_olje_rigger_v1` (Brent og WTI, ikke på dashbordet),
+  `challenger_gass_rigger_v1` (`gass_b.json`, linjen i Henry Hub-panelet),
+  `challenger_laks_tilbud_v1` (biomasse) og aluminium utenfor Kina (bare
+  privat dashbord, IAI). Alle tre Challengerne kjører fra 14.10.
+- Kvartalsvis tilbudsskår kjørt for hånd 14.10: ingen tall endret mot 01.10
+  (ingen nye årsregnskap). Neste planlagte kjøring 5. november.
+- Terminkurven er testet mot A og mot papirene for WTI og Henry Hub (13.10,
+  `sonde_kjor_kurve_a`, `sonde_kjor_kurve_papirer`): den beskriver samme
+  stramhet som A (sterkest mot detrendet A), men varsler verken A eller
+  papirene. Kurveformen står som kontekst. Ikke foreslå den som varsel uten
+  nye data.
+- Grenen `forbered-privat-repo` er laget fra eldre main og har gammel
+  `kapitulasjon_d.py`; flett main inn før den tas i bruk. Repoet gjøres ikke
+  privat før Frode bestemmer det.
 - Varselboksen sier «B er målt for fem»; det er seks metaller pluss rigger.
   Kan regnes i koden på samme måte som C-tellingen.
 - Forslag om en ekstra rutine torsdag som kjører onsdagsrutinen på nytt hvis
@@ -168,7 +185,8 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
   avgjøres.
 - 14.10: første kjøring av `challenger_laks_tilbud_v1` (laks: A_pris i EUR 70
   eller mer og biomasse lavere enn året før). Sjekk `shadow/run_manifest.csv`
-  og `shadow/snapshots/challenger_laks_tilbud_v1/`.
+  og `shadow/snapshots/challenger_laks_tilbud_v1/`. Første kjøring av
+  Champion v1.1 og alle tre Challengerne sjekkes etter onsdagsrutinen 14.10.
 - B for Henry Hub: riggene i gassbassengene varsler produksjonen
   (`sonde_kjor_gass_rigger`), regnskapstallene gjør det ikke. I drift fra
   07.10 som `challenger_gass_rigger_v1` (fra 14.10), `gass_b.json` (skrevet av
