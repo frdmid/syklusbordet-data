@@ -9,6 +9,22 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 14.10.2026 11:26, Claude Code
+**Hva:** Sjekk etter første kjøring av Champion v1.1 og onsdagsrutinen 14.10.
+Alt i orden.
+1. `shadow/run_manifest.csv`: champion_v1_1 og de tre Challengerne har
+   status ok for 2026-W42, `code_changed` false, ingen advarsler eller feil.
+   Snapshot: Champion 105 rader, gass 4, laks 5, olje 8.
+2. To nye hendelser: Henry Hub `watch_active_at_start` både i Champion v1.1
+   og i `challenger_gass_rigger_v1` (A 87,1, Ad 53,9, C åpen, D 19,0; gass
+   B 23,0). Tilstanden sto allerede ved første snapshot; ingen ny episode.
+3. `gass_b.json` (B 23,0, rigger +22,4 % på 12 mnd, aug.) og
+   `laks_biomasse.json` (+2,6 %, aug.) skrevet 14.10 og kopiert til
+   dashbordets database.
+4. D på dashbordet er de rettede tallene (dagskurser): alle 25 segmenter i
+   databasen er like `d_kapitulasjon.json` fra i dag.
+**Cowork må vite:** Ingenting å gjøre. Første uke med riktig D er på bordet.
+
 ### 14.10.2026 09:43, Claude Code
 **Hva:** Mappen `syklusbordet-automatisering_4/` fjernet fra repoet (Frodes
 beslutning). Den var en arkivkopi av ni filer (åtte skript og
