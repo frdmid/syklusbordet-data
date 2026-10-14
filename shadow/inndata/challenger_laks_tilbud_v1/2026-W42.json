@@ -1,0 +1,10 @@
+{
+ "run_id": "challenger_laks_tilbud_v1|2026-W42|2026-10-14 06:41:44",
+ "filer_git_blob_sha": {
+  "segments/laks.json": "d1ba9dd678cb5da2d3aff41bdb0f598a1205b3a3",
+  "shadow/snapshots/champion_v1_1/2026-W42.csv": "e43df856c4891501bb6b24b194605a138a4ea88d"
+ },
+ "kodefiler_sha256": {
+  "challengers/laks_tilbud.py": "b2be4b276d93a77cbf8cb3de263a4e9f883ae627a4eda91597a30e92688184e9"
+ }
+}
