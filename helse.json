@@ -1,6 +1,6 @@
 {
  "id": "helse",
- "laget": "2026-10-07 06:30",
+ "laget": "2026-10-14 06:41",
  "rader": [
   {
    "id": "innhenting",
@@ -9,8 +9,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 2,
-   "siste": "2026-10-07 06:26",
-   "slutt": "2026-10-07"
+   "siste": "2026-10-14 06:39",
+   "slutt": "2026-10-14"
   },
   {
    "id": "kpi",
@@ -89,8 +89,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 7,
-   "siste": "2026-10-01",
-   "slutt": "2026-10-01"
+   "siste": "2026-10-08",
+   "slutt": "2026-10-08"
   },
   {
    "id": "laks_kost",
@@ -199,8 +199,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 2,
-   "siste": "2026-10-06",
-   "slutt": "2026-10-06"
+   "siste": "2026-10-13",
+   "slutt": "2026-10-13"
   },
   {
    "id": "kull",
@@ -249,8 +249,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 9,
-   "siste": "2026-09-29",
-   "slutt": "2026-09-29"
+   "siste": "2026-10-06",
+   "slutt": "2026-10-06"
   },
   {
    "id": "wti_cot",
@@ -259,8 +259,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 9,
-   "siste": "2026-09-29",
-   "slutt": "2026-09-29"
+   "siste": "2026-10-06",
+   "slutt": "2026-10-06"
   },
   {
    "id": "henryhub_cot",
@@ -269,8 +269,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 9,
-   "siste": "2026-09-29",
-   "slutt": "2026-09-29"
+   "siste": "2026-10-06",
+   "slutt": "2026-10-06"
   },
   {
    "id": "gold_cot",
@@ -279,8 +279,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 9,
-   "siste": "2026-09-29",
-   "slutt": "2026-09-29"
+   "siste": "2026-10-06",
+   "slutt": "2026-10-06"
   },
   {
    "id": "kobber_cot",
@@ -289,8 +289,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 9,
-   "siste": "2026-09-29",
-   "slutt": "2026-09-29"
+   "siste": "2026-10-06",
+   "slutt": "2026-10-06"
   },
   {
    "id": "kakao_cot",
@@ -299,8 +299,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 9,
-   "siste": "2026-09-29",
-   "slutt": "2026-09-29"
+   "siste": "2026-10-06",
+   "slutt": "2026-10-06"
   },
   {
    "id": "palmeolje_cot",
@@ -309,8 +309,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 9,
-   "siste": "2026-09-29",
-   "slutt": "2026-09-29"
+   "siste": "2026-10-06",
+   "slutt": "2026-10-06"
   },
   {
    "id": "brent_kurve",
@@ -319,8 +319,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 2,
-   "siste": "2026-10-07",
-   "slutt": "2026-10-07"
+   "siste": "2026-10-14",
+   "slutt": "2026-10-14"
   },
   {
    "id": "wti_kurve",
@@ -329,8 +329,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 2,
-   "siste": "2026-10-07",
-   "slutt": "2026-10-07"
+   "siste": "2026-10-14",
+   "slutt": "2026-10-14"
   },
   {
    "id": "henryhub_kurve",
@@ -339,8 +339,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 2,
-   "siste": "2026-10-07",
-   "slutt": "2026-10-07"
+   "siste": "2026-10-14",
+   "slutt": "2026-10-14"
   },
   {
    "id": "gold_kurve",
@@ -349,8 +349,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 2,
-   "siste": "2026-10-07",
-   "slutt": "2026-10-07"
+   "siste": "2026-10-14",
+   "slutt": "2026-10-14"
   },
   {
    "id": "kobber_kurve",
@@ -359,8 +359,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 2,
-   "siste": "2026-10-07",
-   "slutt": "2026-10-07"
+   "siste": "2026-10-14",
+   "slutt": "2026-10-14"
   },
   {
    "id": "kakao_kurve",
@@ -369,8 +369,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 2,
-   "siste": "2026-10-06",
-   "slutt": "2026-10-06"
+   "siste": "2026-10-13",
+   "slutt": "2026-10-13"
   },
   {
    "id": "uran_fut",
@@ -389,8 +389,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 7,
-   "siste": "2026-09-30",
-   "slutt": "2026-09-30"
+   "siste": "2026-10-07",
+   "slutt": "2026-10-07"
   },
   {
    "id": "bdi",
@@ -410,8 +410,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 2,
-   "siste": "2026-10-06",
-   "slutt": "2026-10-06"
+   "siste": "2026-10-13",
+   "slutt": "2026-10-13"
   },
   {
    "id": "dxy",
@@ -420,8 +420,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 2,
-   "siste": "2026-10-07",
-   "slutt": "2026-10-07"
+   "siste": "2026-10-14",
+   "slutt": "2026-10-14"
   },
   {
    "id": "usdnok",
@@ -430,8 +430,8 @@
    "type": "auto",
    "frekvens": "uke",
    "etterslep": 2,
-   "siste": "2026-10-06",
-   "slutt": "2026-10-06"
+   "siste": "2026-10-13",
+   "slutt": "2026-10-13"
   },
   {
    "id": "owid",
