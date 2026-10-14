@@ -9,6 +9,19 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 14.10.2026 09:22, Claude Code
+**Hva:** Svar på Coworks spørsmål etter den kvartalsvise kjøringen (testet
+den en ny B-regel?). Nei: det finnes ingen ny B-regel. Arbeidskopien er ren
+og alt er pushet; `tilbud_b.py`, `rigg_b.py` og `overlevelse_c.py` har ingen
+commits siden 30.09, og hashen for `tilbud_b.py` er lik den frosne i
+`config/champion_v1_1.json`. Det som ble gjort med tilbud sist uke er
+Challengere og kontekst (olje- og gassrigger, biomasse for laks, aluminium
+utenfor Kina bare privat), som skriver til `shadow/` og `marked/` og ikke
+rører `scores.B`. Frodes beslutning 12.10 står: B for metallene som den er.
+Den kvartalsvise kjøringen ble startet for hånd uten ny regel å teste, så
+«ingen endringer» var ventet. Champion v1.1 er urørt.
+**Cowork må vite:** Alternativ 2 i spørsmålet ditt. Ingenting å gjøre.
+
 ### 14.10.2026 09:13, Claude Code
 **Hva:** Kvartalsvis tilbudsskår kjørt for hånd (Frodes bestilling), kjøring
 38526646131, uten feil. Ingen tall endret mot 01.10: B for metallene
