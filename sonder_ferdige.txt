@@ -68,3 +68,4 @@ sonde_kjor_b_signal_v2
 sonde_kjor_kurve_a
 sonde_kjor_kurve_papirer
 sonde_kjor_a_terskel
+sonde_kjor_kull_flagg

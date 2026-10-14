@@ -1,0 +1,92 @@
+1. KULL PER HALVAAR (realpris i dagens USD, A, Ad, Ar, B2 i bruk)
+
+   2004-01     68.4  A   nan  Ad   nan  Ar   nan  B2   nan  u24   +6.5 %
+   2004-07    108.6  A   nan  Ad   nan  Ar   nan  B2   nan  u24  -22.3 %
+   2005-01     93.1  A  11.5  Ad  14.8  Ar  11.5  B2   nan  u24   -9.2 %
+   2005-07     87.3  A  22.4  Ad  53.7  Ar  22.4  B2   nan  u24  +21.5 %
+   2006-01     73.0  A  27.4  Ad  68.5  Ar  27.4  B2   nan  u24  +69.1 %
+   2006-07     86.9  A  24.1  Ad  58.2  Ar  24.1  B2   nan  u24 +114.9 %
+   2007-01     84.9  A  24.7  Ad  60.0  Ar  24.7  B2   nan  u24  +39.5 %
+   2007-07    108.2  A   1.1  Ad  26.4  Ar   1.1  B2   nan  u24   +5.9 %
+   2008-01    145.7  A   0.0  Ad   5.2  Ar   0.0  B2   nan  u24   +2.9 %
+   2008-07    274.1  A   0.0  Ad   0.0  Ar   0.0  B2   nan  u24  -62.0 %
+   2009-01    126.0  A  11.9  Ad  64.2  Ar  11.9  B2   nan  u24  +47.0 %
+   2009-07    114.8  A  14.8  Ad  76.5  Ar  14.8  B2   nan  u24  +44.5 %
+   2010-01    150.0  A   7.4  Ad  46.3  Ar   7.5  B2   nan  u24  +13.8 %
+   2010-07    147.5  A  10.2  Ad  56.7  Ar  10.8  B2   nan  u24  -13.4 %
+   2011-01    201.5  A   4.5  Ad  21.1  Ar   5.0  B2   nan  u24  -40.1 %
+   2011-07    179.1  A   9.4  Ad  46.8  Ar  10.8  B2  21.2  u24  -48.0 %
+   2012-01    172.2  A  13.1  Ad  61.4  Ar  15.8  B2  21.2  u24  -38.8 %
+   2012-07    129.0  A  27.8  Ad  96.0  Ar  35.0  B2   2.1  u24  -28.8 %
+   2013-01    135.0  A  26.8  Ad  92.4  Ar  35.0  B2   2.1  u24  -42.8 %
+   2013-07    110.8  A  39.9  Ad  99.4  Ar  54.2  B2   0.0  u24  -27.6 %
+   2014-01    116.9  A  37.3  Ad  97.0  Ar  52.5  B2   0.0  u24  -52.3 %
+   2014-07     96.7  A  51.4  Ad  99.4  Ar  72.5  B2   2.0  u24  -12.7 %
+   2015-01     88.0  A  59.1  Ad  99.4  Ar  80.8  B2   2.0  u24  +27.1 %
+   2015-07     84.1  A  64.7  Ad  98.4  Ar  86.7  B2  22.8  u24  +35.4 %
+   2016-01     69.3  A  73.1  Ad  99.5  Ar  99.2  B2  22.8  u24  +73.1 %
+   2016-07     85.2  A  60.3  Ad  94.0  Ar  82.5  B2  49.6  u24  +62.4 %
+   2017-01    115.5  A  32.7  Ad  72.7  Ar  55.8  B2  49.6  u24  +12.8 %
+   2017-07    119.7  A  29.4  Ad  64.9  Ar  51.7  B2  88.9  u24  -24.1 %
+   2018-01    143.9  A  18.0  Ad  48.4  Ar  30.8  B2  88.9  u24  -46.4 %
+   2018-07    159.0  A  11.2  Ad  38.1  Ar  15.8  B2 100.0  u24  -86.8 %
+   2019-01    131.2  A  26.6  Ad  65.1  Ar  40.0  B2 100.0  u24  -16.6 %
+   2019-07     94.1  A  54.9  Ad  91.9  Ar  80.0  B2 100.0  u24  +68.4 %
+   2020-01     90.5  A  56.8  Ad  90.0  Ar  78.3  B2 100.0  u24  +95.3 %
+   2020-07     66.7  A  79.4  Ad  99.6  Ar  99.2  B2 100.0  u24 +191.9 %
+   2021-01    111.2  A  37.9  Ad  68.0  Ar  50.8  B2 100.0  u24 +116.4 %
+   2021-07    186.5  A   3.9  Ad  18.1  Ar   0.0  B2 100.0  u24  -19.1 %
+   2022-01    234.7  A   1.5  Ad  10.6  Ar   0.8  B2 100.0  u24  -54.8 %
+   2022-07    454.7  A   0.0  Ad   0.4  Ar   0.0  B2 100.0  u24 -113.2 %
+   2023-01    356.1  A   3.6  Ad   6.5  Ar   8.3  B2 100.0  u24 -104.6 %
+   2023-07    154.1  A  18.4  Ad  64.3  Ar  21.7  B2  91.9  u24  -27.5 %
+   2024-01    135.7  A  28.7  Ad  77.9  Ar  34.2  B2  91.9  u24  -18.2 %
+   2024-07    146.5  A  23.1  Ad  69.5  Ar  29.2  B2  76.1  u24  -10.2 %
+   2025-01    125.1  A  39.9  Ad  83.4  Ar  54.2  B2  76.1  u24   +nan %
+   2025-07    117.1  A  43.3  Ad  85.0  Ar  58.3  B2  60.4  u24   +nan %
+   2026-01    113.1  A  46.0  Ad  85.9  Ar  65.0  B2  60.4  u24   +nan %
+   2026-07    132.3  A  33.2  Ad  74.3  Ar  50.8  B2  48.6  u24   +nan %
+   2026-09    147.1  A  22.4  Ad  65.7  Ar  32.5  B2  48.6  (siste)
+
+2. REGLENE (snitt for alle maaneder: 12 mnd +2.0 %, 24 mnd +4.2 %)
+
+   R0 Champion (A og Ad 80)           1 mnd, 1 episoder, i sonen naa: nei
+      snitt 12 mnd +116.8 %, 24 mnd +196.4 %, andel positive 24 mnd 100 %
+      start 2020-08 (A 80, Ad 100, pris 65) til 2020-08: 12 mnd +117 %, 24 mnd +196 %
+   R1 krymping (A og Ad 75)           5 mnd, 1 episoder, i sonen naa: nei
+      snitt 12 mnd  +97.8 %, 24 mnd +189.5 %, andel positive 24 mnd 100 %
+      start 2020-05 (A 79, Ad 100, pris 69) til 2020-09: 12 mnd +66 %, 24 mnd +183 %
+   R2 bare Ad 80                     93 mnd, 4 episoder, i sonen naa: nei
+      snitt 12 mnd   +9.5 %, 24 mnd  +34.9 %, andel positive 24 mnd 63 %
+      start 2009-03 (A 24, Ad 98, pris 96) til 2009-05: 12 mnd +41 %, 24 mnd +68 %
+      start 2012-04 (A 20, Ad 82, pris 151) til 2016-09: 12 mnd -18 %, 24 mnd -38 %
+      start 2019-04 (A 40, Ad 81, pris 114) til 2020-11: 12 mnd -40 %, 24 mnd +2 %
+      start 2025-01 (A 40, Ad 83, pris 125): utfall ikke kjent ennaa
+   R3 Ar og Ad 80                    34 mnd, 2 episoder, i sonen naa: nei
+      snitt 12 mnd  +32.7 %, 24 mnd  +92.3 %, andel positive 24 mnd 100 %
+      start 2015-01 (A 59, Ad 99, pris 88) til 2015-01: 12 mnd -24 %, 24 mnd +27 %
+      start 2019-06 (A 55, Ad 92, pris 95) til 2019-12: 12 mnd -33 %, 24 mnd +52 %
+   R4 Ad 80 og B2 50                 35 mnd, 3 episoder, i sonen naa: nei
+      snitt 12 mnd  +26.5 %, 24 mnd +113.8 %, andel positive 24 mnd 100 %
+      start 2017-05 (A 43, Ad 82, pris 102) til 2017-05: 12 mnd +32 %, 24 mnd +6 %
+      start 2019-04 (A 40, Ad 81, pris 114) til 2020-11: 12 mnd -40 %, 24 mnd +2 %
+      start 2025-01 (A 40, Ad 83, pris 125): utfall ikke kjent ennaa
+   R5 Ad 80 og over 3 mnd snitt      29 mnd, 4 episoder, i sonen naa: nei
+      snitt 12 mnd  +14.1 %, 24 mnd  +30.8 %, andel positive 24 mnd 57 %
+      start 2009-05 (A 20, Ad 92, pris 101) til 2009-05: 12 mnd +42 %, 24 mnd +56 %
+      start 2012-08 (A 28, Ad 95, pris 132) til 2012-08: 12 mnd -18 %, 24 mnd -31 %
+      start 2019-10 (A 58, Ad 92, pris 90) til 2019-10: 12 mnd -18 %, 24 mnd +110 %
+      start 2025-05 (A 51, Ad 91, pris 109): utfall ikke kjent ennaa
+   R6 Ad 70 og B2 50                 46 mnd, 3 episoder, i sonen naa: nei
+      snitt 12 mnd  +18.1 %, 24 mnd  +79.1 %, andel positive 24 mnd 71 %
+      start 2017-04 (A 33, Ad 72, pris 115) til 2017-06: 12 mnd +9 %, 24 mnd -1 %
+      start 2019-03 (A 33, Ad 71, pris 123) til 2020-12: 12 mnd -35 %, 24 mnd -2 %
+      start 2023-11 (A 27, Ad 76, pris 138) til 2023-11: 12 mnd +9 %, 24 mnd -17 %
+
+3. HVA SKAL TIL FOR AT KULL KOMMER I SONEN NAA (realpris som gir A og Ad paa 80)
+
+   T 80: A krever under   73.5, Ad krever under  125.0 USD (i dag 147.1)
+   T 75: A krever under   83.1, Ad krever under  132.9 USD (i dag 147.1)
+   T 70: A krever under   87.2, Ad krever under  138.8 USD (i dag 147.1)
+
+Lagret sonder/kull_flagg.csv

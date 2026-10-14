@@ -9,6 +9,30 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 14.10.2026 11:45, Claude Code
+**Hva:** Ny sonde `sonde_kjor_kull_flagg.py` (Frodes bestilling: krymping på
+kull og andre måter å lage bunnflagget for kull). Beskrivende, ingen
+kriterier; kull har realpris fra 2000 og to eller tre bunner, så alt er
+tilpasset på samme historikk som det måles på.
+1. **Krymping gir T 75 for kull og endrer nesten ingenting:** samme ene
+   episode (2020), inn mai i stedet for august 2020, 24 mnd +183 % mot
+   +196 %. Bunnen 2015 til 2016 fanges fortsatt ikke.
+2. **Problemet er rå A, ikke terskelen.** Serien starter i 2000 med lave
+   priser og har toppene 2008 og 2022; rå A 80 krever realpris under 73 USD
+   (i dag 147). Ad har vært 80 eller mer i 93 måneder.
+3. Andre regler: bare Ad 80 (4 episoder, 2012 kom for tidlig, -38 % på
+   24 mnd), Ad 80 og over 3 mnd snitt (samme svakhet), Ad 80 og B2 50 (2017
+   +6 %, 2019 +2 %, 2025 åpen), **rullende A (ti år) og Ad 80: 2 episoder,
+   2015-01 og 2019-06, +27 % og +52 % på 24 mnd, men -24 % og -33 % på
+   12 mnd (tidlig).** Den rullende skåren ble tatt ut av flagget fordi den
+   aldri avgjorde noe på tvers av segmentene; for kull ville den gjort det.
+4. Ad lå 83 til 91 fra januar 2025 til mai 2026 uten flagg; prisen har
+   siden steget fra 109 til 147.
+**Filer:** `sonde_kjor_kull_flagg.py`, `sonder/sonde_kjor_kull_flagg.txt`,
+`sonder/kull_flagg.csv`, `sonder_ferdige.txt`.
+**Cowork må vite:** Ingen endring på bordet. Frode avgjør om rullende A og
+Ad for kull skal prøves framover som Challenger.
+
 ### 14.10.2026 11:40, Claude Code
 **Hva:** Ny sonde `sonde_kjor_a_terskel.py` (Frodes spørsmål: er A 80 for
 rigid på tvers av råvarer?). Tre måter å tilpasse terskelen (A og Ad begge
