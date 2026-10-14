@@ -9,6 +9,21 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 14.10.2026 11:54, Claude Code
+**Hva:** Ny sonde `sonde_kjor_jernmalm_flagg.py` (Frodes spørsmål: kan
+bunnflagget for jernmalm optimaliseres?). Samme oppsett som for kull,
+beskrivende. **Svar: nei, det finnes ingenting å tilpasse på.** Realpris fra
+2010, A fra 2014-12, og den eneste episoden (2014-12 til 2016-02) starter i
+første måned A finnes, så den er ingen målt inngang. Alle reglene (krymping,
+bare Ad, rullende A, Ar 95) gir samme episode; reglene med B2 slår aldri til
+(B2 0 til 43). Rullende A er nesten lik rå A fordi serien er 16 år.
+Motsatt av kull er det detrendet A som holder igjen nå: rå A 79,1 (krever
+under 97,6 USD, i dag 97,7), Ad 61,2 (krever under 74,1). D er 71.
+**Filer:** `sonde_kjor_jernmalm_flagg.py`, `sonder/sonde_kjor_jernmalm_flagg.txt`,
+`sonder/jernmalm_flagg.csv`, `sonder_ferdige.txt`.
+**Cowork må vite:** Ingen endring. Jernmalm kan gå til «under oppsikt»
+(rå A over 80) ved et lite fall i prisen; det er ikke bunnsone.
+
 ### 14.10.2026 11:51, Claude Code
 **Hva:** `challenger_kull_ar95_v1` registrert fra 21.10.2026 (Frodes
 beslutning): bunnsone for kull er Championens rullende A (siste ti år) 95

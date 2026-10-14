@@ -69,3 +69,4 @@ sonde_kjor_kurve_a
 sonde_kjor_kurve_papirer
 sonde_kjor_a_terskel
 sonde_kjor_kull_flagg
+sonde_kjor_jernmalm_flagg
