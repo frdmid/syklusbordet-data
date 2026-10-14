@@ -9,6 +9,17 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 14.10.2026 09:43, Claude Code
+**Hva:** Mappen `syklusbordet-automatisering_4/` fjernet fra repoet (Frodes
+beslutning). Den var en arkivkopi av ni filer (åtte skript og
+`requirements.txt`) lastet opp via nettsiden 22.09 (commit a29edc8), ble ikke
+brukt av noen workflow, rutine eller kode, og hadde samme filnavn som koden i
+drift (`priser.py`, `tilbud_b.py` m.fl.), men gamle versjoner. Filene finnes
+i git-historikken og i Frodes `Downloads`.
+**Filer:** `syklusbordet-automatisering_4/` (slettet).
+**Cowork må vite:** Rediger bare skriptene i roten. Det finnes ingen annen
+kopi i repoet lenger.
+
 ### 14.10.2026 09:37, Claude Code
 **Hva:** `notater/OVERLEVERING.md` oppdatert (Frodes bestilling): åpne punkter
 per 14.10 med B uendret og hvilke tilbudsmål som er Challengere eller
