@@ -1,0 +1,71 @@
+sonde:   sonde_kjor_regime
+kjort:   2026-10-15 11:24:49 UTC
+commit:  6d9c5b3
+status:  OK
+brukte:  49 sekunder
+--------------------------------------------------------------
+Raavarer: 18 segmenter, 1965-01 til 2026-09
+Papirer og fond: 70 med kurs, uker 1990-01-05 til 2026-10-16
+   enheter, siste (mrd USD): Fed-balanse 6748, statskassen 880, reverse repo 0
+   sentralbanker siste (mrd USD): Fed 6743, ECB 6785, BoJ 3996
+
+1. SJOKK (absorpsjon, punkt-i-tid-persentil)
+
+   2008-10 (finanskrisen): absorpsjon 0.63, persentil maks 100; snittkorr papirer 0.58; VIX-persentil 100
+   2011-08 (eurokrisen og USAs kredittvurdering): absorpsjon 0.63, persentil maks 97; snittkorr papirer 0.56; VIX-persentil 96
+   2020-03 (covid): absorpsjon 0.56, persentil maks 94; snittkorr papirer 0.50; VIX-persentil 99
+   maaneder paa 95 eller mer: 18, utenfor kjent stress: 7 (2005-04, 2005-05, 2005-06, 2006-05, 2006-06, 2006-07, 2009-07)
+   -> SJOKK HOLDER IKKE
+   kontroll korr_papirer  : persentil 2008/2011/2020 100/97/96, 20 mnd paa 95+, andel utenfor stress 35%
+   kontroll korr_raavarer : persentil 2008/2011/2020 87/86/70, 6 mnd paa 95+, andel utenfor stress 100%
+   kontroll vix           : persentil 2008/2011/2020 100/96/99, 21 mnd paa 95+, andel utenfor stress 0%
+
+2. VEKST (bredde: andel raavarer opp over 12 mnd)
+
+   2003-01..2008-06: 0.77 (krav > 0,6) ok
+   2021-01..2022-06: 0.82 (krav > 0,6) ok
+   2001-06..2002-06: 0.34 (krav < 0,4) ok
+   2008-11..2009-06: 0.15 (krav < 0,4) ok
+   2015-01..2016-03: 0.13 (krav < 0,4) ok
+   2020-03..2020-08: 0.26 (krav < 0,4) ok
+   -> VEKST HOLDER
+
+3. BILLIG (median A; oeverste tiendedel fra 1990 >= 92.6, nederste <= 17.0)
+
+   2009-02 (): maks 42.0 NEI
+   2016-01 (raavarebunnen): maks 68.2 NEI
+   2020-04 (): maks 69.8 NEI
+   2008-06 (raavaretoppen): min 6.2 ok
+   2022-06 (inflasjon og renteoppgang): min 15.2 ok
+   -> BILLIG HOLDER IKKE
+
+4. LIKVIDITET (beskrivende)
+
+   2008-12: Fed netto    2125 mrd (13 uker +36.5 %), reverse repo      0, sentralbanker    6346 mrd (6 mnd +43.2 %)
+   2011-06: Fed netto    2757 mrd (13 uker  +7.3 %), reverse repo      0, sentralbanker    7317 mrd (6 mnd +10.1 %)
+   2014-10: Fed netto    4234 mrd (13 uker  +0.1 %), reverse repo    135, sentralbanker    9743 mrd (6 mnd  +0.5 %)
+   2018-12: Fed netto    3701 mrd (13 uker  -3.1 %), reverse repo      1, sentralbanker   14310 mrd (6 mnd  -1.7 %)
+   2019-09: Fed netto    3543 mrd (13 uker  -0.8 %), reverse repo      0, sentralbanker   14263 mrd (6 mnd  -0.1 %)
+   2020-06: Fed netto    5458 mrd (13 uker +13.6 %), reverse repo      0, sentralbanker   20136 mrd (6 mnd +31.9 %)
+   2021-12: Fed netto    6903 mrd (13 uker  +1.0 %), reverse repo   1643, sentralbanker   24796 mrd (6 mnd  +2.9 %)
+   2022-12: Fed netto    5830 mrd (13 uker  +1.6 %), reverse repo   2293, sentralbanker   22195 mrd (6 mnd  -6.6 %)
+   2023-12: Fed netto    6163 mrd (13 uker  +4.7 %), reverse repo    819, sentralbanker   20488 mrd (6 mnd  -4.1 %)
+   2024-12: Fed netto    5940 mrd (13 uker  +1.4 %), reverse repo    181, sentralbanker   18406 mrd (6 mnd  -3.3 %)
+   2026-10: Fed netto    5867 mrd (13 uker  -2.0 %), reverse repo      0, sentralbanker     nan mrd (6 mnd  +nan %)
+
+5. I DAG OG ANALOGER
+
+   2026-09: absorpsjon 0.24 (persentil 6), snittkorr papirer 0.13, VIX-persentil 36, kreditt 1.48, rentekurve 0.34
+   bredde 0.71, kobber mot gull 12 mnd +20.8 %, median A 22.4, andel i bunnsonen 0.00, spredning 48.3
+   naermeste maaneder (over absorpsjon_pct, bredde, median_A, vix_pct, kreditt_pct, rentekurve), minst 24 mnd tilbake:
+      2021-11  avstand 1.39  (naer Ukraina, 2022-03)
+      2024-05  avstand 1.45
+      2006-02  avstand 1.55
+      2018-06  avstand 1.84  (naer renteoppgang og handelskrig, 2018-12)
+      2005-08  avstand 2.12
+      2023-09  avstand 2.14
+      2006-12  avstand 2.15
+      2017-11  avstand 2.20
+
+6. OPPSUMMERING: sjokk holder ikke, vekst holder, billig holder ikke, likviditet beskrivende
+Lagret sonder/regime.csv
