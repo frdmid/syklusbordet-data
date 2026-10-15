@@ -9,6 +9,31 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 15.10.2026 13:50, Claude Code
+**Hva:** Ny sonde `sonde_kjor_regime_ventetid.py` (Frodes spørsmål: hvor lenge
+etter et regimeskifte bør man vurdere inngang?). Hendelsesstudie,
+beskrivende, med forhåndssatt krav for at venting slår inngang med en gang
+(slår L = 0 i to av tre skifter og minst 5 pp høyere median, på både
+råvarekurven og papirkurven). Inngang 0 til 12 mnd etter skiftet, 24 mnd
+hold.
+1. **Inn i bred nedgang (24 skifter fra 1965): vent 9 til 12 mnd.** Inngang
+   med en gang ga median -12,8 % (råvarer) og -1,8 % (papirer); etter 9
+   mnd +1,4 % og +23,0 %, etter 12 mnd +5,5 % og +9,0 %. Verste fall
+   underveis -25 % med en gang mot -8 til -16 % ved å vente. En bred
+   nedgang varer median 7 mnd (kvartiler 5 og 14).
+2. **Ut av bred nedgang (27):** ingen ventetid slår inngang med en gang.
+3. **Inn i sjokk (9 fra 1995):** ingen ventetid besto, men én måned var
+   nær: slo inngang med en gang i 88 % (råvarer) og 100 % (papirer), median
+   +7 og +3,5 pp, og verste fall -2 % mot -11 % for råvarer. Feiler bare på
+   5 pp-kravet for papirene.
+4. **Ut av sjokk (10):** ingen ventetid slår inngang med en gang.
+Papirene mot SPY har negativ median etter skifte inn i bred nedgang for
+alle ventetider (-7 til -31 %).
+**Filer:** `sonde_kjor_regime_ventetid.py`, `sonder/sonde_kjor_regime_ventetid.txt`,
+`sonder/regime_ventetid.csv`, `sonder_ferdige.txt`.
+**Cowork må vite:** Ingen endring på bordet. Beskrivende; mange
+sammenligninger på få skifter.
+
 ### 15.10.2026 13:47, Claude Code
 **Hva:** Ny sonde `sonde_kjor_regime_horisont.py` (Frodes bestilling: de tre
 regimehypotesene på 1, 3, 6 og 12 mnd). Samme flagg og klynger som
