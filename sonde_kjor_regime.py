@@ -281,8 +281,9 @@ print(f"   -> BILLIG {'HOLDER' if bok else 'HOLDER IKKE'}")
 print("\n4. LIKVIDITET (beskrivende)\n")
 if lik_ok:
     for t in ("2008-12", "2011-06", "2014-10", "2018-12", "2019-09", "2020-06", "2021-12", "2022-12", "2023-12",
-              "2024-12", str(M.index[-1])):
-        r = M.loc[pd.Period(t, "M")] if pd.Period(t, "M") in M.index else None
+              "2024-12", str(M.dropna(subset=["fed_netto_mrd"]).index[-1])):
+        hit = M[M.index.astype(str) == t]
+        r = hit.iloc[0] if len(hit) and pd.notna(hit.iloc[0].get("fed_netto_mrd")) else None
         if r is not None:
             print(f"   {t}: Fed netto {r.fed_netto_mrd:7.0f} mrd (13 uker {r.fed_netto_13u_pst:+5.1f} %), reverse repo "
                   f"{r.rrp_mrd:6.0f}, sentralbanker {r.sb_sum_mrd:7.0f} mrd (6 mnd {r.sb_6m_pst:+5.1f} %)")
