@@ -9,6 +9,28 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 15.10.2026 13:42, Claude Code
+**Hva:** Ny sonde `sonde_kjor_regime_flagg.py`, steg 3 av regimepanelet:
+virker bunnflaggene ulikt i ulike regimer? Championens bunnsone for 18
+råvarer, innganger fra 1995 med kjent utfall: 33 innganger i 15
+makroklynger (183 dager). Utfall: realpris 24 mnd, median per klynge.
+Kriteriene satt før kjøring, i toppen av fila.
+1. **H2 vekst holder:** flagg når 40 % eller færre av råvarene er i
+   oppgang (bred nedgang) ga +33 % mot -3 % (10 mot 5 klynger, +36 pp,
+   p 0,033, BH ja; før og etter 2010 +53 og +5 pp). Papirene mot SPY peker
+   samme vei (+25 pp). Svakhet: etter 2010 har gruppen «ikke bred nedgang»
+   bare én klynge (2011-09).
+2. **H1 sjokk holder ikke** på 24 mnd (-3 pp, p 0,61), men flagg i uro
+   eller sjokk ga +20 pp på 12 mnd og papirene +54 pp på 24 mnd. Ikke
+   hypotesen som ble avgjort.
+3. **H3 likviditet kan ikke avgjøres** (6 mot 2 klynger fra 2003).
+Flaggene uten bred nedgang: gull 1996, palmeolje 1999, kakao og uran 2000,
+sink 2000, laks og Henry Hub 2011: enkeltråvarer i trøbbel mens resten steg.
+**Filer:** `sonde_kjor_regime_flagg.py`, `sonder/sonde_kjor_regime_flagg.txt`,
+`sonder/regime_flagg.csv`, `sonder_ferdige.txt`.
+**Cowork må vite:** Ingen endring på bordet. Frode avgjør om «bunnsone og
+bred nedgang» skal registreres som Challenger.
+
 ### 15.10.2026 13:38, Claude Code
 **Hva:** Regimepanelet, steg 2 (Frodes bestilling). Kontekst, ikke testet som
 signal, ikke i flagget, ikke shadow-data.

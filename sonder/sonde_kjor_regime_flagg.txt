@@ -1,0 +1,38 @@
+33 innganger i 15 klynger, 1996-07 til 2023-03
+
+1. KLYNGENE (regime ved foerste inngang)
+
+   klynge    n  sjokk bredde Fed13u    12 mnd  24 mnd papir24  segmenter
+   1996-07   1     82   0.46   +nan      -19%    -31%   +nan%  gold
+   1997-12   4     95   0.31   +nan      -41%    +30%   +nan%  brent, wti, nikkel, sink
+   1998-08   3     99   0.29   +nan       -1%     -7%    -82%  kobber, uran, bly
+   1999-07   1     75   0.43   +nan       -6%     -3%     +5%  palmeolje
+   2000-02   2     81   0.64   +nan       -2%    +28%   +111%  kakao, uran
+   2000-10   1     87   0.43   +nan      -38%    -41%   +nan%  sink
+   2001-07   2     71   0.25   +nan      +14%    +36%     -5%  kobber, nikkel
+   2008-11   2    100   0.24  +80.1      +53%    +58%    +92%  sink, aluminium
+   2009-08   1     89   0.29   -0.2      +44%    +45%    +36%  henryhub
+   2011-09   2     97   0.61   +1.4       +4%    +25%     +5%  laks, henryhub
+   2014-12   3     81   0.28   +0.4      -33%    +14%    +30%  henryhub, jernmalm, laks
+   2015-10   3     86   0.06   +2.0       +8%    +30%    +63%  aluminium, nikkel, ttf
+   2019-03   2     59   0.17   -1.5      -49%    +26%     -9%  ttf, henryhub
+   2020-03   5     99   0.28  +22.8     +103%   +148%   +117%  brent, wti, laks, aluminium, kull
+   2023-03   1     73   0.17   +7.1      -34%    +61%     -3%  henryhub
+
+2. HYPOTESENE (median over klynger, realpris 24 mnd)
+
+   H1 sjokk (uro eller sjokk mot rolig): 11 mot 4 klynger
+      24 mnd: +28 % mot +31 %, forskjell -3 pp (a nei); foer/etter 2010 +12 / -16 pp (b nei); p 0.608
+      12 mnd forskjell +20 pp; papirene 24 mnd mot SPY forskjell +54 pp
+   H2 vekst (bred nedgang mot ikke): 10 mot 5 klynger
+      24 mnd: +33 % mot -3 %, forskjell +36 pp (a ok); foer/etter 2010 +53 / +5 pp (b ok); p 0.033
+      12 mnd forskjell +9 pp; papirene 24 mnd mot SPY forskjell +25 pp
+   H3 likviditet (stigende mot fallende): for faa klynger (6 mot 2), kan ikke avgjoeres
+
+3. AVGJOERELSE
+
+   H2 vekst (bred nedgang mot ikke): HOLDER (p 0.033, BH ja)
+   H1 sjokk (uro eller sjokk mot rolig): holder ikke (p 0.608, BH nei)
+   H3 likviditet (stigende mot fallende): kan ikke avgjoeres (p 1.000, BH nei)
+
+Lagret sonder/regime_flagg.csv

@@ -72,3 +72,4 @@ sonde_kjor_kull_flagg
 sonde_kjor_jernmalm_flagg
 sonde_kjor_regime
 sonde_kjor_regime_forste
+sonde_kjor_regime_flagg
