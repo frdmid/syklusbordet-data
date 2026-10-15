@@ -1,76 +1,387 @@
-Hopper over 67 ferdige sonder (sonder_ferdige.txt): sonde_kjor_a_terskel, sonde_kjor_aluminium_tilbud, sonde_kjor_b_dda, sonde_kjor_b_fmg, sonde_kjor_b_gass, sonde_kjor_b_haleregel, sonde_kjor_b_jernmalm, sonde_kjor_b_kilder, sonde_kjor_b_mekanisme, sonde_kjor_b_signal, sonde_kjor_b_signal_v2, sonde_kjor_backtest, sonde_kjor_backtest_lang, sonde_kjor_bdi, sonde_kjor_biomasse, sonde_kjor_brasil, sonde_kjor_c_manuell, sonde_kjor_c_manuell2, sonde_kjor_c_manuell3, sonde_kjor_c_produksjon, sonde_kjor_c_rente, sonde_kjor_c_spleis, sonde_kjor_cot, sonde_kjor_cot_palme_sgx, sonde_kjor_cotr, sonde_kjor_d95, sonde_kjor_d_dekomponering, sonde_kjor_dadj, sonde_kjor_faktor, sonde_kjor_fearnleys_mal, sonde_kjor_fond, sonde_kjor_fond_norge, sonde_kjor_gass_rigger, sonde_kjor_gass_tilbud, sonde_kjor_indikator, sonde_kjor_instrumenttest, sonde_kjor_jernmalm_flagg, sonde_kjor_kali_platina, sonde_kjor_kull_flagg, sonde_kjor_kurve, sonde_kjor_kurve_a, sonde_kjor_kurve_papirer, sonde_kjor_laks, sonde_kjor_laks_valuta, sonde_kjor_land, sonde_kjor_macrotrends, sonde_kjor_oljeservice, sonde_kjor_oslo_askaar, sonde_kjor_oslo_univers, sonde_kjor_regel_foer2011, sonde_kjor_rigg, sonde_kjor_rigg_b, sonde_kjor_rigg_segment, sonde_kjor_rigg_slitasje, sonde_kjor_salg, sonde_kjor_sgx_cot, sonde_kjor_smolt, sonde_kjor_solv_signal, sonde_kjor_stockanalysis, sonde_kjor_terskel, sonde_kjor_timing, sonde_kjor_tio, sonde_kjor_uran, sonde_kjor_uran_spread, sonde_kjor_utbytte, sonde_kjor_utforsk_etf, sonde_kjor_vale
+Hopper over 68 ferdige sonder (sonder_ferdige.txt): sonde_kjor_a_terskel, sonde_kjor_aluminium_tilbud, sonde_kjor_b_dda, sonde_kjor_b_fmg, sonde_kjor_b_gass, sonde_kjor_b_haleregel, sonde_kjor_b_jernmalm, sonde_kjor_b_kilder, sonde_kjor_b_mekanisme, sonde_kjor_b_signal, sonde_kjor_b_signal_v2, sonde_kjor_backtest, sonde_kjor_backtest_lang, sonde_kjor_bdi, sonde_kjor_biomasse, sonde_kjor_brasil, sonde_kjor_c_manuell, sonde_kjor_c_manuell2, sonde_kjor_c_manuell3, sonde_kjor_c_produksjon, sonde_kjor_c_rente, sonde_kjor_c_spleis, sonde_kjor_cot, sonde_kjor_cot_palme_sgx, sonde_kjor_cotr, sonde_kjor_d95, sonde_kjor_d_dekomponering, sonde_kjor_dadj, sonde_kjor_faktor, sonde_kjor_fearnleys_mal, sonde_kjor_fond, sonde_kjor_fond_norge, sonde_kjor_gass_rigger, sonde_kjor_gass_tilbud, sonde_kjor_indikator, sonde_kjor_instrumenttest, sonde_kjor_jernmalm_flagg, sonde_kjor_kali_platina, sonde_kjor_kull_flagg, sonde_kjor_kurve, sonde_kjor_kurve_a, sonde_kjor_kurve_papirer, sonde_kjor_laks, sonde_kjor_laks_valuta, sonde_kjor_land, sonde_kjor_macrotrends, sonde_kjor_oljeservice, sonde_kjor_oslo_askaar, sonde_kjor_oslo_univers, sonde_kjor_regel_foer2011, sonde_kjor_regime, sonde_kjor_rigg, sonde_kjor_rigg_b, sonde_kjor_rigg_segment, sonde_kjor_rigg_slitasje, sonde_kjor_salg, sonde_kjor_sgx_cot, sonde_kjor_smolt, sonde_kjor_solv_signal, sonde_kjor_stockanalysis, sonde_kjor_terskel, sonde_kjor_timing, sonde_kjor_tio, sonde_kjor_uran, sonde_kjor_uran_spread, sonde_kjor_utbytte, sonde_kjor_utforsk_etf, sonde_kjor_vale
 
 Oppstarter: 1 sonde(r) funnet
 
-=== sonde_kjor_regime ===
-Raavarer: 18 segmenter, 1965-01 til 2026-09
-Papirer og fond: 70 med kurs, uker 1990-01-05 til 2026-10-16
-   enheter, siste (mrd USD): Fed-balanse 6748, statskassen 880, reverse repo 0
-   sentralbanker siste (mrd USD): Fed 6743, ECB 6785, BoJ 3996
+=== sonde_kjor_regime_forste ===
+{
+ "id": "regime",
+ "laget": "2026-10-15",
+ "mnd": "2026-09",
+ "vekst": {
+  "ord": "bred oppgang",
+  "bredde": 0.71,
+  "kobber_gull_12m": 20.8
+ },
+ "sjokk": {
+  "ord": "rolig",
+  "vix": 15.8,
+  "vix_pct": 36.0,
+  "korr_papirer": 0.13,
+  "korr_pct": 17.0
+ },
+ "boom": {
+  "ord": "nei",
+  "median_A": 22.4,
+  "grense": 17.0
+ },
+ "kreditt": 1.48,
+ "kreditt_pct": 3.0,
+ "rentekurve": 0.34,
+ "likviditet": {
+  "dato": "2026-10-14",
+  "fed_netto_mrd": 5867.0,
+  "fed_netto_13u_pst": -2.0,
+  "rrp_mrd": 0.0,
+  "rrp_topp_mrd": 2367.0,
+  "rrp_topp_dato": "2022-09-28",
+  "tga_mrd": 880.0,
+  "fed_balanse_mrd": 6748.0,
+  "sb_mnd": "2026-09",
+  "sb_sum_mrd": 17524.0,
+  "sb_6m_pst": -2.4,
+  "serie": [
+   {
+    "t": "2021-11",
+    "netto": 7065.0,
+    "n13": 2.6
+   },
+   {
+    "t": "2021-12",
+    "netto": 6903.0,
+    "n13": 1.0
+   },
+   {
+    "t": "2022-01",
+    "netto": 6633.0,
+    "n13": -4.1
+   },
+   {
+    "t": "2022-02",
+    "netto": 6492.0,
+    "n13": -8.5
+   },
+   {
+    "t": "2022-03",
+    "netto": 6576.0,
+    "n13": -4.9
+   },
+   {
+    "t": "2022-04",
+    "netto": 6192.0,
+    "n13": -6.9
+   },
+   {
+    "t": "2022-05",
+    "netto": 6097.0,
+    "n13": -6.3
+   },
+   {
+    "t": "2022-06",
+    "netto": 5930.0,
+    "n13": -10.3
+   },
+   {
+    "t": "2022-07",
+    "netto": 6098.0,
+    "n13": -1.5
+   },
+   {
+    "t": "2022-08",
+    "netto": 5963.0,
+    "n13": -3.3
+   },
+   {
+    "t": "2022-09",
+    "netto": 5739.0,
+    "n13": -3.3
+   },
+   {
+    "t": "2022-10",
+    "netto": 5902.0,
+    "n13": -3.3
+   },
+   {
+    "t": "2022-11",
+    "netto": 5957.0,
+    "n13": -0.1
+   },
+   {
+    "t": "2022-12",
+    "netto": 5830.0,
+    "n13": 1.6
+   },
+   {
+    "t": "2023-01",
+    "netto": 5947.0,
+    "n13": 0.8
+   },
+   {
+    "t": "2023-02",
+    "netto": 5791.0,
+    "n13": -4.8
+   },
+   {
+    "t": "2023-03",
+    "netto": 6258.0,
+    "n13": 7.1
+   },
+   {
+    "t": "2023-04",
+    "netto": 5992.0,
+    "n13": 0.7
+   },
+   {
+    "t": "2023-05",
+    "netto": 6082.0,
+    "n13": 4.3
+   },
+   {
+    "t": "2023-06",
+    "netto": 6005.0,
+    "n13": -4.1
+   },
+   {
+    "t": "2023-07",
+    "netto": 5950.0,
+    "n13": -0.7
+   },
+   {
+    "t": "2023-08",
+    "netto": 5954.0,
+    "n13": -2.1
+   },
+   {
+    "t": "2023-09",
+    "netto": 5878.0,
+    "n13": -2.1
+   },
+   {
+    "t": "2023-10",
+    "netto": 5973.0,
+    "n13": 0.4
+   },
+   {
+    "t": "2023-11",
+    "netto": 6143.0,
+    "n13": 3.1
+   },
+   {
+    "t": "2023-12",
+    "netto": 6163.0,
+    "n13": 4.7
+   },
+   {
+    "t": "2024-01",
+    "netto": 6173.0,
+    "n13": 3.4
+   },
+   {
+    "t": "2024-02",
+    "netto": 6212.0,
+    "n13": 1.1
+   },
+   {
+    "t": "2024-03",
+    "netto": 6164.0,
+    "n13": 0.0
+   },
+   {
+    "t": "2024-04",
+    "netto": 6020.0,
+    "n13": -3.6
+   },
+   {
+    "t": "2024-05",
+    "netto": 6121.0,
+    "n13": -1.5
+   },
+   {
+    "t": "2024-06",
+    "netto": 5976.0,
+    "n13": -3.1
+   },
+   {
+    "t": "2024-07",
+    "netto": 5979.0,
+    "n13": -0.5
+   },
+   {
+    "t": "2024-08",
+    "netto": 5988.0,
+    "n13": -2.2
+   },
+   {
+    "t": "2024-09",
+    "netto": 5857.0,
+    "n13": -2.0
+   },
+   {
+    "t": "2024-10",
+    "netto": 5949.0,
+    "n13": -0.5
+   },
+   {
+    "t": "2024-11",
+    "netto": 5960.0,
+    "n13": -0.5
+   },
+   {
+    "t": "2024-12",
+    "netto": 5940.0,
+    "n13": 1.4
+   },
+   {
+    "t": "2025-01",
+    "netto": 5912.0,
+    "n13": -0.6
+   },
+   {
+    "t": "2025-02",
+    "netto": 5959.0,
+    "n13": -0.0
+   },
+   {
+    "t": "2025-03",
+    "netto": 6139.0,
+    "n13": 3.3
+   },
+   {
+    "t": "2025-04",
+    "netto": 5863.0,
+    "n13": -0.8
+   },
+   {
+    "t": "2025-05",
+    "netto": 6032.0,
+    "n13": 1.2
+   },
+   {
+    "t": "2025-06",
+    "netto": 6087.0,
+    "n13": -0.8
+   },
+   {
+    "t": "2025-07",
+    "netto": 6117.0,
+    "n13": 4.2
+   },
+   {
+    "t": "2025-08",
+    "netto": 5979.0,
+    "n13": -0.9
+   },
+   {
+    "t": "2025-09",
+    "netto": 5774.0,
+    "n13": -5.3
+   },
+   {
+    "t": "2025-10",
+    "netto": 5610.0,
+    "n13": -8.7
+   },
+   {
+    "t": "2025-11",
+    "netto": 5647.0,
+    "n13": -5.7
+   },
+   {
+    "t": "2025-12",
+    "netto": 5697.0,
+    "n13": -1.3
+   },
+   {
+    "t": "2026-01",
+    "netto": 5663.0,
+    "n13": 1.0
+   },
+   {
+    "t": "2026-02",
+    "netto": 5725.0,
+    "n13": 1.4
+   },
+   {
+    "t": "2026-03",
+    "netto": 5782.0,
+    "n13": 0.7
+   },
+   {
+    "t": "2026-04",
+    "netto": 5717.0,
+    "n13": 0.9
+   },
+   {
+    "t": "2026-05",
+    "netto": 5872.0,
+    "n13": 2.5
+   },
+   {
+    "t": "2026-06",
+    "netto": 5812.0,
+    "n13": 0.5
+   },
+   {
+    "t": "2026-07",
+    "netto": 5825.0,
+    "n13": 1.9
+   },
+   {
+    "t": "2026-08",
+    "netto": 5779.0,
+    "n13": -1.6
+   },
+   {
+    "t": "2026-09",
+    "netto": 5783.0,
+    "n13": -1.0
+   },
+   {
+    "t": "2026-10",
+    "netto": 5867.0,
+    "n13": -2.0
+   }
+  ]
+ },
+ "analoger": [
+  {
+   "t": "2006-02",
+   "avstand": 1.27,
+   "naer": null
+  },
+  {
+   "t": "2024-05",
+   "avstand": 1.43,
+   "naer": null
+  },
+  {
+   "t": "2021-11",
+   "avstand": 1.53,
+   "naer": "gjenåpningen"
+  },
+  {
+   "t": "2005-08",
+   "avstand": 1.61,
+   "naer": null
+  },
+  {
+   "t": "2018-06",
+   "avstand": 1.67,
+   "naer": "renter og handelskrig"
+  }
+ ],
+ "analog_dim": [
+  "bredde",
+  "median_A",
+  "vix_pct",
+  "korr_pct",
+  "kreditt_pct",
+  "rentekurve"
+ ],
+ "kilder": "Råvarer: priser_mnd.csv. Papirer og VIX: Yahoo. Kreditt, rentekurve og likviditet: FRED (BAA10Y, T10Y2Y, WALCL, WTREGEN, RRPONTSYD, ECBASSETSW, JPNASSETS, DEXUSEU, DEXJPUS)."
+}
 
-1. SJOKK (absorpsjon, punkt-i-tid-persentil)
-
-   2008-10 (finanskrisen): absorpsjon 0.63, persentil maks 100; snittkorr papirer 0.58; VIX-persentil 100
-   2011-08 (eurokrisen og USAs kredittvurdering): absorpsjon 0.63, persentil maks 97; snittkorr papirer 0.56; VIX-persentil 96
-   2020-03 (covid): absorpsjon 0.56, persentil maks 94; snittkorr papirer 0.50; VIX-persentil 99
-   maaneder paa 95 eller mer: 18, utenfor kjent stress: 7 (2005-04, 2005-05, 2005-06, 2006-05, 2006-06, 2006-07, 2009-07)
-   -> SJOKK HOLDER IKKE
-   kontroll korr_papirer  : persentil 2008/2011/2020 100/97/96, 20 mnd paa 95+, andel utenfor stress 35%
-   kontroll korr_raavarer : persentil 2008/2011/2020 87/86/70, 6 mnd paa 95+, andel utenfor stress 100%
-   kontroll vix           : persentil 2008/2011/2020 100/96/99, 21 mnd paa 95+, andel utenfor stress 0%
-
-2. VEKST (bredde: andel raavarer opp over 12 mnd)
-
-   2003-01..2008-06: 0.77 (krav > 0,6) ok
-   2021-01..2022-06: 0.82 (krav > 0,6) ok
-   2001-06..2002-06: 0.34 (krav < 0,4) ok
-   2008-11..2009-06: 0.15 (krav < 0,4) ok
-   2015-01..2016-03: 0.13 (krav < 0,4) ok
-   2020-03..2020-08: 0.26 (krav < 0,4) ok
-   -> VEKST HOLDER
-
-3. BILLIG (median A; oeverste tiendedel fra 1990 >= 92.6, nederste <= 17.0)
-
-   2009-02 (): maks 42.0 NEI
-   2016-01 (raavarebunnen): maks 68.2 NEI
-   2020-04 (): maks 69.8 NEI
-   2008-06 (raavaretoppen): min 6.2 ok
-   2022-06 (inflasjon og renteoppgang): min 15.2 ok
-   -> BILLIG HOLDER IKKE
-
-4. LIKVIDITET (beskrivende)
-
-   2008-12: Fed netto    2125 mrd (13 uker +36.5 %), reverse repo      0, sentralbanker    6346 mrd (6 mnd +43.2 %)
-   2011-06: Fed netto    2757 mrd (13 uker  +7.3 %), reverse repo      0, sentralbanker    7317 mrd (6 mnd +10.1 %)
-   2014-10: Fed netto    4234 mrd (13 uker  +0.1 %), reverse repo    135, sentralbanker    9743 mrd (6 mnd  +0.5 %)
-   2018-12: Fed netto    3701 mrd (13 uker  -3.1 %), reverse repo      1, sentralbanker   14310 mrd (6 mnd  -1.7 %)
-   2019-09: Fed netto    3543 mrd (13 uker  -0.8 %), reverse repo      0, sentralbanker   14263 mrd (6 mnd  -0.1 %)
-   2020-06: Fed netto    5458 mrd (13 uker +13.6 %), reverse repo      0, sentralbanker   20136 mrd (6 mnd +31.9 %)
-   2021-12: Fed netto    6903 mrd (13 uker  +1.0 %), reverse repo   1643, sentralbanker   24796 mrd (6 mnd  +2.9 %)
-   2022-12: Fed netto    5830 mrd (13 uker  +1.6 %), reverse repo   2293, sentralbanker   22195 mrd (6 mnd  -6.6 %)
-   2023-12: Fed netto    6163 mrd (13 uker  +4.7 %), reverse repo    819, sentralbanker   20488 mrd (6 mnd  -4.1 %)
-   2024-12: Fed netto    5940 mrd (13 uker  +1.4 %), reverse repo    181, sentralbanker   18406 mrd (6 mnd  -3.3 %)
-   2026-10: Fed netto    5867 mrd (13 uker  -2.0 %), reverse repo      0, sentralbanker     nan mrd (6 mnd  +nan %)
-
-5. I DAG OG ANALOGER
-
-   2026-09: absorpsjon 0.24 (persentil 6), snittkorr papirer 0.13, VIX-persentil 36, kreditt 1.48, rentekurve 0.34
-   bredde 0.71, kobber mot gull 12 mnd +20.8 %, median A 22.4, andel i bunnsonen 0.00, spredning 48.3
-   naermeste maaneder (over absorpsjon_pct, bredde, median_A, vix_pct, kreditt_pct, rentekurve), minst 24 mnd tilbake:
-      2021-11  avstand 1.39  (naer Ukraina, 2022-03)
-      2024-05  avstand 1.45
-      2006-02  avstand 1.55
-      2018-06  avstand 1.84  (naer renteoppgang og handelskrig, 2018-12)
-      2005-08  avstand 2.12
-      2023-09  avstand 2.14
-      2006-12  avstand 2.15
-      2017-11  avstand 2.20
-
-6. OPPSUMMERING: sjokk holder ikke, vekst holder, billig holder ikke, likviditet beskrivende
-Lagret sonder/regime.csv
-
---- skrevet til sonder/sonde_kjor_regime.txt (54 s, kode 0)
+--- skrevet til sonder/sonde_kjor_regime_forste.txt (41 s, kode 0)
 
 
 OPPSUMMERING
-   OK    sonde_kjor_regime                           54 s  -> sonder/sonde_kjor_regime.txt
+   OK    sonde_kjor_regime_forste                    41 s  -> sonder/sonde_kjor_regime_forste.txt
