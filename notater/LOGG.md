@@ -9,6 +9,33 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 15.10.2026 13:28, Claude Code
+**Hva:** Ny sonde `sonde_kjor_regime.py`, steg 1 av regimepanelet (Frodes
+bestilling, med global likviditet lagt til). Kjørt i Actions (FRED svarer
+ikke lokalt). Kriteriene satt før kjøring, i toppen av fila.
+1. **Sjokk (absorpsjon, første hovedkomponent over 70 papirer og fond, 13
+   uker): holder ikke.** Persentil 100, 97 og 94 i 2008, 2011 og 2020 (2020
+   bommet med ett poeng), og 7 av 18 toppmåneder utenfor kjent stress
+   (2005 til 2006, få papirer da). Kontrollene som ble vist ved siden av
+   klarer samme krav: snittkorrelasjon mellom papirene (100, 97, 96; 35 %
+   utenfor) og VIX (100, 96, 99; 0 % utenfor). Korrelasjonen mellom
+   råvarene på månedsdata virker ikke (alle toppene utenfor stress).
+2. **Vekst (andel råvarer opp over 12 mnd): holder.** 0,77 og 0,82 i
+   2003 til 2008 og 2021 til 2022; 0,13 til 0,34 i avmatningene.
+3. **Billig bredt (median A): holder ikke.** Toppene fanges (6 i 2008, 15 i
+   2022), bunnene ikke (median A bare 42, 68 og 70 i 2009, 2016, 2020).
+4. **Likviditet (beskrivende):** Feds netto likviditet (balanse minus
+   statskassen minus reverse repo) 5 867 mrd, -2,0 % på 13 uker; reverse
+   repo ca. 0 (2 293 mrd i desember 2022); Fed, ECB og BoJ samlet -2,4 %
+   på 6 mnd.
+5. **I dag:** lite stress (absorpsjon persentil 6, VIX 36), bred oppgang
+   (0,71), kobber mot gull +21 %, median A 22. Nærmeste måneder: 2021-11,
+   2024-05, 2006-02, 2018-06.
+**Filer:** `sonde_kjor_regime.py`, `sonder/sonde_kjor_regime.txt`,
+`sonder/regime.csv`, `sonder_ferdige.txt`.
+**Cowork må vite:** Ingen endring på bordet ennå. Frode avgjør steg 2
+(panelet).
+
 ### 14.10.2026 11:54, Claude Code
 **Hva:** Ny sonde `sonde_kjor_jernmalm_flagg.py` (Frodes spørsmål: kan
 bunnflagget for jernmalm optimaliseres?). Samme oppsett som for kull,
