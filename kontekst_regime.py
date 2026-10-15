@@ -16,6 +16,9 @@
 #   LIKVIDITET Feds netto likviditet (WALCL minus WTREGEN minus RRPONTSYD),
 #              endring 13 uker, reverse repo, og Fed, ECB og BoJ i USD,
 #              endring 6 mnd. Beskrivende, for faa sykluser til aa teste.
+#   SIDEN      vekst.nedgang_siden og sjokk.sjokk_siden: foerste maaned i
+#              den pagaaende perioden med bred nedgang eller sjokk (15.10.2026),
+#              til teksten om ventetid under panelet.
 #   ANALOGER   naermeste tidligere maaneder over bredde, median A, VIX,
 #              papirkorrelasjon, kreditt (BAA10Y) og rentekurve (T10Y2Y).
 # Ordene i feltene (rolig, uro, sjokk osv.) bruker grensene fra sonden: 0,6 og
@@ -189,6 +192,18 @@ def beregn(priser_csv, note=print):
     sjokk = "sjokk" if sj >= 95 else ("uro" if sj >= 80 else "rolig")
     boom = "alt dyrt" if r.median_A <= q10 else "nei"
 
+    def start_av(maske):
+        """Foerste maaned i den sammenhengende perioden som slutter i siste maaned, eller None."""
+        m = maske.loc[:siste].dropna()
+        if not len(m) or not m.iloc[-1]:
+            return None
+        i = len(m) - 1
+        while i > 0 and m.iloc[i - 1]:
+            i -= 1
+        return str(m.index[i])
+    nedgang_siden = start_av(M.bredde <= 0.4)
+    sjokk_siden = start_av(M[["vix_pct", "korr_pct"]].max(axis=1) >= 95)
+
     dims = [k for k in ("bredde", "median_A", "vix_pct", "korr_pct", "kreditt_pct", "rentekurve") if k in M]
     X = M[dims].dropna()
     Z = (X - X.mean()) / X.std()
@@ -209,9 +224,11 @@ def beregn(priser_csv, note=print):
               "vix_pct": _r(M.vix_pct.get(t), 0), "korr_pct": _r(M.korr_pct.get(t), 0)}
              for t in M.index[M.index <= siste][-60:]]
     return {"id": "regime", "laget": str(dt.date.today()), "mnd": str(siste),
-            "vekst": {"ord": vekst, "bredde": _r(r.bredde, 2), "kobber_gull_12m": _r(r.kobber_gull_12m, 1)},
+            "vekst": {"ord": vekst, "bredde": _r(r.bredde, 2), "kobber_gull_12m": _r(r.kobber_gull_12m, 1),
+                      "nedgang_siden": nedgang_siden},
             "sjokk": {"ord": sjokk, "vix": _r(r.vix, 1), "vix_pct": _r(r.vix_pct, 0),
-                      "korr_papirer": _r(r.korr_papirer, 2), "korr_pct": _r(r.korr_pct, 0)},
+                      "korr_papirer": _r(r.korr_papirer, 2), "korr_pct": _r(r.korr_pct, 0),
+                      "sjokk_siden": sjokk_siden},
             "boom": {"ord": boom, "median_A": _r(r.median_A, 1), "grense": _r(q10, 1)},
             "kreditt": _r(r.get("kreditt"), 2), "kreditt_pct": _r(r.get("kreditt_pct"), 0),
             "rentekurve": _r(r.get("rentekurve"), 2), "likviditet": lik, "analoger": analoger,

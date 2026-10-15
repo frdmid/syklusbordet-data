@@ -163,8 +163,10 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
   privat dashbord, IAI). Alle tre Challengerne kjører fra 14.10.
 - `challenger_kull_ar95_v1` fra 21.10.2026 (Frodes valg, ikke testet som
   regel): bunnsone for kull = rullende A 95 og detrendet A 80. Vises i
-  kullpanelet (dashbordet v63). 21.10: sjekk at manifestet har fire
-  Challengere ok.
+  kullpanelet (dashbordet v63).
+- `challenger_bred_nedgang_v1` fra 21.10.2026: bunnsone bare når 40 % eller
+  færre av råvarene er i oppgang. Boksen «Hva testene sier om å handle»
+  under regimepanelet (dashbordet v65). 21.10: fem Challengere ok.
 - Regimepanelet («Regime nå», dashbordet v64, fra 15.10.2026): `kontekst_regime.py`
   skriver `regime.json` hver uke via `shadow_challenger.kjor`; onsdagsrutinen
   steg 6i skriver marked/regime. Kontekst, ikke testet som signal. Steg 3

@@ -9,6 +9,30 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 15.10.2026 13:55, Claude Code
+**Hva:** (1) `challenger_bred_nedgang_v1` registrert fra 21.10.2026 (Frodes
+beslutning): bunnsone = Championens bottom_zone OG bredde 0,4 eller lavere
+(andel råvaresegmenter i `serier/priser_mnd.csv` med høyere realpris enn 12
+mnd før, samme mål som regimepanelet). Alle segmenter; alt annet er
+Championens. Bakgrunn `sonde_kjor_regime_flagg` (+33 % mot -3 % på 24 mnd,
+in-sample, utvidelse etter regimesonden). Beslutningsregel: ingen konklusjon
+før tre nye makroklynger har modnet. Prøvekjørt på Champion W42: 105 rader,
+bredde 0,706, ingen bunnsone. Kontrollen uten avvik, tester består.
+(2) `kontekst_regime.py`: nye felt `vekst.nedgang_siden` og
+`sjokk.sjokk_siden` (start på pågående bred nedgang eller sjokk), kommer i
+`regime.json` fra 21.10.
+(3) Dashbordet versjon 65: boksen «Hva testene sier om å handle» under
+regimepanelet. En linje for dagens regime (bred nedgang og hvor lenge, sjokk,
+eller ingen grunn til å handle) og tre punkter: vent 9 til 12 mnd etter
+start på bred nedgang; bunnflagg i bred nedgang er de beste (Challenger fra
+21.10); vurder å vente ca. en måned etter sjokk (ikke testet regel). Merket
+som historikk, ikke råd.
+**Filer:** `challengers/bred_nedgang.py`, `challengers/spes_bred_nedgang_v1.json`,
+`config/challengers/challenger_bred_nedgang_v1.json`, `shadow/model_registry.csv`,
+`kontekst_regime.py`, `notater/OVERLEVERING.md`.
+**Cowork må vite:** 21.10 skal manifestet ha fem Challengere ok (gass, laks,
+olje, kull, bred nedgang).
+
 ### 15.10.2026 13:50, Claude Code
 **Hva:** Ny sonde `sonde_kjor_regime_ventetid.py` (Frodes spørsmål: hvor lenge
 etter et regimeskifte bør man vurdere inngang?). Hendelsesstudie,

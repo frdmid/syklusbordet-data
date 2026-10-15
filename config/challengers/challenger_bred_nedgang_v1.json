@@ -1,0 +1,38 @@
+{
+ "model": {
+  "id": "challenger_bred_nedgang_v1",
+  "status": "challenger",
+  "created_at": "2026-10-15",
+  "effective_from": "2026-10-21",
+  "parent_model": "champion_v1_1",
+  "data_schema_version": 1
+ },
+ "spesifikasjon": {
+  "hypothesis": "Championens bunnflagg gir høyere avkastning når det kommer i bred nedgang, altså når 40 % eller færre av råvarene har høyere realpris enn for ett år siden. Da er fallet syklisk og felles; ellers er det oftere én råvare i trøbbel av egne grunner.",
+  "changed_variables": [
+   "bottom_zone for alle segmenter: Championens bottom_zone OG bredde <= 0,4 (andel råvaresegmenter med høyere realpris enn 12 mnd før)"
+  ],
+  "unchanged_variables": [
+   "watch, B, C, D, d95 og papirene",
+   "regel for ny episode (12 mnd)",
+   "holdetid og primært utfall (24 mnd)",
+   "referanser OSEBX og MSCI World (IWDA.L)",
+   "måling i NOK"
+  ],
+  "primary_endpoint": "Avkastning i NOK for papirene 24 måneder etter hypothetical_entry, mot OSEBX, og mot Championens innganger i samme periode.",
+  "expected_direction": "høyere",
+  "decision_rule": "Ingen konklusjon før minst tre nye makroklynger har modnet på 24 måneder. Støttet hvis papirene slår OSEBX i minst to av tre (eller tilsvarende andel ved flere), medianen er positiv, og Championens flagg utenfor bred nedgang i samme periode gjør det dårligere. Ellers forkastet.",
+  "modul": "challengers/bred_nedgang.py",
+  "data": "Ingen egne data. Championens bottom_zone og serier/priser_mnd.csv (realpris per råvaresegment), som regimepanelet.",
+  "evidence_type_before_start": "IN_SAMPLE: sonde_kjor_regime_flagg (15.10.2026), 15 makroklynger fra 1995, +33 % mot -3 % over 24 mnd, p 0,033. Utvidelse etter at regimesonden var kjent; holdt ikke på 1 til 12 mnd.",
+  "notes": "Frodes beslutning 15.10.2026.",
+  "kodefiler": {
+   "challengers/bred_nedgang.py": "5194c9c8b32b445046f8789cff27b3744304b524f4715f152a720f9c5de1b2fc"
+  }
+ },
+ "metadata": {
+  "code_commit": null,
+  "notes": "Frodes beslutning 15.10.2026.",
+  "specification_hash": "2d0db044f9e2322f28b6a2904c7deeea92f4efe7cdf250ee8faaaf708d4d434a"
+ }
+}
