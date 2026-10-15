@@ -1,8 +1,8 @@
 sonde:   sonde_kjor_regime
-kjort:   2026-10-15 11:24:49 UTC
-commit:  6d9c5b3
+kjort:   2026-10-15 11:27:15 UTC
+commit:  1d380c6
 status:  OK
-brukte:  49 sekunder
+brukte:  54 sekunder
 --------------------------------------------------------------
 Raavarer: 18 segmenter, 1965-01 til 2026-09
 Papirer og fond: 70 med kurs, uker 1990-01-05 til 2026-10-16

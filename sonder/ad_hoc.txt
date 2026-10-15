@@ -69,8 +69,8 @@ Papirer og fond: 70 med kurs, uker 1990-01-05 til 2026-10-16
 6. OPPSUMMERING: sjokk holder ikke, vekst holder, billig holder ikke, likviditet beskrivende
 Lagret sonder/regime.csv
 
---- skrevet til sonder/sonde_kjor_regime.txt (49 s, kode 0)
+--- skrevet til sonder/sonde_kjor_regime.txt (54 s, kode 0)
 
 
 OPPSUMMERING
-   OK    sonde_kjor_regime                           49 s  -> sonder/sonde_kjor_regime.txt
+   OK    sonde_kjor_regime                           54 s  -> sonder/sonde_kjor_regime.txt
