@@ -9,6 +9,36 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 15.10.2026 13:38, Claude Code
+**Hva:** Regimepanelet, steg 2 (Frodes bestilling). Kontekst, ikke testet som
+signal, ikke i flagget, ikke shadow-data.
+1. `kontekst_regime.py` (ny) skriver `regime.json` hver uke: vekst (andel
+   råvarer opp over 12 mnd, kobber mot gull), sjokk (VIX og
+   snittkorrelasjonen mellom papirene, persentiler; valgt etter regimesonden
+   fordi sondens eget mål feilet), boom (median A, bare toppene), likviditet
+   (Feds netto likviditet = WALCL minus WTREGEN minus RRPONTSYD, endring 13
+   uker, reverse repo, Fed + ECB + BoJ i USD, endring 6 mnd), kreditt
+   (BAA10Y), rentekurve (T10Y2Y) og fem analoger. Ord: bred oppgang fra 0,6,
+   bred nedgang under 0,4; uro fra persentil 80, sjokk fra 95; alt dyrt
+   under nederste tiendedel av median A siden 1990.
+2. Kalles fra `shadow_challenger.kjor` etter `kontekst_laks` (løkke over
+   begge). Ingen av filene er hashet av Champion eller Challengerne; tester
+   består.
+3. Onsdagsrutinen (trig_01HoJvyjwZRq5J4QNcXoFkr3) har fått steg 6i
+   (marked/regime, samme datokrav som 6f og 6g) og en linje i rapporten.
+   Kontrollert: bare prompten er endret.
+4. Første `regime.json` laget i Actions (`sonde_kjor_regime_forste`, FRED
+   svarer ikke lokalt) og skrevet til marked/regime. Dashbordet versjon 64:
+   boksen «Regime nå» øverst med fire felt, kurver for fem år og analoger.
+   I dag: bred oppgang (0,71), rolig (VIX persentil 36, korrelasjon 17),
+   ikke boom (median A 22), Fed netto -2,0 % på 13 uker, reverse repo 0.
+**Filer:** `kontekst_regime.py`, `shadow_challenger.py`,
+`sonde_kjor_regime_forste.py`, `sonder/regime_forste.json`,
+`sonder_ferdige.txt`, `notater/OVERLEVERING.md`.
+**Cowork må vite:** 21.10: sjekk at `regime.json` har dagens dato og at
+rutinen skrev marked/regime. Frodes merknad: et sjokkmål som ikke slår ut på
+covid er for stramt; panelets mål (VIX og papirkorrelasjon) slo ut i 2020.
+
 ### 15.10.2026 13:28, Claude Code
 **Hva:** Ny sonde `sonde_kjor_regime.py`, steg 1 av regimepanelet (Frodes
 bestilling, med global likviditet lagt til). Kjørt i Actions (FRED svarer

@@ -165,6 +165,10 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
   regel): bunnsone for kull = rullende A 95 og detrendet A 80. Vises i
   kullpanelet (dashbordet v63). 21.10: sjekk at manifestet har fire
   Challengere ok.
+- Regimepanelet («Regime nå», dashbordet v64, fra 15.10.2026): `kontekst_regime.py`
+  skriver `regime.json` hver uke via `shadow_challenger.kjor`; onsdagsrutinen
+  steg 6i skriver marked/regime. Kontekst, ikke testet som signal. Steg 3
+  (virker flaggene ulikt i ulike regimer?) er ikke kjørt.
 - Kvartalsvis tilbudsskår kjørt for hånd 14.10: ingen tall endret mot 01.10
   (ingen nye årsregnskap). Neste planlagte kjøring 5. november.
 - Terminkurven er testet mot A og mot papirene for WTI og Henry Hub (13.10,
