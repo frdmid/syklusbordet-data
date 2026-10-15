@@ -9,6 +9,25 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 15.10.2026 13:47, Claude Code
+**Hva:** Ny sonde `sonde_kjor_regime_horisont.py` (Frodes bestilling: de tre
+regimehypotesene på 1, 3, 6 og 12 mnd). Samme flagg og klynger som
+`sonde_kjor_regime_flagg`; 34 innganger i 16 klynger (en inngang mai 2025
+med kjente korte utfall). Utvidelse etter at 24 mnd var kjent, derfor
+korrigert over alle 12 testene. Kriteriene satt før kjøring.
+**Resultat: ingen holder på 1 til 12 mnd.**
+- H2 bred nedgang: -1, 0, +21 og +14 pp på 1, 3, 6 og 12 mnd (6 mnd
+  p 0,054, ikke gjennom korreksjonen; 12 mnd snur fortegn etter 2010).
+  Gevinsten kommer først på 6 til 24 mnd.
+- H1 sjokk: -2, -9, -16 og +22 pp. Flagg i uro eller sjokk har gitt
+  videre fall de første 3 til 6 månedene, og tatt igjen på 12 mnd.
+  Papirene mot SPY peker motsatt vei på 3 til 12 mnd (+5 til +23 pp).
+- H3 likviditet: for få klynger (7 mot 2).
+**Filer:** `sonde_kjor_regime_horisont.py`, `sonder/sonde_kjor_regime_horisont.txt`,
+`sonder_ferdige.txt`.
+**Cowork må vite:** Ingen endring. Regimet hjelper ikke på kort timing;
+bred nedgang (24 mnd) er det eneste som holder.
+
 ### 15.10.2026 13:42, Claude Code
 **Hva:** Ny sonde `sonde_kjor_regime_flagg.py`, steg 3 av regimepanelet:
 virker bunnflaggene ulikt i ulike regimer? Championens bunnsone for 18
