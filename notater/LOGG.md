@@ -9,6 +9,32 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 15.10.2026 14:01, Claude Code
+**Hva:** (1) Ny sonde `sonde_kjor_ventetid_hold.py` (Frodes bestilling: kjøp
+papirene 9 mnd etter at en bred nedgang starter, hold 1, 3, 6, 12 og 24
+mnd). 16 skifter fra 1991 (15 med 12 og 24 mnd utfall). Sammenlignet med
+inngang i en tilfeldig måned; kriteriene satt før kjøring (9 mnd valgt etter
+`sonde_kjor_regime_ventetid`). **Ingen holdetid holder.** Median for
+papirene mot alle måneder: 1 mnd +3,0 mot +1,0 % (p 0,10), 3 mnd -0,1 mot
++2,7, 6 mnd +0,8 mot +4,2, 12 mnd +0,1 mot +8,1, 24 mnd +23,0 mot +9,9 %
+(bare 53 % av skiftene over, p 0,14). Mot SPY negativ for alle holdetider
+(-0,4 til -15 %). Spredningen er stor (24 mnd fra -59 til +81 %).
+(2) Dashbordet versjon 66: teksten under regimepanelet er rettet. Punkt 1
+sa at papirene ga +9 til +23 % etter 9 til 12 mnd venting; nå står det at
+ventingen unngår fallet, men at inngang da ikke har slått en tilfeldig
+måned og har ligget under S&P 500. Linjen for bred nedgang sier ikke lenger
+at ventetiden er «nådd» som et signal.
+(3) Prosjektdokumentasjonen oppdatert: `notater/OVERLEVERING.md` (rutinens
+steg 6f til 6i og 8, dashbordet v66 og databasedokumentet regime, nye filer
+i tabellen, «Status og åpne punkter per 15.10.2026» skrevet på nytt med
+modellene, regimepanelet og funnene) og `notater/shadow_oos_plan.md`
+(tabell over registrerte Challengere, sjekk fra 21.10).
+**Filer:** `sonde_kjor_ventetid_hold.py`, `sonder/sonde_kjor_ventetid_hold.txt`,
+`sonder/ventetid_hold.csv`, `sonder_ferdige.txt`, `notater/OVERLEVERING.md`,
+`notater/shadow_oos_plan.md`.
+**Cowork må vite:** Les «Status og åpne punkter per 15.10.2026» i
+overleveringen. Ingen ny regel; teksten på dashbordet er gjort forsiktigere.
+
 ### 15.10.2026 13:55, Claude Code
 **Hva:** (1) `challenger_bred_nedgang_v1` registrert fra 21.10.2026 (Frodes
 beslutning): bunnsone = Championens bottom_zone OG bredde 0,4 eller lavere

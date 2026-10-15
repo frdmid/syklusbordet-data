@@ -44,13 +44,19 @@ loggen. Regler og terskler settes før kjøring og flyttes ikke etterpå.
    `kapitulasjon_d.py` → `priser.py` (alle prissegmenter, COT, kurve, VIX,
    dollar, kaller `flagglogg.py`) → `shipping.py` (Fearnleys, arkiverer PDF)
    → `bygg_shipping.py`, som til slutt kaller `endringer.uke()`,
-   `helse.kjor()` og `shadow_oos.kjor_actions()` (Shadow-OOS fra 07.10.2026). Skriptene skriver til repoet gjennom GitHub-API med
+   `helse.kjor()` og `shadow_oos.kjor_actions()` (Shadow-OOS fra 07.10.2026;
+   den kaller Challengerne og til slutt `kontekst_laks.py` og
+   `kontekst_regime.py`). Skriptene skriver til repoet gjennom GitHub-API med
    `GITHUB_TOKEN`; commits heter «oppdatert ...» og føres ikke i loggen.
 2. **Rutinen `trig_01HoJvyjwZRq5J4QNcXoFkr3`** («Syklusbordet: oppdater
    dashbordet fra GitHub»), onsdag rundt 09:16 UTC: henter filene fra repoet
-   og skriver dem til dashbordets database. Prompten har stegene 1 til 7 (6b
-   VIX, 6c dollar, 6d endringer, 6e helse). Den prøver ikke på nytt hvis den
-   feiler; det skjedde 30.09, og den ble kjørt på nytt for hånd.
+   og skriver dem til dashbordets database. Prompten har stegene 1 til 8 (6b
+   VIX, 6c dollar, 6d endringer, 6e helse, 6f gass_b, 6g laks_biomasse, 6h
+   alu_tilbud skal ikke røres, 6i regime fra 15.10; 8 ukeloggen i prosjektet
+   «Handelsalgoritme»). Endres med RemoteTrigger `update` og body
+   `{"prompt": ...}`; kontroller etterpå at bare prompten er endret. Den
+   prøver ikke på nytt hvis den feiler; det skjedde 30.09, og den ble kjørt
+   på nytt for hånd.
 3. **Dashbordet** leser databasen når det åpnes. Det trenger ikke publiseres
    for at nye tall skal vises.
 
@@ -69,7 +75,9 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 ## Dashbordet
 
 - Adresse: https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF (siste versjon
-  62 per 12.10; Cowork kan ha publisert senere).
+  66 per 15.10; Cowork kan ha publisert senere). Nytt fra 12.10: linjen
+  «Kull, rullende A 95» i kullpanelet (v63), boksen «Regime nå» øverst (v64)
+  med «Hva testene sier om å handle» under (v65, rettet i v66).
 - **Omslaget:** filen som Artifact `read` lagrer, begynner med vertens omslag
   (`<!doctype html><html><head><meta charset=utf8>...<body>`) og slutter med
   `</body></html>`. Ta bort begge før publisering, ellers kommer omslaget to
@@ -80,9 +88,9 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
   segmentets id, inkludert `ship_*`) og samlingen `marked` med dokumentene
   `vix`, `dollar`, `endringer`, `helse`, `gass_b` og `laks_biomasse` (de to
   siste fra 07.10, skrevet av Challengeren for gass og av `kontekst_laks.py`,
-  som `shadow_challenger.kjor` kaller hver uke), og `alu_tilbud` (fra 12.10,
-  skrevet for hånd månedlig med `alu_tilbud_privat.py` fra IAI-fila i
-  `data_privat/`).
+  som `shadow_challenger.kjor` kaller hver uke), `regime` (fra 15.10, skrevet
+  av `kontekst_regime.py` samme sted) og `alu_tilbud` (fra 12.10, skrevet for
+  hånd månedlig med `alu_tilbud_privat.py` fra IAI-fila i `data_privat/`).
 - **Kildekoden finnes bare i selve dashbordet.** Les alltid siste versjon med
   Artifact `read` før du endrer noe, og bygg på den. Ellers overskrives den
   andre øktens arbeid.
@@ -109,6 +117,8 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 | `helse.py` | Datahelse, etterslep per kilde står i toppen |
 | `shadow_oos.py` | Shadow-OOS: ukens frosne snapshot, hendelser og manifest i `shadow/`, bare tillegg. Plan og spørsmål i `notater/shadow_oos_plan.md` |
 | `shadow_challenger.py` | Challengere: registrering (`registrer <spesifikasjon.json>`) og ukentlig kjøring som egne grener. Regler i `challengers/<id>.py`, config i `config/challengers/`. Ikke frosset med Champion |
+| `challengers/` | Reglene for Challengerne (`<navn>.py`) og spesifikasjonene (`spes_<id>.json`); fem stykker per 15.10, se Åpne punkter |
+| `kontekst_laks.py`, `kontekst_regime.py` | Kontekst til dashbordet (`laks_biomasse.json`, `regime.json`), kalt fra `shadow_challenger.kjor`. Ikke hashet av noen modell |
 | `serier/priser_mnd.csv` | Hele månedsserien (nominell og real) per råvaresegment, skrevet av `priser.py` hver uke, til Challengere |
 | `test_shadow_oos.py` | Testene for shadow (`python test_shadow_oos.py`, lokalt, skriver ikke til repoet) |
 | `config/champion_v1_1.json` | Frosne regler for Champion v1.1 (fra 14.10.2026) og sha256 for de 16 kodefilene. `config/champion_v1_0.json` er v1.0, avløst fordi D hadde feil kursdata |
@@ -152,58 +162,58 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
   etter desember 2025 i de gamle seriene. Nye sonder og Challengere bør ikke
   hvile på dem; trend eller nye serier med basisår 2025.
 
-## Åpne punkter per 14.10.2026
+## Status og åpne punkter per 15.10.2026
 
-- **B på bordet er ikke endret** (Frodes beslutning 12.10: B for metallene
-  står som den er). Tilbudsmålene fra uke 41 er Challengere eller kontekst
-  som skriver til `shadow/` og `marked/`, aldri til `scores.B`:
-  `challenger_olje_rigger_v1` (Brent og WTI, ikke på dashbordet),
-  `challenger_gass_rigger_v1` (`gass_b.json`, linjen i Henry Hub-panelet),
-  `challenger_laks_tilbud_v1` (biomasse) og aluminium utenfor Kina (bare
-  privat dashbord, IAI). Alle tre Challengerne kjører fra 14.10.
-- `challenger_kull_ar95_v1` fra 21.10.2026 (Frodes valg, ikke testet som
-  regel): bunnsone for kull = rullende A 95 og detrendet A 80. Vises i
-  kullpanelet (dashbordet v63).
-- `challenger_bred_nedgang_v1` fra 21.10.2026: bunnsone bare når 40 % eller
-  færre av råvarene er i oppgang. Boksen «Hva testene sier om å handle»
-  under regimepanelet (dashbordet v65). 21.10: fem Challengere ok.
-- Regimepanelet («Regime nå», dashbordet v64, fra 15.10.2026): `kontekst_regime.py`
-  skriver `regime.json` hver uke via `shadow_challenger.kjor`; onsdagsrutinen
-  steg 6i skriver marked/regime. Kontekst, ikke testet som signal. Steg 3
-  (virker flaggene ulikt i ulike regimer?) er ikke kjørt.
-- Kvartalsvis tilbudsskår kjørt for hånd 14.10: ingen tall endret mot 01.10
-  (ingen nye årsregnskap). Neste planlagte kjøring 5. november.
-- Terminkurven er testet mot A og mot papirene for WTI og Henry Hub (13.10,
-  `sonde_kjor_kurve_a`, `sonde_kjor_kurve_papirer`): den beskriver samme
-  stramhet som A (sterkest mot detrendet A), men varsler verken A eller
-  papirene. Kurveformen står som kontekst. Ikke foreslå den som varsel uten
-  nye data.
+**Modeller i Shadow-OOS**
+- Champion v1.1 fra 14.10.2026 (D rettet til dagskurser 12.10; v1.0 har bare
+  W41, feilene står i `shadow/correction_log.csv`). Første kjøring 14.10 var
+  ok, uten `code_changed`.
+- Challengere (alle med egen startdato, registrert før de ser data):
+  `challenger_laks_tilbud_v1` (laks: A i EUR 70+ og biomasse lavere enn året
+  før), `challenger_gass_rigger_v1` (Henry Hub: lav pris og færre gassrigger;
+  skriver `gass_b.json`), `challenger_olje_rigger_v1` (Brent og WTI: lav pris
+  og færre oljerigger), alle fra 14.10; `challenger_kull_ar95_v1` (kull:
+  rullende A 95 og detrendet A 80, Frodes valg, ikke testet som regel) og
+  `challenger_bred_nedgang_v1` (Championens bunnsone bare når 40 % eller færre
+  av råvarene er i oppgang), begge fra 21.10. **21.10: manifestet skal ha
+  Champion og fem Challengere ok.**
+- B på bordet er ikke endret (Frodes beslutning 12.10). Tilbudsmålene er
+  Challengere eller kontekst, aldri `scores.B`.
+
+**Regimepanelet** (fra 15.10, `kontekst_regime.py`, `regime.json`, steg 6i)
+- Vekst = andel råvarer i oppgang over 12 mnd (testet, holdt). Sjokk = VIX og
+  korrelasjonen mellom papirene (valgt etter at sondens eget mål feilet med
+  ett poeng på covid; begge klarte samme krav). Boom = median A (fanger bare
+  toppene). Likviditet = Feds netto likviditet, reverse repo, Fed + ECB + BoJ
+  (beskrivende, for kort historikk). Analoger. Kontekst, ikke testet som
+  signal. Felt `nedgang_siden` og `sjokk_siden` kommer fra 21.10.
+- Funn (`sonde_kjor_regime*`, `sonde_kjor_ventetid_hold`): bunnflagg i bred
+  nedgang har gitt +33 % mot -3 % over 24 mnd (holder; ikke på 1 til 12 mnd).
+  Sjokk og likviditet holder ikke eller kan ikke avgjøres. Inngang ved start
+  på bred nedgang har gitt fall videre; å vente 9 mnd unngår fallet, men
+  papirer kjøpt da har ikke gjort det bedre enn en tilfeldig måned for noen
+  holdetid (1 til 24 mnd) og har ligget under S&P 500. Teksten under panelet
+  sier dette.
+
+**Andre funn 12. til 15.10** (detaljer i loggen)
+- Terminkurven varsler verken A eller papirene for WTI og Henry Hub.
+- Felles A 80 står; tilpasning per råvare (grupper, halveringstid,
+  krymping) holdt ikke. Jernmalm har for kort serie til å tilpasses.
+- Test-flagget (B2 og D papirer) holder ikke med dagskurser
+  (`sonde_kjor_b_signal_v2`); Frode avgjør hva som skjer med det.
+
+**Praktisk**
+- Kvartalsvis tilbudsskår kjørt for hånd 14.10 uten endringer. Neste
+  planlagte 5. november.
+- FRED svarer ikke fra Frodes maskin; det som trenger FRED, kjøres i Actions
+  (sondeflyten «ad hoc»).
 - Grenen `forbered-privat-repo` er laget fra eldre main og har gammel
   `kapitulasjon_d.py`; flett main inn før den tas i bruk. Repoet gjøres ikke
   privat før Frode bestemmer det.
 - Varselboksen sier «B er målt for fem»; det er seks metaller pluss rigger.
-  Kan regnes i koden på samme måte som C-tellingen.
 - Forslag om en ekstra rutine torsdag som kjører onsdagsrutinen på nytt hvis
   databasen ikke har ukens tall. Ikke bestilt.
-- Champion v1.1 gjelder fra 14.10.2026 (D rettet til dagskurser 12.10; v1.0
-  har bare W41, feilene der står i `shadow/correction_log.csv`). Test-flagget
-  (B2 og D papirer) holder ikke med dagskurser (`sonde_kjor_b_signal_v2`);
-  Frode avgjør hva som skjer med det.
-- Shadow-OOS gikk 07.10 (Champion v1.0, uke 2026-W41, 105 rader). Frodes
-  avgjørelser står i `notater/shadow_oos_plan.md`. Onsdagsrutinen skal ikke
-  vise shadow-status; si fra til Frode i den aktive prosjektchatten når noe må
-  avgjøres.
-- 14.10: første kjøring av `challenger_laks_tilbud_v1` (laks: A_pris i EUR 70
-  eller mer og biomasse lavere enn året før). Sjekk `shadow/run_manifest.csv`
-  og `shadow/snapshots/challenger_laks_tilbud_v1/`. Første kjøring av
-  Champion v1.1 og alle tre Challengerne sjekkes etter onsdagsrutinen 14.10.
-- B for Henry Hub: riggene i gassbassengene varsler produksjonen
-  (`sonde_kjor_gass_rigger`), regnskapstallene gjør det ikke. I drift fra
-  07.10 som `challenger_gass_rigger_v1` (fra 14.10), `gass_b.json` (skrevet av
-  Challengeren hver uke), steg 6f i onsdagsrutinen (marked/gass_b) og linjen
-  «Tilbud B, gass» i Henry Hub-panelet. 14.10: sjekk at begge Challengerne
-  kjørte og at `gass_b.json` ble oppdatert.
-- Laks: valuta tilførte ingenting til A, smoltutsett varsler ikke slakt,
-  biomasse gjør det. Se loggen 07.10.
+- Onsdagsrutinen skal ikke vise shadow-status; si fra til Frode i den aktive
+  prosjektchatten når noe må avgjøres.
 - Parallelt signal for Brent og WTI (detrendet A 95 eller mer) holdes etter
   regelen fra desember 2025 til desember 2027.

@@ -75,3 +75,4 @@ sonde_kjor_regime_forste
 sonde_kjor_regime_flagg
 sonde_kjor_regime_horisont
 sonde_kjor_regime_ventetid
+sonde_kjor_ventetid_hold

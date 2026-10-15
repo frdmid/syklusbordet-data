@@ -275,6 +275,19 @@ Challenger:
   inn i den levende koden. Bare feilrettinger går inn i den levende koden, og
   de merkes `code_changed` og føres i `correction_log.csv`.
 
+### Registrerte Challengere per 15.10.2026
+
+| Id | Fra | Regel | Bakgrunn |
+|---|---|---|---|
+| `challenger_laks_tilbud_v1` | 14.10 | Laks: A i EUR 70+ og biomasse lavere enn året før | `sonde_kjor_biomasse` |
+| `challenger_gass_rigger_v1` | 14.10 | Henry Hub: A og Ad 80+ og færre gassrigger; B_gass | `sonde_kjor_gass_rigger` |
+| `challenger_olje_rigger_v1` | 14.10 | Brent og WTI: A og Ad 80+ og færre oljerigger; B_olje | `sonde_kjor_b_mekanisme` |
+| `challenger_kull_ar95_v1` | 21.10 | Kull: rullende A 95+ og Ad 80+ (Frodes valg, ikke testet som regel) | `sonde_kjor_kull_flagg` |
+| `challenger_bred_nedgang_v1` | 21.10 | Alle: Championens bunnsone og bredde 0,4 eller lavere | `sonde_kjor_regime_flagg` |
+
+Alle har `parent_model` champion_v1_0 eller champion_v1_1 i registeret og
+leser Championens rader for uken de kjører (fra 14.10 v1.1; reglene er like).
+
 ## 9. Åpne punkter, senere
 
 1. «Samtidige produsenter» og faktorjustering (benchmark 2 og 3), før første
@@ -285,6 +298,10 @@ Challenger:
    `shipping.json`.
 
 ## 10. Slik sjekkes det etter 07.10
+
+Fra 21.10.2026: manifestet skal ha `champion_v1_1` og fem Challengere med
+status `ok` for uken.
+
 
 - `shadow/run_manifest.csv` på GitHub skal ha en linje med status `ok` og
   `iso_week` 2026-W41, og `shadow/snapshots/champion_v1_0/2026-W41.csv` skal
