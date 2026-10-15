@@ -9,6 +9,18 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 15.10.2026 14:04, Claude Code
+**Hva:** Notion-siden «Syklusbordet: prosjektbeskrivelse og sikkerhetskopi»
+oppdatert (Frodes bestilling): dashbordet v66, D på dagskurser, regimepanelet
+i kontekstraden, onsdagsrutinens steg til og med 6i og 8, Champion v1.1 og
+alle fem Challengere i Shadow-OOS-tabellen, funnene 12. til 15.10, FRED-serier
+og IAI under kilder, fallgruver om `py`, FRED og `data_privat/`. Filene i
+sikkerhetskopien er ikke byttet; de er fortsatt fra 09.10, og det står i
+toppen av siden.
+**Filer:** ingen i repoet (Notion).
+**Cowork må vite:** Notion-siden følger overleveringen per 15.10. En ny
+sikkerhetskopi er ikke tatt.
+
 ### 15.10.2026 14:01, Claude Code
 **Hva:** (1) Ny sonde `sonde_kjor_ventetid_hold.py` (Frodes bestilling: kjøp
 papirene 9 mnd etter at en bred nedgang starter, hold 1, 3, 6, 12 og 24
