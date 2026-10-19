@@ -52,7 +52,7 @@ loggen. Regler og terskler settes før kjøring og flyttes ikke etterpå.
    dashbordet fra GitHub»), onsdag rundt 09:16 UTC: henter filene fra repoet
    og skriver dem til dashbordets database. Prompten har stegene 1 til 8 (6b
    VIX, 6c dollar, 6d endringer, 6e helse, 6f gass_b, 6g laks_biomasse, 6h
-   alu_tilbud skal ikke røres, 6i regime fra 15.10; 8 ukeloggen i prosjektet
+   alu_tilbud skal ikke røres, 6i regime fra 15.10, 6j uran_kontrakt fra 19.10; 8 ukeloggen i prosjektet
    «Handelsalgoritme»). Endres med RemoteTrigger `update` og body
    `{"prompt": ...}`; kontroller etterpå at bare prompten er endret. Den
    prøver ikke på nytt hvis den feiler; det skjedde 30.09, og den ble kjørt
@@ -75,7 +75,7 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 ## Dashbordet
 
 - Adresse: https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF (siste versjon
-  66 per 15.10; Cowork kan ha publisert senere). Nytt fra 12.10: linjen
+  67 per 19.10; Cowork kan ha publisert senere). Nytt fra 12.10: linjen
   «Kull, rullende A 95» i kullpanelet (v63), boksen «Regime nå» øverst (v64)
   med «Hva testene sier om å handle» under (v65, rettet i v66).
 - **Omslaget:** filen som Artifact `read` lagrer, begynner med vertens omslag
@@ -89,7 +89,8 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
   `vix`, `dollar`, `endringer`, `helse`, `gass_b` og `laks_biomasse` (de to
   siste fra 07.10, skrevet av Challengeren for gass og av `kontekst_laks.py`,
   som `shadow_challenger.kjor` kaller hver uke), `regime` (fra 15.10, skrevet
-  av `kontekst_regime.py` samme sted) og `alu_tilbud` (fra 12.10, skrevet for
+  av `kontekst_regime.py` samme sted), `uran_kontrakt` (fra 19.10, av
+  `kontekst_uran.py`) og `alu_tilbud` (fra 12.10, skrevet for
   hånd månedlig med `alu_tilbud_privat.py` fra IAI-fila i `data_privat/`).
 - **Kildekoden finnes bare i selve dashbordet.** Les alltid siste versjon med
   Artifact `read` før du endrer noe, og bygg på den. Ellers overskrives den
@@ -118,7 +119,7 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 | `shadow_oos.py` | Shadow-OOS: ukens frosne snapshot, hendelser og manifest i `shadow/`, bare tillegg. Plan og spørsmål i `notater/shadow_oos_plan.md` |
 | `shadow_challenger.py` | Challengere: registrering (`registrer <spesifikasjon.json>`) og ukentlig kjøring som egne grener. Regler i `challengers/<id>.py`, config i `config/challengers/`. Ikke frosset med Champion |
 | `challengers/` | Reglene for Challengerne (`<navn>.py`) og spesifikasjonene (`spes_<id>.json`); fem stykker per 15.10, se Åpne punkter |
-| `kontekst_laks.py`, `kontekst_regime.py`, `kontekst_uran.py` | Kontekst til dashbordet (`laks_biomasse.json`, `regime.json`) og ny ukerad i `uran_futures_uke.csv` (kontrollen av uranprisen, fra 19.10), kalt fra `shadow_challenger.kjor`. Ikke hashet av noen modell |
+| `kontekst_laks.py`, `kontekst_regime.py`, `kontekst_uran.py` | Kontekst til dashbordet (`laks_biomasse.json`, `regime.json`) og ny ukerad i `uran_futures_uke.csv` (kontrollen av uranprisen) og `uran_kontrakt.json` (langsiktig kontraktspris), begge fra 19.10, kalt fra `shadow_challenger.kjor`. Ikke hashet av noen modell |
 | `serier/priser_mnd.csv` | Hele månedsserien (nominell og real) per råvaresegment, skrevet av `priser.py` hver uke, til Challengere |
 | `test_shadow_oos.py` | Testene for shadow (`python test_shadow_oos.py`, lokalt, skriver ikke til repoet) |
 | `config/champion_v1_1.json` | Frosne regler for Champion v1.1 (fra 14.10.2026) og sha256 for de 16 kodefilene. `config/champion_v1_0.json` er v1.0, avløst fordi D hadde feil kursdata |

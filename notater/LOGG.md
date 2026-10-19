@@ -9,6 +9,25 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 19.10.2026 12:06, Claude Code
+**Hva:** Langsiktig kontraktspris for uran som kontekst (Frodes bestilling).
+1. `kontekst_uran.py` skriver også `uran_kontrakt.json` hver uke: spot og
+   langsiktig kontraktspris fra Camecos side (månedsslutt, kontrakt fra
+   1996-03), forskjellen spot / kontrakt - 1 med persentil og median, endring
+   i kontraktsprisen over 12 mnd, og de siste 60 månedene. I dag (sept.):
+   kontrakt 96,50, spot 89,63, forskjell -7,1 % (persentil 63, median -11 %),
+   kontrakt +16 % på 12 mnd; likt `sonde_kjor_uran_spread`. Kontekst, ikke
+   en skår: den sonden fant at forskjellen ikke var et signal.
+2. Dashbordet versjon 67: linjen «Langsiktig kontraktspris» med en liten
+   graf (spot og kontrakt, fem år) i uranpanelet. Første dokument skrevet til
+   marked/uran_kontrakt.
+3. Onsdagsrutinen: steg 6j (marked/uran_kontrakt, samme datokrav som 6f til
+   6i) og en linje om uran i rapporten (kontraktspris og siste dato i
+   `uran_futures_uke.csv`). Kontrollert: bare prompten er endret.
+**Filer:** `kontekst_uran.py`, `uran_kontrakt.json`, `notater/OVERLEVERING.md`.
+**Cowork må vite:** 21.10 skal rutinen skrive marked/uran_kontrakt. Tallene
+endres bare når Cameco publiserer en ny måned.
+
 ### 19.10.2026 12:01, Claude Code
 **Hva:** Kontrollserien for uranfutures holdes nå levende (Frodes
 bestilling). `uran_futures_uke.csv` ble lastet opp for hånd 24.09.2026 og
