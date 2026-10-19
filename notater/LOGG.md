@@ -9,6 +9,28 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 19.10.2026 12:01, Claude Code
+**Hva:** Kontrollserien for uranfutures holdes nå levende (Frodes
+bestilling). `uran_futures_uke.csv` ble lastet opp for hånd 24.09.2026 og
+ble aldri oppdatert (siste notering 2026-09-20); helse viste den som rød, og
+kontrollen av Camecos spotpris i `uran_kilde.py` brukte bare futures til
+september. Ny `kontekst_uran.py` legger til én rad i uken: siste notering av
+nærmeste UxC-kontrakt hos Yahoo (`UX=F`), datert søndagen som starter uken,
+som i den opprinnelige fila; samme uke erstattes, og den skriver aldri
+bakover. Kalles fra `shadow_challenger.kjor` sammen med `kontekst_laks` og
+`kontekst_regime`. Første rad lagt inn nå: 2026-10-11, 90,6. Hullet 27.09 til
+04.10 kan ikke fylles (Yahoo gir ikke historikk for `UX=F`).
+Merk: fila var nest nærmeste kontrakt (uxc2), nå nærmeste; forskjellen er
+liten, og kontrollen bruker median over måneder. Data, ikke kode: Championens
+hash (`uran_kilde.py`, `helse.py`) endres ikke. Tester består, kontrollen
+uten avvik.
+Ellers mangler uran fond i D (URA og URNM finnes, men `kapitulasjon_d.py` er
+frosset), COT og terminkurve (ingen kilde). Camecos side har også langsiktig
+kontraktspris, som ikke brukes.
+**Filer:** `kontekst_uran.py`, `shadow_challenger.py`, `uran_futures_uke.csv`,
+`notater/OVERLEVERING.md`.
+**Cowork må vite:** 21.10 skal `uran_futures_uke.csv` få raden 2026-10-18.
+
 ### 15.10.2026 14:04, Claude Code
 **Hva:** Notion-siden «Syklusbordet: prosjektbeskrivelse og sikkerhetskopi»
 oppdatert (Frodes bestilling): dashbordet v66, D på dagskurser, regimepanelet

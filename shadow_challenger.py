@@ -109,9 +109,10 @@ def kjor(lager, rot, naa, note=print):
             ut[f[:-5]] = f"feil: {type(e).__name__}"
             note(f"   challenger {f[:-5]} feilet: {type(e).__name__}: {str(e)[:80]}")
     # Kontekst til dashbordet (07.10.2026), ikke shadow-data og ingen modell:
-    # laks_biomasse.json fra kontekst_laks.py, og (15.10.2026) regime.json fra
-    # kontekst_regime.py. En feil her rammer ingenting annet.
-    for navn in ("kontekst_laks", "kontekst_regime"):
+    # laks_biomasse.json fra kontekst_laks.py, (15.10.2026) regime.json fra
+    # kontekst_regime.py og (19.10.2026) en ny ukerad i uran_futures_uke.csv fra
+    # kontekst_uran.py. En feil her rammer ingenting annet.
+    for navn in ("kontekst_laks", "kontekst_regime", "kontekst_uran"):
         try:
             p = os.path.join(rot, f"{navn}.py")
             if os.path.exists(p) and not os.environ.get("KONTEKST_AV"):

@@ -118,7 +118,7 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 | `shadow_oos.py` | Shadow-OOS: ukens frosne snapshot, hendelser og manifest i `shadow/`, bare tillegg. Plan og spørsmål i `notater/shadow_oos_plan.md` |
 | `shadow_challenger.py` | Challengere: registrering (`registrer <spesifikasjon.json>`) og ukentlig kjøring som egne grener. Regler i `challengers/<id>.py`, config i `config/challengers/`. Ikke frosset med Champion |
 | `challengers/` | Reglene for Challengerne (`<navn>.py`) og spesifikasjonene (`spes_<id>.json`); fem stykker per 15.10, se Åpne punkter |
-| `kontekst_laks.py`, `kontekst_regime.py` | Kontekst til dashbordet (`laks_biomasse.json`, `regime.json`), kalt fra `shadow_challenger.kjor`. Ikke hashet av noen modell |
+| `kontekst_laks.py`, `kontekst_regime.py`, `kontekst_uran.py` | Kontekst til dashbordet (`laks_biomasse.json`, `regime.json`) og ny ukerad i `uran_futures_uke.csv` (kontrollen av uranprisen, fra 19.10), kalt fra `shadow_challenger.kjor`. Ikke hashet av noen modell |
 | `serier/priser_mnd.csv` | Hele månedsserien (nominell og real) per råvaresegment, skrevet av `priser.py` hver uke, til Challengere |
 | `test_shadow_oos.py` | Testene for shadow (`python test_shadow_oos.py`, lokalt, skriver ikke til repoet) |
 | `config/champion_v1_1.json` | Frosne regler for Champion v1.1 (fra 14.10.2026) og sha256 for de 16 kodefilene. `config/champion_v1_0.json` er v1.0, avløst fordi D hadde feil kursdata |
