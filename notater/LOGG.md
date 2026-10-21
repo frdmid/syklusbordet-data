@@ -9,6 +9,24 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 21.10.2026 11:46, Claude Code
+**Hva:** Ukekjøringen 21.10.2026. GitHub startet ikke den planlagte
+innhentingen kl. 08:00 (ingen kjøring registrert; arbeidsflyten er aktiv og
+cron uendret). Rutinen kl. 11:17 og Frodes manuelle kjøring kl. 11:28 fant
+derfor tallene fra 14.10 og skrev riktig nok ingenting. Innhentingen ble
+startet for hånd kl. 11:27 (kjøring 39577148875) og var ferdig 11:35 uten
+feil; `index.json` 11:31. Shadow-OOS uke 43: Champion v1.1 og alle fem
+Challengere ok, første kjøring for kull og bred nedgang. `regime.json` og
+`uran_kontrakt.json` skrevet. Rutinen startet på nytt kl. 11:35 og skrev
+alle 25 segmenter og alle åtte kontekstdokumenter kl. 11:38; datahelse 64
+av 64 grønne.
+Uranfutures: Yahoo har ingen ny notering for `UX=F` siden 15.10, så raden
+for uken 11.10 ble stående og 18.10 mangler. Følges neste uke.
+**Filer:** ingen.
+**Cowork må vite:** Forslag til Frode om å hindre dette (innhenting bort
+fra hel time med reservekjøring, rutinen to ganger med strengere datokrav,
+eller start av rutinen når innhentingen er ferdig) venter på svar.
+
 ### 21.10.2026 08:50, Claude Code
 **Hva:** Den gamle rutinen «Syklusbordet: ukentlig oppdatering»
 (`trig_01W1wAhB8kd4peYJgXGoxH2T`, laget 21.09.2026 i Colab-tiden, cron mandag
