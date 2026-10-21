@@ -1,0 +1,9 @@
+{
+ "run_id": "challenger_kull_ar95_v1|2026-W43|2026-10-21 09:32:39",
+ "filer_git_blob_sha": {
+  "shadow/snapshots/champion_v1_1/2026-W43.csv": "e55ac1982fefe234865903dc15bce5dd39701358"
+ },
+ "kodefiler_sha256": {
+  "challengers/kull_ar95.py": "8b9174ff3a6183d0132d677535105afee20546a4e3915fa39bd3ff00a8797b69"
+ }
+}
