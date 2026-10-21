@@ -1,103 +1,110 @@
 {
  "id": "endringer",
  "uke": {
-  "forrige_dato": "2026-10-07 06:30",
-  "ny_dato": "2026-10-14 06:41",
-  "forrige": "2026-W41",
-  "ny": "2026-W42",
+  "forrige_dato": "2026-10-14 06:41",
+  "ny_dato": "2026-10-21 09:32",
+  "forrige": "2026-W42",
+  "ny": "2026-W43",
   "topp": [
    {
-    "segment": "VLCC (5 år)",
-    "felt": "TC 1 år",
-    "gammel": 158000.0,
-    "ny": 230000.0,
-    "endring_pst": 45.6,
+    "segment": "Marked",
+    "felt": "VIX",
+    "gammel": 15.27,
+    "ny": 17.41,
+    "endring_pst": 14.0,
     "poeng": null,
-    "vekt": 45.6
+    "vekt": 14.0
    },
    {
-    "segment": "Suezmax (5 år)",
-    "felt": "TC 1 år",
-    "gammel": 118000.0,
-    "ny": 165000.0,
-    "endring_pst": 39.8,
-    "poeng": null,
-    "vekt": 39.8
-   },
-   {
-    "segment": "Aframax/LR2 (5 år)",
-    "felt": "TC 1 år",
-    "gammel": 69800.0,
-    "ny": 94000.0,
-    "endring_pst": 34.7,
-    "poeng": null,
-    "vekt": 34.7
-   },
-   {
-    "segment": "Kakao",
+    "segment": "Kobber",
     "felt": "Kapitulasjon D",
-    "gammel": 49.0,
-    "ny": 81.7,
-    "endring_pst": 66.7,
-    "poeng": 32.7,
-    "vekt": 32.7
+    "gammel": 2.7,
+    "ny": 10.9,
+    "endring_pst": 303.7,
+    "poeng": 8.2,
+    "vekt": 8.2
    },
    {
-    "segment": "VLCC (5 år)",
-    "felt": "Paritet A2",
-    "gammel": 1.253,
-    "ny": 1.577,
-    "endring_pst": 25.9,
-    "poeng": null,
-    "vekt": 32.4
+    "segment": "Sink",
+    "felt": "Kapitulasjon D",
+    "gammel": 8.6,
+    "ny": 15.8,
+    "endring_pst": 83.7,
+    "poeng": 7.2,
+    "vekt": 7.2
+   },
+   {
+    "segment": "Gull",
+    "felt": "Kapitulasjon D",
+    "gammel": 32.7,
+    "ny": 39.5,
+    "endring_pst": 20.8,
+    "poeng": 6.8,
+    "vekt": 6.8
    },
    {
     "segment": "Laks (sesongjustert)",
     "felt": "Kapitulasjon D",
-    "gammel": 25.8,
-    "ny": 54.7,
-    "endring_pst": 112.0,
-    "poeng": 28.9,
-    "vekt": 28.9
+    "gammel": 54.7,
+    "ny": 47.9,
+    "endring_pst": -12.4,
+    "poeng": -6.8,
+    "vekt": 6.8
    },
    {
-    "segment": "Jernmalm 62% Fe",
+    "segment": "Naturgass US (Henry Hub)",
+    "felt": "COT-persentil",
+    "gammel": 7.7,
+    "ny": 13.5,
+    "endring_pst": 75.3,
+    "poeng": 5.8,
+    "vekt": 5.8
+   },
+   {
+    "segment": "Nikkel",
     "felt": "Kapitulasjon D",
-    "gammel": 42.3,
-    "ny": 71.2,
-    "endring_pst": 68.3,
-    "poeng": 28.9,
-    "vekt": 28.9
+    "gammel": 7.2,
+    "ny": 12.0,
+    "endring_pst": 66.7,
+    "poeng": 4.8,
+    "vekt": 4.8
    },
    {
-    "segment": "VLCC (5 år)",
-    "felt": "Realpris",
-    "gammel": 162.2,
-    "ny": 205.0,
-    "endring_pst": 26.4,
-    "poeng": null,
-    "vekt": 26.4
+    "segment": "Bly",
+    "felt": "Kapitulasjon D",
+    "gammel": 7.4,
+    "ny": 12.0,
+    "endring_pst": 62.2,
+    "poeng": 4.6,
+    "vekt": 4.6
+   },
+   {
+    "segment": "Gull",
+    "felt": "COT-persentil",
+    "gammel": 44.2,
+    "ny": 39.7,
+    "endring_pst": -10.2,
+    "poeng": -4.5,
+    "vekt": 4.5
    },
    {
     "segment": "Kobber",
     "felt": "COT-persentil",
-    "gammel": 88.5,
-    "ny": 67.3,
-    "endring_pst": -24.0,
-    "poeng": -21.2,
-    "vekt": 21.2
-   },
-   {
-    "segment": "Suezmax (5 år)",
-    "felt": "Paritet A2",
-    "gammel": 1.249,
-    "ny": 1.453,
-    "endring_pst": 16.3,
-    "poeng": null,
-    "vekt": 20.4
+    "gammel": 67.3,
+    "ny": 62.8,
+    "endring_pst": -6.7,
+    "poeng": -4.5,
+    "vekt": 4.5
    }
   ],
-  "skifter": []
+  "skifter": [
+   {
+    "segment": "Oljeservice (boring)",
+    "felt": "Trend",
+    "gammel": "begynnende",
+    "ny": "nei"
+   }
+  ]
  },
  "kvartal": {
   "forrige_dato": "2026-10-01 10:39",
