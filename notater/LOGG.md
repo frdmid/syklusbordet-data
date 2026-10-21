@@ -9,6 +9,31 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 21.10.2026 12:04, Claude Code
+**Hva:** Sikring mot at ukekjøringen uteblir (Frodes beslutning, punkt 1 og 2).
+1. **Innhentingen (`ukentlig.yml`), venter på Frode eller Cowork:** forslag i
+   `notater/ukentlig_forslag.yml`. Hovedkjøring onsdag 08:48 og reserve 09:56
+   norsk tid (cron `48 7 * * 3` og `56 8 * * 3`, vintertid; fra 28.03.2027
+   må de flyttes til `48 6` og `56 7`). Ny jobb «vakt» (`vakt_ukentlig.py`)
+   lar en planlagt kjøring hoppe over hvis `index.json` allerede er skrevet i
+   dag (norsk dato); startet for hånd kjører alltid. `concurrency` gjør at
+   reserven venter hvis hovedkjøringen fortsatt går. Testet lokalt; YAML
+   kontrollert. Claude Code kan ikke endre arbeidsflytene.
+2. **Onsdagsrutinen (gjort):** går nå kl. 10:15 og 13:15 norsk tid
+   (`CRON_TZ=Europe/Oslo 15 10,13 * * 3`). `index.json` må være fra samme
+   dag; før 12:00 venter den på neste forsøk uten oppføring i ukeloggen,
+   etter 12:00 rapporterer den manglende innhenting. Har et tidligere forsøk
+   samme dag skrevet (marked/endringer har samme uke.ny_dato), skriver den
+   ingenting. Alle klokkeslett i rapport og ukelogg i norsk tid. Linjen om
+   D-rettelsen 14.10 er tatt ut (gjaldt bare den kjøringen). Kontrollert:
+   bare prompt og tidsplan er endret.
+**Filer:** `vakt_ukentlig.py` (ny), `notater/ukentlig_forslag.yml` (ny),
+`notater/OVERLEVERING.md`.
+**Cowork må vite:** Kopier `notater/ukentlig_forslag.yml` til
+`.github/workflows/ukentlig.yml` (ord for ord) før onsdag 28.10. Til det er
+gjort, går innhentingen fortsatt 07:00 norsk vintertid uten reserve, og
+rutinen kl. 10:15 kommer etter den.
+
 ### 21.10.2026 11:46, Claude Code
 **Hva:** Ukekjøringen 21.10.2026. GitHub startet ikke den planlagte
 innhentingen kl. 08:00 (ingen kjøring registrert; arbeidsflyten er aktiv og

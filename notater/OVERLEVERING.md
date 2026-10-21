@@ -40,7 +40,7 @@ loggen. Regler og terskler settes før kjøring og flyttes ikke etterpå.
 
 ## Slik går en uke (helt automatisk)
 
-1. **GitHub Actions, `ukentlig.yml`**, onsdag 06:00 UTC:
+1. **GitHub Actions, `ukentlig.yml`**, onsdag 08:00 norsk sommertid / 07:00 vintertid (forslag 21.10: 08:48 med reserve 09:56, se `notater/ukentlig_forslag.yml` og `vakt_ukentlig.py`; legges inn av Frode eller Cowork):
    `kapitulasjon_d.py` → `priser.py` (alle prissegmenter, COT, kurve, VIX,
    dollar, kaller `flagglogg.py`) → `shipping.py` (Fearnleys, arkiverer PDF)
    → `bygg_shipping.py`, som til slutt kaller `endringer.uke()`,
@@ -49,7 +49,7 @@ loggen. Regler og terskler settes før kjøring og flyttes ikke etterpå.
    `kontekst_regime.py`). Skriptene skriver til repoet gjennom GitHub-API med
    `GITHUB_TOKEN`; commits heter «oppdatert ...» og føres ikke i loggen.
 2. **Rutinen `trig_01HoJvyjwZRq5J4QNcXoFkr3`** («Syklusbordet: oppdater
-   dashbordet fra GitHub»), onsdag rundt 09:16 UTC: henter filene fra repoet
+   dashbordet fra GitHub»), onsdag kl. 10:15 og 13:15 norsk tid fra 21.10 (`CRON_TZ=Europe/Oslo`); det andre forsøket gjør bare noe hvis det første ikke fikk ferske tall: henter filene fra repoet
    og skriver dem til dashbordets database. Prompten har stegene 1 til 8 (6b
    VIX, 6c dollar, 6d endringer, 6e helse, 6f gass_b, 6g laks_biomasse, 6h
    alu_tilbud skal ikke røres, 6i regime fra 15.10, 6j uran_kontrakt fra 19.10; 8 ukeloggen i prosjektet
