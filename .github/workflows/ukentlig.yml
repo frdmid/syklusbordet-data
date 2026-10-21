@@ -1,3 +1,17 @@
+# FORSLAG 21.10.2026 (Claude Code, Frodes bestilling). Erstatter
+# .github/workflows/ukentlig.yml. Claude Code kan ikke endre arbeidsflytene;
+# Frode eller Cowork kopierer denne fila dit, ord for ord.
+#
+# Endringer mot dagens fil:
+#   1. Hovedkjoering onsdag 08:48 norsk tid og reservekjoering 09:56, bort fra
+#      hel time (GitHub hoppet over 06:00 UTC 21.10.2026). GitHub regner cron i
+#      UTC: tidene under gjelder vintertid (fra 25.10.2026). Ved sommertid
+#      (fra 28.03.2027) maa de flyttes en time: "48 6 * * 3" og "56 7 * * 3".
+#   2. Jobben «vakt» (vakt_ukentlig.py) lar reserven hoppe over hvis
+#      index.json allerede er skrevet i dag. Startet for haand kjoerer alltid.
+#   3. «concurrency» sier at en ny kjoering venter til en paagaaende er
+#      ferdig, saa reserven aldri gaar samtidig med en forsinket hovedkjoering.
+#
 # Ukentlig innhenting til Syklusbordet.
 #
 # Kjorer paa GitHub sine egne maskiner, ikke i Colab. Gratis for offentlige
@@ -11,16 +25,37 @@ name: Ukentlig innhenting
 
 on:
   schedule:
-    - cron: "0 6 * * 3"        # onsdag 06:00 UTC = 07:00 norsk vintertid
+    - cron: "48 7 * * 3"       # onsdag 08:48 norsk vintertid (hovedkjoering)
+    - cron: "56 8 * * 3"       # onsdag 09:56 norsk vintertid (reserve, se vakt)
   workflow_dispatch:            # og naar du trykker paa knappen selv
 
 permissions:
   contents: write               # lar jobben skrive JSON-filene tilbake
 
+concurrency:
+  group: ukentlig-innhenting
+  cancel-in-progress: false     # en ny kjoering venter, den avbryter ikke
+
 jobs:
+  vakt:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    outputs:
+      kjor: ${{ steps.vakt.outputs.kjor }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - id: vakt
+        name: Har ukens kjoering allerede gaatt?
+        run: python vakt_ukentlig.py
+
   kapitulasjon:
     runs-on: ubuntu-latest
     timeout-minutes: 45
+    needs: vakt
+    if: needs.vakt.outputs.kjor == 'true'
     steps:
       - uses: actions/checkout@v5
       - uses: actions/setup-python@v6

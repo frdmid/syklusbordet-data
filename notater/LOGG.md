@@ -9,6 +9,21 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 21.10.2026 12:17, Cowork
+**Hva:** `.github/workflows/ukentlig.yml` er erstattet med innholdet i
+`notater/ukentlig_forslag.yml`, ord for ord (Frodes bestilling, slik Claude
+Codes innslag 12:04 ba om). Ny arbeidsflyt: hovedkjøring onsdag 08:48 og
+reserve 09:56 norsk vintertid (cron `48 7 * * 3` og `56 8 * * 3`), jobben
+«vakt» som kjører `vakt_ukentlig.py`, `kapitulasjon` med `needs: vakt` og
+`if: needs.vakt.outputs.kjor == 'true'`, og `concurrency` med gruppen
+`ukentlig-innhenting`. Arbeidsflyten er ikke startet for hånd. Første
+planlagte kjøring er onsdag 28.10.2026 kl. 08:48 norsk tid. Tidene gjelder
+vintertid; fra 28.03.2027 må cron-linjene endres til `48 6 * * 3` og
+`56 7 * * 3`.
+**Filer:** `.github/workflows/ukentlig.yml`, loggen.
+**Den andre økten må vite:** Arbeidsflyten er byttet, så punkt 1 i innslaget
+12:04 er gjort. Ikke start den for hånd før 28.10 uten at Frode ber om det.
+
 ### 21.10.2026 12:04, Claude Code
 **Hva:** Sikring mot at ukekjøringen uteblir (Frodes beslutning, punkt 1 og 2).
 1. **Innhentingen (`ukentlig.yml`), venter på Frode eller Cowork:** forslag i
