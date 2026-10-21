@@ -9,6 +9,20 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 21.10.2026 08:50, Claude Code
+**Hva:** Den gamle rutinen «Syklusbordet: ukentlig oppdatering»
+(`trig_01W1wAhB8kd4peYJgXGoxH2T`, laget 21.09.2026 i Colab-tiden, cron mandag
+08:30 norsk tid, stod som avslått) startet likevel 21.10 kl. 08:43, før dagens
+Actions-kjøring. Den skrev de 18 råvaresegmentene til databasen med tallene
+fra 14.10 (samme innhold som lå der, så ingen skade) og forsøkte å skrive en
+oppføring datert 21.10 i den gamle flaggloggen `logg/flagg` og i
+`meta/status`, med tall fra 14.10. Dashbordet bruker ikke `logg/flagg`.
+Frode har slettet rutinen; bekreftet (404). Den eneste onsdagsrutinen er nå
+`trig_01HoJvyjwZRq5J4QNcXoFkr3` (09:00 UTC, rundt 11:15 norsk tid).
+**Filer:** ingen.
+**Cowork må vite:** Oppføringen 21.10 i `logg/flagg` (hvis den ble skrevet)
+bygger på tallene fra 14.10. Ingen andre rutiner for Syklusbordet finnes.
+
 ### 19.10.2026 12:06, Claude Code
 **Hva:** Langsiktig kontraktspris for uran som kontekst (Frodes bestilling).
 1. `kontekst_uran.py` skriver også `uran_kontrakt.json` hver uke: spot og
