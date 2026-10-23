@@ -23,6 +23,8 @@ sikkerhetskopi», mappen «Sikkerhetskopi 2026-10-23».
 | `rutine/onsdagsrutine_prompt.txt` | Hele teksten i onsdagsrutinen (trig_01HoJvyjwZRq5J4QNcXoFkr3) |
 | `rutine/onsdagsrutine_meta.json` | Navn, tidsplan, modell, tillatelser og koblinger |
 | `planlagte_oppgaver/*.md` | De lokale planlagte oppgavene i Claude-appen (to brukte, sjekken 28.10 aktiv) |
+| `prompts.txt` | Promptene, i rekkefølge, for å gjenskape alt i en ny Claude-konto |
+| `minne/*.md` | Claude Codes minnefiler for prosjektet (regler som norsk tid og varsling) |
 | `sha256.txt` | Sjekksum for hver fil |
 
 **Ikke her (offentlig repo):** `marked/alu_tilbud` (produksjon av aluminium

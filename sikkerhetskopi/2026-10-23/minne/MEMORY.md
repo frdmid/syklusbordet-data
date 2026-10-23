@@ -1,0 +1,3 @@
+- [Varsling i prosjektchat](varsling-i-prosjektchat.md) — beskjed i chatten når noe må avgjøres; ingen shadow-status i onsdagsrutinen
+- [Shadow-OOS avgjørelser](shadow-oos-avgjorelser.md) — Champion fryst fra 07.10.2026; ny regel = Challenger; S separat; C stengt ikke kjøpbar; OSEBX
+- [Norsk tid](norsk-tid.md) — alle klokkeslett i norsk tid, aldri UTC
