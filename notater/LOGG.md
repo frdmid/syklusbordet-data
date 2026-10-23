@@ -9,6 +9,25 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 23.10.2026 10:07, Claude Code
+**Hva:** Sikkerhetskopien 23.10 fullført i Notion (Frodes bestilling, med
+`prompts.txt` lagt til). Mappen «Sikkerhetskopi 2026-10-23» på siden
+«Syklusbordet: prosjektbeskrivelse og sikkerhetskopi» har 11 filer, kontrollert:
+`prompts.txt` (promptene i rekkefølge for å gjenskape alt i en ny Claude-konto),
+hele repoet delt i `syklusbordet_kode`, `_data`, `_sonder` (2 deler) og
+`_arkiv` (2 deler), alle under 5 MB fordi Notion-arbeidsområdet har 5 MB
+grense per fil (421 filer, uten `sikkerhetskopi/`), databasen med
+`marked/alu_tilbud`, rutiner med minnefilene, `data_privat/` og dashbordet v67.
+Siden er oppdatert: øverst at siste kopi er 23.10 og å starte med
+`prompts.txt`, uken med 08:48, 09:56, 10:15 og 13:15 norsk tid, tabell over
+filene og ny gjenopprettingsoppskrift; kopien 09.10 står som eldre.
+I repoet er `prompts.txt` og `minne/` lagt til i `sikkerhetskopi/2026-10-23/`
+(README og sha256 oppdatert, 48 filer).
+**Ikke med:** dokumentene i claude.ai-prosjektet «Handelsalgoritme»
+(ukeloggen m.m.) og egne skills; Frode må eksportere dem før overgangen.
+**Filer:** `sikkerhetskopi/2026-10-23/` (tidligere commit), loggen; Notion.
+**Cowork må vite:** Gjenoppretting starter med `prompts.txt`.
+
 ### 23.10.2026 10:03, Claude Code
 **Hva:** (1) Lokal planlagt oppgave `syklusbordet-sjekk-2810` (engangs, onsdag
 28.10.2026 kl. 13:30 norsk tid): sjekker hovedkjøringen 08:48, reserven 09:56
