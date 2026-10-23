@@ -1,0 +1,117 @@
+{
+  "id": "endringer",
+  "kvartal": {
+    "forrige": "2026-10-01",
+    "forrige_dato": "2026-10-01 10:39",
+    "ny": "2026-10-14",
+    "ny_dato": "2026-10-14 07:12",
+    "skifter": [],
+    "topp": []
+  },
+  "uke": {
+    "forrige": "2026-W42",
+    "forrige_dato": "2026-10-14 06:41",
+    "ny": "2026-W43",
+    "ny_dato": "2026-10-21 09:32",
+    "skifter": [
+      {
+        "felt": "Trend",
+        "gammel": "begynnende",
+        "ny": "nei",
+        "segment": "Oljeservice (boring)"
+      }
+    ],
+    "topp": [
+      {
+        "endring_pst": 14,
+        "felt": "VIX",
+        "gammel": 15.27,
+        "ny": 17.41,
+        "poeng": null,
+        "segment": "Marked",
+        "vekt": 14
+      },
+      {
+        "endring_pst": 303.7,
+        "felt": "Kapitulasjon D",
+        "gammel": 2.7,
+        "ny": 10.9,
+        "poeng": 8.2,
+        "segment": "Kobber",
+        "vekt": 8.2
+      },
+      {
+        "endring_pst": 83.7,
+        "felt": "Kapitulasjon D",
+        "gammel": 8.6,
+        "ny": 15.8,
+        "poeng": 7.2,
+        "segment": "Sink",
+        "vekt": 7.2
+      },
+      {
+        "endring_pst": 20.8,
+        "felt": "Kapitulasjon D",
+        "gammel": 32.7,
+        "ny": 39.5,
+        "poeng": 6.8,
+        "segment": "Gull",
+        "vekt": 6.8
+      },
+      {
+        "endring_pst": -12.4,
+        "felt": "Kapitulasjon D",
+        "gammel": 54.7,
+        "ny": 47.9,
+        "poeng": -6.8,
+        "segment": "Laks (sesongjustert)",
+        "vekt": 6.8
+      },
+      {
+        "endring_pst": 75.3,
+        "felt": "COT-persentil",
+        "gammel": 7.7,
+        "ny": 13.5,
+        "poeng": 5.8,
+        "segment": "Naturgass US (Henry Hub)",
+        "vekt": 5.8
+      },
+      {
+        "endring_pst": 66.7,
+        "felt": "Kapitulasjon D",
+        "gammel": 7.2,
+        "ny": 12,
+        "poeng": 4.8,
+        "segment": "Nikkel",
+        "vekt": 4.8
+      },
+      {
+        "endring_pst": 62.2,
+        "felt": "Kapitulasjon D",
+        "gammel": 7.4,
+        "ny": 12,
+        "poeng": 4.6,
+        "segment": "Bly",
+        "vekt": 4.6
+      },
+      {
+        "endring_pst": -10.2,
+        "felt": "COT-persentil",
+        "gammel": 44.2,
+        "ny": 39.7,
+        "poeng": -4.5,
+        "segment": "Gull",
+        "vekt": 4.5
+      },
+      {
+        "endring_pst": -6.7,
+        "felt": "COT-persentil",
+        "gammel": 67.3,
+        "ny": 62.8,
+        "poeng": -4.5,
+        "segment": "Kobber",
+        "vekt": 4.5
+      }
+    ]
+  }
+}

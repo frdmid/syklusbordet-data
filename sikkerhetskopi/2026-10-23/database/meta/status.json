@@ -1,0 +1,277 @@
+{
+  "antall_flagg": 1,
+  "antall_segment": 18,
+  "kilde_logg": [
+    {
+      "detalj": "siste 2026-08",
+      "kilde": "GitHub-speil cpi-us",
+      "status": "OK"
+    },
+    {
+      "detalj": "GitHub-speil cpi-us, siste 2026-08, 2 mnd gammel",
+      "kilde": "deflator, alder",
+      "status": "OK"
+    },
+    {
+      "detalj": "24 mnd, stoerste avvik 0.000 %",
+      "kilde": "deflator, kontroll mot BLS",
+      "status": "OK"
+    },
+    {
+      "detalj": "A=17.8 detr=41.4 rull=6.7   siste 2026-09",
+      "kilde": "segment brent",
+      "status": "OK"
+    },
+    {
+      "detalj": "A=24.7 detr=50.3 rull=11.7   siste 2026-09",
+      "kilde": "segment wti",
+      "status": "OK"
+    },
+    {
+      "detalj": "A=87.1 detr=53.9 rull=67.5 oppsikt  siste 2026-09",
+      "kilde": "segment henryhub",
+      "status": "OK"
+    },
+    {
+      "detalj": "2325 -> 662 mnd, starter 1971-08",
+      "kilde": "avkorting gold",
+      "status": "OK"
+    },
+    {
+      "detalj": "A=1.1 detr=3.6 rull=5.8   siste 2026-09",
+      "kilde": "segment gold",
+      "status": "OK"
+    },
+    {
+      "detalj": "mot IMF 1992-2021: median avvik 1.8 % over 357 mnd, mot futures fra 2022: 1.6 % over 50 mnd",
+      "kilde": "uran, kontroll av Cameco",
+      "status": "OK"
+    },
+    {
+      "detalj": "A=8.4 detr=26.9 rull=8.3   siste 2026-09",
+      "kilde": "segment uran",
+      "status": "OK"
+    },
+    {
+      "detalj": "A=45.8 detr=59.4 rull=56.7   siste 2026-09",
+      "kilde": "segment laks",
+      "status": "OK"
+    },
+    {
+      "detalj": "margin 1.377 (A 90.4), kostnad 2024 59.97 kr/kg, uke 2026-10-08 72.55 kr/kg",
+      "kilde": "laks",
+      "status": "OK"
+    },
+    {
+      "detalj": "A=47.0 detr=98.8 rull=79.2   siste 2026-08",
+      "kilde": "segment oljeservice",
+      "status": "OK"
+    },
+    {
+      "detalj": "observasjon, A 47.0 detr 98.8, aktivitet 105.3 per 2026-08 (persentil 37.7)",
+      "kilde": "oljeservice",
+      "status": "OK"
+    },
+    {
+      "detalj": "72 kolonner, 801 måneder, skiprows=4",
+      "kilde": "Verdensbanken Pink Sheet",
+      "status": "OK"
+    },
+    {
+      "detalj": "A=4.2 detr=2.7 rull=0.0   siste 2026-09",
+      "kilde": "segment kobber",
+      "status": "OK"
+    },
+    {
+      "detalj": "801 -> 561 mnd, starter 1980-01",
+      "kilde": "avkorting nikkel",
+      "status": "OK"
+    },
+    {
+      "detalj": "A=62.7 detr=73.1 rull=70.0   siste 2026-09",
+      "kilde": "segment nikkel",
+      "status": "OK"
+    },
+    {
+      "detalj": "801 -> 561 mnd, starter 1980-01",
+      "kilde": "avkorting aluminium",
+      "status": "OK"
+    },
+    {
+      "detalj": "A=39.6 detr=10.3 rull=8.3   siste 2026-09",
+      "kilde": "segment aluminium",
+      "status": "OK"
+    },
+    {
+      "detalj": "A=12.9 detr=12.9 rull=16.7   siste 2026-09",
+      "kilde": "segment sink",
+      "status": "OK"
+    },
+    {
+      "detalj": "A=64.4 detr=61.8 rull=97.5   siste 2026-09",
+      "kilde": "segment bly",
+      "status": "OK"
+    },
+    {
+      "detalj": "A=7.5 detr=0.1 rull=0.8   siste 2026-09",
+      "kilde": "segment tinn",
+      "status": "OK"
+    },
+    {
+      "detalj": "801 -> 201 mnd, starter 2010-01",
+      "kilde": "avkorting jernmalm",
+      "status": "OK"
+    },
+    {
+      "detalj": "A=79.1 detr=61.2 rull=82.5   siste 2026-09",
+      "kilde": "segment jernmalm",
+      "status": "OK"
+    },
+    {
+      "detalj": "681 -> 321 mnd, starter 2000-01",
+      "kilde": "avkorting kull",
+      "status": "OK"
+    },
+    {
+      "detalj": "A=22.4 detr=65.7 rull=32.5   siste 2026-09",
+      "kilde": "segment kull",
+      "status": "OK"
+    },
+    {
+      "detalj": "801 -> 321 mnd, starter 2000-01",
+      "kilde": "avkorting ttf",
+      "status": "OK"
+    },
+    {
+      "detalj": "A=5.0 detr=8.1 rull=13.3   siste 2026-09",
+      "kilde": "segment ttf",
+      "status": "OK"
+    },
+    {
+      "detalj": "801 -> 561 mnd, starter 1980-01",
+      "kilde": "avkorting kakao",
+      "status": "OK"
+    },
+    {
+      "detalj": "A=18.4 detr=7.0 rull=19.2   siste 2026-09",
+      "kilde": "segment kakao",
+      "status": "OK"
+    },
+    {
+      "detalj": "A=56.7 detr=14.0 rull=20.8   siste 2026-09",
+      "kilde": "segment palmeolje",
+      "status": "OK"
+    },
+    {
+      "detalj": "5 prisområder",
+      "kilde": "NVE magasinstatistikk",
+      "status": "OK"
+    },
+    {
+      "detalj": "22 av 22 symbol, 11 segment dekket",
+      "kilde": "Yahoo totalt",
+      "status": "OK"
+    },
+    {
+      "detalj": "18 av 18 segment fikk instrumentliste",
+      "kilde": "instrumenter",
+      "status": "OK"
+    },
+    {
+      "detalj": "6 segment, siste aar 2024",
+      "kilde": "OWID etterspoersel",
+      "status": "OK"
+    },
+    {
+      "detalj": "18 segment",
+      "kilde": "kapitulasjon D",
+      "status": "OK"
+    },
+    {
+      "detalj": "18 segment, 16 aapne",
+      "kilde": "overlevelsesport C",
+      "status": "OK"
+    },
+    {
+      "detalj": "6 segment fra b_capex.json",
+      "kilde": "tilbudsskaar B",
+      "status": "OK"
+    },
+    {
+      "detalj": "18 segment",
+      "kilde": "trendbekreftelse",
+      "status": "OK"
+    },
+    {
+      "detalj": "2026-10-06, forvaltere +1.5 % av OI, persentil 20.5 (3 aar) / 59.7 (fra 2011), 771 uker",
+      "kilde": "COT brent",
+      "status": "OK"
+    },
+    {
+      "detalj": "2026-10-06, forvaltere +2.8 % av OI, persentil 17.3 (3 aar) / 7.8 (fra 2006), 1061 uker",
+      "kilde": "COT wti",
+      "status": "OK"
+    },
+    {
+      "detalj": "2026-10-06, forvaltere -8.0 % av OI, persentil 7.7 (3 aar) / 30.0 (fra 2006), 1061 uker",
+      "kilde": "COT henryhub",
+      "status": "OK"
+    },
+    {
+      "detalj": "2026-10-06, forvaltere +28.0 % av OI, persentil 44.2 (3 aar) / 60.9 (fra 2006), 1061 uker",
+      "kilde": "COT gold",
+      "status": "OK"
+    },
+    {
+      "detalj": "2026-10-06, forvaltere +20.1 % av OI, persentil 67.3 (3 aar) / 83.8 (fra 2006), 1061 uker",
+      "kilde": "COT kobber",
+      "status": "OK"
+    },
+    {
+      "detalj": "2026-10-06, forvaltere -6.2 % av OI, persentil 14.1 (3 aar) / 13.2 (fra 2006), 1061 uker",
+      "kilde": "COT kakao",
+      "status": "OK"
+    },
+    {
+      "detalj": "2026-10-06, forvaltere -6.1 % av OI, persentil 21.8 (3 aar) / 13.8 (fra 2021), 247 uker",
+      "kilde": "COT palmeolje",
+      "status": "OK"
+    },
+    {
+      "detalj": "7 av 7 kontrakter",
+      "kilde": "COT totalt",
+      "status": "OK"
+    },
+    {
+      "detalj": "90.72 per 2026-10-13",
+      "kilde": "fersk pris jernmalm",
+      "status": "OK"
+    },
+    {
+      "detalj": "6 segmenter, rente 4.057000160217285, historikk brent 2 mnd, wti 2 mnd, henryhub 2 mnd, gold 2 mnd, kobber 2 mnd, kakao 2 mnd",
+      "kilde": "kurveform",
+      "status": "OK"
+    },
+    {
+      "detalj": "15.27 per 2026-10-13, persentil 31.7 (fra 1990-01) / 32.5 (10 aar)",
+      "kilde": "VIX",
+      "status": "OK"
+    },
+    {
+      "detalj": "102.123 per 2026-10-14, persentil 81.4 (fra 1985-01), 12 mnd 2.3 %",
+      "kilde": "DXY",
+      "status": "OK"
+    },
+    {
+      "detalj": "9.5357 per 2026-10-13, persentil 92.2 (fra 1971-01), 12 mnd -4.9 %",
+      "kilde": "USD/NOK",
+      "status": "OK"
+    },
+    {
+      "detalj": "uke 2026-W42: 18 segmenter, 51 kurser, 0 hendelser, hypotese 3 mnd: 0 ferdige av 0, 60/40: 0 ferdige av 0; dom hypotese_3mnd venter, regel_6040 venter",
+      "kilde": "flagglogg",
+      "status": "OK"
+    }
+  ],
+  "oppdatert": "2026-10-21"
+}

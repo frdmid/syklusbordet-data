@@ -1,0 +1,83 @@
+{
+  "beskrivelse": "Uforanderlig logg over hvilke segment som laa i bunnsone ved hver kjoring. Skal aldri skrives om.",
+  "oppforinger": [
+    {
+      "antall_segment": 16,
+      "dato": "2026-09-21",
+      "i_bunnsone": [
+        {
+          "A": 87.6,
+          "id": "henryhub",
+          "navn": "Naturgass US (Henry Hub)"
+        }
+      ],
+      "merknad": "Forste kjoring med fullt prislag. Bare A er beregnet.",
+      "naermest": [
+        {
+          "A": 71.2,
+          "id": "nikkel"
+        },
+        {
+          "A": 65.3,
+          "id": "bly"
+        },
+        {
+          "A": 58.4,
+          "id": "aluminium"
+        }
+      ]
+    },
+    {
+      "antall_segment": 18,
+      "dato": "2026-10-07",
+      "i_bunnsone": [
+        {
+          "A": 84.8,
+          "id": "henryhub",
+          "navn": "Naturgass US (Henry Hub)"
+        }
+      ],
+      "merknad": "Alle 18 kilder OK i datalogg. Shipping-segmentene laa ikke i index.json og er ikke oppdatert.",
+      "naermest": [
+        {
+          "A": 79.1,
+          "id": "jernmalm"
+        },
+        {
+          "A": 64.4,
+          "id": "bly"
+        },
+        {
+          "A": 62.7,
+          "id": "nikkel"
+        }
+      ]
+    },
+    {
+      "antall_segment": 18,
+      "dato": "2026-10-21",
+      "i_bunnsone": [
+        {
+          "A": 87.1,
+          "id": "henryhub",
+          "navn": "Naturgass US (Henry Hub)"
+        }
+      ],
+      "merknad": "Data fra repo datert 2026-10-14 06:39:24. 54 av 54 kilder OK i datalogg. Shipping-segmentene laa ikke i index.json og er ikke oppdatert.",
+      "naermest": [
+        {
+          "A": 79.1,
+          "id": "jernmalm"
+        },
+        {
+          "A": 64.4,
+          "id": "bly"
+        },
+        {
+          "A": 62.7,
+          "id": "nikkel"
+        }
+      ]
+    }
+  ]
+}

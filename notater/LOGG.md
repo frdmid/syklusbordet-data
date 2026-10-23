@@ -9,6 +9,26 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 23.10.2026 10:03, Claude Code
+**Hva:** (1) Lokal planlagt oppgave `syklusbordet-sjekk-2810` (engangs, onsdag
+28.10.2026 kl. 13:30 norsk tid): sjekker hovedkjøringen 08:48, reserven 09:56
+(skal hoppe over), rutinen 10:15 (skal skrive) og 13:15 (skal ikke skrive),
+pluss Shadow-OOS uke 44 og raden i `uran_futures_uke.csv`. Endrer ingenting,
+fører resultatet i loggen. Krever at Claude-appen er åpen.
+(2) Ny sikkerhetskopi før arbeidsgiverens overgang til Enterprise (Frodes
+bestilling): `sikkerhetskopi/2026-10-23/` med dashbordet versjon 67 (med og
+uten vertens omslag; uten omslag er lik den publiserte), hele databasen
+(25 segmenter, 8 markedsdokumenter, `logg/flagg`, `meta/status`), onsdags-
+rutinens tekst og innstillinger (10:15 og 13:15), de lokale planlagte
+oppgavene, README med gjenoppretting og sha256 (43 filer, 2,8 MB).
+`marked/alu_tilbud` (IAI) og `data_privat/` er bevisst ikke med i repoet; de
+ligger bare i Notion-kopien. Notion: ny mappe «Sikkerhetskopi 2026-10-23» med
+hele repoet som zip, databasen med IAI-dokumentet, rutiner og oppgaver,
+dashbordet og de private dataene, og siden oppdatert.
+**Filer:** `sikkerhetskopi/2026-10-23/` (ny), loggen; Notion.
+**Cowork må vite:** Kopien fra 09.10 står urørt. Etter en overgang: følg
+README i `sikkerhetskopi/2026-10-23/`.
+
 ### 21.10.2026 12:17, Cowork
 **Hva:** `.github/workflows/ukentlig.yml` er erstattet med innholdet i
 `notater/ukentlig_forslag.yml`, ord for ord (Frodes bestilling, slik Claude
