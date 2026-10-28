@@ -1,5 +1,5 @@
 {
- "oppdatert": "2026-10-21 09:31:48",
+ "oppdatert": "2026-10-28 12:44:20",
  "segmenter": [
   "brent",
   "wti",
@@ -79,7 +79,7 @@
   {
    "kilde": "laks",
    "status": "OK",
-   "detalj": "margin 1.383 (A 90.0), kostnad 2024 59.97 kr/kg, uke 2026-10-15 74.05 kr/kg"
+   "detalj": "margin 1.395 (A 88.4), kostnad 2024 59.97 kr/kg, uke 2026-10-22 76.04 kr/kg"
   },
   {
    "kilde": "segment oljeservice",
@@ -224,37 +224,37 @@
   {
    "kilde": "COT brent",
    "status": "OK",
-   "detalj": "2026-10-13, forvaltere +1.2 % av OI, persentil 17.3 (3 aar) / 57.4 (fra 2011), 772 uker"
+   "detalj": "2026-10-20, forvaltere +1.2 % av OI, persentil 17.3 (3 aar) / 57.8 (fra 2011), 773 uker"
   },
   {
    "kilde": "COT wti",
    "status": "OK",
-   "detalj": "2026-10-13, forvaltere +2.1 % av OI, persentil 14.1 (3 aar) / 6.2 (fra 2006), 1062 uker"
+   "detalj": "2026-10-20, forvaltere +2.0 % av OI, persentil 14.1 (3 aar) / 5.7 (fra 2006), 1063 uker"
   },
   {
    "kilde": "COT henryhub",
    "status": "OK",
-   "detalj": "2026-10-13, forvaltere -7.3 % av OI, persentil 13.5 (3 aar) / 33.1 (fra 2006), 1062 uker"
+   "detalj": "2026-10-20, forvaltere -9.2 % av OI, persentil 1.3 (3 aar) / 26.3 (fra 2006), 1063 uker"
   },
   {
    "kilde": "COT gold",
    "status": "OK",
-   "detalj": "2026-10-13, forvaltere +27.0 % av OI, persentil 39.7 (3 aar) / 58.5 (fra 2006), 1062 uker"
+   "detalj": "2026-10-20, forvaltere +25.9 % av OI, persentil 32.7 (3 aar) / 54.9 (fra 2006), 1063 uker"
   },
   {
    "kilde": "COT kobber",
    "status": "OK",
-   "detalj": "2026-10-13, forvaltere +19.5 % av OI, persentil 62.8 (3 aar) / 81.8 (fra 2006), 1062 uker"
+   "detalj": "2026-10-20, forvaltere +14.6 % av OI, persentil 48.7 (3 aar) / 72.6 (fra 2006), 1063 uker"
   },
   {
    "kilde": "COT kakao",
    "status": "OK",
-   "detalj": "2026-10-13, forvaltere -6.6 % av OI, persentil 11.5 (3 aar) / 11.9 (fra 2006), 1062 uker"
+   "detalj": "2026-10-20, forvaltere -5.0 % av OI, persentil 20.5 (3 aar) / 16.1 (fra 2006), 1063 uker"
   },
   {
    "kilde": "COT palmeolje",
    "status": "OK",
-   "detalj": "2026-10-13, forvaltere -6.1 % av OI, persentil 21.8 (3 aar) / 13.7 (fra 2021), 248 uker"
+   "detalj": "2026-10-20, forvaltere -6.1 % av OI, persentil 21.8 (3 aar) / 13.7 (fra 2021), 249 uker"
   },
   {
    "kilde": "COT totalt",
@@ -264,32 +264,32 @@
   {
    "kilde": "fersk pris jernmalm",
    "status": "OK",
-   "detalj": "90.86 per 2026-10-20"
+   "detalj": "90.70 per 2026-10-27"
   },
   {
    "kilde": "kurveform",
    "status": "OK",
-   "detalj": "6 segmenter, rente 4.079999923706055, historikk brent 2 mnd, wti 2 mnd, henryhub 2 mnd, gold 2 mnd, kobber 2 mnd, kakao 2 mnd"
+   "detalj": "6 segmenter, rente 4.043000221252441, historikk brent 2 mnd, wti 2 mnd, henryhub 2 mnd, gold 2 mnd, kobber 2 mnd, kakao 2 mnd"
   },
   {
    "kilde": "VIX",
    "status": "OK",
-   "detalj": "17.41 per 2026-10-21, persentil 49.9 (fra 1990-01) / 55.8 (10 aar)"
+   "detalj": "17.43 per 2026-10-28, persentil 49.9 (fra 1990-01) / 55.8 (10 aar)"
   },
   {
    "kilde": "DXY",
    "status": "OK",
-   "detalj": "101.788 per 2026-10-21, persentil 80.2 (fra 1985-01), 12 mnd 2.0 %"
+   "detalj": "102.325 per 2026-10-28, persentil 81.6 (fra 1985-01), 12 mnd 2.5 %"
   },
   {
    "kilde": "USD/NOK",
    "status": "OK",
-   "detalj": "9.3843 per 2026-10-20, persentil 91.5 (fra 1971-01), 12 mnd -6.4 %"
+   "detalj": "9.317 per 2026-10-27, persentil 91.0 (fra 1971-01), 12 mnd -7.1 %"
   },
   {
    "kilde": "flagglogg",
    "status": "OK",
-   "detalj": "uke 2026-W43: 18 segmenter, 51 kurser, 0 hendelser, hypotese 3 mnd: 0 ferdige av 0, 60/40: 0 ferdige av 0; dom hypotese_3mnd venter, regel_6040 venter"
+   "detalj": "uke 2026-W44: 18 segmenter, 51 kurser, 0 hendelser, hypotese 3 mnd: 0 ferdige av 0, 60/40: 0 ferdige av 0; dom hypotese_3mnd venter, regel_6040 venter"
   }
  ]
 }
