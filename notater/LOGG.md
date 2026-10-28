@@ -9,6 +9,30 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 28.10.2026 13:37, Claude Code
+**Hva:** Planlagt sjekk av ukekjøringen 28.10 (første med ny arbeidsflyt).
+Ingen endringer i rutiner, arbeidsflyter eller kode, ingen kjøringer startet.
+1. **Hovedkjøringen 08:48: ikke ok.** GitHub laget ingen kjøring i det hele
+   tatt (ingen runs i repoet etter 21.10). `index.json` står på
+   21.10 11:31; ingen W44 i `shadow/run_manifest.csv`, ingen ny rad i
+   `uran_futures_uke.csv`.
+2. **Reserven 09:56: ikke ok.** Heller ingen kjøring; vakt-jobben har aldri
+   startet.
+3. **Rutinen 10:15 (startet 10:16): ok etter reglene.** Så at `index.json` var
+   fra 21.10, ventet, skrev ingenting og førte ingen oppføring.
+4. **Rutinen 13:15 (startet 13:25): ok etter reglene.** Skrev ingenting, førte
+   oppføringen «ingenting skrevet» i ukeloggen og sendte varsel.
+**Årsak:** Ikke i koden. `ukentlig.yml` er gyldig YAML med cron `48 7 * * 3`
+og `56 8 * * 3`, arbeidsflyten er aktiv, ligger på main (commit 499f9cf av
+frdmid 21.10). GitHub utløste rett og slett ingen av de to planlagte tidene,
+samme svikt som 21.10 (06:00 UTC hoppet over). Reserven hjelper ikke når
+GitHub dropper begge.
+**Filer:** loggen.
+**Cowork må vite:** Uke 44 mangler til innhentingen startes for hånd
+(`gh workflow run ukentlig.yml`, vakt slipper håndstart gjennom) og rutinen
+deretter kjøres. Frode avgjør. Merk: PC-en står nå på Montreal-tid (EST), så
+`Get-Date` gir ikke norsk tid; bruk omregning til Europe/Oslo.
+
 ### 23.10.2026 10:07, Claude Code
 **Hva:** Sikkerhetskopien 23.10 fullført i Notion (Frodes bestilling, med
 `prompts.txt` lagt til). Mappen «Sikkerhetskopi 2026-10-23» på siden
