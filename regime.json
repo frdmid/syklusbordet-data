@@ -1,6 +1,6 @@
 {
  "id": "regime",
- "laget": "2026-10-21",
+ "laget": "2026-10-28",
  "mnd": "2026-09",
  "vekst": {
   "ord": "bred oppgang",
@@ -25,14 +25,14 @@
  "kreditt_pct": 3.0,
  "rentekurve": 0.34,
  "likviditet": {
-  "dato": "2026-10-21",
-  "fed_netto_mrd": 5872.0,
-  "fed_netto_13u_pst": -0.8,
+  "dato": "2026-10-28",
+  "fed_netto_mrd": 5801.0,
+  "fed_netto_13u_pst": -0.4,
   "rrp_mrd": 0.0,
   "rrp_topp_mrd": 2367.0,
   "rrp_topp_dato": "2022-09-28",
-  "tga_mrd": 883.0,
-  "fed_balanse_mrd": 6756.0,
+  "tga_mrd": 952.0,
+  "fed_balanse_mrd": 6754.0,
   "sb_mnd": "2026-09",
   "sb_sum_mrd": 17524.0,
   "sb_6m_pst": -2.4,
@@ -334,8 +334,8 @@
    },
    {
     "t": "2026-10",
-    "netto": 5872.0,
-    "n13": -0.8
+    "netto": 5801.0,
+    "n13": -0.4
    }
   ]
  },
