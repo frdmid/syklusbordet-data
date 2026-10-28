@@ -1,0 +1,9 @@
+{
+ "run_id": "challenger_olje_rigger_v1|2026-W44|2026-10-28 12:46:55",
+ "filer_git_blob_sha": {
+  "shadow/snapshots/champion_v1_1/2026-W44.csv": "2d049082a003e5966ebfd692adf617dc05a64499"
+ },
+ "kodefiler_sha256": {
+  "challengers/olje_rigger.py": "a9363dbbed0685757828aeecc3430560e00fe47e8eaf5d7da71e954378913868"
+ }
+}
