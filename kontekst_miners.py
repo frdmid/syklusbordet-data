@@ -23,6 +23,8 @@
 #             UCITS-fondene 2015 til 2026 og ga noe ut over signal 1, men var
 #             svakt i 1992 til 2014 (sonde_kjor_miners_kurv). Begge signalene
 #             holdt sterkt bare i 2015 til 2026.
+#   REGIMET   gull siste 6 mnd (over +5 % stigende, under -5 % fallende), og
+#             hvordan signalene har virket i hvert regime (ikke sikkert).
 #   PUNKTENE  sig1 og sig2 i serien: måneder der signalet var i øverste
 #             tredjedel mot det som var kjent da (minst 36 mnd), til grafen.
 #   PAPIRENE  UCITS-fondene i USD: GDX.L, GDXJ.L, IAUP.L, AUCO.L. D med samme
@@ -201,6 +203,11 @@ def beregn(priser_csv, idag=None, note=print):
     except Exception as e:
         note(f"   miners: signal 2 mangler ({type(e).__name__})")
 
+    # gullregime i sanntid (sonde_kjor_miners_gullregime): gull siste 6 mnd, ±5 %
+    g6 = np.log(serie("gold")); g6 = (g6 - g6.shift(6)).dropna()
+    regime = {"mnd": str(g6.index[-1]), "gull_6m_pst": _r(100 * (np.exp(g6.iloc[-1]) - 1)),
+              "regime": "stigende" if g6.iloc[-1] > np.log(1.05) else ("fallende" if g6.iloc[-1] < -np.log(1.05) else "stabil")}
+
     for pt in serie_ut:
         if pt["t"] in topp1:
             pt["sig1"] = topp1[pt["t"]]
@@ -244,7 +251,10 @@ def beregn(priser_csv, idag=None, note=print):
         "d_detalj": {"D_aksjer": Dseg, "tema": None, "tema_D": None, "tema_navn": None, "n": len(dverdier),
                      "spredning": [min(dverdier), max(dverdier)] if dverdier else None},
         "gate_detalj": {"aapne": 0, "malte": 0},
-        "miners": {"signal": sig, "signal6": sig6,
+        "miners": {"signal": sig, "signal6": sig6, "regime": regime,
+                   "regimetest": {"s1": {"stigende": "+0,18", "stabil": "+0,17", "fallende": "+0,17 til +0,19"},
+                                  "s2": {"stigende": "+0,29 til +0,34", "stabil": "+0,18 til +0,21", "fallende": "-0,05 til +0,02"},
+                                  "p": "0,17 til 0,39", "kilde": "sonde_kjor_miners_gullregime 28.10.2026"},
                    "test": {"r_3m": "+0,26 (store) og +0,28 (små)", "r_6m": "+0,36 og +0,40",
                             "spread_3m_pp": "9 til 12", "kilde": "sonde_kjor_gullgruver 28.10.2026",
                             "for_2015": "+0,11 til +0,14 på 3 mnd (p 0,05 til 0,08), ingenting på 6 mnd"},

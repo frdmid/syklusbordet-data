@@ -3164,11 +3164,11 @@
  "miners": {
   "signal": {
    "mnd": "2026-10",
-   "endring_3m_pst": -19.2,
+   "endring_3m_pst": -19.5,
    "pctl": 12.0,
    "fra": "2007-10",
-   "gull_3m_pst": -1.1,
-   "olje_3m_pst": 22.5
+   "gull_3m_pst": -1.3,
+   "olje_3m_pst": 22.7
   },
   "signal6": {
    "mnd": "2026-09",
@@ -3177,6 +3177,25 @@
    "olje_A_6m_siden": 13.5,
    "pctl": 69.0,
    "fra": "1992-10"
+  },
+  "regime": {
+   "mnd": "2026-09",
+   "gull_6m_pst": -11.1,
+   "regime": "fallende"
+  },
+  "regimetest": {
+   "s1": {
+    "stigende": "+0,18",
+    "stabil": "+0,17",
+    "fallende": "+0,17 til +0,19"
+   },
+   "s2": {
+    "stigende": "+0,29 til +0,34",
+    "stabil": "+0,18 til +0,21",
+    "fallende": "-0,05 til +0,02"
+   },
+   "p": "0,17 til 0,39",
+   "kilde": "sonde_kjor_miners_gullregime 28.10.2026"
   },
   "test": {
    "r_3m": "+0,26 (store) og +0,28 (små)",

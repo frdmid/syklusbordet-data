@@ -9,6 +9,20 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 28.10.2026 22:43, Claude Code
+**Hva:** Linjen om gullregime i feltet Gullgruver (Frodes bestilling).
+`kontekst_miners.py` regner hver uke sanntidsregimet for gull (endring siste
+6 mnd, over +5 % stigende, under -5 % fallende) i `miners.regime`, og har
+resultatene fra `sonde_kjor_miners_gullregime` i `miners.regimetest`.
+Dashbordet versjon 71: linjen «Gullregime nå» mellom signalene og «Hvor
+godt det er belagt». I dag fallende (gull -11,1 % til september): signal 1
+har virket likt i alle regimer (+0,17 til +0,19), signal 2 har historisk
+ikke sagt noe når gullet faller (-0,05 til +0,02, mot +0,29 til +0,34 når
+det stiger); forskjellen er ikke sikker (p 0,17 til 0,39). Teksten tilpasser
+seg regimet. segments/miners skrevet på nytt (versjon 4).
+**Filer:** `kontekst_miners.py`, `miners.json`.
+**Cowork må vite:** Ingen ny regel; linjen er kontekst.
+
 ### 28.10.2026 22:40, Claude Code
 **Hva:** Ny sonde `sonde_kjor_miners_gullregime.py` (Frodes bestilling:
 oppfører gruvesignalene seg ulikt når gull stiger, står stille eller
