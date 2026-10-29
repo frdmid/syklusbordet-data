@@ -1,0 +1,40 @@
+{
+ "model": {
+  "id": "challenger_gull_begge_v1",
+  "status": "challenger",
+  "created_at": "2026-10-29",
+  "effective_from": "2026-11-04",
+  "parent_model": "champion_v1_1",
+  "data_schema_version": 1
+ },
+ "spesifikasjon": {
+  "hypothesis": "Gullgruvene gjør det bedre enn aksjemarkedet de neste 6 månedene når gull har steget kraftig mot olje (S1) samtidig som oljen har blitt billigere (S2). Gull stiger mens kostnaden faller, og marginen utvides. Ble ikke bekreftet før 2015, men var sterk etter.",
+  "changed_variables": [
+   "bottom_zone for gold: S1 og S2 samme måned (BEGGE), i stedet for Championens flagg",
+   "watch for gold: S1 eller S2",
+   "strong_candidate, d95 og months_in_zone for gold: NULL"
+  ],
+  "unchanged_variables": [
+   "alle andre segmenter",
+   "papirene for gold (GDX.L, GJGB.L, SPGP.L)",
+   "regel for ny episode (12 mnd)",
+   "referanser OSEBX og MSCI World (IWDA.L)",
+   "måling i NOK"
+  ],
+  "primary_endpoint": "Avkastning i NOK for likt vektet GDX.L, GJGB.L og SPGP.L 6 måneder etter hver ukes snapshot, minus MSCI World (IWDA.L), i uker med bottom_zone mot uker uten.",
+  "expected_direction": "høyere",
+  "decision_rule": "Ingen konklusjon før minst 12 måneder med BEGGE har modnet på 6 måneder, fordelt på minst 3 adskilte perioder. Støttet hvis ukene med BEGGE i snitt slår ukene uten med minst 6 prosentpoeng over 6 måneder og selv slår MSCI World, også uten den beste perioden. Ellers forkastet. Episoderegelen på 12 måneder brukes ikke i vurderingen.",
+  "modul": "challengers/gull_begge.py",
+  "data": "Ingen egne data. serier/priser_mnd.csv (gull nominelt, Brent nominelt og realpris), som feltet Gullgruver i dashbordet.",
+  "evidence_type_before_start": "IN_SAMPLE: sonde_kjor_miners_* (28. og 29.10.2026), sju sonder. Ingen regel holdt på 1993 til 2014. BEGGE: 3 mnd p 0,048 på kurven og ^XAU, men måneder med bare S1 ga like mye. Etter 2015 +17,5 % mot -6,0 % over 6 mnd mot SPY.",
+  "notes": "Frodes beslutning 29.10.2026, etter at K1 ble tatt ut av dashbordet.",
+  "kodefiler": {
+   "challengers/gull_begge.py": "eab461c58ae75f931f857ca4dcb4c910fbf284ec6deb93eb1ec9f71dbb6bb6ec"
+  }
+ },
+ "metadata": {
+  "code_commit": null,
+  "notes": "Frodes beslutning 29.10.2026, etter at K1 ble tatt ut av dashbordet.",
+  "specification_hash": "314e2bd66c7bec5e58db2210ae433f692af9756ac8a5fb95771ca6a6a29f21ff"
+ }
+}

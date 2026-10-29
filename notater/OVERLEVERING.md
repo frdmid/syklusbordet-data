@@ -177,7 +177,10 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
   rullende A 95 og detrendet A 80, Frodes valg, ikke testet som regel) og
   `challenger_bred_nedgang_v1` (Championens bunnsone bare når 40 % eller færre
   av råvarene er i oppgang), begge fra 21.10. **21.10: manifestet skal ha
-  Champion og fem Challengere ok.**
+  Champion og fem Challengere ok.** `challenger_gull_begge_v1` (gold:
+  bunnsone når S1 og S2 står samme måned, watch når én av dem står; vurderes
+  på 6 mnd mot MSCI World per uke, ikke per episode) fra 04.11. **04.11:
+  manifestet skal ha Champion og seks Challengere ok.**
 - B på bordet er ikke endret (Frodes beslutning 12.10). Tilbudsmålene er
   Challengere eller kontekst, aldri `scores.B`.
 

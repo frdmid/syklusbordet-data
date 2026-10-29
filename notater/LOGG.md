@@ -9,6 +9,21 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.10.2026 10:12, Claude Code
+
+BEGGE for gullgruvene registrert som Challenger (Frodes beslutning):
+`challenger_gull_begge_v1` fra 04.11.2026. Segmentet gold: bottom_zone = S1 og
+S2 samme måned, watch = S1 eller S2, strong_candidate, d95 og months_in_zone
+NULL; papirene er Championens. S1 og S2 regnes i modulen selv fra
+`serier/priser_mnd.csv` (kopier av funksjonene i `kontekst_miners.py`, frosset),
+så en endring i dashbordkoden endrer ikke regelen. Vurderes per uke på 6 mnd
+mot MSCI World i NOK, minst 12 måneder med BEGGE i minst 3 perioder.
+Testet mot W44: 2026-09, S1 av, S2 på, samme som `miners.json`.
+Filer: `challengers/gull_begge.py`, `challengers/spes_gull_begge_v1.json`,
+`config/challengers/challenger_gull_begge_v1.json`,
+`shadow/model_registry.csv`, `notater/OVERLEVERING.md`.
+For Cowork: 04.11 skal manifestet ha Champion og seks Challengere ok.
+
 ### 29.10.2026 08:59, Claude Code
 **Hva:** K1 er tatt ut som signal i feltet Gullgruver (Frodes beslutning).
 Feltet har ikke noe signal. Punktene S1 (gull mot Brent 3 mnd) og S2 (olje-A
