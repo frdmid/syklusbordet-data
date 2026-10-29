@@ -9,6 +9,30 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 28.10.2026 22:24, Claude Code
+**Hva:** Feltet «Gullgruver (gull mot olje)» (Frodes bestilling, slik foreslått
+etter de tre gruvesondene). Observasjon uten flagg, ikke del av Championen.
+1. `kontekst_miners.py` (ny) skriver `miners.json` i roten (ikke i
+   `segments/`, så Championens skript aldri leser den) i samme format som et
+   segment: serien fat olje per unse gull fra 1986 (gull og WTI fra
+   `serier/priser_mnd.csv`), A, Ad og Ar med bordets formler, bånd, trend
+   (`signaler.trend`), signalet (endring i gull mot olje siste 3 mnd, Yahoo
+   GC=F og BZ=F, med persentil fra 2007), papirene GDX.L, GDXJ.L, IAUP.L og
+   AUCO.L med D (formelen fra `kapitulasjon_d.py`, kopiert), segmentets D =
+   median, C «uaktuell» (fond). Kalles fra `shadow_challenger.kjor`.
+2. I dag: 44,4 fat per unse, A 4,7, Ad 7,6, Ar 19,2, D 44, trend nei;
+   signalet -19,1 % siste 3 mnd (gull -0,9 %, olje +22,4 %, persentil 12).
+3. Dashbordet versjon 68: panelet (gruppe Metall, status Observasjon) med
+   signallinjen og et avsnitt i forklaringen. Første dokument skrevet til
+   segments/miners.
+4. Onsdagsrutinen: steg 6k (segments/miners fra `miners.json`, samme
+   datokrav) og en linje om gullgruver i rapporten. Kontrollert: bare prompten
+   er endret. Tester består, kontrollen uten avvik.
+**Filer:** `kontekst_miners.py`, `shadow_challenger.py`, `miners.json`,
+`notater/OVERLEVERING.md`.
+**Cowork må vite:** IKZ-tilgang er bare kjent for GDX.L; GDXJ.L, IAUP.L og
+AUCO.L står som handlbare uten å være sjekket.
+
 ### 28.10.2026 22:18, Claude Code
 **Hva:** Ny sonde `sonde_kjor_miners_feilpris.py` (Frodes bestilling: let
 etter feilprising av gruvene mot gull og olje). Tre mål, punkt i tid: M1
