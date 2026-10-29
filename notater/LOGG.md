@@ -9,6 +9,26 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.10.2026 08:59, Claude Code
+**Hva:** K1 er tatt ut som signal i feltet Gullgruver (Frodes beslutning).
+Feltet har ikke noe signal. Punktene S1 (gull mot Brent 3 mnd) og S2 (olje-A
+6 mnd) i øverste tredjedel vises igjen i grafen som i v70 og v71 (Frodes
+ønske), nå regnet med månedssnitt som i sondene. `kontekst_miners.py` skriver
+`miners.punkter` (sig1, sig2, sist_sig1, sist_sig2), `signal: null` og en
+tekst om testene; `kombinasjon` og `test` er borte. Dashbordet v74,
+`segments/miners` skrevet, rutinens rapportpunkt om gullgruver endret (bare
+prompten, kontrollert).
+Ny sonde `sonde_kjor_miners_oljeekstrem.py` (ekstremt billig olje som
+signal for gruvene, kriteriene satt før kjøring, avgjort på 1993 til 2014):
+olje-A minst 90, olje-Ar minst 90, oljekrakk 40 %, og de to første sammen med
+S1. **Ingen holder.** Billig olje ga svakere gruver (1993 til 1994 og 1998,
+-6 til -9 % over 6 mnd); oljekrakk finnes bare én gang før 2015 (2008).
+**Filer:** `kontekst_miners.py`, `miners.json`, `sonde_kjor_miners_oljeekstrem.py`,
+`sonder/sonde_kjor_miners_oljeekstrem.txt`, `sonder/miners_oljeekstrem.csv`,
+`sonder_ferdige.txt`, `notater/OVERLEVERING.md`.
+**Cowork må vite:** `miners.kombinasjon` og `miners.test` finnes ikke lenger.
+Syvende sonde på gruvene; ingen signal har holdt på 1993 til 2014.
+
 ### 29.10.2026 08:55, Claude Code
 **Hva:** Ny sonde `sonde_kjor_miners_k1_varianter.py` (Frodes bestilling: kan
 K1 forbedres?). Fem varianter, kriteriene satt før kjøring, avgjort på 1993

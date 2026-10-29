@@ -1,0 +1,76 @@
+EPISODER (fra 1993)
+   E1 olje-A minst 90: 1993-06 til 1994-03, 1994-12, 1995-07, 1995-10, 1997-12 til 1999-02, 2020-03 til 2020-04
+   E2 olje-Ar minst 90: 1993-06 til 1994-03, 1994-12, 1995-07, 1995-10, 1997-12 til 1999-02, 2014-12 til 2015-03, 2015-05 til 2016-11, 2017-06, 2020-02 til 2020-10
+   E3 oljekrakk 40 %: 2008-10 til 2009-06, 2014-12 til 2015-09, 2015-12 til 2016-03, 2020-03 til 2020-05, 2020-09 til 2020-10, 2026-06
+   E4 olje-A minst 90 og S1: 1993-06 til 1993-08, 1993-11 til 1994-01, 1995-07, 1998-01 til 1998-04, 1998-06 til 1998-08, 1998-11 til 1998-12, 2020-03 til 2020-04
+   E5 olje-Ar minst 90 og S1: 1993-06 til 1993-08, 1993-11 til 1994-01, 1995-07, 1998-01 til 1998-04, 1998-06 til 1998-08, 1998-11 til 1998-12, 2014-12 til 2015-02, 2015-07 til 2016-03, 2016-07 til 2016-08, 2017-06, 2020-02 til 2020-05, 2020-09 til 2020-10
+
+==================== h = 3 mnd (per 3 mnd, log, minus SPY)
+   E1 olje-A minst 90
+      1993-2014 (avgjør) KURV  signal  -3.8% (n 28, 5 perioder)  andre  -0.6%  forskjell  -3.1 pp p 0.803  halvdeler -5.4/+nan
+      1993-2014 (avgjør) ^XAU  signal  -5.0% (n 28, 5 perioder)  andre  -1.6%  forskjell  -3.4 pp p 0.800  halvdeler -4.1/+nan
+      2015-2026          KURV  for få måneder
+      2015-2026          ^XAU  for få måneder
+   E2 olje-Ar minst 90
+      1993-2014 (avgjør) KURV  signal  -3.8% (n 28, 5 perioder)  andre  -0.6%  forskjell  -3.1 pp p 0.784  halvdeler -5.4/+nan
+      1993-2014 (avgjør) ^XAU  signal  -5.0% (n 28, 5 perioder)  andre  -1.6%  forskjell  -3.4 pp p 0.816  halvdeler -4.1/+nan
+      2015-2026          KURV  signal  +1.6% (n 32, 4 perioder)  andre  +0.4%  forskjell  +1.1 pp p 0.472  halvdeler +5.1/-26.2
+      2015-2026          ^XAU  signal  +2.3% (n 32, 4 perioder)  andre  -0.4%  forskjell  +2.7 pp p 0.352  halvdeler +5.2/-14.9
+   E3 oljekrakk 40 %
+      1993-2014 (avgjør) KURV  signal +11.4% (n 9, 1 perioder)  andre  -1.4%  forskjell +12.8 pp p 0.136  halvdeler +nan/+14.8
+      1993-2014 (avgjør) ^XAU  signal +10.0% (n 9, 1 perioder)  andre  -2.4%  forskjell +12.4 pp p 0.091  halvdeler +nan/+13.1
+      2015-2026          KURV  signal  +2.3% (n 19, 5 perioder)  andre  +0.4%  forskjell  +1.9 pp p 0.401  halvdeler +5.0/-8.8
+      2015-2026          ^XAU  signal  +3.1% (n 19, 5 perioder)  andre  -0.2%  forskjell  +3.3 pp p 0.257  halvdeler +5.0/-2.4
+   E4 olje-A minst 90 og S1
+      1993-2014 (avgjør) KURV  signal  -3.1% (n 16, 6 perioder)  andre  -0.8%  forskjell  -2.3 pp p 0.656  halvdeler -4.0/+nan
+      1993-2014 (avgjør) ^XAU  signal  -4.3% (n 16, 6 perioder)  andre  -1.8%  forskjell  -2.5 pp p 0.720  halvdeler -2.9/+nan
+      2015-2026          KURV  for få måneder
+      2015-2026          ^XAU  for få måneder
+   E5 olje-Ar minst 90 og S1
+      1993-2014 (avgjør) KURV  signal  -3.1% (n 16, 6 perioder)  andre  -0.8%  forskjell  -2.3 pp p 0.671  halvdeler -4.0/+nan
+      1993-2014 (avgjør) ^XAU  signal  -4.3% (n 16, 6 perioder)  andre  -1.8%  forskjell  -2.5 pp p 0.734  halvdeler -2.9/+nan
+      2015-2026          KURV  signal  +8.9% (n 20, 6 perioder)  andre  -0.7%  forskjell  +9.6 pp p 0.026  halvdeler +15.2/-26.2
+      2015-2026          ^XAU  signal  +8.6% (n 20, 6 perioder)  andre  -1.2%  forskjell  +9.7 pp p 0.014  halvdeler +13.6/-14.9
+
+==================== h = 6 mnd (per 6 mnd, log, minus SPY)
+   E1 olje-A minst 90
+      1993-2014 (avgjør) KURV  signal  -5.7% (n 28, 5 perioder)  andre  -2.5%  forskjell  -3.2 pp p 0.686  halvdeler -6.8/+nan
+      1993-2014 (avgjør) ^XAU  signal  -9.1% (n 28, 5 perioder)  andre  -4.2%  forskjell  -4.9 pp p 0.808  halvdeler -5.8/+nan
+      2015-2026          KURV  for få måneder
+      2015-2026          ^XAU  for få måneder
+   E2 olje-Ar minst 90
+      1993-2014 (avgjør) KURV  signal  -5.7% (n 28, 5 perioder)  andre  -2.5%  forskjell  -3.2 pp p 0.694  halvdeler -6.8/+nan
+      1993-2014 (avgjør) ^XAU  signal  -9.1% (n 28, 5 perioder)  andre  -4.2%  forskjell  -4.9 pp p 0.799  halvdeler -5.8/+nan
+      2015-2026          KURV  signal  -1.9% (n 32, 4 perioder)  andre  +2.5%  forskjell  -4.3 pp p 0.831  halvdeler +2.2/-43.0
+      2015-2026          ^XAU  signal  -0.2% (n 32, 4 perioder)  andre  +0.7%  forskjell  -0.9 pp p 0.537  halvdeler +2.3/-25.5
+   E3 oljekrakk 40 %
+      1993-2014 (avgjør) KURV  signal  +9.3% (n 9, 1 perioder)  andre  -3.3%  forskjell +12.5 pp p 0.217  halvdeler +nan/+15.6
+      1993-2014 (avgjør) ^XAU  signal  +8.7% (n 9, 1 perioder)  andre  -5.3%  forskjell +13.9 pp p 0.189  halvdeler +nan/+14.7
+      2015-2026          KURV  signal  -0.1% (n 18, 4 perioder)  andre  +1.7%  forskjell  -1.7 pp p 0.576  halvdeler +7.0/-43.0
+      2015-2026          ^XAU  signal  +0.5% (n 18, 4 perioder)  andre  +0.5%  forskjell  +0.0 pp p 0.469  halvdeler +4.5/-25.5
+   E4 olje-A minst 90 og S1
+      1993-2014 (avgjør) KURV  signal  -8.7% (n 16, 6 perioder)  andre  -2.5%  forskjell  -6.2 pp p 0.824  halvdeler -9.5/+nan
+      1993-2014 (avgjør) ^XAU  signal -10.3% (n 16, 6 perioder)  andre  -4.4%  forskjell  -5.9 pp p 0.825  halvdeler -6.5/+nan
+      2015-2026          KURV  for få måneder
+      2015-2026          ^XAU  for få måneder
+   E5 olje-Ar minst 90 og S1
+      1993-2014 (avgjør) KURV  signal  -8.7% (n 16, 6 perioder)  andre  -2.5%  forskjell  -6.2 pp p 0.827  halvdeler -9.5/+nan
+      1993-2014 (avgjør) ^XAU  signal -10.3% (n 16, 6 perioder)  andre  -4.4%  forskjell  -5.9 pp p 0.838  halvdeler -6.5/+nan
+      2015-2026          KURV  signal +13.3% (n 20, 6 perioder)  andre  -0.6%  forskjell +13.9 pp p 0.082  halvdeler +26.8/-43.0
+      2015-2026          ^XAU  signal +12.3% (n 20, 6 perioder)  andre  -1.6%  forskjell +13.9 pp p 0.000  halvdeler +22.1/-25.5
+
+AVGJØRELSE (1993 til 2014)
+
+   E1 olje-A minst 90, h 3           : holder ikke (krav a til c nei, største p 0.803, BH nei)
+   E1 olje-A minst 90, h 6           : holder ikke (krav a til c nei, største p 0.808, BH nei)
+   E2 olje-Ar minst 90, h 3          : holder ikke (krav a til c nei, største p 0.816, BH nei)
+   E2 olje-Ar minst 90, h 6          : holder ikke (krav a til c nei, største p 0.799, BH nei)
+   E3 oljekrakk 40 %, h 3            : holder ikke (krav a til c nei, største p 0.136, BH nei)
+   E3 oljekrakk 40 %, h 6            : holder ikke (krav a til c nei, største p 0.217, BH nei)
+   E4 olje-A minst 90 og S1, h 3     : holder ikke (krav a til c nei, største p 0.720, BH nei)
+   E4 olje-A minst 90 og S1, h 6     : holder ikke (krav a til c nei, største p 0.825, BH nei)
+   E5 olje-Ar minst 90 og S1, h 3    : holder ikke (krav a til c nei, største p 0.734, BH nei)
+   E5 olje-Ar minst 90 og S1, h 6    : holder ikke (krav a til c nei, største p 0.838, BH nei)
+
+I DAG (2026-09): olje-A 18, olje-Ar 7, krakk nei, S1 ikke punkt
+Lagret sonder/miners_oljeekstrem.csv
