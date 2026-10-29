@@ -9,6 +9,27 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 28.10.2026 23:01, Claude Code
+**Hva:** Feltet Gullgruver viser nå bare kombinasjonssignalet (Frodes valg,
+alternativ 2: erstatter de to signalene, selv om kombinasjonen ikke besto
+testen på 1993 til 2014).
+1. `kontekst_miners.py`: `miners.kombinasjon` med begge (på eller av), S1
+   (gull mot Brent 3 mnd) og O6 (olje-A 6 mnd) hver for seg med persentil og
+   om de er i øverste tredjedel, og `sist_begge`. Regnet på månedssnitt fra
+   `serier/priser_mnd.csv`, som i testen (ikke Yahoo-terminer). Serien merkes
+   `begge` (53 av 180 mnd i grafen). `miners.test` har tallene fra
+   `sonde_kjor_miners_begge`. I dag av: S1 -37,9 % (persentil 2), O6 +4,3
+   (persentil 69); sist på i desember 2025.
+2. Dashbordet versjon 72: ett punkt over prislinjen (lilla) når begge står,
+   teksten «Kombinasjonssignal: på/av» med begge delene, gullregime, og «Hvor
+   godt det er belagt» (besto ikke, måneder med bare S1 ga like mye; Frodes
+   valg, ikke testet regel). Forklaringen er rettet. segments/miners versjon 5.
+3. Onsdagsrutinen: rapportlinjen for gullgruver bruker nå
+   `miners.kombinasjon`. Kontrollert: bare prompten er endret.
+**Ikke tatt med:** rekkelengde (sonde_kjor_miners_rekker holdt ikke).
+**Filer:** `kontekst_miners.py`, `miners.json`.
+**Cowork må vite:** Signalene S1 og O6 vises ikke lenger hver for seg.
+
 ### 28.10.2026 22:56, Claude Code
 **Hva:** Ny sonde `sonde_kjor_miners_begge.py` (Frodes bestilling: test
 «begge gruvesignalene samme måned»; skulle erstatte de to signalene hvis

@@ -5,8 +5,8 @@
  "unit": "fat olje per unse gull",
  "status": "live",
  "laget": "2026-10-28",
- "note": "Forholdet mellom gullpris og oljepris, et grovt mål på gruvenes margin. Observasjon uten flagg: bunnsonen på dette forholdet holdt ikke (sonden 28.10.2026), og heller ikke feilprising av gruvene mot gull og olje. Signalet som holdt, er endringen i forholdet siste tre måneder.",
- "source": "Gull og WTI fra serier/priser_mnd.csv (Verdensbanken og GitHub-speil); signalet fra Yahoo (GC=F, BZ=F)",
+ "note": "Forholdet mellom gullpris og oljepris, et grovt mål på gruvenes margin. Observasjon uten flagg: bunnsonen på dette forholdet holdt ikke (sonden 28.10.2026), og heller ikke feilprising av gruvene mot gull og olje. Signalet er kombinasjonen av gull mot olje (3 mnd) og olje-A (6 mnd).",
+ "source": "Gull, WTI og Brent fra serier/priser_mnd.csv (Verdensbanken og GitHub-speil)",
  "source_url": "https://github.com/frdmid/syklusbordet-data/blob/main/kontekst_miners.py",
  "hist_start": "1986-01",
  "last_obs": "2026-09",
@@ -26,7 +26,7 @@
   "gate": "uaktuell",
   "months_in_zone": 0,
   "observasjon": true,
-  "observasjon_grunn": "Gullgruvene har ikke flagg. Bunnsonen på gull mot olje ga median -14 % for gruveindeksen over 24 mnd (6 klynger, sonden 28.10.2026). Signalet er endringen i gull mot olje siste tre måneder."
+  "observasjon_grunn": "Gullgruvene har ikke flagg. Bunnsonen på gull mot olje ga median -14 % for gruveindeksen over 24 mnd (6 klynger, sonden 28.10.2026). Signalet er kombinasjonen av gull mot olje og olje-A, som ikke er en testet regel."
  },
  "series": [
   {
@@ -43,8 +43,7 @@
    "Ar": 5.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2011-11",
@@ -60,8 +59,7 @@
    "Ar": 6.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": false
   },
   {
    "t": "2011-12",
@@ -77,8 +75,7 @@
    "Ar": 8.3,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": false
   },
   {
    "t": "2012-01",
@@ -94,8 +91,7 @@
    "Ar": 8.3,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": false
   },
   {
    "t": "2012-02",
@@ -111,8 +107,7 @@
    "Ar": 12.5,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2012-03",
@@ -128,8 +123,7 @@
    "Ar": 15.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2012-04",
@@ -145,8 +139,7 @@
    "Ar": 17.5,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2012-05",
@@ -162,8 +155,7 @@
    "Ar": 4.2,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2012-06",
@@ -179,8 +171,7 @@
    "Ar": 3.3,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2012-07",
@@ -196,8 +187,7 @@
    "Ar": 6.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2012-08",
@@ -213,8 +203,7 @@
    "Ar": 10.8,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": false
   },
   {
    "t": "2012-09",
@@ -230,8 +219,7 @@
    "Ar": 3.3,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": false
   },
   {
    "t": "2012-10",
@@ -247,8 +235,7 @@
    "Ar": 2.5,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": false
   },
   {
    "t": "2012-11",
@@ -264,8 +251,7 @@
    "Ar": 4.2,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2012-12",
@@ -281,8 +267,7 @@
    "Ar": 8.3,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2013-01",
@@ -298,8 +283,7 @@
    "Ar": 13.3,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2013-02",
@@ -315,8 +299,7 @@
    "Ar": 11.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2013-03",
@@ -332,8 +315,7 @@
    "Ar": 20.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": false
   },
   {
    "t": "2013-04",
@@ -349,8 +331,7 @@
    "Ar": 25.8,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": false
   },
   {
    "t": "2013-05",
@@ -366,8 +347,7 @@
    "Ar": 28.3,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": false
   },
   {
    "t": "2013-06",
@@ -383,8 +363,7 @@
    "Ar": 37.5,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": false
   },
   {
    "t": "2013-07",
@@ -400,8 +379,7 @@
    "Ar": 50.8,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": false
   },
   {
    "t": "2013-08",
@@ -417,8 +395,7 @@
    "Ar": 49.2,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2013-09",
@@ -434,8 +411,7 @@
    "Ar": 45.8,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2013-10",
@@ -451,8 +427,7 @@
    "Ar": 40.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2013-11",
@@ -468,8 +443,7 @@
    "Ar": 38.3,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2013-12",
@@ -485,8 +459,7 @@
    "Ar": 50.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2014-01",
@@ -502,8 +475,7 @@
    "Ar": 49.2,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2014-02",
@@ -519,8 +491,7 @@
    "Ar": 50.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": false
   },
   {
    "t": "2014-03",
@@ -536,8 +507,7 @@
    "Ar": 49.2,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2014-04",
@@ -553,8 +523,7 @@
    "Ar": 50.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2014-05",
@@ -570,8 +539,7 @@
    "Ar": 53.3,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": false
   },
   {
    "t": "2014-06",
@@ -587,8 +555,7 @@
    "Ar": 55.8,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2014-07",
@@ -604,8 +571,7 @@
    "Ar": 46.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": false
   },
   {
    "t": "2014-08",
@@ -621,8 +587,7 @@
    "Ar": 48.3,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2014-09",
@@ -638,8 +603,7 @@
    "Ar": 41.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2014-10",
@@ -655,8 +619,7 @@
    "Ar": 30.8,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2014-11",
@@ -672,8 +635,7 @@
    "Ar": 11.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2014-12",
@@ -689,8 +651,7 @@
    "Ar": 0.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2015-01",
@@ -706,8 +667,7 @@
    "Ar": 0.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2015-02",
@@ -723,8 +683,7 @@
    "Ar": 0.8,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2015-03",
@@ -740,8 +699,7 @@
    "Ar": 0.8,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": false
   },
   {
    "t": "2015-04",
@@ -757,8 +715,7 @@
    "Ar": 6.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": false
   },
   {
    "t": "2015-05",
@@ -774,8 +731,7 @@
    "Ar": 7.5,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": false
   },
   {
    "t": "2015-06",
@@ -791,8 +747,7 @@
    "Ar": 8.3,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2015-07",
@@ -808,8 +763,7 @@
    "Ar": 2.5,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2015-08",
@@ -825,8 +779,7 @@
    "Ar": 3.3,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2015-09",
@@ -842,8 +795,7 @@
    "Ar": 0.8,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2015-10",
@@ -859,8 +811,7 @@
    "Ar": 1.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2015-11",
@@ -876,8 +827,7 @@
    "Ar": 0.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2015-12",
@@ -893,8 +843,7 @@
    "Ar": 0.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2016-01",
@@ -910,8 +859,7 @@
    "Ar": 0.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2016-02",
@@ -927,8 +875,7 @@
    "Ar": 0.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2016-03",
@@ -944,8 +891,7 @@
    "Ar": 0.8,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2016-04",
@@ -961,8 +907,7 @@
    "Ar": 3.3,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2016-05",
@@ -978,8 +923,7 @@
    "Ar": 5.8,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2016-06",
@@ -995,8 +939,7 @@
    "Ar": 5.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2016-07",
@@ -1012,8 +955,7 @@
    "Ar": 2.5,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2016-08",
@@ -1029,8 +971,7 @@
    "Ar": 3.3,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2016-09",
@@ -1046,8 +987,7 @@
    "Ar": 5.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2016-10",
@@ -1063,8 +1003,7 @@
    "Ar": 5.8,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2016-11",
@@ -1080,8 +1019,7 @@
    "Ar": 10.8,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2016-12",
@@ -1097,8 +1035,7 @@
    "Ar": 19.2,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2017-01",
@@ -1114,8 +1051,7 @@
    "Ar": 16.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2017-02",
@@ -1131,8 +1067,7 @@
    "Ar": 15.8,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2017-03",
@@ -1148,8 +1083,7 @@
    "Ar": 15.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2017-04",
@@ -1165,8 +1099,7 @@
    "Ar": 10.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2017-05",
@@ -1182,8 +1115,7 @@
    "Ar": 10.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2017-06",
@@ -1199,8 +1131,7 @@
    "Ar": 5.8,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2017-07",
@@ -1216,8 +1147,7 @@
    "Ar": 16.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2017-08",
@@ -1233,8 +1163,7 @@
    "Ar": 6.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2017-09",
@@ -1250,8 +1179,7 @@
    "Ar": 14.2,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2017-10",
@@ -1267,8 +1195,7 @@
    "Ar": 21.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2017-11",
@@ -1284,8 +1211,7 @@
    "Ar": 26.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2017-12",
@@ -1301,8 +1227,7 @@
    "Ar": 29.2,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2018-01",
@@ -1318,8 +1243,7 @@
    "Ar": 30.8,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2018-02",
@@ -1335,8 +1259,7 @@
    "Ar": 28.3,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2018-03",
@@ -1352,8 +1275,7 @@
    "Ar": 32.5,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2018-04",
@@ -1369,8 +1291,7 @@
    "Ar": 37.5,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2018-05",
@@ -1386,8 +1307,7 @@
    "Ar": 38.3,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2018-06",
@@ -1403,8 +1323,7 @@
    "Ar": 50.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2018-07",
@@ -1420,8 +1339,7 @@
    "Ar": 47.5,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2018-08",
@@ -1437,8 +1355,7 @@
    "Ar": 51.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2018-09",
@@ -1454,8 +1371,7 @@
    "Ar": 59.2,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2018-10",
@@ -1471,8 +1387,7 @@
    "Ar": 42.5,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2018-11",
@@ -1488,8 +1403,7 @@
    "Ar": 20.8,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2018-12",
@@ -1505,8 +1419,7 @@
    "Ar": 5.8,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2019-01",
@@ -1522,8 +1435,7 @@
    "Ar": 22.5,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2019-02",
@@ -1539,8 +1451,7 @@
    "Ar": 25.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": false
   },
   {
    "t": "2019-03",
@@ -1556,8 +1467,7 @@
    "Ar": 31.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": false
   },
   {
    "t": "2019-04",
@@ -1573,8 +1483,7 @@
    "Ar": 36.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2019-05",
@@ -1590,8 +1499,7 @@
    "Ar": 22.5,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2019-06",
@@ -1607,8 +1515,7 @@
    "Ar": 25.8,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2019-07",
@@ -1624,8 +1531,7 @@
    "Ar": 21.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2019-08",
@@ -1641,8 +1547,7 @@
    "Ar": 7.5,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2019-09",
@@ -1658,8 +1563,7 @@
    "Ar": 5.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2019-10",
@@ -1675,8 +1579,7 @@
    "Ar": 7.5,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2019-11",
@@ -1692,8 +1595,7 @@
    "Ar": 18.3,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2019-12",
@@ -1709,8 +1611,7 @@
    "Ar": 25.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2020-01",
@@ -1726,8 +1627,7 @@
    "Ar": 3.3,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2020-02",
@@ -1743,8 +1643,7 @@
    "Ar": 0.8,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2020-03",
@@ -1760,8 +1659,7 @@
    "Ar": 0.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2020-04",
@@ -1777,8 +1675,7 @@
    "Ar": 0.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2020-05",
@@ -1794,8 +1691,7 @@
    "Ar": 1.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2020-06",
@@ -1811,8 +1707,7 @@
    "Ar": 2.5,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": false
   },
   {
    "t": "2020-07",
@@ -1828,8 +1723,7 @@
    "Ar": 2.5,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": false
   },
   {
    "t": "2020-08",
@@ -1845,8 +1739,7 @@
    "Ar": 2.5,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2020-09",
@@ -1862,8 +1755,7 @@
    "Ar": 2.5,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2020-10",
@@ -1879,8 +1771,7 @@
    "Ar": 1.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2020-11",
@@ -1896,8 +1787,7 @@
    "Ar": 6.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2020-12",
@@ -1913,8 +1803,7 @@
    "Ar": 7.5,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2021-01",
@@ -1930,8 +1819,7 @@
    "Ar": 9.2,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2021-02",
@@ -1947,8 +1835,7 @@
    "Ar": 15.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2021-03",
@@ -1964,8 +1851,7 @@
    "Ar": 15.8,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2021-04",
@@ -1981,8 +1867,7 @@
    "Ar": 19.2,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2021-05",
@@ -1998,8 +1883,7 @@
    "Ar": 18.3,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2021-06",
@@ -2015,8 +1899,7 @@
    "Ar": 35.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2021-07",
@@ -2032,8 +1915,7 @@
    "Ar": 39.2,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2021-08",
@@ -2049,8 +1931,7 @@
    "Ar": 29.2,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2021-09",
@@ -2066,8 +1947,7 @@
    "Ar": 46.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2021-10",
@@ -2083,8 +1963,7 @@
    "Ar": 56.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2021-11",
@@ -2100,8 +1979,7 @@
    "Ar": 22.5,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2021-12",
@@ -2117,8 +1995,7 @@
    "Ar": 47.5,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2022-01",
@@ -2134,8 +2011,7 @@
    "Ar": 61.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2022-02",
@@ -2151,8 +2027,7 @@
    "Ar": 69.2,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2022-03",
@@ -2168,8 +2043,7 @@
    "Ar": 69.2,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2022-04",
@@ -2185,8 +2059,7 @@
    "Ar": 73.3,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2022-05",
@@ -2202,8 +2075,7 @@
    "Ar": 83.3,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2022-06",
@@ -2219,8 +2091,7 @@
    "Ar": 80.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2022-07",
@@ -2236,8 +2107,7 @@
    "Ar": 79.2,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2022-08",
@@ -2253,8 +2123,7 @@
    "Ar": 66.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2022-09",
@@ -2270,8 +2139,7 @@
    "Ar": 59.2,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2022-10",
@@ -2287,8 +2155,7 @@
    "Ar": 71.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2022-11",
@@ -2304,8 +2171,7 @@
    "Ar": 58.3,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2022-12",
@@ -2321,8 +2187,7 @@
    "Ar": 55.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2023-01",
@@ -2338,8 +2203,7 @@
    "Ar": 45.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2023-02",
@@ -2355,8 +2219,7 @@
    "Ar": 44.2,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2023-03",
@@ -2372,8 +2235,7 @@
    "Ar": 35.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2023-04",
@@ -2389,8 +2251,7 @@
    "Ar": 30.8,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2023-05",
@@ -2406,8 +2267,7 @@
    "Ar": 15.8,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2023-06",
@@ -2423,8 +2283,7 @@
    "Ar": 24.2,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2023-07",
@@ -2440,8 +2299,7 @@
    "Ar": 52.5,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2023-08",
@@ -2457,8 +2315,7 @@
    "Ar": 57.5,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2023-09",
@@ -2474,8 +2331,7 @@
    "Ar": 67.5,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2023-10",
@@ -2491,8 +2347,7 @@
    "Ar": 55.8,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2023-11",
@@ -2508,8 +2363,7 @@
    "Ar": 30.8,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2023-12",
@@ -2525,8 +2379,7 @@
    "Ar": 18.3,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2024-01",
@@ -2542,8 +2395,7 @@
    "Ar": 30.8,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2024-02",
@@ -2559,8 +2411,7 @@
    "Ar": 38.3,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": false
   },
   {
    "t": "2024-03",
@@ -2576,8 +2427,7 @@
    "Ar": 36.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": false
   },
   {
    "t": "2024-04",
@@ -2593,8 +2443,7 @@
    "Ar": 20.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2024-05",
@@ -2610,8 +2459,7 @@
    "Ar": 14.2,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2024-06",
@@ -2627,8 +2475,7 @@
    "Ar": 20.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2024-07",
@@ -2644,8 +2491,7 @@
    "Ar": 14.2,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2024-08",
@@ -2661,8 +2507,7 @@
    "Ar": 11.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": false
   },
   {
    "t": "2024-09",
@@ -2678,8 +2523,7 @@
    "Ar": 8.3,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2024-10",
@@ -2695,8 +2539,7 @@
    "Ar": 7.5,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2024-11",
@@ -2712,8 +2555,7 @@
    "Ar": 7.5,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2024-12",
@@ -2729,8 +2571,7 @@
    "Ar": 11.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": false
   },
   {
    "t": "2025-01",
@@ -2746,8 +2587,7 @@
    "Ar": 10.8,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": false
   },
   {
    "t": "2025-02",
@@ -2763,8 +2603,7 @@
    "Ar": 6.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2025-03",
@@ -2780,8 +2619,7 @@
    "Ar": 6.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2025-04",
@@ -2797,8 +2635,7 @@
    "Ar": 1.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2025-05",
@@ -2814,8 +2651,7 @@
    "Ar": 2.5,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2025-06",
@@ -2831,8 +2667,7 @@
    "Ar": 4.2,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2025-07",
@@ -2848,8 +2683,7 @@
    "Ar": 6.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": false
   },
   {
    "t": "2025-08",
@@ -2865,8 +2699,7 @@
    "Ar": 4.2,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": false
   },
   {
    "t": "2025-09",
@@ -2882,8 +2715,7 @@
    "Ar": 1.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2025-10",
@@ -2899,8 +2731,7 @@
    "Ar": 1.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2025-11",
@@ -2916,8 +2747,7 @@
    "Ar": 1.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2025-12",
@@ -2933,8 +2763,7 @@
    "Ar": 1.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": true
+   "begge": true
   },
   {
    "t": "2026-01",
@@ -2950,8 +2779,7 @@
    "Ar": 2.5,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2026-02",
@@ -2967,8 +2795,7 @@
    "Ar": 2.5,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2026-03",
@@ -2984,8 +2811,7 @@
    "Ar": 13.3,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2026-04",
@@ -3001,8 +2827,7 @@
    "Ar": 16.7,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2026-05",
@@ -3018,8 +2843,7 @@
    "Ar": 10.8,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2026-06",
@@ -3035,8 +2859,7 @@
    "Ar": 5.8,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2026-07",
@@ -3052,8 +2875,7 @@
    "Ar": 15.0,
    "flagg": false,
    "oppsikt": false,
-   "sig1": true,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2026-08",
@@ -3069,8 +2891,7 @@
    "Ar": 10.8,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": false
+   "begge": false
   },
   {
    "t": "2026-09",
@@ -3086,8 +2907,7 @@
    "Ar": 19.2,
    "flagg": false,
    "oppsikt": false,
-   "sig1": false,
-   "sig2": true
+   "begge": false
   }
  ],
  "trend": {
@@ -3162,54 +2982,31 @@
   "malte": 0
  },
  "miners": {
-  "signal": {
-   "mnd": "2026-10",
-   "endring_3m_pst": -19.5,
-   "pctl": 12.0,
-   "fra": "2007-10",
-   "gull_3m_pst": -1.3,
-   "olje_3m_pst": 22.7
-  },
-  "signal6": {
+  "kombinasjon": {
    "mnd": "2026-09",
-   "endring_6m": 4.3,
+   "begge": false,
+   "s1_endring_3m_pst": -37.9,
+   "s1_punkt": false,
+   "s1_pctl": 2.0,
+   "o6_endring": 4.3,
+   "o6_punkt": true,
+   "o6_pctl": 69.0,
    "olje_A": 17.8,
-   "olje_A_6m_siden": 13.5,
-   "pctl": 69.0,
-   "fra": "1992-10"
+   "sist_begge": "2025-12"
   },
   "regime": {
    "mnd": "2026-09",
    "gull_6m_pst": -11.1,
    "regime": "fallende"
   },
-  "regimetest": {
-   "s1": {
-    "stigende": "+0,18",
-    "stabil": "+0,17",
-    "fallende": "+0,17 til +0,19"
-   },
-   "s2": {
-    "stigende": "+0,29 til +0,34",
-    "stabil": "+0,18 til +0,21",
-    "fallende": "-0,05 til +0,02"
-   },
-   "p": "0,17 til 0,39",
-   "kilde": "sonde_kjor_miners_gullregime 28.10.2026"
-  },
   "test": {
-   "r_3m": "+0,26 (store) og +0,28 (små)",
-   "r_6m": "+0,36 og +0,40",
-   "spread_3m_pp": "9 til 12",
-   "kilde": "sonde_kjor_gullgruver 28.10.2026",
-   "for_2015": "+0,11 til +0,14 på 3 mnd (p 0,05 til 0,08), ingenting på 6 mnd"
-  },
-  "test6": {
-   "r_3m": "+0,36 (store) og +0,40 (små)",
-   "r_6m": "+0,40 og +0,47",
-   "utover_signal1": "+0,24 til +0,32",
-   "kilde": "sonde_kjor_miners_dA 28.10.2026",
-   "for_2015": "+0,09 til +0,15, og negativ i 2003 til 2014"
+   "periode": "1993 til 2014, før signalene ble funnet",
+   "begge_3m": "+3,3 % (kurv) og +3,0 % (^XAU) mot -2,8 og -3,3 % i andre måneder, p 0,048",
+   "bare_s1_3m": "+3,3 % for kurven",
+   "bare_o6_3m": "-5,1 %",
+   "begge_6m": "+2,8 og +2,5 % mot -5,6 og -6,7 %, p 0,10 og 0,02",
+   "etter_2015": "+9,6 % på 3 mnd og +17,5 % på 6 mnd (kurv); UCITS +8 til +18 %",
+   "kilde": "sonde_kjor_miners_begge 28.10.2026"
   }
  }
 }
