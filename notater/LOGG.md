@@ -9,6 +9,23 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 28.10.2026 22:18, Claude Code
+**Hva:** Ny sonde `sonde_kjor_miners_feilpris.py` (Frodes bestilling: let
+etter feilprising av gruvene mot gull og olje). Tre mål, punkt i tid: M1
+^XAU mot gull, M2 avvik fra det gull og olje tilsier (tilpasset bare på
+tidligere data), M3 som M2 med S&P 500. A, Ad og Ar som på bordet; høy A =
+gruvene billige. Utfall ^XAU minus gull 24 mnd. Kriteriene satt før kjøring.
+**Resultat: ingen holder.** Rangkorrelasjon A mot utfallet -0,05, -0,04 og
++0,02 (p 0,39 til 0,54); før 2008 negativ for alle. Bunnsonene: M1 2
+klynger, M2 3 klynger (median +9 %, p 0,22), M3 6 klynger (median -18 %).
+Gruvene har ligget etter gull i snitt (tilfeldig 24 mnd: -5 %), og et
+avvik mot gull og olje rettes ikke opp innen 12 til 24 mnd.
+I dag: M2 og M3 A 97 (gruvene billige mot gull og olje), M1 A 32.
+**Filer:** `sonde_kjor_miners_feilpris.py`, `sonder/sonde_kjor_miners_feilpris.txt`,
+`sonder/miners_feilpris.csv`, `sonder_ferdige.txt`.
+**Cowork må vite:** Eneste som har holdt for gruvene er endringen i gull mot
+olje siste 3 mnd (`sonde_kjor_gullgruver`). Feltet «miners» er ikke bygget.
+
 ### 28.10.2026 22:13, Claude Code
 **Hva:** Ny sonde `sonde_kjor_miners_a.py` (Frodes bestilling før feltet
 «miners»): A regnet på forholdet gull mot WTI (fat per unse, fra 1986), med

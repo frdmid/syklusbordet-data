@@ -78,3 +78,4 @@ sonde_kjor_regime_ventetid
 sonde_kjor_ventetid_hold
 sonde_kjor_gullgruver
 sonde_kjor_miners_a
+sonde_kjor_miners_feilpris

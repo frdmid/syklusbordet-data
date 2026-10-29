@@ -1,0 +1,45 @@
+==================== M1 gruver mot gull  (A fra 1990-12)
+   rangkorrelasjon A mot ^XAU minus gull 24 mnd: -0.05 (p 0.542, n 406); før/etter 2008 -0.35 / -0.01
+      Ad: -0.08
+      Ar: -0.10
+      12 mnd: -0.09; mot S&P 24 mnd: -0.13; GDX minus gull 24 mnd: -0.21; AUCO.L minus gull 24 mnd: -0.08
+   bunnsone A og Ad 80+: 17 mnd, 2 klynger, i sonen nå: nei
+      1993-04  A  88 Ad  81 Ar  88  ^XAU minus gull 12m    +5 % 24m    +3 %  mot S&P 24m    +1 %  GDX minus gull 24m  +nan %
+      1996-01  A  99 Ad  83 Ar  99  ^XAU minus gull 12m   -13 % 24m   -31 %  mot S&P 24m  -106 %  GDX minus gull 24m  +nan %
+      klynger med utfall 2: median -14 % mot tilfeldig -5 % (p 0.654)
+   i dag (2026-09): A 32.3, Ad 89.2, Ar 95.8
+
+==================== M2 gruver mot gull og olje  (A fra 2000-12)
+   rangkorrelasjon A mot ^XAU minus gull 24 mnd: -0.04 (p 0.478, n 286); før/etter 2008 -0.30 / -0.05
+      Ad: +0.04
+      Ar: -0.00
+      12 mnd: +0.01; mot S&P 24 mnd: +0.10; GDX minus gull 24 mnd: -0.07; AUCO.L minus gull 24 mnd: -0.09
+   bunnsone A og Ad 80+: 55 mnd, 3 klynger, i sonen nå: nei
+      2006-01  A  80 Ad  98 Ar  81  ^XAU minus gull 12m   -23 % 24m   -29 %  mot S&P 24m   +12 %  GDX minus gull 24m  +nan %
+      2020-04  A  96 Ad 100 Ar  99  ^XAU minus gull 12m   +18 % 24m    +9 %  mot S&P 24m   -12 %  GDX minus gull 24m    -4 %
+      2024-05  A  90 Ad  96 Ar  88  ^XAU minus gull 12m    -6 % 24m   +27 %  mot S&P 24m   +58 %  GDX minus gull 24m   +28 %
+      klynger med utfall 3: median +9 % mot tilfeldig -5 % (p 0.219)
+   i dag (2026-09): A 97.3, Ad 97.3, Ar 91.7
+
+==================== M3 gruver mot gull, olje og marked  (A fra 2000-12)
+   rangkorrelasjon A mot ^XAU minus gull 24 mnd: +0.02 (p 0.391, n 286); før/etter 2008 -0.07 / +0.05
+      Ad: -0.01
+      Ar: -0.01
+      12 mnd: +0.04; mot S&P 24 mnd: -0.00; GDX minus gull 24 mnd: +0.03; AUCO.L minus gull 24 mnd: -0.08
+   bunnsone A og Ad 80+: 107 mnd, 6 klynger, i sonen nå: nei
+      2001-04  A  89 Ad  97 Ar  89  ^XAU minus gull 12m   +14 % 24m    -6 %  mot S&P 24m   +48 %  GDX minus gull 24m  +nan %
+      2004-09  A  86 Ad  92 Ar  86  ^XAU minus gull 12m    -2 % 24m   -16 %  mot S&P 24m    +5 %  GDX minus gull 24m  +nan %
+      2007-09  A  85 Ad  88 Ar  88  ^XAU minus gull 12m   -40 % 24m   -36 %  mot S&P 24m   +35 %  GDX minus gull 24m   -32 %
+      2010-11  A  80 Ad  94 Ar  82  ^XAU minus gull 12m   -26 % 24m   -45 %  mot S&P 24m   -41 %  GDX minus gull 24m   -44 %
+      2016-04  A  93 Ad 100 Ar  98  ^XAU minus gull 12m   -13 % 24m   -21 %  mot S&P 24m   -38 %  GDX minus gull 24m   -21 %
+      2019-06  A  92 Ad  99 Ar  95  ^XAU minus gull 12m   +19 % 24m   +22 %  mot S&P 24m   +14 %  GDX minus gull 24m    -0 %
+      klynger med utfall 6: median -18 % mot tilfeldig -5 % (p 0.814)
+   i dag (2026-09): A 97.3, Ad 97.0, Ar 91.7
+
+AVGJØRELSE
+
+   M2 gruver mot gull og olje: holder ikke (største p 0.478, BH nei)
+   M1 gruver mot gull: holder ikke (største p 0.654, BH nei)
+   M3 gruver mot gull, olje og marked: holder ikke (største p 0.814, BH nei)
+
+Lagret sonder/miners_feilpris.csv
