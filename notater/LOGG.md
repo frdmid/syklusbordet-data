@@ -9,6 +9,32 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 28.10.2026 22:06, Claude Code
+**Hva:** Ny sonde `sonde_kjor_gullgruver.py` (Frodes hypotese: gullgruvene
+følger gull opp og går motsatt av olje). UCITS-fond i USD: GDX.L og IAUP.L
+(store), GDXJ.L (små), AUCO.L (blandet); amerikanske GDX og GDXJ som
+kontroll. Gull GC=F, olje Brent, verden IWDA.L. Kriteriene satt før kjøring.
+1. **Samtidig (ukedata):** beta mot gull 1,7 til 1,8 for de store og 1,9 for
+   de små (t 26 til 30), like stor i uker med stigende og fallende gull.
+   Beta mot olje er 0 (t rundt 0) når gull og marked holdes fast, og svakt
+   positiv uten marked. Gruvene går altså ikke motsatt av olje samme uke.
+2. **Signal: S1 holder på 3 og 6 mnd.** Endring i gull mot olje siste 3 mnd
+   varsler fondene minus MSCI World: GDX.L r +0,26 og +0,36, GDXJ.L +0,28 og
+   +0,40 (p 0,00 til 0,01, samme fortegn i begge halvdeler, gjennom BH);
+   beste mot svakeste tredjedel +9 til +12 pp per 3 mnd. Kontrollene
+   (IAUP.L, AUCO.L, GDX, GDXJ) peker samme vei. Etterslep mot gull og olje
+   (S2) og gulltrenden (S3) holder ikke.
+3. **Tillegg etter kjøring (avgjør ikke):** det er oljedelen som bærer
+   signalet: fallende olje siste 3 mnd varsler gruvene (+0,30 og +0,42 for
+   GDX.L), gull alene gjør det ikke (-0,07). Tåler at 2020 tas ut (+0,20 til
+   +0,42). Oljen virker med 3 til 6 mnd forsinkelse, ikke samme uke.
+4. **I dag:** gull mot olje -21 % siste 3 mnd (persentil 11): oljen har
+   steget mye mer enn gull, et svakt utgangspunkt etter signalet.
+**Filer:** `sonde_kjor_gullgruver.py`, `sonder/sonde_kjor_gullgruver.txt`,
+`sonder/gullgruver.csv`, `sonder_ferdige.txt`.
+**Cowork må vite:** Ingen endring på bordet. Frode avgjør om signalet skal
+vises eller registreres som Challenger. In-sample, 2015 til 2026 for UCITS.
+
 ### 28.10.2026 13:37, Claude Code
 **Hva:** Planlagt sjekk av ukekjøringen 28.10 (første med ny arbeidsflyt).
 Ingen endringer i rutiner, arbeidsflyter eller kode, ingen kjøringer startet.

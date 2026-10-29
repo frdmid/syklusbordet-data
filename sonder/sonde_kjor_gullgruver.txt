@@ -1,0 +1,69 @@
+DEL 1. SAMTIDIG: ukeavkastning mot gull, olje og verden (Newey-West t)
+
+   fond     uker      fra  b gull     t  b olje     t b verden     t    R2 gull opp gull ned
+   GDX.L     605  2015-04    1.80  25.8    0.00   0.1     0.44   6.6  0.68     1.74     1.68
+   IAUP.L    789  2011-09    1.70  30.1   -0.01  -0.2     0.39   7.2  0.70     1.68     1.53
+   GDXJ.L    605  2015-04    1.92  26.8    0.02   0.7     0.59   8.0  0.67     1.78     1.82
+   AUCO.L    892  2008-09    1.74  29.7   -0.00  -0.0     0.44   7.7  0.65     1.75     1.52
+   GDX       892  2006-06    1.71  28.2    0.01   0.2     0.42   5.7  0.66     1.72     1.62
+   GDXJ      885  2009-11    1.94  27.2    0.03   0.9     0.63   6.1  0.65     1.82     1.98
+
+   Olje-beta rullende 104 uker (gull og verden holdt fast), GDX og GDX.L, ved årsslutt:
+      GDX     2010:+0.28 2011:+0.29 2012:+0.05 2013:-0.18 2014:+0.09 2015:+0.14 2016:+0.15 2017:+0.12 2018:+0.03 2019:+0.05 2020:-0.01 2021:-0.00 2022:+0.10 2023:-0.00 2024:-0.01 2025:-0.00
+      GDX.L   2016:+0.14 2017:+0.18 2018:+0.04 2019:+0.03 2020:+0.03 2021:+0.03 2022:+0.04 2023:-0.03 2024:-0.02 2025:+0.01
+      GDXJ.L  2016:+0.12 2017:+0.18 2018:+0.05 2019:+0.04 2020:+0.05 2021:+0.06 2022:+0.11 2023:+0.03 2024:-0.01 2025:-0.00
+
+   Uten verden (bare gull og olje), hele perioden:
+      GDX.L   b gull 1.89  b olje +0.04 (t +1.3)
+      IAUP.L  b gull 1.77  b olje +0.04 (t +1.2)
+      GDXJ.L  b gull 2.05  b olje +0.08 (t +1.8)
+      AUCO.L  b gull 1.81  b olje +0.09 (t +2.8)
+      GDX     b gull 1.69  b olje +0.09 (t +2.5)
+      GDXJ    b gull 2.05  b olje +0.10 (t +1.9)
+
+
+DEL 2. SIGNAL: neste h mnd, fond minus MSCI World
+
+   S1 margin (gull mot olje 3 mnd)
+      1 mnd: GDX.L r+0.13 p0.04 (+0.19/+0.06) +11.2pp n139  IAUP.L r+0.10 p0.07 (+0.08/+0.09) +7.2pp n181  GDXJ.L r+0.11 p0.04 (+0.11/+0.08) +10.7pp n139  AUCO.L r+0.10 p0.06 (+0.08/+0.12) +7.0pp n205  GDX r+0.09 p0.07 (+0.08/+0.10) +6.7pp n205  GDXJ r+0.07 p0.13 (+0.01/+0.11) +4.3pp n203
+      3 mnd: GDX.L r+0.26 p0.01 (+0.27/+0.23) +11.1pp n137  IAUP.L r+0.25 p0.01 (+0.20/+0.25) +10.5pp n179  GDXJ.L r+0.28 p0.00 (+0.24/+0.27) +11.8pp n137  AUCO.L r+0.23 p0.00 (+0.20/+0.24) +9.5pp n203  GDX r+0.24 p0.00 (+0.23/+0.24) +9.8pp n203  GDXJ r+0.23 p0.01 (+0.15/+0.30) +10.9pp n201
+      6 mnd: GDX.L r+0.36 p0.00 (+0.39/+0.29) +9.3pp n134  IAUP.L r+0.28 p0.01 (+0.16/+0.28) +6.9pp n176  GDXJ.L r+0.40 p0.00 (+0.39/+0.37) +10.8pp n134  AUCO.L r+0.24 p0.01 (+0.16/+0.28) +6.3pp n200  GDX r+0.24 p0.01 (+0.17/+0.27) +6.0pp n200  GDXJ r+0.28 p0.00 (+0.19/+0.33) +8.7pp n198
+
+   S2 etterslep mot gull og olje
+      1 mnd: GDX.L r+0.06 p0.28 (+0.00/+0.08) +2.2pp n102  IAUP.L r+0.05 p0.31 (+0.04/+0.05) -0.4pp n144  GDXJ.L r+0.11 p0.14 (+0.05/+0.14) +8.0pp n102  AUCO.L r+0.05 p0.26 (+0.07/+0.02) +1.2pp n180  GDX r+0.02 p0.39 (-0.02/+0.06) +0.4pp n205  GDXJ r+0.06 p0.24 (+0.06/+0.03) +3.6pp n166
+      3 mnd: GDX.L r-0.03 p0.61 (+0.15/-0.20) +0.3pp n100  IAUP.L r-0.04 p0.63 (-0.00/-0.11) -0.9pp n142  GDXJ.L r-0.02 p0.59 (+0.21/-0.27) +0.3pp n100  AUCO.L r+0.01 p0.47 (+0.05/-0.06) -1.8pp n178  GDX r+0.03 p0.39 (+0.01/+0.06) +0.1pp n203  GDXJ r+0.02 p0.45 (+0.13/-0.15) +1.3pp n164
+      6 mnd: GDX.L r+0.02 p0.35 (+0.09/-0.00) +0.1pp n97  IAUP.L r+0.03 p0.39 (+0.08/-0.02) -0.3pp n139  GDXJ.L r-0.05 p0.66 (+0.03/-0.08) -1.0pp n97  AUCO.L r+0.05 p0.33 (+0.01/+0.06) -0.9pp n175  GDX r+0.11 p0.12 (+0.19/+0.04) +1.4pp n200  GDXJ r-0.05 p0.69 (-0.07/-0.09) -3.7pp n161
+
+   S3 gulltrend 3 mnd
+      1 mnd: GDX.L r-0.04 p0.66 (-0.10/-0.01) +0.5pp n139  IAUP.L r-0.04 p0.62 (-0.14/-0.01) -0.2pp n181  GDXJ.L r-0.04 p0.63 (-0.10/-0.00) +1.2pp n139  AUCO.L r-0.06 p0.77 (-0.16/+0.01) -2.3pp n205  GDX r-0.06 p0.76 (-0.14/+0.00) -2.3pp n205  GDXJ r-0.06 p0.72 (-0.15/-0.00) -3.4pp n203
+      3 mnd: GDX.L r-0.07 p0.68 (-0.04/-0.09) -3.3pp n137  IAUP.L r-0.06 p0.63 (-0.16/-0.13) -2.5pp n179  GDXJ.L r-0.04 p0.58 (-0.02/-0.06) -2.2pp n137  AUCO.L r-0.07 p0.68 (-0.08/-0.11) -3.0pp n203  GDX r-0.04 p0.60 (-0.02/-0.11) -2.3pp n203  GDXJ r-0.03 p0.56 (-0.04/-0.07) -0.7pp n201
+      6 mnd: GDX.L r-0.11 p0.73 (-0.18/-0.04) -4.0pp n134  IAUP.L r-0.02 p0.46 (-0.17/-0.11) -1.1pp n176  GDXJ.L r-0.03 p0.50 (-0.08/+0.05) -2.3pp n134  AUCO.L r-0.03 p0.52 (+0.00/-0.13) -1.3pp n200  GDX r-0.01 p0.43 (+0.04/-0.14) -1.0pp n200  GDXJ r+0.04 p0.26 (+0.05/-0.04) +1.0pp n198
+
+AVGJØRELSE (UCITS: GDX.L store og GDXJ.L små)
+
+   S1 margin (gull mot olje 3 mnd)    1 mnd: holder ikke (største p 0.041, BH nei)
+   S1 margin (gull mot olje 3 mnd)    3 mnd: HOLDER (største p 0.010, BH ja)
+   S1 margin (gull mot olje 3 mnd)    6 mnd: HOLDER (største p 0.003, BH ja)
+   S2 etterslep mot gull og olje      1 mnd: holder ikke (største p 0.278, BH nei)
+   S2 etterslep mot gull og olje      3 mnd: holder ikke (største p 0.607, BH nei)
+   S2 etterslep mot gull og olje      6 mnd: holder ikke (største p 0.663, BH nei)
+   S3 gulltrend 3 mnd                 1 mnd: holder ikke (største p 0.658, BH nei)
+   S3 gulltrend 3 mnd                 3 mnd: holder ikke (største p 0.685, BH nei)
+   S3 gulltrend 3 mnd                 6 mnd: holder ikke (største p 0.733, BH nei)
+
+I DAG
+   S1 margin siste 3 mnd: -21.1 % (persentil 11 siden 2000-11)
+   S3 gull siste 3 mnd: -0.8 % (persentil 34)
+   S2 etterslep GDX.L: -12.9 % (persentil 5)
+   S2 etterslep GDXJ.L: -8.5 % (persentil 11)
+
+Lagret sonder/gullgruver.csv
+
+TILLEGG (etter kjøring, avgjør ikke)
+
+   GDX.L   3 mnd: S1 +0.26 (uten 2020 +0.20) | bare gull -0.07 | bare minus olje +0.30 (uten 2020 +0.25) | n 137
+   GDX.L   6 mnd: S1 +0.36 (uten 2020 +0.35) | bare gull -0.11 | bare minus olje +0.42 (uten 2020 +0.42) | n 134
+   GDXJ.L  3 mnd: S1 +0.28 (uten 2020 +0.21) | bare gull -0.04 | bare minus olje +0.31 (uten 2020 +0.25) | n 137
+   GDXJ.L  6 mnd: S1 +0.40 (uten 2020 +0.38) | bare gull -0.03 | bare minus olje +0.44 (uten 2020 +0.43) | n 134
+   GDX     3 mnd: S1 +0.24 (uten 2020 +0.19) | bare gull -0.04 | bare minus olje +0.25 (uten 2020 +0.21) | n 203
+   GDX     6 mnd: S1 +0.24 (uten 2020 +0.21) | bare gull -0.01 | bare minus olje +0.22 (uten 2020 +0.19) | n 200
