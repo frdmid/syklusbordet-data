@@ -84,3 +84,4 @@ sonde_kjor_miners_kurv
 sonde_kjor_miners_gullregime
 sonde_kjor_miners_rekker
 sonde_kjor_miners_begge
+sonde_kjor_miners_begge_rekke

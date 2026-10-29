@@ -9,6 +9,25 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 28.10.2026 23:05, Claude Code
+**Hva:** Ny sonde `sonde_kjor_miners_begge_rekke.py` (Frodes bestilling: test
+rekkelengde i kombinasjonssignalet). Tre varianter valgt ut fra mønstrene i
+`sonde_kjor_miners_rekker`: K1 BEGGE og S1 minst 3 mnd på rad, K2 BEGGE
+minst 2 mnd på rad, K3 BEGGE og O6 høyst 5 mnd på rad. Avgjort på 1993 til
+2014; kriteriene satt før kjøring (inkludert at varianten må slå månedene
+den tar bort og måneder med bare S1).
+**Resultat: ingen holder.** K1 på 6 mnd besto alt unntatt korreksjonen for
+6 tester: +9,1 % (kurven) og +7,0 % (^XAU) mot -5,4 og -6,3 % ellers, p 0,024
+og 0,009, positiv i begge halvdeler, slo månedene den tok bort (-3,1 %) og
+bare S1 (-0,4 %); 17 mnd i 8 perioder. Men i 2015 til 2026 var månedene K1
+tok bort bedre (+22,7 %) enn de den beholdt (+15,2 %), så kravet gjør ikke
+signalet jevnt bedre. K2 og K3 var ikke bedre enn BEGGE uten krav.
+**Filer:** `sonde_kjor_miners_begge_rekke.py`, `sonder/sonde_kjor_miners_begge_rekke.txt`,
+`sonder/miners_begge_rekke.csv`, `sonder_ferdige.txt`.
+**Cowork må vite:** Kombinasjonssignalet i feltet står uendret, uten krav
+til rekkelengde. Femte test på de samme årene for gruvene; ikke flere
+varianter uten nye data.
+
 ### 28.10.2026 23:01, Claude Code
 **Hva:** Feltet Gullgruver viser nå bare kombinasjonssignalet (Frodes valg,
 alternativ 2: erstatter de to signalene, selv om kombinasjonen ikke besto

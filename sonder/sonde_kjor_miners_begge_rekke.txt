@@ -1,0 +1,55 @@
+==================== h = 3 mnd (per 3 mnd, log, minus SPY)
+   BEGGE uten krav
+      1993-2014 (avgjør) KURV  signal  +3.3% (n 35, 14 perioder)  andre  -2.8%  forskjell  +6.1 pp p 0.048  halvdeler +1.2/+10.4  | tatt bort fra BEGGE +nan% (n 0)  bare S1 +3.3%
+      1993-2014 (avgjør) ^XAU  signal  +3.0% (n 35, 14 perioder)  andre  -3.3%  forskjell  +6.4 pp p 0.048  halvdeler +0.9/+11.1  | tatt bort fra BEGGE +nan% (n 0)  bare S1 +1.9%
+      2015-2026          KURV  signal  +9.6% (n 43, 14 perioder)  andre  -3.3%  forskjell +13.0 pp p 0.000  halvdeler +20.0/+6.1  | tatt bort fra BEGGE +nan% (n 0)  bare S1 -2.7%
+      2015-2026          ^XAU  signal  +7.1% (n 43, 14 perioder)  andre  -2.9%  forskjell +10.0 pp p 0.000  halvdeler +17.1/+3.1  | tatt bort fra BEGGE +nan% (n 0)  bare S1 -1.3%
+   K1 BEGGE og S1 minst 3 mnd på rad
+      1993-2014 (avgjør) KURV  signal  +5.1% (n 17, 8 perioder)  andre  -2.4%  forskjell  +7.5 pp p 0.075  halvdeler +1.4/+12.9  | tatt bort fra BEGGE +1.6% (n 18)  bare S1 +3.3%
+      1993-2014 (avgjør) ^XAU  signal  +4.9% (n 17, 8 perioder)  andre  -2.9%  forskjell  +7.8 pp p 0.024  halvdeler +0.6/+14.2  | tatt bort fra BEGGE +1.3% (n 18)  bare S1 +1.9%
+      2015-2026          KURV  signal +10.3% (n 30, 10 perioder)  andre  -2.0%  forskjell +12.3 pp p 0.012  halvdeler +20.5/+3.5  | tatt bort fra BEGGE +8.1% (n 13)  bare S1 -2.7%
+      2015-2026          ^XAU  signal  +7.8% (n 30, 10 perioder)  andre  -1.9%  forskjell  +9.6 pp p 0.045  halvdeler +17.2/+1.4  | tatt bort fra BEGGE +5.6% (n 13)  bare S1 -1.3%
+   K2 BEGGE minst 2 mnd på rad
+      1993-2014 (avgjør) KURV  signal  +3.9% (n 21, 10 perioder)  andre  -2.4%  forskjell  +6.4 pp p 0.085  halvdeler -1.2/+12.2  | tatt bort fra BEGGE +2.4% (n 14)  bare S1 +3.3%
+      1993-2014 (avgjør) ^XAU  signal  +4.4% (n 21, 10 perioder)  andre  -3.0%  forskjell  +7.5 pp p 0.053  halvdeler -0.0/+13.1  | tatt bort fra BEGGE +1.0% (n 14)  bare S1 +1.9%
+      2015-2026          KURV  signal +11.0% (n 30, 8 perioder)  andre  -2.2%  forskjell +13.2 pp p 0.000  halvdeler +21.2/+4.7  | tatt bort fra BEGGE +6.4% (n 13)  bare S1 -2.7%
+      2015-2026          ^XAU  signal  +7.7% (n 30, 8 perioder)  andre  -1.8%  forskjell  +9.5 pp p 0.013  halvdeler +17.6/+0.7  | tatt bort fra BEGGE +5.9% (n 13)  bare S1 -1.3%
+   K3 BEGGE og O6 høyst 5 mnd på rad
+      1993-2014 (avgjør) KURV  signal  +3.4% (n 34, 14 perioder)  andre  -2.7%  forskjell  +6.1 pp p 0.050  halvdeler +1.2/+10.6  | tatt bort fra BEGGE +1.6% (n 1)  bare S1 +3.3%
+      1993-2014 (avgjør) ^XAU  signal  +2.9% (n 34, 14 perioder)  andre  -3.3%  forskjell  +6.2 pp p 0.047  halvdeler +0.9/+11.0  | tatt bort fra BEGGE +6.4% (n 1)  bare S1 +1.9%
+      2015-2026          KURV  signal +10.8% (n 30, 11 perioder)  andre  -2.1%  forskjell +12.8 pp p 0.022  halvdeler +16.9/+8.7  | tatt bort fra BEGGE +7.0% (n 13)  bare S1 -2.7%
+      2015-2026          ^XAU  signal  +8.0% (n 30, 11 perioder)  andre  -1.9%  forskjell  +9.9 pp p 0.036  halvdeler +13.3/+6.3  | tatt bort fra BEGGE +5.1% (n 13)  bare S1 -1.3%
+
+==================== h = 6 mnd (per 6 mnd, log, minus SPY)
+   BEGGE uten krav
+      1993-2014 (avgjør) KURV  signal  +2.8% (n 35, 14 perioder)  andre  -5.6%  forskjell  +8.4 pp p 0.088  halvdeler +13.1/+4.5  | tatt bort fra BEGGE +nan% (n 0)  bare S1 -0.4%
+      1993-2014 (avgjør) ^XAU  signal  +2.5% (n 35, 14 perioder)  andre  -6.7%  forskjell  +9.2 pp p 0.026  halvdeler +11.4/+7.2  | tatt bort fra BEGGE +nan% (n 0)  bare S1 -2.9%
+      2015-2026          KURV  signal +17.5% (n 43, 14 perioder)  andre  -6.0%  forskjell +23.5 pp p 0.000  halvdeler +33.6/+13.4  | tatt bort fra BEGGE +nan% (n 0)  bare S1 -6.2%
+      2015-2026          ^XAU  signal +12.1% (n 43, 14 perioder)  andre  -4.9%  forskjell +17.0 pp p 0.000  halvdeler +27.5/+6.8  | tatt bort fra BEGGE +nan% (n 0)  bare S1 -3.8%
+   K1 BEGGE og S1 minst 3 mnd på rad
+      1993-2014 (avgjør) KURV  signal  +9.1% (n 17, 8 perioder)  andre  -5.4%  forskjell +14.5 pp p 0.024  halvdeler +27.6/+2.8  | tatt bort fra BEGGE -3.1% (n 18)  bare S1 -0.4%
+      1993-2014 (avgjør) ^XAU  signal  +7.0% (n 17, 8 perioder)  andre  -6.3%  forskjell +13.2 pp p 0.009  halvdeler +21.3/+6.0  | tatt bort fra BEGGE -1.6% (n 18)  bare S1 -2.9%
+      2015-2026          KURV  signal +15.2% (n 30, 10 perioder)  andre  -2.4%  forskjell +17.7 pp p 0.046  halvdeler +27.9/+6.8  | tatt bort fra BEGGE +22.7% (n 13)  bare S1 -6.2%
+      2015-2026          ^XAU  signal +10.5% (n 30, 10 perioder)  andre  -2.4%  forskjell +12.9 pp p 0.077  halvdeler +24.0/+0.7  | tatt bort fra BEGGE +15.8% (n 13)  bare S1 -3.8%
+   K2 BEGGE minst 2 mnd på rad
+      1993-2014 (avgjør) KURV  signal  +3.4% (n 21, 10 perioder)  andre  -5.1%  forskjell  +8.4 pp p 0.138  halvdeler +12.5/+5.5  | tatt bort fra BEGGE +2.0% (n 14)  bare S1 -0.4%
+      1993-2014 (avgjør) ^XAU  signal  +4.4% (n 21, 10 perioder)  andre  -6.3%  forskjell +10.7 pp p 0.059  halvdeler +13.5/+8.3  | tatt bort fra BEGGE -0.2% (n 14)  bare S1 -2.9%
+      2015-2026          KURV  signal +19.1% (n 30, 8 perioder)  andre  -3.5%  forskjell +22.6 pp p 0.000  halvdeler +32.6/+12.1  | tatt bort fra BEGGE +13.8% (n 13)  bare S1 -6.2%
+      2015-2026          ^XAU  signal +12.6% (n 30, 8 perioder)  andre  -3.0%  forskjell +15.6 pp p 0.045  halvdeler +27.0/+3.2  | tatt bort fra BEGGE +10.9% (n 13)  bare S1 -3.8%
+   K3 BEGGE og O6 høyst 5 mnd på rad
+      1993-2014 (avgjør) KURV  signal  +3.4% (n 34, 14 perioder)  andre  -5.7%  forskjell  +9.1 pp p 0.046  halvdeler +13.1/+5.6  | tatt bort fra BEGGE -17.7% (n 1)  bare S1 -0.4%
+      1993-2014 (avgjør) ^XAU  signal  +3.0% (n 34, 14 perioder)  andre  -6.7%  forskjell  +9.7 pp p 0.027  halvdeler +11.4/+8.1  | tatt bort fra BEGGE -12.9% (n 1)  bare S1 -2.9%
+      2015-2026          KURV  signal +23.4% (n 30, 11 perioder)  andre  -4.8%  forskjell +28.2 pp p 0.000  halvdeler +38.3/+17.5  | tatt bort fra BEGGE +3.8% (n 13)  bare S1 -6.2%
+      2015-2026          ^XAU  signal +17.3% (n 30, 11 perioder)  andre  -4.3%  forskjell +21.6 pp p 0.000  halvdeler +30.8/+11.6  | tatt bort fra BEGGE +0.1% (n 13)  bare S1 -3.8%
+
+AVGJØRELSE (1993 til 2014)
+
+   K1 BEGGE og S1 minst 3 mnd på rad, h 3      : holder ikke (største p 0.075, BH nei)
+   K1 BEGGE og S1 minst 3 mnd på rad, h 6      : holder ikke (største p 0.024, BH nei)
+   K2 BEGGE minst 2 mnd på rad, h 3            : holder ikke (største p 0.085, BH nei)
+   K2 BEGGE minst 2 mnd på rad, h 6            : holder ikke (største p 0.138, BH nei)
+   K3 BEGGE og O6 høyst 5 mnd på rad, h 3      : holder ikke (største p 0.050, BH nei)
+   K3 BEGGE og O6 høyst 5 mnd på rad, h 6      : holder ikke (største p 0.046, BH nei)
+
+I DAG (2026-09): S1 rekke 0, O6 rekke 1, BEGGE rekke 0
+Lagret sonder/miners_begge_rekke.csv
