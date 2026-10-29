@@ -9,6 +9,29 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 28.10.2026 22:31, Claude Code
+**Hva:** Ny sonde `sonde_kjor_miners_kurv.py` (Frodes bestilling: test
+olje-signalet for gruvene på en kurv med lang historikk). Kurv av NEM,
+Barrick, AEM, GFI, AU, HMY, KGC (store) og AGI, IAG, EGO, BVN (mindre, fra
+2003), likevekt, med utbytte; ^XAU ved siden av (har også forsvunne
+selskaper). Mot SPY. **Avgjort på 1992 til 2014, før perioden signalet ble
+funnet i: en ekte test utenfor utvalget.** Kriteriene satt før kjøring.
+**Resultat: holder ikke utenfor utvalget.**
+- Endring i olje-A over 6 mnd, 1992 til 2014: kurven r +0,11 (p 0,08) og
+  ^XAU +0,15 (p 0,03) på 3 mnd, +0,09 og +0,13 på 6 mnd; riktig fortegn,
+  men svakt, og negativ i 2003 til 2014 (-0,05 til -0,23). 2015 til 2026 er
+  det sterkt på kurven også (+0,37 til +0,39).
+- Gull mot olje 3 mnd (månedssnitt), 1992 til 2014: +0,11 til +0,14 på
+  3 mnd, positiv i begge halvdeler, p 0,05 til 0,08: nærmest, men holder
+  ikke. På 6 mnd ingenting.
+Over hele 1993 til 2026: +0,14 til +0,22, men det er dominert av perioden
+signalet ble funnet i. Tolkning: virkningen av olje på gruvene er langt
+sterkere etter 2015 enn før; ikke bevist som et varig signal.
+**Filer:** `sonde_kjor_miners_kurv.py`, `sonder/sonde_kjor_miners_kurv.txt`,
+`sonder/miners_kurv.csv`, `sonder_ferdige.txt`.
+**Cowork må vite:** Signalet i feltet Gullgruver bør merkes som funnet i
+2015 til 2026 og svakt før det.
+
 ### 28.10.2026 22:27, Claude Code
 **Hva:** Ny sonde `sonde_kjor_miners_dA.py` (Frodes spørsmål: varsler den
 deriverte av en av våre A gruvene?). Endring i A, Ad og Ar over 1, 3 og

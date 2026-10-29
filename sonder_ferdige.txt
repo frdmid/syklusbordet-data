@@ -80,3 +80,4 @@ sonde_kjor_gullgruver
 sonde_kjor_miners_a
 sonde_kjor_miners_feilpris
 sonde_kjor_miners_dA
+sonde_kjor_miners_kurv
