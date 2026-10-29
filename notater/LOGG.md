@@ -9,6 +9,27 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 28.10.2026 22:56, Claude Code
+**Hva:** Ny sonde `sonde_kjor_miners_begge.py` (Frodes bestilling: test
+«begge gruvesignalene samme måned»; skulle erstatte de to signalene hvis
+det holdt). Avgjort på 1993 til 2014, før perioden signalene ble funnet i.
+Kriteriene satt før kjøring, med krav (d) om at BEGGE må slå måneder med
+bare ett av signalene.
+**Resultat: holder ikke, men nær på 3 mnd.**
+- 3 mnd, 1993 til 2014: BEGGE +3,3 % (kurven) og +3,0 % (^XAU) mot -2,8 og
+  -3,3 % i andre måneder, forskjell +6,1 og +6,4 pp, p 0,048, positiv i
+  begge halvdeler, gjennom BH. Feilet bare på (d): måneder med bare S1 ga
+  like mye for kurven (+3,318 % mot +3,310 %).
+- 6 mnd, 1993 til 2014: forskjell +8,4 og +9,2 pp, p 0,10 og 0,02; BEGGE
+  slo bare S1 (+2,8 mot -0,4 %), men kurven bommet på p.
+- Bare O6 var svak før 2015 (-5,1 % på 3 mnd, -15,9 % på 6 mnd); etter 2015
+  positiv. 2015 til 2026: BEGGE +9,6 og +17,5 % (kurven), UCITS +8 til +18 %.
+- Tolkning: før 2015 bar S1 det meste; O6 hjalp bare sammen med S1.
+I dag: S1 ikke punkt, O6 punkt, BEGGE nei.
+**Filer:** `sonde_kjor_miners_begge.py`, `sonder/sonde_kjor_miners_begge.txt`,
+`sonder/miners_begge.csv`, `sonder_ferdige.txt`.
+**Cowork må vite:** Ingen endring på dashbordet; Frode avgjør.
+
 ### 28.10.2026 22:47, Claude Code
 **Hva:** Ny sonde `sonde_kjor_miners_rekker.py` (Frodes spørsmål: gir flere
 signalmåneder på rad et sterkere signal for gruvene?). Signalpunktene som i

@@ -1,0 +1,31 @@
+==================== h = 3 mnd (alle tall per 3 mnd, log, minus marked)
+   1993-2014 (avgjør) KURV    BEGGE  +3.3% (n 35, 14 perioder)  andre  -2.8%  forskjell  +6.1 pp p 0.048  halvdeler +1.2/+10.4  | bare S1 +3.3%  bare O6 -5.1%  ingen -3.9%
+   1993-2014 (avgjør) ^XAU    BEGGE  +3.0% (n 35, 14 perioder)  andre  -3.3%  forskjell  +6.4 pp p 0.048  halvdeler +0.9/+11.1  | bare S1 +1.9%  bare O6 -5.2%  ingen -4.3%
+   2015-2026          KURV    BEGGE  +9.6% (n 43, 14 perioder)  andre  -3.3%  forskjell +13.0 pp p 0.000  halvdeler +20.0/+6.1  | bare S1 -2.7%  bare O6 +3.9%  ingen -5.2%
+   2015-2026          ^XAU    BEGGE  +7.1% (n 43, 14 perioder)  andre  -2.9%  forskjell +10.0 pp p 0.000  halvdeler +17.1/+3.1  | bare S1 -1.3%  bare O6 +2.5%  ingen -4.6%
+   2015-2026          GDX.L   BEGGE  +8.3% (n 41, 13 perioder)  andre  -2.2%  forskjell +10.5 pp  halvdeler +18.4/+3.2  | bare S1 -3.0%  bare O6 +3.8%  ingen -3.3%
+   2015-2026          GDXJ.L  BEGGE  +8.9% (n 41, 13 perioder)  andre  -2.4%  forskjell +11.3 pp  halvdeler +19.6/+3.7  | bare S1 -2.5%  bare O6 +7.2%  ingen -4.5%
+   hele               KURV    BEGGE  +6.0% (n 83, 28 perioder)  andre  -3.1%  forskjell  +9.1 pp p 0.013  halvdeler +5.1/+13.0  | bare S1 +1.1%  bare O6 -3.3%  ingen -4.3%
+   hele               ^XAU    BEGGE  +4.5% (n 83, 28 perioder)  andre  -3.3%  forskjell  +7.8 pp p 0.000  halvdeler +4.4/+10.9  | bare S1 +0.7%  bare O6 -3.7%  ingen -4.4%
+   hele               GDX.L   BEGGE  +8.3% (n 41, 13 perioder)  andre  -2.2%  forskjell +10.5 pp  halvdeler +18.4/+3.2  | bare S1 -3.0%  bare O6 +3.8%  ingen -3.3%
+   hele               GDXJ.L  BEGGE  +8.9% (n 41, 13 perioder)  andre  -2.4%  forskjell +11.3 pp  halvdeler +19.6/+3.7  | bare S1 -2.5%  bare O6 +7.2%  ingen -4.5%
+
+==================== h = 6 mnd (alle tall per 6 mnd, log, minus marked)
+   1993-2014 (avgjør) KURV    BEGGE  +2.8% (n 35, 14 perioder)  andre  -5.6%  forskjell  +8.4 pp p 0.102  halvdeler +13.1/+4.5  | bare S1 -0.4%  bare O6 -15.9%  ingen -4.5%
+   1993-2014 (avgjør) ^XAU    BEGGE  +2.5% (n 35, 14 perioder)  andre  -6.7%  forskjell  +9.2 pp p 0.023  halvdeler +11.4/+7.2  | bare S1 -2.9%  bare O6 -16.0%  ingen -5.5%
+   2015-2026          KURV    BEGGE +17.5% (n 43, 14 perioder)  andre  -6.0%  forskjell +23.5 pp p 0.000  halvdeler +33.6/+13.4  | bare S1 -6.2%  bare O6 +6.2%  ingen -8.7%
+   2015-2026          ^XAU    BEGGE +12.1% (n 43, 14 perioder)  andre  -4.9%  forskjell +17.0 pp p 0.000  halvdeler +27.5/+6.8  | bare S1 -3.8%  bare O6 +6.6%  ingen -7.9%
+   2015-2026          GDX.L   BEGGE +15.7% (n 41, 13 perioder)  andre  -3.9%  forskjell +19.5 pp  halvdeler +32.5/+7.6  | bare S1 -5.0%  bare O6 +7.5%  ingen -6.1%
+   2015-2026          GDXJ.L  BEGGE +17.7% (n 41, 13 perioder)  andre  -4.7%  forskjell +22.4 pp  halvdeler +36.6/+9.6  | bare S1 -5.1%  bare O6 +11.8%  ingen -8.4%
+   hele               KURV    BEGGE  +9.5% (n 83, 28 perioder)  andre  -5.8%  forskjell +15.3 pp p 0.007  halvdeler +8.6/+21.9  | bare S1 -2.4%  bare O6 -9.3%  ingen -5.9%
+   hele               ^XAU    BEGGE  +6.6% (n 83, 28 perioder)  andre  -6.2%  forskjell +12.8 pp p 0.000  halvdeler +9.3/+16.6  | bare S1 -3.2%  bare O6 -9.3%  ingen -6.3%
+   hele               GDX.L   BEGGE +15.7% (n 41, 13 perioder)  andre  -3.9%  forskjell +19.5 pp  halvdeler +32.5/+7.6  | bare S1 -5.0%  bare O6 +7.5%  ingen -6.1%
+   hele               GDXJ.L  BEGGE +17.7% (n 41, 13 perioder)  andre  -4.7%  forskjell +22.4 pp  halvdeler +36.6/+9.6  | bare S1 -5.1%  bare O6 +11.8%  ingen -8.4%
+
+AVGJØRELSE (1993 til 2014, utenfor perioden signalene ble funnet i)
+
+   BEGGE, h=3 mnd: holder ikke (største p 0.048, BH ja)
+   BEGGE, h=6 mnd: holder ikke (største p 0.102, BH nei)
+
+I DAG (2026-09): S1 ikke punkt, O6 punkt, BEGGE nei
+Lagret sonder/miners_begge.csv
