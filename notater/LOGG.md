@@ -9,6 +9,13 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.10.2026 11:03, Claude Code
+
+Dashbordet v75: feltet Gullgruver viser BEGGE-status (S1 og S2 samme måned, på
+eller av, og sist på), med at den følges som challenger_gull_begge_v1 fra
+04.11. Leses fra miners.punkter og seriens sig1 og sig2; ingen nye data.
+Filer: artifact (v75), notater/OVERLEVERING.md. For Cowork: ingenting å gjøre.
+
 ### 29.10.2026 10:12, Claude Code
 
 BEGGE for gullgruvene registrert som Challenger (Frodes beslutning):
