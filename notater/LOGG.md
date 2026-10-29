@@ -9,6 +9,25 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 28.10.2026 22:40, Claude Code
+**Hva:** Ny sonde `sonde_kjor_miners_gullregime.py` (Frodes bestilling:
+oppfører gruvesignalene seg ulikt når gull stiger, står stille eller
+faller, i perioder på minst 6 mnd?). To klassifiseringer: ETTERPÅ (gull fra
+6 mnd før til 6 mnd etter, ±10 %, perioder under 6 mnd slått sammen; 16
+perioder 1993 til 2026, men fallende bare 34 mnd) og SANNTID (gull siste 6
+mnd, ±5 %). Signalene S1 (gull mot olje 3 mnd) og O6 (olje-A 6 mnd) mot
+kurven av gruveaksjer og ^XAU minus SPY. Kriteriene satt før kjøring.
+**Resultat: ingen forskjell holder** (p 0,17 til 1,00).
+- S1 er nesten likt i alle sanntidsregimer (+0,17 til +0,19 på 3 mnd).
+- O6 peker mot en forskjell: sterkest når gull stiger (+0,32 og +0,34),
+  svakere når det står stille (+0,19), null når det faller (-0,01 og -0,05);
+  ikke sikkert (p 0,17 til 0,39).
+I dag: gull -11,7 % siste 6 mnd, sanntidsregime fallende, der O6 historisk
+ikke har sagt noe.
+**Filer:** `sonde_kjor_miners_gullregime.py`, `sonder/sonde_kjor_miners_gullregime.txt`,
+`sonder/miners_gullregime.csv`, `sonder_ferdige.txt`.
+**Cowork må vite:** Ingen endring på dashbordet.
+
 ### 28.10.2026 22:37, Claude Code
 **Hva:** Signalene for Gullgruver som punkter i grafen (Frodes bestilling).
 `kontekst_miners.py` merker hver måned i serien med `sig1` og `sig2` når

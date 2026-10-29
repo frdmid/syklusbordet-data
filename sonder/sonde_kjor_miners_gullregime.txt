@@ -1,0 +1,66 @@
+REGIMENE (antall måneder 1993 til 2026)
+   ETTERPÅ : stigende 169 mnd, stabil 196 mnd, fallende 34 mnd; 16 perioder
+   SANNTID : stigende 180 mnd, stabil 150 mnd, fallende 75 mnd; 94 perioder
+   ETTERPÅ, periodene: 1993-01..1993-04 stabil; 1993-05..1994-03 stigende; 1994-04..1996-06 stabil; 1996-07..1998-03 fallende; 1998-04..2001-07 stabil; 2001-08..2004-05 stigende; 2004-06..2005-05 stabil; 2005-06..2008-03 stigende; 2008-04..2009-01 stabil; 2009-02..2011-10 stigende; 2011-11..2012-09 stabil; 2012-10..2013-10 fallende; 2013-11..2018-12 stabil; 2019-01..2021-02 stigende; 2021-03..2023-08 stabil; 2023-09..2026-03 stigende
+
+S1 gull mot olje 3 mnd, h 3 mnd, ETTERPÅ
+   KURV    stigende +0.09 (n 169)  stabil +0.20 (n 196)  fallende -0.10 (n 34)  | spenn 0.30, høyest stabil, p 0.287
+   ^XAU    stigende +0.08 (n 169)  stabil +0.20 (n 196)  fallende -0.03 (n 34)  | spenn 0.23, høyest stabil, p 0.390
+   GDX.L   stigende +0.12 (n 57)  stabil +0.32 (n 76)  fallende +nan (n 0)  | spenn nan, høyest stabil
+   GDXJ.L  stigende +0.20 (n 57)  stabil +0.27 (n 76)  fallende +nan (n 0)  | spenn nan, høyest stabil
+
+S1 gull mot olje 3 mnd, h 3 mnd, SANNTID
+   KURV    stigende +0.18 (n 180)  stabil +0.17 (n 150)  fallende +0.17 (n 73)  | spenn 0.01, høyest stigende, p 1.000
+   ^XAU    stigende +0.18 (n 180)  stabil +0.17 (n 150)  fallende +0.19 (n 73)  | spenn 0.02, høyest fallende, p 0.995
+   GDX.L   stigende +0.19 (n 70)  stabil +0.31 (n 46)  fallende +nan (n 21)  | spenn nan, høyest stabil
+   GDXJ.L  stigende +0.22 (n 70)  stabil +0.29 (n 46)  fallende +nan (n 21)  | spenn nan, høyest stabil
+
+S1 gull mot olje 3 mnd, h 6 mnd, ETTERPÅ
+   KURV    stigende +0.04 (n 169)  stabil +0.16 (n 196)  fallende -0.29 (n 34)  | spenn 0.45, høyest stabil, p 0.105
+   ^XAU    stigende +0.03 (n 169)  stabil +0.20 (n 196)  fallende -0.14 (n 34)  | spenn 0.35, høyest stabil, p 0.174
+   GDX.L   stigende +0.11 (n 57)  stabil +0.41 (n 76)  fallende +nan (n 0)  | spenn nan, høyest stabil
+   GDXJ.L  stigende +0.18 (n 57)  stabil +0.40 (n 76)  fallende +nan (n 0)  | spenn nan, høyest stabil
+
+S1 gull mot olje 3 mnd, h 6 mnd, SANNTID
+   KURV    stigende +0.11 (n 179)  stabil +0.12 (n 149)  fallende +0.22 (n 72)  | spenn 0.11, høyest fallende, p 0.797
+   ^XAU    stigende +0.13 (n 179)  stabil +0.13 (n 149)  fallende +0.28 (n 72)  | spenn 0.16, høyest fallende, p 0.576
+   GDX.L   stigende +0.19 (n 69)  stabil +0.35 (n 45)  fallende +nan (n 20)  | spenn nan, høyest stabil
+   GDXJ.L  stigende +0.21 (n 69)  stabil +0.37 (n 45)  fallende +nan (n 20)  | spenn nan, høyest stabil
+
+O6 olje-A 6 mnd, h 3 mnd, ETTERPÅ
+   KURV    stigende +0.26 (n 169)  stabil +0.23 (n 196)  fallende +0.04 (n 34)  | spenn 0.22, høyest stigende, p 0.722
+   ^XAU    stigende +0.25 (n 169)  stabil +0.23 (n 196)  fallende +0.18 (n 34)  | spenn 0.07, høyest stigende, p 0.976
+   GDX.L   stigende +0.27 (n 57)  stabil +0.40 (n 76)  fallende +nan (n 0)  | spenn nan, høyest stabil
+   GDXJ.L  stigende +0.33 (n 57)  stabil +0.41 (n 76)  fallende +nan (n 0)  | spenn nan, høyest stabil
+
+O6 olje-A 6 mnd, h 3 mnd, SANNTID
+   KURV    stigende +0.32 (n 180)  stabil +0.19 (n 150)  fallende -0.01 (n 73)  | spenn 0.33, høyest stigende, p 0.173
+   ^XAU    stigende +0.29 (n 180)  stabil +0.21 (n 150)  fallende +0.02 (n 73)  | spenn 0.27, høyest stigende, p 0.243
+   GDX.L   stigende +0.35 (n 70)  stabil +0.20 (n 46)  fallende +nan (n 21)  | spenn nan, høyest stigende
+   GDXJ.L  stigende +0.37 (n 70)  stabil +0.23 (n 46)  fallende +nan (n 21)  | spenn nan, høyest stigende
+
+O6 olje-A 6 mnd, h 6 mnd, ETTERPÅ
+   KURV    stigende +0.23 (n 169)  stabil +0.28 (n 196)  fallende -0.12 (n 34)  | spenn 0.40, høyest stabil, p 0.259
+   ^XAU    stigende +0.21 (n 169)  stabil +0.30 (n 196)  fallende +0.04 (n 34)  | spenn 0.25, høyest stabil, p 0.590
+   GDX.L   stigende +0.34 (n 57)  stabil +0.37 (n 76)  fallende +nan (n 0)  | spenn nan, høyest stabil
+   GDXJ.L  stigende +0.41 (n 57)  stabil +0.43 (n 76)  fallende +nan (n 0)  | spenn nan, høyest stabil
+
+O6 olje-A 6 mnd, h 6 mnd, SANNTID
+   KURV    stigende +0.34 (n 179)  stabil +0.18 (n 149)  fallende -0.05 (n 72)  | spenn 0.39, høyest stigende, p 0.220
+   ^XAU    stigende +0.30 (n 179)  stabil +0.21 (n 149)  fallende +0.02 (n 72)  | spenn 0.28, høyest stigende, p 0.388
+   GDX.L   stigende +0.35 (n 69)  stabil +0.14 (n 45)  fallende +nan (n 20)  | spenn nan, høyest stigende
+   GDXJ.L  stigende +0.39 (n 69)  stabil +0.19 (n 45)  fallende +nan (n 20)  | spenn nan, høyest stigende
+
+AVGJØRELSE: oppfører signalet seg ulikt etter gullregime?
+
+   S1 gull mot olje 3 mnd, h 6, ETTERPÅ    : nei (største p 0.174, BH nei)
+   O6 olje-A 6 mnd, h 3, SANNTID           : nei (største p 0.243, BH nei)
+   O6 olje-A 6 mnd, h 6, SANNTID           : nei (største p 0.388, BH nei)
+   S1 gull mot olje 3 mnd, h 3, ETTERPÅ    : nei (største p 0.390, BH nei)
+   O6 olje-A 6 mnd, h 6, ETTERPÅ           : nei (største p 0.590, BH nei)
+   S1 gull mot olje 3 mnd, h 6, SANNTID    : nei (største p 0.797, BH nei)
+   O6 olje-A 6 mnd, h 3, ETTERPÅ           : nei (største p 0.976, BH nei)
+   S1 gull mot olje 3 mnd, h 3, SANNTID    : nei (største p 1.000, BH nei)
+
+I DAG: gull siste 6 mnd -11.7 % (log), sanntidsregime: fallende
+Lagret sonder/miners_gullregime.csv
