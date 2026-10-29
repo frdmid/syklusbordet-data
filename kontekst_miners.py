@@ -23,6 +23,8 @@
 #             UCITS-fondene 2015 til 2026 og ga noe ut over signal 1, men var
 #             svakt i 1992 til 2014 (sonde_kjor_miners_kurv). Begge signalene
 #             holdt sterkt bare i 2015 til 2026.
+#   PUNKTENE  sig1 og sig2 i serien: måneder der signalet var i øverste
+#             tredjedel mot det som var kjent da (minst 36 mnd), til grafen.
 #   PAPIRENE  UCITS-fondene i USD: GDX.L, GDXJ.L, IAUP.L, AUCO.L. D med samme
 #             formel som kapitulasjon_d.py (kopiert, ikke importert, fordi den
 #             fila kjører ved import), segmentets D = median av papirene. C er
@@ -134,6 +136,16 @@ def _d(daglig):
     return None if i < 0 else (round(float(d[i]), 1), round(float(fall.values[i]), 1))
 
 
+def _toppen(serie, minn=36):
+    """Sann der verdien er i øverste tredjedel mot det som var kjent da."""
+    v = serie.values; ut = {}
+    for i in range(len(v)):
+        h = v[: i + 1]; h = h[np.isfinite(h)]
+        if np.isfinite(v[i]) and len(h) >= minn:
+            ut[str(serie.index[i])] = bool((h <= v[i]).mean() >= 2 / 3)
+    return ut
+
+
 def _r(x, n=1):
     return None if x is None or not np.isfinite(x) else round(float(x), n)
 
@@ -162,11 +174,12 @@ def beregn(priser_csv, idag=None, note=print):
     b, _ = np.polyfit(np.arange(len(lv)), lv, 1)
 
     # signalet: gull mot olje siste 3 mnd, månedsslutt
-    sig = None
+    sig, topp1, topp2 = None, {}, {}
     try:
         g, o = _mnd_slutt("GC=F"), _mnd_slutt("BZ=F")
         m = (g - o).dropna()
         s1 = (m - m.shift(3)).dropna()
+        topp1 = _toppen(s1)
         if len(s1):
             sig = {"mnd": str(s1.index[-1]), "endring_3m_pst": _r(100 * (np.exp(s1.iloc[-1]) - 1)),
                    "pctl": _r(100 * (s1 <= s1.iloc[-1]).mean(), 0), "fra": str(s1.index[0]),
@@ -182,10 +195,17 @@ def beregn(priser_csv, idag=None, note=print):
         ol.index = pd.PeriodIndex(ol.index, freq="M"); ol = ol.sort_index(); vo = np.log(ol.values)
         oA = pd.Series((1 - _expanding_pct(vo)) * 100, index=ol.index)
         d6 = (oA - oA.shift(6)).dropna()
+        topp2 = _toppen(d6)
         sig6 = {"mnd": str(d6.index[-1]), "endring_6m": _r(d6.iloc[-1]), "olje_A": _r(oA.iloc[-1]),
                 "olje_A_6m_siden": _r(oA.iloc[-7]), "pctl": _r(100 * (d6 <= d6.iloc[-1]).mean(), 0), "fra": str(d6.index[0])}
     except Exception as e:
         note(f"   miners: signal 2 mangler ({type(e).__name__})")
+
+    for pt in serie_ut:
+        if pt["t"] in topp1:
+            pt["sig1"] = topp1[pt["t"]]
+        if pt["t"] in topp2:
+            pt["sig2"] = topp2[pt["t"]]
 
     # papirene og D
     instr, dverdier = [], []

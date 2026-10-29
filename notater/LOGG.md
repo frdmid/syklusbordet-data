@@ -9,6 +9,19 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 28.10.2026 22:37, Claude Code
+**Hva:** Signalene for Gullgruver som punkter i grafen (Frodes bestilling).
+`kontekst_miners.py` merker hver måned i serien med `sig1` og `sig2` når
+signalet var i øverste tredjedel mot det som var kjent da (minst 36 mnd):
+signal 1 (gull mot olje 3 mnd, Yahoo fra 2007) i 67 av 180 måneder, signal 2
+(olje-A 6 mnd, fra 1992) i 82. Dashbordet versjon 70: lilla punkter over
+prislinjen for signal 1 og oransje under for signal 2, med forklaring under
+grafen; nye fargetokens `--sig1` og `--sig2` for lys og mørk modus. Bare
+panelet Gullgruver har feltene, så de andre panelene er urørt.
+segments/miners skrevet på nytt (versjon 3).
+**Filer:** `kontekst_miners.py`, `miners.json`.
+**Cowork må vite:** Punktene viser når signalet var sterkt, ikke kjøpsflagg.
+
 ### 28.10.2026 22:35, Claude Code
 **Hva:** Feltet Gullgruver har fått to signaler og rettet tekst (Frodes
 bestilling, med seksmånederssignalet tatt med).
