@@ -9,6 +9,23 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 28.10.2026 22:47, Claude Code
+**Hva:** Ny sonde `sonde_kjor_miners_rekker.py` (Frodes spørsmål: gir flere
+signalmåneder på rad et sterkere signal for gruvene?). Signalpunktene som i
+grafen (øverste tredjedel, punkt i tid), rekkelengde per signalmåned, mot
+kurven av gruveaksjer og ^XAU minus SPY 3 og 6 mnd, 1993 til 2026.
+Kriteriene satt før kjøring.
+**Resultat: holder ikke** (p 0,10 til 0,89).
+- S1: rekker på 1 til 2 mnd ga rundt 0 %, rekker på 3 mnd eller mer +7 til
+  +9 % (kurven, 3 mnd); terskel heller enn jevn økning, ikke sikkert.
+- O6: best ved 3 til 5 mnd, negativ ved 6 mnd eller mer (-1,6 og -8,6 %).
+- Beskrivende, ikke testet: begge signalene samme måned ga +6,0 % (3 mnd) og
+  +9,5 % (6 mnd) for kurven, mot -0,9 og -5,6 % for ett signal og -4,3 og
+  -5,9 % for ingen; samme mønster for ^XAU og UCITS-fondene.
+**Filer:** `sonde_kjor_miners_rekker.py`, `sonder/sonde_kjor_miners_rekker.txt`,
+`sonder/miners_rekker.csv`, `sonder_ferdige.txt`.
+**Cowork må vite:** Ingen endring på dashbordet.
+
 ### 28.10.2026 22:43, Claude Code
 **Hva:** Linjen om gullregime i feltet Gullgruver (Frodes bestilling).
 `kontekst_miners.py` regner hver uke sanntidsregimet for gull (endring siste

@@ -1,0 +1,42 @@
+==================== S1 gull mot olje 3 mnd
+   h = 3 mnd
+      KURV    r(rekke, utfall) +0.12 p 0.103  | av  -2.9% (n 254)  1  +0.5% (n 50)  2  -0.5% (n 35)  3-5  +7.2% (n 49)  6+  +9.2% (n 15)
+      ^XAU    r(rekke, utfall) +0.10 p 0.138  | av  -3.6% (n 254)  1  -0.5% (n 50)  2  -0.6% (n 35)  3-5  +6.0% (n 49)  6+  +6.5% (n 15)
+      GDX.L   r(rekke, utfall) +0.18  | av  -2.0% (n 76)  1  -0.2% (n 16)  2  -0.7% (n 14)  3-5  +9.4% (n 21)  6+  +9.3% (n 10)
+      GDXJ.L  r(rekke, utfall) +0.19  | av  -2.3% (n 76)  1  -0.3% (n 16)  2  -1.0% (n 14)  3-5 +10.4% (n 21)  6+ +11.7% (n 10)
+   h = 6 mnd
+      KURV    r(rekke, utfall) +0.10 p 0.160  | av  -5.2% (n 253)  1  -1.0% (n 49)  2  +3.8% (n 34)  3-5  +9.9% (n 49)  6+  +7.8% (n 15)
+      ^XAU    r(rekke, utfall) +0.09 p 0.161  | av  -6.3% (n 253)  1  -2.7% (n 49)  2  +2.4% (n 34)  3-5  +7.4% (n 49)  6+  +2.6% (n 15)
+      GDX.L   r(rekke, utfall) +0.06  | av  -3.6% (n 75)  1  +3.7% (n 15)  2  +6.1% (n 13)  3-5 +14.7% (n 21)  6+ +10.7% (n 10)
+      GDXJ.L  r(rekke, utfall) +0.11  | av  -4.6% (n 75)  1  +3.4% (n 15)  2  +5.9% (n 13)  3-5 +15.6% (n 21)  6+ +17.9% (n 10)
+
+==================== O6 olje-A 6 mnd
+   h = 3 mnd
+      KURV    r(rekke, utfall) -0.06 p 0.688  | av  -3.1% (n 242)  1  +1.4% (n 33)  2  +2.0% (n 23)  3-5  +6.6% (n 45)  6+  -1.6% (n 28)
+      ^XAU    r(rekke, utfall) -0.09 p 0.777  | av  -3.2% (n 242)  1  +1.0% (n 33)  2  +2.1% (n 23)  3-5  +3.8% (n 45)  6+  -1.8% (n 28)
+      GDX.L   r(rekke, utfall) +0.03  | av  -3.3% (n 82)  1  +6.8% (n 12)  2  +0.2% (n 9)  3-5  +9.4% (n 19)  6+  +8.5% (n 15)
+      GDXJ.L  r(rekke, utfall) +0.05  | av  -4.0% (n 82)  1  +6.6% (n 12)  2  +1.8% (n 9)  3-5 +10.7% (n 19)  6+ +11.2% (n 15)
+   h = 6 mnd
+      KURV    r(rekke, utfall) -0.13 p 0.851  | av  -5.1% (n 239)  1  +3.1% (n 33)  2  +7.1% (n 23)  3-5  +7.4% (n 45)  6+  -8.6% (n 28)
+      ^XAU    r(rekke, utfall) -0.15 p 0.885  | av  -5.6% (n 239)  1  +1.1% (n 33)  2  +5.1% (n 23)  3-5  +4.5% (n 45)  6+  -8.5% (n 28)
+      GDX.L   r(rekke, utfall) -0.06  | av  -5.9% (n 79)  1  +7.8% (n 12)  2 +15.2% (n 9)  3-5 +22.5% (n 19)  6+  +5.9% (n 15)
+      GDXJ.L  r(rekke, utfall) +0.01  | av  -7.6% (n 79)  1  +7.0% (n 12)  2 +15.3% (n 9)  3-5 +25.9% (n 19)  6+ +11.7% (n 15)
+
+==================== Begge signalene samme måned (beskrivende)
+   h 3 KURV   : 0 signal  -4.3% (n 187)  1 signal  -0.9% (n 101)  2 signal  +6.0% (n 83)
+   h 3 ^XAU   : 0 signal  -4.4% (n 187)  1 signal  -1.3% (n 101)  2 signal  +4.5% (n 83)
+   h 3 GDX.L  : 0 signal  -3.3% (n 62)  1 signal  -0.2% (n 34)  2 signal  +8.3% (n 41)
+   h 3 GDXJ.L : 0 signal  -4.5% (n 62)  1 signal  +1.5% (n 34)  2 signal  +8.9% (n 41)
+   h 6 KURV   : 0 signal  -5.9% (n 186)  1 signal  -5.6% (n 99)  2 signal  +9.5% (n 83)
+   h 6 ^XAU   : 0 signal  -6.3% (n 186)  1 signal  -6.0% (n 99)  2 signal  +6.6% (n 83)
+   h 6 GDX.L  : 0 signal  -6.1% (n 61)  1 signal  +0.5% (n 32)  2 signal +15.7% (n 41)
+   h 6 GDXJ.L : 0 signal  -8.4% (n 61)  1 signal  +2.3% (n 32)  2 signal +17.7% (n 41)
+
+AVGJØRELSE: gir lengre rekke sterkere signal?
+
+   S1 gull mot olje 3 mnd, h 3   : nei (største p 0.138, BH nei)
+   S1 gull mot olje 3 mnd, h 6   : nei (største p 0.161, BH nei)
+   O6 olje-A 6 mnd, h 3          : nei (største p 0.777, BH nei)
+   O6 olje-A 6 mnd, h 6          : nei (største p 0.885, BH nei)
+
+Lagret sonder/miners_rekker.csv

@@ -82,3 +82,4 @@ sonde_kjor_miners_feilpris
 sonde_kjor_miners_dA
 sonde_kjor_miners_kurv
 sonde_kjor_miners_gullregime
+sonde_kjor_miners_rekker
