@@ -9,6 +9,23 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.10.2026 08:55, Claude Code
+**Hva:** Ny sonde `sonde_kjor_miners_k1_varianter.py` (Frodes bestilling: kan
+K1 forbedres?). Fem varianter, kriteriene satt før kjøring, avgjort på 1993
+til 2014, og varianten må slå K1 både i snitt og i forskjell mot andre
+måneder: V1 S1 minst 2 mnd på rad, V2a og V2b K1 forsinket 1 og 2 mnd, V3 O6
+på rullende olje-A (10 år), V4 K1 og gull mot olje under 80. persentil siste
+10 år.
+**Resultat: ingen holder, og ingen slår K1 på 6 mnd.** V1 ligger mellom
+BEGGE og K1 (+5,5 % mot K1 +9,1 % på kurven). Forsinkelse svekker signalet
+(+4,3 % og +3,4 %, negativ andre halvdel), så effekten kommer med en gang.
+V3 svakere enn K1 (+6,9 %). V4 høyest snitt på 6 mnd (+17,8 %), men bare 9
+mnd, negativ andre halvdel og svak etter 2015, og ingenting på 3 mnd.
+**Filer:** `sonde_kjor_miners_k1_varianter.py`, `sonder/sonde_kjor_miners_k1_varianter.txt`,
+`sonder/miners_k1_varianter.csv`, `sonder_ferdige.txt`.
+**Cowork må vite:** K1 står uendret i feltet. Sjette sonde på gruvene og de
+samme årene.
+
 ### 29.10.2026 08:35, Claude Code
 **Hva:** K1 er nå signalet i feltet Gullgruver (Frodes valg etter sonden
 28.10, ikke en testet regel; den holdt ikke korreksjonen for flere tester).
