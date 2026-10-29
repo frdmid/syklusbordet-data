@@ -75,7 +75,7 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 ## Dashbordet
 
 - Adresse: https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF (siste versjon
-  72 per 28.10 (panelet Gullgruver med kombinasjonssignalet som punkter i grafen og gullregime); Cowork kan ha publisert senere). Nytt fra 12.10: linjen
+  73 per 29.10 (panelet Gullgruver med signalet K1 som punkter i grafen og gullregime); Cowork kan ha publisert senere). Nytt fra 12.10: linjen
   «Kull, rullende A 95» i kullpanelet (v63), boksen «Regime nå» øverst (v64)
   med «Hva testene sier om å handle» under (v65, rettet i v66).
 - **Omslaget:** filen som Artifact `read` lagrer, begynner med vertens omslag

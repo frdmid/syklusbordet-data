@@ -21,7 +21,10 @@
 #             øverste tredjedel mot det som var kjent da (månedssnitt, som i
 #             sonde_kjor_miners_begge). Besto IKKE testen på 1993 til 2014:
 #             på 3 mnd p 0,048, men måneder med bare gull mot olje ga like mye.
-#             Merket «begge» i serien, til punktene i grafen.
+#             Fra 29.10.2026 er signalet K1 (Frodes valg): BEGGE, og S1 har
+#             stått minst 3 mnd på rad (sonde_kjor_miners_begge_rekke; besto
+#             alle krav på 6 mnd unntatt korreksjonen for flere tester).
+#             Merket «k1» i serien, til punktene i grafen.
 #   REGIMET   gull siste 6 mnd (over +5 % stigende, under -5 % fallende).
 #   PAPIRENE  UCITS-fondene i USD: GDX.L, GDXJ.L, IAUP.L, AUCO.L. D med samme
 #             formel som kapitulasjon_d.py (kopiert, ikke importert, fordi den
@@ -182,15 +185,22 @@ def beregn(priser_csv, idag=None, note=print):
     o6 = (oA - oA.shift(6)).dropna()
     t1, t2 = _toppen(s1), _toppen(o6)
     begge = {t: (t1.get(t, False) and t2.get(t, False)) for t in set(t1) & set(t2)}
+    # K1 (Frodes valg 29.10.2026, sonde_kjor_miners_begge_rekke): BEGGE, og S1
+    # har hatt punkt minst 3 mnd på rad.
+    r1, n = {}, 0
+    for t in sorted(t1):
+        n = n + 1 if t1[t] else 0
+        r1[t] = n
+    k1 = {t: bool(begge[t] and r1.get(t, 0) >= 3) for t in begge}
     sist = max(begge)
-    tidligere = [t for t, v in sorted(begge.items()) if v]
-    komb = {"mnd": sist, "begge": begge[sist],
+    tidligere = [t for t, v in sorted(k1.items()) if v]
+    komb = {"mnd": sist, "k1": k1[sist], "begge": begge[sist], "s1_rekke": r1.get(sist, 0),
             "s1_endring_3m_pst": _r(100 * (np.exp(s1[pd.Period(sist, "M")]) - 1)), "s1_punkt": t1[sist],
             "s1_pctl": _r(100 * (s1[: pd.Period(sist, "M")] <= s1[pd.Period(sist, "M")]).mean(), 0),
             "o6_endring": _r(o6[pd.Period(sist, "M")]), "o6_punkt": t2[sist],
             "o6_pctl": _r(100 * (o6[: pd.Period(sist, "M")] <= o6[pd.Period(sist, "M")]).mean(), 0),
             "olje_A": _r(oA[pd.Period(sist, "M")]),
-            "sist_begge": tidligere[-1] if tidligere else None}
+            "sist_k1": tidligere[-1] if tidligere else None}
 
     # gullregime i sanntid (sonde_kjor_miners_gullregime): gull siste 6 mnd, ±5 %
     g6 = np.log(serie("gold")); g6 = (g6 - g6.shift(6)).dropna()
@@ -198,8 +208,8 @@ def beregn(priser_csv, idag=None, note=print):
               "regime": "stigende" if g6.iloc[-1] > np.log(1.05) else ("fallende" if g6.iloc[-1] < -np.log(1.05) else "stabil")}
 
     for pt in serie_ut:
-        if pt["t"] in begge:
-            pt["begge"] = begge[pt["t"]]
+        if pt["t"] in k1:
+            pt["k1"] = k1[pt["t"]]
 
     # papirene og D
     instr, dverdier = [], []
@@ -222,7 +232,7 @@ def beregn(priser_csv, idag=None, note=print):
         "unit": "fat olje per unse gull", "status": "live", "laget": str(idag or dt.date.today()),
         "note": ("Forholdet mellom gullpris og oljepris, et grovt mål på gruvenes margin. Observasjon uten flagg: "
                  "bunnsonen på dette forholdet holdt ikke (sonden 28.10.2026), og heller ikke feilprising av "
-                 "gruvene mot gull og olje. Signalet er kombinasjonen av gull mot olje (3 mnd) og olje-A (6 mnd)."),
+                 "gruvene mot gull og olje. Signalet er K1: gull mot olje (3 mnd, minst 3 mnd på rad) og olje-A (6 mnd) samtidig."),
         "source": "Gull, WTI og Brent fra serier/priser_mnd.csv (Verdensbanken og GitHub-speil)",
         "source_url": "https://github.com/frdmid/syklusbordet-data/blob/main/kontekst_miners.py",
         "hist_start": str(f.index[0]), "last_obs": siste["t"], "last_nom": siste["nom"], "last_real": siste["real"],
@@ -232,7 +242,7 @@ def beregn(priser_csv, idag=None, note=print):
                    "observasjon": True,
                    "observasjon_grunn": ("Gullgruvene har ikke flagg. Bunnsonen på gull mot olje ga median -14 % for "
                                          "gruveindeksen over 24 mnd (6 klynger, sonden 28.10.2026). Signalet er "
-                                         "kombinasjonen av gull mot olje og olje-A, som ikke er en testet regel.")},
+                                         "K1, kombinasjonen av gull mot olje og olje-A med krav til rekkelengde, som ikke er en testet regel.")},
         "series": serie_ut, "trend": tr,
         "instrumenter": instr,
         "d_detalj": {"D_aksjer": Dseg, "tema": None, "tema_D": None, "tema_navn": None, "n": len(dverdier),
@@ -240,12 +250,12 @@ def beregn(priser_csv, idag=None, note=print):
         "gate_detalj": {"aapne": 0, "malte": 0},
         "miners": {"kombinasjon": komb, "regime": regime,
                    "test": {"periode": "1993 til 2014, før signalene ble funnet",
-                            "begge_3m": "+3,3 % (kurv) og +3,0 % (^XAU) mot -2,8 og -3,3 % i andre måneder, p 0,048",
-                            "bare_s1_3m": "+3,3 % for kurven",
-                            "bare_o6_3m": "-5,1 %",
-                            "begge_6m": "+2,8 og +2,5 % mot -5,6 og -6,7 %, p 0,10 og 0,02",
-                            "etter_2015": "+9,6 % på 3 mnd og +17,5 % på 6 mnd (kurv); UCITS +8 til +18 %",
-                            "kilde": "sonde_kjor_miners_begge 28.10.2026"}},
+                            "k1_6m": "+9,1 % (kurv) og +7,0 % (^XAU) mot -5,4 og -6,3 % i andre måneder, p 0,024 og 0,009",
+                            "k1_3m": "+5,1 og +4,9 % mot -2,4 og -2,9 %, p 0,075 og 0,024",
+                            "tatt_bort_6m": "-3,1 % i månedene med begge der S1 hadde stått kortere enn 3 mnd",
+                            "korreksjon": "besto alle krav unntatt korreksjonen for seks varianter (p 0,024 mot grensen 0,017)",
+                            "etter_2015": "+15,2 % på 6 mnd (kurv), men månedene K1 tok bort ga +22,7 %",
+                            "kilde": "sonde_kjor_miners_begge_rekke 28.10.2026"}},
     }
 
 

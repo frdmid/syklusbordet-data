@@ -9,6 +9,22 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 29.10.2026 08:35, Claude Code
+**Hva:** K1 er nå signalet i feltet Gullgruver (Frodes valg etter sonden
+28.10, ikke en testet regel; den holdt ikke korreksjonen for flere tester).
+K1 = gull mot olje 3 mnd (S1) i øverste tredjedel minst 3 mnd på rad, og
+olje-A 6 mnd (O6) i øverste tredjedel samme måned, punkt i tid.
+`kontekst_miners.py` skriver nå `kombinasjon.k1`, `s1_rekke` og `sist_k1`
+(i stedet for `begge` og `sist_begge`), merker seriepunktene med `k1`, og
+testtallene i `test` er byttet til K1 (1993 til 2014 og 2015 til 2026).
+Dashbordet v73: teksten, de lilla punktene i grafen og forklaringen viser
+K1. `segments/miners` i databasen er skrevet på nytt. Rutinens rapportpunkt
+om gullgruver leser K1-feltene (bare prompten endret, kontrollert).
+Nå (sep 2026): K1 av, S1 0 mnd på rad, sist på i desember 2025.
+**Filer:** `kontekst_miners.py`, `miners.json`, `notater/OVERLEVERING.md`.
+**Cowork må vite:** Feltene `kombinasjon.begge` og `sist_begge` finnes ikke
+lenger i `miners.json`. K1 er kontekst uten flagg, ikke en del av Championen.
+
 ### 28.10.2026 23:05, Claude Code
 **Hva:** Ny sonde `sonde_kjor_miners_begge_rekke.py` (Frodes bestilling: test
 rekkelengde i kombinasjonssignalet). Tre varianter valgt ut fra mønstrene i
