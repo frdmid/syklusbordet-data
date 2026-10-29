@@ -1,0 +1,124 @@
+54 tester. Forventet fortegn: OLJE +, GULL -, FORHOLD -. Utfall: fond minus MSCI World.
+
+==================== OLJE
+   OLJE A k=1       h=3: holder ikke                        (største p 0.227, BH nei)
+      GDX.L r+0.07 p0.227 (+0.13/+0.00) del-0.08  GDXJ.L r+0.08 p0.166 (+0.13/+0.04) del-0.06  AUCO.L r+0.04 p0.283 (+0.03/+0.06) del-0.08  GDX r+0.03 p0.359 (+0.03/+0.05) del-0.10
+   OLJE A k=1       h=6: holder ikke                        (største p 0.032, BH nei)
+      GDX.L r+0.15 p0.029 (+0.21/+0.10) del-0.05  GDXJ.L r+0.13 p0.032 (+0.12/+0.15) del-0.10  AUCO.L r+0.11 p0.065 (+0.08/+0.14) del-0.02  GDX r+0.08 p0.134 (+0.06/+0.12) del-0.04
+   OLJE A k=3       h=3: HOLDER, men er S1 i annen drakt    (største p 0.007, BH ja)
+      GDX.L r+0.27 p0.007 (+0.29/+0.25) del+0.04  GDXJ.L r+0.28 p0.003 (+0.28/+0.28) del+0.05  AUCO.L r+0.25 p0.004 (+0.27/+0.25) del+0.07  GDX r+0.24 p0.005 (+0.25/+0.25) del+0.04
+   OLJE A k=3       h=6: HOLDER, men er S1 i annen drakt    (største p 0.000, BH ja)
+      GDX.L r+0.39 p0.000 (+0.41/+0.36) del+0.15  GDXJ.L r+0.41 p0.000 (+0.40/+0.40) del+0.12  AUCO.L r+0.23 p0.012 (+0.12/+0.32) del+0.08  GDX r+0.21 p0.021 (+0.10/+0.31) del+0.04
+   OLJE A k=6       h=3: HOLDER, og gir noe ut over S1      (største p 0.001, BH ja)
+      GDX.L r+0.36 p0.001 (+0.40/+0.32) del+0.28  GDXJ.L r+0.40 p0.000 (+0.41/+0.36) del+0.32  AUCO.L r+0.26 p0.008 (+0.11/+0.31) del+0.16  GDX r+0.23 p0.011 (+0.07/+0.31) del+0.12
+   OLJE A k=6       h=6: HOLDER, og gir noe ut over S1      (største p 0.005, BH ja)
+      GDX.L r+0.40 p0.005 (+0.36/+0.42) del+0.24  GDXJ.L r+0.47 p0.000 (+0.44/+0.48) del+0.31  AUCO.L r+0.22 p0.044 (-0.04/+0.36) del+0.10  GDX r+0.19 p0.079 (-0.08/+0.34) del+0.06
+   OLJE Ad k=1      h=3: holder ikke                        (største p 0.307, BH nei)
+      GDX.L r+0.04 p0.307 (+0.13/-0.03) del-0.12  GDXJ.L r+0.06 p0.202 (+0.13/+0.01) del-0.09  AUCO.L r+0.02 p0.401 (+0.00/+0.04) del-0.10  GDX r+0.01 p0.452 (+0.01/+0.03) del-0.11
+   OLJE Ad k=1      h=6: holder ikke                        (største p 0.091, BH nei)
+      GDX.L r+0.12 p0.091 (+0.10/+0.13) del-0.09  GDXJ.L r+0.12 p0.065 (+0.06/+0.17) del-0.12  AUCO.L r+0.08 p0.170 (+0.03/+0.11) del-0.05  GDX r+0.06 p0.252 (+0.02/+0.09) del-0.07
+   OLJE Ad k=3      h=3: holder ikke                        (største p 0.024, BH nei)
+      GDX.L r+0.23 p0.024 (+0.24/+0.21) del-0.00  GDXJ.L r+0.24 p0.015 (+0.24/+0.23) del+0.00  AUCO.L r+0.21 p0.025 (+0.21/+0.22) del+0.03  GDX r+0.19 p0.038 (+0.19/+0.22) del+0.00
+   OLJE Ad k=3      h=6: HOLDER, men er S1 i annen drakt    (største p 0.008, BH ja)
+      GDX.L r+0.32 p0.008 (+0.31/+0.34) del+0.02  GDXJ.L r+0.34 p0.003 (+0.31/+0.37) del-0.01  AUCO.L r+0.14 p0.119 (-0.02/+0.29) del-0.06  GDX r+0.12 p0.150 (-0.04/+0.28) del-0.09
+   OLJE Ad k=6      h=3: holder ikke                        (største p 0.016, BH nei)
+      GDX.L r+0.25 p0.016 (+0.21/+0.29) del+0.15  GDXJ.L r+0.29 p0.005 (+0.23/+0.33) del+0.20  AUCO.L r+0.11 p0.166 (-0.06/+0.27) del-0.01  GDX r+0.09 p0.223 (-0.09/+0.26) del-0.04
+   OLJE Ad k=6      h=6: holder ikke                        (største p 0.030, BH nei)
+      GDX.L r+0.29 p0.030 (+0.22/+0.33) del+0.12  GDXJ.L r+0.35 p0.008 (+0.28/+0.38) del+0.15  AUCO.L r+0.04 p0.394 (-0.29/+0.31) del-0.12  GDX r+0.00 p0.494 (-0.32/+0.29) del-0.15
+   OLJE Ar k=1      h=3: holder ikke                        (største p 0.309, BH nei)
+      GDX.L r+0.04 p0.309 (+0.13/-0.05) del-0.11  GDXJ.L r+0.07 p0.199 (+0.16/-0.01) del-0.08  AUCO.L r+0.02 p0.410 (+0.00/+0.03) del-0.10  GDX r+0.01 p0.449 (+0.01/+0.03) del-0.11
+   OLJE Ar k=1      h=6: holder ikke                        (største p 0.156, BH nei)
+      GDX.L r+0.07 p0.156 (+0.11/+0.07) del-0.12  GDXJ.L r+0.08 p0.115 (+0.05/+0.11) del-0.14  AUCO.L r+0.06 p0.225 (+0.05/+0.06) del-0.06  GDX r+0.04 p0.304 (+0.03/+0.05) del-0.08
+   OLJE Ar k=3      h=3: holder ikke                        (største p 0.025, BH nei)
+      GDX.L r+0.21 p0.025 (+0.24/+0.16) del-0.06  GDXJ.L r+0.24 p0.009 (+0.26/+0.19) del-0.03  AUCO.L r+0.20 p0.016 (+0.22/+0.20) del+0.01  GDX r+0.19 p0.027 (+0.20/+0.20) del-0.02
+   OLJE Ar k=3      h=6: HOLDER, men er S1 i annen drakt    (største p 0.002, BH ja)
+      GDX.L r+0.31 p0.002 (+0.30/+0.33) del-0.03  GDXJ.L r+0.34 p0.000 (+0.30/+0.38) del-0.02  AUCO.L r+0.14 p0.084 (-0.02/+0.27) del-0.07  GDX r+0.12 p0.132 (-0.04/+0.27) del-0.11
+   OLJE Ar k=6      h=3: holder ikke                        (største p 0.016, BH nei)
+      GDX.L r+0.23 p0.016 (+0.19/+0.25) del+0.13  GDXJ.L r+0.28 p0.003 (+0.23/+0.31) del+0.18  AUCO.L r+0.13 p0.107 (-0.04/+0.25) del+0.02  GDX r+0.11 p0.157 (-0.08/+0.25) del-0.02
+   OLJE Ar k=6      h=6: holder ikke                        (største p 0.022, BH nei)
+      GDX.L r+0.28 p0.022 (+0.21/+0.38) del+0.12  GDXJ.L r+0.36 p0.004 (+0.27/+0.45) del+0.17  AUCO.L r+0.09 p0.249 (-0.23/+0.32) del-0.05  GDX r+0.05 p0.354 (-0.27/+0.30) del-0.09
+
+==================== GULL
+   GULL A k=1       h=3: holder ikke                        (største p 0.740, BH nei)
+      GDX.L r+0.06 p0.703 (+0.02/+0.09) del+0.15  GDXJ.L r+0.07 p0.740 (+0.06/+0.09) del+0.16  AUCO.L r+0.07 p0.790 (+0.08/+0.06) del+0.14  GDX r+0.06 p0.718 (+0.05/+0.06) del+0.13
+   GULL A k=1       h=6: holder ikke                        (største p 0.563, BH nei)
+      GDX.L r+0.02 p0.563 (-0.00/+0.04) del+0.14  GDXJ.L r-0.04 p0.297 (-0.07/-0.03) del+0.10  AUCO.L r-0.01 p0.384 (-0.10/+0.08) del+0.06  GDX r-0.03 p0.278 (-0.14/+0.08) del+0.03
+   GULL A k=3       h=3: holder ikke                        (største p 0.640, BH nei)
+      GDX.L r+0.05 p0.640 (+0.01/+0.06) del+0.18  GDXJ.L r+0.01 p0.504 (-0.02/+0.03) del+0.13  AUCO.L r+0.05 p0.645 (+0.03/+0.11) del+0.16  GDX r+0.02 p0.570 (-0.02/+0.11) del+0.14
+   GULL A k=3       h=6: holder ikke                        (største p 0.772, BH nei)
+      GDX.L r+0.12 p0.772 (+0.16/+0.03) del+0.32  GDXJ.L r+0.03 p0.540 (+0.06/-0.06) del+0.25  AUCO.L r+0.05 p0.639 (+0.01/+0.15) del+0.17  GDX r+0.04 p0.569 (-0.03/+0.15) del+0.15
+   GULL A k=6       h=3: holder ikke                        (største p 0.740, BH nei)
+      GDX.L r+0.09 p0.740 (+0.10/+0.04) del+0.14  GDXJ.L r+0.02 p0.521 (+0.05/-0.02) del+0.07  AUCO.L r+0.03 p0.566 (+0.02/+0.09) del+0.07  GDX r+0.01 p0.486 (-0.04/+0.10) del+0.05
+   GULL A k=6       h=6: holder ikke                        (største p 0.682, BH nei)
+      GDX.L r+0.11 p0.682 (+0.18/-0.01) del+0.18  GDXJ.L r+0.01 p0.452 (+0.09/-0.10) del+0.09  AUCO.L r-0.01 p0.395 (+0.01/+0.03) del+0.03  GDX r-0.03 p0.341 (-0.05/+0.04) del+0.01
+   GULL Ad k=1      h=3: holder ikke                        (største p 0.644, BH nei)
+      GDX.L r+0.04 p0.640 (+0.02/+0.07) del+0.14  GDXJ.L r+0.05 p0.644 (+0.05/+0.06) del+0.15  AUCO.L r+0.04 p0.663 (+0.07/+0.04) del+0.12  GDX r+0.03 p0.584 (+0.03/+0.04) del+0.12
+   GULL Ad k=1      h=6: holder ikke                        (største p 0.505, BH nei)
+      GDX.L r+0.01 p0.505 (-0.02/+0.05) del+0.16  GDXJ.L r-0.05 p0.260 (-0.08/-0.04) del+0.12  AUCO.L r-0.03 p0.265 (-0.10/+0.06) del+0.05  GDX r-0.05 p0.190 (-0.14/+0.06) del+0.02
+   GULL Ad k=3      h=3: holder ikke                        (største p 0.581, BH nei)
+      GDX.L r+0.03 p0.581 (-0.03/+0.04) del+0.17  GDXJ.L r-0.02 p0.404 (-0.08/+0.02) del+0.12  AUCO.L r+0.04 p0.591 (+0.10/+0.05) del+0.14  GDX r+0.02 p0.521 (+0.04/+0.05) del+0.12
+   GULL Ad k=3      h=6: holder ikke                        (største p 0.652, BH nei)
+      GDX.L r+0.07 p0.652 (+0.11/-0.01) del+0.27  GDXJ.L r-0.01 p0.385 (-0.01/-0.08) del+0.20  AUCO.L r+0.04 p0.572 (+0.11/+0.05) del+0.13  GDX r+0.03 p0.535 (+0.07/+0.05) del+0.12
+   GULL Ad k=6      h=3: holder ikke                        (største p 0.598, BH nei)
+      GDX.L r+0.04 p0.598 (+0.05/-0.00) del+0.10  GDXJ.L r-0.03 p0.314 (-0.02/-0.06) del+0.03  AUCO.L r-0.00 p0.414 (+0.11/+0.03) del+0.04  GDX r-0.02 p0.353 (+0.04/+0.04) del+0.02
+   GULL Ad k=6      h=6: holder ikke                        (største p 0.573, BH nei)
+      GDX.L r+0.07 p0.573 (+0.17/-0.11) del+0.14  GDXJ.L r-0.03 p0.350 (+0.07/-0.20) del+0.05  AUCO.L r-0.03 p0.307 (+0.10/-0.05) del+0.00  GDX r-0.04 p0.258 (+0.04/-0.04) del-0.01
+   GULL Ar k=1      h=3: holder ikke                        (største p 0.704, BH nei)
+      GDX.L r+0.05 p0.664 (+0.02/+0.09) del+0.13  GDXJ.L r+0.05 p0.704 (+0.05/+0.09) del+0.14  AUCO.L r+0.04 p0.668 (+0.06/+0.06) del+0.10  GDX r+0.03 p0.582 (+0.03/+0.05) del+0.09
+   GULL Ar k=1      h=6: holder ikke                        (største p 0.577, BH nei)
+      GDX.L r+0.02 p0.577 (+0.02/+0.02) del+0.14  GDXJ.L r-0.04 p0.297 (-0.04/-0.06) del+0.10  AUCO.L r-0.03 p0.267 (-0.11/+0.08) del+0.02  GDX r-0.05 p0.192 (-0.14/+0.07) del-0.00
+   GULL Ar k=3      h=3: holder ikke                        (største p 0.682, BH nei)
+      GDX.L r+0.06 p0.682 (+0.05/+0.04) del+0.17  GDXJ.L r+0.02 p0.538 (+0.02/+0.01) del+0.13  AUCO.L r+0.05 p0.632 (+0.05/+0.11) del+0.15  GDX r+0.02 p0.535 (+0.00/+0.10) del+0.12
+   GULL Ar k=3      h=6: holder ikke                        (største p 0.852, BH nei)
+      GDX.L r+0.15 p0.852 (+0.18/+0.10) del+0.34  GDXJ.L r+0.07 p0.683 (+0.08/+0.03) del+0.27  AUCO.L r+0.06 p0.686 (+0.02/+0.19) del+0.17  GDX r+0.04 p0.599 (-0.01/+0.19) del+0.15
+   GULL Ar k=6      h=3: holder ikke                        (største p 0.809, BH nei)
+      GDX.L r+0.10 p0.809 (+0.12/+0.09) del+0.14  GDXJ.L r+0.04 p0.637 (+0.07/+0.03) del+0.09  AUCO.L r+0.03 p0.566 (+0.06/+0.13) del+0.06  GDX r+0.01 p0.450 (-0.00/+0.12) del+0.04
+   GULL Ar k=6      h=6: holder ikke                        (største p 0.764, BH nei)
+      GDX.L r+0.14 p0.764 (+0.18/+0.11) del+0.20  GDXJ.L r+0.05 p0.569 (+0.09/+0.03) del+0.12  AUCO.L r+0.01 p0.439 (+0.05/+0.10) del+0.04  GDX r-0.01 p0.370 (-0.02/+0.11) del+0.03
+
+==================== FORHOLD
+   FORHOLD A k=1    h=3: holder ikke                        (største p 0.291, BH nei)
+      GDX.L r-0.05 p0.291 (-0.15/+0.09) del+0.11  GDXJ.L r-0.06 p0.242 (-0.14/+0.06) del+0.11  AUCO.L r-0.06 p0.199 (-0.08/-0.02) del+0.07  GDX r-0.07 p0.191 (-0.12/-0.01) del+0.07
+   FORHOLD A k=1    h=6: holder ikke                        (største p 0.214, BH nei)
+      GDX.L r-0.08 p0.214 (-0.06/-0.09) del+0.15  GDXJ.L r-0.09 p0.165 (-0.02/-0.15) del+0.19  AUCO.L r-0.10 p0.089 (-0.16/-0.04) del+0.04  GDX r-0.09 p0.111 (-0.16/-0.03) del+0.05
+   FORHOLD A k=3    h=3: holder ikke                        (største p 0.054, BH nei)
+      GDX.L r-0.20 p0.054 (-0.24/-0.17) del+0.01  GDXJ.L r-0.21 p0.042 (-0.22/-0.19) del+0.01  AUCO.L r-0.22 p0.009 (-0.29/-0.18) del-0.08  GDX r-0.23 p0.006 (-0.32/-0.17) del-0.09
+   FORHOLD A k=3    h=6: holder ikke                        (største p 0.033, BH nei)
+      GDX.L r-0.26 p0.033 (-0.29/-0.21) del+0.09  GDXJ.L r-0.27 p0.020 (-0.29/-0.26) del+0.13  AUCO.L r-0.18 p0.034 (-0.20/-0.16) del+0.04  GDX r-0.17 p0.040 (-0.20/-0.15) del+0.04
+   FORHOLD A k=6    h=3: holder ikke                        (største p 0.048, BH nei)
+      GDX.L r-0.20 p0.048 (-0.20/-0.20) del-0.09  GDXJ.L r-0.24 p0.015 (-0.22/-0.25) del-0.13  AUCO.L r-0.14 p0.064 (-0.10/-0.18) del-0.02  GDX r-0.14 p0.066 (-0.13/-0.16) del-0.01
+   FORHOLD A k=6    h=6: holder ikke                        (største p 0.084, BH nei)
+      GDX.L r-0.22 p0.084 (-0.23/-0.24) del-0.04  GDXJ.L r-0.29 p0.027 (-0.30/-0.30) del-0.09  AUCO.L r-0.11 p0.167 (+0.05/-0.26) del+0.04  GDX r-0.09 p0.190 (+0.03/-0.24) del+0.05
+   FORHOLD Ad k=1   h=3: holder ikke                        (største p 0.454, BH nei)
+      GDX.L r-0.00 p0.454 (-0.06/+0.09) del+0.17  GDXJ.L r-0.02 p0.379 (-0.07/+0.06) del+0.15  AUCO.L r-0.02 p0.377 (-0.03/-0.01) del+0.11  GDX r-0.02 p0.369 (-0.07/+0.00) del+0.12
+   FORHOLD Ad k=1   h=6: holder ikke                        (største p 0.277, BH nei)
+      GDX.L r-0.05 p0.277 (+0.03/-0.09) del+0.18  GDXJ.L r-0.08 p0.194 (+0.07/-0.15) del+0.20  AUCO.L r-0.09 p0.098 (-0.14/-0.06) del+0.05  GDX r-0.08 p0.139 (-0.15/-0.04) del+0.06
+   FORHOLD Ad k=3   h=3: holder ikke                        (største p 0.083, BH nei)
+      GDX.L r-0.16 p0.083 (-0.17/-0.14) del+0.08  GDXJ.L r-0.19 p0.046 (-0.18/-0.17) del+0.05  AUCO.L r-0.18 p0.025 (-0.19/-0.16) del+0.02  GDX r-0.19 p0.022 (-0.24/-0.14) del+0.01
+   FORHOLD Ad k=3   h=6: holder ikke                        (største p 0.076, BH nei)
+      GDX.L r-0.20 p0.076 (-0.15/-0.23) del+0.18  GDXJ.L r-0.23 p0.032 (-0.16/-0.28) del+0.18  AUCO.L r-0.14 p0.073 (-0.07/-0.17) del+0.10  GDX r-0.13 p0.105 (-0.08/-0.15) del+0.12
+   FORHOLD Ad k=6   h=3: holder ikke                        (største p 0.049, BH nei)
+      GDX.L r-0.20 p0.049 (-0.19/-0.21) del-0.06  GDXJ.L r-0.24 p0.019 (-0.19/-0.25) del-0.10  AUCO.L r-0.15 p0.048 (-0.02/-0.19) del+0.00  GDX r-0.14 p0.060 (-0.05/-0.17) del+0.02
+   FORHOLD Ad k=6   h=6: holder ikke                        (største p 0.057, BH nei)
+      GDX.L r-0.25 p0.057 (-0.21/-0.26) del-0.04  GDXJ.L r-0.31 p0.022 (-0.27/-0.32) del-0.09  AUCO.L r-0.18 p0.052 (+0.04/-0.28) del-0.02  GDX r-0.16 p0.066 (+0.01/-0.25) del-0.00
+   FORHOLD Ar k=1   h=3: holder ikke                        (største p 0.385, BH nei)
+      GDX.L r-0.03 p0.385 (-0.10/+0.09) del+0.15  GDXJ.L r-0.04 p0.305 (-0.10/+0.06) del+0.13  AUCO.L r-0.05 p0.256 (-0.05/-0.02) del+0.10  GDX r-0.05 p0.261 (-0.10/-0.01) del+0.10
+   FORHOLD Ar k=1   h=6: holder ikke                        (største p 0.258, BH nei)
+      GDX.L r-0.06 p0.258 (-0.01/-0.09) del+0.18  GDXJ.L r-0.08 p0.171 (+0.02/-0.15) del+0.20  AUCO.L r-0.08 p0.117 (-0.12/-0.05) del+0.07  GDX r-0.08 p0.150 (-0.12/-0.03) del+0.07
+   FORHOLD Ar k=3   h=3: holder ikke                        (største p 0.076, BH nei)
+      GDX.L r-0.17 p0.076 (-0.19/-0.14) del+0.08  GDXJ.L r-0.19 p0.043 (-0.19/-0.17) del+0.06  AUCO.L r-0.20 p0.015 (-0.23/-0.15) del-0.01  GDX r-0.21 p0.011 (-0.28/-0.14) del-0.02
+   FORHOLD Ar k=3   h=6: holder ikke                        (største p 0.046, BH nei)
+      GDX.L r-0.22 p0.046 (-0.19/-0.22) del+0.18  GDXJ.L r-0.25 p0.019 (-0.20/-0.28) del+0.18  AUCO.L r-0.16 p0.047 (-0.11/-0.15) del+0.09  GDX r-0.15 p0.052 (-0.12/-0.14) del+0.09
+   FORHOLD Ar k=6   h=3: holder ikke                        (største p 0.051, BH nei)
+      GDX.L r-0.19 p0.051 (-0.19/-0.19) del-0.06  GDXJ.L r-0.24 p0.014 (-0.20/-0.24) del-0.11  AUCO.L r-0.17 p0.029 (-0.06/-0.18) del-0.03  GDX r-0.16 p0.033 (-0.10/-0.16) del-0.02
+   FORHOLD Ar k=6   h=6: holder ikke                        (største p 0.065, BH nei)
+      GDX.L r-0.24 p0.065 (-0.21/-0.24) del-0.04  GDXJ.L r-0.30 p0.019 (-0.27/-0.32) del-0.09  AUCO.L r-0.18 p0.051 (+0.02/-0.27) del-0.02  GDX r-0.16 p0.068 (-0.00/-0.24) del-0.00
+
+OPPSUMMERING: OLJE A k=3 h=6, OLJE A k=6 h=3 (ny), OLJE Ar k=3 h=6, OLJE A k=6 h=6 (ny), OLJE A k=3 h=3, OLJE Ad k=3 h=6
+
+I DAG (endring i A siste 3 mnd):
+   OLJE: A -30.1 (nå 17.8), Ad -49.8 (nå 41.4), Ar -70.0 (nå 6.7)
+   GULL: A +0.1 (nå 1.1), Ad -0.0 (nå 3.6), Ar +0.8 (nå 5.8)
+   FORHOLD: A +3.3 (nå 4.7), Ad +6.1 (nå 7.6), Ar +13.3 (nå 19.2)
+
+Lagret sonder/miners_dA.csv

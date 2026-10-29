@@ -9,6 +9,25 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 28.10.2026 22:27, Claude Code
+**Hva:** Ny sonde `sonde_kjor_miners_dA.py` (Frodes spørsmål: varsler den
+deriverte av en av våre A gruvene?). Endring i A, Ad og Ar over 1, 3 og
+6 mnd for gull (realpris), olje (Brent realpris) og forholdet gull mot WTI,
+mot GDX.L og GDXJ.L minus MSCI World de neste 3 og 6 mnd; 54 tester,
+Benjamini-Hochberg. I tillegg: gir det noe ut over S1 (gull mot olje 3 mnd)?
+Kriteriene satt før kjøring.
+**Resultat:** bare olje holder. **Endringen i olje-A over 6 mnd holder på
+både 3 og 6 mnd og gir noe ut over S1**: GDX.L r +0,36 og +0,40, GDXJ.L +0,40
+og +0,47 (p 0,000 til 0,005, samme fortegn i begge halvdeler), delkorrelasjon
+etter S1 +0,24 til +0,32. Kontrollene AUCO.L og GDX peker samme vei, svakere.
+Endringen i olje-A over 3 mnd (A, Ad, Ar) holder også, men er i praksis S1.
+Gull: ingenting. Forholdet: riktig fortegn (-0,16 til -0,31), men ikke
+gjennom korreksjonen.
+**Filer:** `sonde_kjor_miners_dA.py`, `sonder/sonde_kjor_miners_dA.txt`,
+`sonder/miners_dA.csv`, `sonder_ferdige.txt`.
+**Cowork må vite:** Ingen endring på bordet ennå. Frode avgjør om signalet
+skal inn i feltet Gullgruver.
+
 ### 28.10.2026 22:24, Claude Code
 **Hva:** Feltet «Gullgruver (gull mot olje)» (Frodes bestilling, slik foreslått
 etter de tre gruvesondene). Observasjon uten flagg, ikke del av Championen.
