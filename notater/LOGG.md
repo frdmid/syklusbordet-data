@@ -9,6 +9,23 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 28.10.2026 22:13, Claude Code
+**Hva:** Ny sonde `sonde_kjor_miners_a.py` (Frodes bestilling før feltet
+«miners»): A regnet på forholdet gull mot WTI (fat per unse, fra 1986), med
+samme formler som bordet (A, Ad, Ar). Utfall: gruveindeksen ^XAU 24 mnd,
+absolutt og mot S&P 500. Kriteriene satt før kjøring.
+**Resultat: bunnsonen holder ikke.** R1 (A og Ad 80+): 6 klynger, ^XAU
+median -14 % mot +7 % for tilfeldige innganger (p 0,83), mot S&P -8 %; tre
+dårlige innganger i 1990-tallets gullfall (1990, 1996, 1999). R2 (R1 og
+forholdet opp siste 3 mnd): 3 klynger, holder ikke.
+Beskrivende over alle måneder: høyere A gir bedre ^XAU mot S&P de neste
+24 mnd (rangkorrelasjon A +0,27, Ad +0,32, Ar +0,34, overlappende utfall).
+I dag: 44,4 fat per unse, A 4,7, Ad 7,6, Ar 19,2: gull er svært dyrt mot
+olje, altså brede marginer for gruvene.
+**Filer:** `sonde_kjor_miners_a.py`, `sonder/sonde_kjor_miners_a.txt`,
+`sonder/miners_a.csv`, `sonder_ferdige.txt`.
+**Cowork må vite:** Feltet «miners» er ikke bygget; Frode avgjør.
+
 ### 28.10.2026 22:06, Claude Code
 **Hva:** Ny sonde `sonde_kjor_gullgruver.py` (Frodes hypotese: gullgruvene
 følger gull opp og går motsatt av olje). UCITS-fond i USD: GDX.L og IAUP.L

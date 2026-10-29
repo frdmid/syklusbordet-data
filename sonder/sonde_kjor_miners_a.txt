@@ -1,0 +1,32 @@
+Forholdet gull mot WTI 1986-01 til 2026-09; A fra 1990-12; ^XAU fra 1983-12
+
+1. BESKRIVENDE: rangkorrelasjon med ^XAU minus S&P 500 de neste 24 mnd (alle måneder)
+   A : +0.27 (n 407)
+   Ad: +0.32 (n 407)
+   Ar: +0.34 (n 407)
+   (forventet positiv hvis høy A, gull billig mot olje, er godt for gruvene)
+
+2. REGLENE
+
+   R1 A og Ad 80+: 45 mnd, 6 episoder, 6 klynger, i sonen nå: nei
+      1990-12  forhold  13.2  A  93 Ad  92 Ar  93  ^XAU 24m   -31 %  mot S&P   -59 %  GDX mot S&P  +nan %  AUCO.L mot S&P  +nan %
+      1996-12  forhold  14.2  A  96 Ad  89 Ar  96  ^XAU 24m   -59 %  mot S&P  -109 %  GDX mot S&P  +nan %  AUCO.L mot S&P  +nan %
+      1999-06  forhold  13.5  A  97 Ad  92 Ar  96  ^XAU 24m   -23 %  mot S&P   -11 %  GDX mot S&P  +nan %  AUCO.L mot S&P  +nan %
+      2003-02  forhold   9.8  A  95 Ad  83 Ar  91  ^XAU 24m   +32 %  mot S&P    -4 %  GDX mot S&P  +nan %  AUCO.L mot S&P  +nan %
+      2004-07  forhold   9.1  A  97 Ad  84 Ar  95  ^XAU 24m   +49 %  mot S&P   +34 %  GDX mot S&P  +nan %  AUCO.L mot S&P  +nan %
+      2008-05  forhold   7.0  A  99 Ad  85 Ar  98  ^XAU 24m    -4 %  mot S&P   +21 %  GDX mot S&P   +33 %  AUCO.L mot S&P  +nan %
+      klynger med utfall 6: ^XAU median -14 % mot tilfeldig +7 % (p 0.834); mot S&P median -8 %; før/etter 2008 -11 / +21 %
+
+   R2 R1 og forholdet opp siste 3 mnd: 13 mnd, 3 episoder, 3 klynger, i sonen nå: nei
+      1990-12  forhold  13.2  A  93 Ad  92 Ar  93  ^XAU 24m   -31 %  mot S&P   -59 %  GDX mot S&P  +nan %  AUCO.L mot S&P  +nan %
+      1999-12  forhold  11.0  A  98 Ad  96 Ar  97  ^XAU 24m   -22 %  mot S&P    +2 %  GDX mot S&P  +nan %  AUCO.L mot S&P  +nan %
+      2005-01  forhold   8.8  A  97 Ad  83 Ar  95  ^XAU 24m   +43 %  mot S&P   +23 %  GDX mot S&P  +nan %  AUCO.L mot S&P  +nan %
+      klynger med utfall 3: ^XAU median -22 % mot tilfeldig +7 % (p 0.841); mot S&P median +2 %; før/etter 2008 +2 / +nan %
+
+AVGJØRELSE
+
+   R1 A og Ad 80+: holder ikke (p 0.834, BH nei)
+   R2 R1 og forholdet opp siste 3 mnd: holder ikke (p 0.841, BH nei)
+
+I DAG (2026-09): forhold 44.4 fat per unse, A 4.7, Ad 7.6, Ar 19.2, opp siste 3 mnd: nei
+Lagret sonder/miners_a.csv
