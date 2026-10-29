@@ -9,6 +9,24 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 28.10.2026 22:35, Claude Code
+**Hva:** Feltet Gullgruver har fått to signaler og rettet tekst (Frodes
+bestilling, med seksmånederssignalet tatt med).
+1. `kontekst_miners.py`: nytt felt `miners.signal6`, endringen i olje-A
+   (Brent realpris, rå A) over 6 mnd. I dag +4,3 poeng (13,5 til 17,8,
+   persentil 69): oljen litt billigere enn for et halvår siden, godt
+   utgangspunkt etter signal 2. Signal 1 (gull mot olje 3 mnd) -19,2 %,
+   svakt. De to peker hver sin vei nå.
+2. Dashbordet versjon 69: linjen viser «Signal 1» og «Signal 2» og «Hvor godt
+   det er belagt»: holdt i 2015 til 2026, svake på kurven av gruveaksjer i
+   1992 til 2014 (signal 1 +0,11 til +0,14 på 3 mnd, signal 2 +0,09 til
+   +0,15 og negativ i 2003 til 2014), ingen besto testen utenfor utvalget;
+   kontekst, ikke testet som regel. Avsnittet i forklaringen er rettet
+   tilsvarende. segments/miners skrevet på nytt (versjon 2).
+**Filer:** `kontekst_miners.py`, `miners.json`.
+**Cowork må vite:** Seksmånederssignalet er med etter Frodes valg, selv om
+det ikke besto testen utenfor utvalget; teksten sier det.
+
 ### 28.10.2026 22:31, Claude Code
 **Hva:** Ny sonde `sonde_kjor_miners_kurv.py` (Frodes bestilling: test
 olje-signalet for gruvene på en kurv med lang historikk). Kurv av NEM,

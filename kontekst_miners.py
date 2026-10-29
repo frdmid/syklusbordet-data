@@ -18,6 +18,11 @@
 #   SIGNALET  endringen i log(gull/olje) siste 3 mnd ved månedsslutt (Yahoo
 #             GC=F og BZ=F), som i sonde_kjor_gullgruver: holdt på 3 og 6 mnd
 #             mot MSCI World for både store (GDX.L) og små (GDXJ.L) gruver.
+#   SIGNAL 2  endringen i olje-A (Brent realpris, rå A som på bordet) over
+#             6 mnd (Frodes valg 28.10.2026, sonde_kjor_miners_dA): holdt på
+#             UCITS-fondene 2015 til 2026 og ga noe ut over signal 1, men var
+#             svakt i 1992 til 2014 (sonde_kjor_miners_kurv). Begge signalene
+#             holdt sterkt bare i 2015 til 2026.
 #   PAPIRENE  UCITS-fondene i USD: GDX.L, GDXJ.L, IAUP.L, AUCO.L. D med samme
 #             formel som kapitulasjon_d.py (kopiert, ikke importert, fordi den
 #             fila kjører ved import), segmentets D = median av papirene. C er
@@ -170,6 +175,18 @@ def beregn(priser_csv, idag=None, note=print):
     except Exception as e:
         note(f"   miners: signalet mangler ({type(e).__name__})")
 
+    # signal 2: endring i olje-A over 6 mnd
+    sig6 = None
+    try:
+        ol = p[p.segment == "brent"].set_index("t").real.astype(float)
+        ol.index = pd.PeriodIndex(ol.index, freq="M"); ol = ol.sort_index(); vo = np.log(ol.values)
+        oA = pd.Series((1 - _expanding_pct(vo)) * 100, index=ol.index)
+        d6 = (oA - oA.shift(6)).dropna()
+        sig6 = {"mnd": str(d6.index[-1]), "endring_6m": _r(d6.iloc[-1]), "olje_A": _r(oA.iloc[-1]),
+                "olje_A_6m_siden": _r(oA.iloc[-7]), "pctl": _r(100 * (d6 <= d6.iloc[-1]).mean(), 0), "fra": str(d6.index[0])}
+    except Exception as e:
+        note(f"   miners: signal 2 mangler ({type(e).__name__})")
+
     # papirene og D
     instr, dverdier = [], []
     for tk, navn, kom in PAPIRER:
@@ -207,9 +224,13 @@ def beregn(priser_csv, idag=None, note=print):
         "d_detalj": {"D_aksjer": Dseg, "tema": None, "tema_D": None, "tema_navn": None, "n": len(dverdier),
                      "spredning": [min(dverdier), max(dverdier)] if dverdier else None},
         "gate_detalj": {"aapne": 0, "malte": 0},
-        "miners": {"signal": sig,
+        "miners": {"signal": sig, "signal6": sig6,
                    "test": {"r_3m": "+0,26 (store) og +0,28 (små)", "r_6m": "+0,36 og +0,40",
-                            "spread_3m_pp": "9 til 12", "kilde": "sonde_kjor_gullgruver 28.10.2026"}},
+                            "spread_3m_pp": "9 til 12", "kilde": "sonde_kjor_gullgruver 28.10.2026",
+                            "for_2015": "+0,11 til +0,14 på 3 mnd (p 0,05 til 0,08), ingenting på 6 mnd"},
+                   "test6": {"r_3m": "+0,36 (store) og +0,40 (små)", "r_6m": "+0,40 og +0,47",
+                             "utover_signal1": "+0,24 til +0,32", "kilde": "sonde_kjor_miners_dA 28.10.2026",
+                             "for_2015": "+0,09 til +0,15, og negativ i 2003 til 2014"}},
     }
 
 

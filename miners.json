@@ -2804,17 +2804,33 @@
  "miners": {
   "signal": {
    "mnd": "2026-10",
-   "endring_3m_pst": -19.1,
+   "endring_3m_pst": -19.2,
    "pctl": 12.0,
    "fra": "2007-10",
-   "gull_3m_pst": -0.9,
-   "olje_3m_pst": 22.4
+   "gull_3m_pst": -1.0,
+   "olje_3m_pst": 22.5
+  },
+  "signal6": {
+   "mnd": "2026-09",
+   "endring_6m": 4.3,
+   "olje_A": 17.8,
+   "olje_A_6m_siden": 13.5,
+   "pctl": 69.0,
+   "fra": "1992-10"
   },
   "test": {
    "r_3m": "+0,26 (store) og +0,28 (små)",
    "r_6m": "+0,36 og +0,40",
    "spread_3m_pp": "9 til 12",
-   "kilde": "sonde_kjor_gullgruver 28.10.2026"
+   "kilde": "sonde_kjor_gullgruver 28.10.2026",
+   "for_2015": "+0,11 til +0,14 på 3 mnd (p 0,05 til 0,08), ingenting på 6 mnd"
+  },
+  "test6": {
+   "r_3m": "+0,36 (store) og +0,40 (små)",
+   "r_6m": "+0,40 og +0,47",
+   "utover_signal1": "+0,24 til +0,32",
+   "kilde": "sonde_kjor_miners_dA 28.10.2026",
+   "for_2015": "+0,09 til +0,15, og negativ i 2003 til 2014"
   }
  }
 }
