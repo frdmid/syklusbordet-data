@@ -90,3 +90,4 @@ sonde_kjor_miners_oljeekstrem
 sonde_kjor_verdi_trend_kurve
 sonde_kjor_raavarefond
 sonde_kjor_signal_vix_dxy_move
+sonde_kjor_holdetid_nok

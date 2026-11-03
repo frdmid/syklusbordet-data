@@ -9,6 +9,21 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 03.11.2026 14:02, Claude Code
+
+Sonde sonde_kjor_holdetid_nok (Frodes bestilling, beskrivende): inngang ved
+bunnsone og salg etter 3, 6, 9, 12 og 24 mnd i NOK, samme 13 episoder og
+papirer som papirporteføljen i kontekst_handel.py. Median papirer mot MSCI
+World: 3 mnd +2,7 mot +7,7 %, 6 mnd +20 mot +7,5 %, 9 mnd +13 mot +7,9 %,
+12 mnd +36 mot +16 %, 24 mnd +105 mot +32 %. Slo world i 8, 8, 7, 7 og 10 av
+13. Uten 2020 lå papirene under world på 3 til 12 mnd (median -1 til -11 %)
+og over bare på 24 mnd (+57 mot +24 %). Porteføljen (20 % per posisjon) ga
+17 til 21 % i året med kort holdetid mot 31 % med 24 mnd. Salgsregelen (24 mnd)
+endres ikke. Papirene er valgt i 2026, så alle tallene er skjeve i deres favør.
+Filer: sonde_kjor_holdetid_nok.py, sonder/sonde_kjor_holdetid_nok.txt,
+sonder/holdetid_nok.csv, sonder_ferdige.txt.
+For Cowork: ingenting å gjøre.
+
 ### 03.11.2026 13:20, Claude Code
 
 Sonde sonde_kjor_signal_vix_dxy_move (Frodes bestilling): gir bunnsonen ulik
