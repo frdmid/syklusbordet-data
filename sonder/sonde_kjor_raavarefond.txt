@@ -1,0 +1,80 @@
+DEKNING
+   wti        fond USO      fra 2006-04  papirer 3 fra 2009-11  signalmaaneder med fond 2
+   brent      fond BNO      fra 2010-06  papirer 3 fra 2011-09  signalmaaneder med fond 2
+   henryhub   fond UNG      fra 2007-04  papirer 3 fra 2003-09  signalmaaneder med fond 54
+   gold       fond GLD      fra 2004-11  papirer 3 fra 2015-03  signalmaaneder med fond 0
+   kobber     fond COPA.L   fra 2008-01  papirer 3 fra 2003-10  signalmaaneder med fond 0
+   aluminium  fond ALUM.L   fra 2008-01  papirer 3 fra 2001-07  signalmaaneder med fond 10
+   nikkel     fond NICK.L   fra 2008-01  papirer 3 fra 2004-01  signalmaaneder med fond 12
+   sink       fond ZINC.L   fra 2008-01  papirer 3 fra 2011-05  signalmaaneder med fond 5
+   kakao      fond COCO.L   fra 2009-11  papirer 0 fra -  signalmaaneder med fond 0
+   uran       fond U-UN.TO  fra 2006-05  papirer 2 fra 1996-04  signalmaaneder med fond 0
+
+EPISODER (foerste signalmaaned, h 12: fond, papirer, marked, spot; prosent log)
+   aluminium  2009-01  fond  +35.7  papirer  +79.8  marked  +28.3  spot  +45.9  rulle  -10.1
+   aluminium  2015-10  fond  +12.7  papirer  +34.8  marked   +4.3  spot   +9.4  rulle   +3.3
+   aluminium  2020-04  fond  +42.4  papirer +125.2  marked  +37.8  spot  +46.3  rulle   -3.9
+   brent      2020-03  fond  +69.9  papirer  +97.5  marked  +44.6  spot +145.3  rulle  -75.4
+   henryhub   2009-08  fond  -51.9  papirer   +7.7  marked   +4.6  spot  +45.1  rulle  -97.0
+   henryhub   2011-12  fond  -31.3  papirer  -10.0  marked  +14.8  spot  +14.1  rulle  -45.3
+   henryhub   2014-12  fond  -53.3  papirer  -64.6  marked   +1.2  spot  -32.0  rulle  -21.3
+   henryhub   2019-06  fond  -66.2  papirer  -47.1  marked   +7.1  spot  -31.8  rulle  -34.4
+   henryhub   2023-03  fond  -64.5  papirer   +3.5  marked  +25.9  spot  -31.0  rulle  -33.4
+   nikkel     2015-11  fond  +19.5  papirer  +62.1  marked   +7.6  spot  +18.6  rulle   +0.9
+   sink       2008-11  fond  +56.3  papirer +158.7  marked  +22.5  spot  +64.3  rulle   -7.9
+   wti        2020-03  fond  +18.5  papirer +125.1  marked  +44.6  spot +106.0  rulle  -87.5
+
+RESULTAT (prosent log; median og andel over episodene, snitt over alle signalmaaneder)
+
+   h = 6 mnd
+      signal: 85 maaneder, 12 episoder fra 6 raavarer
+      fond                   median ep   -4.1  snitt mnd   +0.6   uten signal snitt   -1.2
+      papirer                median ep  +28.7  snitt mnd  +20.8   uten signal snitt   -3.0
+      marked                 median ep   +8.9  snitt mnd   +9.0   uten signal snitt   +5.5
+      spot                   median ep  +18.9  snitt mnd  +20.7   uten signal snitt   +0.2
+      fond minus papirer     median ep  -18.7  snitt mnd  -20.1  over 0    8 % av 12 ep  p 1.000   uten signal snitt   +1.0
+      fond minus marked      median ep   -7.4  snitt mnd   -8.4  over 0   42 % av 12 ep  p 0.937   uten signal snitt   -6.7
+      papirer minus marked   median ep  +15.0  snitt mnd  +11.8  over 0   75 % av 12 ep  p 0.064   uten signal snitt   -8.6
+      fond minus spot (rulle) median ep   -4.3  snitt mnd  -20.0  over 0   25 % av 12 ep  p 0.973   uten signal snitt   -1.4
+      verste punkt underveis, median ep: fond  -11.7  papirer   -6.7
+      etter 2015 (signalmaaneder): fond   -3.3  papirer  +13.6  marked   +7.8  (n 64)
+
+   h = 12 mnd
+      signal: 85 maaneder, 12 episoder fra 6 raavarer
+      fond                   median ep  +15.6  snitt mnd   +0.7   uten signal snitt   -2.2
+      papirer                median ep  +48.4  snitt mnd  +41.5   uten signal snitt   -4.9
+      marked                 median ep  +18.7  snitt mnd  +18.9   uten signal snitt  +11.2
+      spot                   median ep  +31.8  snitt mnd  +33.7   uten signal snitt   +0.7
+      fond minus papirer     median ep  -43.4  snitt mnd  -40.8  over 0    8 % av 12 ep  p 1.000   uten signal snitt   +1.0
+      fond minus marked      median ep  -10.8  snitt mnd  -18.2  over 0   50 % av 12 ep  p 0.947   uten signal snitt  -13.4
+      papirer minus marked   median ep  +41.0  snitt mnd  +22.7  over 0   67 % av 12 ep  p 0.076   uten signal snitt  -16.2
+      fond minus spot (rulle) median ep  -27.4  snitt mnd  -33.0  over 0   17 % av 12 ep  p 0.999   uten signal snitt   -3.1
+      verste punkt underveis, median ep: fond  -30.1  papirer   -8.2
+      etter 2015 (signalmaaneder): fond   -4.4  papirer  +35.7  marked  +17.6  (n 64)
+
+   h = 24 mnd
+      signal: 85 maaneder, 12 episoder fra 6 raavarer
+      fond                   median ep  +24.8  snitt mnd  +10.4   uten signal snitt   -5.3
+      papirer                median ep  +97.2  snitt mnd  +68.5   uten signal snitt   -8.2
+      marked                 median ep  +35.9  snitt mnd  +34.1   uten signal snitt  +23.2
+      spot                   median ep  +52.1  snitt mnd  +58.9   uten signal snitt   +1.4
+      fond minus papirer     median ep  -72.4  snitt mnd  -58.1  over 0    0 % av 12 ep  p 1.000   uten signal snitt   -0.8
+      fond minus marked      median ep   -5.4  snitt mnd  -23.7  over 0   42 % av 12 ep  p 0.893   uten signal snitt  -28.6
+      papirer minus marked   median ep  +59.8  snitt mnd  +34.4  over 0   75 % av 12 ep  p 0.003   uten signal snitt  -31.8
+      fond minus spot (rulle) median ep  -60.8  snitt mnd  -48.0  over 0    0 % av 12 ep  p 1.000   uten signal snitt   -7.0
+      verste punkt underveis, median ep: fond  -30.1  papirer   -8.2
+      etter 2015 (signalmaaneder): fond   +5.4  papirer  +61.0  marked  +31.9  (n 64)
+
+PER RAAVARE (h 12, snitt over signalmaaneder)
+   aluminium  n  10  ep 3  fond  +28.2  papirer  +80.3  marked  +25.7  rulle   -6.3
+   brent      n   2  ep 1  fond  +79.1  papirer  +81.8  marked  +41.2  rulle  -59.5
+   henryhub   n  54  ep 5  fond  -18.7  papirer  +18.4  marked  +15.7  rulle  -44.4
+   nikkel     n  12  ep 1  fond  +19.8  papirer  +54.9  marked  +14.8  rulle   -3.8
+   sink       n   5  ep 1  fond  +58.6  papirer +141.1  marked  +31.5  rulle   -9.8
+   wti        n   2  ep 1  fond  +50.1  papirer +103.1  marked  +41.2  rulle  -62.6
+
+AVGJOERELSE (krav a til d paa h 12 og h 24)
+   fond minus marked   : holder ikke  h 12: median  -10.8, p 0.947, 12 ep, krav nei, h 24: median   -5.4, p 0.893, 12 ep, krav nei
+   fond minus papirer  : holder ikke  h 12: median  -43.4, p 1.000, 12 ep, krav nei, h 24: median  -72.4, p 1.000, 12 ep, krav nei
+
+Lagret sonder/raavarefond.csv

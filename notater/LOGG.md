@@ -9,6 +9,24 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 03.11.2026 12:53, Claude Code
+
+Sonde sonde_kjor_raavarefond (Frodes bestilling, punkt 4 i
+traderforslagene): fond på råvaren selv mot papirene når bunnsonen står,
+2006 til 2026. Fond: USO, BNO, UNG, GLD og WisdomTree-ETC for kobber,
+aluminium, nikkel, sink og kakao, U-UN.TO for uran. Holder ikke: 12 episoder
+fra 6 råvarer; fondet slo papirene i 1 av 12 over 12 mnd (median -43 pp) og
+0 av 12 over 24 mnd, og lå under SPY. Rullekostnaden spiste det meste:
+spot +32 %, fond +16 % i median over 12 mnd; Henry Hub (UNG) tapte i alle
+fem episodene selv når spot steg, og USO og BNO mistet 60 til 90 pp i 2020.
+Verste punkt underveis var -30 % for fondet mot -8 % for papirene. Papirene
+er valgt i 2026 på data fra 2016, så de er favorisert, men forskjellen er for
+stor til å forklares av det. ETC og amerikanske ETF er uansett ikke lov på
+IKZ. Ingenting endret i dashbordet.
+Filer: sonde_kjor_raavarefond.py, sonder/sonde_kjor_raavarefond.txt,
+sonder/raavarefond.csv, sonder_ferdige.txt.
+For Cowork: ingenting å gjøre.
+
 ### 03.11.2026 12:47, Claude Code
 
 Sonde sonde_kjor_verdi_trend_kurve (Frodes bestilling, punkt 5 i
