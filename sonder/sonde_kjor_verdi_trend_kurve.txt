@@ -1,0 +1,167 @@
+C:\Users\FrodeMidjo\kode\syklusbordet-data\sonde_kjor_verdi_trend_kurve.py:103: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df = data.dropna(); df = df[pd.to_datetime(df.iloc[:, 0], errors="coerce").notna()]
+C:\Users\FrodeMidjo\kode\syklusbordet-data\sonde_kjor_verdi_trend_kurve.py:103: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df = data.dropna(); df = df[pd.to_datetime(df.iloc[:, 0], errors="coerce").notna()]
+C:\Users\FrodeMidjo\kode\syklusbordet-data\sonde_kjor_verdi_trend_kurve.py:103: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df = data.dropna(); df = df[pd.to_datetime(df.iloc[:, 0], errors="coerce").notna()]
+C:\Users\FrodeMidjo\kode\syklusbordet-data\sonde_kjor_verdi_trend_kurve.py:103: UserWarning: Could not infer format, so each element will be parsed individually, falling back to `dateutil`. To ensure parsing is consistent and as-expected, please specify a format.
+  df = data.dropna(); df = df[pd.to_datetime(df.iloc[:, 0], errors="coerce").notna()]
+DAGENS STILLING (siste maaned)
+   S0 bunnsone                       : ingen
+   S1 bunnsone og stigende           : ingen
+   S2 bunnsone og fallende           : ingen
+   S3 tverrsnitt billig og stigende  : ingen
+   K1 billig og backwardation        : ingen
+   K2 billig og contango             : ingen
+   bredde 0.67 (2026-09), VIX 21.0 (2026-11), uro ja
+
+==================== DEL 1: virker signalet (log realpris, per h mnd)
+   h  6 S0 bunnsone                        absolutt 1965-2014  signal   +2.3 %  forskjell   +2.8 pp  p 0.092  halvdeler   +2.3/  +3.2  n 1017  ep 49 fra 16
+   h  6 S0 bunnsone                        absolutt 2015-2026  signal  +15.1 %  forskjell  +14.8 pp  p 0.057  halvdeler  +12.9/ +30.9  n 124  ep 15 fra 9
+   h  6 S0 bunnsone                        tverrsn  1965-2014  signal   +2.3 %  forskjell   +2.8 pp  p 0.000  halvdeler   +1.3/  +3.6  n 1017  ep 49 fra 16
+   h  6 S0 bunnsone                        tverrsn  2015-2026  signal  +10.6 %  forskjell  +11.1 pp  p 0.032  halvdeler   +8.5/ +27.2  n 124  ep 15 fra 9
+   h  6 S1 bunnsone og stigende            absolutt 1965-2014  signal   +5.0 %  forskjell   +5.2 pp  p 0.083  halvdeler   +4.2/  +6.4  n 175  ep 22 fra 6
+   h  6 S1 bunnsone og stigende            absolutt 2015-2026  signal  +22.9 %  forskjell  +22.0 pp  p 0.246  halvdeler  +22.7/   -    n 8  ep 4 fra 4
+   h  6 S1 bunnsone og stigende            tverrsn  1965-2014  signal   +2.3 %  forskjell   +2.4 pp  p 0.196  halvdeler   +0.6/  +3.7  n 175  ep 22 fra 6
+   h  6 S1 bunnsone og stigende            tverrsn  2015-2026  signal  +15.5 %  forskjell  +15.5 pp  p 0.289  halvdeler  +15.6/   -    n 8  ep 4 fra 4
+   h  6 S2 bunnsone og fallende            absolutt 1965-2014  signal   +1.7 %  forskjell   +2.0 pp  p 0.233  halvdeler   +1.5/  +2.4  n 842  ep 54 fra 16
+   h  6 S2 bunnsone og fallende            absolutt 2015-2026  signal  +14.5 %  forskjell  +14.2 pp  p 0.068  halvdeler  +11.9/ +30.9  n 116  ep 15 fra 9
+   h  6 S2 bunnsone og fallende            tverrsn  1965-2014  signal   +2.3 %  forskjell   +2.7 pp  p 0.006  halvdeler   +1.3/  +3.3  n 842  ep 54 fra 16
+   h  6 S2 bunnsone og fallende            tverrsn  2015-2026  signal  +10.2 %  forskjell  +10.7 pp  p 0.031  halvdeler   +7.8/ +27.2  n 116  ep 15 fra 9
+   h  6 S3 tverrsnitt billig og stigende   absolutt 1965-2014  signal   +2.0 %  forskjell   +2.1 pp  p 0.136  halvdeler   -4.9/  +3.4  n 382  ep 55 fra 14
+   h  6 S3 tverrsnitt billig og stigende   absolutt 2015-2026  signal   +9.4 %  forskjell   +8.9 pp  p 0.041  halvdeler   +4.1/ +14.5  n 143  ep 21 fra 9
+   h  6 S3 tverrsnitt billig og stigende   tverrsn  1965-2014  signal   +2.6 %  forskjell   +2.8 pp  p 0.033  halvdeler   -2.7/  +4.0  n 382  ep 55 fra 14
+   h  6 S3 tverrsnitt billig og stigende   tverrsn  2015-2026  signal   +7.8 %  forskjell   +8.2 pp  p 0.040  halvdeler   +4.9/ +12.1  n 143  ep 21 fra 9
+   h  6 K1 billig og backwardation         absolutt 1965-2014  signal   +9.8 %  forskjell  +10.4 pp  p 0.247  halvdeler    -  / +10.4  n 20  ep 3 fra 2
+   h  6 K1 billig og backwardation         absolutt 2015-2026  signal   -4.9 %  forskjell   -5.2 pp  p 0.670  halvdeler   -6.8/  +5.4  n 31  ep 2 fra 1
+   h  6 K1 billig og backwardation         tverrsn  1965-2014  signal   +6.3 %  forskjell   +7.9 pp  p 0.202  halvdeler    -  /  +7.9  n 20  ep 3 fra 2
+   h  6 K1 billig og backwardation         tverrsn  2015-2026  signal   -4.7 %  forskjell   -3.9 pp  p 0.600  halvdeler   -4.2/  -4.0  n 31  ep 2 fra 1
+   h  6 K2 billig og contango              absolutt 1965-2014  signal   +8.6 %  forskjell   +9.6 pp  p 0.187  halvdeler    -  /  +9.6  n 44  ep 7 fra 2
+   h  6 K2 billig og contango              absolutt 2015-2026  signal  +10.7 %  forskjell  +13.8 pp  p 0.102  halvdeler  +16.9/ +10.1  n 56  ep 3 fra 2
+   h  6 K2 billig og contango              tverrsn  1965-2014  signal   +8.7 %  forskjell  +11.1 pp  p 0.107  halvdeler    -  / +11.1  n 44  ep 7 fra 2
+   h  6 K2 billig og contango              tverrsn  2015-2026  signal   +6.6 %  forskjell   +9.9 pp  p 0.065  halvdeler  +12.1/  +6.8  n 56  ep 3 fra 2
+   h  6 S1 mot S2                          absolutt 1965-2014  S1   +5.0 %  S2   +1.7 %  forskjell   +3.3 pp  p 0.077  halvdeler   +2.8/  +4.1  ep 22 fra 6
+   h  6 S1 mot S2                          absolutt 2015-2026  S1  +22.9 %  S2  +14.5 %  forskjell   +8.4 pp  p 0.152  halvdeler  +11.6/   -    ep 4 fra 4
+   h  6 S1 mot S2                          tverrsn  1965-2014  S1   +2.3 %  S2   +2.3 %  forskjell   +0.0 pp  p 0.492  halvdeler   -0.5/  +0.7  ep 22 fra 6
+   h  6 S1 mot S2                          tverrsn  2015-2026  S1  +15.5 %  S2  +10.2 %  forskjell   +5.2 pp  p 0.210  halvdeler   +8.3/   -    ep 4 fra 4
+
+   h 12 S0 bunnsone                        absolutt 1965-2014  signal   +6.2 %  forskjell   +7.7 pp  p 0.024  halvdeler   +6.1/  +9.0  n 1017  ep 49 fra 16
+   h 12 S0 bunnsone                        absolutt 2015-2026  signal  +30.4 %  forskjell  +29.5 pp  p 0.034  halvdeler  +28.6/ +33.6  n 124  ep 15 fra 9
+   h 12 S0 bunnsone                        tverrsn  1965-2014  signal   +5.1 %  forskjell   +6.2 pp  p 0.000  halvdeler   +2.8/  +8.1  n 1017  ep 49 fra 16
+   h 12 S0 bunnsone                        tverrsn  2015-2026  signal  +19.0 %  forskjell  +20.1 pp  p 0.012  halvdeler  +19.5/ +26.4  n 124  ep 15 fra 9
+   h 12 S1 bunnsone og stigende            absolutt 1965-2014  signal   +6.2 %  forskjell   +6.6 pp  p 0.143  halvdeler   +2.3/ +10.6  n 175  ep 22 fra 6
+   h 12 S1 bunnsone og stigende            absolutt 2015-2026  signal  +31.4 %  forskjell  +29.1 pp  p 0.217  halvdeler  +28.0/   -    n 8  ep 4 fra 4
+   h 12 S1 bunnsone og stigende            tverrsn  1965-2014  signal   +1.7 %  forskjell   +1.8 pp  p 0.349  halvdeler   -2.6/  +5.2  n 175  ep 22 fra 6
+   h 12 S1 bunnsone og stigende            tverrsn  2015-2026  signal  +20.4 %  forskjell  +20.5 pp  p 0.238  halvdeler  +20.5/   -    n 8  ep 4 fra 4
+   h 12 S2 bunnsone og fallende            absolutt 1965-2014  signal   +6.2 %  forskjell   +7.4 pp  p 0.050  halvdeler   +6.6/  +8.1  n 842  ep 54 fra 16
+   h 12 S2 bunnsone og fallende            absolutt 2015-2026  signal  +30.3 %  forskjell  +29.4 pp  p 0.123  halvdeler  +28.3/ +33.6  n 116  ep 15 fra 9
+   h 12 S2 bunnsone og fallende            tverrsn  1965-2014  signal   +5.8 %  forskjell   +6.8 pp  p 0.000  halvdeler   +4.1/  +8.2  n 842  ep 54 fra 16
+   h 12 S2 bunnsone og fallende            tverrsn  2015-2026  signal  +19.0 %  forskjell  +19.9 pp  p 0.000  halvdeler  +19.2/ +26.4  n 116  ep 15 fra 9
+   h 12 S3 tverrsnitt billig og stigende   absolutt 1965-2014  signal   +0.2 %  forskjell   +0.5 pp  p 0.315  halvdeler  -10.3/  +2.3  n 382  ep 55 fra 14
+   h 12 S3 tverrsnitt billig og stigende   absolutt 2015-2026  signal  +12.4 %  forskjell  +10.6 pp  p 0.227  halvdeler   -0.0/ +23.7  n 138  ep 21 fra 9
+   h 12 S3 tverrsnitt billig og stigende   tverrsn  1965-2014  signal   +3.0 %  forskjell   +3.2 pp  p 0.063  halvdeler   -4.2/  +4.8  n 382  ep 55 fra 14
+   h 12 S3 tverrsnitt billig og stigende   tverrsn  2015-2026  signal   +7.5 %  forskjell   +8.0 pp  p 0.165  halvdeler   +0.1/ +17.6  n 138  ep 21 fra 9
+   h 12 K1 billig og backwardation         absolutt 1965-2014  signal  +16.9 %  forskjell  +18.5 pp  p 0.209  halvdeler    -  / +18.5  n 20  ep 3 fra 2
+   h 12 K1 billig og backwardation         absolutt 2015-2026  signal   -4.3 %  forskjell   -5.4 pp  p 0.719  halvdeler  -15.6/ +38.0  n 31  ep 2 fra 1
+   h 12 K1 billig og backwardation         tverrsn  1965-2014  signal  +15.0 %  forskjell  +18.4 pp  p 0.098  halvdeler    -  / +18.4  n 20  ep 3 fra 2
+   h 12 K1 billig og backwardation         tverrsn  2015-2026  signal   -3.4 %  forskjell   -1.7 pp  p 0.623  halvdeler   -6.6/ +20.1  n 31  ep 2 fra 1
+   h 12 K2 billig og contango              absolutt 1965-2014  signal  +18.7 %  forskjell  +21.6 pp  p 0.121  halvdeler    -  / +21.6  n 44  ep 7 fra 2
+   h 12 K2 billig og contango              absolutt 2015-2026  signal  +21.2 %  forskjell  +26.5 pp  p 0.059  halvdeler  +28.6/ +22.1  n 56  ep 3 fra 2
+   h 12 K2 billig og contango              tverrsn  1965-2014  signal  +16.2 %  forskjell  +20.9 pp  p 0.076  halvdeler    -  / +20.9  n 44  ep 7 fra 2
+   h 12 K2 billig og contango              tverrsn  2015-2026  signal   +9.9 %  forskjell  +15.1 pp  p 0.086  halvdeler  +16.8/ +12.1  n 56  ep 3 fra 2
+   h 12 S1 mot S2                          absolutt 1965-2014  S1   +6.2 %  S2   +6.2 %  forskjell   +0.0 pp  p 0.486  halvdeler   -3.3/  +3.2  ep 22 fra 6
+   h 12 S1 mot S2                          absolutt 2015-2026  S1  +31.4 %  S2  +30.3 %  forskjell   +1.1 pp  p 0.483  halvdeler   +1.8/   -    ep 4 fra 4
+   h 12 S1 mot S2                          tverrsn  1965-2014  S1   +1.7 %  S2   +5.8 %  forskjell   -4.1 pp  p 0.911  halvdeler   -6.0/  -2.1  ep 22 fra 6
+   h 12 S1 mot S2                          tverrsn  2015-2026  S1  +20.4 %  S2  +19.0 %  forskjell   +1.4 pp  p 0.448  halvdeler   +2.7/   -    ep 4 fra 4
+
+==================== DEL 2: betyr regimet noe (absolutt, log realpris, per h mnd)
+   h  6 S0 bunnsone                        R1 bred nedgang                  avgjoer   i regimet   +1.9 % (n 662, ep 56)  utenfor   +3.0 % (n 355, ep 44)  forskjell   -1.1 pp  p 0.722  halvdeler   -6.1/  +1.8
+   h  6 S0 bunnsone                        R1 bred nedgang                  2015-2026 i regimet  +12.5 % (n 94, ep 14)  utenfor  +23.0 % (n 30, ep 9)  forskjell  -10.5 pp  p 0.600  halvdeler   -4.5/ -15.3
+   h  6 S1 bunnsone og stigende            R1 bred nedgang                  avgjoer   i regimet   +1.9 % (n 44, ep 13)  utenfor   +6.1 % (n 131, ep 18)  forskjell   -4.2 pp  p 0.412  halvdeler  -13.6/  -0.6
+   h  6 S2 bunnsone og fallende            R1 bred nedgang                  avgjoer   i regimet   +1.9 % (n 618, ep 55)  utenfor   +1.1 % (n 224, ep 45)  forskjell   +0.8 pp  p 0.802  halvdeler   -5.0/  +4.1
+   h  6 S2 bunnsone og fallende            R1 bred nedgang                  2015-2026 i regimet  +12.5 % (n 94, ep 14)  utenfor  +23.0 % (n 22, ep 8)  forskjell  -10.5 pp  p 0.640  halvdeler   -0.2/ -15.3
+   h  6 S3 tverrsnitt billig og stigende   R1 bred nedgang                  avgjoer   i regimet   -1.2 % (n 170, ep 36)  utenfor   +4.5 % (n 212, ep 43)  forskjell   -5.7 pp  p 0.231  halvdeler   -2.9/  -5.3
+   h  6 S3 tverrsnitt billig og stigende   R1 bred nedgang                  2015-2026 i regimet   +9.0 % (n 55, ep 15)  utenfor   +9.6 % (n 88, ep 17)  forskjell   -0.6 pp  p 0.937  halvdeler   +4.3/  -3.3
+   h  6 S0 bunnsone                        R2 uro (VIX oeverste tredjedel)  avgjoer   i regimet   +2.5 % (n 312, ep 21)  utenfor   +5.2 % (n 217, ep 20)  forskjell   -2.7 pp  p 0.338  halvdeler   -2.1/  +4.8
+   h  6 S0 bunnsone                        R2 uro (VIX oeverste tredjedel)  2015-2026 i regimet  +41.9 % (n 37, ep 13)  utenfor   +3.7 % (n 87, ep 10)  forskjell  +38.2 pp  p 0.000  halvdeler  +45.1/  -1.7
+   h  6 S1 bunnsone og stigende            R2 uro (VIX oeverste tredjedel)  avgjoer   i regimet   +6.0 % (n 28, ep 10)  utenfor  +10.8 % (n 49, ep 9)  forskjell   -4.9 pp  p 0.631  halvdeler   -3.8/   -  
+   h  6 S2 bunnsone og fallende            R2 uro (VIX oeverste tredjedel)  avgjoer   i regimet   +2.2 % (n 284, ep 21)  utenfor   +3.6 % (n 168, ep 23)  forskjell   -1.4 pp  p 0.615  halvdeler   -0.6/  +6.1
+   h  6 S2 bunnsone og fallende            R2 uro (VIX oeverste tredjedel)  2015-2026 i regimet  +41.9 % (n 37, ep 13)  utenfor   +1.7 % (n 79, ep 10)  forskjell  +40.2 pp  p 0.000  halvdeler  +48.1/  -1.7
+   h  6 S3 tverrsnitt billig og stigende   R2 uro (VIX oeverste tredjedel)  avgjoer   i regimet   +2.6 % (n 91, ep 22)  utenfor   +5.9 % (n 181, ep 29)  forskjell   -3.3 pp  p 0.724  halvdeler  -14.0/  +1.8
+   h  6 S3 tverrsnitt billig og stigende   R2 uro (VIX oeverste tredjedel)  2015-2026 i regimet  +22.4 % (n 29, ep 12)  utenfor   +6.1 % (n 114, ep 21)  forskjell  +16.3 pp  p 0.049  halvdeler  +18.0/ +11.8
+
+   h 12 S0 bunnsone                        R1 bred nedgang                  avgjoer   i regimet   +5.9 % (n 662, ep 56)  utenfor   +6.6 % (n 355, ep 44)  forskjell   -0.7 pp  p 0.900  halvdeler   -8.3/  +3.2
+   h 12 S0 bunnsone                        R1 bred nedgang                  2015-2026 i regimet  +22.6 % (n 94, ep 14)  utenfor  +54.9 % (n 30, ep 9)  forskjell  -32.3 pp  p 0.478  halvdeler  -32.6/ -36.9
+   h 12 S1 bunnsone og stigende            R1 bred nedgang                  avgjoer   i regimet   +3.3 % (n 44, ep 13)  utenfor   +7.2 % (n 131, ep 18)  forskjell   -3.8 pp  p 0.734  halvdeler  -12.3/  -2.8
+   h 12 S2 bunnsone og fallende            R1 bred nedgang                  avgjoer   i regimet   +6.1 % (n 618, ep 55)  utenfor   +6.3 % (n 224, ep 45)  forskjell   -0.2 pp  p 0.981  halvdeler  -11.3/  +6.3
+   h 12 S2 bunnsone og fallende            R1 bred nedgang                  2015-2026 i regimet  +22.6 % (n 94, ep 14)  utenfor  +63.4 % (n 22, ep 8)  forskjell  -40.8 pp  p 0.403  halvdeler  -47.6/ -36.9
+   h 12 S3 tverrsnitt billig og stigende   R1 bred nedgang                  avgjoer   i regimet   -2.8 % (n 170, ep 36)  utenfor   +2.7 % (n 212, ep 43)  forskjell   -5.5 pp  p 0.416  halvdeler   -5.2/  -4.1
+   h 12 S3 tverrsnitt billig og stigende   R1 bred nedgang                  2015-2026 i regimet  +15.8 % (n 51, ep 15)  utenfor  +10.5 % (n 87, ep 17)  forskjell   +5.3 pp  p 0.731  halvdeler   +9.4/  +9.0
+   h 12 S0 bunnsone                        R2 uro (VIX oeverste tredjedel)  avgjoer   i regimet   +8.9 % (n 312, ep 21)  utenfor  +13.1 % (n 217, ep 20)  forskjell   -4.2 pp  p 0.414  halvdeler   -4.2/ +14.6
+   h 12 S0 bunnsone                        R2 uro (VIX oeverste tredjedel)  2015-2026 i regimet  +77.5 % (n 37, ep 13)  utenfor  +10.3 % (n 87, ep 10)  forskjell  +67.1 pp  p 0.011  halvdeler  +74.9/ +14.9
+   h 12 S1 bunnsone og stigende            R2 uro (VIX oeverste tredjedel)  avgjoer   i regimet  +18.4 % (n 28, ep 10)  utenfor  +13.3 % (n 49, ep 9)  forskjell   +5.1 pp  p 0.821  halvdeler   +5.8/   -  
+   h 12 S2 bunnsone og fallende            R2 uro (VIX oeverste tredjedel)  avgjoer   i regimet   +7.9 % (n 284, ep 21)  utenfor  +13.0 % (n 168, ep 23)  forskjell   -5.1 pp  p 0.328  halvdeler   -5.0/ +14.2
+   h 12 S2 bunnsone og fallende            R2 uro (VIX oeverste tredjedel)  2015-2026 i regimet  +77.5 % (n 37, ep 13)  utenfor   +8.2 % (n 79, ep 10)  forskjell  +69.3 pp  p 0.010  halvdeler  +78.0/ +14.9
+   h 12 S3 tverrsnitt billig og stigende   R2 uro (VIX oeverste tredjedel)  avgjoer   i regimet   -2.4 % (n 91, ep 22)  utenfor   +7.6 % (n 181, ep 29)  forskjell  -10.0 pp  p 0.358  halvdeler  -16.7/ -10.0
+   h 12 S3 tverrsnitt billig og stigende   R2 uro (VIX oeverste tredjedel)  2015-2026 i regimet  +26.4 % (n 29, ep 12)  utenfor   +8.7 % (n 109, ep 21)  forskjell  +17.8 pp  p 0.119  halvdeler  +31.9/  +0.9
+
+   h 24 S0 bunnsone                        R1 bred nedgang                  avgjoer   i regimet  +12.7 % (n 662, ep 56)  utenfor  +11.9 % (n 355, ep 44)  forskjell   +0.9 pp  p 0.876  halvdeler   +2.3/  -1.7
+   h 24 S0 bunnsone                        R1 bred nedgang                  2015-2026 i regimet  +69.7 % (n 91, ep 13)  utenfor  +74.6 % (n 28, ep 8)  forskjell   -4.9 pp  p 0.914  halvdeler   -9.8/  -1.1
+   h 24 S1 bunnsone og stigende            R1 bred nedgang                  avgjoer   i regimet  +11.1 % (n 44, ep 13)  utenfor  +11.0 % (n 131, ep 18)  forskjell   +0.1 pp  p 0.998  halvdeler  +14.0/ -13.4
+   h 24 S2 bunnsone og fallende            R1 bred nedgang                  avgjoer   i regimet  +12.9 % (n 618, ep 55)  utenfor  +12.4 % (n 224, ep 45)  forskjell   +0.5 pp  p 0.923  halvdeler   -4.3/  +2.7
+   h 24 S2 bunnsone og fallende            R1 bred nedgang                  2015-2026 i regimet  +69.7 % (n 91, ep 13)  utenfor +106.6 % (n 20, ep 7)  forskjell  -36.9 pp  p 0.636  halvdeler  -62.6/  -1.1
+   h 24 S3 tverrsnitt billig og stigende   R1 bred nedgang                  avgjoer   i regimet   -3.0 % (n 170, ep 36)  utenfor   -4.8 % (n 212, ep 43)  forskjell   +1.8 pp  p 0.819  halvdeler  +11.7/  +1.5
+   h 24 S3 tverrsnitt billig og stigende   R1 bred nedgang                  2015-2026 i regimet  +31.6 % (n 42, ep 12)  utenfor  -14.3 % (n 69, ep 14)  forskjell  +45.9 pp  p 0.099  halvdeler  +36.7/ +91.0
+   h 24 S0 bunnsone                        R2 uro (VIX oeverste tredjedel)  avgjoer   i regimet  +19.5 % (n 312, ep 21)  utenfor  +20.4 % (n 217, ep 20)  forskjell   -1.0 pp  p 0.855  halvdeler   +0.8/  +3.0
+   h 24 S0 bunnsone                        R2 uro (VIX oeverste tredjedel)  2015-2026 i regimet +126.6 % (n 37, ep 13)  utenfor  +45.7 % (n 82, ep 9)  forskjell  +80.9 pp  p 0.067  halvdeler  +87.1/ +29.6
+   h 24 S1 bunnsone og stigende            R2 uro (VIX oeverste tredjedel)  avgjoer   i regimet  +33.3 % (n 28, ep 10)  utenfor  +24.7 % (n 49, ep 9)  forskjell   +8.6 pp  p 0.800  halvdeler  +14.6/   -  
+   h 24 S2 bunnsone og fallende            R2 uro (VIX oeverste tredjedel)  avgjoer   i regimet  +18.1 % (n 284, ep 21)  utenfor  +19.2 % (n 168, ep 23)  forskjell   -1.1 pp  p 0.834  halvdeler   -0.3/ +13.5
+   h 24 S2 bunnsone og fallende            R2 uro (VIX oeverste tredjedel)  2015-2026 i regimet +126.6 % (n 37, ep 13)  utenfor  +51.2 % (n 74, ep 9)  forskjell  +75.3 pp  p 0.064  halvdeler  +80.8/ +29.6
+   h 24 S3 tverrsnitt billig og stigende   R2 uro (VIX oeverste tredjedel)  avgjoer   i regimet   +1.2 % (n 91, ep 22)  utenfor   -0.9 % (n 181, ep 29)  forskjell   +2.2 pp  p 0.921  halvdeler  -16.1/  +7.3
+   h 24 S3 tverrsnitt billig og stigende   R2 uro (VIX oeverste tredjedel)  2015-2026 i regimet  +13.3 % (n 25, ep 9)  utenfor   +0.1 % (n 86, ep 18)  forskjell  +13.2 pp  p 0.544  halvdeler  +36.2/ -15.0
+
+AVGJOERELSE DEL 1 (1965 til 2014)
+
+   K1 billig og backwardation, h 12              : holder ikke (krav a til c nei, største p 0.209, BH nei)
+   K1 billig og backwardation, h 6               : holder ikke (krav a til c nei, største p 0.247, BH nei)
+   K2 billig og contango, h 12                   : holder ikke (krav a til c nei, største p 0.121, BH nei)
+   K2 billig og contango, h 6                    : holder ikke (krav a til c nei, største p 0.187, BH nei)
+   S0 bunnsone, h 12                             : holder ikke (krav a til c ja, største p 0.024, BH nei)
+   S0 bunnsone, h 6                              : holder ikke (krav a til c nei, største p 0.092, BH nei)
+   S1 bunnsone og stigende, h 12                 : holder ikke (krav a til c nei, største p 0.349, BH nei)
+   S1 bunnsone og stigende, h 6                  : holder ikke (krav a til c nei, største p 0.196, BH nei)
+   S1 mot S2, h 12                               : holder ikke (krav a til c nei, største p 0.911, BH nei)
+   S1 mot S2, h 6                                : holder ikke (krav a til c nei, største p 0.492, BH nei)
+   S2 bunnsone og fallende, h 12                 : holder ikke (krav a til c nei, største p 0.050, BH nei)
+   S2 bunnsone og fallende, h 6                  : holder ikke (krav a til c nei, største p 0.233, BH nei)
+   S3 tverrsnitt billig og stigende, h 12        : holder ikke (krav a til c nei, største p 0.315, BH nei)
+   S3 tverrsnitt billig og stigende, h 6         : holder ikke (krav a til c nei, største p 0.136, BH nei)
+
+AVGJOERELSE DEL 2 (R1 1965 til 2014, R2 1993 til 2014)
+
+   S0 bunnsone | R1 bred nedgang, h 12                                     : holder ikke (krav nei, p 0.900, BH nei)
+   S0 bunnsone | R1 bred nedgang, h 24                                     : holder ikke (krav nei, p 0.876, BH nei)
+   S0 bunnsone | R1 bred nedgang, h 6                                      : holder ikke (krav nei, p 0.722, BH nei)
+   S0 bunnsone | R2 uro (VIX oeverste tredjedel), h 12                     : holder ikke (krav nei, p 0.414, BH nei)
+   S0 bunnsone | R2 uro (VIX oeverste tredjedel), h 24                     : holder ikke (krav nei, p 0.855, BH nei)
+   S0 bunnsone | R2 uro (VIX oeverste tredjedel), h 6                      : holder ikke (krav nei, p 0.338, BH nei)
+   S1 bunnsone og stigende | R1 bred nedgang, h 12                         : holder ikke (krav nei, p 0.734, BH nei)
+   S1 bunnsone og stigende | R1 bred nedgang, h 24                         : holder ikke (krav nei, p 0.998, BH nei)
+   S1 bunnsone og stigende | R1 bred nedgang, h 6                          : holder ikke (krav nei, p 0.412, BH nei)
+   S1 bunnsone og stigende | R2 uro (VIX oeverste tredjedel), h 12         : holder ikke (krav nei, p 0.821, BH nei)
+   S1 bunnsone og stigende | R2 uro (VIX oeverste tredjedel), h 24         : holder ikke (krav nei, p 0.800, BH nei)
+   S1 bunnsone og stigende | R2 uro (VIX oeverste tredjedel), h 6          : holder ikke (krav nei, p 0.631, BH nei)
+   S2 bunnsone og fallende | R1 bred nedgang, h 12                         : holder ikke (krav nei, p 0.981, BH nei)
+   S2 bunnsone og fallende | R1 bred nedgang, h 24                         : holder ikke (krav nei, p 0.923, BH nei)
+   S2 bunnsone og fallende | R1 bred nedgang, h 6                          : holder ikke (krav nei, p 0.802, BH nei)
+   S2 bunnsone og fallende | R2 uro (VIX oeverste tredjedel), h 12         : holder ikke (krav nei, p 0.328, BH nei)
+   S2 bunnsone og fallende | R2 uro (VIX oeverste tredjedel), h 24         : holder ikke (krav nei, p 0.834, BH nei)
+   S2 bunnsone og fallende | R2 uro (VIX oeverste tredjedel), h 6          : holder ikke (krav nei, p 0.615, BH nei)
+   S3 tverrsnitt billig og stigende | R1 bred nedgang, h 12                : holder ikke (krav nei, p 0.416, BH nei)
+   S3 tverrsnitt billig og stigende | R1 bred nedgang, h 24                : holder ikke (krav nei, p 0.819, BH nei)
+   S3 tverrsnitt billig og stigende | R1 bred nedgang, h 6                 : holder ikke (krav nei, p 0.231, BH nei)
+   S3 tverrsnitt billig og stigende | R2 uro (VIX oeverste tredjedel), h 12: holder ikke (krav nei, p 0.358, BH nei)
+   S3 tverrsnitt billig og stigende | R2 uro (VIX oeverste tredjedel), h 24: holder ikke (krav nei, p 0.921, BH nei)
+   S3 tverrsnitt billig og stigende | R2 uro (VIX oeverste tredjedel), h 6 : holder ikke (krav nei, p 0.724, BH nei)
+
+Lagret sonder/verdi_trend_kurve.csv

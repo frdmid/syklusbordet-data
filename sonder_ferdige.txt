@@ -87,3 +87,4 @@ sonde_kjor_miners_begge
 sonde_kjor_miners_begge_rekke
 sonde_kjor_miners_k1_varianter
 sonde_kjor_miners_oljeekstrem
+sonde_kjor_verdi_trend_kurve

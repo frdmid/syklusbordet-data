@@ -9,6 +9,25 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 03.11.2026 12:47, Claude Code
+
+Sonde sonde_kjor_verdi_trend_kurve (Frodes bestilling, punkt 5 i
+traderforslagene, og om regimet påvirker avkastningen ved signal). Utfall er
+realprisen til råvaren selv, 1965 til 2014 avgjør. Ingenting holdt, men:
+bunnsonen (A rå og detrendet 80) ga +6,2 % mot -1,5 % over 12 mnd, p 0,024
+(tverrsnitt p under 0,001), positiv i begge halvdelene, 49 episoder fra 16
+råvarer; klarte krav a til c og strøk bare på Benjamini-Hochberg. Etter 2015
++30 %. Trend (billig og stigende mot billig og fallende) tilførte ingenting
+(+6,2 mot +6,2 % over 12 mnd). Tverrsnitt verdi og trend og terminkurven
+(WTI og Henry Hub, 3 og 7 episoder) holdt ikke. Regime: bred nedgang og uro
+(VIX) endret ikke avkastningen ved signal før 2015; etter 2015 var uro mye
+bedre (+77 mot +10 % over 12 mnd), avgjør ikke. Bred nedgang gjentar ikke
++33 mot -3 % fra sonde_kjor_regime_flagg (annet mål: makroklynger og
+papirer). Ingenting endret i dashbordet.
+Filer: sonde_kjor_verdi_trend_kurve.py, sonder/sonde_kjor_verdi_trend_kurve.txt,
+sonder/verdi_trend_kurve.csv, sonder_ferdige.txt.
+For Cowork: ingenting å gjøre.
+
 ### 29.10.2026 11:03, Claude Code
 
 Dashbordet v75: feltet Gullgruver viser BEGGE-status (S1 og S2 samme måned, på
