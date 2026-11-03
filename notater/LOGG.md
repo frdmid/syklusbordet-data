@@ -9,6 +9,21 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 03.11.2026 15:51, Claude Code
+
+Sonde sonde_kjor_halv_gevinst (Frodes bestilling, beskrivende): selg
+halvparten etter 6 mnd hvis gevinsten er minst 25 % (H1), eller uansett (H2),
+resten holdt til 24 mnd, den solgte delen i MSCI World. 13 episoder, NOK.
+H1 ikke bedre: solgt i 5 episoder (aluminium 2015 og 2020, Brent, WTI, kull
+2020), dårligere i alle fem, aldri bedre; snitt +129 mot +191 % for H0. H2
+ikke bedre: median +61 mot +105 %, bedre i 3 av 13 (de svakeste), verste
+episode +7 mot -3 %. Grensene 15 og 40 % ga det samme. Salgsregelen (24 mnd)
+står. Første kjøring manglet tre episoder fordi Yahoo ikke svarte for
+papirene; kjørt på nytt med alle 13.
+Filer: sonde_kjor_halv_gevinst.py, sonder/sonde_kjor_halv_gevinst.txt,
+sonder/halv_gevinst.csv, sonder_ferdige.txt.
+For Cowork: ingenting å gjøre.
+
 ### 03.11.2026 14:02, Claude Code
 
 Sonde sonde_kjor_holdetid_nok (Frodes bestilling, beskrivende): inngang ved

@@ -1,0 +1,29 @@
+PER EPISODE (prosent i NOK etter 24 mnd; * = halvparten solgt etter 6 mnd)
+   segment    inngang  6 mnd   H0   H1   H2   H1 (følsomhet)   H1 (følsomhet)   World
+   henryhub   2011-12  -19.4    +27.9     +27.9     +21.4*    +27.9     +27.9    +49.4
+   henryhub   2014-12   -1.0     +7.5      +7.5     +10.3*     +7.5      +7.5    +23.1
+   jernmalm   2014-12  -23.7    +80.8     +80.8     +34.0*    +80.8     +80.8    +23.1
+   aluminium  2015-10  +55.5   +167.8    +132.6*   +132.6*   +132.6*   +132.6*   +18.7
+   nikkel     2015-11   +7.7   +150.4    +150.4     +92.9*   +150.4    +150.4    +20.8
+   ttf        2015-12  +20.0    +57.1     +57.1     +56.9*    +56.9*    +57.1    +23.9
+   ttf        2019-03   -5.7     -2.6      -2.6      +7.3*     -2.6      -2.6    +37.2
+   henryhub   2019-06   -8.7   +105.1    +105.1     +61.2*   +105.1    +105.1    +44.9
+   brent      2020-03  +25.4   +243.6    +150.2*   +150.2*   +150.2*   +243.6    +42.6
+   wti        2020-03  +60.9   +540.5    +320.8*   +320.8*   +320.8*   +320.8*   +42.6
+   aluminium  2020-04  +30.0   +382.6    +223.0*   +223.0*   +223.0*   +382.6    +31.5
+   kull       2020-08  +69.8   +683.4    +389.7*   +389.7*   +389.7*   +389.7*   +24.0
+   henryhub   2023-03  +24.6    +35.3     +35.3     +46.1*    +46.1*    +35.3    +34.9
+
+SAMMENDRAG (ferdige episoder)
+   variant                          median   snitt   mot H0: median  bedre i   verste ep  verste punkt (median)
+   H0 hold alt 24 mnd                +105.1  +190.7      +0.0        0 av 13      -2.6     -14.7
+   H1 halv ved +25 %                 +105.1  +129.1      +0.0        0 av 13      -2.6     -14.7
+   H2 halv uansett                    +61.2  +118.9     -44.0        3 av 13      +7.3     -14.5
+   H1 halv ved +15 % (følsomhet)     +105.1  +129.9      +0.0        1 av 13      -2.6     -14.7
+   H1 halv ved +40 % (følsomhet)     +105.1  +148.5      +0.0        0 av 13      -2.6     -14.7
+
+LESING (H1 og H2 mot H0, regelen satt før kjøring)
+   H1 halv ved +25 %: ikke bedre (median +0.0 pp, bedre i 0 av 13, solgt i 5)
+   H2 halv uansett: ikke bedre (median -44.0 pp, bedre i 3 av 13, solgt i 13)
+
+Lagret sonder/halv_gevinst.csv
