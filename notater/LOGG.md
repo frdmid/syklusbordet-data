@@ -9,6 +9,23 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 03.11.2026 13:20, Claude Code
+
+Sonde sonde_kjor_signal_vix_dxy_move (Frodes bestilling): gir bunnsonen ulik
+avkastning etter nivået på VIX, DXY og MOVE når signalet kommer? Utfall er
+råvarens realpris, øverste mot nederste tredjedel (punkt i tid). Holder ikke
+for noen. Før 2015: VIX ingen forskjell (+8,9 mot +11,9 % over 12 mnd); høy
+DXY svakere over 6 og 12 mnd (-1,3 mot +3,8 % over 6 mnd, samme fortegn i
+begge halvdelene, p 0,14). Etter 2015 var høy VIX mye bedre (+77 mot +15 %
+over 12 mnd, mest 2020), avgjør ikke. MOVE (fra 2002) bare beskrivende: høy
+MOVE bedre (+50 mot +37 % over 12 mnd), p 0,55. Papirporteføljens 13
+posisjoner med nivåene ved inngang er listet. Merk: DXY fra Yahoo går fra
+1971, ikke 1988 som skrevet før kjøring; avgjort på 1974 til 2014, og
+toppteksten er rettet. Ingenting endret i dashbordet.
+Filer: sonde_kjor_signal_vix_dxy_move.py, sonder/sonde_kjor_signal_vix_dxy_move.txt,
+sonder/signal_vix_dxy_move.csv, sonder_ferdige.txt.
+For Cowork: ingenting å gjøre.
+
 ### 03.11.2026 13:05, Claude Code
 
 Handlingsliste og papirportefølje (Frodes bestilling, punkt 1 og 3 i
