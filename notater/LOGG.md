@@ -9,6 +9,32 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 03.11.2026 13:05, Claude Code
+
+Handlingsliste og papirportefølje (Frodes bestilling, punkt 1 og 3 i
+traderforslagene, med evidensgrad etter punkt 8). Ny kontekstmodul
+`kontekst_handel.py`, kalt sist fra `shadow_challenger.kjor` (etter
+kontekst_miners), skriver `handel.json`:
+- liste: alle segmenter, de med et signal som står først, så etter avstand til
+  Championens bunnsone (det som mangler på A rå pluss A detrendet til 80), med
+  hva som mangler, trend, D og port C. Signalene: Championens bunnsone,
+  oppsikt og d95, og Challengernes bunnsone eller watch fra siste snapshot.
+- evidens: sterk (holdt og ikke motsagt), middels (holdt én gang, nær, eller
+  sterk bare etter 2015), svak (holdt ikke eller ikke testet). Bunnsone, bred
+  nedgang og BEGGE er middels; resten svak; ingen er sterk.
+- live: innganger fra Shadow-OOS (bottom_zone_enter som ny episode), tom nå.
+- portefolje: Championens regel spilt av fra segmentenes månedsserie, 20 % per
+  åpen posisjon (høyst fem), resten i MSCI World, NOK, fra 2013-03 (OSEBX). Gir
+  31 % i året mot 15 % for MSCI World, men papirene er dagens, valgt med
+  kjennskap til årene; teksten sier det.
+Dashbordet v76: boksen Handlingsliste øverst. marked/handel skrevet for hånd
+nå (versjon 1). Rutinen har nytt steg 6l og en rapportlinje (kontrollert at
+bare prompten er endret).
+Filer: `kontekst_handel.py`, `handel.json`, `shadow_challenger.py`,
+`notater/OVERLEVERING.md`.
+For Cowork: Les siste versjon av dashbordet før du publiserer; boksen ligger
+i `<section id="handel">` og funksjonen `visHandel`.
+
 ### 03.11.2026 12:53, Claude Code
 
 Sonde sonde_kjor_raavarefond (Frodes bestilling, punkt 4 i

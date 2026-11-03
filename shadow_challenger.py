@@ -111,9 +111,10 @@ def kjor(lager, rot, naa, note=print):
     # Kontekst til dashbordet (07.10.2026), ikke shadow-data og ingen modell:
     # laks_biomasse.json fra kontekst_laks.py, (15.10.2026) regime.json fra
     # kontekst_regime.py og (19.10.2026) en ny ukerad i uran_futures_uke.csv fra
-    # kontekst_uran.py, og (28.10.2026) miners.json fra kontekst_miners.py. En
-    # feil her rammer ingenting annet.
-    for navn in ("kontekst_laks", "kontekst_regime", "kontekst_uran", "kontekst_miners"):
+    # kontekst_uran.py, (28.10.2026) miners.json fra kontekst_miners.py og
+    # (03.11.2026) handel.json fra kontekst_handel.py (sist, den leser Challengernes
+    # snapshot). En feil her rammer ingenting annet.
+    for navn in ("kontekst_laks", "kontekst_regime", "kontekst_uran", "kontekst_miners", "kontekst_handel"):
         try:
             p = os.path.join(rot, f"{navn}.py")
             if os.path.exists(p) and not os.environ.get("KONTEKST_AV"):
