@@ -9,6 +9,29 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 03.11.2026 15:57, Claude Code
+
+USD/NOK i makroregimer (Frodes bestilling: guide eller tidlig varsel for USD
+mot NOK). Sonde sonde_kjor_usdnok_regime: ni varsler (uro, aksjefall,
+oljefall, bred nedgang, dollartrend, egen trend, dyr dollar, rentefordel,
+samlet) mot endringen i USD/NOK neste 3, 6 og 12 mnd, avgjort på 1993 til
+2014. Ingen holdt. Nærmest: oljefall (+1,6 pp over 3 mnd, p 0,055) og
+dollartrend (+1,5 pp, p 0,076), men begge snudde etter 2015. Beskrivende
+tillegg sonde_kjor_usdnok_samtidig (kjørt etter at regimesonden var lest):
+dollaren beveger seg SAMTIDIG med krakk, ikke før (korrelasjon -0,38 mot
+S&P 500 per måned; i de 22 månedene med S&P under -7 % steg USD/NOK 3,7 % i
+snitt; 2008-10 +13,8 %, 2020-03 +10,4 %, 2022-09 +8,8 %). 12 av 13 flagg i
+papirporteføljen kom med USD/NOK i persentil 87 eller høyere mot siste ti år;
+over 24 mnd falt USD/NOK i median 0,8 %, men 10 til 17 % etter 2020-flaggene.
+Dashbordet v77: USD/NOK som siste rad i korrelasjonsmatrisen, fra
+marked/dollar (usdnok.serie), regnet som -100 x log(kurs) så den går samme
+vei som A. Ingen ny datakilde, rutinen er uendret.
+Filer: sonde_kjor_usdnok_regime.py, sonde_kjor_usdnok_samtidig.py,
+sonder/sonde_kjor_usdnok_regime.txt, sonder/sonde_kjor_usdnok_samtidig.txt,
+sonder/usdnok_regime.csv, sonder_ferdige.txt, notater/OVERLEVERING.md.
+For Cowork: les siste versjon av dashbordet før publisering (renderKorr og
+visDollar er endret).
+
 ### 03.11.2026 15:51, Claude Code
 
 Sonde sonde_kjor_halv_gevinst (Frodes bestilling, beskrivende): selg

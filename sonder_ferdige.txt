@@ -92,3 +92,5 @@ sonde_kjor_raavarefond
 sonde_kjor_signal_vix_dxy_move
 sonde_kjor_holdetid_nok
 sonde_kjor_halv_gevinst
+sonde_kjor_usdnok_regime
+sonde_kjor_usdnok_samtidig

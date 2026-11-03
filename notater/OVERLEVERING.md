@@ -75,7 +75,7 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 ## Dashbordet
 
 - Adresse: https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF (siste versjon
-  76 per 03.11 (boksen Handlingsliste øverst med evidensgrad, åpne posisjoner fra Shadow-OOS og papirporteføljen; panelet Gullgruver med S1, S2 og BEGGE-status); Cowork kan ha publisert senere). Nytt fra 12.10: linjen
+  77 per 03.11 (boksen Handlingsliste øverst med evidensgrad, åpne posisjoner fra Shadow-OOS og papirporteføljen; USD/NOK i korrelasjonsmatrisen; panelet Gullgruver med S1, S2 og BEGGE-status); Cowork kan ha publisert senere). Nytt fra 12.10: linjen
   «Kull, rullende A 95» i kullpanelet (v63), boksen «Regime nå» øverst (v64)
   med «Hva testene sier om å handle» under (v65, rettet i v66).
 - **Omslaget:** filen som Artifact `read` lagrer, begynner med vertens omslag

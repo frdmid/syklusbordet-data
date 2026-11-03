@@ -1,0 +1,120 @@
+USD/NOK 1980-12 til 2026-11, siste 9.230
+
+I DAG (siste maaned med data for alle):
+   W1 uro             PAA
+   W2 aksjefall       av
+   W3 oljefall        av
+   W4 bred nedgang    av
+   W5 dollartrend     PAA
+   W6 egen trend      av
+   W7 dyr dollar      av
+   W8 rentefordel     av
+   W9 samlet          av
+
+==================== h = 3 mnd (endring i log USD/NOK, positiv = sterkere dollar)
+   W1 uro             1993-2014  varsel   +0.4 %  andre   +0.0 %  forskjell   +0.3 pp  p 0.359  halvdeler   +1.6/  -1.1  n 107  ep  2  riktig retning  54 %
+   W1 uro             2015-2026  varsel   -0.6 %  andre   +0.7 %  forskjell   -1.3 pp  p 0.853  halvdeler   -5.7/  +1.8  n  35  ep  4  riktig retning  46 %
+   W2 aksjefall       1993-2014  varsel   -0.8 %  andre   +0.4 %  forskjell   -1.2 pp  p 0.850  halvdeler   -2.7/  +0.6  n  53  ep  3  riktig retning  40 %
+   W2 aksjefall       2015-2026  varsel   +2.2 %  andre   +0.2 %  forskjell   +2.0 pp  p 0.091  halvdeler   -4.8/  +3.6  n  13  ep  3  riktig retning  62 %
+   W3 oljefall        1993-2014  varsel   +1.3 %  andre   -0.3 %  forskjell   +1.6 pp  p 0.055  halvdeler   +1.2/  +2.0  n  76  ep  6  riktig retning  54 %
+   W3 oljefall        2015-2026  varsel   -1.4 %  andre   +1.4 %  forskjell   -2.8 pp  p 1.000  halvdeler   -4.7/  -0.8  n  51  ep  3  riktig retning  41 %
+   W4 bred nedgang    1993-2014  varsel   +0.2 %  andre   +0.1 %  forskjell   +0.0 pp  p 0.437  halvdeler   +0.6/  -0.5  n 102  ep  5  riktig retning  55 %
+   W4 bred nedgang    2015-2026  varsel   +0.3 %  andre   +0.5 %  forskjell   -0.2 pp  p 0.629  halvdeler   +0.5/  -1.1  n  57  ep  4  riktig retning  53 %
+   W5 dollartrend     1993-2014  varsel   +1.1 %  andre   -0.4 %  forskjell   +1.5 pp  p 0.076  halvdeler   +0.0/  +3.4  n  93  ep  6  riktig retning  57 %
+   W5 dollartrend     2015-2026  varsel   -0.9 %  andre   +1.0 %  forskjell   -1.9 pp  p 0.988  halvdeler   -2.8/  -1.0  n  48  ep  1  riktig retning  46 %
+   W6 egen trend      1993-2014  varsel   +0.7 %  andre   -0.1 %  forskjell   +0.9 pp  p 0.113  halvdeler   +0.2/  +1.5  n  89  ep  4  riktig retning  51 %
+   W6 egen trend      2015-2026  varsel   -1.1 %  andre   +1.3 %  forskjell   -2.4 pp  p 0.976  halvdeler   -3.6/  -1.2  n  53  ep  1  riktig retning  45 %
+   W7 dyr dollar      1993-2014  varsel   +0.6 %  andre   -0.0 %  forskjell   +0.6 pp  p 0.733  halvdeler   -0.1/  +8.1  n  77  ep  3  riktig retning  42 %
+   W7 dyr dollar      2015-2026  varsel   +0.3 %  andre   +0.8 %  forskjell   -0.5 pp  p 0.427  halvdeler    -  /  -0.5  n 129  ep  1  riktig retning  46 %
+   W8 rentefordel     1993-2014  varsel   -0.4 %  andre   +0.3 %  forskjell   -0.7 pp  p 0.668  halvdeler   +0.4/  -2.0  n  89  ep  2  riktig retning  46 %
+   W8 rentefordel     2015-2026  varsel   +0.2 %  andre   +0.6 %  forskjell   -0.4 pp  p 0.658  halvdeler   -3.0/  +1.3  n  88  ep  1  riktig retning  53 %
+   W9 samlet          1993-2014  varsel   +0.6 %  andre   -0.2 %  forskjell   +0.8 pp  p 0.146  halvdeler   +1.3/  +0.4  n 110  ep  7  riktig retning  54 %
+   W9 samlet          2015-2026  varsel   -0.4 %  andre   +0.9 %  forskjell   -1.3 pp  p 0.828  halvdeler   -3.8/  +1.3  n  61  ep  1  riktig retning  51 %
+
+==================== h = 6 mnd (endring i log USD/NOK, positiv = sterkere dollar)
+   W1 uro             1993-2014  varsel   +0.6 %  andre   +0.1 %  forskjell   +0.5 pp  p 0.398  halvdeler   +2.3/  -1.4  n 107  ep  2  riktig retning  52 %
+   W1 uro             2015-2026  varsel   +0.3 %  andre   +1.1 %  forskjell   -0.7 pp  p 0.534  halvdeler   -7.3/  +3.4  n  35  ep  4  riktig retning  49 %
+   W2 aksjefall       1993-2014  varsel   -2.1 %  andre   +0.9 %  forskjell   -2.9 pp  p 0.897  halvdeler   -5.3/  +0.0  n  53  ep  3  riktig retning  32 %
+   W2 aksjefall       2015-2026  varsel   +2.8 %  andre   +0.7 %  forskjell   +2.1 pp  p 0.289  halvdeler   -7.5/  +4.6  n  13  ep  3  riktig retning  69 %
+   W3 oljefall        1993-2014  varsel   +0.2 %  andre   +0.3 %  forskjell   -0.2 pp  p 0.476  halvdeler   -0.3/  +0.0  n  76  ep  6  riktig retning  49 %
+   W3 oljefall        2015-2026  varsel   -0.7 %  andre   +1.7 %  forskjell   -2.4 pp  p 0.943  halvdeler   -2.8/  -2.0  n  49  ep  3  riktig retning  41 %
+   W4 bred nedgang    1993-2014  varsel   -0.2 %  andre   +0.6 %  forskjell   -0.8 pp  p 0.538  halvdeler   -0.1/  -1.5  n 102  ep  5  riktig retning  55 %
+   W4 bred nedgang    2015-2026  varsel   +0.7 %  andre   +1.0 %  forskjell   -0.4 pp  p 0.601  halvdeler   +0.6/  -1.9  n  57  ep  4  riktig retning  53 %
+   W5 dollartrend     1993-2014  varsel   +1.1 %  andre   -0.2 %  forskjell   +1.2 pp  p 0.149  halvdeler   +1.0/  +1.7  n  93  ep  6  riktig retning  56 %
+   W5 dollartrend     2015-2026  varsel   +1.3 %  andre   +0.6 %  forskjell   +0.7 pp  p 0.323  halvdeler   +1.2/  +0.2  n  47  ep  1  riktig retning  55 %
+   W6 egen trend      1993-2014  varsel   +1.3 %  andre   -0.2 %  forskjell   +1.5 pp  p 0.128  halvdeler   +2.0/  +1.1  n  89  ep  4  riktig retning  52 %
+   W6 egen trend      2015-2026  varsel   +0.4 %  andre   +1.2 %  forskjell   -0.8 pp  p 0.704  halvdeler   -0.2/  -1.6  n  53  ep  1  riktig retning  51 %
+   W7 dyr dollar      1993-2014  varsel   +0.6 %  andre   +0.2 %  forskjell   +0.4 pp  p 0.606  halvdeler   -0.8/ +11.8  n  77  ep  3  riktig retning  48 %
+   W7 dyr dollar      2015-2026  varsel   +0.8 %  andre   +1.8 %  forskjell   -1.0 pp  p 0.395  halvdeler    -  /  -1.4  n 129  ep  1  riktig retning  46 %
+   W8 rentefordel     1993-2014  varsel   -0.7 %  andre   +0.6 %  forskjell   -1.3 pp  p 0.652  halvdeler   +1.3/  -4.1  n  89  ep  2  riktig retning  48 %
+   W8 rentefordel     2015-2026  varsel   +0.9 %  andre   +0.7 %  forskjell   +0.2 pp  p 0.448  halvdeler   -1.3/  +1.0  n  88  ep  1  riktig retning  59 %
+   W9 samlet          1993-2014  varsel   +0.3 %  andre   +0.2 %  forskjell   +0.1 pp  p 0.405  halvdeler   +1.9/  -1.8  n 110  ep  7  riktig retning  53 %
+   W9 samlet          2015-2026  varsel   +0.5 %  andre   +1.2 %  forskjell   -0.7 pp  p 0.572  halvdeler   -1.9/  +0.3  n  61  ep  1  riktig retning  52 %
+
+==================== h = 12 mnd (endring i log USD/NOK, positiv = sterkere dollar)
+   W1 uro             1993-2014  varsel   +1.3 %  andre   +0.2 %  forskjell   +1.1 pp  p 0.407  halvdeler   +4.3/  -1.0  n 107  ep  2  riktig retning  61 %
+   W1 uro             2015-2026  varsel   +0.7 %  andre   +1.7 %  forskjell   -1.0 pp  p 0.441  halvdeler  -10.8/  +3.3  n  34  ep  4  riktig retning  59 %
+   W2 aksjefall       1993-2014  varsel   -4.9 %  andre   +2.0 %  forskjell   -6.9 pp  p 0.926  halvdeler  -11.6/  -0.9  n  53  ep  3  riktig retning  32 %
+   W2 aksjefall       2015-2026  varsel   +4.2 %  andre   +1.1 %  forskjell   +3.1 pp  p 0.228  halvdeler  -11.8/  +6.5  n  13  ep  3  riktig retning  85 %
+   W3 oljefall        1993-2014  varsel   -1.7 %  andre   +1.6 %  forskjell   -3.3 pp  p 0.923  halvdeler   -2.5/  -3.9  n  76  ep  6  riktig retning  49 %
+   W3 oljefall        2015-2026  varsel   -2.3 %  andre   +3.6 %  forskjell   -5.9 pp  p 1.000  halvdeler   -6.8/  -5.0  n  48  ep  3  riktig retning  35 %
+   W4 bred nedgang    1993-2014  varsel   +0.2 %  andre   +0.9 %  forskjell   -0.6 pp  p 0.505  halvdeler   -2.4/  +2.2  n 102  ep  5  riktig retning  63 %
+   W4 bred nedgang    2015-2026  varsel   +0.6 %  andre   +2.1 %  forskjell   -1.5 pp  p 0.599  halvdeler   +0.5/  -3.9  n  57  ep  4  riktig retning  56 %
+   W5 dollartrend     1993-2014  varsel   +0.2 %  andre   +0.8 %  forskjell   -0.6 pp  p 0.498  halvdeler   +2.7/  -3.9  n  93  ep  6  riktig retning  49 %
+   W5 dollartrend     2015-2026  varsel   +2.5 %  andre   +0.9 %  forskjell   +1.7 pp  p 0.194  halvdeler   +0.1/  +3.2  n  46  ep  1  riktig retning  59 %
+   W6 egen trend      1993-2014  varsel   +0.4 %  andre   +0.7 %  forskjell   -0.3 pp  p 0.431  halvdeler   +3.6/  -4.2  n  89  ep  4  riktig retning  48 %
+   W6 egen trend      2015-2026  varsel   +1.6 %  andre   +1.3 %  forskjell   +0.3 pp  p 0.426  halvdeler   -1.2/  +2.0  n  53  ep  1  riktig retning  58 %
+   W7 dyr dollar      1993-2014  varsel   +0.3 %  andre   +0.7 %  forskjell   -0.5 pp  p 0.515  halvdeler   -2.4/ +22.3  n  77  ep  3  riktig retning  39 %
+   W7 dyr dollar      2015-2026  varsel   +1.1 %  andre  +15.0 %  forskjell  -13.9 pp  p 0.000  halvdeler    -  / -14.3  n 128  ep  1  riktig retning  46 %
+   W8 rentefordel     1993-2014  varsel   -1.2 %  andre   +1.6 %  forskjell   -2.8 pp  p 0.753  halvdeler   +4.6/ -10.9  n  89  ep  2  riktig retning  48 %
+   W8 rentefordel     2015-2026  varsel   +2.0 %  andre   +0.3 %  forskjell   +1.7 pp  p 0.300  halvdeler   +3.9/  -0.0  n  88  ep  1  riktig retning  59 %
+   W9 samlet          1993-2014  varsel   -0.7 %  andre   +1.6 %  forskjell   -2.3 pp  p 0.791  halvdeler   +1.9/  -6.3  n 110  ep  7  riktig retning  53 %
+   W9 samlet          2015-2026  varsel   +0.9 %  andre   +1.9 %  forskjell   -1.0 pp  p 0.621  halvdeler   -2.8/  +0.7  n  61  ep  1  riktig retning  56 %
+
+AVGJOERELSE (1993 til 2014)
+
+   W1 uro, h 12            : holder ikke (krav a til d nei, p 0.407, BH nei)
+   W1 uro, h 3             : holder ikke (krav a til d nei, p 0.359, BH nei)
+   W1 uro, h 6             : holder ikke (krav a til d nei, p 0.398, BH nei)
+   W2 aksjefall, h 12      : holder ikke (krav a til d nei, p 0.926, BH nei)
+   W2 aksjefall, h 3       : holder ikke (krav a til d nei, p 0.850, BH nei)
+   W2 aksjefall, h 6       : holder ikke (krav a til d nei, p 0.897, BH nei)
+   W3 oljefall, h 12       : holder ikke (krav a til d nei, p 0.923, BH nei)
+   W3 oljefall, h 3        : holder ikke (krav a til d nei, p 0.055, BH nei)
+   W3 oljefall, h 6        : holder ikke (krav a til d nei, p 0.476, BH nei)
+   W4 bred nedgang, h 12   : holder ikke (krav a til d nei, p 0.505, BH nei)
+   W4 bred nedgang, h 3    : holder ikke (krav a til d nei, p 0.437, BH nei)
+   W4 bred nedgang, h 6    : holder ikke (krav a til d nei, p 0.538, BH nei)
+   W5 dollartrend, h 12    : holder ikke (krav a til d nei, p 0.498, BH nei)
+   W5 dollartrend, h 3     : holder ikke (krav a til d nei, p 0.076, BH nei)
+   W5 dollartrend, h 6     : holder ikke (krav a til d nei, p 0.149, BH nei)
+   W6 egen trend, h 12     : holder ikke (krav a til d nei, p 0.431, BH nei)
+   W6 egen trend, h 3      : holder ikke (krav a til d nei, p 0.113, BH nei)
+   W6 egen trend, h 6      : holder ikke (krav a til d nei, p 0.128, BH nei)
+   W7 dyr dollar, h 12     : holder ikke (krav a til d nei, p 0.515, BH nei)
+   W7 dyr dollar, h 3      : holder ikke (krav a til d nei, p 0.733, BH nei)
+   W7 dyr dollar, h 6      : holder ikke (krav a til d nei, p 0.606, BH nei)
+   W8 rentefordel, h 12    : holder ikke (krav a til d nei, p 0.753, BH nei)
+   W8 rentefordel, h 3     : holder ikke (krav a til d nei, p 0.668, BH nei)
+   W8 rentefordel, h 6     : holder ikke (krav a til d nei, p 0.652, BH nei)
+   W9 samlet, h 12         : holder ikke (krav a til d nei, p 0.791, BH nei)
+   W9 samlet, h 3          : holder ikke (krav a til d nei, p 0.146, BH nei)
+   W9 samlet, h 6          : holder ikke (krav a til d nei, p 0.405, BH nei)
+
+BESKRIVENDE: USD/NOK etter vekstregime og uro (snitt neste 3 og 12 mnd, prosent log, 1993 til 2026)
+   h 3 mnd
+      bred nedgang  rolig  n  93  snitt   +1.1 %  median   +1.2 %  dollar opp i  58 %
+      bred nedgang  uro    n  66  snitt   -1.0 %  median   -0.1 %  dollar opp i  48 %
+      bred oppgang  rolig  n 124  snitt   -0.4 %  median   -0.4 %  dollar opp i  46 %
+      bred oppgang  uro    n  42  snitt   +2.1 %  median   +1.6 %  dollar opp i  60 %
+      noeytral      rolig  n  45  snitt   +0.6 %  median   -0.0 %  dollar opp i  49 %
+      noeytral      uro    n  34  snitt   -0.1 %  median   -0.0 %  dollar opp i  50 %
+   h 12 mnd
+      bred nedgang  rolig  n  93  snitt   +2.6 %  median   +2.7 %  dollar opp i  65 %
+      bred nedgang  uro    n  66  snitt   -2.8 %  median   +1.0 %  dollar opp i  55 %
+      bred oppgang  rolig  n 119  snitt   -1.2 %  median   -2.7 %  dollar opp i  40 %
+      bred oppgang  uro    n  41  snitt   +6.6 %  median   +6.9 %  dollar opp i  68 %
+      noeytral      rolig  n  42  snitt   +2.1 %  median   -1.0 %  dollar opp i  48 %
+      noeytral      uro    n  34  snitt   +2.1 %  median   +3.6 %  dollar opp i  62 %
+
+Lagret sonder/usdnok_regime.csv

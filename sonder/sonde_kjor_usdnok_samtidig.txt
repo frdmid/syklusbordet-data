@@ -1,0 +1,30 @@
+korrelasjon maanedlig USD/NOK mot S&P 500, 1993-2026: -0.38
+  S&P -1.00 til -0.07: n  22  USD/NOK samme mnd snitt  +3.7 %
+  S&P -0.07 til -0.03: n  44  USD/NOK samme mnd snitt  +0.7 %
+  S&P -0.03 til +0.03: n 222  USD/NOK samme mnd snitt  +0.4 %
+  S&P +0.03 til +1.00: n 119  USD/NOK samme mnd snitt  -1.4 %
+10 verste S&P-maaneder og USD/NOK samme maaned:
+  2008-10  S&P  -18.6 %  USD/NOK +13.8 %
+  1998-08  S&P  -15.8 %  USD/NOK  +3.6 %
+  2020-03  S&P  -13.4 %  USD/NOK +10.4 %
+  2002-09  S&P  -11.7 %  USD/NOK  -0.8 %
+  2009-02  S&P  -11.6 %  USD/NOK  +1.3 %
+  2022-09  S&P   -9.8 %  USD/NOK  +8.8 %
+  2001-02  S&P   -9.7 %  USD/NOK  +1.0 %
+  2018-12  S&P   -9.6 %  USD/NOK  +1.3 %
+  2008-09  S&P   -9.5 %  USD/NOK  +7.8 %
+  2022-04  S&P   -9.2 %  USD/NOK  +5.6 %
+USD/NOK over flaggepisodene (inngang til +24 mnd):
+  henryhub   2011-12  USD/NOK 5.99  +6 mnd  -0.2 %  +24 mnd  +1.5 %  pct mot 10 aar  34
+  henryhub   2014-12  USD/NOK 7.43  +6 mnd  +5.7 %  +24 mnd +16.0 %  pct mot 10 aar  99
+  jernmalm   2014-12  USD/NOK 7.43  +6 mnd  +5.7 %  +24 mnd +16.0 %  pct mot 10 aar  99
+  aluminium  2015-10  USD/NOK 8.53  +6 mnd  -5.2 %  +24 mnd  -4.0 %  pct mot 10 aar  99
+  nikkel     2015-11  USD/NOK 8.69  +6 mnd  -3.9 %  +24 mnd  -4.4 %  pct mot 10 aar  99
+  ttf        2015-12  USD/NOK 8.81  +6 mnd  -4.9 %  +24 mnd  -6.9 %  pct mot 10 aar 100
+  ttf        2019-03  USD/NOK 8.60  +6 mnd  +5.7 %  +24 mnd  -0.8 %  pct mot 10 aar  94
+  henryhub   2019-06  USD/NOK 8.52  +6 mnd  +3.1 %  +24 mnd  +0.5 %  pct mot 10 aar  87
+  brent      2020-03  USD/NOK 10.51  +6 mnd  -9.7 %  +24 mnd -16.7 %  pct mot 10 aar 100
+  wti        2020-03  USD/NOK 10.51  +6 mnd  -9.7 %  +24 mnd -16.7 %  pct mot 10 aar 100
+  aluminium  2020-04  USD/NOK 10.28  +6 mnd  -7.8 %  +24 mnd -10.0 %  pct mot 10 aar  99
+  kull       2020-08  USD/NOK 8.76  +6 mnd  -2.0 %  +24 mnd +13.5 %  pct mot 10 aar  87
+  henryhub   2023-03  USD/NOK 10.48  +6 mnd  +1.4 %  +24 mnd  +0.7 %  pct mot 10 aar  98
