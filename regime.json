@@ -1,47 +1,42 @@
 {
  "id": "regime",
- "laget": "2026-10-28",
- "mnd": "2026-09",
+ "laget": "2026-11-04",
+ "mnd": "2026-10",
  "vekst": {
-  "ord": "bred oppgang",
-  "bredde": 0.67,
-  "kobber_gull_12m": 20.8,
+  "ord": "blandet",
+  "bredde": 0.57,
+  "kobber_gull_12m": 28.9,
   "nedgang_siden": null
  },
  "sjokk": {
   "ord": "rolig",
-  "vix": 15.8,
-  "vix_pct": 36.0,
-  "korr_papirer": 0.13,
-  "korr_pct": 17.0,
+  "vix": 16.9,
+  "vix_pct": 44.0,
+  "korr_papirer": 0.11,
+  "korr_pct": 12.0,
   "sjokk_siden": null
  },
  "boom": {
   "ord": "nei",
-  "median_A": 23.6,
-  "grense": 17.0
+  "median_A": 20.1,
+  "grense": 17.1
  },
- "kreditt": 1.48,
+ "kreditt": 1.46,
  "kreditt_pct": 3.0,
- "rentekurve": 0.34,
+ "rentekurve": 0.39,
  "likviditet": {
-  "dato": "2026-10-28",
-  "fed_netto_mrd": 5801.0,
-  "fed_netto_13u_pst": -0.4,
+  "dato": "2026-11-04",
+  "fed_netto_mrd": 5745.0,
+  "fed_netto_13u_pst": -1.6,
   "rrp_mrd": 0.0,
   "rrp_topp_mrd": 2367.0,
   "rrp_topp_dato": "2022-09-28",
-  "tga_mrd": 952.0,
-  "fed_balanse_mrd": 6754.0,
+  "tga_mrd": 1000.0,
+  "fed_balanse_mrd": 6746.0,
   "sb_mnd": "2026-09",
   "sb_sum_mrd": 17524.0,
   "sb_6m_pst": -2.4,
   "serie": [
-   {
-    "t": "2021-11",
-    "netto": 7065.0,
-    "n13": 2.6
-   },
    {
     "t": "2021-12",
     "netto": 6903.0,
@@ -334,36 +329,41 @@
    },
    {
     "t": "2026-10",
-    "netto": 5801.0,
-    "n13": -0.4
+    "netto": 5746.0,
+    "n13": -1.4
+   },
+   {
+    "t": "2026-11",
+    "netto": 5745.0,
+    "n13": -1.6
    }
   ]
  },
  "analoger": [
   {
-   "t": "2006-02",
-   "avstand": 1.32,
+   "t": "2024-04",
+   "avstand": 1.43,
    "naer": null
   },
   {
-   "t": "2024-05",
-   "avstand": 1.37,
+   "t": "2006-02",
+   "avstand": 1.53,
    "naer": null
   },
   {
    "t": "2021-11",
-   "avstand": 1.54,
+   "avstand": 1.76,
    "naer": "gjenåpningen"
   },
   {
    "t": "2005-08",
-   "avstand": 1.55,
+   "avstand": 1.95,
    "naer": null
   },
   {
-   "t": "2018-06",
-   "avstand": 1.64,
-   "naer": "renter og handelskrig"
+   "t": "2023-09",
+   "avstand": 1.97,
+   "naer": null
   }
  ],
  "analog_dim": [
@@ -375,13 +375,6 @@
   "rentekurve"
  ],
  "serie": [
-  {
-   "t": "2021-10",
-   "bredde": 0.83,
-   "median_A": 26.6,
-   "vix_pct": 53.0,
-   "korr_pct": 63.0
-  },
   {
    "t": "2021-11",
    "bredde": 0.78,
@@ -427,7 +420,7 @@
   {
    "t": "2022-05",
    "bredde": 0.72,
-   "median_A": 18.7,
+   "median_A": 19.1,
    "vix_pct": 92.0,
    "korr_pct": 70.0
   },
@@ -455,7 +448,7 @@
   {
    "t": "2022-09",
    "bredde": 0.39,
-   "median_A": 31.1,
+   "median_A": 31.0,
    "vix_pct": 88.0,
    "korr_pct": 74.0
   },
@@ -791,9 +784,16 @@
   {
    "t": "2026-09",
    "bredde": 0.67,
-   "median_A": 23.6,
+   "median_A": 23.8,
    "vix_pct": 36.0,
    "korr_pct": 17.0
+  },
+  {
+   "t": "2026-10",
+   "bredde": 0.57,
+   "median_A": 20.1,
+   "vix_pct": 44.0,
+   "korr_pct": 12.0
   }
  ],
  "kilder": "Råvarer: priser_mnd.csv. Papirer og VIX: Yahoo. Kreditt, rentekurve og likviditet: FRED (BAA10Y, T10Y2Y, WALCL, WTREGEN, RRPONTSYD, ECBASSETSW, JPNASSETS, DEXUSEU, DEXJPUS)."
