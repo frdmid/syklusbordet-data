@@ -1,21 +1,16 @@
 {
  "id": "uran_kontrakt",
- "laget": "2026-10-28",
- "mnd": "2026-09",
- "spot": 89.63,
- "kontrakt": 96.5,
- "spread_pst": -7.1,
- "spread_pctl": 63.0,
- "spread_median": -11.3,
- "kontrakt_12m_pst": 16.3,
+ "laget": "2026-11-04",
+ "mnd": "2026-10",
+ "spot": 91.55,
+ "kontrakt": 98.0,
+ "spread_pst": -6.6,
+ "spread_pctl": 65.0,
+ "spread_median": -11.2,
+ "kontrakt_12m_pst": 15.3,
  "fra": "1996-03",
  "kilde": "Cameco (UxC og TradeTech), månedsslutt; spot og langsiktig kontraktspris, USD/lb U3O8",
  "serie": [
-  {
-   "t": "2021-10",
-   "spot": 45.2,
-   "kontrakt": 43.0
-  },
   {
    "t": "2021-11",
    "spot": 45.75,
@@ -310,6 +305,11 @@
    "t": "2026-09",
    "spot": 89.63,
    "kontrakt": 96.5
+  },
+  {
+   "t": "2026-10",
+   "spot": 91.55,
+   "kontrakt": 98.0
   }
  ]
 }
