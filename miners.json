@@ -4,7 +4,7 @@
  "group": "Metall",
  "unit": "fat olje per unse gull",
  "status": "live",
- "laget": "2026-10-29",
+ "laget": "2026-11-04",
  "note": "Forholdet mellom gullpris og oljepris, et grovt mål på gruvenes margin. Observasjon uten flagg: bunnsonen på dette forholdet holdt ikke (sonden 28.10.2026), og heller ikke feilprising av gruvene mot gull og olje, og ingen av signalene som ble testet.",
  "source": "Gull, WTI og Brent fra serier/priser_mnd.csv (Verdensbanken og GitHub-speil)",
  "source_url": "https://github.com/frdmid/syklusbordet-data/blob/main/kontekst_miners.py",
@@ -21,7 +21,7 @@
   "oppsikt": false,
   "A2": null,
   "B": null,
-  "D": 44.5,
+  "D": 44.8,
   "S": null,
   "gate": "uaktuell",
   "months_in_zone": 0,
@@ -3109,8 +3109,8 @@
    "kommentar": "Store gruver. Samme uke: beta mot gull 1,8, mot olje 0,0 (sonden 28.10.2026).",
    "omvendt": false,
    "handlbar": true,
-   "D": 52.7,
-   "fall_pst": -28.6
+   "D": 51.3,
+   "fall_pst": -28.1
   },
   {
    "ticker": "GDXJ.L",
@@ -3120,8 +3120,8 @@
    "kommentar": "Små gruver. Beta mot gull 1,9, mot olje 0,0. Svinger mest.",
    "omvendt": false,
    "handlbar": true,
-   "D": 50.6,
-   "fall_pst": -33.5
+   "D": 54.7,
+   "fall_pst": -34.1
   },
   {
    "ticker": "IAUP.L",
@@ -3131,8 +3131,8 @@
    "kommentar": "Store produsenter. Beta mot gull 1,7, mot olje 0,0.",
    "omvendt": false,
    "handlbar": true,
-   "D": 32.6,
-   "fall_pst": -27.2
+   "D": 31.8,
+   "fall_pst": -26.5
   },
   {
    "ticker": "AUCO.L",
@@ -3143,18 +3143,18 @@
    "omvendt": false,
    "handlbar": true,
    "D": 38.3,
-   "fall_pst": -27.1
+   "fall_pst": -26.8
   }
  ],
  "d_detalj": {
-  "D_aksjer": 44.5,
+  "D_aksjer": 44.8,
   "tema": null,
   "tema_D": null,
   "tema_navn": null,
   "n": 4,
   "spredning": [
-   32.6,
-   52.7
+   31.8,
+   54.7
   ]
  },
  "gate_detalj": {
@@ -3163,8 +3163,8 @@
  },
  "miners": {
   "regime": {
-   "mnd": "2026-09",
-   "gull_6m_pst": -11.1,
+   "mnd": "2026-10",
+   "gull_6m_pst": -13.0,
    "regime": "fallende"
   },
   "signal": null,
