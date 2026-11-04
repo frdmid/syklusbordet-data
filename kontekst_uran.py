@@ -15,6 +15,18 @@
 # naermeste kontrakt, ikke nest naermeste; forskjellen er liten, og
 # kontrollen bruker median over maaneder.
 #
+# KILDE FRA 04.11.2026: UX=F hos Yahoo sto stille fra 2026-10-22 (kontrakten
+# handles sjelden, og Yahoo oppdaterer da ikke), og ukeraden falt bort. Det
+# hadde skjedd foer. Naa brukes Sprott Physical Uranium Trust foerst: Sprott
+# verdsetter beholdningen daglig til en sammensatt spotpris (TradeTech, UxC,
+# S&P Platts og Numerco), og spot = markedsverdien av uranet delt paa pund
+# (sprott.com/api/FinancialData/v1/BullionCalculatorData, samme kall som
+# fondets egen side gjoer; ingen konto). Sammenlignet 04.11.2026: Sprott
+# 92,01 per 3. november, Cameco 91,55 for oktober, UX=F 88,5 per 22. oktober.
+# Yahoo brukes bare hvis Sprott ikke svarer. Fra 2026-11 er raden altsaa
+# spot, ikke futures; kontrollen i uran_kilde.py sammenligner med Camecos spot
+# og blir ikke daarligere av det.
+#
 # I tillegg (19.10.2026) skrives uran_kontrakt.json: spot og langsiktig
 # kontraktspris fra Camecos side, forskjellen (spot / kontrakt - 1) med
 # persentil mot egen historikk fra 1996, og de siste 60 maanedene til
@@ -37,7 +49,55 @@ UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                     "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"}
 
 
-def siste_notering():
+SPROTT = "https://sprott.com/api/FinancialData/v1/BullionCalculatorData"
+
+
+def sprott_spot(forrige=None):
+    """Spot fra Sprott Physical Uranium Trust: markedsverdi av uranet / pund.
+    Fondene ligger i fast rekkefoelge (gull, soelv, gull og soelv, PSLV-par,
+    uran, kobber); fondets egen side leser uran som nummer 4, saa det gjoer vi
+    ogsaa. Vakter: 20 til 300 USD per pund, minst 20 millioner pund, og
+    hoeyst 40 % fra forrige rad i fila, saa et skifte i rekkefoelgen gir feil
+    i stedet for soelvprisen."""
+    for i in range(4):
+        try:
+            r = requests.get(SPROTT, headers=UA, timeout=40)
+            d = r.json()
+            if isinstance(d, str):
+                d = json.loads(d)
+            x = d[4]
+            lbs, verdi = x.get("totalOunces1"), x.get("totalMarketValue")
+            pris = verdi / lbs
+            if not (lbs > 2e7 and 20 < pris < 300 and not x.get("totalOunces2")):
+                raise ValueError(f"uventet post i Sprott-data: {round(pris, 2)}")
+            if forrige and abs(pris / forrige - 1) > 0.4:
+                raise ValueError(f"Sprott {round(pris, 2)} mot forrige {forrige}")
+            return round(pris, 2), dt.date.fromisoformat(x["dateTimeStamp"][:10])
+        except ValueError:
+            raise
+        except Exception:
+            pass
+        time.sleep(2 ** (i + 1))
+    raise RuntimeError("Sprott ga ingen uranpris")
+
+
+def siste_notering(forrige=None):
+    """Sprott foerst, Yahoo (UX=F) hvis Sprott ikke svarer eller er eldre."""
+    kand = []
+    try:
+        kand.append(sprott_spot(forrige))
+    except Exception:
+        pass
+    try:
+        kand.append(yahoo_notering())
+    except Exception:
+        pass
+    if not kand:
+        raise RuntimeError("verken Sprott eller Yahoo ga uranpris")
+    return max(kand, key=lambda x: x[1])      # nyeste; Sprott vinner ved lik dato
+
+
+def yahoo_notering():
     for i in range(4):
         try:
             r = requests.get(f"https://query1.finance.yahoo.com/v8/finance/chart/{SYM}",
@@ -123,12 +183,16 @@ def kjor(lager, note=print):
     except Exception as e:
         note(f"   kontekst {KFIL} feilet: {type(e).__name__}: {str(e)[:80]}")
     try:
-        pris, dato = siste_notering()
-        if (dt.date.today() - dato).days > 10:
-            raise RuntimeError(f"notering fra {dato} er for gammel")
         t, sha = lager.les(FIL)
         if t is None:
             raise RuntimeError(f"{FIL} finnes ikke")
+        try:
+            forrige = float(t.strip().splitlines()[-1].split(",")[1])
+        except Exception:
+            forrige = None
+        pris, dato = siste_notering(forrige)
+        if (dt.date.today() - dato).days > 10:
+            raise RuntimeError(f"notering fra {dato} er for gammel")
         ny = oppdater(t, pris, dato)
         if ny != t:
             lager.erstatt(FIL, ny, sha)

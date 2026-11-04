@@ -9,6 +9,24 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 04.11.2026 12:50, Claude Code
+
+Uranprisen i uran_futures_uke.csv falt bort igjen (kontekst_uran feilet i dag:
+UX=F hos Yahoo har stått på 88,5 siden 22.10, kontrakten handles sjelden). Ny
+hovedkilde i `kontekst_uran.py`: Sprott Physical Uranium Trust, spot =
+markedsverdien av uranet delt på pund (sprott.com/api/FinancialData/v1/
+BullionCalculatorData, samme kall som fondets egen side; ingen konto; CME ble
+prøvd, men blokkerer og forbyr skraping). Sprott er en sammensatt spotpris
+(TradeTech, UxC, Platts, Numerco), daglig. 04.11: Sprott 92,01 per 3.11,
+Cameco 91,55 for oktober. Yahoo er reserve; den nyeste av de to brukes, Sprott
+ved lik dato. Vakter: post nummer 4 i Sprott-dataene (som siden selv bruker),
+20 til 300 USD per pund, minst 20 millioner pund, høyst 40 % fra forrige rad.
+Fra 2026-11 er raden altså spot, ikke futures; kontrollen i uran_kilde.py
+sammenligner med Camecos spot. Ukens rad 2026-11-01 lagt inn for hånd nå
+(92,01); hullet 2026-10-25 fylles ikke.
+Filer: `kontekst_uran.py`, `uran_futures_uke.csv`.
+For Cowork: ingenting å gjøre.
+
 ### 03.11.2026 15:57, Claude Code
 
 USD/NOK i makroregimer (Frodes bestilling: guide eller tidlig varsel for USD
