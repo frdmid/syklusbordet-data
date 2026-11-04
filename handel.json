@@ -1,7 +1,7 @@
 {
  "id": "handel",
- "oppdatert": "2026-11-03",
- "mnd": "2026-09",
+ "oppdatert": "2026-11-04",
+ "mnd": "2026-10",
  "evidens": {
   "nivaa": {
    "sterk": "holdt kravene satt før kjøring, og ikke motsagt senere",
@@ -58,18 +58,18 @@
  },
  "liste": [
   {
-   "id": "henryhub",
-   "navn": "Naturgass US (Henry Hub)",
-   "A": 87.1,
-   "Ad": 53.9,
-   "Ar": 67.5,
-   "D": 14.3,
+   "id": "jernmalm",
+   "navn": "Jernmalm 62% Fe",
+   "A": 84.7,
+   "Ad": 70.8,
+   "Ar": 91.7,
+   "D": 74.0,
    "gate": "aapen",
    "trend": "nei",
    "observasjon": false,
-   "avstand": 26.1,
+   "avstand": 9.2,
    "mangler": [
-    "A detrendet 53,9 (mangler 26,1)"
+    "A detrendet 70,8 (mangler 9,2)"
    ],
    "merknad": [],
    "signaler": [
@@ -80,37 +80,63 @@
    ]
   },
   {
-   "id": "jernmalm",
-   "navn": "Jernmalm 62% Fe",
-   "A": 79.1,
-   "Ad": 61.2,
-   "Ar": 82.5,
-   "D": 71.5,
+   "id": "henryhub",
+   "navn": "Naturgass US (Henry Hub)",
+   "A": 87.1,
+   "Ad": 55.5,
+   "Ar": 67.5,
+   "D": 17.3,
    "gate": "aapen",
    "trend": "nei",
    "observasjon": false,
-   "avstand": 19.7,
+   "avstand": 24.5,
    "mangler": [
-    "A rå 79,1 (mangler 0,9)",
-    "A detrendet 61,2 (mangler 18,8)"
+    "A detrendet 55,5 (mangler 24,5)"
    ],
    "merknad": [],
-   "signaler": []
+   "signaler": [
+    {
+     "id": "oppsikt",
+     "tilstand": "watch"
+    }
+   ]
+  },
+  {
+   "id": "gold",
+   "navn": "Gull",
+   "A": 1.8,
+   "Ad": 4.8,
+   "Ar": 10.0,
+   "D": 50.8,
+   "gate": "uaktuell",
+   "trend": "nei",
+   "observasjon": false,
+   "avstand": 153.4,
+   "mangler": [
+    "A rå 1,8 (mangler 78,2)",
+    "A detrendet 4,8 (mangler 75,2)"
+   ],
+   "merknad": [],
+   "signaler": [
+    {
+     "id": "challenger_gull_begge_v1",
+     "tilstand": "watch"
+    }
+   ]
   },
   {
    "id": "nikkel",
    "navn": "Nikkel",
-   "A": 62.7,
-   "Ad": 73.1,
-   "Ar": 70.0,
-   "D": 13.1,
+   "A": 71.7,
+   "Ad": 80.8,
+   "Ar": 87.5,
+   "D": 16.7,
    "gate": "aapen",
-   "trend": "begynnende",
+   "trend": "nei",
    "observasjon": false,
-   "avstand": 24.2,
+   "avstand": 8.3,
    "mangler": [
-    "A rå 62,7 (mangler 17,3)",
-    "A detrendet 73,1 (mangler 6,9)"
+    "A rå 71,7 (mangler 8,3)"
    ],
    "merknad": [],
    "signaler": []
@@ -118,17 +144,17 @@
   {
    "id": "bly",
    "navn": "Bly",
-   "A": 64.4,
-   "Ad": 61.8,
-   "Ar": 97.5,
-   "D": 13.1,
+   "A": 66.0,
+   "Ad": 62.8,
+   "Ar": 98.3,
+   "D": 16.5,
    "gate": "aapen",
    "trend": "nei",
    "observasjon": false,
-   "avstand": 33.8,
+   "avstand": 31.2,
    "mangler": [
-    "A rå 64,4 (mangler 15,6)",
-    "A detrendet 61,8 (mangler 18,2)"
+    "A rå 66,0 (mangler 14,0)",
+    "A detrendet 62,8 (mangler 17,2)"
    ],
    "merknad": [],
    "signaler": []
@@ -136,35 +162,17 @@
   {
    "id": "kull",
    "navn": "Termisk kull (Australia)",
-   "A": 22.4,
-   "Ad": 65.7,
-   "Ar": 32.5,
-   "D": 3.0,
+   "A": 20.2,
+   "Ad": 63.7,
+   "Ar": 30.8,
+   "D": 8.8,
    "gate": "aapen",
    "trend": "bekreftet",
    "observasjon": false,
-   "avstand": 71.9,
+   "avstand": 76.1,
    "mangler": [
-    "A rå 22,4 (mangler 57,6)",
-    "A detrendet 65,7 (mangler 14,3)"
-   ],
-   "merknad": [],
-   "signaler": []
-  },
-  {
-   "id": "wti",
-   "navn": "Råolje (WTI)",
-   "A": 24.7,
-   "Ad": 50.3,
-   "Ar": 11.7,
-   "D": 0.0,
-   "gate": "aapen",
-   "trend": "bekreftet",
-   "observasjon": false,
-   "avstand": 85.0,
-   "mangler": [
-    "A rå 24,7 (mangler 55,3)",
-    "A detrendet 50,3 (mangler 29,7)"
+    "A rå 20,2 (mangler 59,8)",
+    "A detrendet 63,7 (mangler 16,3)"
    ],
    "merknad": [],
    "signaler": []
@@ -172,35 +180,35 @@
   {
    "id": "palmeolje",
    "navn": "Palmeolje",
-   "A": 56.7,
-   "Ad": 14.0,
-   "Ar": 20.8,
-   "D": 11.9,
+   "A": 61.1,
+   "Ad": 17.6,
+   "Ar": 30.8,
+   "D": 16.3,
    "gate": "aapen",
-   "trend": "bekreftet",
+   "trend": "begynnende",
    "observasjon": false,
-   "avstand": 89.3,
+   "avstand": 81.3,
    "mangler": [
-    "A rå 56,7 (mangler 23,3)",
-    "A detrendet 14,0 (mangler 66,0)"
+    "A rå 61,1 (mangler 18,9)",
+    "A detrendet 17,6 (mangler 62,4)"
    ],
    "merknad": [],
    "signaler": []
   },
   {
-   "id": "brent",
-   "navn": "Råolje (Brent)",
-   "A": 17.8,
-   "Ad": 41.4,
-   "Ar": 6.7,
-   "D": 0.0,
+   "id": "wti",
+   "navn": "Råolje (WTI)",
+   "A": 24.9,
+   "Ad": 51.3,
+   "Ar": 12.5,
+   "D": 2.0,
    "gate": "aapen",
    "trend": "bekreftet",
    "observasjon": false,
-   "avstand": 100.8,
+   "avstand": 83.8,
    "mangler": [
-    "A rå 17,8 (mangler 62,2)",
-    "A detrendet 41,4 (mangler 38,6)"
+    "A rå 24,9 (mangler 55,1)",
+    "A detrendet 51,3 (mangler 28,7)"
    ],
    "merknad": [],
    "signaler": []
@@ -208,17 +216,35 @@
   {
    "id": "aluminium",
    "navn": "Aluminium",
-   "A": 39.6,
-   "Ad": 10.3,
-   "Ar": 8.3,
-   "D": 44.7,
+   "A": 51.6,
+   "Ad": 17.1,
+   "Ar": 17.5,
+   "D": 48.2,
    "gate": "aapen",
    "trend": "begynnende",
    "observasjon": false,
-   "avstand": 110.1,
+   "avstand": 91.3,
    "mangler": [
-    "A rå 39,6 (mangler 40,4)",
-    "A detrendet 10,3 (mangler 69,7)"
+    "A rå 51,6 (mangler 28,4)",
+    "A detrendet 17,1 (mangler 62,9)"
+   ],
+   "merknad": [],
+   "signaler": []
+  },
+  {
+   "id": "brent",
+   "navn": "Råolje (Brent)",
+   "A": 18.0,
+   "Ad": 42.1,
+   "Ar": 6.7,
+   "D": 2.4,
+   "gate": "aapen",
+   "trend": "bekreftet",
+   "observasjon": false,
+   "avstand": 99.9,
+   "mangler": [
+    "A rå 18,0 (mangler 62,0)",
+    "A detrendet 42,1 (mangler 37,9)"
    ],
    "merknad": [],
    "signaler": []
@@ -226,17 +252,17 @@
   {
    "id": "uran",
    "navn": "Uran",
-   "A": 8.4,
-   "Ad": 26.9,
-   "Ar": 8.3,
-   "D": 28.9,
+   "A": 7.1,
+   "Ad": 26.2,
+   "Ar": 5.8,
+   "D": 31.4,
    "gate": "aapen",
    "trend": "bekreftet",
    "observasjon": false,
-   "avstand": 124.7,
+   "avstand": 126.7,
    "mangler": [
-    "A rå 8,4 (mangler 71,6)",
-    "A detrendet 26,9 (mangler 53,1)"
+    "A rå 7,1 (mangler 72,9)",
+    "A detrendet 26,2 (mangler 53,8)"
    ],
    "merknad": [],
    "signaler": []
@@ -244,17 +270,17 @@
   {
    "id": "sink",
    "navn": "Sink",
-   "A": 12.9,
-   "Ad": 12.9,
-   "Ar": 16.7,
-   "D": 16.4,
+   "A": 15.3,
+   "Ad": 15.3,
+   "Ar": 22.5,
+   "D": 25.8,
    "gate": "aapen",
    "trend": "bekreftet",
    "observasjon": false,
-   "avstand": 134.2,
+   "avstand": 129.4,
    "mangler": [
-    "A rå 12,9 (mangler 67,1)",
-    "A detrendet 12,9 (mangler 67,1)"
+    "A rå 15,3 (mangler 64,7)",
+    "A detrendet 15,3 (mangler 64,7)"
    ],
    "merknad": [],
    "signaler": []
@@ -262,17 +288,17 @@
   {
    "id": "kakao",
    "navn": "Kakao",
-   "A": 18.4,
-   "Ad": 7.0,
-   "Ar": 19.2,
-   "D": 79.3,
+   "A": 19.9,
+   "Ad": 8.2,
+   "Ar": 20.8,
+   "D": 77.8,
    "gate": "aapen",
    "trend": "begynnende",
    "observasjon": false,
-   "avstand": 134.6,
+   "avstand": 131.9,
    "mangler": [
-    "A rå 18,4 (mangler 61,6)",
-    "A detrendet 7,0 (mangler 73,0)"
+    "A rå 19,9 (mangler 60,1)",
+    "A detrendet 8,2 (mangler 71,8)"
    ],
    "merknad": [],
    "signaler": []
@@ -280,17 +306,17 @@
   {
    "id": "ttf",
    "navn": "Naturgass Europa",
-   "A": 5.0,
-   "Ad": 8.1,
-   "Ar": 13.3,
-   "D": 0.0,
+   "A": 4.7,
+   "Ad": 7.1,
+   "Ar": 12.5,
+   "D": 5.0,
    "gate": "aapen",
    "trend": "bekreftet",
    "observasjon": false,
-   "avstand": 146.9,
+   "avstand": 148.2,
    "mangler": [
-    "A rå 5,0 (mangler 75,0)",
-    "A detrendet 8,1 (mangler 71,9)"
+    "A rå 4,7 (mangler 75,3)",
+    "A detrendet 7,1 (mangler 72,9)"
    ],
    "merknad": [],
    "signaler": []
@@ -298,17 +324,17 @@
   {
    "id": "tinn",
    "navn": "Tinn",
-   "A": 7.5,
-   "Ad": 0.1,
-   "Ar": 0.8,
-   "D": 10.3,
+   "A": 9.0,
+   "Ad": 1.7,
+   "Ar": 5.0,
+   "D": 16.7,
    "gate": "aapen",
-   "trend": "bekreftet",
+   "trend": "begynnende",
    "observasjon": false,
-   "avstand": 152.4,
+   "avstand": 149.3,
    "mangler": [
-    "A rå 7,5 (mangler 72,5)",
-    "A detrendet 0,1 (mangler 79,9)"
+    "A rå 9,0 (mangler 71,0)",
+    "A detrendet 1,7 (mangler 78,3)"
    ],
    "merknad": [],
    "signaler": []
@@ -317,34 +343,16 @@
    "id": "kobber",
    "navn": "Kobber",
    "A": 4.2,
-   "Ad": 2.7,
+   "Ad": 3.0,
    "Ar": 0.0,
-   "D": 14.0,
+   "D": 19.4,
    "gate": "aapen",
    "trend": "bekreftet",
    "observasjon": false,
-   "avstand": 153.1,
+   "avstand": 152.8,
    "mangler": [
     "A rå 4,2 (mangler 75,8)",
-    "A detrendet 2,7 (mangler 77,3)"
-   ],
-   "merknad": [],
-   "signaler": []
-  },
-  {
-   "id": "gold",
-   "navn": "Gull",
-   "A": 1.1,
-   "Ad": 3.6,
-   "Ar": 5.8,
-   "D": 46.8,
-   "gate": "uaktuell",
-   "trend": "begynnende",
-   "observasjon": false,
-   "avstand": 155.3,
-   "mangler": [
-    "A rå 1,1 (mangler 78,9)",
-    "A detrendet 3,6 (mangler 76,4)"
+    "A detrendet 3,0 (mangler 77,0)"
    ],
    "merknad": [],
    "signaler": []
@@ -352,16 +360,16 @@
   {
    "id": "oljeservice",
    "navn": "Oljeservice (boring)",
-   "A": 47.8,
-   "Ad": 99.2,
-   "Ar": 81.7,
-   "D": 5.1,
+   "A": 48.2,
+   "Ad": 99.8,
+   "Ar": 82.5,
+   "D": 10.0,
    "gate": "aapen",
    "trend": "nei",
    "observasjon": true,
-   "avstand": 32.2,
+   "avstand": 31.8,
    "mangler": [
-    "A rå 47,8 (mangler 32,2)"
+    "A rå 48,2 (mangler 31,8)"
    ],
    "merknad": [
     "observasjon, Championen har ikke flagg her"
@@ -371,17 +379,17 @@
   {
    "id": "laks",
    "navn": "Laks (sesongjustert)",
-   "A": 45.8,
-   "Ad": 59.4,
+   "A": 46.4,
+   "Ad": 60.0,
    "Ar": 56.7,
-   "D": 47.2,
+   "D": 46.5,
    "gate": "ukjent",
    "trend": "begynnende",
    "observasjon": true,
-   "avstand": 54.8,
+   "avstand": 53.6,
    "mangler": [
-    "A rå 45,8 (mangler 34,2)",
-    "A detrendet 59,4 (mangler 20,6)"
+    "A rå 46,4 (mangler 33,6)",
+    "A detrendet 60,0 (mangler 20,0)"
    ],
    "merknad": [
     "observasjon, Championen har ikke flagg her"
@@ -1293,7 +1301,7 @@
    {
     "t": "2022-07",
     "flagg": 2090.63,
-    "bred": 1493.97,
+    "bred": 1493.98,
     "n": 1,
     "world": 379.43,
     "osebx": 265.95
@@ -1396,7 +1404,7 @@
    },
    {
     "t": "2023-08",
-    "flagg": 2736.87,
+    "flagg": 2736.88,
     "bred": 1878.19,
     "n": 1,
     "world": 462.62,
@@ -1708,11 +1716,11 @@
    },
    {
     "t": "2026-11",
-    "flagg": 3967.96,
-    "bred": 2723.02,
+    "flagg": 3990.97,
+    "bred": 2738.82,
     "n": 0,
-    "world": 684.7,
-    "osebx": 446.33
+    "world": 688.67,
+    "osebx": 447.58
    }
   ],
   "posisjoner": [
@@ -2110,9 +2118,9 @@
    }
   ],
   "aarlig": {
-   "flagg": 30.9,
+   "flagg": 31.0,
    "bred": 27.4,
-   "world": 15.1,
+   "world": 15.2,
    "osebx": 11.6
   }
  }
