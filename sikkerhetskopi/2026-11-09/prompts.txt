@@ -1,0 +1,126 @@
+PROMPTER FOR Å GJENSKAPE SYKLUSBORDET I EN NY CLAUDE-KONTO
+Laget 09.11.2026 (erstatter kopien 23.10.2026). Bruk dem i rekkefølge.
+Lim inn teksten mellom strekene. Alt ligger også i Notion-siden
+«SB handover mappe», mappen «Sikkerhetskopi 2026-11-09».
+
+Det som overlever uansett: repoet frdmid/syklusbordet-data på GitHub (kode,
+data, Shadow-OOS, sonder, notater, denne sikkerhetskopien) og GitHub
+Actions, som henter data hver onsdag uten Claude. Det som må lages på nytt
+i den nye kontoen: dashbordet (artifact med database), onsdagsrutinen,
+minnet, koblingene og prosjektet «Handelsalgoritme».
+
+======================================================================
+FØR DU BEGYNNER (gjør selv, ingen prompt)
+======================================================================
+1. Før overgangen: eksporter dokumentene i claude.ai-prosjektet
+   «Handelsalgoritme» (blant annet claude/syklusbordet-ukelogg.md,
+   syklusbordet-status.md og bordet-metodikk.md). De ligger bare i
+   claude.ai og er ikke med i denne kopien.
+2. Før overgangen: eksporter egne skills fra claude.ai (Innstillinger,
+   Skills) hvis du vil beholde dem.
+3. Last ned fra Notion-siden «SB handover mappe», mappen
+   «Sikkerhetskopi 2026-11-09»: syklusbordet_privat_2026-11-09.zip og
+   syklusbordet_database_2026-11-09.zip. (Alt annet ligger også i repoet.)
+4. I den nye kontoen: installer Claude-appen, logg inn, og koble til
+   Notion (og Google Drive m.m. etter behov) under Koblinger.
+5. Sørg for at Git (GitHub Desktop eller GitHub CLI) og Python (py) finnes
+   på maskinen, og at du er logget inn på GitHub. GitHub-repoet og
+   Actions eies av GitHub-kontoen frdmid og påvirkes ikke av Claude-kontoen.
+
+======================================================================
+PROMPT 1. Claude Code: hent repoet og les deg opp
+(Claude Code, ny økt i en tom mappe, f.eks. C:\Users\<deg>\kode)
+----------------------------------------------------------------------
+Jeg flytter prosjektet Syklusbordet til en ny Claude-konto. Klon repoet
+https://github.com/frdmid/syklusbordet-data til
+C:\Users\<deg>\kode\syklusbordet-data (ikke i OneDrive). Python startes
+med `py`. Les CLAUDE.md, notater/LOGG.md (nyeste øverst),
+notater/OVERLEVERING.md og sikkerhetskopi/2026-11-09/README.md.
+Kontroller sjekksummene i sikkerhetskopi/2026-11-09/sha256.txt. Pakk ut
+syklusbordet_privat_2026-11-09.zip (jeg legger den i Nedlastinger) til
+data_privat/ i repoet; den mappen er ignorert av git og skal aldri
+committes, fordi repoet er offentlig og IAI-dataene bare er til personlig
+bruk. Legg minnefilene i sikkerhetskopi/2026-11-09/minne/ inn som minne
+for prosjektet. Oppsummer kort hva prosjektet er og hva som må
+gjenskapes, uten å endre noe ennå.
+----------------------------------------------------------------------
+
+======================================================================
+PROMPT 2. Claude Code: gjenskap dashbordet og databasen
+----------------------------------------------------------------------
+Publiser sikkerhetskopi/2026-11-09/dashbord_v77_til_publisering.html som
+en ny artifact med tittelen Syklusbordet og kapabiliteten db (den skal
+ha sin egen database). Kontroller etter publisering at fila begynner med
+<title>Syklusbordet</title> og at :root{ --ground:#f4f4f1 står øverst.
+Skriv så alle JSON-filene i sikkerhetskopi/2026-11-09/database/ til den
+nye artifactens database med ArtifactData (batch): samlingene segments
+(26, med miners), marked (vix, dollar, endringer, helse, gass_b,
+laks_biomasse, regime, uran_kontrakt, handel), logg og meta, dokument-id
+lik filnavnet uten .json. Skriv i tillegg marked/alu_tilbud fra
+database/marked/alu_tilbud.json i syklusbordet_database_2026-11-09.zip
+(Nedlastinger); den ligger ikke i repoet. Åpne dashbordet og kontroller at
+handlingslisten, regimeboksen, panelene og korrelasjonsmatrisen (med
+USD/NOK) viser tall. Oppdater den nye adressen i notater/OVERLEVERING.md,
+før det i notater/LOGG.md (norsk tid, i samme commit) og push.
+----------------------------------------------------------------------
+
+======================================================================
+PROMPT 3. Claude Code: gjenskap onsdagsrutinen
+----------------------------------------------------------------------
+Lag onsdagsrutinen på nytt som en rutine i skyen (RemoteTrigger create)
+med navnet «Syklusbordet: oppdater dashbordet fra GitHub», tidsplanen
+CRON_TZ=Europe/Oslo 15 10,13 * * 3 (onsdag 10:15 og 13:15 norsk tid),
+den nyeste Opus-modellen, og teksten i
+sikkerhetskopi/2026-11-09/rutine/onsdagsrutine_prompt.txt (stegene 1 til
+8 med 6b til 6l), men med den nye artifact-adressen i stedet for
+https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF. Den trenger tilgang til
+artifact-databasen og til claude.ai-prosjektet «Handelsalgoritme» for
+ukeloggen (punkt 8 i teksten). Innstillingene står i
+rutine/onsdagsrutine_meta.json. Les rutinen tilbake og kontroller at
+teksten er lik fila. Start den ikke nå; første kjøring er neste onsdag.
+Før i loggen og oppdater overleveringen.
+----------------------------------------------------------------------
+
+======================================================================
+PROMPT 4. Cowork (eller claude.ai): gjenskap prosjektet og ukeloggen
+----------------------------------------------------------------------
+Lag et prosjekt som heter «Handelsalgoritme» og legg inn dokumentene jeg
+eksporterte fra det gamle prosjektet (claude/syklusbordet-ukelogg.md,
+syklusbordet-status.md, bordet-metodikk.md og de andre). Ukeloggen skal
+ligge på stien claude/syklusbordet-ukelogg.md, fordi onsdagsrutinen
+skriver dit. Les så notater/OVERLEVERING.md i repoet frdmid/syklusbordet-data
+og bekreft hvem som eier hva: Cowork eier c_manuell.* og b_manuell.*, og
+endrer .github/workflows/ og CLAUDE.md når Frode ber om det; Claude Code
+gjør resten. Den månedlige IAI-oppdateringen (marked/alu_tilbud fra
+data_privat/ med alu_tilbud_privat.py) gjøres for hånd.
+----------------------------------------------------------------------
+
+======================================================================
+PROMPT 5. Claude Code: oppdater Notion og test en onsdag
+----------------------------------------------------------------------
+Oppdater Notion-siden «SB handover mappe» med den nye dashbordadressen
+og den nye rutinen. Sett deretter opp en lokal engangsoppgave til
+førstkommende onsdag kl. 13:30 norsk tid som sjekker at GitHub-
+innhentingen 08:48 gikk (start den med `gh workflow run ukentlig.yml` hvis
+den ikke gikk), at rutinen 10:15 skrev til databasen og at rutinen 13:15
+ikke skrev noe, at Shadow-OOS har Champion og seks Challengere ok i
+shadow/run_manifest.csv, og at handel.json og uran_futures_uke.csv fikk
+ny rad. Fører resultatet i loggen. Bruk
+sikkerhetskopi/2026-11-09/planlagte_oppgaver/syklusbordet-sjekk-2810.md
+som mal, med nye datoer og adresser.
+----------------------------------------------------------------------
+
+======================================================================
+REGLER SOM MÅ MED I DEN NYE KONTOEN (står i CLAUDE.md, OVERLEVERING og minnet)
+======================================================================
+- Skriv på norsk, ingen tankestrek, alle klokkeslett i norsk tid (aldri UTC).
+- Felles logg i notater/LOGG.md, nyeste øverst, i samme commit som endringen.
+- Ingen økt oppretter kontoer eller melder deg på tjenester. Foreslå, ikke
+  etabler.
+- Champion i Shadow-OOS endres aldri; ny regel blir en Challenger med egen
+  startdato (onsdag etter registrering).
+- Sonder: kriterier skrives i toppen før kjøring og flyttes ikke etterpå;
+  avgjøres på eldre data, nyere vises.
+- Repoet er offentlig: IAI-data bare i data_privat/ og det private dashbordet.
+- Beskjed i prosjektchatten når noe må avgjøres; ingen shadow-status i rutinen.
+- Nedlastinger krever tillatelse. Sikkerhetskopi = Notion og GitHub.

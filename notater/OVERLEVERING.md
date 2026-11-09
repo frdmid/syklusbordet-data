@@ -22,6 +22,15 @@ segment. Frode bruker det til å se etter bunner. Skårene:
 Alt som er testet, står med test og resultat i toppen av skriptet og i
 loggen. Regler og terskler settes før kjøring og flyttes ikke etterpå.
 
+## Sikkerhetskopi og overlevering til ny konto
+
+Notion-siden «SB handover mappe» (tidligere «Syklusbordet: prosjektbeskrivelse
+og sikkerhetskopi») har alt som trengs for å fortsette i en ny Claude-konto.
+Siste kopi: mappen «Sikkerhetskopi 2026-11-09» (repoet i zip, databasen med
+IAI-dokumentet, rutinen, minnet, de private dataene, dashbordet v77 og
+`prompts.txt`). Samme kopi uten private data: `sikkerhetskopi/2026-11-09/`.
+Start med `prompts.txt`.
+
 ## Hvem eier hva
 
 - **Cowork-økten** eier `c_manuell.json`, `c_manuell.py`, `b_manuell.json` og

@@ -1,0 +1,2127 @@
+{
+  "evidens": {
+    "nivaa": {
+      "middels": "holdt én gang, men ikke gjentatt; nær; eller sterk bare etter 2015",
+      "sterk": "holdt kravene satt før kjøring, og ikke motsagt senere",
+      "svak": "holdt ikke, eller ikke testet som regel"
+    },
+    "signaler": {
+      "bunnsone": {
+        "grad": "middels",
+        "grunn": "Råvaren har steget 6,2 % mot −1,5 % ellers over 12 mnd (1965 til 2014) og klarte alle krav unntatt korreksjonen for mange tester. Papirene har gitt +25 % i median over 24 mnd, men under markedet, og regelen holdt ikke før 2011.",
+        "navn": "Championens bunnsone"
+      },
+      "challenger_bred_nedgang_v1": {
+        "grad": "middels",
+        "grunn": "+33 % mot −3 % over 24 mnd (15 makroklynger fra 1995, holdt), men valgt etter at regimesonden var kjent og ikke gjentatt på råvarens pris (sonden 03.11.2026).",
+        "navn": "Bunnsone i bred nedgang"
+      },
+      "challenger_gass_rigger_v1": {
+        "grad": "svak",
+        "grunn": "Riggene varsler produksjonen, men flagget er ikke testet mot papirene.",
+        "navn": "Henry Hub, bunnsone og færre gassrigger"
+      },
+      "challenger_gull_begge_v1": {
+        "grad": "middels",
+        "grunn": "Nær før 2015 (p 0,048 over 3 mnd, men måneder med bare S1 ga like mye), sterk etter 2015 (+17,5 % mot −6,0 % over 6 mnd).",
+        "navn": "Gullgruver BEGGE"
+      },
+      "challenger_kull_ar95_v1": {
+        "grad": "svak",
+        "grunn": "To episoder, terskelen valgt etter å ha sett dataene, ikke testet som regel.",
+        "navn": "Kull, rullende A 95"
+      },
+      "challenger_laks_tilbud_v1": {
+        "grad": "svak",
+        "grunn": "Delene er sett i data, flagget er ikke testet mot papirene.",
+        "navn": "Laks, lav pris og krympende biomasse"
+      },
+      "challenger_olje_rigger_v1": {
+        "grad": "svak",
+        "grunn": "Riggene varsler produksjonen, men flagget er ikke testet mot papirene.",
+        "navn": "Olje, bunnsone og færre oljerigger"
+      },
+      "d95": {
+        "grad": "svak",
+        "grunn": "Holdt ikke i sonden d95. Frodes eget valg.",
+        "navn": "Parallelt signal d95 (detrendet A 95)"
+      },
+      "oppsikt": {
+        "grad": "svak",
+        "grunn": "Rå A alene kunne ikke skilles fra tilfeldige kjøpsdatoer (2011 til 2026).",
+        "navn": "Oppsikt (bare A rå over 80)"
+      }
+    }
+  },
+  "id": "handel",
+  "liste": [
+    {
+      "A": 84.7,
+      "Ad": 70.8,
+      "Ar": 91.7,
+      "D": 74,
+      "avstand": 9.2,
+      "gate": "aapen",
+      "id": "jernmalm",
+      "mangler": [
+        "A detrendet 70,8 (mangler 9,2)"
+      ],
+      "merknad": [],
+      "navn": "Jernmalm 62% Fe",
+      "observasjon": false,
+      "signaler": [
+        {
+          "id": "oppsikt",
+          "tilstand": "watch"
+        }
+      ],
+      "trend": "nei"
+    },
+    {
+      "A": 87.1,
+      "Ad": 55.5,
+      "Ar": 67.5,
+      "D": 17.3,
+      "avstand": 24.5,
+      "gate": "aapen",
+      "id": "henryhub",
+      "mangler": [
+        "A detrendet 55,5 (mangler 24,5)"
+      ],
+      "merknad": [],
+      "navn": "Naturgass US (Henry Hub)",
+      "observasjon": false,
+      "signaler": [
+        {
+          "id": "oppsikt",
+          "tilstand": "watch"
+        }
+      ],
+      "trend": "nei"
+    },
+    {
+      "A": 1.8,
+      "Ad": 4.8,
+      "Ar": 10,
+      "D": 50.8,
+      "avstand": 153.4,
+      "gate": "uaktuell",
+      "id": "gold",
+      "mangler": [
+        "A rå 1,8 (mangler 78,2)",
+        "A detrendet 4,8 (mangler 75,2)"
+      ],
+      "merknad": [],
+      "navn": "Gull",
+      "observasjon": false,
+      "signaler": [
+        {
+          "id": "challenger_gull_begge_v1",
+          "tilstand": "watch"
+        }
+      ],
+      "trend": "nei"
+    },
+    {
+      "A": 71.7,
+      "Ad": 80.8,
+      "Ar": 87.5,
+      "D": 16.7,
+      "avstand": 8.3,
+      "gate": "aapen",
+      "id": "nikkel",
+      "mangler": [
+        "A rå 71,7 (mangler 8,3)"
+      ],
+      "merknad": [],
+      "navn": "Nikkel",
+      "observasjon": false,
+      "signaler": [],
+      "trend": "nei"
+    },
+    {
+      "A": 66,
+      "Ad": 62.8,
+      "Ar": 98.3,
+      "D": 16.5,
+      "avstand": 31.2,
+      "gate": "aapen",
+      "id": "bly",
+      "mangler": [
+        "A rå 66,0 (mangler 14,0)",
+        "A detrendet 62,8 (mangler 17,2)"
+      ],
+      "merknad": [],
+      "navn": "Bly",
+      "observasjon": false,
+      "signaler": [],
+      "trend": "nei"
+    },
+    {
+      "A": 20.2,
+      "Ad": 63.7,
+      "Ar": 30.8,
+      "D": 8.8,
+      "avstand": 76.1,
+      "gate": "aapen",
+      "id": "kull",
+      "mangler": [
+        "A rå 20,2 (mangler 59,8)",
+        "A detrendet 63,7 (mangler 16,3)"
+      ],
+      "merknad": [],
+      "navn": "Termisk kull (Australia)",
+      "observasjon": false,
+      "signaler": [],
+      "trend": "bekreftet"
+    },
+    {
+      "A": 61.1,
+      "Ad": 17.6,
+      "Ar": 30.8,
+      "D": 16.3,
+      "avstand": 81.3,
+      "gate": "aapen",
+      "id": "palmeolje",
+      "mangler": [
+        "A rå 61,1 (mangler 18,9)",
+        "A detrendet 17,6 (mangler 62,4)"
+      ],
+      "merknad": [],
+      "navn": "Palmeolje",
+      "observasjon": false,
+      "signaler": [],
+      "trend": "begynnende"
+    },
+    {
+      "A": 24.9,
+      "Ad": 51.3,
+      "Ar": 12.5,
+      "D": 2,
+      "avstand": 83.8,
+      "gate": "aapen",
+      "id": "wti",
+      "mangler": [
+        "A rå 24,9 (mangler 55,1)",
+        "A detrendet 51,3 (mangler 28,7)"
+      ],
+      "merknad": [],
+      "navn": "Råolje (WTI)",
+      "observasjon": false,
+      "signaler": [],
+      "trend": "bekreftet"
+    },
+    {
+      "A": 51.6,
+      "Ad": 17.1,
+      "Ar": 17.5,
+      "D": 48.2,
+      "avstand": 91.3,
+      "gate": "aapen",
+      "id": "aluminium",
+      "mangler": [
+        "A rå 51,6 (mangler 28,4)",
+        "A detrendet 17,1 (mangler 62,9)"
+      ],
+      "merknad": [],
+      "navn": "Aluminium",
+      "observasjon": false,
+      "signaler": [],
+      "trend": "begynnende"
+    },
+    {
+      "A": 18,
+      "Ad": 42.1,
+      "Ar": 6.7,
+      "D": 2.4,
+      "avstand": 99.9,
+      "gate": "aapen",
+      "id": "brent",
+      "mangler": [
+        "A rå 18,0 (mangler 62,0)",
+        "A detrendet 42,1 (mangler 37,9)"
+      ],
+      "merknad": [],
+      "navn": "Råolje (Brent)",
+      "observasjon": false,
+      "signaler": [],
+      "trend": "bekreftet"
+    },
+    {
+      "A": 7.1,
+      "Ad": 26.2,
+      "Ar": 5.8,
+      "D": 31.4,
+      "avstand": 126.7,
+      "gate": "aapen",
+      "id": "uran",
+      "mangler": [
+        "A rå 7,1 (mangler 72,9)",
+        "A detrendet 26,2 (mangler 53,8)"
+      ],
+      "merknad": [],
+      "navn": "Uran",
+      "observasjon": false,
+      "signaler": [],
+      "trend": "bekreftet"
+    },
+    {
+      "A": 15.3,
+      "Ad": 15.3,
+      "Ar": 22.5,
+      "D": 25.8,
+      "avstand": 129.4,
+      "gate": "aapen",
+      "id": "sink",
+      "mangler": [
+        "A rå 15,3 (mangler 64,7)",
+        "A detrendet 15,3 (mangler 64,7)"
+      ],
+      "merknad": [],
+      "navn": "Sink",
+      "observasjon": false,
+      "signaler": [],
+      "trend": "bekreftet"
+    },
+    {
+      "A": 19.9,
+      "Ad": 8.2,
+      "Ar": 20.8,
+      "D": 77.8,
+      "avstand": 131.9,
+      "gate": "aapen",
+      "id": "kakao",
+      "mangler": [
+        "A rå 19,9 (mangler 60,1)",
+        "A detrendet 8,2 (mangler 71,8)"
+      ],
+      "merknad": [],
+      "navn": "Kakao",
+      "observasjon": false,
+      "signaler": [],
+      "trend": "begynnende"
+    },
+    {
+      "A": 4.7,
+      "Ad": 7.1,
+      "Ar": 12.5,
+      "D": 5,
+      "avstand": 148.2,
+      "gate": "aapen",
+      "id": "ttf",
+      "mangler": [
+        "A rå 4,7 (mangler 75,3)",
+        "A detrendet 7,1 (mangler 72,9)"
+      ],
+      "merknad": [],
+      "navn": "Naturgass Europa",
+      "observasjon": false,
+      "signaler": [],
+      "trend": "bekreftet"
+    },
+    {
+      "A": 9,
+      "Ad": 1.7,
+      "Ar": 5,
+      "D": 16.7,
+      "avstand": 149.3,
+      "gate": "aapen",
+      "id": "tinn",
+      "mangler": [
+        "A rå 9,0 (mangler 71,0)",
+        "A detrendet 1,7 (mangler 78,3)"
+      ],
+      "merknad": [],
+      "navn": "Tinn",
+      "observasjon": false,
+      "signaler": [],
+      "trend": "begynnende"
+    },
+    {
+      "A": 4.2,
+      "Ad": 3,
+      "Ar": 0,
+      "D": 19.4,
+      "avstand": 152.8,
+      "gate": "aapen",
+      "id": "kobber",
+      "mangler": [
+        "A rå 4,2 (mangler 75,8)",
+        "A detrendet 3,0 (mangler 77,0)"
+      ],
+      "merknad": [],
+      "navn": "Kobber",
+      "observasjon": false,
+      "signaler": [],
+      "trend": "bekreftet"
+    },
+    {
+      "A": 48.2,
+      "Ad": 99.8,
+      "Ar": 82.5,
+      "D": 10,
+      "avstand": 31.8,
+      "gate": "aapen",
+      "id": "oljeservice",
+      "mangler": [
+        "A rå 48,2 (mangler 31,8)"
+      ],
+      "merknad": [
+        "observasjon, Championen har ikke flagg her"
+      ],
+      "navn": "Oljeservice (boring)",
+      "observasjon": true,
+      "signaler": [],
+      "trend": "nei"
+    },
+    {
+      "A": 46.4,
+      "Ad": 60,
+      "Ar": 56.7,
+      "D": 46.5,
+      "avstand": 53.6,
+      "gate": "ukjent",
+      "id": "laks",
+      "mangler": [
+        "A rå 46,4 (mangler 33,6)",
+        "A detrendet 60,0 (mangler 20,0)"
+      ],
+      "merknad": [
+        "observasjon, Championen har ikke flagg her"
+      ],
+      "navn": "Laks (sesongjustert)",
+      "observasjon": true,
+      "signaler": [],
+      "trend": "begynnende"
+    }
+  ],
+  "live": [],
+  "mnd": "2026-10",
+  "oppdatert": "2026-11-04",
+  "portefolje": {
+    "aarlig": {
+      "bred": 27.4,
+      "flagg": 31,
+      "osebx": 11.6,
+      "world": 15.2
+    },
+    "fra": "2013-03",
+    "posisjoner": [
+      {
+        "apen": false,
+        "avk": 27.9,
+        "inngang": "2011-12",
+        "navn": "Naturgass US (Henry Hub)",
+        "osebx": null,
+        "papirer": [
+          "BIR.TO",
+          "TOU.TO",
+          "EQT"
+        ],
+        "segment": "henryhub",
+        "utlop": "2013-12",
+        "variant": "alle",
+        "world": 49.4
+      },
+      {
+        "apen": false,
+        "avk": 27.9,
+        "inngang": "2011-12",
+        "navn": "Naturgass US (Henry Hub)",
+        "osebx": null,
+        "papirer": [
+          "BIR.TO",
+          "TOU.TO",
+          "EQT"
+        ],
+        "segment": "henryhub",
+        "utlop": "2013-12",
+        "variant": "bred",
+        "world": 49.4
+      },
+      {
+        "apen": false,
+        "avk": 7.5,
+        "inngang": "2014-12",
+        "navn": "Naturgass US (Henry Hub)",
+        "osebx": 18.7,
+        "papirer": [
+          "BIR.TO",
+          "TOU.TO",
+          "EQT"
+        ],
+        "segment": "henryhub",
+        "utlop": "2016-12",
+        "variant": "alle",
+        "world": 23.1
+      },
+      {
+        "apen": false,
+        "avk": 7.5,
+        "inngang": "2014-12",
+        "navn": "Naturgass US (Henry Hub)",
+        "osebx": 18.7,
+        "papirer": [
+          "BIR.TO",
+          "TOU.TO",
+          "EQT"
+        ],
+        "segment": "henryhub",
+        "utlop": "2016-12",
+        "variant": "bred",
+        "world": 23.1
+      },
+      {
+        "apen": false,
+        "avk": 80.8,
+        "inngang": "2014-12",
+        "navn": "Jernmalm 62% Fe",
+        "osebx": 18.7,
+        "papirer": [
+          "LIF.TO",
+          "VALE",
+          "CIA.TO"
+        ],
+        "segment": "jernmalm",
+        "utlop": "2016-12",
+        "variant": "alle",
+        "world": 23.1
+      },
+      {
+        "apen": false,
+        "avk": 80.8,
+        "inngang": "2014-12",
+        "navn": "Jernmalm 62% Fe",
+        "osebx": 18.7,
+        "papirer": [
+          "LIF.TO",
+          "VALE",
+          "CIA.TO"
+        ],
+        "segment": "jernmalm",
+        "utlop": "2016-12",
+        "variant": "bred",
+        "world": 23.1
+      },
+      {
+        "apen": false,
+        "avk": 167.8,
+        "inngang": "2015-10",
+        "navn": "Aluminium",
+        "osebx": 31.2,
+        "papirer": [
+          "NHY.OL",
+          "AA",
+          "CENX"
+        ],
+        "segment": "aluminium",
+        "utlop": "2017-10",
+        "variant": "alle",
+        "world": 18.7
+      },
+      {
+        "apen": false,
+        "avk": 167.8,
+        "inngang": "2015-10",
+        "navn": "Aluminium",
+        "osebx": 31.2,
+        "papirer": [
+          "NHY.OL",
+          "AA",
+          "CENX"
+        ],
+        "segment": "aluminium",
+        "utlop": "2017-10",
+        "variant": "bred",
+        "world": 18.7
+      },
+      {
+        "apen": false,
+        "avk": 150.4,
+        "inngang": "2015-11",
+        "navn": "Nikkel",
+        "osebx": 26.7,
+        "papirer": [
+          "ERA.PA",
+          "GLEN.L",
+          "EXV6.DE"
+        ],
+        "segment": "nikkel",
+        "utlop": "2017-11",
+        "variant": "alle",
+        "world": 20.8
+      },
+      {
+        "apen": false,
+        "avk": 150.4,
+        "inngang": "2015-11",
+        "navn": "Nikkel",
+        "osebx": 26.7,
+        "papirer": [
+          "ERA.PA",
+          "GLEN.L",
+          "EXV6.DE"
+        ],
+        "segment": "nikkel",
+        "utlop": "2017-11",
+        "variant": "bred",
+        "world": 20.8
+      },
+      {
+        "apen": false,
+        "avk": 57.1,
+        "inngang": "2015-12",
+        "navn": "Naturgass Europa",
+        "osebx": 33.5,
+        "papirer": [
+          "EQNR.OL"
+        ],
+        "segment": "ttf",
+        "utlop": "2017-12",
+        "variant": "alle",
+        "world": 23.9
+      },
+      {
+        "apen": false,
+        "avk": 57.1,
+        "inngang": "2015-12",
+        "navn": "Naturgass Europa",
+        "osebx": 33.5,
+        "papirer": [
+          "EQNR.OL"
+        ],
+        "segment": "ttf",
+        "utlop": "2017-12",
+        "variant": "bred",
+        "world": 23.9
+      },
+      {
+        "apen": false,
+        "avk": -2.6,
+        "inngang": "2019-03",
+        "navn": "Naturgass Europa",
+        "osebx": 22.7,
+        "papirer": [
+          "EQNR.OL"
+        ],
+        "segment": "ttf",
+        "utlop": "2021-03",
+        "variant": "alle",
+        "world": 37.2
+      },
+      {
+        "apen": false,
+        "avk": -2.6,
+        "inngang": "2019-03",
+        "navn": "Naturgass Europa",
+        "osebx": 22.7,
+        "papirer": [
+          "EQNR.OL"
+        ],
+        "segment": "ttf",
+        "utlop": "2021-03",
+        "variant": "bred",
+        "world": 37.2
+      },
+      {
+        "apen": false,
+        "avk": 105.1,
+        "inngang": "2019-06",
+        "navn": "Naturgass US (Henry Hub)",
+        "osebx": 29.6,
+        "papirer": [
+          "BIR.TO",
+          "TOU.TO",
+          "EQT"
+        ],
+        "segment": "henryhub",
+        "utlop": "2021-06",
+        "variant": "alle",
+        "world": 44.9
+      },
+      {
+        "apen": false,
+        "avk": 105.1,
+        "inngang": "2019-06",
+        "navn": "Naturgass US (Henry Hub)",
+        "osebx": 29.6,
+        "papirer": [
+          "BIR.TO",
+          "TOU.TO",
+          "EQT"
+        ],
+        "segment": "henryhub",
+        "utlop": "2021-06",
+        "variant": "bred",
+        "world": 44.9
+      },
+      {
+        "apen": false,
+        "avk": 243.6,
+        "inngang": "2020-03",
+        "navn": "Råolje (Brent)",
+        "osebx": 78.4,
+        "papirer": [
+          "IOGP.L",
+          "DNO.OL",
+          "AKRBP.OL"
+        ],
+        "segment": "brent",
+        "utlop": "2022-03",
+        "variant": "alle",
+        "world": 42.6
+      },
+      {
+        "apen": false,
+        "avk": 243.6,
+        "inngang": "2020-03",
+        "navn": "Råolje (Brent)",
+        "osebx": 78.4,
+        "papirer": [
+          "IOGP.L",
+          "DNO.OL",
+          "AKRBP.OL"
+        ],
+        "segment": "brent",
+        "utlop": "2022-03",
+        "variant": "bred",
+        "world": 42.6
+      },
+      {
+        "apen": false,
+        "avk": 540.5,
+        "inngang": "2020-03",
+        "navn": "Råolje (WTI)",
+        "osebx": 78.4,
+        "papirer": [
+          "CVE.TO",
+          "WCP.TO",
+          "IOGP.L"
+        ],
+        "segment": "wti",
+        "utlop": "2022-03",
+        "variant": "alle",
+        "world": 42.6
+      },
+      {
+        "apen": false,
+        "avk": 540.5,
+        "inngang": "2020-03",
+        "navn": "Råolje (WTI)",
+        "osebx": 78.4,
+        "papirer": [
+          "CVE.TO",
+          "WCP.TO",
+          "IOGP.L"
+        ],
+        "segment": "wti",
+        "utlop": "2022-03",
+        "variant": "bred",
+        "world": 42.6
+      },
+      {
+        "apen": false,
+        "avk": 382.6,
+        "inngang": "2020-04",
+        "navn": "Aluminium",
+        "osebx": 60,
+        "papirer": [
+          "NHY.OL",
+          "AA",
+          "CENX"
+        ],
+        "segment": "aluminium",
+        "utlop": "2022-04",
+        "variant": "alle",
+        "world": 31.5
+      },
+      {
+        "apen": false,
+        "avk": 382.6,
+        "inngang": "2020-04",
+        "navn": "Aluminium",
+        "osebx": 60,
+        "papirer": [
+          "NHY.OL",
+          "AA",
+          "CENX"
+        ],
+        "segment": "aluminium",
+        "utlop": "2022-04",
+        "variant": "bred",
+        "world": 31.5
+      },
+      {
+        "apen": false,
+        "avk": 683.4,
+        "inngang": "2020-08",
+        "navn": "Termisk kull (Australia)",
+        "osebx": 45.3,
+        "papirer": [
+          "BTU",
+          "GLEN.L",
+          "ARLP"
+        ],
+        "segment": "kull",
+        "utlop": "2022-08",
+        "variant": "alle",
+        "world": 24
+      },
+      {
+        "apen": false,
+        "avk": 35.3,
+        "inngang": "2023-03",
+        "navn": "Naturgass US (Henry Hub)",
+        "osebx": 27.1,
+        "papirer": [
+          "BIR.TO",
+          "TOU.TO",
+          "EQT"
+        ],
+        "segment": "henryhub",
+        "utlop": "2025-03",
+        "variant": "alle",
+        "world": 34.9
+      },
+      {
+        "apen": false,
+        "avk": 35.3,
+        "inngang": "2023-03",
+        "navn": "Naturgass US (Henry Hub)",
+        "osebx": 27.1,
+        "papirer": [
+          "BIR.TO",
+          "TOU.TO",
+          "EQT"
+        ],
+        "segment": "henryhub",
+        "utlop": "2025-03",
+        "variant": "bred",
+        "world": 34.9
+      }
+    ],
+    "regel": "Hver åpen posisjon får 20 % (høyst 5), resten står i MSCI World. Inngang ved månedsslutt i flaggmåneden, holdt 24 mnd, likt vektet i dagens papirer, i NOK.",
+    "serie": [
+      {
+        "bred": 100,
+        "flagg": 100,
+        "n": 1,
+        "osebx": 100,
+        "t": "2013-03",
+        "world": 100
+      },
+      {
+        "bred": 101.66,
+        "flagg": 101.66,
+        "n": 1,
+        "osebx": 101.89,
+        "t": "2013-04",
+        "world": 101.46
+      },
+      {
+        "bred": 105,
+        "flagg": 105,
+        "n": 1,
+        "osebx": 104.35,
+        "t": "2013-05",
+        "world": 103.9
+      },
+      {
+        "bred": 105.44,
+        "flagg": 105.44,
+        "n": 1,
+        "osebx": 99.49,
+        "t": "2013-06",
+        "world": 104.27
+      },
+      {
+        "bred": 107.47,
+        "flagg": 107.47,
+        "n": 1,
+        "osebx": 105.13,
+        "t": "2013-07",
+        "world": 107.11
+      },
+      {
+        "bred": 108.52,
+        "flagg": 108.52,
+        "n": 1,
+        "osebx": 105.43,
+        "t": "2013-08",
+        "world": 108.01
+      },
+      {
+        "bred": 112.2,
+        "flagg": 112.2,
+        "n": 1,
+        "osebx": 106.48,
+        "t": "2013-09",
+        "world": 111.97
+      },
+      {
+        "bred": 113.4,
+        "flagg": 113.4,
+        "n": 1,
+        "osebx": 112.97,
+        "t": "2013-10",
+        "world": 114.75
+      },
+      {
+        "bred": 118.62,
+        "flagg": 118.62,
+        "n": 1,
+        "osebx": 115.19,
+        "t": "2013-11",
+        "world": 120.31
+      },
+      {
+        "bred": 121.06,
+        "flagg": 121.06,
+        "n": 0,
+        "osebx": 116.48,
+        "t": "2013-12",
+        "world": 122.08
+      },
+      {
+        "bred": 119.98,
+        "flagg": 119.98,
+        "n": 0,
+        "osebx": 113.69,
+        "t": "2014-01",
+        "world": 121
+      },
+      {
+        "bred": 122,
+        "flagg": 122,
+        "n": 0,
+        "osebx": 117.93,
+        "t": "2014-02",
+        "world": 123.04
+      },
+      {
+        "bred": 120.87,
+        "flagg": 120.87,
+        "n": 0,
+        "osebx": 119.26,
+        "t": "2014-03",
+        "world": 121.89
+      },
+      {
+        "bred": 121.2,
+        "flagg": 121.2,
+        "n": 0,
+        "osebx": 122.74,
+        "t": "2014-04",
+        "world": 122.23
+      },
+      {
+        "bred": 124.08,
+        "flagg": 124.08,
+        "n": 0,
+        "osebx": 128.45,
+        "t": "2014-05",
+        "world": 125.13
+      },
+      {
+        "bred": 130.13,
+        "flagg": 130.13,
+        "n": 0,
+        "osebx": 131.13,
+        "t": "2014-06",
+        "world": 131.24
+      },
+      {
+        "bred": 131.48,
+        "flagg": 131.48,
+        "n": 0,
+        "osebx": 129.94,
+        "t": "2014-07",
+        "world": 132.6
+      },
+      {
+        "bred": 131.42,
+        "flagg": 131.42,
+        "n": 0,
+        "osebx": 129.49,
+        "t": "2014-08",
+        "world": 132.53
+      },
+      {
+        "bred": 134.01,
+        "flagg": 134.01,
+        "n": 0,
+        "osebx": 129.32,
+        "t": "2014-09",
+        "world": 135.15
+      },
+      {
+        "bred": 140.19,
+        "flagg": 140.19,
+        "n": 0,
+        "osebx": 124.21,
+        "t": "2014-10",
+        "world": 141.38
+      },
+      {
+        "bred": 148.07,
+        "flagg": 148.07,
+        "n": 0,
+        "osebx": 120.19,
+        "t": "2014-11",
+        "world": 149.33
+      },
+      {
+        "bred": 157.01,
+        "flagg": 157.01,
+        "n": 2,
+        "osebx": 122.25,
+        "t": "2014-12",
+        "world": 158.34
+      },
+      {
+        "bred": 153.34,
+        "flagg": 153.34,
+        "n": 2,
+        "osebx": 126.52,
+        "t": "2015-01",
+        "world": 162.65
+      },
+      {
+        "bred": 161.35,
+        "flagg": 161.35,
+        "n": 2,
+        "osebx": 130.65,
+        "t": "2015-02",
+        "world": 168.5
+      },
+      {
+        "bred": 161.51,
+        "flagg": 161.51,
+        "n": 2,
+        "osebx": 131.41,
+        "t": "2015-03",
+        "world": 175.22
+      },
+      {
+        "bred": 159.71,
+        "flagg": 159.71,
+        "n": 2,
+        "osebx": 135.68,
+        "t": "2015-04",
+        "world": 167.69
+      },
+      {
+        "bred": 159.07,
+        "flagg": 159.07,
+        "n": 2,
+        "osebx": 137.03,
+        "t": "2015-05",
+        "world": 173.01
+      },
+      {
+        "bred": 156.74,
+        "flagg": 156.74,
+        "n": 2,
+        "osebx": 133.51,
+        "t": "2015-06",
+        "world": 170.67
+      },
+      {
+        "bred": 161.05,
+        "flagg": 161.05,
+        "n": 2,
+        "osebx": 135.59,
+        "t": "2015-07",
+        "world": 180.91
+      },
+      {
+        "bred": 158.29,
+        "flagg": 158.29,
+        "n": 2,
+        "osebx": 126.08,
+        "t": "2015-08",
+        "world": 172.75
+      },
+      {
+        "bred": 153.16,
+        "flagg": 153.16,
+        "n": 2,
+        "osebx": 123.47,
+        "t": "2015-09",
+        "world": 169.14
+      },
+      {
+        "bred": 164.99,
+        "flagg": 164.99,
+        "n": 3,
+        "osebx": 130.57,
+        "t": "2015-10",
+        "world": 183.8
+      },
+      {
+        "bred": 160.51,
+        "flagg": 160.51,
+        "n": 4,
+        "osebx": 133.44,
+        "t": "2015-11",
+        "world": 186.29
+      },
+      {
+        "bred": 153.09,
+        "flagg": 153.09,
+        "n": 5,
+        "osebx": 129.51,
+        "t": "2015-12",
+        "world": 185.4
+      },
+      {
+        "bred": 146.64,
+        "flagg": 146.64,
+        "n": 5,
+        "osebx": 119.04,
+        "t": "2016-01",
+        "world": 168.65
+      },
+      {
+        "bred": 165.35,
+        "flagg": 165.35,
+        "n": 5,
+        "osebx": 121.5,
+        "t": "2016-02",
+        "world": 171.79
+      },
+      {
+        "bred": 183.12,
+        "flagg": 183.12,
+        "n": 5,
+        "osebx": 122.61,
+        "t": "2016-03",
+        "world": 173.46
+      },
+      {
+        "bred": 210.82,
+        "flagg": 210.82,
+        "n": 5,
+        "osebx": 128.66,
+        "t": "2016-04",
+        "world": 171.89
+      },
+      {
+        "bred": 187.86,
+        "flagg": 187.86,
+        "n": 5,
+        "osebx": 131.01,
+        "t": "2016-05",
+        "world": 178.98
+      },
+      {
+        "bred": 202.23,
+        "flagg": 202.23,
+        "n": 5,
+        "osebx": 127.94,
+        "t": "2016-06",
+        "world": 176.06
+      },
+      {
+        "bred": 223.96,
+        "flagg": 223.96,
+        "n": 5,
+        "osebx": 130.01,
+        "t": "2016-07",
+        "world": 188.3
+      },
+      {
+        "bred": 211.24,
+        "flagg": 211.24,
+        "n": 5,
+        "osebx": 131.35,
+        "t": "2016-08",
+        "world": 183.89
+      },
+      {
+        "bred": 215.77,
+        "flagg": 215.77,
+        "n": 5,
+        "osebx": 132.15,
+        "t": "2016-09",
+        "world": 178.99
+      },
+      {
+        "bred": 227.01,
+        "flagg": 227.01,
+        "n": 5,
+        "osebx": 135.44,
+        "t": "2016-10",
+        "world": 180.09
+      },
+      {
+        "bred": 283.68,
+        "flagg": 283.68,
+        "n": 5,
+        "osebx": 139.35,
+        "t": "2016-11",
+        "world": 188.73
+      },
+      {
+        "bred": 284.31,
+        "flagg": 284.31,
+        "n": 3,
+        "osebx": 145.13,
+        "t": "2016-12",
+        "world": 194.92
+      },
+      {
+        "bred": 309.23,
+        "flagg": 309.23,
+        "n": 3,
+        "osebx": 147.09,
+        "t": "2017-01",
+        "world": 191.49
+      },
+      {
+        "bred": 308.7,
+        "flagg": 308.7,
+        "n": 3,
+        "osebx": 146.49,
+        "t": "2017-02",
+        "world": 199.37
+      },
+      {
+        "bred": 307.57,
+        "flagg": 307.57,
+        "n": 3,
+        "osebx": 145.98,
+        "t": "2017-03",
+        "world": 206.14
+      },
+      {
+        "bred": 310.72,
+        "flagg": 310.72,
+        "n": 3,
+        "osebx": 148.06,
+        "t": "2017-04",
+        "world": 209.08
+      },
+      {
+        "bred": 311.86,
+        "flagg": 311.86,
+        "n": 3,
+        "osebx": 150.75,
+        "t": "2017-05",
+        "world": 209.96
+      },
+      {
+        "bred": 310.9,
+        "flagg": 310.9,
+        "n": 3,
+        "osebx": 148.25,
+        "t": "2017-06",
+        "world": 209.39
+      },
+      {
+        "bred": 320.33,
+        "flagg": 320.33,
+        "n": 3,
+        "osebx": 155.45,
+        "t": "2017-07",
+        "world": 201.97
+      },
+      {
+        "bred": 330.15,
+        "flagg": 330.15,
+        "n": 3,
+        "osebx": 157.01,
+        "t": "2017-08",
+        "world": 198.51
+      },
+      {
+        "bred": 340.36,
+        "flagg": 340.36,
+        "n": 3,
+        "osebx": 166.19,
+        "t": "2017-09",
+        "world": 208.34
+      },
+      {
+        "bred": 355.46,
+        "flagg": 355.46,
+        "n": 2,
+        "osebx": 171.25,
+        "t": "2017-10",
+        "world": 218.16
+      },
+      {
+        "bred": 367.51,
+        "flagg": 367.51,
+        "n": 1,
+        "osebx": 169.1,
+        "t": "2017-11",
+        "world": 225.04
+      },
+      {
+        "bred": 377.43,
+        "flagg": 377.43,
+        "n": 0,
+        "osebx": 172.84,
+        "t": "2017-12",
+        "world": 229.79
+      },
+      {
+        "bred": 369.38,
+        "flagg": 369.38,
+        "n": 0,
+        "osebx": 172.11,
+        "t": "2018-01",
+        "world": 224.89
+      },
+      {
+        "bred": 363.68,
+        "flagg": 363.68,
+        "n": 0,
+        "osebx": 173.97,
+        "t": "2018-02",
+        "world": 221.42
+      },
+      {
+        "bred": 351.56,
+        "flagg": 351.56,
+        "n": 0,
+        "osebx": 170.9,
+        "t": "2018-03",
+        "world": 214.05
+      },
+      {
+        "bred": 365.94,
+        "flagg": 365.94,
+        "n": 0,
+        "osebx": 182.5,
+        "t": "2018-04",
+        "world": 222.8
+      },
+      {
+        "bred": 374.32,
+        "flagg": 374.32,
+        "n": 0,
+        "osebx": 185.8,
+        "t": "2018-05",
+        "world": 227.9
+      },
+      {
+        "bred": 375.88,
+        "flagg": 375.88,
+        "n": 0,
+        "osebx": 186.57,
+        "t": "2018-06",
+        "world": 228.85
+      },
+      {
+        "bred": 384.62,
+        "flagg": 384.62,
+        "n": 0,
+        "osebx": 190.23,
+        "t": "2018-07",
+        "world": 234.17
+      },
+      {
+        "bred": 397.42,
+        "flagg": 397.42,
+        "n": 0,
+        "osebx": 192.42,
+        "t": "2018-08",
+        "world": 241.96
+      },
+      {
+        "bred": 391.95,
+        "flagg": 391.95,
+        "n": 0,
+        "osebx": 199.12,
+        "t": "2018-09",
+        "world": 238.63
+      },
+      {
+        "bred": 373.86,
+        "flagg": 373.86,
+        "n": 0,
+        "osebx": 188.8,
+        "t": "2018-10",
+        "world": 227.62
+      },
+      {
+        "bred": 381.29,
+        "flagg": 381.29,
+        "n": 0,
+        "osebx": 182.72,
+        "t": "2018-11",
+        "world": 232.15
+      },
+      {
+        "bred": 362.53,
+        "flagg": 362.53,
+        "n": 0,
+        "osebx": 169.66,
+        "t": "2018-12",
+        "world": 220.73
+      },
+      {
+        "bred": 376.54,
+        "flagg": 376.54,
+        "n": 0,
+        "osebx": 177.27,
+        "t": "2019-01",
+        "world": 229.25
+      },
+      {
+        "bred": 394.71,
+        "flagg": 394.71,
+        "n": 0,
+        "osebx": 183.63,
+        "t": "2019-02",
+        "world": 240.31
+      },
+      {
+        "bred": 403.04,
+        "flagg": 403.04,
+        "n": 1,
+        "osebx": 183.17,
+        "t": "2019-03",
+        "world": 245.39
+      },
+      {
+        "bred": 415.76,
+        "flagg": 415.76,
+        "n": 1,
+        "osebx": 186.95,
+        "t": "2019-04",
+        "world": 253.89
+      },
+      {
+        "bred": 393.7,
+        "flagg": 393.7,
+        "n": 1,
+        "osebx": 180.83,
+        "t": "2019-05",
+        "world": 244.52
+      },
+      {
+        "bred": 403.05,
+        "flagg": 403.05,
+        "n": 2,
+        "osebx": 183.49,
+        "t": "2019-06",
+        "world": 251.51
+      },
+      {
+        "bred": 414.97,
+        "flagg": 414.97,
+        "n": 2,
+        "osebx": 182.33,
+        "t": "2019-07",
+        "world": 265.37
+      },
+      {
+        "bred": 389.56,
+        "flagg": 389.56,
+        "n": 2,
+        "osebx": 182.78,
+        "t": "2019-08",
+        "world": 264.56
+      },
+      {
+        "bred": 412.2,
+        "flagg": 412.2,
+        "n": 2,
+        "osebx": 188.15,
+        "t": "2019-09",
+        "world": 270.95
+      },
+      {
+        "bred": 413.72,
+        "flagg": 413.72,
+        "n": 2,
+        "osebx": 190.58,
+        "t": "2019-10",
+        "world": 279.12
+      },
+      {
+        "bred": 422.35,
+        "flagg": 422.35,
+        "n": 2,
+        "osebx": 191.52,
+        "t": "2019-11",
+        "world": 287.91
+      },
+      {
+        "bred": 437.95,
+        "flagg": 437.95,
+        "n": 2,
+        "osebx": 197.67,
+        "t": "2019-12",
+        "world": 284.11
+      },
+      {
+        "bred": 421.49,
+        "flagg": 421.49,
+        "n": 2,
+        "osebx": 193.93,
+        "t": "2020-01",
+        "world": 295.57
+      },
+      {
+        "bred": 380.51,
+        "flagg": 380.51,
+        "n": 2,
+        "osebx": 176.2,
+        "t": "2020-02",
+        "world": 273.13
+      },
+      {
+        "bred": 360.63,
+        "flagg": 360.63,
+        "n": 4,
+        "osebx": 150.07,
+        "t": "2020-03",
+        "world": 269.47
+      },
+      {
+        "bred": 502.39,
+        "flagg": 502.39,
+        "n": 5,
+        "osebx": 164.49,
+        "t": "2020-04",
+        "world": 289.58
+      },
+      {
+        "bred": 510.24,
+        "flagg": 510.24,
+        "n": 5,
+        "osebx": 169.09,
+        "t": "2020-05",
+        "world": 287.95
+      },
+      {
+        "bred": 524.05,
+        "flagg": 524.05,
+        "n": 5,
+        "osebx": 168.76,
+        "t": "2020-06",
+        "world": 291.61
+      },
+      {
+        "bred": 528.58,
+        "flagg": 528.58,
+        "n": 5,
+        "osebx": 175.34,
+        "t": "2020-07",
+        "world": 287.33
+      },
+      {
+        "bred": 570.37,
+        "flagg": 570.37,
+        "n": 6,
+        "osebx": 182.35,
+        "t": "2020-08",
+        "world": 302.63
+      },
+      {
+        "bred": 514.7,
+        "flagg": 514.39,
+        "n": 6,
+        "osebx": 181.68,
+        "t": "2020-09",
+        "world": 307.37
+      },
+      {
+        "bred": 514.14,
+        "flagg": 513.75,
+        "n": 6,
+        "osebx": 172.29,
+        "t": "2020-10",
+        "world": 303.08
+      },
+      {
+        "bred": 656.86,
+        "flagg": 662.9,
+        "n": 6,
+        "osebx": 197.45,
+        "t": "2020-11",
+        "world": 315.58
+      },
+      {
+        "bred": 691.07,
+        "flagg": 711.48,
+        "n": 6,
+        "osebx": 206.7,
+        "t": "2020-12",
+        "world": 319.04
+      },
+      {
+        "bred": 704.22,
+        "flagg": 747.75,
+        "n": 6,
+        "osebx": 205.2,
+        "t": "2021-01",
+        "world": 319.98
+      },
+      {
+        "bred": 849.38,
+        "flagg": 916.59,
+        "n": 6,
+        "osebx": 213.72,
+        "t": "2021-02",
+        "world": 325.23
+      },
+      {
+        "bred": 917.18,
+        "flagg": 965.12,
+        "n": 5,
+        "osebx": 224.71,
+        "t": "2021-03",
+        "world": 336.7
+      },
+      {
+        "bred": 920.87,
+        "flagg": 970.05,
+        "n": 5,
+        "osebx": 228.44,
+        "t": "2021-04",
+        "world": 336.97
+      },
+      {
+        "bred": 979.32,
+        "flagg": 1088.97,
+        "n": 5,
+        "osebx": 236.17,
+        "t": "2021-05",
+        "world": 349.75
+      },
+      {
+        "bred": 1076.8,
+        "flagg": 1221.59,
+        "n": 4,
+        "osebx": 237.89,
+        "t": "2021-06",
+        "world": 364.53
+      },
+      {
+        "bred": 1068.29,
+        "flagg": 1268.92,
+        "n": 4,
+        "osebx": 240.72,
+        "t": "2021-07",
+        "world": 376.91
+      },
+      {
+        "bred": 1062.42,
+        "flagg": 1309.01,
+        "n": 4,
+        "osebx": 242.33,
+        "t": "2021-08",
+        "world": 384.63
+      },
+      {
+        "bred": 1176.26,
+        "flagg": 1467.29,
+        "n": 4,
+        "osebx": 246.88,
+        "t": "2021-09",
+        "world": 372.85
+      },
+      {
+        "bred": 1208.43,
+        "flagg": 1476.58,
+        "n": 4,
+        "osebx": 253.13,
+        "t": "2021-10",
+        "world": 372.71
+      },
+      {
+        "bred": 1232.01,
+        "flagg": 1471.08,
+        "n": 4,
+        "osebx": 250.69,
+        "t": "2021-11",
+        "world": 395.71
+      },
+      {
+        "bred": 1301.88,
+        "flagg": 1572.36,
+        "n": 4,
+        "osebx": 254.97,
+        "t": "2021-12",
+        "world": 402.21
+      },
+      {
+        "bred": 1378.18,
+        "flagg": 1702.19,
+        "n": 4,
+        "osebx": 249.33,
+        "t": "2022-01",
+        "world": 386.09
+      },
+      {
+        "bred": 1457.84,
+        "flagg": 1895.29,
+        "n": 4,
+        "osebx": 255.12,
+        "t": "2022-02",
+        "world": 377.24
+      },
+      {
+        "bred": 1574.99,
+        "flagg": 2139.49,
+        "n": 2,
+        "osebx": 267.68,
+        "t": "2022-03",
+        "world": 384.28
+      },
+      {
+        "bred": 1499.58,
+        "flagg": 2069,
+        "n": 1,
+        "osebx": 263.11,
+        "t": "2022-04",
+        "world": 380.86
+      },
+      {
+        "bred": 1463.18,
+        "flagg": 2056.9,
+        "n": 1,
+        "osebx": 273.21,
+        "t": "2022-05",
+        "world": 371.61
+      },
+      {
+        "bred": 1406.45,
+        "flagg": 1969.55,
+        "n": 1,
+        "osebx": 248.36,
+        "t": "2022-06",
+        "world": 357.2
+      },
+      {
+        "bred": 1493.98,
+        "flagg": 2090.63,
+        "n": 1,
+        "osebx": 265.95,
+        "t": "2022-07",
+        "world": 379.43
+      },
+      {
+        "bred": 1477.44,
+        "flagg": 2152.9,
+        "n": 0,
+        "osebx": 264.99,
+        "t": "2022-08",
+        "world": 375.23
+      },
+      {
+        "bred": 1458.83,
+        "flagg": 2125.79,
+        "n": 0,
+        "osebx": 234.03,
+        "t": "2022-09",
+        "world": 370.51
+      },
+      {
+        "bred": 1485.47,
+        "flagg": 2164.61,
+        "n": 0,
+        "osebx": 249.45,
+        "t": "2022-10",
+        "world": 377.27
+      },
+      {
+        "bred": 1509.74,
+        "flagg": 2199.97,
+        "n": 0,
+        "osebx": 259.07,
+        "t": "2022-11",
+        "world": 383.44
+      },
+      {
+        "bred": 1455.64,
+        "flagg": 2121.14,
+        "n": 0,
+        "osebx": 252.33,
+        "t": "2022-12",
+        "world": 369.7
+      },
+      {
+        "bred": 1566.39,
+        "flagg": 2282.53,
+        "n": 0,
+        "osebx": 253.7,
+        "t": "2023-01",
+        "world": 397.83
+      },
+      {
+        "bred": 1594.86,
+        "flagg": 2324.01,
+        "n": 0,
+        "osebx": 263.35,
+        "t": "2023-02",
+        "world": 405.06
+      },
+      {
+        "bred": 1645.33,
+        "flagg": 2397.55,
+        "n": 1,
+        "osebx": 253.3,
+        "t": "2023-03",
+        "world": 417.87
+      },
+      {
+        "bred": 1730.65,
+        "flagg": 2521.88,
+        "n": 1,
+        "osebx": 260.27,
+        "t": "2023-04",
+        "world": 434.53
+      },
+      {
+        "bred": 1776.9,
+        "flagg": 2589.27,
+        "n": 1,
+        "osebx": 254.35,
+        "t": "2023-05",
+        "world": 448.26
+      },
+      {
+        "bred": 1867.66,
+        "flagg": 2721.53,
+        "n": 1,
+        "osebx": 257.66,
+        "t": "2023-06",
+        "world": 465.2
+      },
+      {
+        "bred": 1812.46,
+        "flagg": 2641.09,
+        "n": 1,
+        "osebx": 264.2,
+        "t": "2023-07",
+        "world": 450.4
+      },
+      {
+        "bred": 1878.19,
+        "flagg": 2736.88,
+        "n": 1,
+        "osebx": 266.46,
+        "t": "2023-08",
+        "world": 462.62
+      },
+      {
+        "bred": 1819.8,
+        "flagg": 2651.79,
+        "n": 1,
+        "osebx": 273.97,
+        "t": "2023-09",
+        "world": 448.14
+      },
+      {
+        "bred": 1846.74,
+        "flagg": 2691.04,
+        "n": 1,
+        "osebx": 271.86,
+        "t": "2023-10",
+        "world": 448.99
+      },
+      {
+        "bred": 1864.49,
+        "flagg": 2716.91,
+        "n": 1,
+        "osebx": 276.71,
+        "t": "2023-11",
+        "world": 468.86
+      },
+      {
+        "bred": 1844.74,
+        "flagg": 2688.14,
+        "n": 1,
+        "osebx": 277.29,
+        "t": "2023-12",
+        "world": 473.39
+      },
+      {
+        "bred": 1882.42,
+        "flagg": 2743.03,
+        "n": 1,
+        "osebx": 271.28,
+        "t": "2024-01",
+        "world": 492.11
+      },
+      {
+        "bred": 1979.24,
+        "flagg": 2884.12,
+        "n": 1,
+        "osebx": 268.69,
+        "t": "2024-02",
+        "world": 516.01
+      },
+      {
+        "bred": 2083.62,
+        "flagg": 3036.22,
+        "n": 1,
+        "osebx": 281.86,
+        "t": "2024-03",
+        "world": 545.22
+      },
+      {
+        "bred": 2118.13,
+        "flagg": 3086.51,
+        "n": 1,
+        "osebx": 291,
+        "t": "2024-04",
+        "world": 544.13
+      },
+      {
+        "bred": 2071.99,
+        "flagg": 3019.27,
+        "n": 1,
+        "osebx": 305.71,
+        "t": "2024-05",
+        "world": 530.61
+      },
+      {
+        "bred": 2125.11,
+        "flagg": 3096.68,
+        "n": 1,
+        "osebx": 301.85,
+        "t": "2024-06",
+        "world": 555.83
+      },
+      {
+        "bred": 2178.69,
+        "flagg": 3174.76,
+        "n": 1,
+        "osebx": 309.69,
+        "t": "2024-07",
+        "world": 575.51
+      },
+      {
+        "bred": 2133.64,
+        "flagg": 3109.11,
+        "n": 1,
+        "osebx": 305.48,
+        "t": "2024-08",
+        "world": 564.6
+      },
+      {
+        "bred": 2193.18,
+        "flagg": 3195.87,
+        "n": 1,
+        "osebx": 300.57,
+        "t": "2024-09",
+        "world": 578.62
+      },
+      {
+        "bred": 2241.07,
+        "flagg": 3265.66,
+        "n": 1,
+        "osebx": 303.77,
+        "t": "2024-10",
+        "world": 593.54
+      },
+      {
+        "bred": 2384.44,
+        "flagg": 3474.58,
+        "n": 1,
+        "osebx": 308.61,
+        "t": "2024-11",
+        "world": 624.03
+      },
+      {
+        "bred": 2410.49,
+        "flagg": 3512.53,
+        "n": 1,
+        "osebx": 302.42,
+        "t": "2024-12",
+        "world": 627.39
+      },
+      {
+        "bred": 2506.5,
+        "flagg": 3652.44,
+        "n": 1,
+        "osebx": 321.61,
+        "t": "2025-01",
+        "world": 650.91
+      },
+      {
+        "bred": 2428.5,
+        "flagg": 3538.78,
+        "n": 1,
+        "osebx": 316.13,
+        "t": "2025-02",
+        "world": 630.88
+      },
+      {
+        "bred": 2242.34,
+        "flagg": 3267.5,
+        "n": 0,
+        "osebx": 321.84,
+        "t": "2025-03",
+        "world": 563.83
+      },
+      {
+        "bred": 2236.76,
+        "flagg": 3259.37,
+        "n": 0,
+        "osebx": 315.59,
+        "t": "2025-04",
+        "world": 562.43
+      },
+      {
+        "bred": 2317.31,
+        "flagg": 3376.76,
+        "n": 0,
+        "osebx": 331.4,
+        "t": "2025-05",
+        "world": 582.69
+      },
+      {
+        "bred": 2411.35,
+        "flagg": 3513.79,
+        "n": 0,
+        "osebx": 344.07,
+        "t": "2025-06",
+        "world": 606.33
+      },
+      {
+        "bred": 2520.72,
+        "flagg": 3673.16,
+        "n": 0,
+        "osebx": 344.91,
+        "t": "2025-07",
+        "world": 633.83
+      },
+      {
+        "bred": 2503.87,
+        "flagg": 3648.6,
+        "n": 0,
+        "osebx": 349.41,
+        "t": "2025-08",
+        "world": 629.6
+      },
+      {
+        "bred": 2554.86,
+        "flagg": 3722.9,
+        "n": 0,
+        "osebx": 349.01,
+        "t": "2025-09",
+        "world": 642.42
+      },
+      {
+        "bred": 2635.66,
+        "flagg": 3840.66,
+        "n": 0,
+        "osebx": 342.06,
+        "t": "2025-10",
+        "world": 662.74
+      },
+      {
+        "bred": 2670.34,
+        "flagg": 3891.19,
+        "n": 0,
+        "osebx": 341.6,
+        "t": "2025-11",
+        "world": 671.46
+      },
+      {
+        "bred": 2679.51,
+        "flagg": 3904.55,
+        "n": 0,
+        "osebx": 358.18,
+        "t": "2025-12",
+        "world": 673.76
+      },
+      {
+        "bred": 2583.23,
+        "flagg": 3764.25,
+        "n": 0,
+        "osebx": 373.59,
+        "t": "2026-01",
+        "world": 649.55
+      },
+      {
+        "bred": 2607.17,
+        "flagg": 3799.14,
+        "n": 0,
+        "osebx": 401.53,
+        "t": "2026-02",
+        "world": 655.57
+      },
+      {
+        "bred": 2448.37,
+        "flagg": 3567.74,
+        "n": 0,
+        "osebx": 438.86,
+        "t": "2026-03",
+        "world": 615.64
+      },
+      {
+        "bred": 2584.56,
+        "flagg": 3766.18,
+        "n": 0,
+        "osebx": 428.39,
+        "t": "2026-04",
+        "world": 649.89
+      },
+      {
+        "bred": 2708.05,
+        "flagg": 3946.13,
+        "n": 0,
+        "osebx": 424.5,
+        "t": "2026-05",
+        "world": 680.94
+      },
+      {
+        "bred": 2878.65,
+        "flagg": 4194.73,
+        "n": 0,
+        "osebx": 404.66,
+        "t": "2026-06",
+        "world": 723.83
+      },
+      {
+        "bred": 2769.76,
+        "flagg": 4036.06,
+        "n": 0,
+        "osebx": 428.28,
+        "t": "2026-07",
+        "world": 696.46
+      },
+      {
+        "bred": 2818.64,
+        "flagg": 4107.28,
+        "n": 0,
+        "osebx": 449.5,
+        "t": "2026-08",
+        "world": 708.75
+      },
+      {
+        "bred": 2870.17,
+        "flagg": 4182.37,
+        "n": 0,
+        "osebx": 440.39,
+        "t": "2026-09",
+        "world": 721.7
+      },
+      {
+        "bred": 2720.52,
+        "flagg": 3964.3,
+        "n": 0,
+        "osebx": 455.2,
+        "t": "2026-10",
+        "world": 684.07
+      },
+      {
+        "bred": 2738.82,
+        "flagg": 3990.97,
+        "n": 0,
+        "osebx": 447.58,
+        "t": "2026-11",
+        "world": 688.67
+      }
+    ]
+  }
+}

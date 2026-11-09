@@ -9,6 +9,25 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 09.11.2026 10:54, Claude Code
+
+Overleveringsmappe i Notion (Frodes bestilling): siden «Syklusbordet:
+prosjektbeskrivelse og sikkerhetskopi» heter nå «SB handover mappe» og er
+skrevet om etter status 9.11 (dashbord v77, sju modeller i Shadow-OOS, steg
+6l, handlingslisten, Sprott for uran, funnene fra sondene, fallgruver).
+Ny sikkerhetskopi i mappen «Sikkerhetskopi 2026-11-09» (den tomme mappen
+«Sikkerhetskopi 2026-11-04» er gitt nytt navn og fylt): 11 filer, kontrollert
+lastet opp: prompts.txt, repoet i zip under 5 MB (kode, data, sonder del 1 og
+2, arkiv del 1 og 2; 516 filer), databasen med marked/alu_tilbud (IAI) og
+handel, rutiner med minne og planlagte oppgaver, data_privat og dashbordet
+v77. I repoet: `sikkerhetskopi/2026-11-09/` med dashbordet v77 (med og uten
+omslag), databasen uten alu_tilbud, rutinens tekst og innstillinger, minnet,
+de planlagte oppgavene, README, prompts.txt og sha256 (50 filer).
+Kopiene 23.10 og 09.10 står urørt.
+Filer: `sikkerhetskopi/2026-11-09/`, `notater/OVERLEVERING.md`; Notion.
+For Cowork: Gjenoppretting i ny konto starter med prompts.txt i Notion-siden
+«SB handover mappe».
+
 ### 04.11.2026 12:50, Claude Code
 
 Uranprisen i uran_futures_uke.csv falt bort igjen (kontekst_uran feilet i dag:

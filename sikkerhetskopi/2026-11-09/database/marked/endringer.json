@@ -1,0 +1,141 @@
+{
+  "id": "endringer",
+  "kvartal": {
+    "forrige": "2026-10-01",
+    "forrige_dato": "2026-10-01 10:39",
+    "ny": "2026-10-14",
+    "ny_dato": "2026-10-14 07:12",
+    "skifter": [],
+    "topp": []
+  },
+  "uke": {
+    "forrige": "2026-W44",
+    "forrige_dato": "2026-10-28 12:46",
+    "ny": "2026-W45",
+    "ny_dato": "2026-11-04 11:36",
+    "skifter": [
+      {
+        "felt": "Trend",
+        "gammel": "begynnende",
+        "ny": "nei",
+        "segment": "Gull"
+      },
+      {
+        "felt": "Trend",
+        "gammel": "begynnende",
+        "ny": "nei",
+        "segment": "Nikkel"
+      },
+      {
+        "felt": "Trend",
+        "gammel": "bekreftet",
+        "ny": "begynnende",
+        "segment": "Tinn"
+      },
+      {
+        "felt": "Under oppsikt",
+        "gammel": false,
+        "ny": true,
+        "segment": "Jernmalm 62% Fe"
+      },
+      {
+        "felt": "Trend",
+        "gammel": "bekreftet",
+        "ny": "begynnende",
+        "segment": "Palmeolje"
+      }
+    ],
+    "topp": [
+      {
+        "endring_pst": 12.1,
+        "felt": "Realpris",
+        "gammel": 25.42,
+        "ny": 28.5,
+        "poeng": null,
+        "segment": "Naturgass Europa",
+        "vekt": 12.1
+      },
+      {
+        "endring_pst": 30.3,
+        "felt": "Prisnivå A",
+        "gammel": 39.6,
+        "ny": 51.6,
+        "poeng": 12,
+        "segment": "Aluminium",
+        "vekt": 12
+      },
+      {
+        "endring_pst": 15.7,
+        "felt": "A detrendet",
+        "gammel": 61.2,
+        "ny": 70.8,
+        "poeng": 9.6,
+        "segment": "Jernmalm 62% Fe",
+        "vekt": 9.6
+      },
+      {
+        "endring_pst": 57.3,
+        "felt": "Kapitulasjon D",
+        "gammel": 16.4,
+        "ny": 25.8,
+        "poeng": 9.4,
+        "segment": "Sink",
+        "vekt": 9.4
+      },
+      {
+        "endring_pst": 14.4,
+        "felt": "Prisnivå A",
+        "gammel": 62.7,
+        "ny": 71.7,
+        "poeng": 9,
+        "segment": "Nikkel",
+        "vekt": 9
+      },
+      {
+        "endring_pst": -15.8,
+        "felt": "COT-persentil",
+        "gammel": 48.7,
+        "ny": 41,
+        "poeng": -7.7,
+        "segment": "Kobber",
+        "vekt": 7.7
+      },
+      {
+        "endring_pst": 10.5,
+        "felt": "A detrendet",
+        "gammel": 73.1,
+        "ny": 80.8,
+        "poeng": 7.7,
+        "segment": "Nikkel",
+        "vekt": 7.7
+      },
+      {
+        "endring_pst": -7.1,
+        "felt": "Realpris",
+        "gammel": 97.7,
+        "ny": 90.8,
+        "poeng": null,
+        "segment": "Jernmalm 62% Fe",
+        "vekt": 7.1
+      },
+      {
+        "endring_pst": -6.8,
+        "felt": "Realpris",
+        "gammel": 3283,
+        "ny": 3061,
+        "poeng": null,
+        "segment": "Aluminium",
+        "vekt": 6.8
+      },
+      {
+        "endring_pst": 66,
+        "felt": "A detrendet",
+        "gammel": 10.3,
+        "ny": 17.1,
+        "poeng": 6.8,
+        "segment": "Aluminium",
+        "vekt": 6.8
+      }
+    ]
+  }
+}
