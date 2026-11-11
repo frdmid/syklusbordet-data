@@ -9,6 +9,39 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 11.11.2026 14:28, Claude Code
+
+Uro-feltet i regimepanelet delt i to (Frodes forslag, bygget). Nivå er
+månedssnittet av VIX, volvariasjon månedssnittet av VVIX. Etter Frodes poeng
+om at lang historikk betyr mindre for VIX enn for enkeltassets, «vol er vol»,
+brukes ABSOLUTTE grenser og ikke persentil: 20 og 30 for nivå, 105 og 120 for
+volvariasjon, runde tall valgt fra fordelingen på den felles perioden fra
+2007. Det ga også 59 måneder mer dekning enn persentilforslaget, inkludert
+finanskrisen og eurokrisen, siden en persentil måtte bygge opp 60 måneder
+VVIX-historikk først. Fem ord med hysterese (opp straks, ned etter to måneder
+under): rolig 50 %, urolig forventning, spent nivå, forhøyet og sjokk.
+Symmetrisk varighetskrav ble forkastet fordi det leste tollsjokket april 2025
+og mars 2026 som rolig. Papirkorrelasjonen er tatt ut av ordet, men vises.
+Den rullende tiårspersentilen per ledd vises som tilleggstall. De gamle
+feltene vix og vix_pct står igjen og brukes fortsatt i analogavstanden, så
+analoglisten er uendret. Oktober 2026 leser rolig (nivå 16,9, volvariasjon
+95,0).
+Kontrollert: 15 logikktester lokalt (hysterese, de fem ordene, hel måned,
+rullende persentil), modulen kjørt lokalt uten å skrive til repoet, og
+dashbordet testet i nettleserpanelet for alle fem tilstander, for den gamle
+feltstrukturen, og uten sidevis rulling ved 390 px. Ingen feil i konsollen.
+Dashbordet v78 publisert. Boksen viser den gamle cellen hvis databasen har
+forrige struktur, så den virker også til Actions skriver den nye regime.json
+første gang (onsdag 18.11). Onsdagsrutinen er endret: punkt 6i krever nå
+nivaa_grenser og volvar_grenser, og rapportlinjen for regime viser de to
+leddene. Kontrollert byte for byte at bare prompten er endret; kjøringene i
+dag (08:53, 10:15 og 13:19) er intakte, neste kjøring 18.11 kl. 10:15.
+Filer: `kontekst_regime.py`, `notater/onsdagsrutine_prompt_2026-11-11.txt`,
+`notater/OVERLEVERING.md`; dashbordet v78, rutinen.
+For Cowork: Les siste versjon av dashbordet før du publiserer; regimeboksen
+har nye celler i `visRegime` og en reserve for den gamle feltstrukturen.
+Kopien av rutineteksten i `sikkerhetskopi/2026-11-09/` er utdatert.
+
 ### 11.11.2026 13:45, Claude Code
 
 Forslag til nytt sjokkfelt i regimepanelet (Frodes forslag: feltet deles i to,

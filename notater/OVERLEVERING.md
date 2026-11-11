@@ -16,6 +16,13 @@ segment. Frode bruker det til å se etter bunner. Skårene:
   og fra `b_manuell.json`; rigger egen beregning i `rigg_b.py`.
 - **C** overlevelsesport: kvartaler kontantene holder i selskapets verste år.
   Under 8 er porten stengt. Fra SEC og fra `c_manuell.json`.
+- **Uro (regimepanelet)**, fra 11.11.2026: sjokkfeltet er delt i to, nivå
+  (månedssnitt VIX) og volvariasjon (månedssnitt VVIX), mot absolutte grenser
+  20 og 30 for nivå, 105 og 120 for volvariasjon. Fem ord: rolig, spent nivå,
+  urolig forventning, forhøyet og sjokk, med hysterese (opp straks, ned etter
+  to måneder under). Papirkorrelasjonen står utenfor ordet. Grensene er valgt,
+  ikke målt; se `notater/2026-11-11_regime_sjokk_forslag.md` og sonden
+  `sonde_kjor_vvix_sjokk`.
 - **D** kapitulasjon: hvor langt papirene er falt, mot egen historikk.
 - Kontekst uten skår: trend, COT, kurveform, VIX, dollar, rater.
 
@@ -29,7 +36,10 @@ og sikkerhetskopi») har alt som trengs for å fortsette i en ny Claude-konto.
 Siste kopi: mappen «Sikkerhetskopi 2026-11-09» (repoet i zip, databasen med
 IAI-dokumentet, rutinen, minnet, de private dataene, dashbordet v77 og
 `prompts.txt`). Samme kopi uten private data: `sikkerhetskopi/2026-11-09/`.
-Start med `prompts.txt`. Siden har fra 11.11.2026 også et avsnitt om den
+Start med `prompts.txt`. MERK: onsdagsrutinens tekst ble endret 11.11.2026
+(punkt 6i og rapportlinjen for regime), så kopien i `sikkerhetskopi/2026-11-09/`
+er utdatert. Den levende teksten ligger i
+`notater/onsdagsrutine_prompt_2026-11-11.txt`. Siden har fra 11.11.2026 også et avsnitt om den
 uavhengige gjennomgangen (`notater/2026-11-11_gjennomgang.md`) og promptene
 som gjør forslagene (`notater/2026-11-11_prompt_forbedringer.md`); ny
 sikkerhetskopi tas når stegene der er gjort.
@@ -64,7 +74,7 @@ sikkerhetskopi tas når stegene der er gjort.
    dashbordet fra GitHub»), onsdag kl. 10:15 og 13:15 norsk tid fra 21.10 (`CRON_TZ=Europe/Oslo`); det andre forsøket gjør bare noe hvis det første ikke fikk ferske tall: henter filene fra repoet
    og skriver dem til dashbordets database. Prompten har stegene 1 til 8 (6b
    VIX, 6c dollar, 6d endringer, 6e helse, 6f gass_b, 6g laks_biomasse, 6h
-   alu_tilbud skal ikke røres, 6i regime fra 15.10, 6j uran_kontrakt fra 19.10, 6k segments/miners fra 28.10, 6l marked/handel fra 04.11; 8 ukeloggen i prosjektet
+   alu_tilbud skal ikke røres, 6i regime fra 15.10, uro delt i to 11.11, 6j uran_kontrakt fra 19.10, 6k segments/miners fra 28.10, 6l marked/handel fra 04.11; 8 ukeloggen i prosjektet
    «Handelsalgoritme»). Endres med RemoteTrigger `update` og body
    `{"prompt": ...}`; kontroller etterpå at bare prompten er endret. Den
    prøver ikke på nytt hvis den feiler; det skjedde 30.09, og den ble kjørt
@@ -87,7 +97,7 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 ## Dashbordet
 
 - Adresse: https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF (siste versjon
-  77 per 03.11 (boksen Handlingsliste øverst med evidensgrad, åpne posisjoner fra Shadow-OOS og papirporteføljen; USD/NOK i korrelasjonsmatrisen; panelet Gullgruver med S1, S2 og BEGGE-status); Cowork kan ha publisert senere). Nytt fra 12.10: linjen
+  78 per 11.11 (uro delt i nivå og volvariasjon i regimeboksen); 77 per 03.11 (boksen Handlingsliste øverst med evidensgrad, åpne posisjoner fra Shadow-OOS og papirporteføljen; USD/NOK i korrelasjonsmatrisen; panelet Gullgruver med S1, S2 og BEGGE-status); Cowork kan ha publisert senere). Nytt fra 12.10: linjen
   «Kull, rullende A 95» i kullpanelet (v63), boksen «Regime nå» øverst (v64)
   med «Hva testene sier om å handle» under (v65, rettet i v66).
 - **Omslaget:** filen som Artifact `read` lagrer, begynner med vertens omslag

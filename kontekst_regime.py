@@ -6,11 +6,46 @@
 # Skriver regime.json med fire felt og analoger:
 #   VEKST      andel raavaresegmenter med hoeyere realpris enn for 12 mnd
 #              siden (holdt i sonden), og kobber mot gull, endring 12 mnd.
-#   SJOKK      VIX (maanedssnitt) og snittkorrelasjonen mellom ukeavkastningen
-#              til papirene og fondene paa bordet, rullende 13 uker, begge som
-#              persentil mot egen historikk. Sondens eget maal (absorpsjon)
-#              holdt ikke; disse to klarte samme krav som kontroll, og er
-#              valgt ETTER aa ha sett resultatet.
+#   SJOKK      To ledd fra 11.11.2026 (Frodes forslag, se
+#              notater/2026-11-11_regime_sjokk_forslag.md):
+#                nivaa   maanedssnitt av ^VIX      (fra 1990)
+#                volvar  maanedssnitt av ^VVIX     (fra januar 2007)
+#              ABSOLUTTE grenser, ikke persentil (Frodes poeng 11.11.2026:
+#              for VIX er lang historikk ikke like viktig som for enkeltassets
+#              og papirer, «vol er vol» - 20 er 20 i 1995 og i 2026, mens en
+#              raavares realpris bare kan leses mot sin egen fordeling).
+#              Det gir ogsaa 59 maaneder mer dekning: med persentil maatte
+#              VVIX bygge opp 60 maaneder og startet foerst desember 2011, saa
+#              finanskrisen og eurokrisen hadde ikke noe volvariasjonsledd.
+#                nivaa:  20 forhoeyet, 30 hoey   (p63 og p91 fra 2007)
+#                volvar: 105 forhoeyet, 120 hoey (p79 og p95 fra 2007)
+#              Grensene er RUNDE TALL valgt fra fordelingen, ikke maalt mot
+#              noe utfall. 20 og 30 er markedets egne konvensjonelle nivaaer.
+#              Ordet settes av paret, med hysterese (inn med en gang, ut etter
+#              UT_MND maaneder under): begge over den hoeye grensen gir sjokk,
+#              begge over den lave gir forhoeyet, bare nivaa gir «spent nivaa»
+#              (uroen er priset og stabil, som juni 2022), bare volvar gir
+#              «urolig forventning» (markedet er usikkert paa usikkerheten,
+#              ofte foer en bevegelse, som oktober 2018), ellers rolig. De to
+#              enkeltleddene er med vilje ikke samme ord.
+#              Symmetrisk varighetskrav ble forkastet: det leste tollsjokket
+#              april 2025 og mars 2026 som rolig, fordi de var enkeltmaaneder.
+#              Et sjokk maa registreres i maaneden det skjer; usikkerheten er
+#              naar det slutter.
+#              volvar er NULL foer 2007. Da settes ordet av nivaa alene og
+#              merknaden sier at volvariasjonen er ukjent.
+#              Den rullende tiaarspersentilen for hvert ledd (nivaa_pct,
+#              volvar_pct) VISES som tilleggstall, men setter ikke ordet.
+#              Papirkorrelasjonen (korr_papirer, rullende 13 uker) staar
+#              fortsatt i feltet, men er TATT UT AV ORDET: max() over tre
+#              ledd sto paa nesten hele tiden. Den er ikke maalt paa samme
+#              maate ennaa.
+#              Det gamle voksende VIX-maalet (vix_pct) staar igjen i feltet og
+#              i serien for bakoverkompatibilitet, og brukes fortsatt i
+#              analogavstanden (dims), slik at analoglisten ikke endrer seg.
+#              INGEN av disse maalene er testet som signal: sonden
+#              sonde_kjor_vvix_sjokk (11.11.2026) viste at verken VIX-nivaa,
+#              VIX-spredning eller VVIX skiller utfallene etter bunnsonen.
 #   BOOM       median A over raavarene. Fanger toppene (2008, 2022), ikke
 #              bunnene, og vises bare som tegn paa at alt er dyrt.
 #   LIKVIDITET Feds netto likviditet (WALCL minus WTREGEN minus RRPONTSYD),
@@ -21,8 +56,8 @@
 #              til teksten om ventetid under panelet.
 #   ANALOGER   naermeste tidligere maaneder over bredde, median A, VIX,
 #              papirkorrelasjon, kreditt (BAA10Y) og rentekurve (T10Y2Y).
-# Ordene i feltene (rolig, uro, sjokk osv.) bruker grensene fra sonden: 0,6 og
-# 0,4 for bredde, 95 for sjokk, nederste tiendedel siden 1990 for median A.
+# Ordene i feltene bruker grensene fra sonden: 0,6 og 0,4 for bredde, nederste
+# tiendedel siden 1990 for median A. Sjokkfeltet bruker grensene over (11.11.2026).
 #
 # Kalles hver uke fra shadow_challenger.kjor (etter Challengerne), som
 # kontekst_laks. Ikke med i Championens frosne filer og ikke i noen
@@ -46,6 +81,14 @@ HENDELSER = {"1998-09": "LTCM og Russland", "2001-09": "11. september", "2002-07
              "2020-03": "covid", "2021-11": "gjenåpningen", "2022-03": "Ukraina", "2022-06": "inflasjonstoppen",
              "2025-04": "tollsjokket"}
 MIN = 60
+# Sjokkfeltet (11.11.2026). Runde tall valgt fra fordelingen av maanedssnittene
+# paa den felles perioden fra 2007, ikke maalt mot noe utfall. VIX: 20 traff
+# p63 og 30 traff p91. VVIX: 105 traff p79 og 120 traff p95.
+NIVAA_GRENSER = (20, 30)        # maanedssnitt ^VIX: forhoeyet, hoey
+VOLVAR_GRENSER = (105, 120)     # maanedssnitt ^VVIX: forhoeyet, hoey
+UT_MND = 2                      # maaneder under grensen foer ordet gaar ned
+MIN_DAGER = 15                  # hel maaned, som priser.py kaster paabegynt maaned
+RULL_VINDU = 120                # tiaarsvindu for persentilen som vises
 
 
 def _get(url, **kw):
@@ -100,6 +143,68 @@ def _pit(s):
     return pd.Series(o, index=s.index)
 
 
+def _mnd_hel(s):
+    """Maanedssnitt av en dagsserie, men bare hele maaneder (11.11.2026).
+
+    En paabegynt maaned har faa handledager og kan ikke sammenlignes med hele
+    maaneder. Samme regel som hel_maaned i priser.py, der en paabegynt maaned
+    kastes slik at flagg ikke slaar inn og ut midt i en maaned."""
+    g = s.groupby(s.index.to_period("M"))
+    m = g.mean()[g.size() >= MIN_DAGER]
+    return m.sort_index()
+
+
+def _rull(s, w=RULL_VINDU, minn=MIN):
+    """Persentil i et rullende vindu, som rolling_pct i priser.py (Ar).
+
+    Vises som tilleggstall ved hvert sjokkledd, men setter ikke ordet: ordet
+    bruker absolutte grenser (se toppen av fila)."""
+    v = s.values
+    ut = np.full(len(v), np.nan)
+    for i in range(len(v)):
+        lo = max(0, i - w + 1)
+        if i - lo + 1 >= minn and np.isfinite(v[i]):
+            y = v[lo: i + 1]
+            y = y[np.isfinite(y)]
+            if len(y) >= minn:
+                ut[i] = (y <= v[i]).mean() * 100
+    return pd.Series(ut, index=s.index)
+
+
+def _hysterese(mask, ut_k=UT_MND):
+    """Inn i tilstanden med en gang, ut etter ut_k maaneder paa rad under.
+
+    Et symmetrisk varighetskrav leste tollsjokket (april 2025) og mars 2026 som
+    rolig, fordi de var enkeltmaaneder. Et sjokk maa registreres i maaneden det
+    skjer; usikkerheten er naar det slutter. NaN regnes som under grensen, men
+    nullstiller ikke tilstanden med en gang."""
+    ut, pa, under = [], False, 0
+    for v in mask:
+        if bool(v):
+            pa, under = True, 0
+        elif pa:
+            under += 1
+            if under >= ut_k:
+                pa, under = False, 0
+        ut.append(pa)
+    return pd.Series(ut, index=mask.index)
+
+
+def _sjokk_ord(nivaa_opp, volvar_opp, hoy_begge, volvar_kjent):
+    """De fem ordene i sjokkfeltet. Rekkefoelgen er streng: sjokk foerst."""
+    if hoy_begge:
+        return "sjokk"
+    if not volvar_kjent:
+        return "spent nivå" if nivaa_opp else "rolig"
+    if nivaa_opp and volvar_opp:
+        return "forhøyet"
+    if nivaa_opp:
+        return "spent nivå"
+    if volvar_opp:
+        return "urolig forventning"
+    return "rolig"
+
+
 def _A_raa(v):
     o = np.full(len(v), np.nan)
     for i in range(59, len(v)):
@@ -147,7 +252,13 @@ def beregn(priser_csv, note=print):
         pk.append((c.sum() - n) / (n * (n - 1)))
     U = pd.Series(pk, index=R.index)
     M["korr_papirer"] = _mnd(U)
-    M["vix"] = _mnd(_dag("^VIX"), "mean")
+    # Sjokkfeltets to ledd (11.11.2026). Hele maaneder, absolutte grenser.
+    M["vix"] = _mnd_hel(_dag("^VIX"))
+    try:
+        M["vvix"] = _mnd_hel(_dag("^VVIX"))
+    except Exception as e:
+        note(f"   regime: VVIX mangler ({type(e).__name__}: {str(e)[:60]})")
+        M["vvix"] = np.nan
     for sid, navn in (("BAA10Y", "kreditt"), ("T10Y2Y", "rentekurve")):
         try:
             M[navn] = _mnd(_fred(sid), "mean")
@@ -155,6 +266,16 @@ def beregn(priser_csv, note=print):
             note(f"   regime: {sid} mangler ({type(e).__name__})")
     M = M.sort_index()
     M["vix_pct"] = _pit(M.vix); M["korr_pct"] = _pit(M.korr_papirer)
+    # Rullende tiaarspersentil per ledd. Vises, setter ikke ordet.
+    M["nivaa_pct"] = _rull(M.vix)
+    M["volvar_pct"] = _rull(M.vvix) if M.vvix.notna().any() else np.nan
+    # Ordet, maaned for maaned, med hysterese over hele historikken.
+    M["nivaa_opp"] = _hysterese(M.vix >= NIVAA_GRENSER[0])
+    M["volvar_opp"] = _hysterese(M.vvix >= VOLVAR_GRENSER[0])
+    M["sjokk_hoy"] = _hysterese((M.vix >= NIVAA_GRENSER[1]) & (M.vvix >= VOLVAR_GRENSER[1]))
+    M["sjokk_ord"] = [_sjokk_ord(M.nivaa_opp.iat[i], M.volvar_opp.iat[i],
+                                 M.sjokk_hoy.iat[i], bool(np.isfinite(M.vvix.iat[i])))
+                      for i in range(len(M))]
     if "kreditt" in M:
         M["kreditt_pct"] = _pit(M.kreditt)
 
@@ -188,8 +309,7 @@ def beregn(priser_csv, note=print):
     fra90 = M.index >= pd.Period("1990-01", "M")
     q10 = float(M.median_A[fra90].quantile(0.1))
     vekst = "bred oppgang" if r.bredde >= 0.6 else ("bred nedgang" if r.bredde <= 0.4 else "blandet")
-    sj = max(r.vix_pct, r.korr_pct)
-    sjokk = "sjokk" if sj >= 95 else ("uro" if sj >= 80 else "rolig")
+    sjokk = M.sjokk_ord.loc[siste]
     boom = "alt dyrt" if r.median_A <= q10 else "nei"
 
     def start_av(maske):
@@ -202,7 +322,8 @@ def beregn(priser_csv, note=print):
             i -= 1
         return str(m.index[i])
     nedgang_siden = start_av(M.bredde <= 0.4)
-    sjokk_siden = start_av(M[["vix_pct", "korr_pct"]].max(axis=1) >= 95)
+    # Foerste maaned i den paagaaende perioden der ordet ikke er rolig.
+    sjokk_siden = start_av(M.sjokk_ord != "rolig")
 
     dims = [k for k in ("bredde", "median_A", "vix_pct", "korr_pct", "kreditt_pct", "rentekurve") if k in M]
     X = M[dims].dropna()
@@ -221,19 +342,43 @@ def beregn(priser_csv, note=print):
             break
 
     serie = [{"t": str(t), "bredde": _r(M.bredde.get(t), 2), "median_A": _r(M.median_A.get(t), 1),
-              "vix_pct": _r(M.vix_pct.get(t), 0), "korr_pct": _r(M.korr_pct.get(t), 0)}
+              "vix_pct": _r(M.vix_pct.get(t), 0), "korr_pct": _r(M.korr_pct.get(t), 0),
+              "nivaa": _r(M.vix.get(t), 2), "volvar": _r(M.vvix.get(t), 2),
+              "nivaa_pct": _r(M.nivaa_pct.get(t), 0), "volvar_pct": _r(M.volvar_pct.get(t), 0),
+              "ord": M.sjokk_ord.get(t)}
              for t in M.index[M.index <= siste][-60:]]
     return {"id": "regime", "laget": str(dt.date.today()), "mnd": str(siste),
             "vekst": {"ord": vekst, "bredde": _r(r.bredde, 2), "kobber_gull_12m": _r(r.kobber_gull_12m, 1),
                       "nedgang_siden": nedgang_siden},
-            "sjokk": {"ord": sjokk, "vix": _r(r.vix, 1), "vix_pct": _r(r.vix_pct, 0),
+            "sjokk": {"ord": sjokk,
+                      # de to leddene som setter ordet
+                      "nivaa": _r(r.vix, 2), "nivaa_pct": _r(r.get("nivaa_pct"), 0),
+                      "nivaa_grenser": list(NIVAA_GRENSER),
+                      "volvar": _r(r.get("vvix"), 2), "volvar_pct": _r(r.get("volvar_pct"), 0),
+                      "volvar_grenser": list(VOLVAR_GRENSER),
+                      "volvar_kjent": bool(np.isfinite(r.get("vvix", np.nan))),
+                      "ut_mnd": UT_MND,
+                      # vises, men utenfor ordet
                       "korr_papirer": _r(r.korr_papirer, 2), "korr_pct": _r(r.korr_pct, 0),
-                      "sjokk_siden": sjokk_siden},
+                      # det gamle voksende maalet, for bakoverkompatibilitet
+                      "vix": _r(r.vix, 1), "vix_pct": _r(r.vix_pct, 0),
+                      "sjokk_siden": sjokk_siden,
+                      "merknad": "Nivå er månedssnittet av VIX, volvariasjon månedssnittet av VVIX, "
+                                 f"begge mot absolutte grenser ({NIVAA_GRENSER[0]} og {NIVAA_GRENSER[1]} "
+                                 f"for nivå, {VOLVAR_GRENSER[0]} og {VOLVAR_GRENSER[1]} for volvariasjon). "
+                                 f"Ordet går opp med én gang og ned etter {UT_MND} måneder under. "
+                                 "Persentilene er rullende ti år og vises bare. Papirkorrelasjonen står "
+                                 "utenfor ordet. Grensene er valgt, ikke målt: sonden sonde_kjor_vvix_sjokk "
+                                 "viste at ingen av målene skiller utfallene etter bunnsonen. Kontekst, "
+                                 "ikke et signal."
+                                 + ("" if bool(np.isfinite(r.get("vvix", np.nan)))
+                                    else " VVIX finnes først fra januar 2007, så volvariasjonen er ukjent "
+                                         "denne måneden og ordet er satt av nivået alene.")},
             "boom": {"ord": boom, "median_A": _r(r.median_A, 1), "grense": _r(q10, 1)},
             "kreditt": _r(r.get("kreditt"), 2), "kreditt_pct": _r(r.get("kreditt_pct"), 0),
             "rentekurve": _r(r.get("rentekurve"), 2), "likviditet": lik, "analoger": analoger,
             "analog_dim": dims, "serie": serie,
-            "kilder": "Råvarer: priser_mnd.csv. Papirer og VIX: Yahoo. Kreditt, rentekurve og likviditet: FRED "
+            "kilder": "Råvarer: priser_mnd.csv. Papirer, VIX og VVIX: Yahoo. Kreditt, rentekurve og likviditet: FRED "
                       "(BAA10Y, T10Y2Y, WALCL, WTREGEN, RRPONTSYD, ECBASSETSW, JPNASSETS, DEXUSEU, DEXJPUS)."}
 
 
