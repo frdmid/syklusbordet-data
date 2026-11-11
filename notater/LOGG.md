@@ -9,7 +9,56 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
-### 11.11.2026 09:13, Claude Code
+### 11.11.2026 13:35, Claude Code
+
+Tidssonefeil funnet og rettet. `TZ=Europe/Oslo date` i Git Bash paa Frodes
+maskin gir ikke norsk tid: Git Bash mangler tidssonebasen for Europe/Oslo og
+faller tilbake til UTC (den svarer «GMT +0000»). Instruksen i OVERLEVERING om
+aa hente klokkeslettet slik har derfor gitt innslag som ligger en time bak om
+vinteren og to timer bak om sommeren. De fire innslagene fra i dag er rettet
+mot commit-tidene (07:52 til 08:52, 08:00 til 09:00, 09:13 til 10:13, og
+sondeinnslaget til 13:34). Eldre innslag er ikke gjennomgaatt; de kan ha
+samme avvik.
+Riktig kilde paa denne maskinen er Python, som har egen tidssonebase:
+`py -c "import datetime as dt; from zoneinfo import ZoneInfo;
+print(dt.datetime.now(ZoneInfo('Europe/Oslo')).strftime('%d.%m.%Y %H:%M'))"`.
+Maskinens egen lokale klokke staar ogsaa riktig (+0100), saa `date` uten
+TZ virker, men det er tilfeldig riktig og brekker hvis maskinen flyttes.
+Sonden sonde_kjor_vvix_sjokk skrev «UTC» paa en lokal tid foer rettingen; den
+skriver naa norsk tid fra zoneinfo.
+Filer: `notater/OVERLEVERING.md`, `notater/LOGG.md`, `sonde_kjor_vvix_sjokk.py`.
+For Cowork: bruk ikke `TZ=Europe/Oslo date` i Git Bash. Sjekk om CLAUDE.md
+eller egne rutiner sier det samme, og rett det der ogsaa.
+
+### 11.11.2026 13:34, Claude Code
+
+Sonde sonde_kjor_vvix_sjokk (Frodes bestilling etter gjennomgangen 11.11):
+kan sjokkleddet i regimepanelet bli bedre med månedssnitt av VVIX, eller med
+spredningen i VIX innenfor måneden, enn med månedssnittet av VIX alene?
+Kriteriene er de samme som i sonde_kjor_signal_vix_dxy_move, skrevet i toppen
+før kjøring, avgjort på oppstart til 2014.
+Ingen av målene holder. vix_snitt og vix_spredning feilet alle seks tester
+(største forskjell 5,8 pp over 12 mnd for spredningen, p 0,249, og halvdelene
+har ulikt fortegn). vix_snitt etter 2015 ser sterk ut (+62 pp over 12 mnd,
+p 0,019), men halvdelene er +74 og -53, og perioden avgjør ikke; samme bilde
+som sonden 03.11. vvix_snitt kan ikke avgjøres, som varslet før kjøring:
+serien starter 2007, og nederste tredjedel har bare 5 signalmåneder.
+Beskrivende funn: VVIX er tilgjengelig hos Yahoo med dagsdata fra 03.01.2007
+(238 hele måneder). Persentilene korrelerer 0,55 (vix_snitt mot vvix), 0,56
+(spredning mot vvix) og 0,30 (vix_snitt mot spredning), så de tre måler ulike
+ting. Med terskelen 95 treffer VVIX i 18 måneder der VIX ikke gjør det, VIX
+aldri alene, begge i to (mars og april 2020); VVIX ville altså overtatt
+sjokkordet. 25 av 37 bunnsone-episoder kom i en måned der VIX-snittet selv
+sto over 95, og VVIX sto i øverste tredjedel ved 11 av 13 innganger i
+papirporteføljen, så målene skiller ikke mellom inngangene.
+Konklusjon: kontekst_regime.py endres ikke. Skal VVIX inn, hører det hjemme
+som et felt som vises uten å påvirke ordet, eller som en Challenger med egen
+startdato.
+Filer: `sonde_kjor_vvix_sjokk.py`, `sonder/sonde_kjor_vvix_sjokk.txt`,
+`sonder/vvix_sjokk.csv`, `sonder_ferdige.txt`.
+For Cowork: ingenting å gjøre. Regimepanelet er uendret.
+
+### 11.11.2026 10:13, Claude Code
 
 Notion-siden «SB handover mappe» oppdatert (Frodes bestilling): nytt avsnitt
 «Gjennomgang 11. november 2026 og planlagte forbedringer» med hovedfunn, de
@@ -20,7 +69,7 @@ OVERLEVERING har fått samme peker.
 Filer: `notater/OVERLEVERING.md`, `notater/LOGG.md`; Notion.
 For Cowork: ingenting å gjøre.
 
-### 11.11.2026 08:00, Claude Code
+### 11.11.2026 09:00, Claude Code
 
 Prompter for forbedringene fra gjennomgangen (Frodes bestilling):
 `notater/2026-11-11_prompt_forbedringer.md`. Én prompt til Claude Code i
@@ -34,7 +83,7 @@ kjørt ennå.
 Filer: `notater/2026-11-11_prompt_forbedringer.md`, `notater/LOGG.md`.
 For Cowork: Cowork-prompten nederst i fila gjelder filer Cowork eier.
 
-### 11.11.2026 07:52, Claude Code
+### 11.11.2026 08:52, Claude Code
 
 Uavhengig gjennomgang av prosjektet (Frodes bestilling), lest fra Notion-siden
 «SB handover mappe», loggen, overleveringen, koden, dataene og dashbordet v77.

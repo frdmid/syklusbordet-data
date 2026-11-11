@@ -139,7 +139,11 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 
 ## Fallgruver
 
-- **Loggen:** før dato og klokkeslett fra `TZ=Europe/Oslo date`, ikke anslå.
+- **Loggen:** før dato og klokkeslett i norsk tid, ikke anslå. Bruk
+  Python, ikke Git Bash: `TZ=Europe/Oslo date` i Git Bash på Frodes maskin
+  svarer «GMT +0000», altså UTC, og ga innslag en time bak om vinteren
+  (funnet 11.11.2026). Riktig: `py -c "import datetime as dt; from
+  zoneinfo import ZoneInfo; print(dt.datetime.now(ZoneInfo('Europe/Oslo')).strftime('%d.%m.%Y %H:%M'))"`.
   Innslaget skal i samme commit som endringen. Ingen tankestrek i tekst.
 - **Lokal kopi:** Fra 02.10 ligger Frodes arbeidskopi i
   `C:\Users\FrodeMidjo\kode\syklusbordet-data`, utenfor OneDrive. Den gamle

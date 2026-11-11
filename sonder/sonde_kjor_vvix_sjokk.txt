@@ -1,0 +1,102 @@
+sonde_kjor_vvix_sjokk, kjort 2026-11-11 13:33:06 norsk tid
+Kriteriene staar i toppen av fila og er satt foer kjoering.
+
+18 raavarer, 1960-01 til 2026-10, 1143 signalmaaneder i alt
+^VIX  1990-01-02 til 2026-11-11, 9286 dager
+^VVIX 2007-01-03 til 2026-11-10, 4987 dager
+vix_snitt      1990-01 til 2026-10 (442 hele mnd), siste 16.896, persentil 44
+vix_spredning  1990-01 til 2026-10 (442 hele mnd), siste 0.071, persentil 71
+vvix_snitt     2007-01 til 2026-10 (238 hele mnd), siste 94.965, persentil 59
+
+==================== vix_snitt (oeverste mot nederste tredjedel, log realpris, per h mnd)
+   tredjedel fra 1992-12. Avgjoeres paa oppstart til 2014-12.
+   h  6 avgjoer   (1992-12) hoey   +2.5 % (n 312, ep 21)  midt   +7.0 %  lav   +3.4 % (n 135, ep 12)  forskjell   -0.9 pp  p 0.862  halvdeler   -0.5/  -1.4
+   h  6 2015-2026 (2015-01) hoey  +41.9 % (n 37, ep 13)  midt   +3.9 %  lav   +3.4 % (n 45, ep 8)  forskjell  +38.5 pp  p 0.000  halvdeler  +43.7/  -9.4
+   h 12 avgjoer   (1992-12) hoey   +8.9 % (n 312, ep 21)  midt  +13.2 %  lav  +11.9 % (n 135, ep 12)  forskjell   -3.0 pp  p 0.554  halvdeler   -3.5/ +12.0
+   h 12 2015-2026 (2015-01) hoey  +77.5 % (n 37, ep 13)  midt   +5.3 %  lav  +15.1 % (n 45, ep 8)  forskjell  +62.4 pp  p 0.019  halvdeler  +74.2/ -52.9
+   h 24 avgjoer   (1992-12) hoey  +19.5 % (n 312, ep 21)  midt  +20.5 %  lav  +19.8 % (n 135, ep 12)  forskjell   -0.4 pp  p 0.986  halvdeler   +0.3/  -2.8
+   h 24 2015-2026 (2015-01) hoey +126.6 % (n 37, ep 13)  midt  +49.9 %  lav  +41.6 % (n 45, ep 8)  forskjell  +84.9 pp  p 0.068  halvdeler  +94.9/ -19.9
+
+==================== vix_spredning (oeverste mot nederste tredjedel, log realpris, per h mnd)
+   tredjedel fra 1992-12. Avgjoeres paa oppstart til 2014-12.
+   h  6 avgjoer   (1992-12) hoey   +4.1 % (n 185, ep 31)  midt   +4.1 %  lav   +1.9 % (n 150, ep 29)  forskjell   +2.2 pp  p 0.543  halvdeler   +1.3/  -5.6
+   h  6 2015-2026 (2015-01) hoey  +12.9 % (n 78, ep 15)  midt  +19.4 %  lav  +17.3 % (n 15, ep 8)  forskjell   -4.4 pp  p 0.792  halvdeler   -3.3/  +5.8
+   h 12 avgjoer   (1992-12) hoey  +13.2 % (n 185, ep 31)  midt  +10.0 %  lav   +7.4 % (n 150, ep 29)  forskjell   +5.8 pp  p 0.249  halvdeler   +4.8/  -2.2
+   h 12 2015-2026 (2015-01) hoey  +32.5 % (n 78, ep 15)  midt  +30.4 %  lav  +19.3 % (n 15, ep 8)  forskjell  +13.2 pp  p 0.566  halvdeler  +15.9/  -1.5
+   h 24 avgjoer   (1992-12) hoey  +21.3 % (n 185, ep 31)  midt  +20.3 %  lav  +17.1 % (n 150, ep 29)  forskjell   +4.2 pp  p 0.535  halvdeler   +3.8/ -28.2
+   h 24 2015-2026 (2015-01) hoey  +73.6 % (n 76, ep 14)  midt  +57.3 %  lav  +81.7 % (n 14, ep 7)  forskjell   -8.1 pp  p 0.836  halvdeler  -10.0/ -26.5
+
+==================== vvix_snitt (oeverste mot nederste tredjedel, log realpris, per h mnd)
+   tredjedel fra 2009-12. Beskrivende, avgjoer ikke (for kort serie, se toppen av fila).
+   h  6 hele      (2009-12) hoey  +17.6 % (n 95, ep 16)  midt   +8.7 %  lav  +26.5 % (n 5, ep 2)  forskjell   -8.9 pp  p 0.838  halvdeler   -9.0/  +2.5
+   h  6 2015-2026 (2015-01) hoey  +18.7 % (n 74, ep 14)  midt   +7.9 %  lav  +26.5 % (n 5, ep 2)  forskjell   -7.8 pp  p 0.809  halvdeler   +0.7/  +8.5
+   h 12 hele      (2009-12) hoey  +40.0 % (n 95, ep 16)  midt   +4.7 %  lav  +55.3 % (n 5, ep 2)  forskjell  -15.2 pp  p 0.829  halvdeler   -7.8/  +6.5
+   h 12 2015-2026 (2015-01) hoey  +44.6 % (n 74, ep 14)  midt   +4.2 %  lav  +55.3 % (n 5, ep 2)  forskjell  -10.7 pp  p 0.803  halvdeler  +19.3/ -36.2
+   h 24 hele      (2009-12) hoey  +80.4 % (n 93, ep 15)  midt  +34.9 %  lav  +55.9 % (n 5, ep 2)  forskjell  +24.5 pp  p 0.709  halvdeler  +34.5/ +77.7
+   h 24 2015-2026 (2015-01) hoey  +92.3 % (n 72, ep 13)  midt  +35.5 %  lav  +55.9 % (n 5, ep 2)  forskjell  +36.4 pp  p 0.636  halvdeler  +96.7/ -40.7
+
+AVGJOERELSE (vix_snitt og vix_spredning, oppstart til 2014-12)
+
+   vix_snitt, h 12         : holder ikke (krav a til d nei, p 0.554, BH nei)
+   vix_snitt, h 24         : holder ikke (krav a til d nei, p 0.986, BH nei)
+   vix_snitt, h 6          : holder ikke (krav a til d nei, p 0.862, BH nei)
+   vix_spredning, h 12     : holder ikke (krav a til d nei, p 0.249, BH nei)
+   vix_spredning, h 24     : holder ikke (krav a til d nei, p 0.535, BH nei)
+   vix_spredning, h 6      : holder ikke (krav a til d nei, p 0.543, BH nei)
+
+   vvix_snitt: kan ikke avgjoeres i denne sonden (serien starter 2007).
+
+==================== TEST B, beskrivende: sjokkord med terskel 95
+   persentil finnes for alle tre fra 2011-12 (179 mnd)
+
+   korrelasjon mellom persentilene (felles maaneder)
+     vix_snitt      vix_snitt +1.00   vix_spred +0.30   vvix_snit +0.55
+     vix_spredning  vix_snitt +0.30   vix_spred +1.00   vvix_snit +0.56
+     vvix_snitt     vix_snitt +0.55   vix_spred +0.56   vvix_snit +1.00
+
+   maaneder over 95 per maal (hele perioden til maalet)
+     vix_snitt       21 av 383 mnd fra 1994-12: 1997-11, 1998-08, 1998-09, 1998-10, 2001-09, 2001-10, 2002-07, 2002-08, 2002-09, 2002-10, 2008-10, 2008-11, 2008-12, 2009-01 ...
+     vix_spredning   37 av 383 mnd fra 1994-12: 1998-08, 2001-09, 2005-04, 2006-05, 2006-06, 2007-02, 2007-03, 2007-06, 2007-08, 2007-11, 2008-09, 2008-10, 2008-11, 2010-05 ...
+     vvix_snitt      20 av 179 mnd fra 2011-12: 2015-09, 2018-02, 2018-03, 2018-10, 2020-03, 2020-04, 2020-05, 2020-06, 2020-07, 2020-10, 2020-11, 2021-01, 2021-02, 2021-05 ...
+
+   uenighet paa felles maaneder (fra 2011-12)
+     vix_snitt mot vix_spredning: bare vix_snitt  1, bare vix_spredning 21, begge  1
+     vix_snitt mot vvix_snitt: bare vix_snitt  0, bare vvix_snitt 18, begge  2
+     vix_spredning mot vvix_snitt: bare vix_spredning 16, bare vvix_snitt 14, begge  6
+
+   bunnsone-episoder som kom i sjokk etter hvert maal
+     vix_snitt      25 av 37 episoder i maaneder maalet dekker
+     vix_spredning  25 av 37 episoder i maaneder maalet dekker
+     vvix_snitt     8 av 17 episoder i maaneder maalet dekker
+
+   siste 12 hele maaneder
+     mnd              vix_snitt   vix_spredning      vvix_snitt
+     2025-11        19.90 ( 62)      0.09 ( 83)    106.80 ( 83)
+     2025-12        15.55 ( 35)      0.05 ( 38)     92.02 ( 51)
+     2026-01        16.05 ( 38)      0.08 ( 77)     98.53 ( 69)
+     2026-02        19.24 ( 58)      0.08 ( 81)    107.14 ( 83)
+     2026-03        25.60 ( 85)      0.11 ( 93)    122.29 ( 97)
+     2026-04        19.81 ( 61)      0.06 ( 58)    101.97 ( 75)
+     2026-05        17.24 ( 46)      0.04 (  8)     93.47 ( 54)
+     2026-06        17.96 ( 53)      0.11 ( 94)     92.92 ( 52)
+     2026-07        17.15 ( 45)      0.08 ( 78)     95.27 ( 60)
+     2026-08        15.23 ( 32)      0.04 ( 15)     88.88 ( 42)
+     2026-09        15.78 ( 36)      0.06 ( 63)     89.97 ( 46)
+     2026-10        16.90 ( 44)      0.07 ( 71)     94.97 ( 59)
+
+==================== TEST C, beskrivende: papirporteføljen ved inngang
+   henryhub   2011-12  vix_snitt    25.05 (hoey)  vix_spredning     0.05 (midt)  vvix_snitt    91.88 (hoey)  papirer    +27.9 %  MSCI World   +49.4 %
+   henryhub   2014-12  vix_snitt    16.31 (midt)  vix_spredning     0.10 (hoey)  vvix_snitt   103.50 (hoey)  papirer     +7.5 %  MSCI World   +23.1 %
+   jernmalm   2014-12  vix_snitt    16.31 (midt)  vix_spredning     0.10 (hoey)  vvix_snitt   103.50 (hoey)  papirer    +80.8 %  MSCI World   +23.1 %
+   aluminium  2015-10  vix_snitt    16.79 (midt)  vix_spredning     0.06 (midt)  vvix_snitt    94.56 (hoey)  papirer   +167.8 %  MSCI World   +18.7 %
+   nikkel     2015-11  vix_snitt    16.21 (midt)  vix_spredning     0.07 (hoey)  vvix_snitt    91.64 (hoey)  papirer   +150.4 %  MSCI World   +20.8 %
+   ttf        2015-12  vix_snitt    18.03 (midt)  vix_spredning     0.11 (hoey)  vvix_snitt   104.82 (hoey)  papirer    +57.1 %  MSCI World   +23.9 %
+   ttf        2019-03  vix_snitt    14.49 (lav)  vix_spredning     0.07 (hoey)  vvix_snitt    86.32 (midt)  papirer     -2.6 %  MSCI World   +37.2 %
+   henryhub   2019-06  vix_snitt    15.84 (midt)  vix_spredning     0.04 (lav)  vvix_snitt    85.56 (midt)  papirer   +105.1 %  MSCI World   +44.9 %
+   brent      2020-03  vix_snitt    57.74 (hoey)  vix_spredning     0.17 (hoey)  vvix_snitt   157.02 (hoey)  papirer   +243.6 %  MSCI World   +42.6 %
+   wti        2020-03  vix_snitt    57.74 (hoey)  vix_spredning     0.17 (hoey)  vvix_snitt   157.02 (hoey)  papirer   +540.5 %  MSCI World   +42.6 %
+   aluminium  2020-04  vix_snitt    41.45 (hoey)  vix_spredning     0.07 (hoey)  vvix_snitt   131.94 (hoey)  papirer   +382.6 %  MSCI World   +31.5 %
+   kull       2020-08  vix_snitt    22.89 (hoey)  vix_spredning     0.05 (lav)  vvix_snitt   111.41 (hoey)  papirer   +683.4 %  MSCI World   +24.0 %
+   henryhub   2023-03  vix_snitt    21.64 (hoey)  vix_spredning     0.08 (hoey)  vvix_snitt    95.89 (midt)  papirer    +35.3 %  MSCI World   +34.9 %
+
+Lagret sonder/vvix_sjokk.csv

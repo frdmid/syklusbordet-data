@@ -94,3 +94,4 @@ sonde_kjor_holdetid_nok
 sonde_kjor_halv_gevinst
 sonde_kjor_usdnok_regime
 sonde_kjor_usdnok_samtidig
+sonde_kjor_vvix_sjokk
