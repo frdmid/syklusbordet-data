@@ -9,6 +9,40 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 11.11.2026 13:45, Claude Code
+
+Forslag til nytt sjokkfelt i regimepanelet (Frodes forslag: feltet deles i to,
+månedssnitt VIX som nivå og månedssnitt VVIX som volvariasjon, begge over
+persentil 80 for forhøyet). Notatet
+`notater/2026-11-11_regime_sjokk_forslag.md` har forslaget med målte tall.
+Ingenting er bygget; `kontekst_regime.py` er uendret.
+Fire ting måtte løses før skalaen kunne settes:
+1. Lik terskel betyr ikke det samme på de to leddene. Med dagens voksende
+   persentil ligger VVIX over 80 i 33,0 % av månedene og VIX i 10,6 %, så
+   begge over 80 blir i praksis VIX alene. Rullende tiårsvindu for begge
+   (som rolling_pct og Ar) gir 16,8 mot 29,6 %, og 22 av 179 måneder med
+   begge over 80 mot 14 før.
+2. Ordet flimrer: 39 skifter på 179 måneder uten varighetskrav. Symmetrisk
+   krav om to måneder retter det, men leser tollsjokket april 2025 og mars
+   2026 som rolig. Løsningen er inn med én gang, ut etter to måneder under:
+   37 skifter, median periode tre måneder, ingen kjent sjokkmåned lest rolig.
+3. VVIX har dagsdata fra 03.01.2007, så persentilen starter desember 2011 og
+   204 måneder av VIX-historikken mangler volvariasjonsleddet. Feltet må vise
+   ukjent før den datoen, og VVIX må holdes utenfor dims i analogavstanden,
+   ellers faller 1998, 2001 og 2002 ut av analoglisten.
+4. Papirkorrelasjonen må ut av ordet. max() over tre ledd står på nesten hele
+   tiden. Den vises som eget tall til den er målt på samme måte.
+Foreslått skala, fem ord: sjokk (begge over 95, 2,8 % av månedene), forhøyet
+(begge over 80, 12,8 %), spent nivå (bare nivå, uroen er priset og stabil),
+urolig forventning (bare volvariasjon, ofte før en bevegelse) og rolig
+(57,0 %). De to enkeltleddene er ikke slått sammen, fordi de betyr motsatte
+ting. Oktober 2026 leser rolig (nivå 44, volvariasjon 59).
+Merk at feltet er kontekst: sonden sonde_kjor_vvix_sjokk viste at ingen av
+målene skiller utfallene, og tersklene er valgt, ikke målt.
+Filer: `notater/2026-11-11_regime_sjokk_forslag.md`, `notater/LOGG.md`.
+For Cowork: ingenting å gjøre nå. Bygges forslaget, må onsdagsrutinens punkt
+6i få de nye feltnavnene i kravene sine.
+
 ### 11.11.2026 13:35, Claude Code
 
 Tidssonefeil funnet og rettet. `TZ=Europe/Oslo date` i Git Bash paa Frodes
