@@ -1,10 +1,10 @@
 {
  "id": "regime",
- "laget": "2026-11-04",
+ "laget": "2026-11-11",
  "mnd": "2026-10",
  "vekst": {
   "ord": "blandet",
-  "bredde": 0.57,
+  "bredde": 0.59,
   "kobber_gull_12m": 28.9,
   "nedgang_siden": null
  },
@@ -18,24 +18,24 @@
  },
  "boom": {
   "ord": "nei",
-  "median_A": 20.1,
+  "median_A": 20.0,
   "grense": 17.1
  },
  "kreditt": 1.46,
  "kreditt_pct": 3.0,
  "rentekurve": 0.39,
  "likviditet": {
-  "dato": "2026-11-04",
-  "fed_netto_mrd": 5745.0,
-  "fed_netto_13u_pst": -1.6,
+  "dato": "2026-11-11",
+  "fed_netto_mrd": 5791.0,
+  "fed_netto_13u_pst": -0.1,
   "rrp_mrd": 0.0,
   "rrp_topp_mrd": 2367.0,
   "rrp_topp_dato": "2022-09-28",
-  "tga_mrd": 1000.0,
-  "fed_balanse_mrd": 6746.0,
-  "sb_mnd": "2026-09",
-  "sb_sum_mrd": 17524.0,
-  "sb_6m_pst": -2.4,
+  "tga_mrd": 957.0,
+  "fed_balanse_mrd": 6748.0,
+  "sb_mnd": "2026-10",
+  "sb_sum_mrd": 17367.0,
+  "sb_6m_pst": -4.3,
   "serie": [
    {
     "t": "2021-12",
@@ -334,35 +334,35 @@
    },
    {
     "t": "2026-11",
-    "netto": 5745.0,
-    "n13": -1.6
+    "netto": 5791.0,
+    "n13": -0.1
    }
   ]
  },
  "analoger": [
   {
    "t": "2024-04",
-   "avstand": 1.43,
+   "avstand": 1.45,
    "naer": null
   },
   {
    "t": "2006-02",
-   "avstand": 1.53,
+   "avstand": 1.59,
    "naer": null
   },
   {
    "t": "2021-11",
-   "avstand": 1.76,
+   "avstand": 1.73,
    "naer": "gjenåpningen"
   },
   {
    "t": "2005-08",
-   "avstand": 1.95,
+   "avstand": 1.94,
    "naer": null
   },
   {
    "t": "2023-09",
-   "avstand": 1.97,
+   "avstand": 1.98,
    "naer": null
   }
  ],
@@ -420,7 +420,7 @@
   {
    "t": "2022-05",
    "bredde": 0.72,
-   "median_A": 19.1,
+   "median_A": 18.7,
    "vix_pct": 92.0,
    "korr_pct": 70.0
   },
@@ -448,7 +448,7 @@
   {
    "t": "2022-09",
    "bredde": 0.39,
-   "median_A": 31.0,
+   "median_A": 31.1,
    "vix_pct": 88.0,
    "korr_pct": 74.0
   },
@@ -790,8 +790,8 @@
   },
   {
    "t": "2026-10",
-   "bredde": 0.57,
-   "median_A": 20.1,
+   "bredde": 0.59,
+   "median_A": 20.0,
    "vix_pct": 44.0,
    "korr_pct": 12.0
   }
