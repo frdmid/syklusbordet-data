@@ -1,19 +1,13 @@
 {
  "id": "gass_b",
- "laget": "2026-11-04",
- "mnd": "2026-08",
- "rigger": 97.75,
- "endring_12m_logpst": 22.43,
- "B": 23.0,
+ "laget": "2026-11-11",
+ "mnd": "2026-09",
+ "rigger": 93.5,
+ "endring_12m_logpst": 18.33,
+ "B": 27.4,
  "kilde": "EIA Drilling Productivity Report (arkiv) og STEO tabell 10a",
  "challenger": "challenger_gass_rigger_v1",
  "serie": [
-  {
-   "t": "2021-09",
-   "rigger": 89.0,
-   "x": 29.78,
-   "B": 13.5
-  },
   {
    "t": "2021-10",
    "rigger": 86.0,
@@ -367,6 +361,12 @@
    "rigger": 97.8,
    "x": 22.43,
    "B": 23.0
+  },
+  {
+   "t": "2026-09",
+   "rigger": 93.5,
+   "x": 18.33,
+   "B": 27.4
   }
  ]
 }
