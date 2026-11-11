@@ -1,134 +1,103 @@
 {
  "id": "endringer",
  "uke": {
-  "forrige_dato": "2026-10-28 12:46",
-  "ny_dato": "2026-11-04 11:36",
-  "forrige": "2026-W44",
-  "ny": "2026-W45",
+  "forrige_dato": "2026-11-04 11:36",
+  "ny_dato": "2026-11-11 07:50",
+  "forrige": "2026-W45",
+  "ny": "2026-W46",
   "topp": [
    {
-    "segment": "Naturgass Europa",
-    "felt": "Realpris",
-    "gammel": 25.42,
-    "ny": 28.5,
-    "endring_pst": 12.1,
-    "poeng": null,
-    "vekt": 12.1
-   },
-   {
-    "segment": "Aluminium",
-    "felt": "Prisnivå A",
-    "gammel": 39.6,
-    "ny": 51.6,
-    "endring_pst": 30.3,
-    "poeng": 12.0,
-    "vekt": 12.0
-   },
-   {
-    "segment": "Jernmalm 62% Fe",
-    "felt": "A detrendet",
-    "gammel": 61.2,
-    "ny": 70.8,
-    "endring_pst": 15.7,
-    "poeng": 9.6,
-    "vekt": 9.6
-   },
-   {
-    "segment": "Sink",
-    "felt": "Kapitulasjon D",
-    "gammel": 16.4,
-    "ny": 25.8,
-    "endring_pst": 57.3,
-    "poeng": 9.4,
-    "vekt": 9.4
-   },
-   {
-    "segment": "Nikkel",
-    "felt": "Prisnivå A",
-    "gammel": 62.7,
-    "ny": 71.7,
-    "endring_pst": 14.4,
-    "poeng": 9.0,
-    "vekt": 9.0
-   },
-   {
-    "segment": "Kobber",
+    "segment": "Palmeolje",
     "felt": "COT-persentil",
-    "gammel": 48.7,
-    "ny": 41.0,
-    "endring_pst": -15.8,
-    "poeng": -7.7,
-    "vekt": 7.7
+    "gammel": 21.2,
+    "ny": 44.2,
+    "endring_pst": 108.5,
+    "poeng": 23.0,
+    "vekt": 23.0
    },
    {
-    "segment": "Nikkel",
+    "segment": "Naturgass US (Henry Hub)",
     "felt": "A detrendet",
-    "gammel": 73.1,
-    "ny": 80.8,
-    "endring_pst": 10.5,
-    "poeng": 7.7,
-    "vekt": 7.7
+    "gammel": 55.5,
+    "ny": 76.5,
+    "endring_pst": 37.8,
+    "poeng": 21.0,
+    "vekt": 21.0
    },
    {
-    "segment": "Jernmalm 62% Fe",
+    "segment": "Naturgass US (Henry Hub)",
     "felt": "Realpris",
-    "gammel": 97.7,
-    "ny": 90.8,
-    "endring_pst": -7.1,
+    "gammel": 3.02,
+    "ny": 2.42,
+    "endring_pst": -19.9,
     "poeng": null,
-    "vekt": 7.1
+    "vekt": 19.9
    },
-   {
-    "segment": "Aluminium",
-    "felt": "Realpris",
-    "gammel": 3283.0,
-    "ny": 3061.0,
-    "endring_pst": -6.8,
-    "poeng": null,
-    "vekt": 6.8
-   },
-   {
-    "segment": "Aluminium",
-    "felt": "A detrendet",
-    "gammel": 10.3,
-    "ny": 17.1,
-    "endring_pst": 66.0,
-    "poeng": 6.8,
-    "vekt": 6.8
-   }
-  ],
-  "skifter": [
    {
     "segment": "Gull",
-    "felt": "Trend",
-    "gammel": "begynnende",
-    "ny": "nei"
+    "felt": "Kapitulasjon D",
+    "gammel": 50.8,
+    "ny": 31.1,
+    "endring_pst": -38.8,
+    "poeng": -19.7,
+    "vekt": 19.7
    },
    {
-    "segment": "Nikkel",
-    "felt": "Trend",
-    "gammel": "begynnende",
-    "ny": "nei"
+    "segment": "Råolje (Brent)",
+    "felt": "COT-persentil",
+    "gammel": 15.4,
+    "ny": 26.9,
+    "endring_pst": 74.7,
+    "poeng": 11.5,
+    "vekt": 11.5
    },
    {
-    "segment": "Tinn",
-    "felt": "Trend",
-    "gammel": "bekreftet",
-    "ny": "begynnende"
+    "segment": "Råolje (WTI)",
+    "felt": "A detrendet",
+    "gammel": 51.3,
+    "ny": 40.2,
+    "endring_pst": -21.6,
+    "poeng": -11.1,
+    "vekt": 11.1
    },
    {
-    "segment": "Jernmalm 62% Fe",
-    "felt": "Under oppsikt",
-    "gammel": false,
-    "ny": true
+    "segment": "Råolje (WTI)",
+    "felt": "Realpris",
+    "gammel": 97.18,
+    "ny": 107.56,
+    "endring_pst": 10.7,
+    "poeng": null,
+    "vekt": 10.7
    },
    {
-    "segment": "Palmeolje",
-    "felt": "Trend",
-    "gammel": "bekreftet",
-    "ny": "begynnende"
+    "segment": "Naturgass Europa",
+    "felt": "Kapitulasjon D",
+    "gammel": 5.0,
+    "ny": 14.7,
+    "endring_pst": 194.0,
+    "poeng": 9.7,
+    "vekt": 9.7
+   },
+   {
+    "segment": "Suezmax (5 år)",
+    "felt": "Kapitulasjon D",
+    "gammel": 2.1,
+    "ny": 10.5,
+    "endring_pst": 400.0,
+    "poeng": 8.4,
+    "vekt": 8.4
+   },
+   {
+    "segment": "Naturgass US (Henry Hub)",
+    "felt": "Kapitulasjon D",
+    "gammel": 17.3,
+    "ny": 25.5,
+    "endring_pst": 47.4,
+    "poeng": 8.2,
+    "vekt": 8.2
    }
-  ]
+  ],
+  "skifter": []
  },
  "kvartal": {
   "forrige_dato": "2026-10-14 07:12",
