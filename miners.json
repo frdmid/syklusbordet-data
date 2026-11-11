@@ -4,24 +4,24 @@
  "group": "Metall",
  "unit": "fat olje per unse gull",
  "status": "live",
- "laget": "2026-11-04",
+ "laget": "2026-11-11",
  "note": "Forholdet mellom gullpris og oljepris, et grovt mål på gruvenes margin. Observasjon uten flagg: bunnsonen på dette forholdet holdt ikke (sonden 28.10.2026), og heller ikke feilprising av gruvene mot gull og olje, og ingen av signalene som ble testet.",
  "source": "Gull, WTI og Brent fra serier/priser_mnd.csv (Verdensbanken og GitHub-speil)",
  "source_url": "https://github.com/frdmid/syklusbordet-data/blob/main/kontekst_miners.py",
  "hist_start": "1986-01",
- "last_obs": "2026-09",
- "last_nom": 44.443,
- "last_real": 44.443,
- "trend_pst_aar": 1.27,
+ "last_obs": "2026-10",
+ "last_nom": 38.165,
+ "last_real": 38.165,
+ "trend_pst_aar": 1.29,
  "scores": {
-  "A": 4.7,
-  "Ad": 7.6,
-  "Ar": 19.2,
+  "A": 6.5,
+  "Ad": 14.7,
+  "Ar": 26.7,
   "flagg": false,
   "oppsikt": false,
   "A2": null,
   "B": null,
-  "D": 44.8,
+  "D": 25.9,
   "S": null,
   "gate": "uaktuell",
   "months_in_zone": 0,
@@ -29,23 +29,6 @@
   "observasjon_grunn": "Gullgruvene har ikke flagg. Bunnsonen på gull mot olje ga median -14 % for gruveindeksen over 24 mnd (6 klynger, sonden 28.10.2026). Ingen signal: ingen av de testede signalene holdt på 1993 til 2014."
  },
  "series": [
-  {
-   "t": "2011-10",
-   "nom": 17.877,
-   "real": 17.877,
-   "p10": 8.782,
-   "p25": 10.771,
-   "p50": 15.964,
-   "p75": 20.144,
-   "p90": 23.761,
-   "A": 37.4,
-   "Ad": 1.3,
-   "Ar": 5.0,
-   "flagg": false,
-   "oppsikt": false,
-   "sig1": true,
-   "sig2": true
-  },
   {
    "t": "2011-11",
    "nom": 17.328,
@@ -3088,15 +3071,32 @@
    "oppsikt": false,
    "sig1": false,
    "sig2": true
+  },
+  {
+   "t": "2026-10",
+   "nom": 38.165,
+   "real": 38.165,
+   "p10": 9.575,
+   "p25": 13.347,
+   "p50": 18.562,
+   "p75": 24.11,
+   "p90": 30.068,
+   "A": 6.5,
+   "Ad": 14.7,
+   "Ar": 26.7,
+   "flagg": false,
+   "oppsikt": false,
+   "sig1": false,
+   "sig2": false
   }
  ],
  "trend": {
-  "t": "2026-09",
+  "t": "2026-10",
   "basis": "realpris, maanedlig",
-  "mom12_pst": -23.5,
-  "mom6_pst": -5.9,
-  "ma10": 56.7217,
-  "avvik_ma10_pst": -21.6,
+  "mom12_pst": -41.9,
+  "mom6_pst": -12.2,
+  "ma10": 53.0129,
+  "avvik_ma10_pst": -28.0,
   "over_ma10": false,
   "signal": "nei"
  },
@@ -3109,8 +3109,8 @@
    "kommentar": "Store gruver. Samme uke: beta mot gull 1,8, mot olje 0,0 (sonden 28.10.2026).",
    "omvendt": false,
    "handlbar": true,
-   "D": 51.3,
-   "fall_pst": -28.1
+   "D": 27.9,
+   "fall_pst": -20.9
   },
   {
    "ticker": "GDXJ.L",
@@ -3120,8 +3120,8 @@
    "kommentar": "Små gruver. Beta mot gull 1,9, mot olje 0,0. Svinger mest.",
    "omvendt": false,
    "handlbar": true,
-   "D": 54.7,
-   "fall_pst": -34.1
+   "D": 40.6,
+   "fall_pst": -27.0
   },
   {
    "ticker": "IAUP.L",
@@ -3131,8 +3131,8 @@
    "kommentar": "Store produsenter. Beta mot gull 1,7, mot olje 0,0.",
    "omvendt": false,
    "handlbar": true,
-   "D": 31.8,
-   "fall_pst": -26.5
+   "D": 17.5,
+   "fall_pst": -19.0
   },
   {
    "ticker": "AUCO.L",
@@ -3142,19 +3142,19 @@
    "kommentar": "Blandet størrelse, fra 2008. Beta mot gull 1,7, mot olje 0,0.",
    "omvendt": false,
    "handlbar": true,
-   "D": 38.3,
-   "fall_pst": -26.8
+   "D": 23.9,
+   "fall_pst": -19.6
   }
  ],
  "d_detalj": {
-  "D_aksjer": 44.8,
+  "D_aksjer": 25.9,
   "tema": null,
   "tema_D": null,
   "tema_navn": null,
   "n": 4,
   "spredning": [
-   31.8,
-   54.7
+   17.5,
+   40.6
   ]
  },
  "gate_detalj": {
@@ -3169,11 +3169,11 @@
   },
   "signal": null,
   "punkter": {
-   "mnd1": "2026-09",
+   "mnd1": "2026-10",
    "sig1": false,
    "sist_sig1": "2026-07",
-   "mnd2": "2026-09",
-   "sig2": true,
+   "mnd2": "2026-10",
+   "sig2": false,
    "sist_sig2": "2026-09"
   },
   "tester": "Testet på gruveaksjer 1993 til 2014, før signalene ble funnet: kombinasjonen av gull mot olje og olje-A, K1 med krav til rekkelengde, varianter med forsinkelse og rullende A, og ekstremt billig olje eller oljekrakk. Ingen holdt. Billig olje ga svakere gruver, ikke sterkere.",
