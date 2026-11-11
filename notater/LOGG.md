@@ -9,6 +9,20 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 11.11.2026 08:00, Claude Code
+
+Prompter for forbedringene fra gjennomgangen (Frodes bestilling):
+`notater/2026-11-11_prompt_forbedringer.md`. Én prompt til Claude Code i
+seks steg (lås bibliotekversjoner og miljølogg, evalueringsprotokoll for
+Championen, dashbordet leser dashbord/data.json fra repoet med databasen som
+reserve og dashbord/index.html som kilde, ukerapport fra Actions til
+logg/uke/, rull loggen til notater/logg/, småting) og én til Cowork (fire
+cron-tider i ukentlig.yml, CLAUDE.md etter at loggen er rullet, Fearnleys-
+vilkårene). Tre avgjørelser for Frode står øverst i fila. Ingenting er
+kjørt ennå.
+Filer: `notater/2026-11-11_prompt_forbedringer.md`, `notater/LOGG.md`.
+For Cowork: Cowork-prompten nederst i fila gjelder filer Cowork eier.
+
 ### 11.11.2026 07:52, Claude Code
 
 Uavhengig gjennomgang av prosjektet (Frodes bestilling), lest fra Notion-siden
