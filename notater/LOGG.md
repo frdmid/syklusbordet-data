@@ -9,6 +9,21 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 11.11.2026 07:52, Claude Code
+
+Uavhengig gjennomgang av prosjektet (Frodes bestilling), lest fra Notion-siden
+«SB handover mappe», loggen, overleveringen, koden, dataene og dashbordet v77.
+Testene i test_shadow_oos.py kjørt lokalt: 16 av 16 besto. Notatet
+`notater/2026-11-11_gjennomgang.md` har 13 punkter med alternativer og en
+prioritert liste på fem: lås bibliotekversjoner og før dem i manifestet,
+evalueringsprotokoll for Championen, dashbordet leser repoet direkte og
+repoet blir kilde for dashbordkoden, alle fire cron-tidene i ukentlig.yml,
+rull loggen og la Actions skrive ukerapporten til repoet. Ingen kode eller
+data er endret.
+Filer: `notater/2026-11-11_gjennomgang.md`, `notater/LOGG.md`.
+For Cowork: punkt 6 (fire cron-tider i `.github/workflows/ukentlig.yml`) og
+punkt 10 (Fearnleys-PDF-ene i et offentlig repo) gjelder filer Cowork eier.
+
 ### 09.11.2026 10:54, Claude Code
 
 Overleveringsmappe i Notion (Frodes bestilling): siden «Syklusbordet:
