@@ -29,7 +29,10 @@ og sikkerhetskopi») har alt som trengs for å fortsette i en ny Claude-konto.
 Siste kopi: mappen «Sikkerhetskopi 2026-11-09» (repoet i zip, databasen med
 IAI-dokumentet, rutinen, minnet, de private dataene, dashbordet v77 og
 `prompts.txt`). Samme kopi uten private data: `sikkerhetskopi/2026-11-09/`.
-Start med `prompts.txt`.
+Start med `prompts.txt`. Siden har fra 11.11.2026 også et avsnitt om den
+uavhengige gjennomgangen (`notater/2026-11-11_gjennomgang.md`) og promptene
+som gjør forslagene (`notater/2026-11-11_prompt_forbedringer.md`); ny
+sikkerhetskopi tas når stegene der er gjort.
 
 ## Hvem eier hva
 

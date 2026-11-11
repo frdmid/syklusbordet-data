@@ -9,6 +9,17 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 11.11.2026 09:13, Claude Code
+
+Notion-siden «SB handover mappe» oppdatert (Frodes bestilling): nytt avsnitt
+«Gjennomgang 11. november 2026 og planlagte forbedringer» med hovedfunn, de
+fem prioriterte stegene og de tre avgjørelsene for Frode, pluss pekere til
+de to notatene i innledningen og under «Les først i repoet». Ingen ny
+sikkerhetskopi; kopien 09.11 gjelder til stegene i promptfila er gjort.
+OVERLEVERING har fått samme peker.
+Filer: `notater/OVERLEVERING.md`, `notater/LOGG.md`; Notion.
+For Cowork: ingenting å gjøre.
+
 ### 11.11.2026 08:00, Claude Code
 
 Prompter for forbedringene fra gjennomgangen (Frodes bestilling):
