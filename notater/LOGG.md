@@ -9,6 +9,26 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 11.11.2026 14:30, Claude Code
+
+Funn, ikke rettet: `test_shadow_oos.py` har fra i dag én feilende test,
+`test_no_future_data`, på `champion_v1_1|2026-10-07|ship_vlcc|-`. Testen bygger
+et syntetisk snapshot med datoen 2026-10-07 fra dagens data i repoet, og krever
+at ingen observasjonsdato ligger etter snapshotdatoen. Denne ukens kjøring satte
+`segments/ship_vlcc.json` til last_obs 2026-11 (den sto 2026-10 den 28.10 og
+04.11), så november er nå etter 7. oktober og kravet brytes.
+Dette er ikke en feil i Shadow-OOS og ikke forårsaket av dagens endring i
+kontekst_regime.py: verken shadow_oos.py eller test_shadow_oos.py importerer
+den modulen. Testen er tidsavhengig fordi snapshotdatoen er fast mens dataene
+den leser er ferske, og den vil feile hver uke fra nå.
+Den asserten er riktig i innhold og bør ikke svekkes. Rettingen bør enten låse
+inndataene testen leser, eller utlede snapshotdatoen fra dataene i stedet for å
+skrive 2026-10-07. `test_shadow_oos.py` er ikke blant Championens 16 hashede
+filer, så en retting der merkes ikke som kodeendring. Frode avgjør.
+Filer: ingen endret. `notater/LOGG.md`.
+For Cowork: kjører du testene, er denne ene feilen ventet til noen retter
+testen. De 15 andre består.
+
 ### 11.11.2026 14:28, Claude Code
 
 Uro-feltet i regimepanelet delt i to (Frodes forslag, bygget). Nivå er
