@@ -125,14 +125,32 @@ Hver er pakket i try/except som før, så en feil i én rammer ingen andre.
 
 ## Det Cowork må gjøre
 
-1. **Reserveinstallasjon i `ukentlig.yml`** hvis Frode vil ha eksakte pinner
-   senere: et steg som prøver `pip install -r requirements.txt` og ved feil
-   faller tilbake til installasjon uten pinner, slik at en manglende hjulfil
-   ikke stopper onsdagen. Uten det steget skal pinnene ikke strammes.
-2. **`CLAUDE.md`**: regelen om å lese loggen bør peke til blokken «Status nå»
-   og inneværende måned, og si at eldre innslag ligger i `notater/logg/`.
-3. **Alle fire cron-tidene** i `ukentlig.yml` (steg 4 i gjennomgangen, ikke
-   gjort her).
+Oppdatert 12.11.2026: punkt 1 og 3 gjelder samme fil, og hele filen ligger nå
+ferdig i `notater/ukentlig_forslag.yml`, som kopieres til
+`.github/workflows/ukentlig.yml` ord for ord. Den har både de fire
+cron-tidene og reserveinstallasjonen, og toppteksten forklarer begge.
+
+1. **Kopier `notater/ukentlig_forslag.yml`** til
+   `.github/workflows/ukentlig.yml`, ord for ord. Den inneholder:
+   - **fire cron-tider** i stedet for to, så filen virker både ved vintertid
+     og sommertid uten å flyttes for hånd. Vakta gjør de overflødige til
+     ingenting. Effekten: om vinteren går hovedkjøringen 07:48 i stedet for
+     08:48, om sommeren 08:48 i stedet for 09:48. Begge er harmløse, fordi
+     alle kildene er forrige dags sluttkurser eller månedstall, og rutinen
+     går først 10:15.
+   - **reserveinstallasjon** i hvert pip-steg, så en manglende hjulfil ikke
+     stopper hele onsdagen. Uten dette steget skal versjonene i
+     `requirements.txt` ikke strammes til eksakte pinner.
+2. **`CLAUDE.md`**: bytt de to linjene om loggen. Nøyaktig tekst, klar til å
+   limes inn i stedet for dagens to første kulepunkt-linjer:
+
+   ```
+   - `notater/LOGG.md` er felles logg for Cowork-økten og Claude Code-økten.
+     Les blokken «Status nå» øverst og innslagene fra inneværende måned før du
+     begynner. Eldre innslag ligger i `notater/logg/<år>-<mnd>.md`, en fil per
+     måned. «Status nå» oppdateres i samme commit som endringen, og ved
+     månedsskifte flyttes forrige måned ut.
+   ```
 
 ## Det som ikke er gjort
 

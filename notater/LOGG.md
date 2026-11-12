@@ -15,7 +15,7 @@ ord for ord, og blokken «Status nå» oppdateres. Eldre innslag ligger der.
 
 Oppdateres i SAMME commit som endringen, med samme regel som innslagene
 under. Er den eldre enn det nyeste innslaget, er den ikke til å stole på.
-Sist oppdatert 12.11.2026 12:55.
+Sist oppdatert 12.11.2026 13:00.
 
 - **Dashbord:** versjon 79, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
   Kilden er `dashbord/index.html` i repoet, ikke artifacten. Siden leser
@@ -32,6 +32,29 @@ Sist oppdatert 12.11.2026 12:55.
 - **Eldre innslag:** `notater/logg/<år>-<mnd>.md`, en fil per måned.
 
 ---
+
+### 12.11.2026 13:00, Claude Code
+
+Forslagsfila til arbeidsflyten gjort klar til kopiering (Frode har bedt Cowork
+om de tre punktene, og ingenting er kommet inn ennå per dette innslaget).
+Problemet var at `notater/ukentlig_forslag.yml`, som toppteksten sier skal
+kopieres ord for ord, fortsatt hadde BARE TO cron-tider og ingen
+reserveinstallasjon. Hadde Cowork fulgt prosedyren, ville de fått den gamle
+versjonen. Fila har nå fire cron-tider ("48 6", "48 7", "56 7" og "56 8", alle
+onsdag) og reserveinstallasjon i alle tre pip-stegene, og toppteksten forklarer
+begge endringene og at vakta gjør de overflødige tidene til ingenting.
+Effekten av de fire tidene står i fila: om vinteren går hovedkjøringen 07:48 i
+stedet for 08:48, om sommeren 08:48 i stedet for 09:48. Begge er harmløse,
+fordi alle kildene er forrige dags sluttkurser eller månedstall, og rutinen går
+først 10:15.
+`notater/2026-11-12_robusthet.md` er rettet: punkt 1 og 3 gjaldt samme fil og
+er slått sammen til én kopieringsinstruks, og punkt 2 har nå den nøyaktige
+CLAUDE.md-teksten klar til å limes inn, i stedet for en beskrivelse.
+Kontrollert: fire cron-tider, tre pip-steg med reserve, ingen tabulatorer, og
+name, on og jobs står.
+Filer: `notater/ukentlig_forslag.yml`, `notater/2026-11-12_robusthet.md`.
+For Cowork: kopier `notater/ukentlig_forslag.yml` til
+`.github/workflows/ukentlig.yml` ord for ord. Ikke skriv cron-tidene selv.
 
 ### 12.11.2026 12:55, Claude Code
 
