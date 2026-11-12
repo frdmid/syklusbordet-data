@@ -12,6 +12,7 @@ import glob, json, os, shutil, tempfile
 
 os.environ["KONTEKST_AV"] = "1"     # ingen nettkall til kontekstfilene i testene (07.10.2026)
 import shadow_oos as so
+import shadow_utfall as su          # fase 2, utfallene (12.11.2026)
 
 ROT = os.path.dirname(os.path.abspath(__file__))
 UTC = dt.timezone.utc
@@ -410,6 +411,152 @@ def test_config_og_register():
     assert k["model"]["effective_from"] == "2026-10-14" and k["model"]["parent_model"] == "champion_v1_0"
     assert "champion_v1_0" in reg                      # forrige Champion staar i registeret
     assert not so.kodeavvik(k, ROT), "frosne kodefiler avviker fra config"
+
+
+# ---------------------------------------------------------------- fase 2, utfall
+# Tester for shadow_utfall.py (12.11.2026), med kjente tall saa svaret kan
+# regnes for haand. Protokollen som bruker tallene staar i
+# notater/champion_evaluering.md.
+#
+#   TEST.OL    NOK, usd_per_enhet 0,10 (10 NOK per USD)
+#              100 -> 110 med utbytte 5 -> 120, altsaa
+#              andeler *= 1 + 5/110 og avkastning = 1,0454545 * 1,20 - 1
+#   TEST.TO    CAD, 50 i begge ender, usd_per_enhet 0,72 -> 0,80,
+#              altsaa 0,1111111 bare av valutaen
+#   TEST.DEAD  NOK, serien slutter foer modning, saa den er avnotert
+U_SIGNAL = dt.date(2025, 1, 8)
+U_MOD3 = su.pluss_mnd(U_SIGNAL, 3)
+U_NAA = dt.datetime(2025, 5, 1, 12, tzinfo=su.OSLO)
+U_UKE_S = so.periodenokkel(U_SIGNAL)
+U_UKE_M = so.periodenokkel(U_MOD3)
+U_KURS = [
+    (U_UKE_S, "2025-01-08", "TEST.OL", 100, "NOK", "2025-01-07", 0, 0.10),
+    (U_UKE_S, "2025-01-08", "TEST.TO", 50, "CAD", "2025-01-07", 0, 0.72),
+    (U_UKE_S, "2025-01-08", "TEST.DEAD", 200, "NOK", "2025-01-07", 0, 0.10),
+    ("2025-W07", "2025-02-12", "TEST.OL", 110, "NOK", "2025-02-11", 5, 0.10),
+    ("2025-W07", "2025-02-12", "TEST.TO", 50, "CAD", "2025-02-11", 0, 0.72),
+    ("2025-W07", "2025-02-12", "TEST.DEAD", 190, "NOK", "2025-02-11", 0, 0.10),
+    (U_UKE_M, "2025-04-09", "TEST.OL", 120, "NOK", "2025-04-08", 0, 0.10),
+    (U_UKE_M, "2025-04-09", "TEST.TO", 50, "CAD", "2025-04-08", 0, 0.80),
+]
+U_PAPIRER = (("TEST.OL", True), ("TEST.TO", True), ("TEST.DEAD", True))
+U_FELT = ["uke", "dato", "ticker", "segmenter", "kurs", "valuta", "kursdato",
+          "utbytte", "usd_per_enhet"]
+
+
+def _u_kursfil():
+    linjer = [",".join(U_FELT)]
+    for uke, dato, tk, kurs, val, kd, ub, upe in U_KURS:
+        linjer.append(",".join(str(x) for x in
+                               (uke, dato, tk, "brent", kurs, val, kd, ub, upe)))
+    return chr(10).join(linjer) + chr(10)
+
+
+def _u_snapshot(uke, ref_kurs, papirer):
+    rader = [{"snapshot_id": "x|" + uke + "|brent|" + tk, "snapshot_date": "2025-01-08",
+              "iso_week": uke, "model_version": so.MODELL, "segment": "brent",
+              "instrument": tk, "level": "instrument", "currency": "NOK",
+              "instrument_price": "100",
+              "instrument_eligible": "true" if kjop else "false"}
+             for tk, kjop in papirer]
+    rader.append({"snapshot_id": "x|" + uke + "|-|IWDA.L", "snapshot_date": "2025-01-08",
+                  "iso_week": uke, "model_version": so.MODELL, "segment": "",
+                  "instrument": "IWDA.L", "level": "benchmark", "currency": "USD",
+                  "instrument_price": str(ref_kurs)})
+    return so.til_csv(rader, so.F_SNAP)
+
+
+def _u_lager(papirer=U_PAPIRER, ref_s=100, ref_m=110, med_modning=True):
+    l = _lager()
+    l._skriv(so.HENDELSER, so.til_csv([{
+        "event_id": "e1", "model_version": so.MODELL, "event_date": U_SIGNAL.isoformat(),
+        "iso_week": U_UKE_S, "segment": "brent", "instrument": "",
+        "event": "hypothetical_entry", "snapshot_id": "x", "run_id": "r1",
+        "episode_id": "ep1", "new_episode": "true", "macro_cluster_id": "k1",
+        "commodity_signal": "true", "investable_signal": "true"}], so.F_EVENT))
+    l._skriv(so.UTFALL, ",".join(so.F_OUTCOME) + chr(10))
+    l._skriv(su.KURSER, _u_kursfil())
+    l._skriv("shadow/snapshots/" + so.MODELL + "/" + U_UKE_S + ".csv",
+             _u_snapshot(U_UKE_S, ref_s, papirer))
+    if med_modning:
+        l._skriv("shadow/snapshots/" + so.MODELL + "/" + U_UKE_M + ".csv",
+                 _u_snapshot(U_UKE_M, ref_m, papirer))
+    return l
+
+
+def _naer(a, b, tol=1e-5):
+    return a is not None and abs(a - b) < tol
+
+
+def test_utfall_regnestykket():
+    """Utbytte reinvestert, valuta regnet om, segmentet likt vektet."""
+    nye = su.utfall(_u_lager(), U_NAA, note=lambda *a: None)
+    assert {r["horizon"] for r in nye} == {3}, "bare 3 mnd skal vaere modnet"
+    pap = {r["instrument"]: r for r in nye if r["instrument"]}
+    assert _naer(pap["TEST.OL"]["instrument_return"], (1 + 5 / 110) * 1.20 - 1), \
+        pap["TEST.OL"]["instrument_return"]
+    assert _naer(pap["TEST.TO"]["instrument_return"], 0.80 / 0.72 - 1), \
+        pap["TEST.TO"]["instrument_return"]
+    seg = [r for r in nye if not r["instrument"]][0]
+    ventet = ((1 + 5 / 110) * 1.20 - 1 + 0.80 / 0.72 - 1 + (190 / 200 - 1)) / 3
+    assert _naer(seg["portfolio_return"], ventet), seg["portfolio_return"]
+    assert _naer(seg["benchmark_return"], 0.10), seg["benchmark_return"]
+    assert _naer(seg["excess_return"], ventet - 0.10, 1e-4), seg["excess_return"]
+    assert seg["portfolio_id"] == "k1"
+
+
+def test_utfall_avnotert():
+    """Et papir som slutter aa handles faar status, ikke et gjettet tall."""
+    nye = su.utfall(_u_lager(), U_NAA, note=lambda *a: None)
+    d = [r for r in nye if r["instrument"] == "TEST.DEAD"][0]
+    assert d["outcome_status"] == "avnotert" and d["delisting"] == "true", d
+    seg = [r for r in nye if not r["instrument"]][0]
+    assert seg["outcome_status"] == "delvis", seg["outcome_status"]
+
+
+def test_utfall_bare_modne():
+    """Foer horisonten er modnet skrives ingenting, aldri et delvis tall."""
+    assert su.utfall(_u_lager(), dt.datetime(2025, 2, 1, tzinfo=su.OSLO),
+                     note=lambda *a: None) == []
+
+
+def test_utfall_idempotent():
+    """Samme kjoering to ganger legger ikke til rader paa nytt."""
+    l = _u_lager()
+    su.kjor(l, note=lambda *a: None, naa=U_NAA)
+    n1 = len(so.fra_csv(_les(l, so.UTFALL)))
+    su.kjor(l, note=lambda *a: None, naa=U_NAA)
+    assert n1 > 0 and len(so.fra_csv(_les(l, so.UTFALL))) == n1
+
+
+def test_utfall_ingen_kjoepbare():
+    """Ingen kjoepbare papirer er et resultat, ikke manglende data."""
+    nye = su.utfall(_u_lager(papirer=(("TEST.OL", False),)), U_NAA, note=lambda *a: None)
+    assert len(nye) == 1 and nye[0]["outcome_status"] == "ingen_kjopbare", nye
+
+
+def test_utfall_referanse_mangler():
+    """Mangler referansen, staar meravkastningen tom i stedet for aa gjettes."""
+    nye = su.utfall(_u_lager(med_modning=False), U_NAA, note=lambda *a: None)
+    seg = [r for r in nye if not r["instrument"]][0]
+    assert seg["benchmark_return"] is None and seg["excess_return"] is None, seg
+
+
+def test_utfall_bare_tillegg():
+    """Overskriften staar, filen slutter med linjeskift, og en feil kaster ikke."""
+    l = _u_lager()
+    su.kjor(l, note=lambda *a: None, naa=U_NAA)
+    t = _les(l, so.UTFALL)
+    assert t.split(chr(10))[0] == ",".join(so.F_OUTCOME)
+    assert t.endswith(chr(10))
+
+    class Daarlig:
+        def les(self, sti):
+            raise RuntimeError("nede")
+
+    meld = []
+    su.kjor(Daarlig(), note=meld.append)
+    assert any("feilet" in m for m in meld), meld
 
 
 if __name__ == "__main__":

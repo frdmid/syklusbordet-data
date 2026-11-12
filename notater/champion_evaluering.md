@@ -51,9 +51,18 @@ For hver modnet klynge:
    omvendt eksponering, og C ikke stengt).
 2. Klyngens avkastning: likt vektet over segmentene i klyngen, altså ett
    segment er én vekt uansett hvor mange papirer det har.
-3. Klyngens **meravkastning**: klyngens avkastning minus MSCI World
-   (`IWDA.L`, i NOK) over nøyaktig det samme vinduet, fra den første
-   signaldatoen i klyngen.
+3. Hvert segments **meravkastning**: segmentets avkastning minus MSCI World
+   (`IWDA.L`, i NOK) over nøyaktig det samme vinduet, altså fra segmentets
+   egen signaldato til samme dato 24 måneder senere.
+4. Klyngens meravkastning: likt vektet snitt av segmentenes meravkastninger.
+
+Punkt 3 og 4 ble presisert 12.11.2026, da modulen ble bygget. Den første
+formuleringen sa «fra den første signaldatoen i klyngen», og den er tvetydig
+når segmentene i en klynge kan ha signaldatoer opptil 183 dager fra hverandre:
+da finnes det ikke ett felles vindu. Hvert segment måles derfor mot
+referansen over sitt eget vindu, og klyngen er snittet av meravkastningene.
+Presiseringen er gjort før Championen har hatt en eneste inngang, altså uten
+at noe utfall er kjent, og den er ført i loggen.
 
 OSEBX (`OSEBX.OL`) regnes og rapporteres ved siden av, men avgjør ikke.
 Begrunnelsen er pre-registrert her: papirene er globale (Toronto, London,
@@ -189,24 +198,47 @@ setningen om at de ikke er uavhengige observasjoner.
 - **Onsdagsrutinen skal ikke vise shadow-status** (Frodes regel 05.10.2026).
   Varsel går i prosjektchatten.
 
-## 9. Det som mangler for å kunne kjøre dette
+## 9. Modulen som regner utfallene
 
-`shadow/shadow_outcomes.csv` er tom. Fase 2 av Shadow-OOS, som regner
-utfallene, er ikke bygget. Protokollen kan altså ikke utføres ennå, men den er
+**Bygget 12.11.2026:** `shadow_utfall.py`. `shadow/shadow_outcomes.csv` er
+fortsatt tom, men bare fordi det ikke finnes innganger å regne på. Protokollen kan altså ikke utføres ennå, men den er
 skrevet nå fordi den må være satt før første inngang, og første inngang kan
 komme når som helst: jernmalm mangler 9,2 poeng og Henry Hub 24,5 til
 bunnsonen per 11.11.2026.
 
-**Forslag til modulen**, ikke bygget: `shadow_utfall.py` i roten, kalt fra
-`shadow_challenger.kjor` etter Challengerne, som leser snapshotene og
-`logg/kurser_uke.csv`, regner avkastning per papir, segment og klynge ved 3,
-6, 12 og 24 måneder, og legger rader til `shadow/shadow_outcomes.csv` med
-`so.legg_til_rader`, altså bare tillegg. Den må **ikke** ligge blant
-Championens 16 hashede filer, slik at den kan rettes uten å gjøre Championen
-ugyldig. Den bør ha egne tester i `test_shadow_oos.py`, minst: at en
-avkastning regnes fra snapshotets kurser og ikke fra dagens, at en klynge
-uten kjøpbart papir gir en rad uten avkastning, og at en modning ikke skrives
-to ganger.
+Modulen ligger i roten, kalles fra `shadow_challenger.kjor` etter
+kontekstmodulene, og leser bare filer som alt er i repoet: snapshotene,
+`logg/kurser_uke.csv` og `serier/priser_mnd.csv`. Ingen nettkall. Den er
+**ikke** blant Championens 16 hashede filer, slik at en feil kan rettes uten
+å gjøre Championen ugyldig, og den skriver bare tillegg med
+`so.legg_til_rader`.
+
+Avkastningen er totalavkastning i NOK med utbyttet reinvestert i papirets
+egen valuta. Reinvestering er valgt fordi MSCI World måles med `IWDA.L`, som
+er akkumulerende, og OSEBX er en totalavkastningsindeks: uten reinvestering
+ville papirene blitt målt mot referanser som har utbyttet inne.
+
+Filen får én rad per papir og én rad per segment, med klyngens id i
+`portfolio_id`. **Klyngens tall regnes ikke og lagres ikke**, det er snittet
+av segmentradene og regnes når protokollen leses, så det samme tallet ikke
+ligger to steder og kan bli uenig med seg selv.
+
+Felt som står tomme, aldri 0: `factor_adjusted_return`,
+`max_adverse_excursion` og `max_favorable_excursion` (de trenger referansens
+ukesti, altså over hundre snapshotfiler per utfall, og det er for dyrt mot
+GitHub-API), `share_dilution`, `capital_raise`, `restructuring` og
+`bankruptcy` (må leses for hånd). `max_drawdown` regnes av ukeserien.
+
+Statusfeltet `outcome_status` sier hvorfor et tall mangler i stedet for at
+det gjettes: `ok`, `delvis`, `avnotert`, `mangler_kurs`, `ingen_kjopbare`
+eller `mangler_referanse`.
+
+**Sju tester i `test_shadow_oos.py`** (12.11.2026, alle består sammen med de
+16 gamle): regnestykket med kjente tall der utbytte og valuta er regnet for
+hånd, et papir som slutter å handles, at umodne horisonter ikke skrives, at
+en ny kjøring ikke legger til rader på nytt, at en klynge uten kjøpbart
+papir gir egen status, at en manglende referanse gir tom meravkastning i
+stedet for et gjett, og at overskriften står og en feil ikke kaster.
 
 ## 10. Kjente begrensninger
 

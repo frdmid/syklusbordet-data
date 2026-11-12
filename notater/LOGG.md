@@ -15,7 +15,7 @@ ord for ord, og blokken «Status nå» oppdateres. Eldre innslag ligger der.
 
 Oppdateres i SAMME commit som endringen, med samme regel som innslagene
 under. Er den eldre enn det nyeste innslaget, er den ikke til å stole på.
-Sist oppdatert 12.11.2026 12:42.
+Sist oppdatert 12.11.2026 12:55.
 
 - **Dashbord:** versjon 79, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
   Kilden er `dashbord/index.html` i repoet, ikke artifacten. Siden leser
@@ -24,7 +24,7 @@ Sist oppdatert 12.11.2026 12:42.
   jernmalm og Henry Hub i oppsikt, gull i watch hos BEGGE.
 - **Ukeflyt:** `ukentlig.yml` onsdag 08:48 (reserve 09:56), onsdagsrutinen
   10:15 og 13:15. Neste rutinekjøring 18.11.2026.
-- **Tester:** `python test_shadow_oos.py`, 16 av 16 består. Før publisering:
+- **Tester:** `python test_shadow_oos.py`, 23 av 23 består. Før publisering:
   `py -X utf8 dashbord/kontroller.py`.
 - **Åpne avgjørelser for Frode:** om onsdagsrutinen skal reduseres nå at
   dashbordet leser repoet direkte. Championens evalueringsprotokoll er
@@ -32,6 +32,46 @@ Sist oppdatert 12.11.2026 12:42.
 - **Eldre innslag:** `notater/logg/<år>-<mnd>.md`, en fil per måned.
 
 ---
+
+### 12.11.2026 12:55, Claude Code
+
+Fase 2 av Shadow-OOS bygget (Frodes bestilling): `shadow_utfall.py` regner de
+modne utfallene og fyller `shadow/shadow_outcomes.csv`, som har stått tom med
+bare overskrift siden 07.10.2026. Protokollen som bruker tallene er
+`notater/champion_evaluering.md`. Modulen regner, den avgjør ingenting.
+Ikke hashet av Championen, med vilje, så en feil her kan rettes uten å gjøre
+Championen ugyldig. Ingen nettkall: alt regnes av snapshotene,
+`logg/kurser_uke.csv` og `serier/priser_mnd.csv`. Bare tillegg via
+`so.legg_til_rader`. Kalt fra `shadow_challenger.kjor` etter kontekstmodulene.
+Avkastningen er totalavkastning i NOK med utbyttet reinvestert i papirets egen
+valuta. Reinvestering fordi MSCI World måles med IWDA.L, som er akkumulerende,
+og OSEBX er en totalavkastningsindeks; uten reinvestering ville papirene blitt
+målt mot referanser som har utbyttet inne. Valutaen tas fra usd_per_enhet i
+kursloggen, som også dekker GBp riktig uten deling på 100.
+Filen får én rad per papir og én per segment, med klyngens id i portfolio_id.
+Klyngens tall regnes og lagres IKKE: det er snittet av segmentradene og regnes
+når protokollen leses, så det samme tallet ikke ligger to steder.
+Tomme felt (NULL, aldri 0): factor_adjusted_return og de to
+excursion-feltene, fordi de trenger referansens ukesti, altså over hundre
+snapshotfiler per utfall; og de fire selskapshendelsene, som må leses for
+hånd. max_drawdown regnes av ukeserien. outcome_status sier hvorfor et tall
+mangler i stedet for at det gjettes: ok, delvis, avnotert, mangler_kurs,
+ingen_kjopbare eller mangler_referanse.
+PRESISERT I PROTOKOLLEN: formuleringen om klyngens vindu var tvetydig.
+Den sa «fra den første signaldatoen i klyngen», men segmentene i en klynge kan
+ha signaldatoer opptil 183 dager fra hverandre, så det finnes ikke ett felles
+vindu. Hvert segment måles nå mot referansen over sitt eget vindu, og klyngen
+er snittet av meravkastningene. Presiseringen er gjort før Championen har hatt
+en eneste inngang, altså uten at noe utfall er kjent.
+Sju nye tester i `test_shadow_oos.py`, med kjente tall der utbytte og valuta
+er regnet for hånd: regnestykket, avnotert papir, at umodne horisonter ikke
+skrives, idempotens, klynge uten kjøpbart papir, manglende referanse, og at
+overskriften står og en feil ikke kaster. Hele suiten 23 av 23.
+Modulen gir null rader i dag, som den skal: det finnes ingen innganger.
+Filer: `shadow_utfall.py`, `test_shadow_oos.py`, `shadow_challenger.py`,
+`notater/champion_evaluering.md`, `notater/OVERLEVERING.md`, `notater/LOGG.md`.
+For Cowork: `shadow/shadow_outcomes.csv` skrives nå automatisk. Den rettes
+aldri for hånd; en feil føres i `shadow/correction_log.csv` som før.
 
 ### 12.11.2026 12:42, Claude Code
 

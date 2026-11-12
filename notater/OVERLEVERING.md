@@ -162,6 +162,7 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 | `dashbord/index.html` | Dashbordets kilde fra 12.11.2026. Publiseres som den er, uten omslag |
 | `dashbord/bygg.py` | Setter sammen `dashbord/data.json` av filene i repoet, med samme krav som rutinen og bevaring av felt mot forrige fil |
 | `dashbord/kontroller.py` | Kjøres før publisering, avslutter med kode 1 hvis noe er galt |
+| `shadow_utfall.py` | Fase 2: modne utfall til `shadow/shadow_outcomes.csv`, bare tillegg, ingen nettkall, ikke hashet av Championen |
 | `miljo_logg.py` | Hvilke biblioteksversjoner som kjørte, `logg/miljo.csv`, med avvik mot `config/miljo_kjent.json` |
 | `ukerapport.py` | Ukens tall til `logg/uke/<uke>.md`. Tillegg til rutinens rapport, ikke erstatning |
 | `test_shadow_oos.py` | Testene for shadow (`python test_shadow_oos.py`, lokalt, skriver ikke til repoet) |
@@ -202,7 +203,9 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
   høyst én av fem slo indeksen. Bestått-kravet står, men er flere tiår unna:
   med tre klynger ville «to av tre» gitt 50 prosent falsk godkjenning.
   Protokollen kan ikke pekes til fra config, som aldri endres for hånd.
-  Den krever `shadow/shadow_outcomes.csv`, som er tom; fase 2 er ikke bygget.
+  Fase 2 ble bygget 12.11.2026 (`shadow_utfall.py`), og regner utfallene
+  automatisk hver uke. `shadow/shadow_outcomes.csv` er fortsatt tom, men
+  bare fordi Championen ikke har hatt noen inngang ennå.
 - **Shadow-OOS:** filene i `shadow/` og `config/champion_*.json` rettes
   aldri for hånd. En feil føres i `shadow/correction_log.csv` (ny linje,
   originalen står). Endringer i en av de 16 kodefilene i config merkes som

@@ -118,6 +118,9 @@ def kjor(lager, rot, naa, note=print):
     # Fra 12.11.2026 (Frodes bestilling, steg 1, 3 og 5 i gjennomgangen) tre
     # moduler til, i denne rekkefolgen og til slutt, fordi hver leser det den
     # forrige skrev:
+    #   shadow_utfall   fase 2: modne utfall til shadow/shadow_outcomes.csv.
+    #                   Bare tillegg, ingen nettkall, ikke hashet av Championen.
+    #                   Protokollen staar i notater/champion_evaluering.md
     #   miljo_logg      hvilke biblioteksversjoner som kjorte, logg/miljo.csv
     #   dashbord/bygg   dashbord/data.json, dashbordets hovedkilde. Maa gaa
     #                   ETTER kontekstfilene, ellers blir regime, miners og
@@ -125,7 +128,8 @@ def kjor(lager, rot, naa, note=print):
     #   ukerapport      logg/uke/<uke>.md. Maa gaa SIST, den leser miljoeloggen
     # Alle tre er additive: feiler de, staar dashbordet paa databasen som foer.
     for navn in ("kontekst_laks", "kontekst_regime", "kontekst_uran", "kontekst_miners",
-                 "kontekst_handel", "miljo_logg", "dashbord/bygg", "ukerapport"):
+                 "kontekst_handel", "shadow_utfall", "miljo_logg", "dashbord/bygg",
+                 "ukerapport"):
         try:
             p = os.path.join(rot, f"{navn}.py")
             if os.path.exists(p) and not os.environ.get("KONTEKST_AV"):
