@@ -125,13 +125,14 @@ Hver er pakket i try/except som før, så en feil i én rammer ingen andre.
 
 ## Det Cowork må gjøre
 
-Oppdatert 12.11.2026: punkt 1 og 3 gjelder samme fil, og hele filen ligger nå
-ferdig i `notater/ukentlig_forslag.yml`, som kopieres til
-`.github/workflows/ukentlig.yml` ord for ord. Den har både de fire
-cron-tidene og reserveinstallasjonen, og toppteksten forklarer begge.
+Oppdatert 12.11.2026, senere samme dag: **punkt 1 og 3 er GJORT.** Frode ga
+denne økten tillatelse til å endre arbeidsflytfilene, så
+`.github/workflows/ukentlig.yml` er skrevet direkte, og
+`notater/ukentlig_forslag.yml` er pensjonert. Cowork hadde gjort samme arbeid,
+men kunne ikke pushe; deres patch er dermed overflødig. De tre tingene Cowork
+pekte på er rettet i samme slengen, se loggen.
 
-1. **Kopier `notater/ukentlig_forslag.yml`** til
-   `.github/workflows/ukentlig.yml`, ord for ord. Den inneholder:
+Det som ble lagt inn (står nå i arbeidsflyten):
    - **fire cron-tider** i stedet for to, så filen virker både ved vintertid
      og sommertid uten å flyttes for hånd. Vakta gjør de overflødige til
      ingenting. Effekten: om vinteren går hovedkjøringen 07:48 i stedet for

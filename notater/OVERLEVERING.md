@@ -66,7 +66,14 @@ sikkerhetskopi tas når stegene der er gjort.
 
 ## Slik går en uke (helt automatisk)
 
-1. **GitHub Actions, `ukentlig.yml`**, onsdag 08:00 norsk sommertid / 07:00 vintertid (forslag 21.10: 08:48 med reserve 09:56, se `notater/ukentlig_forslag.yml` og `vakt_ukentlig.py`; legges inn av Frode eller Cowork):
+1. **GitHub Actions, `ukentlig.yml`**, fra 12.11.2026 med fire cron-tider, så
+   den virker året rundt uten å flyttes for hånd. I praksis: hovedkjøring
+   07:48 norsk vintertid og 08:48 sommertid, reserve 09:56 i begge. Vakta
+   (`vakt_ukentlig.py`) lar de senere tidene hoppe over når `index.json` alt
+   er skrevet i dag. Hvert installasjonssteg har en reserve som leser
+   pakkenavnene ut av `requirements.txt` og skriver `::warning::` når den
+   brukes. Filen redigeres nå direkte; `notater/ukentlig_forslag.yml` er
+   pensjonert:
    `kapitulasjon_d.py` → `priser.py` (alle prissegmenter, COT, kurve, VIX,
    dollar, kaller `flagglogg.py`) → `shipping.py` (Fearnleys, arkiverer PDF)
    → `bygg_shipping.py`, som til slutt kaller `endringer.uke()`,

@@ -1,16 +1,33 @@
-# FORSLAG 21.10.2026 (Claude Code, Frodes bestilling). Erstatter
-# .github/workflows/ukentlig.yml. Claude Code kan ikke endre arbeidsflytene;
-# Frode eller Cowork kopierer denne fila dit, ord for ord.
+# Ukentlig innhenting til Syklusbordet.
 #
-# Endringer mot dagens fil:
-#   1. Hovedkjoering onsdag 08:48 norsk tid og reservekjoering 09:56, bort fra
-#      hel time (GitHub hoppet over 06:00 UTC 21.10.2026). GitHub regner cron i
-#      UTC: tidene under gjelder vintertid (fra 25.10.2026). Ved sommertid
-#      (fra 28.03.2027) maa de flyttes en time: "48 6 * * 3" og "56 7 * * 3".
-#   2. Jobben «vakt» (vakt_ukentlig.py) lar reserven hoppe over hvis
-#      index.json allerede er skrevet i dag. Startet for haand kjoerer alltid.
-#   3. «concurrency» sier at en ny kjoering venter til en paagaaende er
-#      ferdig, saa reserven aldri gaar samtidig med en forsinket hovedkjoering.
+# Denne filen ER arbeidsflyten. Den ble lenge vedlikeholdt som et forslag i
+# notater/ukentlig_forslag.yml fordi Claude Code ikke fikk endre
+# .github/workflows/; den sperren ble loftet 12.11.2026, og forslagsfila er
+# dermed pensjonert. Historikken ligger i git og i notater/LOGG.md.
+#
+# TIDENE. Fire cron-tider, to for hver aarstid, saa filen virker baade ved
+# vintertid og sommertid uten aa flyttes for haand. GitHub regner cron i UTC.
+# Vakta gjor de overflodige til ingenting: den forste kjoringen skriver
+# index.json, og de neste stopper etter vaktjobben. I praksis:
+#     vinter   07:48 hovedkjoring, 09:56 reserve
+#     sommer   08:48 hovedkjoring, 09:56 reserve
+# At vinterkjoringen er en time tidligere enn den var, er harmlost: alle
+# kildene er forrige dags sluttkurser eller maanedstall, og onsdagsrutinen gaar
+# forst 10:15. Regnet om med zoneinfo av to okter uavhengig, 12.11.2026.
+#
+# AVHENGIGHETENE. Hvert installasjonssteg har en reserve, fordi en manglende
+# hjulfil ellers stopper hele onsdagen. Reserven leser pakkenavnene UT AV
+# requirements.txt, saa en ny pakke der ikke blir glemt i reserven, og den
+# skriver ::warning:: slik at bruk av reserven synes i kjoringens sammendrag og
+# ikke bare i stegloggen. requirements.txt har ovre grenser og ikke eksakte
+# pinner; naa som reserven finnes, kan de strammes, men det er Frodes valg.
+# Hva som faktisk kjorte, staar i logg/miljo.csv, med avvik mot
+# config/miljo_kjent.json.
+#
+# VAKTA. Jobben under (vakt_ukentlig.py) lar de senere tidene hoppe over hvis
+# index.json allerede er skrevet i dag. Startet for haand kjorer alltid.
+# «concurrency» sier at en ny kjoring venter til en paagaaende er ferdig, saa
+# reserven aldri gaar samtidig med en forsinket hovedkjoring.
 #
 # Ukentlig innhenting til Syklusbordet.
 #
@@ -25,8 +42,11 @@ name: Ukentlig innhenting
 
 on:
   schedule:
-    - cron: "48 7 * * 3"       # onsdag 08:48 norsk vintertid (hovedkjoering)
-    - cron: "56 8 * * 3"       # onsdag 09:56 norsk vintertid (reserve, se vakt)
+    # Fire tider, to for hver aarstid. Vakta slipper bare den foerste gjennom.
+    - cron: "48 6 * * 3"       # 08:48 norsk sommertid (07:48 vintertid)
+    - cron: "48 7 * * 3"       # 08:48 norsk vintertid (09:48 sommertid)
+    - cron: "56 7 * * 3"       # 09:56 norsk sommertid, reserve (08:56 vintertid)
+    - cron: "56 8 * * 3"       # 09:56 norsk vintertid, reserve (10:56 sommertid)
   workflow_dispatch:            # og naar du trykker paa knappen selv
 
 permissions:
@@ -62,7 +82,15 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
-      - run: pip install -r requirements.txt
+      - name: Avhengigheter, med reserve
+        run: |
+          if pip install -r requirements.txt; then
+            exit 0
+          fi
+          echo "::warning::pip install -r requirements.txt feilet. Faller tilbake til \
+          installasjon uten versjonskrav. Se logg/miljo.csv for hva som faktisk ble \
+          installert, og config/miljo_kjent.json for hva som er kjent godt."
+          pip install $(sed -E 's/[<>=!].*//' requirements.txt | grep -vE '^[[:space:]]*(#|$)')
       - name: Kapitulasjon D
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -78,7 +106,15 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
-      - run: pip install -r requirements.txt
+      - name: Avhengigheter, med reserve
+        run: |
+          if pip install -r requirements.txt; then
+            exit 0
+          fi
+          echo "::warning::pip install -r requirements.txt feilet. Faller tilbake til \
+          installasjon uten versjonskrav. Se logg/miljo.csv for hva som faktisk ble \
+          installert, og config/miljo_kjent.json for hva som er kjent godt."
+          pip install $(sed -E 's/[<>=!].*//' requirements.txt | grep -vE '^[[:space:]]*(#|$)')
       - name: Priser, 24 segmenter
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -94,7 +130,15 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
-      - run: pip install -r requirements.txt
+      - name: Avhengigheter, med reserve
+        run: |
+          if pip install -r requirements.txt; then
+            exit 0
+          fi
+          echo "::warning::pip install -r requirements.txt feilet. Faller tilbake til \
+          installasjon uten versjonskrav. Se logg/miljo.csv for hva som faktisk ble \
+          installert, og config/miljo_kjent.json for hva som er kjent godt."
+          pip install $(sed -E 's/[<>=!].*//' requirements.txt | grep -vE '^[[:space:]]*(#|$)')
       - name: Fearnleys ukerapporter
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

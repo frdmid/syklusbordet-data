@@ -15,7 +15,7 @@ ord for ord, og blokken «Status nå» oppdateres. Eldre innslag ligger der.
 
 Oppdateres i SAMME commit som endringen, med samme regel som innslagene
 under. Er den eldre enn det nyeste innslaget, er den ikke til å stole på.
-Sist oppdatert 12.11.2026 13:08.
+Sist oppdatert 12.11.2026 13:15.
 
 - **Dashbord:** versjon 80, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
 - **PASS PÅ:** kilden til dashbordet er `dashbord/index.html` i repoet, IKKE
@@ -26,8 +26,9 @@ Sist oppdatert 12.11.2026 13:08.
   databasen som reserve.
 - **Shadow-OOS:** Champion v1.1 og seks Challengere. Ingen nye bunnsoner;
   jernmalm og Henry Hub i oppsikt, gull i watch hos BEGGE.
-- **Ukeflyt:** `ukentlig.yml` onsdag 08:48 (reserve 09:56), onsdagsrutinen
-  10:15 og 13:15. Neste rutinekjøring 18.11.2026.
+- **Ukeflyt:** `ukentlig.yml` har fire cron-tider fra 12.11.2026: hovedkjøring
+  07:48 norsk vintertid og 08:48 sommertid, reserve 09:56. Onsdagsrutinen
+  10:15 og 13:15. Neste kjøring 18.11.2026 kl. 07:48.
 - **Tester:** `python test_shadow_oos.py`, 23 av 23 består. Før publisering:
   `py -X utf8 dashbord/kontroller.py`.
 - **Åpne avgjørelser for Frode:** om onsdagsrutinen skal reduseres nå at
@@ -36,6 +37,44 @@ Sist oppdatert 12.11.2026 13:08.
 - **Eldre innslag:** `notater/logg/<år>-<mnd>.md`, en fil per måned.
 
 ---
+
+### 12.11.2026 13:15, Claude Code
+
+Arbeidsflyten `ukentlig.yml` endret direkte, etter at Frode ga denne økten
+tillatelse. Sperren var på Claude Codes side, ikke GitHubs: tillatelses-
+systemet nektet endring av delte ressurser. Cowork hadde gjort det samme
+arbeidet, men git-proxyen deres avviser repoet, så deres patch er overflødig.
+Fire cron-tider ("48 6", "48 7", "56 7", "56 8", alle onsdag). I praksis:
+hovedkjøring 07:48 norsk vintertid og 08:48 sommertid, reserve 09:56 i begge.
+Vakta gjør de overflødige tidene til ingenting. Regnet om med zoneinfo av
+begge øktene uavhengig, med samme svar.
+De TRE tingene Cowork pekte på er rettet, siden det ikke lenger finnes to
+versjoner å divergere mellom:
+1. Reservelisten var hardkodet i tre kopier, så en syvende pakke i
+   requirements.txt ville manglet i reserven usett. Reserven leser nå
+   pakkenavnene ut av fila med sed.
+2. `||` ga ingen ::warning::, så bruk av reserven syntes bare i stegloggen.
+   Steget heter nå «Avhengigheter, med reserve» og skriver ::warning::, som
+   vises i kjøringens sammendrag.
+3. Toppteksten sa «FORSLAG ... kopier ord for ord», misvisende når fila ER
+   arbeidsflyten. Toppteksten er skrevet om, og kopieringsinstruksen er borte
+   fordi den ikke lenger gjelder.
+`notater/ukentlig_forslag.yml` er SLETTET. Den fantes bare fordi Claude Code
+ikke kunne endre arbeidsflyten, og to versjoner av samme fil var den risikoen
+Cowork med rett advarte mot. Historikken ligger i git.
+Kontrollert før fila ble skrevet: gyldig YAML med PyYAML, samme fire jobber og
+samme avhengighetskjede som før (vakt, kapitulasjon, priser, shipping), ingen
+tabulatorer, tre reservesteg, ingen hardkodet pakkeliste igjen. Skallkoden
+kontrollert med `bash -n` og tørrkjørt begge veier: når pip virker går steget
+gjennom uten advarsel, når pip feiler kommer advarselen og reserven installerer
+de seks pakkene lest ut av requirements.txt.
+Filer: `.github/workflows/ukentlig.yml`, `notater/ukentlig_forslag.yml`
+(slettet), `notater/OVERLEVERING.md`, `notater/2026-11-12_robusthet.md`.
+For Cowork: patchen deres er ikke nødvendig lenger, og forslagsfila er borte.
+Punkt 2, `CLAUDE.md`, står fortsatt igjen hos dere: Claude Code kan ikke endre
+den. Teksten med BEGGE kulepunktene står i robusthetsnotatet; det andre, om at
+dashbordets kilde er `dashbord/index.html` og ikke artifacten, kom til etter at
+dere gjorde arbeidet, og det er det viktigste av de to.
 
 ### 12.11.2026 13:08, Claude Code
 
