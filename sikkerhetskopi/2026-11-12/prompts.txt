@@ -1,9 +1,11 @@
 PROMPTER FOR Å GJENSKAPE SYKLUSBORDET I EN NY CLAUDE-KONTO
 Laget 09.11.2026, oppdatert 12.11.2026. Bruk dem i rekkefølge.
-ENDRET 12.11.2026: dashbordet er versjon 78 (uro delt i nivå og
-volvariasjon i regimeboksen) og onsdagsrutinens tekst er endret
-(punkt 6i og rapportlinjen for regime). Begge ligger i mappen
-sikkerhetskopi/2026-11-12/. Alt annet hentes fortsatt fra
+ENDRET 12.11.2026: dashbordets kilde ligger nå i repoet som
+dashbord/index.html, ikke i en frosset kopi her og ikke i artifacten.
+Publiser den filen som den er. Versjon 79 leser dashbord/data.json fra
+repoet, med databasen som reserve. Onsdagsrutinens tekst er også endret
+(punkt 6i og rapportlinjen for regime) og ligger her.
+Kopiene dashbord_v78_* er beholdt som tilbakerulling. Alt annet hentes fortsatt fra
 sikkerhetskopi/2026-11-09/: databasen, minnet, de planlagte oppgavene
 og de private dataene er uendret.
 Lim inn teksten mellom strekene. Alt ligger også i Notion-siden
@@ -55,7 +57,8 @@ gjenskapes, uten å endre noe ennå.
 ======================================================================
 PROMPT 2. Claude Code: gjenskap dashbordet og databasen
 ----------------------------------------------------------------------
-Publiser sikkerhetskopi/2026-11-12/dashbord_v78_til_publisering.html som
+Publiser dashbord/index.html fra repoet (det er kilden fra 12.11.2026;
+kjor forst `py -X utf8 dashbord/kontroller.py`) som
 en ny artifact med tittelen Syklusbordet og kapabiliteten db (den skal
 ha sin egen database). Kontroller etter publisering at fila begynner med
 <title>Syklusbordet</title> og at :root{ --ground:#f4f4f1 står øverst.

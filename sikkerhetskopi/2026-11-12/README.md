@@ -7,12 +7,17 @@ Alt som ikke ligger her, hentes fra kopien 09.11, som står urørt.
 **Start med `prompts.txt` i denne mappen.** Den er kopien fra 09.11 med
 stiene rettet.
 
+**Dashbordet hentes ikke herfra lenger.** Fra 12.11.2026 er kilden
+`dashbord/index.html` i repoet, og den publiseres som den er etter at
+`dashbord/kontroller.py` har gått. Filene `dashbord_v78_*` i denne mappen er
+beholdt som tilbakerulling til versjonen før dashbordet leste repoet.
+
 ## Hva som er endret
 
 | Fil | Hvorfor |
 |---|---|
-| `dashbord_v78_publisert.html` | Dashbordet versjon 78 slik verten serverer det, med vertens omslag |
-| `dashbord_v78_til_publisering.html` | Samme side uten omslaget, klar til å publiseres som ny artifact (med `db`) |
+| `dashbord_v78_publisert.html` | Dashbordet versjon 78, med vertens omslag. **Tilbakerulling**, ikke gjeldende versjon |
+| `dashbord_v78_til_publisering.html` | Samme uten omslag. Versjonen FØR dashbordet begynte å lese repoet (12.11.2026) |
 | `rutine/onsdagsrutine_prompt.txt` | Onsdagsrutinens tekst endret 11.11.2026: punkt 6i krever `nivaa_grenser` og `volvar_grenser`, og rapportlinjen for regime viser de to leddene |
 | `prompts.txt` | Peker til v78 og til rutineteksten her |
 | `sha256.txt` | Sjekksum for hver fil i denne mappen |

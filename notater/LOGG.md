@@ -33,6 +33,24 @@ Sist oppdatert 12.11.2026 11:49.
 
 ---
 
+### 12.11.2026 11:53, Claude Code
+
+Handovermappen og Notion-siden rettet etter steg 3. Dashbordets kilde ligger
+nå i repoet, så tillegget 12.11 trenger ikke en frosset kopi av siden:
+`sikkerhetskopi/2026-11-12/prompts.txt` og README peker nå til
+`dashbord/index.html`, og kopiene `dashbord_v78_*` er beholdt og merket som
+tilbakerulling til versjonen før dashbordet leste repoet. sha256 regnet på
+nytt. Notion-siden «SB handover mappe» rettet på 16 punkter i to runder:
+v79 overalt, den snudde regelen om dashbordkilden, de tre datakildene,
+de tre nye modulene i ukeflyten, blokken «Status nå» i leserekkefølgen,
+VVIX-funnet, og at bibliotekversjonene ikke er pinnet og hvorfor.
+Kontrollert at den publiserte siden har omslaget én gang, tittel og
+rotfarger, og at den leser repoets data.json; og at data.json faktisk
+serveres fra raw.githubusercontent (832 kB, identisk med den lokale, CORS
+åpen, ingen alu_tilbud).
+Filer: `sikkerhetskopi/2026-11-12/`, `notater/LOGG.md`; Notion.
+For Cowork: gjenoppretting publiserer nå `dashbord/index.html` fra repoet.
+
 ### 12.11.2026 11:49, Claude Code
 
 Steg 1, 3 og 5 fra gjennomgangen gjennomført (Frodes bestilling: prioriter
