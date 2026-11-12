@@ -8,7 +8,7 @@
 # ---------------------------------------------------------------------------
 
 import datetime as dt
-import json, os, shutil, tempfile
+import glob, json, os, shutil, tempfile
 
 os.environ["KONTEKST_AV"] = "1"     # ingen nettkall til kontekstfilene i testene (07.10.2026)
 import shadow_oos as so
@@ -80,6 +80,41 @@ def _kjor(lager, d, kl="06:40:00", oppdatert=None):
 
 def _les(lager, sti):
     return lager.les(sti)[0]
+
+
+def _dato_med_alle_data():
+    """Snapshotdato for test_no_future_data, utledet fra dataene i repoet.
+
+    De andre testene pinner 2026-10-07, og det er riktig for dem: de maaler
+    reglene, og da maa datoen staa fast. Denne testen maaler noe annet, at
+    ingenting i snapshotet er fra ETTER snapshotdatoen, og da maa datoen ligge
+    paa eller etter de ferskeste dataene i repoet. Med en fast dato i fortiden
+    feiler den saa snart innhentingen har gaatt noen ganger til: den brakk
+    11.11.2026, da skipssegmentene fikk last_obs 2026-11, altsaa en maaned
+    etter 2026-10-07. Det var dataene som var ferske, ikke shadow som skrev
+    fremtid (funnet 11.11.2026, rettet 12.11.2026).
+
+    Datoen er den foerste onsdagen paa eller etter det ferskeste av:
+      - foerste dag i den nyeste observasjonsmaaneden i segments/ (segmentrader
+        har last_obs som maaned, og testen sammenligner maaned mot maaned), og
+      - den nyeste kursdatoen i logg/kurser_uke.csv (instrumentrader har full
+        dato).
+    Onsdag fordi shadow-uken starter der (so.UKEDAG_START).
+    """
+    nyeste = "0000-01-01"
+    for f in sorted(glob.glob(os.path.join(ROT, "segments", "*.json"))):
+        with open(f, encoding="utf-8") as fh:
+            lo = json.load(fh).get("last_obs")
+        if lo:
+            nyeste = max(nyeste, lo[:7] + "-01")
+    k = os.path.join(ROT, "logg", "kurser_uke.csv")
+    if os.path.exists(k):
+        with open(k, encoding="utf-8") as fh:
+            for r in so.fra_csv(fh.read()):
+                if r.get("kursdato"):
+                    nyeste = max(nyeste, r["kursdato"][:10])
+    d = dt.date.fromisoformat(nyeste)
+    return d + dt.timedelta(days=(so.UKEDAG_START - d.weekday()) % 7)
 
 
 def _endre_segment(lager, sid, fn):
@@ -172,8 +207,11 @@ def test_legg_til_er_bare_tillegg():
 
 def test_no_future_data():
     l = _lager()
-    _kjor(l, "2026-10-07")
-    for r in so.fra_csv(_les(l, f"{so.SNAP_MAPPE}/2026-W41.csv")):
+    d = _dato_med_alle_data()                      # se _dato_med_alle_data
+    _kjor(l, d.isoformat())
+    rader = so.fra_csv(_les(l, f"{so.SNAP_MAPPE}/{so.periodenokkel(d)}.csv"))
+    assert rader, f"ingen rader i snapshotet for {so.periodenokkel(d)}"
+    for r in rader:
         sd = r["snapshot_date"]
         assert r["available_from"] <= sd
         if r["observation_date"]:

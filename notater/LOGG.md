@@ -9,6 +9,27 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 12.11.2026 11:01, Claude Code
+
+Rettet den tidsavhengige testen `test_no_future_data` (funnet 11.11, Frodes
+bestilling). Den pinnet snapshotdatoen til 2026-10-07 og leste ferske data fra
+repoet, så den brakk da skipssegmentene fikk last_obs 2026-11. Datoen utledes
+nå fra dataene med den nye hjelpefunksjonen `_dato_med_alle_data`: første
+onsdag på eller etter det ferskeste av første dag i nyeste observasjonsmåned i
+`segments/` og nyeste kursdato i `logg/kurser_uke.csv`. I dag gir det
+2026-11-11, altså shadow-uken 2026-W46. De andre testene pinner fortsatt
+2026-10-07, som er riktig for dem: de måler reglene, og da skal datoen stå
+fast. Testen leser nå snapshotet gjennom `so.periodenokkel` i stedet for et
+hardkodet ukenavn, og krever at snapshotet ikke er tomt.
+Asserten er ikke svekket. Kontrollert med tre prøver: med den utledede datoen
+gir snapshotet 105 rader uten fremtidsdata; med 2026-10-07 feiler den fortsatt
+på ship_vlcc, altså den gamle situasjonen; og et segment satt til last_obs
+2027-01 blir fanget. Hele suiten: 16 av 16 består.
+`test_shadow_oos.py` er ikke blant Championens 16 hashede filer, så dette
+merkes ikke som kodeendring, og ingenting i `shadow/` er rørt.
+Filer: `test_shadow_oos.py`.
+For Cowork: testene består igjen, 16 av 16.
+
 ### 11.11.2026 14:30, Claude Code
 
 Funn, ikke rettet: `test_shadow_oos.py` har fra i dag én feilende test,
