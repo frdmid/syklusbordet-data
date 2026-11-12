@@ -1,0 +1,5 @@
+9a14dbfd20a0e0b2ad06079a043a528d3443625c93cdd16203e1ae0733163434 *./README.md
+be4715d51ed499ebc2bdc9922a2af003f00fa33859069844d9a7cd15bd9c66b9 *./dashbord_v78_publisert.html
+0be4624edcf2cba9078c137b9f3a34cdeef7ffd4e896aff2047005c96265ebd0 *./dashbord_v78_til_publisering.html
+10a49cdaaeda5cb636009bc157dfe36911de3795ada1ab498bf3e81e031a8e00 *./prompts.txt
+984167ad5b5c9ffebf2894d9e6c00688b592480f76a07d134209e77432d760a1 *./rutine/onsdagsrutine_prompt.txt

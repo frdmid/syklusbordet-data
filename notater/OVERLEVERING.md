@@ -36,9 +36,13 @@ og sikkerhetskopi») har alt som trengs for å fortsette i en ny Claude-konto.
 Siste kopi: mappen «Sikkerhetskopi 2026-11-09» (repoet i zip, databasen med
 IAI-dokumentet, rutinen, minnet, de private dataene, dashbordet v77 og
 `prompts.txt`). Samme kopi uten private data: `sikkerhetskopi/2026-11-09/`.
-Start med `prompts.txt`. MERK: onsdagsrutinens tekst ble endret 11.11.2026
-(punkt 6i og rapportlinjen for regime), så kopien i `sikkerhetskopi/2026-11-09/`
-er utdatert. Den levende teksten ligger i
+Tillegg 12.11.2026: mappen «Tillegg 2026-11-12» (og
+`sikkerhetskopi/2026-11-12/`) har det som er endret siden 09.11, fordi en
+gjenoppretting derfra ellers ville gitt dashbord v77 og gammel rutinetekst:
+dashbordet v78, onsdagsrutinens tekst, en rettet `prompts.txt` og en README.
+**Start med `prompts.txt` i tillegget**, ikke den i kopien 09.11. Alt annet
+(databasen, minnet, de planlagte oppgavene, de private dataene) hentes
+fortsatt fra 09.11. Den levende rutineteksten ligger også i
 `notater/onsdagsrutine_prompt_2026-11-11.txt`. Siden har fra 11.11.2026 også et avsnitt om den
 uavhengige gjennomgangen (`notater/2026-11-11_gjennomgang.md`) og promptene
 som gjør forslagene (`notater/2026-11-11_prompt_forbedringer.md`); ny

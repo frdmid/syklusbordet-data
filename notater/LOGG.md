@@ -9,6 +9,29 @@ notat skal ha en linje her. Automatiske commits fra GitHub Actions
 
 ---
 
+### 12.11.2026 11:17, Claude Code
+
+Handovermappen oppdatert (Frodes bestilling). En gjenoppretting fra kopien
+09.11 ville gitt dashbord v77 og gammel rutinetekst, så det som er endret er
+lagt i et tillegg i stedet for at den daterte kopien røres:
+`sikkerhetskopi/2026-11-12/` med dashbordet v78 (med og uten omslag),
+onsdagsrutinens tekst slik den står etter 11.11, en `prompts.txt` med stiene
+rettet, en README som sier hva som fortsatt hentes fra 09.11, og sha256 for
+fem filer. Kontrollert at fila til publisering begynner med tittelen, ikke har
+omslag, og inneholder de nye uro-cellene, og at den publiserte har omslaget
+én gang.
+I Notion: ny mappe «Tillegg 2026-11-12» på siden «SB handover mappe» med
+prompts.txt, README.md, onsdagsrutine_prompt.txt og dashbordet v78 (fire
+filer, alle lastet opp og kontrollert i mappen). Siden er skrevet om på 13
+punkter: v78 overalt, nytt avsnitt om tillegget, uro-feltet under Skårene og i
+dashbordavsnittet, rutinens punkt 6i, shadow-status 11.11 med 16 av 16 tester,
+VVIX-funnet under Viktige funn, og tidssonefeilen under Fallgruver.
+Ingen ny full sikkerhetskopi: databasen, minnet, de planlagte oppgavene og de
+private dataene er uendret siden 09.11, og databasens marked/regime har med
+vilje fortsatt forrige feltstruktur til første onsdagskjøring etter 11.11.
+Filer: `sikkerhetskopi/2026-11-12/`, `notater/OVERLEVERING.md`; Notion.
+For Cowork: gjenoppretting starter nå med prompts.txt i «Tillegg 2026-11-12».
+
 ### 12.11.2026 11:01, Claude Code
 
 Rettet den tidsavhengige testen `test_no_future_data` (funnet 11.11, Frodes
