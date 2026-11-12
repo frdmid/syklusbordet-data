@@ -199,8 +199,9 @@ trenger for å vekte graden, og den finnes alt i sondeutskriftene.
 - Rutinen bruker `project_read` og `project_write` mot claude.ai-prosjektet.
   Prompts.txt bør si hva som gjøres hvis den nye kontoen ikke har det
   verktøyet (punkt 7 over løser det).
-- Små ting: `README.md` er 19 byte; første linje i `.gitignore` er en
-  kommentar som har slukt `__pycache__/` (ufarlig fordi `*.pyc` dekker).
+- Små ting: `README.md` er 19 byte. (Rettet 12.11.2026: påstanden om at
+  `.gitignore` hadde slukt `__pycache__/` var feil. Den kom av at to filer ble
+  lest sammenslått i samme kommando. `.gitignore` er i orden.)
 
 ## Prioritert, hvis bare fem ting gjøres
 

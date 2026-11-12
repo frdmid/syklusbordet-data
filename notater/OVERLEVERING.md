@@ -71,8 +71,10 @@ sikkerhetskopi tas når stegene der er gjort.
    dollar, kaller `flagglogg.py`) → `shipping.py` (Fearnleys, arkiverer PDF)
    → `bygg_shipping.py`, som til slutt kaller `endringer.uke()`,
    `helse.kjor()` og `shadow_oos.kjor_actions()` (Shadow-OOS fra 07.10.2026;
-   den kaller Challengerne og til slutt `kontekst_laks.py` og
-   `kontekst_regime.py`). Skriptene skriver til repoet gjennom GitHub-API med
+   den kaller Challengerne og til slutt kontekstmodulene laks, regime, uran,
+   miners og handel, og fra 12.11.2026 også `miljo_logg.py`,
+   `dashbord/bygg.py` og `ukerapport.py`, i den rekkefølgen).
+   Skriptene skriver til repoet gjennom GitHub-API med
    `GITHUB_TOKEN`; commits heter «oppdatert ...» og føres ikke i loggen.
 2. **Rutinen `trig_01HoJvyjwZRq5J4QNcXoFkr3`** («Syklusbordet: oppdater
    dashbordet fra GitHub»), onsdag kl. 10:15 og 13:15 norsk tid fra 21.10 (`CRON_TZ=Europe/Oslo`); det andre forsøket gjør bare noe hvis det første ikke fikk ferske tall: henter filene fra repoet
@@ -110,6 +112,13 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
   ganger. Filen som publiseres skal begynne med `<title>Syklusbordet</title>`.
 - Uten Playwright: server filen med `python -m http.server` og test i
   nettleserpanelet (konsoll, og `scrollWidth` lik bredden ved 390 px).
+- **Datakilde fra 12.11.2026:** dashbordet leser `dashbord/data.json` fra det
+  offentlige repoet først (skrevet av `dashbord/bygg.py` hver uke), databasen
+  som reserve, og de innbakte dataene som siste utvei. Valget tas på friskhet,
+  og siden skriver hvilken kilde som ble brukt i tabellen Datahelse.
+  `marked/alu_tilbud` (IAI) hentes ALLTID fra databasen og ligger aldri i
+  repoet; tre sperrer holder det slik, se `dashbord/README.md`. Onsdagsrutinen
+  går uendret og fyller databasen som før.
 - Database: samlingen `segments` (ett dokument per segment, id lik
   segmentets id, inkludert `ship_*`) og samlingen `marked` med dokumentene
   `vix`, `dollar`, `endringer`, `helse`, `gass_b` og `laks_biomasse` (de to
@@ -118,9 +127,12 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
   av `kontekst_regime.py` samme sted), `uran_kontrakt` (fra 19.10, av
   `kontekst_uran.py`), `handel` (fra 03.11, av `kontekst_handel.py`) og `alu_tilbud` (fra 12.10, skrevet for
   hånd månedlig med `alu_tilbud_privat.py` fra IAI-fila i `data_privat/`).
-- **Kildekoden finnes bare i selve dashbordet.** Les alltid siste versjon med
-  Artifact `read` før du endrer noe, og bygg på den. Ellers overskrives den
-  andre øktens arbeid.
+- **Kilden er `dashbord/index.html` i repoet** fra 12.11.2026, ikke
+  artifacten. Regelen er snudd: før måtte du lese artifacten først, nå skal du
+  kjøre `git pull` først og publisere den filen som den er. Risikoen er nå å
+  publisere fra et utdatert arbeidstre. Kjør `py -X utf8 dashbord/kontroller.py`
+  før hver publisering; den stopper manglende tittel, dobbelt omslag, en
+  testkopi med lokal DATA_URL og en side uten reserve. Se `dashbord/README.md`.
 - **Etter hver publisering:** kontroller at `<title>Syklusbordet</title>` og
   `:root{ --ground:#f4f4f1 ...}` står øverst. Coworks versjon 54 mistet dem
   (lys modus ble fargeløs), og omslaget kom med to ganger.
@@ -147,12 +159,21 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 | `challengers/` | Reglene for Challengerne (`<navn>.py`) og spesifikasjonene (`spes_<id>.json`); fem stykker per 15.10, se Åpne punkter |
 | `kontekst_laks.py`, `kontekst_regime.py`, `kontekst_uran.py`, `kontekst_miners.py` (feltet Gullgruver, `miners.json`, fra 28.10), `kontekst_handel.py` (handlingslisten, evidensgradene og papirporteføljen, `handel.json`, fra 03.11; kalles sist) | Kontekst til dashbordet (`laks_biomasse.json`, `regime.json`) og ny ukerad i `uran_futures_uke.csv` (kontrollen av uranprisen) og `uran_kontrakt.json` (langsiktig kontraktspris), begge fra 19.10, kalt fra `shadow_challenger.kjor`. Ikke hashet av noen modell |
 | `serier/priser_mnd.csv` | Hele månedsserien (nominell og real) per råvaresegment, skrevet av `priser.py` hver uke, til Challengere |
+| `dashbord/index.html` | Dashbordets kilde fra 12.11.2026. Publiseres som den er, uten omslag |
+| `dashbord/bygg.py` | Setter sammen `dashbord/data.json` av filene i repoet, med samme krav som rutinen og bevaring av felt mot forrige fil |
+| `dashbord/kontroller.py` | Kjøres før publisering, avslutter med kode 1 hvis noe er galt |
+| `miljo_logg.py` | Hvilke biblioteksversjoner som kjørte, `logg/miljo.csv`, med avvik mot `config/miljo_kjent.json` |
+| `ukerapport.py` | Ukens tall til `logg/uke/<uke>.md`. Tillegg til rutinens rapport, ikke erstatning |
 | `test_shadow_oos.py` | Testene for shadow (`python test_shadow_oos.py`, lokalt, skriver ikke til repoet) |
 | `config/champion_v1_1.json` | Frosne regler for Champion v1.1 (fra 14.10.2026) og sha256 for de 16 kodefilene. `config/champion_v1_0.json` er v1.0, avløst fordi D hadde feil kursdata |
 | `shadow/` | `model_registry.csv`, `snapshots/`, `inndata/`, `shadow_events.csv`, `shadow_outcomes.csv` (tom), `correction_log.csv`, `run_manifest.csv` |
 
 ## Fallgruver
 
+- **Loggen er rullet** fra 12.11.2026: `notater/LOGG.md` har blokken
+  «Status nå», inneværende måned og regelen om månedsskifte. Eldre innslag
+  ligger i `notater/logg/<år>-<mnd>.md`, ord for ord. «Status nå» oppdateres i
+  samme commit som endringen.
 - **Loggen:** før dato og klokkeslett i norsk tid, ikke anslå. Bruk
   Python, ikke Git Bash: `TZ=Europe/Oslo date` i Git Bash på Frodes maskin
   svarer «GMT +0000», altså UTC, og ga innslag en time bak om vinteren

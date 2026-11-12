@@ -114,11 +114,22 @@ def kjor(lager, rot, naa, note=print):
     # kontekst_uran.py, (28.10.2026) miners.json fra kontekst_miners.py og
     # (03.11.2026) handel.json fra kontekst_handel.py (sist, den leser Challengernes
     # snapshot). En feil her rammer ingenting annet.
-    for navn in ("kontekst_laks", "kontekst_regime", "kontekst_uran", "kontekst_miners", "kontekst_handel"):
+    #
+    # Fra 12.11.2026 (Frodes bestilling, steg 1, 3 og 5 i gjennomgangen) tre
+    # moduler til, i denne rekkefolgen og til slutt, fordi hver leser det den
+    # forrige skrev:
+    #   miljo_logg      hvilke biblioteksversjoner som kjorte, logg/miljo.csv
+    #   dashbord/bygg   dashbord/data.json, dashbordets hovedkilde. Maa gaa
+    #                   ETTER kontekstfilene, ellers blir regime, miners og
+    #                   handel en uke gamle i den
+    #   ukerapport      logg/uke/<uke>.md. Maa gaa SIST, den leser miljoeloggen
+    # Alle tre er additive: feiler de, staar dashbordet paa databasen som foer.
+    for navn in ("kontekst_laks", "kontekst_regime", "kontekst_uran", "kontekst_miners",
+                 "kontekst_handel", "miljo_logg", "dashbord/bygg", "ukerapport"):
         try:
             p = os.path.join(rot, f"{navn}.py")
             if os.path.exists(p) and not os.environ.get("KONTEKST_AV"):
-                spes = importlib.util.spec_from_file_location(navn, p)
+                spes = importlib.util.spec_from_file_location(navn.replace("/", "_"), p)
                 kl = importlib.util.module_from_spec(spes)
                 spes.loader.exec_module(kl)
                 kl.kjor(lager, note)

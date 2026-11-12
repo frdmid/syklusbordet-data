@@ -1,6 +1,22 @@
-pandas>=2.0
-numpy>=1.24
-requests>=2.31
-openpyxl>=3.1
-pdfplumber>=0.11
-lxml>=5.0
+# Avhengigheter for Syklusbordet.
+#
+# Oevre grenser lagt inn 12.11.2026 (Frodes bestilling, steg 1 i
+# notater/2026-11-11_gjennomgang.md). Nedre grense er den koden er skrevet mot,
+# oevre grense er neste majorversjon. Grensene er valgt slik at de som faktisk
+# kjorte 11.11.2026 er innenfor: pandas 3.1.1, numpy 2.5.4, requests 2.34.2,
+# openpyxl 3.1.5, pdfplumber 0.11.10, lxml 6.1.3 (se config/miljo_kjent.json).
+#
+# IKKE eksakte pinner, med vilje: en eksakt pinne gjor stille avvik til hard
+# feil, fordi et manglende hjul for runnerens Python stopper hele onsdagen, og
+# ukentlig.yml har ingen reserveinstallasjon. Skal det pinnes eksakt, maa
+# Cowork foerst legge inn et reservesteg i arbeidsflyten; se notatet
+# notater/2026-11-12_robusthet.md.
+#
+# Hva som faktisk kjorer registreres hver uke i logg/miljo.csv av
+# miljo_logg.py, som sier fra naar det avviker fra config/miljo_kjent.json.
+pandas>=2.0,<4.0
+numpy>=1.24,<3.0
+requests>=2.31,<3.0
+openpyxl>=3.1,<4.0
+pdfplumber>=0.11,<1.0
+lxml>=5.0,<7.0
