@@ -150,7 +150,16 @@ cron-tidene og reserveinstallasjonen, og toppteksten forklarer begge.
      begynner. Eldre innslag ligger i `notater/logg/<år>-<mnd>.md`, en fil per
      måned. «Status nå» oppdateres i samme commit som endringen, og ved
      månedsskifte flyttes forrige måned ut.
+   - Kilden til dashbordet er `dashbord/index.html` i repoet, ikke den
+     publiserte artifacten. Kjør `git pull` før du endrer eller publiserer, og
+     `py -X utf8 dashbord/kontroller.py` før hver publisering. Publiserer du
+     fra den gamle artifacten, overskrives arbeidet i mappen.
    ```
+
+   Den andre linjen er den viktigste av alt i dette notatet. Den gamle vanen,
+   å lese artifacten først, var riktig til 12.11.2026 og er nå den eneste
+   måten arbeid kan gå tapt på. `CLAUDE.md` leses av hver økt ved oppstart, og
+   er derfor det eneste stedet beskjeden garantert blir sett.
 
 ## Det som ikke er gjort
 

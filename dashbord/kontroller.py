@@ -90,6 +90,9 @@ def main():
         return 1
     print(f"\nAlt i orden{', ' + str(len(adv)) + ' advarsel(er)' if adv else ''}. "
           "Filen kan publiseres som den er, uten omslag.")
+    print("\nHUSK: kilden er dashbord/index.html i repoet, ikke artifacten.")
+    print("Publiserer du fra den gamle artifacten, overskrives arbeidet i mappen.")
+    print("Kjoerte du `git pull` foer du endret?")
     return 0
 
 

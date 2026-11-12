@@ -15,11 +15,15 @@ ord for ord, og blokken «Status nå» oppdateres. Eldre innslag ligger der.
 
 Oppdateres i SAMME commit som endringen, med samme regel som innslagene
 under. Er den eldre enn det nyeste innslaget, er den ikke til å stole på.
-Sist oppdatert 12.11.2026 13:00.
+Sist oppdatert 12.11.2026 13:08.
 
-- **Dashbord:** versjon 79, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
-  Kilden er `dashbord/index.html` i repoet, ikke artifacten. Siden leser
-  `dashbord/data.json` fra repoet, databasen som reserve.
+- **Dashbord:** versjon 80, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
+- **PASS PÅ:** kilden til dashbordet er `dashbord/index.html` i repoet, IKKE
+  artifacten. Kjør `git pull` før du endrer eller publiserer, og
+  `py -X utf8 dashbord/kontroller.py` før hver publisering. Publiserer du
+  fra den gamle artifacten, overskrives arbeidet i mappen. Regelen ble
+  snudd 12.11.2026. Siden leser `dashbord/data.json` fra repoet, med
+  databasen som reserve.
 - **Shadow-OOS:** Champion v1.1 og seks Challengere. Ingen nye bunnsoner;
   jernmalm og Henry Hub i oppsikt, gull i watch hos BEGGE.
 - **Ukeflyt:** `ukentlig.yml` onsdag 08:48 (reserve 09:56), onsdagsrutinen
@@ -32,6 +36,33 @@ Sist oppdatert 12.11.2026 13:00.
 - **Eldre innslag:** `notater/logg/<år>-<mnd>.md`, en fil per måned.
 
 ---
+
+### 12.11.2026 13:08, Claude Code
+
+Advarselen om dashbordkilden lagt flere steder (Frodes bestilling). Den gamle
+vanen, å lese artifacten først, var riktig til 12.11.2026 og er nå den eneste
+måten arbeid kan gå tapt på: publiserer en økt fra den gamle artifacten,
+overskrives arbeidet i `dashbord/`. Beskjeden sto bare i OVERLEVERING,
+`dashbord/README.md`, Notion-siden og sikkerhetskopien, altså steder man leser
+hvis man alt vet at man skal lete.
+Nå står den også:
+1. i blokken «Status nå» øverst i denne loggen, som leses først,
+2. som en kommentar rett etter tittelen i `dashbord/index.html`, altså i den
+   filen den som skal endre dashbordet uansett åpner,
+3. i utskriften fra `dashbord/kontroller.py`, som kjøres rett før hver
+   publisering, med spørsmålet «kjørte du git pull før du endret?»,
+4. i `notater/2026-11-12_robusthet.md`, der CLAUDE.md-lappen til Cowork nå har
+   to kulepunkt i stedet for ett. Det siste er det viktigste stedet, siden
+   CLAUDE.md leses av hver økt ved oppstart og er det eneste stedet beskjeden
+   garantert blir sett. Bare Cowork kan endre den filen.
+Kommentaren står ETTER tittellinjen, fordi `kontroller.py` krever at filen
+begynner med `<title>Syklusbordet</title>`; kontrollen går fortsatt gjennom.
+Dashbordet republisert som v80, så den publiserte siden og kilden i repoet er
+like, som er hele poenget med at repoet er kilden.
+Filer: `dashbord/index.html`, `dashbord/kontroller.py`,
+`notater/2026-11-12_robusthet.md`, `notater/LOGG.md`; dashbordet v80.
+For Cowork: CLAUDE.md-lappen i robusthetsnotatet har nå to kulepunkt. Det
+andre er det som hindrer at arbeid går tapt.
 
 ### 12.11.2026 13:00, Claude Code
 
