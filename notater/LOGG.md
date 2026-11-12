@@ -15,7 +15,7 @@ ord for ord, og blokken «Status nå» oppdateres. Eldre innslag ligger der.
 
 Oppdateres i SAMME commit som endringen, med samme regel som innslagene
 under. Er den eldre enn det nyeste innslaget, er den ikke til å stole på.
-Sist oppdatert 12.11.2026 13:15.
+Sist oppdatert 12.11.2026 13:22.
 
 - **Dashbord:** versjon 80, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
 - **PASS PÅ:** kilden til dashbordet er `dashbord/index.html` i repoet, IKKE
@@ -37,6 +37,44 @@ Sist oppdatert 12.11.2026 13:15.
 - **Eldre innslag:** `notater/logg/<år>-<mnd>.md`, en fil per måned.
 
 ---
+
+### 12.11.2026 13:22, Cowork
+
+`CLAUDE.md` endret etter punkt 2 i innslaget 13:15 under: det første kulepunktet
+om loggen er byttet ut med to kulepunkter, ord for ord fra
+`notater/2026-11-12_robusthet.md`. Det første sier at økten skal lese «Status nå»
+og innslagene fra inneværende måned, og hvor eldre innslag ligger. Det andre
+sier at kilden til dashbordet er `dashbord/index.html` i repoet og ikke den
+publiserte artifacten, at `git pull` skal kjøres før endring eller
+publisering, og `py -X utf8 dashbord/kontroller.py` før hver publisering. Resten
+av filen er uendret. Endringen er gjort i Frodes arbeidskopi, som var lik main
+(42e2f04) før den, og pushes av Frode.
+Det som ikke gjelder lenger, så ingen tar det opp igjen:
+1. Coworks to patcher fra 12.11.2026 (laget kl. 12:10 og 12:11 mot main 872938d,
+   i prosjektdokumentet `claude/ukentlig-yml-patch-2026-11-12.md`) ble aldri
+   pushet. 42e2f04 har gjort det samme arbeidet, så patchene skal ikke brukes:
+   `git am` vil kollidere. Det samme gjelder Coworks innslag 13:10 og 13:12, som
+   aldri kom på main. Innslaget 13:15 under er den gjeldende beskrivelsen.
+2. Patch 2 la til en egen `avhengigheter.py` for reserveinstallasjonen. Den er
+   ikke i bruk. Claude Code løste de samme to svakhetene (hardkodet pakkeliste
+   og manglende `::warning::`) med `sed` i selve arbeidsflyten, og ingen
+   `avhengigheter.py` skal legges inn.
+3. Den eldre patchen fra 21.10.2026 (`claude/ukentlig-yml-patch.md`) er
+   historikk. Arbeidsflyten har hatt vakta siden 28.10.2026.
+Det som gjelder om hvordan Cowork kommer til repoet: git-proxyen i Cowork-økten
+avviser skriving til `frdmid/syklusbordet-data`, fordi repoet ikke ligger i
+øktens godkjente kilder. Det samme skjedde 21.10.2026. Lesing fungerer. Frodes
+lokale arbeidskopi (`C:\Users\FrodeMidjo\kode\syklusbordet-data`) kan Cowork
+skrive til, og Frode pusher i GitHub Desktop. Filbryggen til maskinen hans
+avviste skriving til `.github/workflows/` 21.10.2026, så arbeidsflytfiler må
+kopieres av Frode eller skrives av Claude Code. Verken Claude Code eller
+Cowork kan pushe alt alene, og det gjelder uansett hvem som tar over.
+**Filer:** `CLAUDE.md`, `notater/LOGG.md`.
+**Claude Code må vite:** Punkt 2 fra innslaget 13:15 er gjort, så Cowork har
+ingenting mer å gjøre på den prosedyren. Reserveinstallasjonen i `sed`-form er
+Coworks eneste gjenstående merknad: kontroller at et første kjøresteg uten
+`requirements.txt`-feil ikke gir en `::warning::`, når kjøringen 18.11.2026
+kl. 07:48 har gått.
 
 ### 12.11.2026 13:15, Claude Code
 
