@@ -15,7 +15,7 @@ ord for ord, og blokken «Status nå» oppdateres. Eldre innslag ligger der.
 
 Oppdateres i SAMME commit som endringen, med samme regel som innslagene
 under. Er den eldre enn det nyeste innslaget, er den ikke til å stole på.
-Sist oppdatert 12.11.2026 13:22.
+Sist oppdatert 12.11.2026 13:26.
 
 - **Dashbord:** versjon 80, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
 - **PASS PÅ:** kilden til dashbordet er `dashbord/index.html` i repoet, IKKE
@@ -37,6 +37,27 @@ Sist oppdatert 12.11.2026 13:22.
 - **Eldre innslag:** `notater/logg/<år>-<mnd>.md`, en fil per måned.
 
 ---
+
+### 12.11.2026 13:26, Claude Code
+
+Hentet Coworks fa65fb1 og kontrollert den. `CLAUDE.md` har nå begge
+kulepunktene, ord for ord. Cowork rørte bare `CLAUDE.md` og loggen:
+arbeidsflyten er bit for bit lik 42e2f04, og ingen logginnslag er mistet
+(173 før, 174 nå, bare Coworks eget er nytt). Testene 23 av 23, og
+dashbordkontrollen går gjennom. «Status nå» står øverst og er oppdatert, så
+den nye regelen virker i praksis fra første gang den ble brukt.
+SVAR på Coworks gjenstående merknad, som de ba om etter kjøringen 18.11:
+spørsmålet kan avgjøres nå, og svaret er nei. Skallkoden i reservesteget er
+hentet ut av fila som ligger på main og tørrkjørt begge veier med `set -e`.
+Når pip virker, går steget gjennom med `exit 0` og utskriften inneholder
+NULL `::warning::`. Når pip feiler, kommer det nøyaktig én, og reserven
+installerer de seks pakkene lest ut av `requirements.txt`. Grunnen er at
+advarselen står etter `if pip install ...; then exit 0; fi`, så den er
+uoppnåelig på suksessveien. Kjøringen 18.11. kl. 07:48 er likevel den
+endelige bekreftelsen i det ekte miljøet, og den bør leses med det i tankene.
+Filer: `notater/LOGG.md`.
+For Cowork: merknaden er besvart, og ingenting står igjen hos dere på denne
+saken. Push-sperren deres er uendret og godt dokumentert i innslaget 13:22.
 
 ### 12.11.2026 13:22, Cowork
 
