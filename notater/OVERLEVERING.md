@@ -194,6 +194,15 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 - **FRED** henger med nettleser-UA; bruk `User-Agent: Syklusbordet`.
 - **SEC** krever en User-Agent med kontaktinfo.
 - Nettilgang i Code-økten er åpen for SEC, Yahoo, FRED og selskapenes sider.
+- **Championens evalueringsprotokoll** ligger i
+  `notater/champion_evaluering.md` (12.11.2026), forhåndsregistrert før
+  første inngang. Kort: en observasjon er én makroklynge, ikke én episode
+  og ikke ett papir; primærutfallet er 24 måneders meravkastning i NOK mot
+  MSCI World; forkastet etter fem modne klynger hvis medianen er negativ og
+  høyst én av fem slo indeksen. Bestått-kravet står, men er flere tiår unna:
+  med tre klynger ville «to av tre» gitt 50 prosent falsk godkjenning.
+  Protokollen kan ikke pekes til fra config, som aldri endres for hånd.
+  Den krever `shadow/shadow_outcomes.csv`, som er tom; fase 2 er ikke bygget.
 - **Shadow-OOS:** filene i `shadow/` og `config/champion_*.json` rettes
   aldri for hånd. En feil føres i `shadow/correction_log.csv` (ny linje,
   originalen står). Endringer i en av de 16 kodefilene i config merkes som

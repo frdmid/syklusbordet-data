@@ -15,7 +15,7 @@ ord for ord, og blokken «Status nå» oppdateres. Eldre innslag ligger der.
 
 Oppdateres i SAMME commit som endringen, med samme regel som innslagene
 under. Er den eldre enn det nyeste innslaget, er den ikke til å stole på.
-Sist oppdatert 12.11.2026 11:49.
+Sist oppdatert 12.11.2026 12:42.
 
 - **Dashbord:** versjon 79, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
   Kilden er `dashbord/index.html` i repoet, ikke artifacten. Siden leser
@@ -26,12 +26,49 @@ Sist oppdatert 12.11.2026 11:49.
   10:15 og 13:15. Neste rutinekjøring 18.11.2026.
 - **Tester:** `python test_shadow_oos.py`, 16 av 16 består. Før publisering:
   `py -X utf8 dashbord/kontroller.py`.
-- **Åpne avgjørelser for Frode:** kravene i Championens
-  evalueringsprotokoll, og om onsdagsrutinen skal reduseres når dashbordet
-  leser repoet direkte. Se `notater/2026-11-11_prompt_forbedringer.md`.
+- **Åpne avgjørelser for Frode:** om onsdagsrutinen skal reduseres nå at
+  dashbordet leser repoet direkte. Championens evalueringsprotokoll er
+  skrevet (`notater/champion_evaluering.md`, 12.11.2026). Se `notater/2026-11-11_prompt_forbedringer.md`.
 - **Eldre innslag:** `notater/logg/<år>-<mnd>.md`, en fil per måned.
 
 ---
+
+### 12.11.2026 12:42, Claude Code
+
+Evalueringsprotokoll for Champion v1.1 skrevet (steg 2, Frodes bestilling):
+`notater/champion_evaluering.md`. Forhåndsregistrert før første inngang, og
+det er kontrollert at klokken ikke har begynt: `shadow/shadow_events.csv` har
+åtte rader, alle `watch_*`, null `hypothetical_entry` og null modninger, og
+`shadow/shadow_outcomes.csv` er tom.
+Rammen ble endret av regnestykket underveis. Utkastet hadde «minst to av tre
+klynger slår indeksen» som bestått-krav. Med en ensidig fortegnstest gir det
+50 prosent falsk godkjenning for en verdiløs regel, så det kan ikke brukes.
+Og selv ved seks klynger ville en virkelig god regel (vinner 70 % av
+klyngene) feile kravet oftere enn den klarer det (42 % treff). Historisk takt
+er én klynge per 1,9 år, så seks modne klynger er rundt tretten år etter
+første inngang. Protokollen er derfor bygget som et FALSIFISERINGS-instrument:
+forkastet etter fem modne klynger hvis medianen av meravkastningene er negativ
+OG høyst én av fem slo MSCI World (treffer en god regel i bare 3,1 % av
+tilfellene, en dårlig i 52,8 %). Varsel, ikke forkasting, etter tre klynger
+med negativ median. Bestått-kravet står, men er flere tiår unna, og
+«ikke forkastet» er uttrykkelig ikke det samme som bekreftet.
+En observasjon er én MAKROKLYNGE, ikke én episode og ikke ett papir, fordi
+råvarene flagger sammen: elleve inngangsmåneder 2011 til 2023 var bare seks
+klynger. Papir- og segmenttall rapporteres beskrivende med den faste
+setningen om at de ikke er uavhengige.
+Kanttilfeller avgjort nå: klynge uten kjøpbart papir, C som stenger etter
+inngang, papir som slutter å handles, uke merket code_changed, og klynge som
+ikke har modnet. Primærkomparator er MSCI World, med OSEBX ved siden; valget
+er begrunnet i protokollen, og å bytte i ettertid er ikke tillatt.
+I tillegg en maskinerikontroll som KAN gjøres tidlig: ved første modne klynge
+regnes avkastningen på nytt uavhengig av utfallsmodulen, og de to må stemme.
+Protokollen kan ikke kjøres ennå: fase 2 mangler. Forslag til
+`shadow_utfall.py` står i avsnitt 9, med krav om at den IKKE skal hashes av
+Championen, og hvilke tester den bør ha. Den er ikke bygget.
+Filer: `notater/champion_evaluering.md`, `notater/OVERLEVERING.md`,
+`notater/LOGG.md`.
+For Cowork: protokollen kan ikke pekes til fra `config/champion_v1_1.json`,
+siden den filen aldri endres for hånd. Pekeren står i OVERLEVERING.
 
 ### 12.11.2026 11:53, Claude Code
 
