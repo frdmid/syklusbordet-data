@@ -15,7 +15,7 @@ ord for ord, og blokken «Status nå» oppdateres. Eldre innslag ligger der.
 
 Oppdateres i SAMME commit som endringen, med samme regel som innslagene
 under. Er den eldre enn det nyeste innslaget, er den ikke til å stole på.
-Sist oppdatert 16.11.2026 14:57.
+Sist oppdatert 16.11.2026 15:02.
 
 - **Dashbord:** versjon 80, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
 - **PASS PÅ:** kilden til dashbordet er `dashbord/index.html` i repoet, IKKE
@@ -37,6 +37,47 @@ Sist oppdatert 16.11.2026 14:57.
 - **Eldre innslag:** `notater/logg/<år>-<mnd>.md`, en fil per måned.
 
 ---
+
+### 16.11.2026 15:02, Claude Code
+
+Sonde sonde_kjor_uten_2020 (Frodes bestilling): hvor mye av det prosjektet
+tror på er egentlig 2020? Testet de tre påstandene som har evidensgrad
+«middels» i handel.json, altså de eneste som bærer vekt, pluss
+papirporteføljen øverst på dashbordet. Kriterium satt før kjøring: en påstand
+er 2020-avhengig hvis forskjellen skifter fortegn eller krymper til under
+halvparten når signalmånedene i 2020 tas ut. 28 av 1143 signalmåneder er
+fra 2020.
+1. CHAMPIONENS BUNNSONE PÅ RÅVAREPRISEN HOLDER. På det avgjørende vinduet
+   1965 til 2014 er 2020 ikke med i det hele tatt, og tallene er uendret
+   (en god kontroll på at koden gjør det den skal). På hele 1965 til 2026
+   beholder forskjellen 70 til 85 % uten 2020, på alle fem horisontene. Ved
+   12 måneder +9,5 pp med 2020 og +7,9 pp uten. Dette er den viktigste
+   påstanden i prosjektet, og den er ikke 2020-avhengig. Merk at dette er
+   råvarens egen pris; at regelen ikke holdt på PAPIRENE før 2011 står
+   uendret fra backtesten 28.09.
+2. BRED NEDGANG er ikke hovedsakelig 2020, men mye svakere enn overskriften.
+   Forskjellen beholder 51 til 172 % ved fire av fem horisonter; bare 9
+   måneder faller under halvparten. Men nivået: forskjellen er +2,8 pp ved
+   6 måneder, +1,1 pp ved 12 og +9,6 pp ved 24, mens evidensteksten sier
+   «+33 % mot −3 % over 24 mnd». Forskjellen i nivå er at teksten måler
+   makroklynger og denne sonden signalmåneder. Begge kan være riktige, men en
+   leser av dashbordet vil ikke gjette at måneds-tallet er 1 pp ved 12 mnd.
+3. GULL BEGGE holder, men er lite: median meravkastning +3,3 pp over 6
+   måneder med 2020, +2,3 pp uten, altså 70 % beholdt. Også her er nivået
+   lavere enn evidensteksten antyder, av samme grunn som over.
+4. PAPIRPORTEFØLJEN er 2020-avhengig i snittet. Snittet krymper til 25 %
+   (fra +159 til +39 pp over world), medianen beholder 55 % (fra +60 til
+   +33 pp). Uten 2020 slo porteføljen world i 6 av 9 posisjoner mot 10 av 13.
+   De fire fra 2020 er de fire største med stor margin: kull +659, WTI +498,
+   aluminium +351 og Brent +201 prosentpoeng over world. Nummer fem er
+   aluminium 2015 med +149.
+Konklusjon: kjernen tåler det, utstillingsvinduet gjør det ikke. Ingenting er
+endret i noen fil utenom sonden. Det som er verdt å vurdere, er om
+papirporteføljen på dashbordet skal vise medianen uten 2020 ved siden av
+dagens tall, slik punkt 2 i gjennomgangen 11.11 foreslo.
+Filer: `sonde_kjor_uten_2020.py`, `sonder/sonde_kjor_uten_2020.txt`,
+`sonder/uten_2020.csv`, `sonder_ferdige.txt`.
+For Cowork: ingenting å gjøre. Dashbordet er uendret.
 
 ### 16.11.2026 14:57, Claude Code
 

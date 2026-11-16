@@ -1,0 +1,51 @@
+sonde_kjor_uten_2020
+Kriteriet staar i toppen av fila og er satt foer kjoering.
+
+18 raavarer, 1960-01 til 2026-10
+signalmaaneder i alt 1143, derav i 2020: 28
+
+==================== 1. Championens bunnsone, raavarens realpris
+   Evidensteksten bruker 1965 til 2014, som ikke inneholder 2020.
+
+   1965-2014 (avgjorende)
+      h  3  signal   +0.8 % mot ellers   -0.1 %  forskjell   +0.9 pp  |  uten 2020   +0.9 pp   ikke 2020-avhengig (beholder 100 %)
+      h  6  signal   +2.3 % mot ellers   -0.4 %  forskjell   +2.7 pp  |  uten 2020   +2.7 pp   ikke 2020-avhengig (beholder 100 %)
+      h  9  signal   +4.2 % mot ellers   -0.8 %  forskjell   +5.0 pp  |  uten 2020   +5.0 pp   ikke 2020-avhengig (beholder 100 %)
+      h 12  signal   +6.2 % mot ellers   -1.2 %  forskjell   +7.4 pp  |  uten 2020   +7.4 pp   ikke 2020-avhengig (beholder 100 %)
+      h 24  signal  +12.4 % mot ellers   -2.5 %  forskjell  +14.9 pp  |  uten 2020  +14.9 pp   ikke 2020-avhengig (beholder 100 %)
+
+   hele 1965-2026
+      h  3  signal   +1.7 % mot ellers   -0.1 %  forskjell   +1.8 pp  |  uten 2020   +1.2 pp   ikke 2020-avhengig (beholder 70 %)
+      h  6  signal   +3.7 % mot ellers   -0.2 %  forskjell   +3.9 pp  |  uten 2020   +3.1 pp   ikke 2020-avhengig (beholder 81 %)
+      h  9  signal   +6.0 % mot ellers   -0.4 %  forskjell   +6.4 pp  |  uten 2020   +5.2 pp   ikke 2020-avhengig (beholder 82 %)
+      h 12  signal   +8.8 % mot ellers   -0.7 %  forskjell   +9.5 pp  |  uten 2020   +7.9 pp   ikke 2020-avhengig (beholder 83 %)
+      h 24  signal  +18.6 % mot ellers   -1.6 %  forskjell  +20.1 pp  |  uten 2020  +17.1 pp   ikke 2020-avhengig (beholder 85 %)
+
+==================== 2. challenger_bred_nedgang_v1
+   Bunnsone naar 40% eller faerre raavarer er i oppgang, mot bunnsone ellers.
+   h  3  i bred nedgang   +2.9 % (n 332) mot ellers   +3.3 % (n 204)  forskjell   -0.4 pp  |  uten 2020   -0.7 pp (n 311)   ikke 2020-avhengig (beholder 172 %)
+   h  6  i bred nedgang   +7.4 % (n 332) mot ellers   +4.6 % (n 202)  forskjell   +2.8 pp  |  uten 2020   +1.7 pp (n 311)   ikke 2020-avhengig (beholder 61 %)
+   h  9  i bred nedgang  +10.7 % (n 332) mot ellers   +8.8 % (n 202)  forskjell   +1.9 pp  |  uten 2020   +0.6 pp (n 311)   2020-AVHENGIG (krympet til 32 %)
+   h 12  i bred nedgang  +15.0 % (n 332) mot ellers  +13.9 % (n 202)  forskjell   +1.1 pp  |  uten 2020   +0.6 pp (n 311)   ikke 2020-avhengig (beholder 51 %)
+   h 24  i bred nedgang  +35.1 % (n 329) mot ellers  +25.6 % (n 201)  forskjell   +9.6 pp  |  uten 2020   +6.4 pp (n 308)   ikke 2020-avhengig (beholder 67 %)
+
+==================== 3. challenger_gull_begge_v1, gruvefondene 6 mnd mot MSCI World
+   BEGGE staar i 52 av 180 maaneder (2011-11 til 2026-10)
+   fond med kurs: AUCO.L, GDX.L, GDXJ.L, IAUP.L   (world: ok)
+   med 2020    44 signalmaaneder, median meravkastning   +3.3 pp
+   uten 2020   40 signalmaaneder, median meravkastning   +2.3 pp
+   ikke 2020-avhengig (beholder 70 %)
+
+==================== 4. Papirportefoeljen i handel.json, 13 posisjoner
+   alle 13 posisjoner: median meravkastning   +60.2 pp, snitt  +158.7 pp, slo world i 10 av 13
+   uten 2020 (9):       median   +33.2 pp, snitt   +39.3 pp, slo world i 6 av 9
+   median: ikke 2020-avhengig (beholder 55 %)
+   snitt:  2020-AVHENGIG (krympet til 25 %)
+   de fire fra 2020, i prosentpoeng over world:
+      2020-08  kull         +659.4 pp   <- 2020
+      2020-03  wti          +497.9 pp   <- 2020
+      2020-04  aluminium    +351.1 pp   <- 2020
+      2020-03  brent        +201.0 pp   <- 2020
+      2015-10  aluminium    +149.1 pp
+
+Lagret sonder/uten_2020.csv
