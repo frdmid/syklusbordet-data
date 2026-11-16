@@ -204,6 +204,41 @@ def _kurv(tickere, note):
     return pd.DataFrame(m)
 
 
+def uten_aar(poslist, aar="2020"):
+    """Posisjonenes meravkastning mot MSCI World, med og uten ett kalenderaar.
+
+    Lagt inn 16.11.2026 etter sonde_kjor_uten_2020: snittet over de 13
+    posisjonene krympet til en fjerdedel naar 2020 ble tatt ut, fordi de fire
+    posisjonene fra 2020 er de fire stoerste med stor margin (kull +659, WTI
+    +498, aluminium +351 og Brent +201 prosentpoeng over world; nummer fem er
+    aluminium 2015 med +149). Medianen beholdt 55 %. Det store tallet skal
+    derfor ikke staa alene paa bordet.
+
+    Dette er posisjonsstatistikk, ikke en ny simulering: indeksen i serie og
+    tallene i aarlig er uendret. Aa simulere uten 2020 ville vaere et annet
+    regnestykke, og det er ikke det sonden maalte."""
+    mer = [(q["inngang"], q["avk"] - q["world"]) for q in poslist
+           if q["variant"] == "alle" and q.get("world") is not None]
+    if not mer:
+        return None
+    alle = [x for _, x in mer]
+    uten = [x for d, x in mer if not str(d).startswith(aar)]
+    if not uten:
+        return None
+    med = lambda v: _r(float(np.median(v)), 1)
+    snt = lambda v: _r(float(np.mean(v)), 1)
+    return {"aar": aar, "n_alle": len(alle), "n_uten": len(uten),
+            "median_alle": med(alle), "median_uten": med(uten),
+            "snitt_alle": snt(alle), "snitt_uten": snt(uten),
+            "slo_world_alle": sum(x > 0 for x in alle),
+            "slo_world_uten": sum(x > 0 for x in uten),
+            "merknad": (f"Meravkastning mot MSCI World per posisjon, i prosentpoeng, "
+                        f"over hele holdetiden. Uten {aar} betyr at posisjonene med "
+                        f"inngang i {aar} er tatt ut. Indeksen i grafen og tallene i "
+                        f"aarlig er IKKE regnet om; dette er posisjonsstatistikk. "
+                        f"Se sonde_kjor_uten_2020 (16.11.2026).")}
+
+
 def portefolje(segmenter, priser_csv, note=print):
     bredde = _bredde(priser_csv)
     world, osebx = _mnd(_yahoo(WORLD)), _mnd(_yahoo(OSEBX))
@@ -271,7 +306,8 @@ def portefolje(segmenter, priser_csv, note=print):
                      f"månedsslutt i flaggmåneden, holdt {HOLD} mnd, likt vektet i dagens papirer, i NOK.",
             "fra": serie[0]["t"], "serie": serie, "posisjoner": poslist,
             "aarlig": {"flagg": cagr(s1["flagg"]), "bred": cagr(s1["bred"]), "world": cagr(s1["world"]),
-                       "osebx": cagr(s1["osebx"]) if s1["osebx"] else None}}
+                       "osebx": cagr(s1["osebx"]) if s1["osebx"] else None},
+            "uten_2020": uten_aar(poslist)}
 
 
 def live(lager, note=print):

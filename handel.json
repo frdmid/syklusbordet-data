@@ -2117,6 +2117,18 @@
    "bred": 27.5,
    "world": 15.3,
    "osebx": 11.5
+  },
+  "uten_2020": {
+   "aar": "2020",
+   "n_alle": 13,
+   "n_uten": 9,
+   "median_alle": 60.2,
+   "median_uten": 33.2,
+   "snitt_alle": 158.7,
+   "snitt_uten": 39.3,
+   "slo_world_alle": 10,
+   "slo_world_uten": 6,
+   "merknad": "Meravkastning mot MSCI World per posisjon, i prosentpoeng, over hele holdetiden. Uten 2020 betyr at posisjonene med inngang i 2020 er tatt ut. Indeksen i grafen og tallene i aarlig er IKKE regnet om; dette er posisjonsstatistikk. Se sonde_kjor_uten_2020 (16.11.2026)."
   }
  }
 }

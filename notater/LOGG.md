@@ -15,9 +15,9 @@ ord for ord, og blokken «Status nå» oppdateres. Eldre innslag ligger der.
 
 Oppdateres i SAMME commit som endringen, med samme regel som innslagene
 under. Er den eldre enn det nyeste innslaget, er den ikke til å stole på.
-Sist oppdatert 16.11.2026 15:02.
+Sist oppdatert 16.11.2026 15:06.
 
-- **Dashbord:** versjon 80, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
+- **Dashbord:** versjon 81, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
 - **PASS PÅ:** kilden til dashbordet er `dashbord/index.html` i repoet, IKKE
   artifacten. Kjør `git pull` før du endrer eller publiserer, og
   `py -X utf8 dashbord/kontroller.py` før hver publisering. Publiserer du
@@ -37,6 +37,35 @@ Sist oppdatert 16.11.2026 15:02.
 - **Eldre innslag:** `notater/logg/<år>-<mnd>.md`, en fil per måned.
 
 ---
+
+### 16.11.2026 15:06, Claude Code
+
+Papirporteføljen på dashbordet viser nå tallene uten 2020 ved siden av dagens
+(Frodes bestilling, etter sonde_kjor_uten_2020 samme dag, og punkt 2 i
+gjennomgangen 11.11). Ny funksjon `uten_aar` i `kontekst_handel.py` regner
+meravkastningen per posisjon mot MSCI World med og uten posisjonene som har
+inngang i 2020, og legger den i `handel.json` under `portefolje.uten_2020`.
+Tallene: snittet faller fra 159 til 39 prosentpoeng, medianen fra 60 til 33,
+og porteføljen slo indeksen i 6 av 9 posisjoner mot 10 av 13.
+Dette er POSISJONSSTATISTIKK, ikke en ny simulering. Kurven og de årlige
+tallene er uendret, og det står i både merknaden i json-fila og i teksten på
+bordet. Å simulere indeksen uten 2020 ville vært et annet regnestykke enn det
+sonden målte, og er ikke gjort.
+Dashbordet v81: ny avsnittlinje rett under porteføljekurven, før forbeholdet
+om papirvalget. Teksten sier at signalet ikke er borte uten 2020, men at den
+årlige avkastningen er båret av fire posisjoner og ikke av en typisk en.
+`handel.json` er oppdatert for hånd nå med feltet regnet av posisjonene som
+alt sto i fila, altså uten nettkall; fra neste onsdag skriver
+`kontekst_handel.py` det selv. `dashbord/data.json` bygget på nytt, så
+dashbordet får feltet med én gang.
+Kontrollert: kontroller.py går gjennom, feltet er med i data.json, linjen
+rendrer i nettleserpanelet med riktige tall, ingen feil i konsollen, og
+ingenting er bredere enn 390 piksler. En målefeil ble rettet underveis:
+første utgave brukte `pst()` og skrev «prosent prosentpoeng».
+Filer: `kontekst_handel.py`, `handel.json`, `dashbord/index.html`,
+`dashbord/data.json`; dashbordet v81.
+For Cowork: les siste versjon av `dashbord/index.html` i repoet før du
+publiserer. Endringen ligger i `visHandel`, i blokken `pfHtml`.
 
 ### 16.11.2026 15:02, Claude Code
 
