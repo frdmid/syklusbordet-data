@@ -15,7 +15,7 @@ ord for ord, og blokken «Status nå» oppdateres. Eldre innslag ligger der.
 
 Oppdateres i SAMME commit som endringen, med samme regel som innslagene
 under. Er den eldre enn det nyeste innslaget, er den ikke til å stole på.
-Sist oppdatert 12.11.2026 13:26.
+Sist oppdatert 16.11.2026 14:57.
 
 - **Dashbord:** versjon 80, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
 - **PASS PÅ:** kilden til dashbordet er `dashbord/index.html` i repoet, IKKE
@@ -37,6 +37,42 @@ Sist oppdatert 12.11.2026 13:26.
 - **Eldre innslag:** `notater/logg/<år>-<mnd>.md`, en fil per måned.
 
 ---
+
+### 16.11.2026 14:57, Claude Code
+
+Sonde sonde_kjor_vvix_regime (Frodes bestilling): gir bunnsonen ulik
+avkastning i ulike VVIX-regimer, og i kombinasjoner av høy og lav VIX og
+VVIX? Nytt mot de to tidligere sondene: absolutte grenser i stedet for
+persentiltredjedeler, kombinasjoner av to ledd, og horisonten 9 måneder.
+Grenser: VIX 20 og VVIX 105, de samme regimepanelet fikk 12.11. Spredningen i
+VIX innenfor måneden (fra 1990) er den lange stedfortrederen for
+volvariasjon, med medianen før 2015 som grense.
+AVGJORT: 0 av 15 tester holdt. Verken VIX-nivået, spredningen eller
+kombinasjonen nivå ganger spredning skiller utfallene på det avgjørende
+vinduet (oppstart til 2014). Nærmest var spredningen ved 9 og 12 måneder
+(3,7 og 4,7 prosentpoeng, p 0,070 og 0,066), men begge bommet både på
+kravet om størrelse og på at halvdelene skal ha samme fortegn.
+KAN IKKE AVGJØRES, varslet før kjøring: VVIX og VIX ganger VVIX. Telt på
+observasjoner før kjøring har vinduet før 2015 bare 2 episoder med høy VVIX
+og 0 med lav VIX og høy VVIX. VVIX-æraen har 20 episoder i alt, og
+fordelingen er brukbar over hele æraen (15 og 15), men ikke delt i to.
+DET VIKTIGE FUNNET er likevel i de beskrivende tallene. Høy VVIX ser
+spektakulær ut: +120 mot +45 % over 24 måneder, p 0,000. Men halvdelene er
+-5 og +90 prosentpoeng, altså ligger alt i den andre halvdelen. Et
+beskrivende tillegg, lagt til etter at hovedresultatet var lest og merket som
+det, tar ut signalmånedene i 2020:
+  VVIX alene, 12 mnd: +52,6 pp med 2020, -0,3 pp uten (p 0,996)
+  VVIX alene, 24 mnd: +74,7 pp med 2020, -2,1 pp uten (p 0,888)
+  begge høye, 12 mnd: +69,8 pp med 2020, +14,9 pp uten (p 0,443)
+  begge høye, 24 mnd: +89,5 pp med 2020, -2,2 pp uten (p 0,927)
+Hele effekten er altså 2020. Det er samme mønster prosjektet har funnet før:
+VIX etter 2015 (sonden 03.11), papirene i bunnsonen (backtesten 28.09) og
+holdetidene (03.11) bæres alle av den ene vendingen.
+Konklusjon: ingen regel, og ingen endring i noe. Uro-feltet i regimepanelet
+er fortsatt kontekst, og evidensgraden står.
+Filer: `sonde_kjor_vvix_regime.py`, `sonder/sonde_kjor_vvix_regime.txt`,
+`sonder/vvix_regime.csv`, `sonder_ferdige.txt`.
+For Cowork: ingenting å gjøre. Dashbordet og regimepanelet er uendret.
 
 ### 12.11.2026 13:26, Claude Code
 

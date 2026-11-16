@@ -1,0 +1,126 @@
+sonde_kjor_vvix_regime
+Kriteriene staar i toppen av fila og er satt foer kjoering.
+
+18 raavarer, 1960-01 til 2026-10, 1143 signalmaaneder i alt
+^VIX  1990-01 til 2026-10 (442 hele mnd), siste 16.90
+^VVIX 2007-01 til 2026-10 (238 hele mnd), siste 94.97
+spredning 1990-01 til 2026-10, siste 0.0714
+grenser: VIX 20, VVIX 105, spredning 0.0538 (median foer 2014-12)
+
+==================== nivaa (VIX >= 20)
+   avgjoeres paa 1990-01 til 2014-12, 2015-2026 vises
+   h  3 avgjoer        hoy   +1.2 % (n 331, ep 23)  lav   +1.5 % (n 314, ep 33)  forskjell   -0.3 pp  p 0.868  halvdeler   -0.3/  -5.2
+   h  3 2015-2026      hoy  +24.6 % (n  38, ep 14)  lav   +2.2 % (n  88, ep 10)  forskjell  +22.4 pp  p 0.010  halvdeler  +26.7/  -2.0
+   h  6 avgjoer        hoy   +3.5 % (n 331, ep 23)  lav   +2.9 % (n 314, ep 33)  forskjell   +0.6 pp  p 0.819  halvdeler   +0.1/  -7.3
+   h  6 2015-2026      hoy  +41.6 % (n  38, ep 14)  lav   +3.3 % (n  86, ep 10)  forskjell  +38.3 pp  p 0.000  halvdeler  +45.5/  -8.3
+   h  9 avgjoer        hoy   +6.5 % (n 331, ep 23)  lav   +4.8 % (n 314, ep 33)  forskjell   +1.6 pp  p 0.674  halvdeler   +0.4/  -4.1
+   h  9 2015-2026      hoy  +57.7 % (n  38, ep 14)  lav   +4.5 % (n  86, ep 10)  forskjell  +53.3 pp  p 0.000  halvdeler  +61.8/  -6.0
+   h 12 avgjoer        hoy  +10.0 % (n 331, ep 23)  lav   +6.3 % (n 314, ep 33)  forskjell   +3.7 pp  p 0.469  halvdeler   +0.9/  +6.9
+   h 12 2015-2026      hoy  +75.7 % (n  38, ep 14)  lav  +10.3 % (n  86, ep 10)  forskjell  +65.4 pp  p 0.000  halvdeler  +77.5/ -26.0
+   h 24 avgjoer        hoy  +20.4 % (n 331, ep 23)  lav  +10.8 % (n 314, ep 33)  forskjell   +9.6 pp  p 0.288  halvdeler   +6.0/  +6.9
+   h 24 2015-2026      hoy +126.6 % (n  37, ep 13)  lav  +45.4 % (n  83, ep  9)  forskjell  +81.2 pp  p 0.073  halvdeler  +88.7/  -4.3
+
+==================== spredning (VIX, >= median)
+   avgjoeres paa 1990-01 til 2014-12, 2015-2026 vises
+   h  3 avgjoer        hoy   +1.4 % (n 314, ep 35)  lav   +1.3 % (n 331, ep 32)  forskjell   +0.1 pp  p 0.950  halvdeler   +0.1/  -2.0
+   h  3 2015-2026      hoy   +8.6 % (n 104, ep 14)  lav  +10.7 % (n  22, ep 10)  forskjell   -2.1 pp  p 0.835  halvdeler   -2.8/  +9.0
+   h  6 avgjoer        hoy   +3.3 % (n 314, ep 35)  lav   +3.0 % (n 331, ep 32)  forskjell   +0.3 pp  p 0.887  halvdeler   +0.1/  -2.5
+   h  6 2015-2026      hoy  +13.7 % (n 102, ep 14)  lav  +21.3 % (n  22, ep 10)  forskjell   -7.6 pp  p 0.484  halvdeler   -6.4/  +4.1
+   h  9 avgjoer        hoy   +7.6 % (n 314, ep 35)  lav   +3.9 % (n 331, ep 32)  forskjell   +3.7 pp  p 0.070  halvdeler   +3.9/  -4.2
+   h  9 2015-2026      hoy  +20.6 % (n 102, ep 14)  lav  +21.5 % (n  22, ep 10)  forskjell   -0.9 pp  p 0.930  halvdeler   +4.1/  -7.5
+   h 12 avgjoer        hoy  +10.6 % (n 314, ep 35)  lav   +5.9 % (n 331, ep 32)  forskjell   +4.7 pp  p 0.066  halvdeler   +5.2/  -6.9
+   h 12 2015-2026      hoy  +31.8 % (n 102, ep 14)  lav  +23.6 % (n  22, ep 10)  forskjell   +8.3 pp  p 0.748  halvdeler  +15.0/ -15.3
+   h 24 avgjoer        hoy  +17.8 % (n 314, ep 35)  lav  +13.8 % (n 331, ep 32)  forskjell   +4.1 pp  p 0.292  halvdeler   +2.9/  -0.3
+   h 24 2015-2026      hoy  +71.2 % (n  99, ep 13)  lav  +66.7 % (n  21, ep  9)  forskjell   +4.6 pp  p 0.817  halvdeler   +2.7/ -20.3
+
+==================== nivaa OG spredning hoye
+   avgjoeres paa 1990-01 til 2014-12, 2015-2026 vises
+   h  3 avgjoer        hoy   +1.3 % (n 182, ep 21)  lav   +1.5 % (n 182, ep 31)  forskjell   -0.2 pp  p 0.917  halvdeler   -0.2/  -8.5
+   h  3 2015-2026      hoy  +23.9 % (n  35, ep 13)  lav   +7.2 % (n  19, ep  8)  forskjell  +16.7 pp  p 0.100  halvdeler  +19.5/  +4.1
+   h  6 avgjoer        hoy   +3.7 % (n 182, ep 21)  lav   +2.9 % (n 182, ep 31)  forskjell   +0.8 pp  p 0.821  halvdeler   +0.2/ -10.9
+   h  6 2015-2026      hoy  +40.9 % (n  35, ep 13)  lav  +16.8 % (n  19, ep  8)  forskjell  +24.1 pp  p 0.150  halvdeler  +31.4/  -3.9
+   h  9 avgjoer        hoy   +7.6 % (n 182, ep 21)  lav   +2.9 % (n 182, ep 31)  forskjell   +4.7 pp  p 0.265  halvdeler   +3.7/  -7.9
+   h  9 2015-2026      hoy  +56.9 % (n  35, ep 13)  lav  +14.3 % (n  19, ep  8)  forskjell  +42.6 pp  p 0.043  halvdeler  +55.4/  -9.7
+   h 12 avgjoer        hoy  +12.0 % (n 182, ep 21)  lav   +4.6 % (n 182, ep 31)  forskjell   +7.4 pp  p 0.187  halvdeler   +5.5/  -0.3
+   h 12 2015-2026      hoy  +73.6 % (n  35, ep 13)  lav  +11.4 % (n  19, ep  8)  forskjell  +62.2 pp  p 0.000  halvdeler  +81.0/ -36.3
+   h 24 avgjoer        hoy  +22.1 % (n 182, ep 21)  lav  +10.1 % (n 182, ep 31)  forskjell  +12.0 pp  p 0.174  halvdeler   +8.0/  +4.5
+   h 24 2015-2026      hoy +122.3 % (n  34, ep 12)  lav  +48.5 % (n  18, ep  7)  forskjell  +73.7 pp  p 0.087  halvdeler  +83.2/ -12.0
+
+==================== volvariasjon (VVIX >= 105)
+   BESKRIVENDE, avgjoer ikke: for faa episoder foer 2015 (se toppen av fila). Vises over 2007-01 til 2026.
+   h  3 hele (beskr.)  hoy  +24.1 % (n  40, ep 15)  lav   +3.5 % (n 119, ep 15)  forskjell  +20.6 pp  p 0.010  halvdeler  -11.5/ +35.6
+   h  3 2015-2026      hoy  +25.4 % (n  38, ep 13)  lav   +1.9 % (n  88, ep 10)  forskjell  +23.4 pp  p 0.000  halvdeler  +24.4/ +23.9
+   h  6 hele (beskr.)  hoy  +37.0 % (n  40, ep 15)  lav   +9.2 % (n 117, ep 15)  forskjell  +27.8 pp  p 0.078  halvdeler   -7.9/ +46.1
+   h  6 2015-2026      hoy  +38.4 % (n  38, ep 13)  lav   +4.8 % (n  86, ep 10)  forskjell  +33.6 pp  p 0.022  halvdeler  +37.3/ +13.8
+   h  9 hele (beskr.)  hoy  +47.9 % (n  40, ep 15)  lav  +14.1 % (n 117, ep 15)  forskjell  +33.8 pp  p 0.064  halvdeler  -10.8/ +56.5
+   h  9 2015-2026      hoy  +49.3 % (n  38, ep 13)  lav   +8.2 % (n  86, ep 10)  forskjell  +41.2 pp  p 0.035  halvdeler  +46.4/  +6.3
+   h 12 hele (beskr.)  hoy  +70.1 % (n  40, ep 15)  lav  +17.5 % (n 117, ep 15)  forskjell  +52.6 pp  p 0.000  halvdeler   -7.6/ +82.0
+   h 12 2015-2026      hoy  +71.9 % (n  38, ep 13)  lav  +12.0 % (n  86, ep 10)  forskjell  +59.9 pp  p 0.000  halvdeler  +65.8/ +15.1
+   h 24 hele (beskr.)  hoy +120.1 % (n  40, ep 15)  lav  +45.4 % (n 113, ep 14)  forskjell  +74.7 pp  p 0.000  halvdeler   -5.1/ +89.6
+   h 24 2015-2026      hoy +123.7 % (n  38, ep 13)  lav  +45.8 % (n  82, ep  9)  forskjell  +78.0 pp  p 0.000  halvdeler  +89.7/ -21.3
+
+==================== nivaa OG volvariasjon hoye
+   BESKRIVENDE, avgjoer ikke: for faa episoder foer 2015 (se toppen av fila). Vises over 2007-01 til 2026.
+   h  3 hele (beskr.)  hoy  +25.4 % (n  34, ep 14)  lav   +2.0 % (n  95, ep 12)  forskjell  +23.4 pp  p 0.016  halvdeler   -6.9/ +36.1
+   h  3 2015-2026      hoy  +27.0 % (n  32, ep 12)  lav   +1.2 % (n  82, ep 10)  forskjell  +25.8 pp  p 0.012  halvdeler  +28.5/  +9.5
+   h  6 hele (beskr.)  hoy  +42.5 % (n  34, ep 14)  lav   +5.2 % (n  93, ep 12)  forskjell  +37.3 pp  p 0.026  halvdeler   +1.8/ +52.5
+   h  6 2015-2026      hoy  +44.5 % (n  32, ep 12)  lav   +3.1 % (n  80, ep 10)  forskjell  +41.3 pp  p 0.036  halvdeler  +46.7/  -5.8
+   h  9 hele (beskr.)  hoy  +59.2 % (n  34, ep 14)  lav   +8.7 % (n  93, ep 12)  forskjell  +50.5 pp  p 0.005  halvdeler   +5.4/ +68.7
+   h  9 2015-2026      hoy  +61.6 % (n  32, ep 12)  lav   +6.0 % (n  80, ep 10)  forskjell  +55.6 pp  p 0.019  halvdeler  +61.6/  -2.9
+   h 12 hele (beskr.)  hoy  +82.5 % (n  34, ep 14)  lav  +12.7 % (n  93, ep 12)  forskjell  +69.8 pp  p 0.000  halvdeler  +11.3/ +92.6
+   h 12 2015-2026      hoy  +85.5 % (n  32, ep 12)  lav  +11.1 % (n  80, ep 10)  forskjell  +74.3 pp  p 0.000  halvdeler  +81.2/  -4.2
+   h 24 hele (beskr.)  hoy +133.6 % (n  34, ep 14)  lav  +44.1 % (n  90, ep 11)  forskjell  +89.5 pp  p 0.000  halvdeler   +5.8/+104.2
+   h 24 2015-2026      hoy +138.7 % (n  32, ep 12)  lav  +45.6 % (n  77, ep  9)  forskjell  +93.2 pp  p 0.031  halvdeler +100.8/ -18.9
+
+AVGJOERELSE (bare nivaa, spredning og nivaa x spredning; oppstart til 2014-12)
+
+   nivaa (VIX >= 20), h 12           : holder ikke  (a nei, p 0.469, c ja, d ja, BH nei)
+   nivaa (VIX >= 20), h 24           : holder ikke  (a nei, p 0.288, c ja, d ja, BH nei)
+   nivaa (VIX >= 20), h 3            : holder ikke  (a nei, p 0.868, c ja, d ja, BH nei)
+   nivaa (VIX >= 20), h 6            : holder ikke  (a nei, p 0.819, c nei, d ja, BH nei)
+   nivaa (VIX >= 20), h 9            : holder ikke  (a nei, p 0.674, c nei, d ja, BH nei)
+   nivaa OG spredning hoye, h 12     : holder ikke  (a ja, p 0.187, c nei, d ja, BH nei)
+   nivaa OG spredning hoye, h 24     : holder ikke  (a ja, p 0.174, c ja, d ja, BH nei)
+   nivaa OG spredning hoye, h 3      : holder ikke  (a nei, p 0.917, c ja, d ja, BH nei)
+   nivaa OG spredning hoye, h 6      : holder ikke  (a nei, p 0.821, c nei, d ja, BH nei)
+   nivaa OG spredning hoye, h 9      : holder ikke  (a ja, p 0.265, c nei, d ja, BH nei)
+   spredning (VIX, >= median), h 12  : holder ikke  (a nei, p 0.066, c nei, d ja, BH nei)
+   spredning (VIX, >= median), h 24  : holder ikke  (a nei, p 0.292, c nei, d ja, BH nei)
+   spredning (VIX, >= median), h 3   : holder ikke  (a nei, p 0.950, c nei, d ja, BH nei)
+   spredning (VIX, >= median), h 6   : holder ikke  (a nei, p 0.887, c nei, d ja, BH nei)
+   spredning (VIX, >= median), h 9   : holder ikke  (a nei, p 0.070, c nei, d ja, BH nei)
+
+   0 av 15 klarte krav a til d, 0 ogsaa BH
+
+   volvariasjon (VVIX) og nivaa x volvariasjon kan ikke avgjoeres her:
+   vinduet foer 2015 har 2 episoder med hoy VVIX og 0 med lav VIX og hoy
+   VVIX. Tallene over for dem er in-sample og kan ikke etablere en regel.
+
+PAPIRPORTEFOELJEN (beskrivende): regimet ved inngang og papirenes avkastning mot MSCI World
+   henryhub   2011-12  VIX  25.05 (hoy)  VVIX   91.88 (lav)  spredning 0.0513 (lav)  papirer    +27.9 %  MSCI World   +49.4 %
+   henryhub   2014-12  VIX  16.31 (lav)  VVIX  103.50 (lav)  spredning 0.1022 (hoy)  papirer     +7.5 %  MSCI World   +23.1 %
+   jernmalm   2014-12  VIX  16.31 (lav)  VVIX  103.50 (lav)  spredning 0.1022 (hoy)  papirer    +80.8 %  MSCI World   +23.1 %
+   aluminium  2015-10  VIX  16.79 (lav)  VVIX   94.56 (lav)  spredning 0.0611 (hoy)  papirer   +167.8 %  MSCI World   +18.7 %
+   nikkel     2015-11  VIX  16.21 (lav)  VVIX   91.64 (lav)  spredning 0.0748 (hoy)  papirer   +150.4 %  MSCI World   +20.8 %
+   ttf        2015-12  VIX  18.03 (lav)  VVIX  104.82 (lav)  spredning 0.1083 (hoy)  papirer    +57.1 %  MSCI World   +23.9 %
+   ttf        2019-03  VIX  14.49 (lav)  VVIX   86.32 (lav)  spredning 0.0687 (hoy)  papirer     -2.6 %  MSCI World   +37.2 %
+   henryhub   2019-06  VIX  15.84 (lav)  VVIX   85.56 (lav)  spredning 0.0379 (lav)  papirer   +105.1 %  MSCI World   +44.9 %
+   brent      2020-03  VIX  57.74 (hoy)  VVIX  157.02 (hoy)  spredning 0.1662 (hoy)  papirer   +243.6 %  MSCI World   +42.6 %
+   wti        2020-03  VIX  57.74 (hoy)  VVIX  157.02 (hoy)  spredning 0.1662 (hoy)  papirer   +540.5 %  MSCI World   +42.6 %
+   aluminium  2020-04  VIX  41.45 (hoy)  VVIX  131.94 (hoy)  spredning 0.0729 (hoy)  papirer   +382.6 %  MSCI World   +31.5 %
+   kull       2020-08  VIX  22.89 (hoy)  VVIX  111.41 (hoy)  spredning 0.0487 (lav)  papirer   +683.4 %  MSCI World   +24.0 %
+   henryhub   2023-03  VIX  21.64 (hoy)  VVIX   95.89 (lav)  spredning 0.0758 (hoy)  papirer    +35.3 %  MSCI World   +34.9 %
+
+==================== TILLEGG, beskrivende: uten 2020
+   Lagt til etter at hovedresultatet var lest. Avgjoer ingenting.
+   Signalmaaneder i kalenderaaret 2020 er tatt ut, alt annet er likt.
+
+   volvariasjon (VVIX >= 105)
+      h 12  med 2020: forskjell  +52.6 pp (ep 15/15, p 0.000)   uten 2020: forskjell   -0.3 pp (ep 11/15, p 0.996)
+      h 24  med 2020: forskjell  +74.7 pp (ep 15/14, p 0.000)   uten 2020: forskjell   -2.1 pp (ep 11/14, p 0.888)
+
+   nivaa OG volvariasjon hoye
+      h 12  med 2020: forskjell  +69.8 pp (ep 14/12, p 0.000)   uten 2020: forskjell  +14.9 pp (ep 8/12, p 0.443)
+      h 24  med 2020: forskjell  +89.5 pp (ep 14/11, p 0.000)   uten 2020: forskjell   -2.2 pp (ep 8/11, p 0.927)
+
+Lagret sonder/vvix_regime.csv
