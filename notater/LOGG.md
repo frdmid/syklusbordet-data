@@ -15,7 +15,7 @@ ord for ord, og blokken «Status nå» oppdateres. Eldre innslag ligger der.
 
 Oppdateres i SAMME commit som endringen, med samme regel som innslagene
 under. Er den eldre enn det nyeste innslaget, er den ikke til å stole på.
-Sist oppdatert 16.11.2026 15:06.
+Sist oppdatert 18.11.2026 10:32.
 
 - **Dashbord:** versjon 81, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
 - **PASS PÅ:** kilden til dashbordet er `dashbord/index.html` i repoet, IKKE
@@ -26,9 +26,12 @@ Sist oppdatert 16.11.2026 15:06.
   databasen som reserve.
 - **Shadow-OOS:** Champion v1.1 og seks Challengere. Ingen nye bunnsoner;
   jernmalm og Henry Hub i oppsikt, gull i watch hos BEGGE.
-- **Ukeflyt:** `ukentlig.yml` har fire cron-tider fra 12.11.2026: hovedkjøring
-  07:48 norsk vintertid og 08:48 sommertid, reserve 09:56. Onsdagsrutinen
-  10:15 og 13:15. Neste kjøring 18.11.2026 kl. 07:48.
+- **Ukeflyt:** `ukentlig.yml` har fire cron-tider natt til onsdag fra
+  18.11.2026: 01:48, 02:48, 02:56 og 03:56 norsk vintertid (en time senere
+  om sommeren). GitHub har startet planlagte kjøringer 6,6 til 8,8 timer
+  for sent; med det kommer den første mellom 08:24 og 10:36 norsk
+  vintertid. Onsdagsrutinen 10:15 og 13:15. Neste
+  planlagte kjøring 25.11.2026.
 - **Tester:** `python test_shadow_oos.py`, 23 av 23 består. Før publisering:
   `py -X utf8 dashbord/kontroller.py`.
 - **Åpne avgjørelser for Frode:** om onsdagsrutinen skal reduseres nå at
@@ -37,6 +40,39 @@ Sist oppdatert 16.11.2026 15:06.
 - **Eldre innslag:** `notater/logg/<år>-<mnd>.md`, en fil per måned.
 
 ---
+
+### 18.11.2026 10:32, Cowork
+
+Tidene i `.github/workflows/ukentlig.yml` er flyttet til natt til onsdag
+(Frodes bestilling). Grunnen: GitHub har ikke kjørt de planlagte tidene på
+klokkeslettet. Frodes Actions-oversikt viser at de planlagte kjøringene kom
+15:31 og 16:31 (28.10), 16:46 og 17:37 (04.11) og 16:37 og 17:39 (11.11),
+altså 6,5 til 9 timer for sent, og bare to av tidene hver gang. Alle varte
+10 til 14 sekunder: vakta stoppet dem fordi Frode allerede hadde startet
+innhentingen for hånd (13:40, 12:30 og 08:44). Ukens tall de tre ukene kom
+derfor fra kjøringer startet for hånd. Sjekken 28.10 kl. 13:37 konkluderte
+med at GitHub ikke laget noen kjøring; de kom to timer senere. 18.11 hadde
+ingen kjøring startet kl. 10:30, og index.json og d_kapitulasjon.json står
+fortsatt på 11.11.
+Nye tider (UTC): "48 0", "48 1", "56 1" og "56 2", alle onsdag. Norsk tid
+01:48, 02:48, 02:56 og 03:56 om vinteren, en time senere om sommeren.
+Regnet om med zoneinfo for 25.11.2026 og 02.06.2027. Alle fire er onsdag
+både i UTC og norsk tid, så Shadow-OOS (dato i UTC, uke fra onsdag) og vakta
+(norsk dato) er enige; en tid tirsdag kveld UTC er unngått med vilje. Med
+forsinkelsene de tre siste ukene (6,6 til 8,8 timer) kommer den første
+tiden mellom 08:24 og 10:36 norsk vintertid, før onsdagsrutinen 13:15. Det
+er ingen garanti. Kildene er forrige
+dags sluttkurser, månedstall og Fearnleys-rapporten fra uken før (siste rad
+i shipping.json er 04.11; kjøringen 11.11 fikk heller ikke 11.11-rapporten),
+så tallene blir de samme som ved kjøring om morgenen.
+Toppteksten i arbeidsflyten er skrevet om tilsvarende. Ingenting annet i
+fila er endret (YAML lest inn og kontrollert). «Status nå» er oppdatert.
+Ikke endret: onsdagsrutinens prompt sier fortsatt «08:48 med reserve 09:56»
+i bakgrunnsteksten; logikken der hviler bare på at index.json er fra i dag,
+så den virker uendret.
+Filer: `.github/workflows/ukentlig.yml`, `notater/LOGG.md`.
+For Claude Code: se etter 25.11 om kjøringen kom før 10:15. Kommer den
+fortsatt for sent, er neste steg at noe utenfor GitHub starter den.
 
 ### 16.11.2026 15:06, Claude Code
 

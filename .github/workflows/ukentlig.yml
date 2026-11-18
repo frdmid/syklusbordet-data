@@ -5,15 +5,22 @@
 # .github/workflows/; den sperren ble loftet 12.11.2026, og forslagsfila er
 # dermed pensjonert. Historikken ligger i git og i notater/LOGG.md.
 #
-# TIDENE. Fire cron-tider, to for hver aarstid, saa filen virker baade ved
-# vintertid og sommertid uten aa flyttes for haand. GitHub regner cron i UTC.
+# TIDENE (flyttet til natt til onsdag 18.11.2026, Frodes beslutning). GitHub
+# starter planlagte kjoringer for gratis, offentlige repoer naar det er plass,
+# ikke paa klokkeslettet. 28.10, 04.11 og 11.11 kom de 6,5 til 9 timer for
+# sent (15:31 til 17:39 norsk tid), og bare to av tidene kom hver gang. Ukens
+# tall kom de ukene fra kjoringer Frode startet for haand. Med tidene om
+# natta kommer en forsinket kjoring normalt for onsdagsrutinen 13:15.
+# Alle fire tidene er onsdag baade i UTC og norsk tid, slik at Shadow-OOS
+# (som regner dato i UTC, uken fra onsdag) og vakta (norsk dato) er enige.
+# GitHub regner cron i UTC. Norsk tid:
+#     vinter   01:48, 02:48, 02:56, 03:56
+#     sommer   02:48, 03:48, 03:56, 04:56
 # Vakta gjor de overflodige til ingenting: den forste kjoringen skriver
-# index.json, og de neste stopper etter vaktjobben. I praksis:
-#     vinter   07:48 hovedkjoring, 09:56 reserve
-#     sommer   08:48 hovedkjoring, 09:56 reserve
-# At vinterkjoringen er en time tidligere enn den var, er harmlost: alle
-# kildene er forrige dags sluttkurser eller maanedstall, og onsdagsrutinen gaar
-# forst 10:15. Regnet om med zoneinfo av to okter uavhengig, 12.11.2026.
+# index.json, og de neste stopper etter vaktjobben. Kildene er forrige dags
+# sluttkurser, maanedstall og Fearnleys-rapporten fra uken foer, saa tallene
+# blir de samme som ved kjoring om morgenen. Tidligere tider: 08:48 og 09:56
+# (21.10 til 11.11), 07:48 vinter og 08:48 sommer (12.11 til 17.11).
 #
 # AVHENGIGHETENE. Hvert installasjonssteg har en reserve, fordi en manglende
 # hjulfil ellers stopper hele onsdagen. Reserven leser pakkenavnene UT AV
@@ -42,11 +49,11 @@ name: Ukentlig innhenting
 
 on:
   schedule:
-    # Fire tider, to for hver aarstid. Vakta slipper bare den foerste gjennom.
-    - cron: "48 6 * * 3"       # 08:48 norsk sommertid (07:48 vintertid)
-    - cron: "48 7 * * 3"       # 08:48 norsk vintertid (09:48 sommertid)
-    - cron: "56 7 * * 3"       # 09:56 norsk sommertid, reserve (08:56 vintertid)
-    - cron: "56 8 * * 3"       # 09:56 norsk vintertid, reserve (10:56 sommertid)
+    # Fire tider natt til onsdag. Vakta slipper bare den foerste gjennom.
+    - cron: "48 0 * * 3"       # 01:48 norsk vintertid (02:48 sommertid)
+    - cron: "48 1 * * 3"       # 02:48 norsk vintertid (03:48 sommertid)
+    - cron: "56 1 * * 3"       # 02:56 norsk vintertid (03:56 sommertid)
+    - cron: "56 2 * * 3"       # 03:56 norsk vintertid (04:56 sommertid)
   workflow_dispatch:            # og naar du trykker paa knappen selv
 
 permissions:
