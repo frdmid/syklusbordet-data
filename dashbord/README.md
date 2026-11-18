@@ -57,6 +57,21 @@ Tre sperrer holder det der, og ingen av dem skal fjernes:
 2. `index.html` avviser en `data.json` som inneholder dokumentet.
 3. `index.html` henter alltid `alu_tilbud` fra databasen, aldri fra repoet.
 
+## Hentingen skal ikke sende headere
+
+Fra 18.11.2026. `fetch` av `data.json` sender **ingen** `headers`, og det er
+med vilje. `Cache-Control` er ikke en trygg forespørselsheader, så den gjør
+kallet til et som krever CORS-preflight. `raw.githubusercontent.com` svarer
+**403 på OPTIONS**, men 200 på GET med `Access-Control-Allow-Origin: *`
+(målt 18.11.2026 med curl). Med headeren feilet altså hver henting, og siden
+falt tilbake til databasen hver gang: 18.11 sto uke 46 på bordet mens uke 47
+lå i repoet. Cache-brekken `?cb=<tid>` og `cache: "no-store"` gir fersk fil
+uten preflight, og det er nok.
+
+`kontroller.py` stopper nå en side der kallet har `headers` eller
+`Cache-Control`. Rådet om en `no-cache`-header i onsdagsrutinen gjelder
+`curl`, som ikke er underlagt CORS, og skal ikke flyttes hit.
+
 ## Når noe skal endres
 
 Endrer du lastelogikken, kjør `kontroller.py` og test lokalt først:
@@ -69,6 +84,16 @@ Test minst fire tilfeller, alle fire er prøvd 12.11.2026: en gyldig
 `data.json`, en som mangler (404), en med for få segmenter, og en som
 inneholder `alu_tilbud`. I alle tre siste skal siden falle tilbake og si det i
 tabellen Datahelse. Kontroller også at ingenting er bredere enn 390 piksler.
+
+**En lokal test kan ikke erstatte en test i den publiserte artifacten.**
+Siden servert fra `127.0.0.1` henter `data.json` fra et annet opphav enn
+artifacten gjør, og en lokal side regnes som samme opphav i andre regler.
+CORS-feilen over slapp gjennom nettopp fordi alle fire tilfellene ble prøvd
+lokalt 12.11.2026. Etter publisering: åpne dashbordet og les linjen
+`#datakilde` først i avsnittet over tabellen Datahelse. Står det at tallene
+kom fra repoet, virker hentingen. Står det databasen samtidig som
+`dashbord/data.json` er fersk i repoet, er hentingen blokkert, og da er
+onsdagsrutinen fortsatt hovedveien.
 
 Merk at en testkopi med en lokal `DATA_URL` aldri skal publiseres;
 `kontroller.py` stopper det.

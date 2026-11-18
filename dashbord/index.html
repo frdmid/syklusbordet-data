@@ -2130,8 +2130,17 @@ async function hentRepoData() {
     const avbryt = setTimeout(() => ctl.abort(), 8000);
     let r;
     try {
+      // INGEN headere her, med vilje. Cache-Control er ikke en trygg
+      // forespoerselsheader, saa den gjor hentingen til en kryssopprinnelses-
+      // forespoersel som krever preflight. raw.githubusercontent svarer 403 paa
+      // OPTIONS (maalt 18.11.2026), saa preflighten feilet og siden falt
+      // tilbake til databasen hver gang. Cache-brekken i ?cb= og
+      // cache: "no-store" gir fersk fil uten preflight. LEGG DEN IKKE TILBAKE.
+      // Merk at raadet om en no-cache-header i onsdagsrutinen og i
+      // OVERLEVERING gjelder curl, som ikke er underlagt CORS; i en nettleser
+      // er det motsatt.
       r = await fetch(DATA_URL + "?cb=" + Date.now(),
-                      {cache: "no-store", headers: {"Cache-Control": "no-cache"}, signal: ctl.signal});
+                      {cache: "no-store", signal: ctl.signal});
     } finally { clearTimeout(avbryt); }
     if (!r || !r.ok) return null;
     const d = await r.json();

@@ -92,8 +92,11 @@ sikkerhetskopi tas når stegene der er gjort.
    `{"prompt": ...}`; kontroller etterpå at bare prompten er endret. Den
    prøver ikke på nytt hvis den feiler; det skjedde 30.09, og den ble kjørt
    på nytt for hånd.
-3. **Dashbordet** leser databasen når det åpnes. Det trenger ikke publiseres
-   for at nye tall skal vises.
+3. **Dashbordet** leser `dashbord/data.json` fra repoet først og databasen som
+   reserve når det åpnes. Det trenger ikke publiseres for at nye tall skal
+   vises. Så lenge hentingen fra repoet ikke er bekreftet i den publiserte
+   artifacten (se Dashbordet under), er det databasen onsdagsrutinen fyller
+   som faktisk står på bordet, og rutinen er hovedveien.
 
 **Kvartalsvis, `kvartalsvis.yml`** (5. feb, mai, aug, nov 07:00 UTC):
 `tilbud_b.py` (kaller `rigg_b.py` til slutt) → `overlevelse_c.py` (kaller
@@ -110,7 +113,8 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 ## Dashbordet
 
 - Adresse: https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF (siste versjon
-  78 per 11.11 (uro delt i nivå og volvariasjon i regimeboksen); 77 per 03.11 (boksen Handlingsliste øverst med evidensgrad, åpne posisjoner fra Shadow-OOS og papirporteføljen; USD/NOK i korrelasjonsmatrisen; panelet Gullgruver med S1, S2 og BEGGE-status); Cowork kan ha publisert senere). Nytt fra 12.10: linjen
+  82 per 18.11 (Cache-Control-headeren ute av hentingen); 81 per 16.11
+  (papirporteføljen uten 2020); 78 per 11.11 (uro delt i nivå og volvariasjon i regimeboksen); 77 per 03.11 (boksen Handlingsliste øverst med evidensgrad, åpne posisjoner fra Shadow-OOS og papirporteføljen; USD/NOK i korrelasjonsmatrisen; panelet Gullgruver med S1, S2 og BEGGE-status); Cowork kan ha publisert senere). Nytt fra 12.10: linjen
   «Kull, rullende A 95» i kullpanelet (v63), boksen «Regime nå» øverst (v64)
   med «Hva testene sier om å handle» under (v65, rettet i v66).
 - **Omslaget:** filen som Artifact `read` lagrer, begynner med vertens omslag
@@ -126,6 +130,28 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
   `marked/alu_tilbud` (IAI) hentes ALLTID fra databasen og ligger aldri i
   repoet; tre sperrer holder det slik, se `dashbord/README.md`. Onsdagsrutinen
   går uendret og fyller databasen som før.
+- **Hentingen skal ikke sende headere (18.11.2026).** Fram til versjon 82
+  sendte `fetch` headeren `Cache-Control: no-cache`. Den er ikke en trygg
+  forespørselsheader, så kallet krevde CORS-preflight, og
+  `raw.githubusercontent.com` svarer 403 på OPTIONS (målt med curl 18.11.2026;
+  GET svarer 200 med `Access-Control-Allow-Origin: *`). Siden falt derfor
+  tilbake til databasen hver gang, og 18.11 sto uke 46 på bordet mens uke 47
+  lå i repoet. Headeren er fjernet i v82; `?cb=<tid>` og `cache: "no-store"`
+  er nok, og `kontroller.py` stopper nå en side som sender headere. Rådet om
+  `no-cache` i onsdagsrutinen gjelder `curl`, som ikke er underlagt CORS, og
+  står uendret.
+- **IKKE BEKREFTET:** om artifactens sandkasse i det hele tatt tillater
+  henting fra et eksternt nettsted (`connect-src` i vertens CSP). Det kan bare
+  måles i den publiserte artifacten, og verken nettleserpanelet eller
+  Chrome-utvidelsen var innlogget 18.11.2026. **Første oppgave for den som
+  åpner dashbordet:** les linjen `#datakilde` først i avsnittet over tabellen
+  Datahelse. Står det at tallene kom fra repoet, er saken lukket, og da kan
+  onsdagsrutinen kortes ned. Står det databasen mens `dashbord/data.json` er
+  fersk, blokkerer sandkassen hentingen, og **da er onsdagsrutinen fortsatt
+  hovedveien** og må beholdes som den er. Før svaret i loggen.
+- **En lokal test beviser ingenting om CORS.** Alle fire lastetilfellene ble
+  prøvd 12.11.2026 fra `127.0.0.1`, altså samme opphav, og nettopp derfor
+  slapp feilen over gjennom. Test alltid i den publiserte artifacten etterpå.
 - Database: samlingen `segments` (ett dokument per segment, id lik
   segmentets id, inkludert `ship_*`) og samlingen `marked` med dokumentene
   `vix`, `dollar`, `endringer`, `helse`, `gass_b` og `laks_biomasse` (de to

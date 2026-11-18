@@ -15,15 +15,22 @@ ord for ord, og blokken «Status nå» oppdateres. Eldre innslag ligger der.
 
 Oppdateres i SAMME commit som endringen, med samme regel som innslagene
 under. Er den eldre enn det nyeste innslaget, er den ikke til å stole på.
-Sist oppdatert 18.11.2026 10:32.
+Sist oppdatert 18.11.2026 11:04.
 
-- **Dashbord:** versjon 81, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
+- **Dashbord:** versjon 82, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
 - **PASS PÅ:** kilden til dashbordet er `dashbord/index.html` i repoet, IKKE
   artifacten. Kjør `git pull` før du endrer eller publiserer, og
   `py -X utf8 dashbord/kontroller.py` før hver publisering. Publiserer du
   fra den gamle artifacten, overskrives arbeidet i mappen. Regelen ble
   snudd 12.11.2026. Siden leser `dashbord/data.json` fra repoet, med
   databasen som reserve.
+- **PASS PÅ, hentingen:** `fetch` av `data.json` skal IKKE sende headere.
+  `Cache-Control` utløser CORS-preflight, og raw.githubusercontent svarer 403
+  på OPTIONS. Headeren er ute fra v82 (18.11). `kontroller.py` stopper den nå.
+- **IKKE BEKREFTET:** at den publiserte artifacten får lov til å hente fra et
+  eksternt nettsted. Les linjen `#datakilde` over tabellen Datahelse neste
+  gang du åpner dashbordet, og før svaret her. Står det databasen mens
+  `dashbord/data.json` er fersk, er onsdagsrutinen fortsatt hovedveien.
 - **Shadow-OOS:** Champion v1.1 og seks Challengere. Ingen nye bunnsoner;
   jernmalm og Henry Hub i oppsikt, gull i watch hos BEGGE.
 - **Ukeflyt:** `ukentlig.yml` har fire cron-tider natt til onsdag fra
@@ -35,11 +42,57 @@ Sist oppdatert 18.11.2026 10:32.
 - **Tester:** `python test_shadow_oos.py`, 23 av 23 består. Før publisering:
   `py -X utf8 dashbord/kontroller.py`.
 - **Åpne avgjørelser for Frode:** om onsdagsrutinen skal reduseres nå at
-  dashbordet leser repoet direkte. Championens evalueringsprotokoll er
+  dashbordet leser repoet direkte. Avgjørelsen venter på linjen `#datakilde`
+  i den publiserte artifacten (se over); så lenge den ikke er lest, beholdes
+  rutinen som den er. Championens evalueringsprotokoll er
   skrevet (`notater/champion_evaluering.md`, 12.11.2026). Se `notater/2026-11-11_prompt_forbedringer.md`.
 - **Eldre innslag:** `notater/logg/<år>-<mnd>.md`, en fil per måned.
 
 ---
+
+### 18.11.2026 11:04, Claude Code
+
+Dashbordet leste aldri `dashbord/data.json` fra repoet. Frode oppdaget det
+18.11: bordet viste uke 46 etter at uke 47 lå i repoet. Årsaken er funnet og
+målt. `fetch` sendte headeren `Cache-Control: no-cache`. Den er ikke en trygg
+forespørselsheader, så kallet krevde CORS-preflight, og
+`raw.githubusercontent.com` svarer **403 på OPTIONS** mens GET svarer 200 med
+`Access-Control-Allow-Origin: *` (målt med curl 18.11, med og uten
+`Access-Control-Request-Headers: cache-control`; 403 begge veier). Hentingen
+feilet altså hver eneste gang, og siden falt tilbake til databasen.
+
+Headeren er fjernet. `?cb=<tid>` og `cache: "no-store"` gir fersk fil uten
+preflight. Over kallet står nå en kommentar på seks linjer om hvorfor den
+ikke skal legges tilbake, og at rådet om `no-cache` i onsdagsrutinen gjelder
+`curl`, som ikke er underlagt CORS. `kontroller.py` har fått en ny sperre:
+den avviser en side der kallet til `DATA_URL` inneholder `headers` eller
+`Cache-Control`. Sperren er prøvd begge veier (ren fil: 0 feil; med headeren
+lagt tilbake i en kopi: 1 feil). Dashbordet er publisert som **versjon 82**.
+
+Hvorfor det slapp gjennom: alle fire lastetilfellene 12.11 ble prøvd mot en
+lokal server på `127.0.0.1`. Da er side og fil samme opphav, og CORS gjelder
+ikke. Det står nå i `dashbord/README.md` og i OVERLEVERING at en lokal test
+ikke kan erstatte en test i den publiserte artifacten.
+
+**Det som IKKE er bekreftet,** og som bare Frode kan se nå: om artifactens
+sandkasse i det hele tatt tillater henting fra et eksternt nettsted. Verken
+nettleserpanelet (ikke innlogget på claude.ai) eller Chrome-utvidelsen (ikke
+tilkoblet) kunne åpne den publiserte siden. Oppgaven er én linje: åpne
+dashbordet og les `#datakilde` først i avsnittet over tabellen Datahelse.
+Står det at tallene kom fra repoet, virker hentingen, og onsdagsrutinen kan
+kortes ned. Står det databasen mens `dashbord/data.json` er fersk i repoet
+(den er fersk nå: skrevet av Actions 10:49 i dag, med index_oppdatert
+18.11 09:42, 26 segmenter), blokkerer sandkassen hentingen, og da er
+onsdagsrutinen fortsatt hovedveien. Svaret føres her.
+
+Actions-halvdelen virker uansett: `dashbord/data.json` ble skrevet av
+github-actions[bot] 18.11 kl. 10:49 (commit c445cd8), 26 segmenter, 9
+markedsdokumenter, 0 avviste.
+
+Filer: `dashbord/index.html` (v82), `dashbord/kontroller.py`,
+`dashbord/README.md`, `notater/OVERLEVERING.md`, `notater/LOGG.md`.
+For Cowork: publiser aldri en side der hentingen sender headere;
+`kontroller.py` stopper det nå. Onsdagsrutinen er uendret.
 
 ### 18.11.2026 10:32, Cowork
 

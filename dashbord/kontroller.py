@@ -42,6 +42,23 @@ def kontroller(t, storrelse):
     if RAW not in t:
         feil.append("DATA_URL peker ikke paa repoets data.json. En testkopi med en lokal "
                     "sti skal aldri publiseres.")
+    # Hentingen skal IKKE sende headere. Cache-Control er ikke en trygg
+    # forespoerselsheader, saa den gjoer kallet til ett som krever
+    # CORS-preflight, og raw.githubusercontent svarer 403 paa OPTIONS (maalt
+    # 18.11.2026). Da falt siden tilbake til databasen hver gang, og uke 46 sto
+    # paa bordet mens uke 47 laa i repoet. En lokal test fra 127.0.0.1 er samme
+    # opphav og avsloerer det ikke; derfor staar sjekken her.
+    i = t.find("fetch(DATA_URL")
+    if i < 0:
+        feil.append("fetch(DATA_URL ...) finnes ikke: siden henter ikke data.json.")
+    else:
+        j = t.find(";", i)
+        kall = t[i:j] if j > i else t[i:i + 400]
+        if "headers" in kall or "Cache-Control" in kall:
+            feil.append("hentingen av data.json sender headere. Det utloeser "
+                        "CORS-preflight, som raw.githubusercontent svarer 403 paa, "
+                        "saa siden faller tilbake til databasen. Bruk bare "
+                        "?cb= og cache: no-store, ingen headere.")
     if 'id="datakilde"' not in t:
         feil.append('feltet id="datakilde" mangler: siden kan ikke vise hvilken kilde som ble brukt.')
     if 'x.id !== "alu_tilbud"' not in t or "alu_tilbud" not in t:
