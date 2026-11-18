@@ -1,103 +1,110 @@
 {
  "id": "endringer",
  "uke": {
-  "forrige_dato": "2026-11-04 11:36",
-  "ny_dato": "2026-11-11 07:50",
-  "forrige": "2026-W45",
-  "ny": "2026-W46",
+  "forrige_dato": "2026-11-11 07:50",
+  "ny_dato": "2026-11-18 09:44",
+  "forrige": "2026-W46",
+  "ny": "2026-W47",
   "topp": [
-   {
-    "segment": "Palmeolje",
-    "felt": "COT-persentil",
-    "gammel": 21.2,
-    "ny": 44.2,
-    "endring_pst": 108.5,
-    "poeng": 23.0,
-    "vekt": 23.0
-   },
-   {
-    "segment": "Naturgass US (Henry Hub)",
-    "felt": "A detrendet",
-    "gammel": 55.5,
-    "ny": 76.5,
-    "endring_pst": 37.8,
-    "poeng": 21.0,
-    "vekt": 21.0
-   },
-   {
-    "segment": "Naturgass US (Henry Hub)",
-    "felt": "Realpris",
-    "gammel": 3.02,
-    "ny": 2.42,
-    "endring_pst": -19.9,
-    "poeng": null,
-    "vekt": 19.9
-   },
    {
     "segment": "Gull",
     "felt": "Kapitulasjon D",
-    "gammel": 50.8,
-    "ny": 31.1,
-    "endring_pst": -38.8,
-    "poeng": -19.7,
-    "vekt": 19.7
+    "gammel": 31.1,
+    "ny": 59.3,
+    "endring_pst": 90.7,
+    "poeng": 28.2,
+    "vekt": 28.2
    },
    {
-    "segment": "Råolje (Brent)",
-    "felt": "COT-persentil",
-    "gammel": 15.4,
-    "ny": 26.9,
-    "endring_pst": 74.7,
+    "segment": "Marked",
+    "felt": "VIX",
+    "gammel": 19.46,
+    "ny": 23.66,
+    "endring_pst": 21.6,
+    "poeng": null,
+    "vekt": 21.6
+   },
+   {
+    "segment": "Kobber",
+    "felt": "Kapitulasjon D",
+    "gammel": 19.0,
+    "ny": 32.3,
+    "endring_pst": 70.0,
+    "poeng": 13.3,
+    "vekt": 13.3
+   },
+   {
+    "segment": "Bly",
+    "felt": "Kapitulasjon D",
+    "gammel": 16.5,
+    "ny": 28.0,
+    "endring_pst": 69.7,
     "poeng": 11.5,
     "vekt": 11.5
    },
    {
-    "segment": "Råolje (WTI)",
-    "felt": "A detrendet",
-    "gammel": 51.3,
-    "ny": 40.2,
-    "endring_pst": -21.6,
-    "poeng": -11.1,
-    "vekt": 11.1
-   },
-   {
-    "segment": "Råolje (WTI)",
-    "felt": "Realpris",
-    "gammel": 97.18,
-    "ny": 107.56,
-    "endring_pst": 10.7,
-    "poeng": null,
-    "vekt": 10.7
-   },
-   {
-    "segment": "Naturgass Europa",
+    "segment": "Nikkel",
     "felt": "Kapitulasjon D",
-    "gammel": 5.0,
-    "ny": 14.7,
-    "endring_pst": 194.0,
-    "poeng": 9.7,
-    "vekt": 9.7
+    "gammel": 17.0,
+    "ny": 28.0,
+    "endring_pst": 64.7,
+    "poeng": 11.0,
+    "vekt": 11.0
    },
    {
-    "segment": "Suezmax (5 år)",
+    "segment": "Sink",
     "felt": "Kapitulasjon D",
-    "gammel": 2.1,
-    "ny": 10.5,
-    "endring_pst": 400.0,
-    "poeng": 8.4,
-    "vekt": 8.4
-   },
-   {
-    "segment": "Naturgass US (Henry Hub)",
-    "felt": "Kapitulasjon D",
-    "gammel": 17.3,
-    "ny": 25.5,
+    "gammel": 23.2,
+    "ny": 34.2,
     "endring_pst": 47.4,
-    "poeng": 8.2,
-    "vekt": 8.2
+    "poeng": 11.0,
+    "vekt": 11.0
+   },
+   {
+    "segment": "Gull",
+    "felt": "COT-persentil",
+    "gammel": 32.1,
+    "ny": 42.9,
+    "endring_pst": 33.6,
+    "poeng": 10.8,
+    "vekt": 10.8
+   },
+   {
+    "segment": "Tinn",
+    "felt": "Kapitulasjon D",
+    "gammel": 17.0,
+    "ny": 26.4,
+    "endring_pst": 55.3,
+    "poeng": 9.4,
+    "vekt": 9.4
+   },
+   {
+    "segment": "Kakao",
+    "felt": "COT-persentil",
+    "gammel": 10.9,
+    "ny": 2.6,
+    "endring_pst": -76.1,
+    "poeng": -8.3,
+    "vekt": 8.3
+   },
+   {
+    "segment": "Termisk kull (Australia)",
+    "felt": "Kapitulasjon D",
+    "gammel": 8.9,
+    "ny": 16.7,
+    "endring_pst": 87.6,
+    "poeng": 7.8,
+    "vekt": 7.8
    }
   ],
-  "skifter": []
+  "skifter": [
+   {
+    "segment": "Oljeservice (boring)",
+    "felt": "Trend",
+    "gammel": "nei",
+    "ny": "begynnende"
+   }
+  ]
  },
  "kvartal": {
   "forrige_dato": "2026-10-14 07:12",
