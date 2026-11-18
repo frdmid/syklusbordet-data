@@ -15,7 +15,7 @@ ord for ord, og blokken «Status nå» oppdateres. Eldre innslag ligger der.
 
 Oppdateres i SAMME commit som endringen, med samme regel som innslagene
 under. Er den eldre enn det nyeste innslaget, er den ikke til å stole på.
-Sist oppdatert 18.11.2026 11:33.
+Sist oppdatert 18.11.2026 11:40.
 
 - **Dashbord:** versjon 85, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
 - **PASS PÅ:** kilden til dashbordet er `dashbord/index.html` i repoet, IKKE
@@ -36,6 +36,14 @@ Sist oppdatert 18.11.2026 11:33.
   er det eneste bordet kan lese. Rutinen skal ikke kortes ned.
   `dashbord/bygg.py` og `dashbord/data.json` står som før, men dashbordet
   kan ikke lese dem.
+- **Databasen står på uke 47** fra 18.11 kl. 11:40: ukens tall er kopiert
+  fra `dashbord/data.json` inn i databasen med Artifact-databasen, 26
+  segmenter og ni markedsdokumenter, `alu_tilbud` urørt. Det viser at en
+  Claude-økt kan fylle databasen fra repoet, så rutinen KAN reduseres til en
+  kopi. Ikke gjort; rutinen er uendret.
+- **Alt som skal vises på bordet må skrives til databasen,** ikke bare til
+  fila i repoet. `portefolje.uten_2020` lå bare i fila fra 16.11 og har
+  derfor aldri vært synlig før kopien 18.11.
 - **Linjen over tabellen Datahelse** sier hvilken kilde som ble brukt, med
   databasens dato, og hvilken lastelogikk som kjører («laster 2026-11-18d»).
   Den avslører en gammel side i cache. `kontroller.py` krever at den står.
@@ -57,6 +65,45 @@ Sist oppdatert 18.11.2026 11:33.
 - **Eldre innslag:** `notater/logg/<år>-<mnd>.md`, en fil per måned.
 
 ---
+
+### 18.11.2026 11:40, Claude Code
+
+Ukens tall er kopiert fra `dashbord/data.json` i repoet rett inn i
+dashbordets database (Frodes bestilling, etter at hentingen viste seg
+blokkert). Bordet viser uke 47 nå, uten at onsdagsrutinen har kjørt.
+26 segmenter og ni markedsdokumenter skrevet med Artifact-databasen, i to
+batcher som hver gikk gjennom som én operasjon. `marked/alu_tilbud` er ikke
+rørt: IAI-tallene ligger bare i databasen og i `data_privat/`, og de er
+ikke i fila.
+
+Kontrollert FØR skrivingen: de 35 dokumentene i databasen hadde nøyaktig
+samme felter på toppnivå som fila, ingen felter bare i databasen (som ville
+blitt borte av en «set») og ingen bare i fila. Hvert dokument ble festet til
+versjonen som ble lest (`if_version`), så en samtidig skriving fra rutinen
+ville stoppet kopien i stedet for å overskrive den.
+
+Kontrollert ETTER: `marked/endringer` har nå uke 2026-W47 med
+`ny_dato 2026-11-18 09:44` (var 2026-W46, 11.11 07:50), og `marked/handel`
+har `oppdatert 2026-11-18`. Dokumentene er tallmessig identiske med fila;
+databasen skriver 85.0 som 85, og det er den eneste forskjellen.
+
+**Et funn underveis:** `portefolje.uten_2020` lå ikke i databasen i det hele
+tatt (`handel` sto på versjon 3 fra 11.11). Linjen om papirporteføljen uten
+2020, lagt inn på bordet 16.11, har altså aldri vært synlig for Frode, fordi
+dashbordet leser databasen og ikke fila. Nå ligger den der (snitt 158,7 mot
+39,3 prosentpoeng). Det er en påminnelse om at `kontekst_handel.py` skriver
+til begge: fila i repoet OG dokumentet i databasen, og det er databasen som
+vises.
+
+Dette var samtidig prøven på forslaget fra 11:33: en Claude-økt KAN fylle
+databasen fra repoet. Onsdagsrutinen kan derfor reduseres til en kopi i
+stedet for å hente alle kildene på nytt, men det er ikke gjort, og rutinen
+er uendret. Den går som planlagt 13:15 i dag og skriver sine egne tall over
+disse; de bør bli de samme, siden begge kommer fra Actions-kjøringen 10:49.
+
+Filer: ingen i repoet. Dette var en skriving til dashbordets database.
+For Cowork: databasen står på uke 47 fra nå. Går rutinen 13:15 som normalt,
+skal den ikke se noen forskjell.
 
 ### 18.11.2026 11:33, Claude Code
 
