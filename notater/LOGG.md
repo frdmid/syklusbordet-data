@@ -15,7 +15,7 @@ ord for ord, og blokken «Status nå» oppdateres. Eldre innslag ligger der.
 
 Oppdateres i SAMME commit som endringen, med samme regel som innslagene
 under. Er den eldre enn det nyeste innslaget, er den ikke til å stole på.
-Sist oppdatert 18.11.2026 11:57.
+Sist oppdatert 18.11.2026 12:05.
 
 - **Dashbord:** versjon 85, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
 - **PASS PÅ:** kilden til dashbordet er `dashbord/index.html` i repoet, IKKE
@@ -111,9 +111,10 @@ mulige første prøven på den nye prompten. Les rapporten der når den kommer.
 rutinens kopi. Ingen logikk er endret (filen importerer, MIN_SEGMENTER er
 fortsatt 20).
 
-IKKE GJORT: `notater/OVERLEVERING.md` beskriver fortsatt rutinen som en
-innhenting fil for fil (punkt 2 under ukeflyten, og punktene om datakilden).
-Den teksten må skrives om neste gang noen er i fila.
+`notater/OVERLEVERING.md` er skrevet om samme dag kl. 12:05: punkt 2 under
+ukeflyten beskriver kopien steg for steg, gjenopprettingsavsnittet peker på
+den nye prompten med den gamle som reserve, og forslaget om å fylle databasen
+fra repoet er erstattet av det som faktisk ble gjort.
 
 Filer: `notater/onsdagsrutine_prompt_2026-11-18.txt` (ny), `dashbord/bygg.py`,
 `notater/LOGG.md`. Triggeren er endret utenfor repoet.

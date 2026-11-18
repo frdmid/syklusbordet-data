@@ -42,8 +42,9 @@ gjenoppretting derfra ellers ville gitt dashbord v77 og gammel rutinetekst:
 dashbordet v78, onsdagsrutinens tekst, en rettet `prompts.txt` og en README.
 **Start med `prompts.txt` i tillegget**, ikke den i kopien 09.11. Alt annet
 (databasen, minnet, de planlagte oppgavene, de private dataene) hentes
-fortsatt fra 09.11. Den levende rutineteksten ligger også i
-`notater/onsdagsrutine_prompt_2026-11-11.txt`. Siden har fra 11.11.2026 også et avsnitt om den
+fortsatt fra 09.11. Den levende rutineteksten ligger også i repoet:
+`notater/onsdagsrutine_prompt_2026-11-18.txt` fra 18.11.2026, og den gamle,
+lange utgaven i `notater/onsdagsrutine_prompt_2026-11-11.txt`. Siden har fra 11.11.2026 også et avsnitt om den
 uavhengige gjennomgangen (`notater/2026-11-11_gjennomgang.md`) og promptene
 som gjør forslagene (`notater/2026-11-11_prompt_forbedringer.md`); ny
 sikkerhetskopi tas når stegene der er gjort.
@@ -84,14 +85,32 @@ sikkerhetskopi tas når stegene der er gjort.
    Skriptene skriver til repoet gjennom GitHub-API med
    `GITHUB_TOKEN`; commits heter «oppdatert ...» og føres ikke i loggen.
 2. **Rutinen `trig_01HoJvyjwZRq5J4QNcXoFkr3`** («Syklusbordet: oppdater
-   dashbordet fra GitHub»), onsdag kl. 10:15 og 13:15 norsk tid fra 21.10 (`CRON_TZ=Europe/Oslo`); det andre forsøket gjør bare noe hvis det første ikke fikk ferske tall: henter filene fra repoet
-   og skriver dem til dashbordets database. Prompten har stegene 1 til 8 (6b
-   VIX, 6c dollar, 6d endringer, 6e helse, 6f gass_b, 6g laks_biomasse, 6h
-   alu_tilbud skal ikke røres, 6i regime fra 15.10, uro delt i to 11.11, 6j uran_kontrakt fra 19.10, 6k segments/miners fra 28.10, 6l marked/handel fra 04.11; 8 ukeloggen i prosjektet
-   «Handelsalgoritme»). Endres med RemoteTrigger `update` og body
-   `{"prompt": ...}`; kontroller etterpå at bare prompten er endret. Den
-   prøver ikke på nytt hvis den feiler; det skjedde 30.09, og den ble kjørt
-   på nytt for hånd.
+   dashbordet fra GitHub»), onsdag kl. 10:15 og 13:15 norsk tid fra 21.10
+   (`CRON_TZ=Europe/Oslo`); det andre forsøket gjør bare noe hvis det første
+   ikke fikk ferske tall.
+   **Fra 18.11.2026 er den en KOPI, ikke en innhenting** (Frodes
+   beslutning). Den henter `dashbord/data.json` fra repoet og skriver de 26
+   segmentene og de ni markedsdokumentene til dashbordets database, men bare
+   hvis datodelen av «laget» i fila er dagens norske dato. Er den ikke det,
+   skrives ingenting: før 12:00 venter den på forsøket 13:15, etter 12:00
+   rapporterer den at fila mangler. Kravene dokument for dokument ligger i
+   `dashbord/bygg.py`, som kjører i Actions; avviste dokumenter står i
+   feltet «avvist» og tilbakelagte felter i «bevart», og rapporten leser de
+   to i stedet for å validere på nytt. Stegene er 1 hent, 2 friskhetskrav,
+   3 er uken alt skrevet, 4 les databasens versjoner, 5 kontroller at ingen
+   felter forsvinner, 6 skriv i batcher med `if_version`, 7 les endringer
+   tilbake, 8 rapport, 9 ukeloggen i prosjektet «Handelsalgoritme».
+   `marked/alu_tilbud` røres aldri.
+   Teksten ligger ord for ord i
+   `notater/onsdagsrutine_prompt_2026-11-18.txt`. Den gamle, lange prompten
+   som henter fil for fil står i `notater/onsdagsrutine_prompt_2026-11-11.txt`
+   og er fortsatt riktig; bruk den for hånd den uken `bygg.py` skulle feile,
+   for da kommer ingenting inn i databasen.
+   Endres med RemoteTrigger `update` og body `{"prompt": ...}`; kontroller
+   etterpå at bare prompten er endret (18.11 ble cron, enabled, navn, modell,
+   permission_mode, varsling, prosjekt og konnektorer kontrollert mot verdiene
+   før). Den prøver ikke på nytt hvis den feiler; det skjedde 30.09, og den
+   ble kjørt på nytt for hånd.
 3. **Dashbordet** leser databasen når det åpnes, med de innbakte dataene som
    siste utvei. Det trenger ikke publiseres for at nye tall skal vises.
    Rutinen er ENESTE vei inn: en publisert artifact får ikke hente fra noe
@@ -145,11 +164,13 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
   først**, og aldri med headere (se neste punkt). Begrunnelsen står også som
   kommentar i `index.html` rett over lastelogikken, og `kontroller.py`
   advarer hvis `fetch(` kommer tilbake i filen.
-- **Mulig neste steg, ikke gjort:** en Claude-økt kan kopiere
-  `dashbord/data.json` rett inn i dashbordets database med Artifact-databasen
-  (26 segmenter og ni markedsdokumenter, `alu_tilbud` urørt). Da kan
-  onsdagsrutinen reduseres til en kopi fra repoet i stedet for å hente alle
-  kildene på nytt. Frodes avgjørelse.
+- **Gjort 18.11.2026:** ukens tall ble kopiert fra `dashbord/data.json` inn
+  i databasen med Artifact-databasen (26 segmenter og ni markedsdokumenter,
+  `alu_tilbud` urørt), og onsdagsrutinen er deretter lagt om til nettopp en
+  slik kopi, se punkt 2 under ukeflyten. Alt som skal vises på bordet må
+  altså ligge i `dashbord/data.json`; en fil i repoet som ikke kommer med
+  der, blir aldri synlig. Det var slik `portefolje.uten_2020` ble borte:
+  den lå i `handel.json` fra 16.11, men aldri i databasen, før kopien.
 - **Hentingen skal ikke sende headere (18.11.2026).** Fram til versjon 82
   sendte `fetch` headeren `Cache-Control: no-cache`. Den er ikke en trygg
   forespørselsheader, så kallet krevde CORS-preflight, og
