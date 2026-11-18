@@ -113,7 +113,9 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 ## Dashbordet
 
 - Adresse: https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF (siste versjon
-  82 per 18.11 (Cache-Control-headeren ute av hentingen); 81 per 16.11
+  83 per 18.11 (linjen over Datahelse sier hvorfor en reserve ble brukt, og
+  hvilken lastelogikk som kjører); 82 per 18.11 (Cache-Control-headeren ute av
+  hentingen); 81 per 16.11
   (papirporteføljen uten 2020); 78 per 11.11 (uro delt i nivå og volvariasjon i regimeboksen); 77 per 03.11 (boksen Handlingsliste øverst med evidensgrad, åpne posisjoner fra Shadow-OOS og papirporteføljen; USD/NOK i korrelasjonsmatrisen; panelet Gullgruver med S1, S2 og BEGGE-status); Cowork kan ha publisert senere). Nytt fra 12.10: linjen
   «Kull, rullende A 95» i kullpanelet (v63), boksen «Regime nå» øverst (v64)
   med «Hva testene sier om å handle» under (v65, rettet i v66).
@@ -140,12 +142,22 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
   er nok, og `kontroller.py` stopper nå en side som sender headere. Rådet om
   `no-cache` i onsdagsrutinen gjelder `curl`, som ikke er underlagt CORS, og
   står uendret.
+- **Linjen sier nå hvorfor (v83, 18.11.2026).** `repoFeil` i lastelogikken
+  gir én av fem grunner i linjen over tabellen Datahelse: nettleseren stanset
+  hentingen (med feilnavn), repoet svarte med statuskode, filen var halv,
+  filen inneholdt `alu_tilbud`, eller filen i repoet var ikke nyere enn
+  databasen (med begge datoene). `LASTER_VERSJON` står i samme linje og
+  avslører en gammel side i cache; den oppdateres bare når lastelogikken
+  endres. `kontroller.py` krever at begge brukes.
 - **IKKE BEKREFTET:** om artifactens sandkasse i det hele tatt tillater
   henting fra et eksternt nettsted (`connect-src` i vertens CSP). Det kan bare
   måles i den publiserte artifacten, og verken nettleserpanelet eller
-  Chrome-utvidelsen var innlogget 18.11.2026. **Første oppgave for den som
-  åpner dashbordet:** les linjen `#datakilde` først i avsnittet over tabellen
-  Datahelse. Står det at tallene kom fra repoet, er saken lukket, og da kan
+  Chrome-utvidelsen var innlogget 18.11.2026. Utelukket er friskhetsregelen
+  (databasens `endringer.uke.ny_dato` sto på 11.11 07:50, repoets på 18.11
+  09:44), filen (26 segmenter, ingen `alu_tilbud`) og GET som sådan (henting
+  fra et annet opphav virker: prøvd fra `127.0.0.1` 18.11). **Første oppgave
+  for den som åpner dashbordet:** lukk fanen, åpne på nytt og les linjen
+  `#datakilde` først i avsnittet over tabellen Datahelse. Står det at tallene kom fra repoet, er saken lukket, og da kan
   onsdagsrutinen kortes ned. Står det databasen mens `dashbord/data.json` er
   fersk, blokkerer sandkassen hentingen, og **da er onsdagsrutinen fortsatt
   hovedveien** og må beholdes som den er. Før svaret i loggen.

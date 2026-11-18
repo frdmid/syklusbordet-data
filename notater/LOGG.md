@@ -15,9 +15,9 @@ ord for ord, og blokken «Status nå» oppdateres. Eldre innslag ligger der.
 
 Oppdateres i SAMME commit som endringen, med samme regel som innslagene
 under. Er den eldre enn det nyeste innslaget, er den ikke til å stole på.
-Sist oppdatert 18.11.2026 11:04.
+Sist oppdatert 18.11.2026 11:20.
 
-- **Dashbord:** versjon 82, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
+- **Dashbord:** versjon 83, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
 - **PASS PÅ:** kilden til dashbordet er `dashbord/index.html` i repoet, IKKE
   artifacten. Kjør `git pull` før du endrer eller publiserer, og
   `py -X utf8 dashbord/kontroller.py` før hver publisering. Publiserer du
@@ -28,9 +28,14 @@ Sist oppdatert 18.11.2026 11:04.
   `Cache-Control` utløser CORS-preflight, og raw.githubusercontent svarer 403
   på OPTIONS. Headeren er ute fra v82 (18.11). `kontroller.py` stopper den nå.
 - **IKKE BEKREFTET:** at den publiserte artifacten får lov til å hente fra et
-  eksternt nettsted. Les linjen `#datakilde` over tabellen Datahelse neste
-  gang du åpner dashbordet, og før svaret her. Står det databasen mens
-  `dashbord/data.json` er fersk, er onsdagsrutinen fortsatt hovedveien.
+  eksternt nettsted. Linjen over tabellen Datahelse sier fra v83 HVORFOR en
+  reserve ble brukt, og hvilken lastelogikk som kjører («laster
+  2026-11-18b»). Lukk fanen, åpne dashbordet på nytt og les linjen. Sier den
+  «nettleseren stanset hentingen», blokkerer sandkassen hentingen, og
+  onsdagsrutinen blir hovedveien for godt. Utelukket 18.11: friskhetsregelen
+  (databasen står på 11.11 07:50, repoet på 18.11 09:44), filen (26
+  segmenter, ingen alu_tilbud) og GET som sådan (virker fra et annet opphav
+  lokalt).
 - **Shadow-OOS:** Champion v1.1 og seks Challengere. Ingen nye bunnsoner;
   jernmalm og Henry Hub i oppsikt, gull i watch hos BEGGE.
 - **Ukeflyt:** `ukentlig.yml` har fire cron-tider natt til onsdag fra
@@ -49,6 +54,58 @@ Sist oppdatert 18.11.2026 11:04.
 - **Eldre innslag:** `notater/logg/<år>-<mnd>.md`, en fil per måned.
 
 ---
+
+### 18.11.2026 11:20, Claude Code
+
+Frode leste linjen i den publiserte artifacten etter v82: «Tallene kommer fra
+databasen; repoet svarte ikke eller var eldre.» Den gamle teksten blandet tre
+ulike årsaker, så den ble målt bort én for én.
+
+**Friskhetsregelen er utelukket.** Databasens `marked/endringer` har
+`uke.ny_dato = 2026-11-11 07:50` (versjon 10, skrevet 11.11), mens
+`dashbord/data.json` i repoet har `ny_dato = 2026-11-18 09:44`. Repoet er
+altså en uke ferskere, og `repoDato >= dbDato` er sann. Databasen står
+fortsatt på uke 46, og det er nettopp det Frode så på bordet.
+
+**Filen er utelukket.** `data.json` har 26 segmenter, ni markedsdokumenter og
+ingen `alu_tilbud`, så ingen av avvisningsreglene slår inn.
+
+**GET er utelukket.** Siden ble servert fra `127.0.0.1:8742` og hentet
+`data.json` fra raw.githubusercontent på et ANNET opphav uten feil: linjen
+sa «Tallene kommer fra repoet, satt sammen 2026-11-18 10:49», 23 rader i
+oversikten, ingen feil i konsollen, bredde 307 px. Kryssopprinnelse i seg
+selv er altså ikke problemet nå at headeren er borte.
+
+Da står `fetch` selv igjen: enten stanser artifactens sandkasse kallet
+(`connect-src` i vertens CSP), eller siden Frode så på var en eldre versjon
+fra nettleserens cache. Det kan ikke skilles fra utsiden, så siden sier det
+nå selv. Ny `repoFeil` i lastelogikken gir én av fem konkrete grunner i
+linjen over tabellen Datahelse: nettleseren stanset hentingen (med
+feilnavn og melding), repoet svarte med statuskode, filen var halv, filen
+inneholdt `alu_tilbud`, eller filen i repoet var ikke nyere enn databasen
+(med begge datoene). I tillegg står `LASTER_VERSJON` i linjen, nå
+«2026-11-18b», slik at en gammel side i cache avslører seg selv. Konstanten
+oppdateres bare når lastelogikken endres, ikke ved hver publisering.
+
+Alle fem grenene er prøvd i nettleserpanelet ved å bytte ut `window.fetch`:
+blokkert kall ga «nettleseren stanset hentingen (TypeError: Failed to
+fetch)», 403 ga «repoet svarte 403 Forbidden», halv fil ga «filen hadde 1
+segmenter med serie», og `alu_tilbud` ga «filen inneholdt alu_tilbud og ble
+avvist». `kontroller.py` krever nå at både `repoFeil` og `LASTER_VERSJON`
+brukes, så diagnosen ikke kan falle ut igjen, og sjekken av
+`alu_tilbud`-avvisningen er rettet til den nye kodelinjen. Publisert som
+**versjon 83**.
+
+**Neste steg, Frode:** åpne dashbordet på nytt (lukk fanen først, slik at
+siden hentes på nytt) og les linjen over tabellen Datahelse. Står det
+«laster 2026-11-18b», er det den nye siden. Sier den «nettleseren stanset
+hentingen», blokkerer sandkassen ekstern henting, og onsdagsrutinen blir
+hovedveien for godt. Sier den at tallene kommer fra repoet, var det bare en
+gammel side i cache, og saken er lukket. Før svaret her.
+
+Filer: `dashbord/index.html` (v83), `dashbord/kontroller.py`,
+`notater/LOGG.md`.
+For Cowork: ingenting i onsdagsrutinen er endret.
 
 ### 18.11.2026 11:04, Claude Code
 

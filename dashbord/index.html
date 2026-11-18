@@ -2124,6 +2124,17 @@ function visHandel(h){
    Feiler alt, staar de innbakte dataene, akkurat som foer. */
 const DATA_URL = "https://raw.githubusercontent.com/frdmid/syklusbordet-data/main/dashbord/data.json";
 
+/* LASTER_VERSJON staar i linjen over tabellen Datahelse, slik at det er mulig
+   aa se om siden som er aapen virkelig er den sist publiserte. Den oppdateres
+   BARE naar lastelogikken under endres, ikke ved hver publisering. */
+const LASTER_VERSJON = "2026-11-18b";
+
+/* repoFeil forteller HVORFOR repoet ikke ble brukt. Uten den sa linjen bare
+   "svarte ikke eller var eldre", og 18.11.2026 kostet det en runde: tallene
+   kom fra databasen, og det var umulig aa se om hentingen var blokkert, om
+   filen var avvist, eller om databasen var ferskest. */
+let repoFeil = "";
+
 async function hentRepoData() {
   try {
     const ctl = new AbortController();
@@ -2141,14 +2152,31 @@ async function hentRepoData() {
       // er det motsatt.
       r = await fetch(DATA_URL + "?cb=" + Date.now(),
                       {cache: "no-store", signal: ctl.signal});
+    } catch (e) {
+      // Her havner et kall som nettleseren selv stanser: CSP i artifactens
+      // sandkasse, CORS, nett nede, eller tidsavbruddet paa 8 sekunder.
+      repoFeil = "nettleseren stanset hentingen (" + ((e && e.name) || "feil")
+               + (e && e.message ? ": " + e.message : "") + ")";
+      return null;
     } finally { clearTimeout(avbryt); }
-    if (!r || !r.ok) return null;
+    if (!r) { repoFeil = "hentingen ga ingen svar"; return null; }
+    if (!r.ok) { repoFeil = "repoet svarte " + r.status + " " + (r.statusText || ""); return null; }
     const d = await r.json();
     const segs = Object.values((d && d.segments) || {}).filter(s => s && s.series && s.series.length);
-    if (segs.length < 20 || !d.marked) return null;          // halv fil: ikke bruk den
-    if (d.marked.alu_tilbud) return null;                    // skal aldri ligge der
+    if (segs.length < 20 || !d.marked) {        // halv fil: ikke bruk den
+      repoFeil = "filen hadde " + segs.length + " segmenter med serie"
+               + (d && d.marked ? "" : " og ingen markedsdata");
+      return null;
+    }
+    if (d.marked.alu_tilbud) {                  // skal aldri ligge der
+      repoFeil = "filen inneholdt alu_tilbud og ble avvist";
+      return null;
+    }
     return d;
-  } catch (e) { return null; }
+  } catch (e) {
+    repoFeil = "uventet feil i lesingen (" + ((e && e.name) || "feil") + ")";
+    return null;
+  }
 }
 
 (async () => {
@@ -2176,10 +2204,16 @@ async function hentRepoData() {
   const alu = mdDb.find(x => x && x.id === "alu_tilbud");      // alltid fra databasen
   if (alu) md = md.filter(x => !x || x.id !== "alu_tilbud").concat([alu]);
 
+  // Linjen skal alltid si HVORFOR en reserve ble brukt, og hvilken
+  // lastelogikk som kjoerer. Se repoFeil og LASTER_VERSJON over.
+  const grunn = repo
+    ? `filen i repoet er fra ${repoDato || "ukjent dato"} og er ikke nyere enn databasen (${dbDato || "ukjent dato"})`
+    : (repoFeil || "ukjent grunn");
   const kildeTekst = brukRepo
-    ? `Tallene kommer fra repoet, satt sammen ${repo.laget} norsk tid. `
-    : (segsDb.length ? "Tallene kommer fra databasen; repoet svarte ikke eller var eldre. "
-                     : "Tallene er de innbakte: verken repoet eller databasen svarte. ");
+    ? `Tallene kommer fra repoet, satt sammen ${repo.laget} norsk tid (laster ${LASTER_VERSJON}). `
+    : (segsDb.length
+        ? `Tallene kommer fra databasen (${dbDato || "ukjent dato"}). Repoet ble ikke brukt: ${grunn} (laster ${LASTER_VERSJON}). `
+        : `Tallene er de innbakte: verken repoet eller databasen svarte. Repoet: ${grunn} (laster ${LASTER_VERSJON}). `);
   const kildeEl = document.getElementById("datakilde");
   if (kildeEl) kildeEl.textContent = kildeTekst;
 

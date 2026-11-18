@@ -64,8 +64,15 @@ def kontroller(t, storrelse):
     if 'x.id !== "alu_tilbud"' not in t or "alu_tilbud" not in t:
         feil.append("haandteringen av alu_tilbud mangler: IAI-tallene skal alltid komme "
                     "fra databasen, aldri fra repoet.")
-    if 'd.marked.alu_tilbud) return null' not in t:
+    if "if (d.marked.alu_tilbud)" not in t:
         feil.append("siden avviser ikke en data.json som inneholder alu_tilbud.")
+    # Diagnosen i linjen over tabellen Datahelse. Uten den sier siden bare at
+    # repoet "svarte ikke eller var eldre", og da maa feilsoekingen gjoeres
+    # paa nytt hver gang (det skjedde 18.11.2026).
+    for navn in ("repoFeil", "LASTER_VERSJON"):
+        if t.count(navn) < 3:
+            feil.append(f"{navn} brukes ikke: linjen over Datahelse sier ikke hvorfor "
+                        "en reserve ble brukt, eller hvilken lastelogikk som kjoerer.")
 
     # reserven
     for navn in ("const SEED", "ENDR_SEED", "HELSE_SEED"):
