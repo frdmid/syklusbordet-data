@@ -15,9 +15,9 @@ ord for ord, og blokken «Status nå» oppdateres. Eldre innslag ligger der.
 
 Oppdateres i SAMME commit som endringen, med samme regel som innslagene
 under. Er den eldre enn det nyeste innslaget, er den ikke til å stole på.
-Sist oppdatert 18.11.2026 12:05.
+Sist oppdatert 18.11.2026 12:22.
 
-- **Dashbord:** versjon 85, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
+- **Dashbord:** versjon 86, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
 - **PASS PÅ:** kilden til dashbordet er `dashbord/index.html` i repoet, IKKE
   artifacten. Kjør `git pull` før du endrer eller publiserer, og
   `py -X utf8 dashbord/kontroller.py` før hver publisering. Publiserer du
@@ -70,6 +70,42 @@ Sist oppdatert 18.11.2026 12:05.
 - **Eldre innslag:** `notater/logg/<år>-<mnd>.md`, en fil per måned.
 
 ---
+
+### 18.11.2026 12:22, Claude Code
+
+Volvariasjonsfeltet i regimeboksen har fått sitt eget ord (Frodes bestilling:
+det viste bare tallet, mens nivåfeltet viste et ord, så de to cellene var
+bygget ulikt). Ordene er **samstemt** under 105, **delt** fra 105 og
+**uenig** fra 120. Frode valgte ordfamilien selv blant tre forslag.
+
+Grensene er de samme som før, 105 og 120, så ingen nye tall er innført.
+Ordet sier hvor enig markedet er om risikoen, ikke hvor stor den er: VVIX er
+volatiliteten i VIX selv, altså hvor mye markedet skifter mening om hvor
+farlig det er. Ordene fra nivåcellen (rolig, forhøyet, sjokk) er med vilje
+ikke gjenbrukt. Hadde begge cellene brukt de samme ordene, ville det ikke
+vært mulig å se hvilket av dem som er det FELLES ordet, satt av begge beina
+sammen. Det felles ordet står fortsatt i nivåcellen.
+
+Tallet er flyttet ned i beskrivelsen, «VVIX 95,0 i månedssnitt», helt likt
+nivåcellen, som sier «VIX 16,9 i månedssnitt». Ordet får samme farge som der:
+gul fra 105, rød fra 120, ingen farge under. Før 2007 står streken og
+forklaringen om at VVIX ikke finnes, som før.
+
+Ordet regnes i `index.html` av tallet og grensene som alt ligger i
+`marked/regime`, ikke i `kontekst_regime.py`. Det er med vilje: da virker
+cellen med en gang, også på dokumentet som ligger i databasen nå, og den er
+ikke avhengig av at et nytt felt kommer med neste onsdagsrutine. Begrunnelsen
+står som kommentar over koden.
+
+Prøvd lokalt med dokumentet fra databasen og tallene byttet ut: 94,97 ga
+Samstemt uten farge, 110 ga Delt i gult, 125 ga Uenig i rødt, og volvar_kjent
+usann ga streken. Ingen feil i konsollen. De siste fem årene ville ordet stått
+på samstemt i 78 % av månedene, delt i 13 % og uenig i 8 % (høyest januar
+2022 med 127, lavest mai 2024 med 78). I dag 95,0, altså samstemt.
+Publisert som **versjon 86**.
+
+Filer: `dashbord/index.html` (v86), `notater/LOGG.md`.
+For Cowork: ingenting i rutinen eller i `kontekst_regime.py` er endret.
 
 ### 18.11.2026 11:57, Claude Code
 

@@ -1053,6 +1053,20 @@ function visRegime(g){
   if (!el || !g || !g.vekst) return;
   const S = g.serie || [], L = g.likviditet, stor = x => x == null ? "–" : x.charAt(0).toUpperCase() + x.slice(1);
   const sjKl = g.sjokk.ord === "sjokk" ? "sjokk" : (g.sjokk.ord === "rolig" ? "" : "uro");
+  // Ord for volvariasjonen (Frodes oenske 18.11.2026). Cellen viste bare tallet,
+  // mens nivaacellen viste et ord, saa de to var bygget ulikt. Ordene settes av
+  // de grensene som alt gjelder, 105 og 120, regnet her av tallet i dokumentet.
+  // Ingen ny grense, og ingen avhengighet av et nytt felt fra onsdagsrutinen:
+  // cellen virker med en gang, ogsaa paa et dokument skrevet foer i dag.
+  // Ordet beskriver enigheten om risikoen, ikke nivaaet paa den: VVIX er
+  // volatiliteten i VIX selv, altsaa hvor mye markedet skifter mening om hvor
+  // farlig det er. Ordene i nivaacellen (rolig, forhoeyet, sjokk) er med vilje
+  // ikke brukt her; da ville det ikke vaere til aa se hvilket ord som er det
+  // felles.
+  const vvOrd = (v, gr) => !Array.isArray(gr) || v == null ? null
+                         : (v >= gr[1] ? "uenig" : (v >= gr[0] ? "delt" : "samstemt"));
+  const vvO = g.sjokk.volvar_kjent ? vvOrd(g.sjokk.volvar, g.sjokk.volvar_grenser) : null;
+  const vvKl = vvO === "uenig" ? "sjokk" : (vvO === "delt" ? "uro" : "");
   // Uro-feltet ble delt i to 11.11.2026 (nivå = VIX, volvariasjon = VVIX, absolutte
   // grenser). Den gamle cellen vises fortsatt hvis databasen har forrige struktur,
   // slik at boksen virker også foer Actions har skrevet den nye regime.json.
@@ -1061,8 +1075,8 @@ function visRegime(g){
     `<div class="sigcell"><div class="sl">Uro, nivå (VIX)</div><div class="sv ${sjKl}">${stor(g.sjokk.ord)}</div>
       <div class="sd">VIX ${fmt(g.sjokk.nivaa, 1)} i månedssnitt. Forhøyet fra ${g.sjokk.nivaa_grenser[0]} og høyt fra ${g.sjokk.nivaa_grenser[1]} (persentil ${fmt(g.sjokk.nivaa_pct, 0)} mot siste ti år). Ordet settes av nivå og volvariasjon sammen: begge forhøyet gir forhøyet, begge høye gir sjokk, bare ett av dem gir spent nivå eller urolig forventning. Det går opp med én gang og ned etter ${g.sjokk.ut_mnd} måneder under.</div>
       ${spark(S.map(r => r.nivaa), 10, 45, g.sjokk.nivaa_grenser[0])}<div class="sm">VIX, månedssnitt, siste fem år</div></div>`,
-    `<div class="sigcell${g.sjokk.volvar_kjent ? "" : " na"}"><div class="sl">Uro, volvariasjon (VVIX)</div><div class="sv">${g.sjokk.volvar_kjent ? fmt(g.sjokk.volvar, 1) : "–"}</div>
-      <div class="sd">${g.sjokk.volvar_kjent ? `Volatiliteten i VIX selv, månedssnitt. Forhøyet fra ${g.sjokk.volvar_grenser[0]} og høyt fra ${g.sjokk.volvar_grenser[1]} (persentil ${fmt(g.sjokk.volvar_pct, 0)} mot siste ti år). Høy volvariasjon uten høyt nivå er et marked som er usikkert på usikkerheten, ofte før en bevegelse. Høyt nivå uten volvariasjon er uro som er priset og stabil.` : "VVIX finnes først fra januar 2007, så volvariasjonen er ukjent denne måneden og ordet er satt av nivået alene."}</div>
+    `<div class="sigcell${g.sjokk.volvar_kjent ? "" : " na"}"><div class="sl">Uro, volvariasjon (VVIX)</div><div class="sv ${vvKl}">${vvO ? stor(vvO) : "–"}</div>
+      <div class="sd">${g.sjokk.volvar_kjent ? `VVIX ${fmt(g.sjokk.volvar, 1)} i månedssnitt, altså volatiliteten i VIX selv: hvor mye markedet skifter mening om hvor farlig det er. Samstemt under ${g.sjokk.volvar_grenser[0]}, delt fra ${g.sjokk.volvar_grenser[0]} og uenig fra ${g.sjokk.volvar_grenser[1]} (persentil ${fmt(g.sjokk.volvar_pct, 0)} mot siste ti år). Høy volvariasjon uten høyt nivå er et marked som er usikkert på usikkerheten, ofte før en bevegelse. Høyt nivå uten volvariasjon er uro som er priset og stabil.` : "VVIX finnes først fra januar 2007, så volvariasjonen er ukjent denne måneden og ordet er satt av nivået alene."}</div>
       ${spark(S.map(r => r.volvar), 70, 140, g.sjokk.volvar_grenser[0])}<div class="sm">VVIX, månedssnitt, siste fem år</div>
       <div class="sm">Papirkorrelasjonen ${fmt(g.sjokk.korr_papirer, 2)} (persentil ${fmt(g.sjokk.korr_pct, 0)}) står utenfor ordet.</div></div>`
   ].join("")) : (
@@ -1090,7 +1104,7 @@ function visRegime(g){
     ${regimeGjor(g)}
     <details><summary>Om feltene</summary>
       <p>Sonden 15. oktober 2026 prøvde om målene kjenner igjen de store hendelsene. Vekst holdt: andelen råvarer i oppgang lå på 0,77 til 0,82 i boomene 2003 til 2008 og 2021 til 2022, og 0,13 til 0,34 i avmatningene. Sjokk: sondens eget mål bommet med ett poeng i 2020 og ga feilalarmer i 2005 og 2006. VIX og korrelasjonen mellom papirene klarte samme krav og er valgt her, etter at resultatet var kjent. Median A fanget toppene, ikke bunnene.</p>
-      <p>Uro-feltet ble delt i to 11. november 2026. Nivå er månedssnittet av VIX, volvariasjon månedssnittet av VVIX, altså volatiliteten i VIX selv. Begge måles mot absolutte grenser og ikke mot persentil, fordi vol er vol: 20 er 20 i 1995 og i 2026, mens en råvares realpris bare kan leses mot sin egen fordeling. Absolutte grenser gir også 59 måneder mer dekning, inkludert finanskrisen og eurokrisen, siden en persentil måtte bygge opp fem år med VVIX-historikk først. Grensene er runde tall valgt fra fordelingen, ikke målt mot noe utfall: sonden 11. november 2026 viste at verken VIX-nivå, spredningen i VIX eller VVIX skiller utfallene etter bunnsonen. Papirkorrelasjonen ble tatt ut av ordet samtidig, fordi høyeste av tre ledd sto på nesten hele tiden. Feltet er kontekst.</p>
+      <p>Uro-feltet ble delt i to 11. november 2026. Nivå er månedssnittet av VIX, volvariasjon månedssnittet av VVIX, altså volatiliteten i VIX selv. Begge måles mot absolutte grenser og ikke mot persentil, fordi vol er vol: 20 er 20 i 1995 og i 2026, mens en råvares realpris bare kan leses mot sin egen fordeling. Absolutte grenser gir også 59 måneder mer dekning, inkludert finanskrisen og eurokrisen, siden en persentil måtte bygge opp fem år med VVIX-historikk først. Grensene er runde tall valgt fra fordelingen, ikke målt mot noe utfall: sonden 11. november 2026 viste at verken VIX-nivå, spredningen i VIX eller VVIX skiller utfallene etter bunnsonen. Papirkorrelasjonen ble tatt ut av ordet samtidig, fordi høyeste av tre ledd sto på nesten hele tiden. Feltet er kontekst. Volvariasjonen fikk sitt eget ord 18. november 2026: samstemt under 105, delt fra 105 og uenig fra 120, altså de samme grensene som før. Ordet sier hvor enig markedet er om risikoen, og ikke hvor stor den er; det store ordet øverst i nivåfeltet er fortsatt det felles ordet, satt av begge beina sammen.</p>
       <p>Likviditet er ikke testet: historikken starter i 2002, og reverse repo har bare betydd noe fra 2021. Når reverse repo er nær null, går en oppbygging av statskassens konto rett ut av likviditeten i markedet.</p>
       <p>«Ligner mest på» er de nærmeste tidligere månedene over bredde, median A, VIX, korrelasjon, kreditt og rentekurve, minst to år tilbake.</p>
     </details>`;
