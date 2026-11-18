@@ -2,15 +2,20 @@
 # dashbord/bygg: setter sammen dashbord/data.json av filene i repoet
 # (Frodes bestilling 12.11.2026, steg 3 i notater/2026-11-11_gjennomgang.md).
 #
-# HVORFOR. Dashbordet har lest databasen sin, og databasen har bare blitt
-# fylt av onsdagsrutinen: en spraakmodell som gjor ETL etter tolv steg prosa.
-# Den feilet 30.09.2026, og 04.11.2026 maatte Actions startes for haand.
-# Leser dashbordet i stedet denne filen rett fra det offentlige repoet, er den
-# fersk i samme sekund som Actions er ferdig.
+# HVORFOR. Dashbordet leser databasen sin, og databasen fylles av
+# onsdagsrutinen: en spraakmodell som gjorde ETL etter tolv steg prosa. Den
+# feilet 30.09.2026, og 04.11.2026 maatte Actions startes for haand. Denne
+# filen samler ukens tall EN gang, i Actions, med de samme kravene rutinen
+# hadde, slik at rutinen bare er en kopi.
 #
-# DATABASEN BLIR IKKE SLAATT AV. Rutinen gaar som foer, og dashbordet velger
-# den ferskeste av de to. Denne filen er altsaa et TILLEGG: feiler den, eller
-# blir den avvist, viser dashbordet det databasen har, som i dag.
+# ENDRET 18.11.2026. Fra 12.11 leste dashbordet denne filen rett fra det
+# offentlige repoet. Det virker ikke: en publisert artifact faar ikke hente
+# fra noe eksternt nettsted (baade raw.githubusercontent og jsDelivr ga
+# TypeError: Failed to fetch i den publiserte siden, altsaa sandkassens CSP).
+# Hentingen er ute av index.html, og denne filen er i stedet KILDEN til
+# onsdagsrutinens kopi: rutinen henter den med curl og skriver de 26
+# segmentene og de ni markedsdokumentene til databasen med Artifact-databasen.
+# Se notater/onsdagsrutine_prompt_2026-11-18.txt og notater/LOGG.md 18.11.
 #
 # ALU_TILBUD SKAL ALDRI HIT. marked/alu_tilbud er IAI-tall med vilkaar om
 # personlig bruk, og repoet er offentlig. Dokumentet ligger bare i databasen
@@ -251,9 +256,11 @@ def bygg(lager, naa=None, note=print):
           "laget_tz": "Europe/Oslo",
           "index_oppdatert": idx["oppdatert"],
           "ny_dato": ((marked.get("endringer") or {}).get("uke") or {}).get("ny_dato"),
-          "om": ("Satt sammen av dashbord/bygg.py av filene i repoet. Dashbordet leser den "
-                 "ferskeste av denne og sin egen database. marked/alu_tilbud ligger ALDRI "
-                 "her (IAI-tall, personlig bruk) og hentes alltid fra databasen."),
+          "om": ("Satt sammen av dashbord/bygg.py av filene i repoet. Onsdagsrutinen "
+                 "kopierer den inn i dashbordets database; siden selv kan ikke hente "
+                 "den (sandkassen stanser all ekstern henting, maalt 18.11.2026). "
+                 "marked/alu_tilbud ligger ALDRI her (IAI-tall, personlig bruk) og "
+                 "skrives bare for haand til databasen."),
           "antall": {"segments": len(segments), "marked": len(marked)},
           "avvist": avvist, "bevart": bevart,
           "segments": segments, "marked": marked}

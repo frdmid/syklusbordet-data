@@ -15,7 +15,7 @@ ord for ord, og blokken «Status nå» oppdateres. Eldre innslag ligger der.
 
 Oppdateres i SAMME commit som endringen, med samme regel som innslagene
 under. Er den eldre enn det nyeste innslaget, er den ikke til å stole på.
-Sist oppdatert 18.11.2026 11:40.
+Sist oppdatert 18.11.2026 11:57.
 
 - **Dashbord:** versjon 85, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
 - **PASS PÅ:** kilden til dashbordet er `dashbord/index.html` i repoet, IKKE
@@ -32,8 +32,13 @@ Sist oppdatert 18.11.2026 11:40.
   lokalt). Forsøket er ryddet ut i v85; koden ligger i commit ff22032.
   Legg aldri henting tilbake uten å måle i den PUBLISERTE siden først, og
   aldri med headere.
-- **ONSDAGSRUTINEN ER ENESTE VEI INN.** Den fyller databasen, og databasen
-  er det eneste bordet kan lese. Rutinen skal ikke kortes ned.
+- **ONSDAGSRUTINEN ER ENESTE VEI INN, og den er en KOPI fra 18.11.2026.**
+  Den henter `dashbord/data.json` og skriver de 26 segmentene og de ni
+  markedsdokumentene til databasen, hvis fila er fra samme dag (Frodes
+  beslutning 18.11). Den henter ikke lenger de tjuefem enkeltfilene.
+  Prompten ligger i `notater/onsdagsrutine_prompt_2026-11-18.txt` og er lik
+  teksten i triggeren `trig_01HoJvyjwZRq5J4QNcXoFkr3`. Den gamle, lange
+  prompten står i `notater/onsdagsrutine_prompt_2026-11-11.txt` som reserve.
   `dashbord/bygg.py` og `dashbord/data.json` står som før, men dashbordet
   kan ikke lese dem.
 - **Databasen står på uke 47** fra 18.11 kl. 11:40: ukens tall er kopiert
@@ -65,6 +70,55 @@ Sist oppdatert 18.11.2026 11:40.
 - **Eldre innslag:** `notater/logg/<år>-<mnd>.md`, en fil per måned.
 
 ---
+
+### 18.11.2026 11:57, Claude Code
+
+Onsdagsrutinen er lagt om til en kopi fra repoet (Frodes beslutning: «kan
+være en kopi av repoet hvis repoet er oppdatert samme dag»). Den nye
+prompten er skrevet til triggeren `trig_01HoJvyjwZRq5J4QNcXoFkr3` og ligger
+ord for ord i `notater/onsdagsrutine_prompt_2026-11-18.txt`. Kontrollert
+etter skrivingen: teksten i triggeren er identisk med fila, og ingenting
+annet er endret (cron `CRON_TZ=Europe/Oslo 15 10,13 * * 3`, enabled, navn,
+modell claude-opus-5, permission_mode auto, varsling, prosjekt og
+konnektorer står som før). Neste kjøring 13:15 i dag.
+
+Hva som er nytt: rutinen henter én fil, `dashbord/data.json`, i stedet for
+tjuefem. Kravene den hadde dokument for dokument ligger allerede i
+`dashbord/bygg.py`, som kjører i Actions og fører avviste dokumenter i
+«avvist» og tilbakelagte felter i «bevart»; rapporten leser de to feltene i
+stedet for å validere på nytt. Friskhetskravet er Frodes: datodelen av
+«laget» må være dagens norske dato, ellers skrives ingenting (før 12:00
+venter den på forsøket 13:15, etter 12:00 rapporterer den at fila mangler).
+Idempotensen er beholdt: er uke.ny_dato i databasen alt lik «ny_dato» i
+fila, skriver den ingenting. Steg for steg: hent, friskhetskrav, er uken
+alt skrevet, les databasens versjoner, kontroller at ingen felter
+forsvinner, skriv i batcher med if_version, les endringer tilbake, rapporter,
+før ukeloggen. `marked/alu_tilbud` røres ikke.
+
+Prompten er kortet fra 19 969 til 14 368 tegn, og rapporten og ukeloggen er
+beholdt ord for ord, med feltstiene pekt om til data.json. To felt er rettet
+mot fila slik den faktisk ser ut: gullgruvenes punkter står under
+`segments.miners.miners.punkter`, og jernmalmens «kurve» fantes ikke 18.11,
+som ikke er en feil. Ett nytt punkt i rapporten: papirporteføljen uten 2020,
+siden den manglet i databasen helt til kopien i dag.
+
+Kjøringen 13:15 i dag treffer idempotenskravet og skal skrive ingenting,
+siden tallene ble kopiert for hånd 11:40. Det er samtidig den mildeste
+mulige første prøven på den nye prompten. Les rapporten der når den kommer.
+
+`dashbord/bygg.py` har fått rettet begrunnelsen i toppen og teksten i feltet
+«om»: fila er ikke lenger noe dashbordet leser selv, den er kilden til
+rutinens kopi. Ingen logikk er endret (filen importerer, MIN_SEGMENTER er
+fortsatt 20).
+
+IKKE GJORT: `notater/OVERLEVERING.md` beskriver fortsatt rutinen som en
+innhenting fil for fil (punkt 2 under ukeflyten, og punktene om datakilden).
+Den teksten må skrives om neste gang noen er i fila.
+
+Filer: `notater/onsdagsrutine_prompt_2026-11-18.txt` (ny), `dashbord/bygg.py`,
+`notater/LOGG.md`. Triggeren er endret utenfor repoet.
+For Cowork: rutinen er en kopi nå. Skal noe vises på bordet, må det ligge i
+`dashbord/data.json` i repoet, ellers kommer det ikke inn i databasen.
 
 ### 18.11.2026 11:40, Claude Code
 

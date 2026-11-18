@@ -1,0 +1,98 @@
+Ukentlig oppdatering av Syklusbordet. Kjør dette selv, uten å stille spørsmål. Svar på norsk.
+
+BAKGRUNN
+Syklusbordet er et dashbord som følger hvor lavt hvert sykliske segment ligger mot sin egen realprishistorikk. Det er publisert som artifact på https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF og leser dataene sine fra sin egen database (samlingen "segments", ett dokument per segment, dokument-id = segmentets id, og samlingen "marked" med dokumentene "vix", "dollar", "endringer", "helse", "gass_b", "laks_biomasse", "regime", "uran_kontrakt" og "handel").
+
+Dataene produseres av en GitHub Actions-arbeidsflyt i det offentlige repoet frdmid/syklusbordet-data, som kjører natt til onsdag. Jobben din er kun å flytte dem fra repoet inn i databasen. Du skal IKKE publisere siden på nytt: siden leser databasen ved innlasting, så en databaseskriving er nok.
+
+FRA 18.11.2026 ER DETTE EN KOPI, IKKE EN INNHENTING
+Arbeidsflyten bygger `dashbord/data.json` med `dashbord/bygg.py`, som har de SAMME kravene denne rutinen hadde før, dokument for dokument: krav til serie, instrumenter, skårer, realpris for skipssegmentene, og datokrav på kontekstfilene. Filer som ikke består, står oppført i feltet "avvist", og felter som ellers ville forsvunnet, er lagt tilbake og står i "bevart". Du skal derfor ikke lenger hente de tjuefem enkeltfilene og validere dem selv. Du henter én fil og kopierer den inn.
+
+Dashbordet kan IKKE lese repoet selv. En publisert artifact får ikke hente fra noe eksternt nettsted: både raw.githubusercontent og jsDelivr ga «TypeError: Failed to fetch» i den publiserte siden 18.11.2026, altså stanset av sandkassens CSP. Databasen er eneste vei inn til bordet, og denne rutinen er eneste vei til databasen. Alt som skal vises må skrives hit; en fil i repoet alene er ikke synlig for noen.
+
+Trenger du en gang den gamle veien, fil for fil, ligger hele den forrige prompten i repoet som `notater/onsdagsrutine_prompt_2026-11-11.txt`. Den er fortsatt riktig, bare lang.
+
+TO FORSØK OG NORSK TID
+Denne rutinen går to ganger hver onsdag, kl. 10:15 og kl. 13:15 norsk tid. Det andre forsøket skal fange opp en innhenting som kom for sent til det første. Alle klokkeslett i rapporten og i ukeloggen skal være norsk tid (Europe/Oslo), aldri UTC. Feltet "laget" i data.json er allerede norsk tid ("laget_tz" sier det). Feltet "index_oppdatert" og tidsstemplene i index.json er UTC og må regnes om før du skriver dem.
+
+VIKTIG OM CACHE
+raw.githubusercontent serverer cachede kopier. Bruk alltid en tilfeldig spørrestreng OG no-cache-header, ellers risikerer du å skrive gammelt innhold over nytt:
+  curl -sS -H 'Cache-Control: no-cache' "https://raw.githubusercontent.com/frdmid/syklusbordet-data/main/FIL?cb=$RANDOM"
+Headeren er riktig her fordi curl ikke er underlagt CORS. I en nettleser er den motsatt: der utløser den en preflight som GitHub svarer 403 på. Flytt den aldri inn i dashbordets kode.
+
+SLIK GJØR DU DET
+
+1. Hent `dashbord/data.json` fra repoet (med cache-brekk). Lagre den som fil i arbeidsmappen. Ikke skriv innholdet til skjerm, fila er på rundt 850 kB.
+
+   Hent også `index.json` fra repoet (med cache-brekk). Den brukes bare til loggen i rapporten (punkt 8) og ikke til å skrive noe.
+
+2. FRISKHETSKRAVET. Datodelen av "laget" i data.json skal være I DAGS norske dato. Er den ikke det, har ukens kjøring ikke lagt fila i repoet, og du skal ikke skrive noe til databasen:
+   - er klokka før 12:00 norsk tid (forsøket kl. 10:15), skriv bare én linje om at du venter på forsøket kl. 13:15, og ingen oppføring i ukeloggen
+   - er klokka 12:00 eller senere, rapporter at fila mangler eller er gammel, med datoen som sto i den, og før det i ukeloggen etter punkt 9
+
+   Kontroller samtidig disse kravene til fila. Svikter ett av dem, skriv INGENTING og si hvilket:
+   - "id" er "data"
+   - "antall".segments er 20 eller mer, og "marked" finnes
+   - "marked" inneholder IKKE "alu_tilbud". Det er IAI-tall med vilkår om personlig bruk, og de skal aldri ligge i det offentlige repoet. Ligger det der, er en sperre i bygg.py brutt: skriv ingenting og si det tydelig.
+   - "ny_dato" finnes
+
+3. ER UKEN ALLEREDE SKREVET? Les marked/endringer i databasen med ArtifactData "get". Er uke.ny_dato der lik "ny_dato" i data.json, har et tidligere forsøk i dag alt skrevet ukens tall: skriv ingenting, gi én linje i rapporten, og ingen ny oppføring i ukeloggen.
+
+4. LES DATABASEN. ArtifactData, action "list", collection "segments", og så collection "marked", begge med out_dir så innholdet havner i filer og ikke i konteksten. Versjonsnummeret for hvert dokument står i svaret fra "list", ikke nødvendigvis inne i filene: noter det derfra, du trenger det i punkt 6. Et dokument som ikke finnes fra før skrives uten if_version. Blir out_dir avvist der du kjører, bruk en annen mappe; får du den ikke til, les uten out_dir, men da bare marked (de ni er små) og hent versjonene for segmentene med "list" uten å gjengi innholdet.
+
+5. KONTROLLER AT INGENTING MISTER INNHOLD. For hvert dokument i data.json: har dokumentet i databasen felter på toppnivå som fila mangler, skal du legge de gamle verdiene inn i fila før du skriver, og si i rapporten hvilket dokument og hvilke felter det gjaldt. Det skal normalt ikke skje: `bevar()` i bygg.py gjør den samme jobben mot forrige ukes fil, og 18.11.2026 var feltene like i alle 35 dokumentene. Skjer det likevel, betyr det at databasen har noe arbeidsflyten ikke lenger skriver, og det skal ikke forsvinne i stillhet.
+
+   Les også feltene "avvist" og "bevart" i data.json. De er bygg.py sin egen rapport: "avvist" er dokumentene som ikke besto kravene og derfor ikke ligger i fila (dokumentet i databasen blir stående urørt), "bevart" er feltene bygg.py måtte legge tilbake. Begge skal med i rapporten med dokument og grunn. Et tomt "avvist" er det normale.
+
+6. SKRIV. Lag én fil per dokument med innholdet fra data.json: segmentene fra "segments" (dokument-id = nøkkelen) og markedspostene fra "marked" (dokument-id = nøkkelen). Skriv dem med ArtifactData, action "batch", med op "set", collection "segments" eller "marked", doc_id, file_path = filen, og if_version = versjonen du leste i punkt 4.
+   - hold hver batch under rundt 700 kB til sammen; 26 segmenter og ni markedsposter blir to batcher
+   - rør ALDRI marked/alu_tilbud. Det oppdateres for hånd av Cowork fra tall som ikke ligger i repoet. Nevn det ikke i rapporten.
+   - feiler en batch på versjonskonflikt, les dokumentene på nytt og prøv én gang til. Feiler den igjen, si det og la være.
+   - databasen skriver 85.0 som 85. Det er bare tallformat og ikke en endring.
+
+7. KONTROLLER ETTERPÅ. Les marked/endringer med "get" på nytt. uke.ny_dato skal nå være lik "ny_dato" i data.json. Er den ikke det, si det tydelig i rapporten: da er ikke ukens tall på bordet.
+
+8. Rapporter kort, på norsk, i denne formen. Samme rapport føres også i prosjektdokumentet, se punkt 9. Alle tallene står i data.json: segmentene under "segments".<id>, markedspostene under "marked".<id>. Loggen står i index.json.
+   - "laget" i data.json, "index_oppdatert" regnet om til norsk tid, og hvor mange dokumenter som ble skrevet
+   - endringer siden forrige uke: forrige og ny dato (marked.endringer.uke.forrige_dato og uke.ny_dato), alle skifter (uke.skifter) og de tre største endringene (uke.topp) med gammelt tall, nytt tall og endring i prosent
+   - datahelse: regn status for radene i marked.helse etter regelen i toppen av helse.py i repoet (automatiske: grønn til slutten av neste periode pluss etterslep pluss 3 dager, gul til pluss 7, rød over; manuelle: rød når dagens dato er etter "grense"; rader med "status" beholder den). List de gule og røde med navn og siste observasjon, eller skriv at alle er grønne
+   - en tabell med segment, A, Ad, Ar, B2, D og siste observasjon, sortert med høyeste A øverst
+   - hvilke segmenter som står i bunnsone (scores.flagg er sann) og hvilke som står under oppsikt (scores.oppsikt er sann)
+   - Brent og WTI, parallelt signal (Frodes valg, ikke testet; WTI fra 28.09.2026): står scores.flagg_d95 som sann for hver av dem, altså detrendet A 95 eller mer? Si ja eller nei med detrendet A per segment. Begge holdes etter regelen fra desember 2025 til desember 2027.
+   - D-dekning: hva linjen "kapitulasjon D" i loggen i index.json sier. Står det færre enn 18 segment, list hvilke segmenter som mangler scores.D, siden feltet da står tomt på dashbordet. Vakta i kapitulasjon_d.py krever dagskurser fra Yahoo og hopper over papirer som får noe annet, så en lav D-dekning betyr at Yahoo svarte feil fra GitHubs maskiner, ikke at markedet har endret seg.
+   - for segmentene med COT: forvalternes persentil mot tre år (cot.mm_pctl_3aar), og merk dem som ligger på 10 eller lavere eller 90 eller høyere
+   - laks (observasjon, aldri flagg): margin (laks.margin), margin-A (laks.A_margin), siste uke og kilopris (laks.uke, laks.uke_nok_kg), og om kostnadstallet er ferskt (laks.kost_fersk)
+   - VIX: verdi, dato og persentil (pctl_alle)
+   - dollaren: DXY og USD/NOK med verdi, persentil (pctl_alle) og endring over 12 måneder (endring_12m_pst)
+   - B for gass: B, endringen i gassrigger over 12 mnd (endring_12m_logpst) og måneden (mnd)
+   - biomasse for laks: endringen fra året før (dB) og måneden (mnd)
+   - regime: ordet og tallene for vekst (vekst.ord, vekst.bredde), uro (sjokk.ord, nivå sjokk.nivaa med persentil sjokk.nivaa_pct, volvariasjon sjokk.volvar med persentil sjokk.volvar_pct, og papirkorrelasjonen sjokk.korr_pct, som står utenfor ordet; si fra i én linje hvis sjokk.volvar er null) og boom (boom.ord, boom.median_A), likviditet (likviditet.fed_netto_13u_pst og likviditet.rrp_mrd, eller at den var null) og de to første analogene
+   - uran: langsiktig kontraktspris (kontrakt), spot, forskjellen (spread_pst) og måneden (mnd) fra marked.uran_kontrakt, og siste dato i uran_futures_uke.csv i repoet (skal være søndagen som startet forrige uke eller nyere)
+   - gullgruver: forholdet (last_nom, fat olje per unse gull), A, Ad og Ar, D, og punktene S1 og S2 (segments.miners.miners.punkter.sig1 og sig2 som på eller av, og sist_sig1 og sist_sig2; merk at segmentet heter miners OG har et underobjekt som heter miners); feltet har ikke noe signal
+   - handlingslisten: de tre første radene i marked.handel.liste (navn, avstand og signalene som står), og antall åpne posisjoner i marked.handel.live
+   - papirporteføljen uten 2020 (marked.handel.portefolje.uten_2020): snitt og median med og uten, og hvor mange posisjoner som slo MSCI World. Står feltet ikke der, si det: det betyr at kontekst_handel.py kjørte gammel kode
+   - jernmalm: kurveform (form, front_neste, front_pris og front_mot_siste_pst hvis feltet "kurve" finnes; 18.11.2026 fantes det ikke, og det er ikke en feil) og D med tema (d_detalj.tema_navn)
+   - deflatoren: hvilken kilde som ble brukt og om linjen "deflator, kontroll mot BLS" i loggen i index.json sto som OK
+   - flaggloggen: om loggen i index.json har en linje "flagglogg" med status OK, og hva den sier. Mangler linjen eller står den som FEIL, si det tydelig: da skrives ikke loggen over flagg framover.
+   - kurveform: om loggen har en linje "kurveform" med status OK, og hvor mange måneder historikk hvert segment har
+   - "avvist" og "bevart" fra data.json, med dokument og grunn, og alt du selv måtte lappe i punkt 5
+   - et dokument som står i databasen men ikke i data.json, hvis det finnes noe annet enn alu_tilbud
+   Ikke lim inn rådata. Ikke foreslå oppfølgingsspørsmål. Ikke bruk tankestrek.
+
+9. Før rapporten i prosjektdokumentet, som siste steg etter at rapporten er skrevet. Prosjektet «Handelsalgoritme» har dokumentet claude/syklusbordet-ukelogg.md, som er den samlede historikken over disse kjøringene. Rapporten i økten din forsvinner med økten; dette dokumentet er det Frode og statusnotatet peker til senere.
+   - Les dokumentet med Projects, method "project_read", path "claude/syklusbordet-ukelogg.md".
+   - Lag en ny oppføring i samme form som de som ligger der: en overskrift på nivå to med ukedag, dato og klokkeslett i norsk tid fra "laget" i data.json og om kjøringen var planlagt eller startet for hånd, så et avsnitt om hva som ble skrevet og om noe måtte lappes, så tabellen med segment, A, Ad, Ar, B2, D og siste observasjon, så kulepunktene fra rapporten. Bruk komma som desimaltegn, som i de eksisterende oppføringene. Ikke bruk tankestrek.
+   - Bygg hele det nye dokumentet som en fil i arbeidsmappen: overskriften og innledningen øverst slik de står, så den nye oppføringen, så alle de gamle oppføringene ord for ord. Du skal aldri slette, slå sammen, korte ned eller skrive om en eldre oppføring, og aldri korte ned loggen på eget initiativ.
+   - Skriv den tilbake med method "project_write", path "claude/syklusbordet-ukelogg.md" og local_path som peker på filen. Ikke send innholdet inline.
+   - Ble ingenting skrevet til databasen, før likevel en kort oppføring på to eller tre linjer med datoen i data.json og hvorfor ingenting ble skrevet. Loggen skal også vise ukene som sto stille.
+   - Passerer dokumentet rundt 60 000 tegn, si det i én linje i rapporten og la det stå. Frode avgjør hva som skal gjøres med det.
+   - Feiler lesingen eller skrivingen, si det i rapporten og gå videre. Databaseskrivingen er det viktige, loggen er dokumentasjon.
+
+HVIS NOE ER GALT
+Svarer ikke raw.githubusercontent, eller mangler `dashbord/data.json`: skriv ingenting og si hva som skjedde. Det er alltid bedre å la forrige ukes tall stå enn å skrive noe halvt.
+
+Er data.json fra i dag, men "avvist" inneholder dokumenter, er det arbeidsflyten som ikke fikk alt: dokumentene som mangler blir stående med forrige ukes tall i databasen, og det er riktig. Ta dem med i rapporten med grunn, så ser Frode hvilken kilde som sviktet.
+
+Mangler data.json mens enkeltfilene i repoet ser ferske ut, har `dashbord/bygg.py` feilet. Da får ikke bordet ukens tall i det hele tatt. Si det tydelig i rapporten og i ukeloggen. Den gamle prompten, som henter fil for fil, ligger i `notater/onsdagsrutine_prompt_2026-11-11.txt` og kan brukes for hånd den uken.
+
+Loggen i index.json har et felt per kilde med status OK eller FEIL: ta med de som feilet i rapporten, det er slik vi oppdager at en datakilde har falt bort. Linjer i loggen om at uran eller BDI er mer enn noen måneder gammel betyr at kopien i repoet (uran_reserve.csv eller bdi.json) må forlenges: ta dem med i rapporten.
