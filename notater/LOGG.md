@@ -29,7 +29,7 @@ Sist oppdatert 18.11.2026 10:32.
 - **Ukeflyt:** `ukentlig.yml` har fire cron-tider natt til onsdag fra
   18.11.2026: 01:48, 02:48, 02:56 og 03:56 norsk vintertid (en time senere
   om sommeren). GitHub har startet planlagte kjøringer 6,6 til 8,8 timer
-  for sent; med det kommer den første mellom 08:24 og 10:36 norsk
+  for sent; med det kommer den første mellom 08:23 og 10:37 norsk
   vintertid. Onsdagsrutinen 10:15 og 13:15. Neste
   planlagte kjøring 25.11.2026.
 - **Tester:** `python test_shadow_oos.py`, 23 av 23 består. Før publisering:
@@ -60,7 +60,7 @@ Regnet om med zoneinfo for 25.11.2026 og 02.06.2027. Alle fire er onsdag
 både i UTC og norsk tid, så Shadow-OOS (dato i UTC, uke fra onsdag) og vakta
 (norsk dato) er enige; en tid tirsdag kveld UTC er unngått med vilje. Med
 forsinkelsene de tre siste ukene (6,6 til 8,8 timer) kommer den første
-tiden mellom 08:24 og 10:36 norsk vintertid, før onsdagsrutinen 13:15. Det
+tiden mellom 08:23 og 10:37 norsk vintertid, før onsdagsrutinen 13:15. Det
 er ingen garanti. Kildene er forrige
 dags sluttkurser, månedstall og Fearnleys-rapporten fra uken før (siste rad
 i shipping.json er 04.11; kjøringen 11.11 fikk heller ikke 11.11-rapporten),
