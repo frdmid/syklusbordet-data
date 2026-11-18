@@ -4,7 +4,7 @@
  "group": "Metall",
  "unit": "fat olje per unse gull",
  "status": "live",
- "laget": "2026-11-11",
+ "laget": "2026-11-18",
  "note": "Forholdet mellom gullpris og oljepris, et grovt mål på gruvenes margin. Observasjon uten flagg: bunnsonen på dette forholdet holdt ikke (sonden 28.10.2026), og heller ikke feilprising av gruvene mot gull og olje, og ingen av signalene som ble testet.",
  "source": "Gull, WTI og Brent fra serier/priser_mnd.csv (Verdensbanken og GitHub-speil)",
  "source_url": "https://github.com/frdmid/syklusbordet-data/blob/main/kontekst_miners.py",
@@ -21,7 +21,7 @@
   "oppsikt": false,
   "A2": null,
   "B": null,
-  "D": 25.9,
+  "D": 56.3,
   "S": null,
   "gate": "uaktuell",
   "months_in_zone": 0,
@@ -3109,8 +3109,8 @@
    "kommentar": "Store gruver. Samme uke: beta mot gull 1,8, mot olje 0,0 (sonden 28.10.2026).",
    "omvendt": false,
    "handlbar": true,
-   "D": 27.9,
-   "fall_pst": -20.9
+   "D": 63.5,
+   "fall_pst": -32.8
   },
   {
    "ticker": "GDXJ.L",
@@ -3120,8 +3120,8 @@
    "kommentar": "Små gruver. Beta mot gull 1,9, mot olje 0,0. Svinger mest.",
    "omvendt": false,
    "handlbar": true,
-   "D": 40.6,
-   "fall_pst": -27.0
+   "D": 63.8,
+   "fall_pst": -39.7
   },
   {
    "ticker": "IAUP.L",
@@ -3131,8 +3131,8 @@
    "kommentar": "Store produsenter. Beta mot gull 1,7, mot olje 0,0.",
    "omvendt": false,
    "handlbar": true,
-   "D": 17.5,
-   "fall_pst": -19.0
+   "D": 41.7,
+   "fall_pst": -31.2
   },
   {
    "ticker": "AUCO.L",
@@ -3142,19 +3142,19 @@
    "kommentar": "Blandet størrelse, fra 2008. Beta mot gull 1,7, mot olje 0,0.",
    "omvendt": false,
    "handlbar": true,
-   "D": 23.9,
-   "fall_pst": -19.6
+   "D": 49.1,
+   "fall_pst": -31.6
   }
  ],
  "d_detalj": {
-  "D_aksjer": 25.9,
+  "D_aksjer": 56.3,
   "tema": null,
   "tema_D": null,
   "tema_navn": null,
   "n": 4,
   "spredning": [
-   17.5,
-   40.6
+   41.7,
+   63.8
   ]
  },
  "gate_detalj": {
