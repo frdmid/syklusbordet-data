@@ -92,11 +92,10 @@ sikkerhetskopi tas når stegene der er gjort.
    `{"prompt": ...}`; kontroller etterpå at bare prompten er endret. Den
    prøver ikke på nytt hvis den feiler; det skjedde 30.09, og den ble kjørt
    på nytt for hånd.
-3. **Dashbordet** leser `dashbord/data.json` fra repoet først og databasen som
-   reserve når det åpnes. Det trenger ikke publiseres for at nye tall skal
-   vises. Så lenge hentingen fra repoet ikke er bekreftet i den publiserte
-   artifacten (se Dashbordet under), er det databasen onsdagsrutinen fyller
-   som faktisk står på bordet, og rutinen er hovedveien.
+3. **Dashbordet** leser databasen når det åpnes, med de innbakte dataene som
+   siste utvei. Det trenger ikke publiseres for at nye tall skal vises.
+   Rutinen er ENESTE vei inn: en publisert artifact får ikke hente fra noe
+   eksternt nettsted (målt 18.11.2026, se Dashbordet under).
 
 **Kvartalsvis, `kvartalsvis.yml`** (5. feb, mai, aug, nov 07:00 UTC):
 `tilbud_b.py` (kaller `rigg_b.py` til slutt) → `overlevelse_c.py` (kaller
@@ -113,9 +112,10 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 ## Dashbordet
 
 - Adresse: https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF (siste versjon
-  84 per 18.11 (jsDelivr som reservevei inn); 83 per 18.11 (linjen over
-  Datahelse sier hvorfor en reserve ble brukt, og hvilken lastelogikk som
-  kjører); 82 per 18.11 (Cache-Control-headeren ute av
+  85 per 18.11 (repoveien ryddet ut, databasen er eneste kilde); 84 per
+  18.11 (jsDelivr som reservevei inn, stanset av sandkassen); 83 per 18.11
+  (linjen over Datahelse sier hvorfor en reserve ble brukt, og hvilken
+  lastelogikk som kjører); 82 per 18.11 (Cache-Control-headeren ute av
   hentingen); 81 per 16.11
   (papirporteføljen uten 2020); 78 per 11.11 (uro delt i nivå og volvariasjon i regimeboksen); 77 per 03.11 (boksen Handlingsliste øverst med evidensgrad, åpne posisjoner fra Shadow-OOS og papirporteføljen; USD/NOK i korrelasjonsmatrisen; panelet Gullgruver med S1, S2 og BEGGE-status); Cowork kan ha publisert senere). Nytt fra 12.10: linjen
   «Kull, rullende A 95» i kullpanelet (v63), boksen «Regime nå» øverst (v64)
@@ -126,13 +126,30 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
   ganger. Filen som publiseres skal begynne med `<title>Syklusbordet</title>`.
 - Uten Playwright: server filen med `python -m http.server` og test i
   nettleserpanelet (konsoll, og `scrollWidth` lik bredden ved 390 px).
-- **Datakilde fra 12.11.2026:** dashbordet leser `dashbord/data.json` fra det
-  offentlige repoet først (skrevet av `dashbord/bygg.py` hver uke), databasen
-  som reserve, og de innbakte dataene som siste utvei. Valget tas på friskhet,
-  og siden skriver hvilken kilde som ble brukt i tabellen Datahelse.
-  `marked/alu_tilbud` (IAI) hentes ALLTID fra databasen og ligger aldri i
-  repoet; tre sperrer holder det slik, se `dashbord/README.md`. Onsdagsrutinen
-  går uendret og fyller databasen som før.
+- **Datakilde, slik den er fra 18.11.2026:** dashbordet leser databasen, med
+  de innbakte dataene (`SEED`) som siste utvei. `marked/alu_tilbud` (IAI)
+  kommer alltid fra databasen og ligger aldri i det offentlige repoet.
+  Forsøket fra 12.11.2026 på å lese `dashbord/data.json` fra repoet først er
+  ryddet ut i v85, se neste punkt. `dashbord/bygg.py` og `dashbord/data.json`
+  står som før: de er den maskinlesbare kopien av ukens tall i repoet, like
+  fersk som Actions, men dashbordet kan ikke lese dem.
+- **AVKLART 18.11.2026: en publisert artifact får IKKE hente fra noe
+  eksternt nettsted.** Linjen i v84 sa det selv: både
+  `raw.githubusercontent.com` og jsDelivr-speilet ga «TypeError: Failed to
+  fetch». Begge svarer 200 med `Access-Control-Allow-Origin: *` målt med
+  curl, og samme henting virket fra en lokal server på et annet opphav, så
+  det er verken CORS, headere eller filen. Det som står igjen er
+  `connect-src` i vertens CSP, og den kan ikke endres herfra. Hentingen er
+  derfor ute av siden fra v85. Koden med begge veier og diagnosen ligger i
+  commit ff22032. **Legg den ikke tilbake uten å måle i den PUBLISERTE siden
+  først**, og aldri med headere (se neste punkt). Begrunnelsen står også som
+  kommentar i `index.html` rett over lastelogikken, og `kontroller.py`
+  advarer hvis `fetch(` kommer tilbake i filen.
+- **Mulig neste steg, ikke gjort:** en Claude-økt kan kopiere
+  `dashbord/data.json` rett inn i dashbordets database med Artifact-databasen
+  (26 segmenter og ni markedsdokumenter, `alu_tilbud` urørt). Da kan
+  onsdagsrutinen reduseres til en kopi fra repoet i stedet for å hente alle
+  kildene på nytt. Frodes avgjørelse.
 - **Hentingen skal ikke sende headere (18.11.2026).** Fram til versjon 82
   sendte `fetch` headeren `Cache-Control: no-cache`. Den er ikke en trygg
   forespørselsheader, så kallet krevde CORS-preflight, og

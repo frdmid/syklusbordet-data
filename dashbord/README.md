@@ -31,22 +31,28 @@ tittelen og at lys modus har farge.
 
 ## Hvor tallene kommer fra
 
-Siden prøver kildene i denne rekkefølgen, og velger på **friskhet** og ikke
-på hvem som svarer først:
+Siden leser to kilder, i denne rekkefølgen:
 
-1. `dashbord/data.json` fra det offentlige repoet, hentet med cache-brekk,
-   først fra `raw.githubusercontent.com` og så fra jsDelivr-speilet.
-   Den er fersk i samme sekund som GitHub Actions er ferdig.
-2. Dashbordets egen database, som onsdagsrutinen fyller en time senere.
-3. De innbakte dataene i `index.html`, som siste utvei.
+1. Dashbordets egen database, som onsdagsrutinen fyller. **Eneste vei inn.**
+2. De innbakte dataene i `index.html`, som siste utvei.
 
-**Merk, målt 18.11.2026:** den publiserte artifacten fikk IKKE hente fra
-`raw.githubusercontent.com`. Linjen over tabellen Datahelse sa «nettleseren
-stanset hentingen (TypeError: Failed to fetch)», mens samme henting virket
-fra en lokal server på et annet opphav. Det er sandkassens CSP
-(`connect-src`), og den kan ikke endres herfra. **Onsdagsrutinen, som fyller
-databasen, er derfor hovedveien.** jsDelivr-speilet er lagt inn som forsøk
-nummer to; om det slipper gjennom, står i loggen.
+Linjen over tabellen Datahelse sier hvilken av dem som ble brukt, med
+databasens dato, og hvilken lastelogikk som kjører (`LASTER_VERSJON`). Den
+siste er der for å avsløre en gammel side i nettleserens cache.
+
+**Hvorfor ikke repoet, målt 18.11.2026:** fra 12.11 forsøkte siden å lese
+`dashbord/data.json` fra det offentlige repoet først, fordi filen der er
+fersk i samme sekund som Actions er ferdig. En publisert artifact får ikke
+hente fra noe eksternt nettsted. Både `raw.githubusercontent.com` og
+jsDelivr-speilet ga «TypeError: Failed to fetch» i den publiserte siden,
+mens samme henting virket fra en lokal server på et annet opphav. Det er
+sandkassens CSP (`connect-src`), og den kan ikke endres herfra. Hentingen er
+ryddet ut i v85; koden ligger i commit ff22032.
+
+`dashbord/bygg.py` og `dashbord/data.json` står som før. De er den
+maskinlesbare kopien av ukens tall i repoet, like fersk som Actions, men
+dashbordet kan ikke lese dem. En Claude-økt kan derimot kopiere `data.json`
+inn i databasen med Artifact-databasen; det er ikke satt opp.
 
 Siden skriver hvilken kilde som ble brukt i tabellen Datahelse, så en gammel
 kilde ikke kan se fersk ut. Databasen er altså ikke slått av: feiler `bygg.py`,
@@ -60,26 +66,28 @@ en publisering uten innbaking gir en side uten siste utvei.
 
 `marked/alu_tilbud` er produksjonstall fra IAI med vilkår om personlig bruk,
 og repoet er offentlig. Dokumentet ligger bare i databasen og i `data_privat/`.
-Tre sperrer holder det der, og ingen av dem skal fjernes:
+To sperrer holder det der, og ingen av dem skal fjernes:
 
 1. `bygg.py` har `alu_tilbud` i `FORBUDT` og en `assert` før filen skrives.
-2. `index.html` avviser en `data.json` som inneholder dokumentet.
-3. `index.html` henter alltid `alu_tilbud` fra databasen, aldri fra repoet.
+2. `index.html` henter alltid `alu_tilbud` fra databasen, aldri fra en annen
+   kilde. (Sperren i `index.html` som avviste en `data.json` med dokumentet
+   falt bort med hentingen i v85, og trengs ikke: siden leser ikke repoet.)
 
-## Hentingen skal ikke sende headere
+## Om noen skulle legge henting tilbake
 
-Fra 18.11.2026. `fetch` av `data.json` sender **ingen** `headers`, og det er
-med vilje. `Cache-Control` er ikke en trygg forespørselsheader, så den gjør
-kallet til et som krever CORS-preflight. `raw.githubusercontent.com` svarer
-**403 på OPTIONS**, men 200 på GET med `Access-Control-Allow-Origin: *`
-(målt 18.11.2026 med curl). Med headeren feilet altså hver henting, og siden
-falt tilbake til databasen hver gang: 18.11 sto uke 46 på bordet mens uke 47
-lå i repoet. Cache-brekken `?cb=<tid>` og `cache: "no-store"` gir fersk fil
-uten preflight, og det er nok.
+Siden gjør ingen nettkall utenom Google Fonts, og `kontroller.py` advarer
+hvis `fetch(` kommer tilbake i filen. Skulle sandkassen en dag slippe
+henting ut, gjelder to ting som er målt 18.11.2026:
 
-`kontroller.py` stopper nå en side der kallet har `headers` eller
-`Cache-Control`. Rådet om en `no-cache`-header i onsdagsrutinen gjelder
-`curl`, som ikke er underlagt CORS, og skal ikke flyttes hit.
+- **Mål i den PUBLISERTE siden, ikke lokalt.** En side servert fra
+  `127.0.0.1` henter fra et annet opphav enn artifacten gjør, og alle fire
+  lastetilfellene besto lokalt 12.11 mens hentingen var død i artifacten.
+- **Send ingen headere.** `Cache-Control` er ikke en trygg
+  forespørselsheader, så den gjør kallet til et som krever CORS-preflight,
+  og `raw.githubusercontent.com` svarer 403 på OPTIONS (200 på GET med
+  `Access-Control-Allow-Origin: *`). Cache-brekken `?cb=<tid>` og
+  `cache: "no-store"` er nok. Rådet om en `no-cache`-header i
+  onsdagsrutinen gjelder `curl`, som ikke er underlagt CORS.
 
 ## Når noe skal endres
 
@@ -89,20 +97,18 @@ Endrer du lastelogikken, kjør `kontroller.py` og test lokalt først:
 py -X utf8 -m http.server 8742 --bind 127.0.0.1
 ```
 
-Test minst fire tilfeller, alle fire er prøvd 12.11.2026: en gyldig
-`data.json`, en som mangler (404), en med for få segmenter, og en som
-inneholder `alu_tilbud`. I alle tre siste skal siden falle tilbake og si det i
-tabellen Datahelse. Kontroller også at ingenting er bredere enn 390 piksler.
+Lokalt finnes ingen database, så siden faller tilbake til de innbakte
+dataene. Det er testen på at reserven står: 19 segmenter, 19 paneler, ingen
+feil i konsollen, og linjen skal si «Tallene er de innbakte: databasen
+svarte ikke». Kontroller også at ingenting er bredere enn 390 piksler.
 
 **En lokal test kan ikke erstatte en test i den publiserte artifacten.**
-Siden servert fra `127.0.0.1` henter `data.json` fra et annet opphav enn
-artifacten gjør, og en lokal side regnes som samme opphav i andre regler.
-CORS-feilen over slapp gjennom nettopp fordi alle fire tilfellene ble prøvd
-lokalt 12.11.2026. Etter publisering: åpne dashbordet og les linjen
-`#datakilde` først i avsnittet over tabellen Datahelse. Står det at tallene
-kom fra repoet, virker hentingen. Står det databasen samtidig som
-`dashbord/data.json` er fersk i repoet, er hentingen blokkert, og da er
-onsdagsrutinen fortsatt hovedveien.
+Databasen finnes bare der, og en lokal side regnes som samme opphav i regler
+som gjelder i artifacten. Etter publisering: åpne dashbordet og les linjen
+`#datakilde` først i avsnittet over tabellen Datahelse. Den skal si at
+tallene kommer fra databasen, med dato, og hvilken lastelogikk som kjører.
+Står det en annen lastelogikk enn den du publiserte, ser du en gammel side
+fra cache; lukk fanen og åpne på nytt.
 
 Merk at en testkopi med en lokal `DATA_URL` aldri skal publiseres;
 `kontroller.py` stopper det.

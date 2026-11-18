@@ -17,9 +17,6 @@ import sys
 ROT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FIL = os.path.join(ROT, "dashbord", "index.html")
 GRENSE = 16 * 1024 * 1024          # artifactens grense
-RAW = "https://raw.githubusercontent.com/frdmid/syklusbordet-data/main/dashbord/data.json"
-JSD = ("https://cdn.jsdelivr.net/gh/frdmid/syklusbordet-data@main"
-       "/dashbord/data.json")
 
 
 def kontroller(t, storrelse):
@@ -38,54 +35,29 @@ def kontroller(t, storrelse):
     if storrelse > GRENSE:
         feil.append(f"filen er {storrelse} byte, over grensen {GRENSE}.")
 
-    # lastelogikken
-    if t.count("hentRepoData") < 2:
-        feil.append("hentRepoData mangler: siden leser ikke dashbord/data.json fra repoet.")
-    if RAW not in t:
-        feil.append("DATA_URL peker ikke paa repoets data.json. En testkopi med en lokal "
-                    "sti skal aldri publiseres.")
-    # Hentingen skal IKKE sende headere. Cache-Control er ikke en trygg
-    # forespoerselsheader, saa den gjoer kallet til ett som krever
-    # CORS-preflight, og raw.githubusercontent svarer 403 paa OPTIONS (maalt
-    # 18.11.2026). Da falt siden tilbake til databasen hver gang, og uke 46 sto
-    # paa bordet mens uke 47 laa i repoet. En lokal test fra 127.0.0.1 er samme
-    # opphav og avsloerer det ikke; derfor staar sjekken her.
-    # Alle fetch-kall sjekkes, ikke bare det foerste, slik at sperren holder
-    # ogsaa naar lastelogikken faar flere veier inn (jsDelivr fra 18.11.2026).
-    i, n_fetch = 0, 0
-    while True:
-        i = t.find("fetch(", i)
-        if i < 0:
-            break
-        j = t.find(";", i)
-        kall = t[i:j] if j > i else t[i:i + 400]
-        if "headers" in kall or "Cache-Control" in kall:
-            feil.append("et fetch-kall sender headere. Det utloeser CORS-preflight, "
-                        "som raw.githubusercontent svarer 403 paa, saa siden faller "
-                        "tilbake til databasen. Bruk bare ?cb= og cache: no-store, "
-                        "ingen headere.")
-        n_fetch += 1
-        i += 6
-    if n_fetch == 0:
-        feil.append("ingen fetch i filen: siden henter ikke data.json.")
-    if JSD not in t:
-        feil.append("reserveveien over jsDelivr mangler. Sandkassen stanset kallet til "
-                    "raw.githubusercontent 18.11.2026, saa den veien er alt som er.")
+    # lastelogikken. Siden leser databasen, som onsdagsrutinen fyller, med de
+    # innbakte dataene som siste utvei. Forsoeket paa aa lese
+    # dashbord/data.json fra repoet (12.11 til 18.11.2026) er tatt ut: begge
+    # veier ble stanset av sandkassens CSP i den publiserte siden. Koden ligger
+    # i commit ff22032.
     if 'id="datakilde"' not in t:
-        feil.append('feltet id="datakilde" mangler: siden kan ikke vise hvilken kilde som ble brukt.')
+        feil.append('feltet id="datakilde" mangler: siden kan ikke vise hvilken kilde '
+                    "som ble brukt.")
+    if t.count("LASTER_VERSJON") < 3:
+        feil.append("LASTER_VERSJON brukes ikke: linjen over Datahelse sier ikke hvilken "
+                    "lastelogikk som kjoerer, og en gammel side i cache avsloerer seg "
+                    "ikke selv.")
     if 'x.id !== "alu_tilbud"' not in t or "alu_tilbud" not in t:
         feil.append("haandteringen av alu_tilbud mangler: IAI-tallene skal alltid komme "
-                    "fra databasen, aldri fra repoet.")
-    if "if (d.marked.alu_tilbud)" not in t:
-        feil.append("siden avviser ikke en data.json som inneholder alu_tilbud.")
-    # Diagnosen i linjen over tabellen Datahelse. Uten den sier siden bare at
-    # repoet "svarte ikke eller var eldre", og da maa feilsoekingen gjoeres
-    # paa nytt hver gang (det skjedde 18.11.2026).
-    for navn in ("repoFeil", "LASTER_VERSJON"):
-        if t.count(navn) < 3:
-            feil.append(f"{navn} brukes ikke: linjen over Datahelse sier ikke hvorfor "
-                        "en reserve ble brukt, eller hvilken lastelogikk som kjoerer.")
-
+                    "fra databasen.")
+    # Henter siden fra et eksternt nettsted igjen, er det enten en bevisst
+    # endring etter en ny maaling, eller en gammel vane som kom tilbake. Den
+    # skal ikke stoppe publiseringen, men den skal sees.
+    if "fetch(" in t:
+        adv.append("filen henter fra nettet (fetch). Sandkassen stanset baade "
+                   "raw.githubusercontent og jsDelivr 18.11.2026. Maal i den "
+                   "PUBLISERTE siden foer du stoler paa det, og send aldri headere: "
+                   "de utloeser CORS-preflight.")
     # reserven
     for navn in ("const SEED", "ENDR_SEED", "HELSE_SEED"):
         if navn not in t:

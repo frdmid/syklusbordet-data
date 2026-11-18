@@ -15,31 +15,30 @@ ord for ord, og blokken «Status nå» oppdateres. Eldre innslag ligger der.
 
 Oppdateres i SAMME commit som endringen, med samme regel som innslagene
 under. Er den eldre enn det nyeste innslaget, er den ikke til å stole på.
-Sist oppdatert 18.11.2026 11:26.
+Sist oppdatert 18.11.2026 11:33.
 
-- **Dashbord:** versjon 84, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
+- **Dashbord:** versjon 85, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
 - **PASS PÅ:** kilden til dashbordet er `dashbord/index.html` i repoet, IKKE
   artifacten. Kjør `git pull` før du endrer eller publiserer, og
   `py -X utf8 dashbord/kontroller.py` før hver publisering. Publiserer du
   fra den gamle artifacten, overskrives arbeidet i mappen. Regelen ble
-  snudd 12.11.2026. Siden leser `dashbord/data.json` fra repoet, med
-  databasen som reserve.
-- **PASS PÅ, hentingen:** `fetch` av `data.json` skal IKKE sende headere.
-  `Cache-Control` utløser CORS-preflight, og raw.githubusercontent svarer 403
-  på OPTIONS. Headeren er ute fra v82 (18.11). `kontroller.py` stopper den nå.
-- **MÅLT 18.11.2026: artifacten får IKKE hente fra raw.githubusercontent.**
-  Linjen i v83 sa «nettleseren stanset hentingen (TypeError: Failed to
-  fetch)». Alt annet var utelukket: friskhetsregelen (databasen 11.11 07:50
-  mot repoet 18.11 09:44), filen (26 segmenter, ingen alu_tilbud) og GET i
-  seg selv (virker fra et annet opphav lokalt). Det er sandkassens CSP, og
-  den kan vi ikke endre.
-- **ONSDAGSRUTINEN ER HOVEDVEIEN.** Den fyller databasen, og databasen er
-  det bordet viser. Rutinen skal ikke kortes ned.
-- **Ett forsøk gjenstår:** v84 prøver jsDelivr (samme offentlige repo) etter
-  raw.githubusercontent. Lukk fanen, åpne dashbordet og les linjen over
-  tabellen Datahelse. «via jsDelivr» betyr at bordet leser repoet igjen.
-  Sier den at begge veier ble stanset, er saken lukket, og de to adressene
-  kan fjernes igjen.
+  snudd 12.11.2026 og gjelder fortsatt.
+- **AVKLART 18.11.2026: en publisert artifact får IKKE hente fra noe
+  eksternt nettsted.** Både raw.githubusercontent og jsDelivr ga «TypeError:
+  Failed to fetch» i den publiserte siden (v84). Det er sandkassens CSP, og
+  den kan ikke endres herfra. Utelukket underveis: friskhetsregelen
+  (databasen 11.11 07:50 mot repoet 18.11 09:44), filen (26 segmenter, ingen
+  alu_tilbud) og CORS/headere (samme henting virker fra et annet opphav
+  lokalt). Forsøket er ryddet ut i v85; koden ligger i commit ff22032.
+  Legg aldri henting tilbake uten å måle i den PUBLISERTE siden først, og
+  aldri med headere.
+- **ONSDAGSRUTINEN ER ENESTE VEI INN.** Den fyller databasen, og databasen
+  er det eneste bordet kan lese. Rutinen skal ikke kortes ned.
+  `dashbord/bygg.py` og `dashbord/data.json` står som før, men dashbordet
+  kan ikke lese dem.
+- **Linjen over tabellen Datahelse** sier hvilken kilde som ble brukt, med
+  databasens dato, og hvilken lastelogikk som kjører («laster 2026-11-18d»).
+  Den avslører en gammel side i cache. `kontroller.py` krever at den står.
 - **Shadow-OOS:** Champion v1.1 og seks Challengere. Ingen nye bunnsoner;
   jernmalm og Henry Hub i oppsikt, gull i watch hos BEGGE.
 - **Ukeflyt:** `ukentlig.yml` har fire cron-tider natt til onsdag fra
@@ -58,6 +57,58 @@ Sist oppdatert 18.11.2026 11:26.
 - **Eldre innslag:** `notater/logg/<år>-<mnd>.md`, en fil per måned.
 
 ---
+
+### 18.11.2026 11:33, Claude Code
+
+**Endelig svar: en publisert artifact får ikke hente fra noe eksternt
+nettsted.** Frode leste linjen i v84: begge veier, både
+raw.githubusercontent og jsDelivr-speilet, ga «TypeError: Failed to fetch»
+(laster 2026-11-18c). Det er sandkassens CSP (`connect-src`), ikke CORS,
+ikke headere, ikke filen: samme henting virket fra en lokal server på et
+annet opphav. Dermed er forsøket fra 12.11.2026 på å gjøre repoet til
+hovedkilde dødt, og det er ryddet ut.
+
+**Dashbordet leser nå databasen, med de innbakte dataene som siste utvei,
+akkurat som før 12.11.** `DATA_URL`, `DATA_URL_JSD`, `hentFra`,
+`hentRepoData`, `repoFeil` og `repoVei` er tatt ut av `index.html`. Siden
+gjør ingen nettkall utenom Google Fonts. Det som er beholdt, er linjen over
+tabellen Datahelse: den sier nå hvilken kilde som ble brukt, med databasens
+dato, og `LASTER_VERSJON` («2026-11-18d»), slik at en gammel side i cache
+avslører seg selv. Uten de to sto bordet på uke 46 i flere timer 18.11 uten
+at det var mulig å se hvorfor.
+
+Begrunnelsen og målingene står som kommentar i `index.html` rett over
+lastelogikken, med beskjed om ikke å legge henting tilbake uten å måle i den
+PUBLISERTE siden først. Koden med begge veier og diagnosen ligger i commit
+ff22032 om den skulle bli brukbar senere.
+
+`kontroller.py`: kravene om `hentRepoData`, DATA_URL og jsDelivr-adressen er
+ute. Igjen står `id="datakilde"`, `LASTER_VERSJON`, alu_tilbud fra databasen,
+reserven (SEED og databasen), tittel, `:root`, omslag og størrelse. Ny
+ADVARSEL, ikke feil: står det `fetch(` i filen, sier den at sandkassen
+stanset begge veier 18.11 og at det må måles i den publiserte siden først.
+Prøvd lokalt etterpå: ingen feil i konsollen, 19 segmenter fra de innbakte
+dataene, 19 paneler, bredde 307 px, og ingen nettkall utenom fontene.
+Publisert som **versjon 85**.
+
+**Onsdagsrutinen er hovedveien, og den skal ikke kortes ned.** Databasen er
+det eneste bordet kan lese. Steg 3 i `notater/2026-11-11_gjennomgang.md` er
+dermed delvis tilbakeført: `dashbord/bygg.py` og `dashbord/data.json` står
+som før og er fortsatt nyttige (de er den maskinlesbare kopien av ukens tall
+i repoet, og de er like ferske som Actions), men dashbordet kan ikke lese
+dem. Actions-halvdelen av steget virker og er ikke rørt.
+
+**Mulig neste steg, ikke gjort:** en Claude-økt kan kopiere
+`dashbord/data.json` rett inn i dashbordets database med Artifact-databasen
+(26 segmenter og ni markedsdokumenter, alu_tilbud urørt). Da trenger ikke
+onsdagsrutinen hente kildene på nytt; den kan reduseres til en kopi fra
+repoet, og tallene på bordet blir like ferske som Actions-kjøringen. Det er
+Frodes avgjørelse, og det er ikke rørt nå.
+
+Filer: `dashbord/index.html` (v85), `dashbord/kontroller.py`,
+`dashbord/README.md`, `notater/OVERLEVERING.md`, `notater/LOGG.md`.
+For Cowork: ingenting i onsdagsrutinen er endret, og den er nå eneste vei
+inn til bordet.
 
 ### 18.11.2026 11:26, Claude Code
 
