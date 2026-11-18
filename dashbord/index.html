@@ -2124,18 +2124,35 @@ function visHandel(h){
    Feiler alt, staar de innbakte dataene, akkurat som foer. */
 const DATA_URL = "https://raw.githubusercontent.com/frdmid/syklusbordet-data/main/dashbord/data.json";
 
+/* RESERVEVEI, lagt inn 18.11.2026. Den publiserte artifacten fikk IKKE hente
+   fra raw.githubusercontent: den sa «nettleseren stanset hentingen
+   (TypeError: Failed to fetch)», lest i selve den publiserte siden, mens
+   samme henting virket fra en lokal server paa et annet opphav. Det peker paa
+   sandkassens CSP, og den kan vi ikke endre. jsDelivr speiler det samme
+   offentlige repoet og staar paa vertens liste over tillatte nettsteder for
+   skript, saa den er verdt et forsoek.
+   jsDelivr kan ligge bak repoet i opptil et halvt doegn (s-maxage=43200).
+   Det kan ikke skade: valget mellom kildene tas paa FRISKHET, saa en gammel
+   fil blir forkastet mot databasens dato, og alle avvisningsreglene gjelder
+   som foer. Faller begge veier, staar databasen, akkurat som naa. */
+const DATA_URL_JSD = "https://cdn.jsdelivr.net/gh/frdmid/syklusbordet-data@main/dashbord/data.json";
+
 /* LASTER_VERSJON staar i linjen over tabellen Datahelse, slik at det er mulig
    aa se om siden som er aapen virkelig er den sist publiserte. Den oppdateres
    BARE naar lastelogikken under endres, ikke ved hver publisering. */
-const LASTER_VERSJON = "2026-11-18b";
+const LASTER_VERSJON = "2026-11-18c";
 
-/* repoFeil forteller HVORFOR repoet ikke ble brukt. Uten den sa linjen bare
-   "svarte ikke eller var eldre", og 18.11.2026 kostet det en runde: tallene
-   kom fra databasen, og det var umulig aa se om hentingen var blokkert, om
-   filen var avvist, eller om databasen var ferskest. */
+/* repoFeil forteller HVORFOR repoet ikke ble brukt, og repoVei hvilken vei
+   som ga filen. Uten dem sa linjen bare "svarte ikke eller var eldre", og
+   18.11.2026 kostet det en runde: tallene kom fra databasen, og det var
+   umulig aa se om hentingen var blokkert, om filen var avvist, eller om
+   databasen var ferskest. */
 let repoFeil = "";
+let repoVei = "";
 
-async function hentRepoData() {
+/* Henter og godkjenner filen fra en adresse. Returnerer [data, grunn]:
+   data er null naar filen ikke kan brukes, og grunn sier hvorfor. */
+async function hentFra(url) {
   try {
     const ctl = new AbortController();
     const avbryt = setTimeout(() => ctl.abort(), 8000);
@@ -2150,33 +2167,41 @@ async function hentRepoData() {
       // Merk at raadet om en no-cache-header i onsdagsrutinen og i
       // OVERLEVERING gjelder curl, som ikke er underlagt CORS; i en nettleser
       // er det motsatt.
-      r = await fetch(DATA_URL + "?cb=" + Date.now(),
+      r = await fetch(url + "?cb=" + Date.now(),
                       {cache: "no-store", signal: ctl.signal});
     } catch (e) {
       // Her havner et kall som nettleseren selv stanser: CSP i artifactens
       // sandkasse, CORS, nett nede, eller tidsavbruddet paa 8 sekunder.
-      repoFeil = "nettleseren stanset hentingen (" + ((e && e.name) || "feil")
-               + (e && e.message ? ": " + e.message : "") + ")";
-      return null;
+      return [null, "nettleseren stanset hentingen (" + ((e && e.name) || "feil")
+                  + (e && e.message ? ": " + e.message : "") + ")"];
     } finally { clearTimeout(avbryt); }
-    if (!r) { repoFeil = "hentingen ga ingen svar"; return null; }
-    if (!r.ok) { repoFeil = "repoet svarte " + r.status + " " + (r.statusText || ""); return null; }
+    if (!r) return [null, "hentingen ga ingen svar"];
+    if (!r.ok) return [null, "svarte " + r.status + " " + (r.statusText || "")];
     const d = await r.json();
     const segs = Object.values((d && d.segments) || {}).filter(s => s && s.series && s.series.length);
     if (segs.length < 20 || !d.marked) {        // halv fil: ikke bruk den
-      repoFeil = "filen hadde " + segs.length + " segmenter med serie"
-               + (d && d.marked ? "" : " og ingen markedsdata");
-      return null;
+      return [null, "filen hadde " + segs.length + " segmenter med serie"
+                  + (d && d.marked ? "" : " og ingen markedsdata")];
     }
     if (d.marked.alu_tilbud) {                  // skal aldri ligge der
-      repoFeil = "filen inneholdt alu_tilbud og ble avvist";
-      return null;
+      return [null, "filen inneholdt alu_tilbud og ble avvist"];
     }
-    return d;
+    return [d, ""];
   } catch (e) {
-    repoFeil = "uventet feil i lesingen (" + ((e && e.name) || "feil") + ")";
-    return null;
+    return [null, "uventet feil i lesingen (" + ((e && e.name) || "feil") + ")"];
   }
+}
+
+async function hentRepoData() {
+  const veier = [["raw.githubusercontent", DATA_URL], ["jsDelivr", DATA_URL_JSD]];
+  const grunner = [];
+  for (const [navn, url] of veier) {
+    const svar = await hentFra(url);
+    if (svar[0]) { repoVei = navn; return svar[0]; }
+    grunner.push(navn + " " + svar[1]);
+  }
+  repoFeil = grunner.join("; ");
+  return null;
 }
 
 (async () => {
@@ -2210,7 +2235,7 @@ async function hentRepoData() {
     ? `filen i repoet er fra ${repoDato || "ukjent dato"} og er ikke nyere enn databasen (${dbDato || "ukjent dato"})`
     : (repoFeil || "ukjent grunn");
   const kildeTekst = brukRepo
-    ? `Tallene kommer fra repoet, satt sammen ${repo.laget} norsk tid (laster ${LASTER_VERSJON}). `
+    ? `Tallene kommer fra repoet via ${repoVei || "ukjent vei"}, satt sammen ${repo.laget} norsk tid (laster ${LASTER_VERSJON}). `
     : (segsDb.length
         ? `Tallene kommer fra databasen (${dbDato || "ukjent dato"}). Repoet ble ikke brukt: ${grunn} (laster ${LASTER_VERSJON}). `
         : `Tallene er de innbakte: verken repoet eller databasen svarte. Repoet: ${grunn} (laster ${LASTER_VERSJON}). `);

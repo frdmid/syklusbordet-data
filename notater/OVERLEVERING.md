@@ -113,8 +113,9 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
 ## Dashbordet
 
 - Adresse: https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF (siste versjon
-  83 per 18.11 (linjen over Datahelse sier hvorfor en reserve ble brukt, og
-  hvilken lastelogikk som kjører); 82 per 18.11 (Cache-Control-headeren ute av
+  84 per 18.11 (jsDelivr som reservevei inn); 83 per 18.11 (linjen over
+  Datahelse sier hvorfor en reserve ble brukt, og hvilken lastelogikk som
+  kjører); 82 per 18.11 (Cache-Control-headeren ute av
   hentingen); 81 per 16.11
   (papirporteføljen uten 2020); 78 per 11.11 (uro delt i nivå og volvariasjon i regimeboksen); 77 per 03.11 (boksen Handlingsliste øverst med evidensgrad, åpne posisjoner fra Shadow-OOS og papirporteføljen; USD/NOK i korrelasjonsmatrisen; panelet Gullgruver med S1, S2 og BEGGE-status); Cowork kan ha publisert senere). Nytt fra 12.10: linjen
   «Kull, rullende A 95» i kullpanelet (v63), boksen «Regime nå» øverst (v64)
@@ -149,15 +150,28 @@ kriterium skrives i toppen før kjøring. Ferdig sonde føres i
   databasen (med begge datoene). `LASTER_VERSJON` står i samme linje og
   avslører en gammel side i cache; den oppdateres bare når lastelogikken
   endres. `kontroller.py` krever at begge brukes.
-- **IKKE BEKREFTET:** om artifactens sandkasse i det hele tatt tillater
-  henting fra et eksternt nettsted (`connect-src` i vertens CSP). Det kan bare
-  måles i den publiserte artifacten, og verken nettleserpanelet eller
-  Chrome-utvidelsen var innlogget 18.11.2026. Utelukket er friskhetsregelen
+- **MÅLT 18.11.2026: sandkassen stanser hentingen fra
+  raw.githubusercontent.** Linjen i v83 sa «nettleseren stanset hentingen
+  (TypeError: Failed to fetch)», med «laster 2026-11-18b», altså den nye
+  siden og ikke en gammel fra cache. Utelukket er friskhetsregelen
   (databasens `endringer.uke.ny_dato` sto på 11.11 07:50, repoets på 18.11
   09:44), filen (26 segmenter, ingen `alu_tilbud`) og GET som sådan (henting
-  fra et annet opphav virker: prøvd fra `127.0.0.1` 18.11). **Første oppgave
-  for den som åpner dashbordet:** lukk fanen, åpne på nytt og les linjen
-  `#datakilde` først i avsnittet over tabellen Datahelse. Står det at tallene kom fra repoet, er saken lukket, og da kan
+  fra et annet opphav virker: prøvd fra `127.0.0.1` 18.11). Det som står
+  igjen er `connect-src` i vertens CSP, og den kan ikke endres herfra.
+  **Derfor er onsdagsrutinen hovedveien, og den skal ikke kortes ned.**
+  Databasen er det bordet faktisk viser.
+- **Reservevei over jsDelivr (v84, 18.11.2026), ikke bekreftet.**
+  `cdn.jsdelivr.net/gh/frdmid/syklusbordet-data@main/dashbord/data.json`
+  speiler samme offentlige repo og svarer 200 med
+  `Access-Control-Allow-Origin: *`; `cdn.jsdelivr.net` står på vertens liste
+  over tillatte nettsteder for skript, så den kan være tillatt for henting
+  også. `hentRepoData()` prøver raw først og jsDelivr etterpå, og linjen sier
+  hvilken vei som ga filen. jsDelivr kan ligge et halvt døgn bak repoet
+  (`s-maxage=43200`); det er ufarlig, fordi valget tas på friskhet og en
+  gammel fil forkastes mot databasens dato. **Les linjen én gang til:** står
+  det «via jsDelivr», leser bordet repoet igjen. Står det at begge veier ble
+  stanset, er saken lukket, og de to adressene og `hentFra` kan fjernes igjen
+  for å holde siden enkel. Før svaret i loggen. Står det at tallene kom fra repoet, er saken lukket, og da kan
   onsdagsrutinen kortes ned. Står det databasen mens `dashbord/data.json` er
   fersk, blokkerer sandkassen hentingen, og **da er onsdagsrutinen fortsatt
   hovedveien** og må beholdes som den er. Før svaret i loggen.

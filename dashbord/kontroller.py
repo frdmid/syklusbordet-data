@@ -18,6 +18,8 @@ ROT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FIL = os.path.join(ROT, "dashbord", "index.html")
 GRENSE = 16 * 1024 * 1024          # artifactens grense
 RAW = "https://raw.githubusercontent.com/frdmid/syklusbordet-data/main/dashbord/data.json"
+JSD = ("https://cdn.jsdelivr.net/gh/frdmid/syklusbordet-data@main"
+       "/dashbord/data.json")
 
 
 def kontroller(t, storrelse):
@@ -48,17 +50,27 @@ def kontroller(t, storrelse):
     # 18.11.2026). Da falt siden tilbake til databasen hver gang, og uke 46 sto
     # paa bordet mens uke 47 laa i repoet. En lokal test fra 127.0.0.1 er samme
     # opphav og avsloerer det ikke; derfor staar sjekken her.
-    i = t.find("fetch(DATA_URL")
-    if i < 0:
-        feil.append("fetch(DATA_URL ...) finnes ikke: siden henter ikke data.json.")
-    else:
+    # Alle fetch-kall sjekkes, ikke bare det foerste, slik at sperren holder
+    # ogsaa naar lastelogikken faar flere veier inn (jsDelivr fra 18.11.2026).
+    i, n_fetch = 0, 0
+    while True:
+        i = t.find("fetch(", i)
+        if i < 0:
+            break
         j = t.find(";", i)
         kall = t[i:j] if j > i else t[i:i + 400]
         if "headers" in kall or "Cache-Control" in kall:
-            feil.append("hentingen av data.json sender headere. Det utloeser "
-                        "CORS-preflight, som raw.githubusercontent svarer 403 paa, "
-                        "saa siden faller tilbake til databasen. Bruk bare "
-                        "?cb= og cache: no-store, ingen headere.")
+            feil.append("et fetch-kall sender headere. Det utloeser CORS-preflight, "
+                        "som raw.githubusercontent svarer 403 paa, saa siden faller "
+                        "tilbake til databasen. Bruk bare ?cb= og cache: no-store, "
+                        "ingen headere.")
+        n_fetch += 1
+        i += 6
+    if n_fetch == 0:
+        feil.append("ingen fetch i filen: siden henter ikke data.json.")
+    if JSD not in t:
+        feil.append("reserveveien over jsDelivr mangler. Sandkassen stanset kallet til "
+                    "raw.githubusercontent 18.11.2026, saa den veien er alt som er.")
     if 'id="datakilde"' not in t:
         feil.append('feltet id="datakilde" mangler: siden kan ikke vise hvilken kilde som ble brukt.')
     if 'x.id !== "alu_tilbud"' not in t or "alu_tilbud" not in t:

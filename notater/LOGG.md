@@ -15,9 +15,9 @@ ord for ord, og blokken «Status nå» oppdateres. Eldre innslag ligger der.
 
 Oppdateres i SAMME commit som endringen, med samme regel som innslagene
 under. Er den eldre enn det nyeste innslaget, er den ikke til å stole på.
-Sist oppdatert 18.11.2026 11:20.
+Sist oppdatert 18.11.2026 11:26.
 
-- **Dashbord:** versjon 83, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
+- **Dashbord:** versjon 84, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
 - **PASS PÅ:** kilden til dashbordet er `dashbord/index.html` i repoet, IKKE
   artifacten. Kjør `git pull` før du endrer eller publiserer, og
   `py -X utf8 dashbord/kontroller.py` før hver publisering. Publiserer du
@@ -27,15 +27,19 @@ Sist oppdatert 18.11.2026 11:20.
 - **PASS PÅ, hentingen:** `fetch` av `data.json` skal IKKE sende headere.
   `Cache-Control` utløser CORS-preflight, og raw.githubusercontent svarer 403
   på OPTIONS. Headeren er ute fra v82 (18.11). `kontroller.py` stopper den nå.
-- **IKKE BEKREFTET:** at den publiserte artifacten får lov til å hente fra et
-  eksternt nettsted. Linjen over tabellen Datahelse sier fra v83 HVORFOR en
-  reserve ble brukt, og hvilken lastelogikk som kjører («laster
-  2026-11-18b»). Lukk fanen, åpne dashbordet på nytt og les linjen. Sier den
-  «nettleseren stanset hentingen», blokkerer sandkassen hentingen, og
-  onsdagsrutinen blir hovedveien for godt. Utelukket 18.11: friskhetsregelen
-  (databasen står på 11.11 07:50, repoet på 18.11 09:44), filen (26
-  segmenter, ingen alu_tilbud) og GET som sådan (virker fra et annet opphav
-  lokalt).
+- **MÅLT 18.11.2026: artifacten får IKKE hente fra raw.githubusercontent.**
+  Linjen i v83 sa «nettleseren stanset hentingen (TypeError: Failed to
+  fetch)». Alt annet var utelukket: friskhetsregelen (databasen 11.11 07:50
+  mot repoet 18.11 09:44), filen (26 segmenter, ingen alu_tilbud) og GET i
+  seg selv (virker fra et annet opphav lokalt). Det er sandkassens CSP, og
+  den kan vi ikke endre.
+- **ONSDAGSRUTINEN ER HOVEDVEIEN.** Den fyller databasen, og databasen er
+  det bordet viser. Rutinen skal ikke kortes ned.
+- **Ett forsøk gjenstår:** v84 prøver jsDelivr (samme offentlige repo) etter
+  raw.githubusercontent. Lukk fanen, åpne dashbordet og les linjen over
+  tabellen Datahelse. «via jsDelivr» betyr at bordet leser repoet igjen.
+  Sier den at begge veier ble stanset, er saken lukket, og de to adressene
+  kan fjernes igjen.
 - **Shadow-OOS:** Champion v1.1 og seks Challengere. Ingen nye bunnsoner;
   jernmalm og Henry Hub i oppsikt, gull i watch hos BEGGE.
 - **Ukeflyt:** `ukentlig.yml` har fire cron-tider natt til onsdag fra
@@ -54,6 +58,57 @@ Sist oppdatert 18.11.2026 11:20.
 - **Eldre innslag:** `notater/logg/<år>-<mnd>.md`, en fil per måned.
 
 ---
+
+### 18.11.2026 11:26, Claude Code
+
+**Svaret er inne: artifactens sandkasse stanser hentingen fra
+raw.githubusercontent.** Frode leste linjen i v83: «Tallene kommer fra
+databasen (2026-11-11 07:50). Repoet ble ikke brukt: nettleseren stanset
+hentingen (TypeError: Failed to fetch) (laster 2026-11-18b).» «laster
+2026-11-18b» viser at det var den nye siden og ikke en gammel fra cache.
+Alt annet var utelukket på forhånd: friskhetsregelen, filen, og GET i seg
+selv (samme henting virket fra en lokal server på et annet opphav). Da er
+det `connect-src` i vertens CSP, og den kan vi ikke endre.
+
+**Derfor er onsdagsrutinen fortsatt hovedveien.** Den fyller databasen, og
+databasen er det dashbordet faktisk viser. Rutinen skal ikke kortes ned, og
+den åpne avgjørelsen om å redusere den er lukket med dette. Det står nå i
+«Status nå», i OVERLEVERING og i `dashbord/README.md`.
+
+**Én vei mer er prøvd, fordi den var billig:** jsDelivr speiler det samme
+offentlige repoet, og `cdn.jsdelivr.net` står på vertens liste over tillatte
+nettsteder for skript, så den kan være tillatt for henting også. Målt med
+curl: `GET` svarer 200 med `Access-Control-Allow-Origin: *`, fila der er
+dagens (`laget 2026-11-18 10:49`, `ny_dato 2026-11-18 09:44`, 26 segmenter),
+og `?cb=` forstyrrer ikke. jsDelivr kan ligge opptil et halvt døgn bak
+repoet (`s-maxage=43200`), men det kan ikke skade: valget mellom kildene tas
+på friskhet, så en gammel fil blir forkastet mot databasens dato, og alle
+avvisningsreglene gjelder som før. Faller begge veier, står databasen,
+akkurat som nå.
+
+Lastelogikken er derfor delt i `hentFra(url)`, som henter og godkjenner én
+adresse, og `hentRepoData()`, som prøver raw.githubusercontent først og
+jsDelivr etterpå. Linjen sier hvilken vei som ga filen, og ved fall begge
+grunnene etter hverandre. Prøvd lokalt med `window.fetch` byttet ut: bare
+raw stengt ga «via jsDelivr» med dagens fil, begge stengt ga begge grunnene
+etter hverandre. Ingen feil i konsollen, 23 rader, bredde 307 px.
+`LASTER_VERSJON` er «2026-11-18c».
+
+`kontroller.py` sjekker nå ALLE fetch-kall for headere, ikke bare det
+første, og krever at jsDelivr-adressen står i filen. Publisert som
+**versjon 84**.
+
+**Neste steg, Frode:** lukk fanen, åpne dashbordet på nytt og les linjen.
+Står det «via jsDelivr», leser bordet repoet igjen, og tallene er ferske i
+samme sekund som Actions er ferdig. Står det at begge veier ble stanset, er
+saken endelig lukket: sandkassen slipper ingen henting ut, onsdagsrutinen er
+den eneste veien, og da kan de to adressene og `hentFra` fjernes igjen for å
+holde siden enkel. Før svaret her.
+
+Filer: `dashbord/index.html` (v84), `dashbord/kontroller.py`,
+`dashbord/README.md`, `notater/OVERLEVERING.md`, `notater/LOGG.md`.
+For Cowork: onsdagsrutinen er hovedveien og er uendret. Publiser aldri en
+side der et fetch-kall sender headere; `kontroller.py` stopper det.
 
 ### 18.11.2026 11:20, Claude Code
 

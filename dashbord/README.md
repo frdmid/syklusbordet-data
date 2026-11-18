@@ -31,13 +31,22 @@ tittelen og at lys modus har farge.
 
 ## Hvor tallene kommer fra
 
-Siden prøver tre kilder i denne rekkefølgen, og velger på **friskhet** og ikke
+Siden prøver kildene i denne rekkefølgen, og velger på **friskhet** og ikke
 på hvem som svarer først:
 
-1. `dashbord/data.json` fra det offentlige repoet, hentet med cache-brekk.
+1. `dashbord/data.json` fra det offentlige repoet, hentet med cache-brekk,
+   først fra `raw.githubusercontent.com` og så fra jsDelivr-speilet.
    Den er fersk i samme sekund som GitHub Actions er ferdig.
 2. Dashbordets egen database, som onsdagsrutinen fyller en time senere.
 3. De innbakte dataene i `index.html`, som siste utvei.
+
+**Merk, målt 18.11.2026:** den publiserte artifacten fikk IKKE hente fra
+`raw.githubusercontent.com`. Linjen over tabellen Datahelse sa «nettleseren
+stanset hentingen (TypeError: Failed to fetch)», mens samme henting virket
+fra en lokal server på et annet opphav. Det er sandkassens CSP
+(`connect-src`), og den kan ikke endres herfra. **Onsdagsrutinen, som fyller
+databasen, er derfor hovedveien.** jsDelivr-speilet er lagt inn som forsøk
+nummer to; om det slipper gjennom, står i loggen.
 
 Siden skriver hvilken kilde som ble brukt i tabellen Datahelse, så en gammel
 kilde ikke kan se fersk ut. Databasen er altså ikke slått av: feiler `bygg.py`,
