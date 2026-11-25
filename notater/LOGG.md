@@ -15,7 +15,7 @@ ord for ord, og blokken «Status nå» oppdateres. Eldre innslag ligger der.
 
 Oppdateres i SAMME commit som endringen, med samme regel som innslagene
 under. Er den eldre enn det nyeste innslaget, er den ikke til å stole på.
-Sist oppdatert 25.11.2026 09:22.
+Sist oppdatert 25.11.2026 09:27.
 
 - **Dashbord:** versjon 88, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
 - **PASS PÅ:** kilden til dashbordet er `dashbord/index.html` i repoet, IKKE
@@ -76,13 +76,77 @@ Sist oppdatert 25.11.2026 09:22.
   er IKKE satt på vakthunden, så den varsler, men starter ikke.
 - **Tester:** `python test_shadow_oos.py`, 23 av 23 består. Før publisering:
   `py -X utf8 dashbord/kontroller.py`.
-- **Åpne avgjørelser for Frode:** om `GH_DISPATCH_TOKEN`
+- **Åpne avgjørelser for Frode:** om laksechallengeren skal få en NY utgave
+  med en annen utgang (sonden 25.11 viste at «A faller 30 poeng, to måneder
+  på rad» holder posisjonen gjennom 2020 i stedet for å selge på én støyete
+  måned, og at familien «endring i A» er langt mindre følsom for terskelen
+  enn et fast nivå). En endret utgang er en NY Challenger fra en ny dato.
+  Om `GH_DISPATCH_TOKEN`
   skal settes på vakthunden, slik at den kan starte innhentingen selv.
   Avgjort 18.11: onsdagsrutinen er en kopi fra repoet og er eneste vei inn. Championens evalueringsprotokoll er
   skrevet (`notater/champion_evaluering.md`, 12.11.2026). Se `notater/2026-11-11_prompt_forbedringer.md`.
 - **Eldre innslag:** `notater/logg/<år>-<mnd>.md`, en fil per måned.
 
 ---
+
+### 25.11.2026 09:27, Claude Code
+
+Salgsreglene for laksesignalet er målt (Frodes bestilling: «Det er tilfeller
+hvor signal utløses ved allerede høy A. Kan du vurdere en regel for salg
+basert på økning i nominell A i stedet? Test ulike regler»). Ny sonde
+`sonde_kjor_laks_salg.py`, rapport i `sonder/sonde_kjor_laks_salg.txt`, tall
+i `sonder/laks_salg.json`. **Ingenting er endret, verken på bordet eller i
+Challengeren.**
+
+**Premisset holder.** Inngangene har rå A på 91,8, 92,0, 94,8 og 78,4. Alle
+fire starter høyt, så dagens utgang, rå A tilbake på 50, er et langt fall.
+Verre: A-banen viser at den selger på støy. Etter inngangen april 2020 faller
+A til 49 i måned 2, utgangen løser ut, og så går A opp igjen til 76, 87 og
+89. Det samme i 2025: 42 i måned 5, deretter 55, 51 og 69.
+
+**Tretten regler er målt** i fire familier, alle med tak på 24 måneder: fast
+nivå (A under 50, 60, 40), fall i A fra inngang (20, 30, 40 poeng), andel av
+inngangs-A (70 og 50 %), nominell prisoppgang (20, 30, 50 %) og to varianter
+der kravet må holde to måneder på rad. Kriteriet sa før måling at sonden
+ikke kan velge regel: fire episoder og tretten regler, så den beste er støy.
+Den sa også at jeg ikke skal anbefale den høyeste medianen, og det gjør jeg
+ikke.
+
+Dette er det som faktisk er verdt å si:
+
+1. **Alle reglene gir 3 av 4 positive, og den svakeste episoden er alltid
+   2025** (−7,8 til −8,6 pp). Valget av salgsregel endrer altså ikke dommen
+   over signalet, bare hvor mye av oppgangen som tas med.
+2. **Følsomheten skiller familiene.** Flytter man terskelen ett hakk,
+   beveger medianen seg 0,5 pp for andel av inngangs-A, 3,4 pp for fall i
+   poeng, 8,6 pp for fast nivå og 52,2 pp for prisoppgang. Frodes forslag,
+   altså endringen i A i stedet for et nivå, er den mest stabile familien.
+   Det er et bedre argument enn et høyt tall.
+3. **Kravet om to måneder på rad retter 2020-feilen.** «A under 50 i to
+   måneder» holder posisjonen fra april 2020 til april 2021 (12 måneder,
+   +19,6 pp) i stedet for å selge i juni 2020 (2 måneder, +11,3 pp). Samme
+   for «A falt 30 poeng i to måneder».
+4. **Pass på «pris opp 50 %».** Den har den høyeste medianen, +67,8 pp, men
+   bare tre episoder: 2025 nådde aldri +50 % innen dataene vi har. Regelen
+   måler altså bare de episodene som lyktes. Det er et utvalg etter utfall,
+   og tallet skal ikke brukes.
+
+**To spørsmål fra Frode underveis, begge besvart av tallene:**
+- *Hvorfor utløses ikke signalet i januar 2021?* Det gjør det. Både desember
+  2020 (Ad 98,9, Ar 88,3) og januar 2021 (Ad 98,9, Ar 90,8) er
+  signalmåneder. De får bare ikke et nytt kjøpsmerke, fordi Championens
+  regel om ny episode krever 12 måneder uten signal, og april 2020 ligger ni
+  måneder før. Det avdekker en luke i kombinasjonen: posisjonen ble solgt i
+  juni 2020, signalet kom tilbake i desember, men regelen tillot ingen ny
+  inngang før april 2021. En utgang som holder lenger (punkt 3) lukker den
+  luken av seg selv.
+- *Hvorfor ikke september 2022?* Ad var 84,6, altså over 80, men Ar var
+  81,7 og kravet er over 85. Den mangler 3,3 poeng på det rullende benet
+  alene.
+
+Filer: `sonde_kjor_laks_salg.py` (ny), `sonder/sonde_kjor_laks_salg.txt`,
+`sonder/laks_salg.json`, `sonder_ferdige.txt`, `notater/LOGG.md`.
+For Cowork: ingen endring i rutinen, bordet, databasen eller Shadow-OOS.
 
 ### 25.11.2026 09:22, Claude Code
 

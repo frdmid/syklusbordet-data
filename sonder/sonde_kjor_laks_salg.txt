@@ -1,0 +1,134 @@
+==============================================================================
+sonde_kjor_laks_salg: salgsregler for laksesignalet
+BESKRIVENDE. Velger ingen regel. Se kriteriet i toppen av fila.
+==============================================================================
+
+Episoder: 4
+   2012-01  raa A ved inngang 91.8, nominell pris 4.457
+   2015-04  raa A ved inngang 92.0, nominell pris 4.703
+   2020-04  raa A ved inngang 94.8, nominell pris 5.060
+   2025-04  raa A ved inngang 78.4, nominell pris 7.234
+
+Kursene fra Yahoo, maanedsslutt, utbytte reinvestert
+   MOWI.OL     323 mnd
+   SALM.OL     235 mnd
+   LSG.OL      291 mnd
+   BAKKA.OL    201 mnd
+   IWDA.L      207 mnd (MSCI World i kroner)
+
+==============================================================================
+HVER REGEL, EPISODE FOR EPISODE
+holdetid i maaneder, kurvens avkastning i prosent, meravkastning mot world i pp
+Naar regelen ikke slaar til innen 24 maaneder, selges det ved taket.
+==============================================================================
+
+F1 A <= 50 (dagens)
+   2012-01 -> 2012-12  11 mnd   kurv   +49.1 %   mot world   +43.1 pp
+   2015-04 -> 2015-10   6 mnd   kurv   +31.6 %   mot world   +22.5 pp
+   2020-04 -> 2020-06   2 mnd   kurv   +11.8 %   mot world   +11.3 pp
+   2025-04 -> 2025-09   5 mnd   kurv    +6.7 %   mot world    -7.8 pp
+
+F1 A <= 60
+   2012-01 -> 2012-11  10 mnd   kurv   +39.7 %   mot world   +34.1 pp
+   2015-04 -> 2015-10   6 mnd   kurv   +31.6 %   mot world   +22.5 pp
+   2020-04 -> 2020-06   2 mnd   kurv   +11.8 %   mot world   +11.3 pp
+   2025-04 -> 2025-09   5 mnd   kurv    +6.7 %   mot world    -7.8 pp
+
+F1 A <= 40
+   2012-01 -> 2012-12  11 mnd   kurv   +49.1 %   mot world   +43.1 pp
+   2015-04 -> 2015-12   8 mnd   kurv   +38.4 %   mot world   +27.6 pp
+   2020-04 -> 2021-05  13 mnd   kurv   +43.7 %   mot world   +23.4 pp
+   2025-04 -> 2025-11   7 mnd   kurv   +11.4 %   mot world    -7.9 pp
+
+F2 A falt 20 poeng
+   2012-01 -> 2012-11  10 mnd   kurv   +39.7 %   mot world   +34.1 pp
+   2015-04 -> 2015-09   5 mnd   kurv   +29.8 %   mot world   +29.3 pp
+   2020-04 -> 2020-06   2 mnd   kurv   +11.8 %   mot world   +11.3 pp
+   2025-04 -> 2025-09   5 mnd   kurv    +6.7 %   mot world    -7.8 pp
+
+F2 A falt 30 poeng
+   2012-01 -> 2012-11  10 mnd   kurv   +39.7 %   mot world   +34.1 pp
+   2015-04 -> 2015-09   5 mnd   kurv   +29.8 %   mot world   +29.3 pp
+   2020-04 -> 2020-06   2 mnd   kurv   +11.8 %   mot world   +11.3 pp
+   2025-04 -> 2025-09   5 mnd   kurv    +6.7 %   mot world    -7.8 pp
+
+F2 A falt 40 poeng
+   2012-01 -> 2012-12  11 mnd   kurv   +49.1 %   mot world   +43.1 pp
+   2015-04 -> 2015-10   6 mnd   kurv   +31.6 %   mot world   +22.5 pp
+   2020-04 -> 2020-06   2 mnd   kurv   +11.8 %   mot world   +11.3 pp
+   2025-04 -> 2025-11   7 mnd   kurv   +11.4 %   mot world    -7.9 pp
+
+F3 A under 70 % av inng.
+   2012-01 -> 2012-11  10 mnd   kurv   +39.7 %   mot world   +34.1 pp
+   2015-04 -> 2015-09   5 mnd   kurv   +29.8 %   mot world   +29.3 pp
+   2020-04 -> 2020-06   2 mnd   kurv   +11.8 %   mot world   +11.3 pp
+   2025-04 -> 2025-09   5 mnd   kurv    +6.7 %   mot world    -7.8 pp
+
+F3 A under 50 % av inng.
+   2012-01 -> 2012-12  11 mnd   kurv   +49.1 %   mot world   +43.1 pp
+   2015-04 -> 2015-11   7 mnd   kurv   +31.2 %   mot world   +19.9 pp
+   2020-04 -> 2021-04  12 mnd   kurv   +35.3 %   mot world   +19.6 pp
+   2025-04 -> 2025-11   7 mnd   kurv   +11.4 %   mot world    -7.9 pp
+
+F4 pris opp 20 %
+   2012-01 -> 2012-12  11 mnd   kurv   +49.1 %   mot world   +43.1 pp
+   2015-04 -> 2015-11   7 mnd   kurv   +31.2 %   mot world   +19.9 pp
+   2020-04 -> 2020-06   2 mnd   kurv   +11.8 %   mot world   +11.3 pp
+   2025-04 -> 2025-09   5 mnd   kurv    +6.7 %   mot world    -7.8 pp
+
+F4 pris opp 30 %
+   2012-01 -> 2013-01  12 mnd   kurv   +65.9 %   mot world   +57.0 pp
+   2015-04 -> 2016-01   9 mnd   kurv   +45.3 %   mot world   +43.7 pp
+   2020-04 -> 2020-06   2 mnd   kurv   +11.8 %   mot world   +11.3 pp
+   2025-04 -> 2025-12   8 mnd   kurv   +19.3 %   mot world    -0.8 pp
+
+F4 pris opp 50 %
+   2012-01 -> 2013-04  15 mnd   kurv   +89.6 %   mot world   +67.8 pp
+   2015-04 -> 2016-06  14 mnd   kurv   +82.9 %   mot world   +77.3 pp
+   2020-04 -> 2021-10  18 mnd   kurv   +54.0 %   mot world   +24.6 pp
+   2025-04: ikke modnet enda
+
+F5 A <= 50 i to mnd
+   2012-01 -> 2013-01  12 mnd   kurv   +65.9 %   mot world   +57.0 pp
+   2015-04 -> 2015-11   7 mnd   kurv   +31.2 %   mot world   +19.9 pp
+   2020-04 -> 2021-04  12 mnd   kurv   +35.3 %   mot world   +19.6 pp
+   2025-04 -> 2025-10   6 mnd   kurv    +9.6 %   mot world    -8.6 pp
+
+F5 A falt 30 i to mnd
+   2012-01 -> 2012-12  11 mnd   kurv   +49.1 %   mot world   +43.1 pp
+   2015-04 -> 2015-10   6 mnd   kurv   +31.6 %   mot world   +22.5 pp
+   2020-04 -> 2021-04  12 mnd   kurv   +35.3 %   mot world   +19.6 pp
+   2025-04 -> 2025-10   6 mnd   kurv    +9.6 %   mot world    -8.6 pp
+
+==============================================================================
+OPPSUMMERING, sortert slik reglene er skrevet og IKKE etter resultat
+==============================================================================
+regel                       n  median h  median mer  svakeste  positive
+F1 A <= 50 (dagens)         4        6m      +16.9      -7.8    3 av 4
+F1 A <= 60                  4        6m      +16.9      -7.8    3 av 4
+F1 A <= 40                  4       10m      +25.5      -7.9    3 av 4
+F2 A falt 20 poeng          4        5m      +20.3      -7.8    3 av 4
+F2 A falt 30 poeng          4        5m      +20.3      -7.8    3 av 4
+F2 A falt 40 poeng          4        6m      +16.9      -7.9    3 av 4
+F3 A under 70 % av inng.    4        5m      +20.3      -7.8    3 av 4
+F3 A under 50 % av inng.    4        9m      +19.8      -7.9    3 av 4
+F4 pris opp 20 %            4        6m      +15.6      -7.8    3 av 4
+F4 pris opp 30 %            4        8m      +27.5      -0.8    3 av 4
+F4 pris opp 50 %            3       15m      +67.8     +24.6    3 av 3
+F5 A <= 50 i to mnd         4       10m      +19.8      -8.6    3 av 4
+F5 A falt 30 i to mnd       4        8m      +21.1      -8.6    3 av 4
+
+==============================================================================
+FOELSOMHET: hvor mye flytter svaret seg naar parameteren flyttes ett hakk
+==============================================================================
+   F1 (nivaa): median mer gaar fra +16.9 til +25.5 pp over 3 terskler, spenn 8.6 pp
+   F2 (fall i poeng): median mer gaar fra +16.9 til +20.3 pp over 3 terskler, spenn 3.4 pp
+   F3 (andel): median mer gaar fra +19.8 til +20.3 pp over 2 terskler, spenn 0.5 pp
+   F4 (prisoppgang): median mer gaar fra +15.6 til +67.8 pp over 3 terskler, spenn 52.2 pp
+
+MINNER OM, fra kriteriet i toppen: fire episoder og tretten regler.
+Den hoeyeste medianen her er ikke et funn, og sonden anbefaler ingen regel.
+Challengeren som gaar har utgangen A <= 50 registrert og kan ikke endres;
+en annen utgang maatte bli en NY Challenger fra en ny dato.
+
+Lagret sonder/laks_salg.json
