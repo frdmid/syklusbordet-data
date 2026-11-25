@@ -1,110 +1,103 @@
 {
  "id": "endringer",
  "uke": {
-  "forrige_dato": "2026-11-11 07:50",
-  "ny_dato": "2026-11-18 09:44",
-  "forrige": "2026-W46",
-  "ny": "2026-W47",
+  "forrige_dato": "2026-11-18 09:44",
+  "ny_dato": "2026-11-25 07:38",
+  "forrige": "2026-W47",
+  "ny": "2026-W48",
   "topp": [
    {
     "segment": "Gull",
-    "felt": "Kapitulasjon D",
-    "gammel": 31.1,
-    "ny": 59.3,
-    "endring_pst": 90.7,
-    "poeng": 28.2,
-    "vekt": 28.2
+    "felt": "COT-persentil",
+    "gammel": 42.9,
+    "ny": 25.0,
+    "endring_pst": -41.7,
+    "poeng": -17.9,
+    "vekt": 17.9
    },
    {
     "segment": "Marked",
     "felt": "VIX",
-    "gammel": 19.46,
-    "ny": 23.66,
-    "endring_pst": 21.6,
+    "gammel": 23.66,
+    "ny": 26.36,
+    "endring_pst": 11.4,
     "poeng": null,
-    "vekt": 21.6
+    "vekt": 11.4
+   },
+   {
+    "segment": "Palmeolje",
+    "felt": "Kapitulasjon D",
+    "gammel": 15.2,
+    "ny": 23.2,
+    "endring_pst": 52.6,
+    "poeng": 8.0,
+    "vekt": 8.0
    },
    {
     "segment": "Kobber",
-    "felt": "Kapitulasjon D",
-    "gammel": 19.0,
-    "ny": 32.3,
-    "endring_pst": 70.0,
-    "poeng": 13.3,
-    "vekt": 13.3
+    "felt": "COT-persentil",
+    "gammel": 38.5,
+    "ny": 30.8,
+    "endring_pst": -20.0,
+    "poeng": -7.7,
+    "vekt": 7.7
    },
    {
-    "segment": "Bly",
+    "segment": "Råolje (WTI)",
     "felt": "Kapitulasjon D",
-    "gammel": 16.5,
-    "ny": 28.0,
-    "endring_pst": 69.7,
-    "poeng": 11.5,
-    "vekt": 11.5
+    "gammel": 7.1,
+    "ny": 14.3,
+    "endring_pst": 101.4,
+    "poeng": 7.2,
+    "vekt": 7.2
    },
    {
-    "segment": "Nikkel",
+    "segment": "Palmeolje",
+    "felt": "COT-persentil",
+    "gammel": 41.7,
+    "ny": 34.6,
+    "endring_pst": -17.0,
+    "poeng": -7.1,
+    "vekt": 7.1
+   },
+   {
+    "segment": "Råolje (Brent)",
     "felt": "Kapitulasjon D",
-    "gammel": 17.0,
-    "ny": 28.0,
-    "endring_pst": 64.7,
-    "poeng": 11.0,
-    "vekt": 11.0
+    "gammel": 8.6,
+    "ny": 15.4,
+    "endring_pst": 79.1,
+    "poeng": 6.8,
+    "vekt": 6.8
    },
    {
     "segment": "Sink",
     "felt": "Kapitulasjon D",
-    "gammel": 23.2,
-    "ny": 34.2,
-    "endring_pst": 47.4,
-    "poeng": 11.0,
-    "vekt": 11.0
+    "gammel": 34.2,
+    "ny": 41.0,
+    "endring_pst": 19.9,
+    "poeng": 6.8,
+    "vekt": 6.8
    },
    {
-    "segment": "Gull",
-    "felt": "COT-persentil",
-    "gammel": 32.1,
-    "ny": 42.9,
-    "endring_pst": 33.6,
-    "poeng": 10.8,
-    "vekt": 10.8
-   },
-   {
-    "segment": "Tinn",
+    "segment": "Naturgass US (Henry Hub)",
     "felt": "Kapitulasjon D",
-    "gammel": 17.0,
-    "ny": 26.4,
-    "endring_pst": 55.3,
-    "poeng": 9.4,
-    "vekt": 9.4
+    "gammel": 22.0,
+    "ny": 27.2,
+    "endring_pst": 23.6,
+    "poeng": 5.2,
+    "vekt": 5.2
    },
-   {
-    "segment": "Kakao",
-    "felt": "COT-persentil",
-    "gammel": 10.9,
-    "ny": 2.6,
-    "endring_pst": -76.1,
-    "poeng": -8.3,
-    "vekt": 8.3
-   },
-   {
-    "segment": "Termisk kull (Australia)",
-    "felt": "Kapitulasjon D",
-    "gammel": 8.9,
-    "ny": 16.7,
-    "endring_pst": 87.6,
-    "poeng": 7.8,
-    "vekt": 7.8
-   }
-  ],
-  "skifter": [
    {
     "segment": "Oljeservice (boring)",
-    "felt": "Trend",
-    "gammel": "nei",
-    "ny": "begynnende"
+    "felt": "Kapitulasjon D",
+    "gammel": 18.3,
+    "ny": 23.4,
+    "endring_pst": 27.9,
+    "poeng": 5.1,
+    "vekt": 5.1
    }
-  ]
+  ],
+  "skifter": []
  },
  "kvartal": {
   "forrige_dato": "2026-10-14 07:12",
