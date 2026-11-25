@@ -15,7 +15,7 @@ ord for ord, og blokken «Status nå» oppdateres. Eldre innslag ligger der.
 
 Oppdateres i SAMME commit som endringen, med samme regel som innslagene
 under. Er den eldre enn det nyeste innslaget, er den ikke til å stole på.
-Sist oppdatert 25.11.2026 09:03.
+Sist oppdatert 25.11.2026 09:12.
 
 - **Dashbord:** versjon 86, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
 - **PASS PÅ:** kilden til dashbordet er `dashbord/index.html` i repoet, IKKE
@@ -70,14 +70,15 @@ Sist oppdatert 25.11.2026 09:03.
   planlagte kjøring 25.11.2026.
 - **Tester:** `python test_shadow_oos.py`, 23 av 23 består. Før publisering:
   `py -X utf8 dashbord/kontroller.py`.
-- **Laksesignal, venter på Frode (25.11.2026):** forslaget Ad > 80 og
-  Ar > 85 er målt beskrivende i `sonde_kjor_laks_signal.py`. Det slår inn 17
-  måneder i 4 klynger på 15 år, og kan ikke etableres statistisk: tre
-  klynger med kjent utfall gir best mulig p 0,125. Tre av tre lukkede
-  klynger er positive mot MSCI World på 9 til 24 måneder, men den fjerde,
-  som fortsatt står åpen fra april 2025, er negativ på alle horisonter.
-  Signalet står AV nå. Neste steg er Frodes: Challenger i Shadow-OOS med
-  startdato, eller legge forslaget bort. Ingen flagg på bordet.
+- **Shadow-OOS:** Champion v1.1 og SJU Challengere. Ny 25.11.2026:
+  `challenger_laks_adar_v1`, bunnflagg for laks fra Ad > 80 og Ar > 85
+  (Frodes beslutning), virksom fra onsdag 02.12.2026. Championen har ingen
+  flagg for laks. Grunnlaget er in-sample og kan ikke etableres på
+  historikken: 17 signalmåneder i fire klynger, tre med kjent utfall, beste
+  mulige p 0,125. Primært utfall er 12 måneder og ikke 24, fordi Frode
+  mener laksesyklusen er kortere. Signalet sto AV ved registreringen, og
+  laks har fortsatt ingen flagg på bordet; Challengeren logges bare i
+  Shadow-OOS.
 - **Åpne avgjørelser for Frode:** om onsdagsrutinen skal reduseres nå at
   dashbordet leser repoet direkte. Avgjørelsen venter på linjen `#datakilde`
   i den publiserte artifacten (se over); så lenge den ikke er lest, beholdes
@@ -86,6 +87,58 @@ Sist oppdatert 25.11.2026 09:03.
 - **Eldre innslag:** `notater/logg/<år>-<mnd>.md`, en fil per måned.
 
 ---
+
+### 25.11.2026 09:12, Claude Code
+
+Laksesignalet er registrert som Challenger i Shadow-OOS (Frodes beslutning
+rett etter sonden samme morgen).
+
+`challenger_laks_adar_v1`, virksom fra **onsdag 02.12.2026**, forelder
+champion_v1_1, specification_hash
+`6f75e5629cf477ef10f9a7ecdec89ba9d4d86da017e976d5d5faf22d6e53440a`.
+Registrert med `python shadow_challenger.py registrer`, som skrev
+`config/challengers/challenger_laks_adar_v1.json` med hash av regelfila og
+en linje i `shadow/model_registry.csv`. Startdatoen er neste onsdag, slik
+rammeverket krever, og den må være pushet før den.
+
+Regelen, i `challengers/laks_adar.py`: for segmentet laks settes bottom_zone
+av Championens egne skårer, A_detrended > 80 OG A_rolling > 85, strengt
+større enn slik Frode skrev det. Rå A inngår ikke. `observation_only` settes
+til false for laks, siden Championen har true der og flagget nå er ekte.
+Alt annet er Championens: watch, B, C, D, d95, papirene (MOWI, SALM, LSG,
+BAKKA), regelen om ny episode på 12 måneder, referansene og måling i kroner.
+Mangler en av de to skårene, settes bottom_zone til NULL.
+
+Primært utfall er **12 måneder** og ikke 24, fordi Frode mener
+laksesyklusen er kortere. Beslutningsregelen krever minst tre nye episoder
+modnet på 12 måneder, og at papirene slår MSCI World i minst to av tre med
+positiv median. Rammeverket modner 3, 6, 12 og 24 måneder uansett, så de
+tre andre står som kontekst.
+
+Utgangen Frode spurte om, rå A tilbake på 50 med tak på 24 måneder, ligger
+IKKE i koden. Rammeverket modner utfall på faste horisonter, og å endre det
+ville være å røre Championens maskineri. Den står i spesifikasjonen og i
+toppen av regelfila, og kan regnes i ettertid av A-banen i snapshotene.
+Sonden ga median holdetid 5 måneder og +16,9 prosentpoeng for den utgangen
+over fire klynger.
+
+Prøvd: regelen mot denne ukens Champion-snapshot gir bottom_zone false (Ad
+60,0 og Ar 56,7), og de fire instrumentradene går gjennom urørt. Med
+konstruerte tall: Ad 85 og Ar 90 gir true, Ad 85 og Ar 80 gir false, Ad 79
+og Ar 90 gir false, og manglende Ad gir NULL med `missing_fields` satt.
+`python test_shadow_oos.py`: 23 av 23, 0 feil.
+
+IKKE GJORT: Challengeren vises ikke på dashbordet. Gass og gull vises i sine
+paneler, og laks kunne fått det samme, men det krever at ukekjeden skriver
+statusen og at panelet leser den. Frodes valg. Bordet er uendret.
+
+Filer: `challengers/laks_adar.py` (ny),
+`challengers/spes_laks_adar_v1.json` (ny),
+`config/challengers/challenger_laks_adar_v1.json` (ny, skrevet av
+registreringen), `shadow/model_registry.csv` (en linje lagt til av
+registreringen), `notater/LOGG.md`.
+For Cowork: ingenting i rutinen, bordet eller databasen er endret. Den nye
+Challengeren begynner å logge av seg selv i ukekjeden fra 02.12.
 
 ### 25.11.2026 09:03, Claude Code
 
