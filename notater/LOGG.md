@@ -45,44 +45,38 @@ Sist oppdatert 25.11.2026 09:12.
   fra `dashbord/data.json` inn i databasen med Artifact-databasen, 26
   segmenter og ni markedsdokumenter, `alu_tilbud` urørt. Ingen segmenter i
   bunnsone; Henry Hub og jernmalm under oppsikt.
-- **UKEFLYTEN, to sikringer fra 25.11.2026.** `ukentlig.yml` har én cron,
-  `48 0-11 * * 3`, altså tolv forsøk onsdag 01:48 til 12:48 norsk vintertid;
-  vakta stopper de overflødige etter 10 til 14 sekunder. I tillegg ser
-  rutinen `trig_01NsfjGaHztBo9zs7JxZs6fJ` («vakthund for ukentlig
-  innhenting») kl. 08:45 om index.json er fra i dag, og sender e-post hvis
-  ikke. Grunnen: 25.11 fyrte ingen av de fire nattetidene, fjerde uke på rad
-  der tallene måtte startes for hånd. Vakthunden kan starte kjøringen selv
-  hvis `GH_DISPATCH_TOKEN` settes på rutinen; det er Frodes valg, og den er
-  ikke satt.
 - **Alt som skal vises på bordet må skrives til databasen,** ikke bare til
   fila i repoet. `portefolje.uten_2020` lå bare i fila fra 16.11 og har
   derfor aldri vært synlig før kopien 18.11.
 - **Linjen over tabellen Datahelse** sier hvilken kilde som ble brukt, med
   databasens dato, og hvilken lastelogikk som kjører («laster 2026-11-18d»).
   Den avslører en gammel side i cache. `kontroller.py` krever at den står.
-- **Shadow-OOS:** Champion v1.1 og seks Challengere. Ingen nye bunnsoner;
-  jernmalm og Henry Hub i oppsikt, gull i watch hos BEGGE.
-- **Ukeflyt:** `ukentlig.yml` har fire cron-tider natt til onsdag fra
-  18.11.2026: 01:48, 02:48, 02:56 og 03:56 norsk vintertid (en time senere
-  om sommeren). GitHub har startet planlagte kjøringer 6,6 til 8,8 timer
-  for sent; med det kommer den første mellom 08:23 og 10:37 norsk
-  vintertid. Onsdagsrutinen 10:15 og 13:15. Neste
-  planlagte kjøring 25.11.2026.
-- **Tester:** `python test_shadow_oos.py`, 23 av 23 består. Før publisering:
-  `py -X utf8 dashbord/kontroller.py`.
-- **Shadow-OOS:** Champion v1.1 og SJU Challengere. Ny 25.11.2026:
+- **Shadow-OOS:** Champion v1.1 og sju Challengere. Ingen nye bunnsoner;
+  jernmalm og Henry Hub i oppsikt, gull i watch hos BEGGE. Ny 25.11.2026:
   `challenger_laks_adar_v1`, bunnflagg for laks fra Ad > 80 og Ar > 85
   (Frodes beslutning), virksom fra onsdag 02.12.2026. Championen har ingen
   flagg for laks. Grunnlaget er in-sample og kan ikke etableres på
   historikken: 17 signalmåneder i fire klynger, tre med kjent utfall, beste
-  mulige p 0,125. Primært utfall er 12 måneder og ikke 24, fordi Frode
-  mener laksesyklusen er kortere. Signalet sto AV ved registreringen, og
-  laks har fortsatt ingen flagg på bordet; Challengeren logges bare i
-  Shadow-OOS.
-- **Åpne avgjørelser for Frode:** om onsdagsrutinen skal reduseres nå at
-  dashbordet leser repoet direkte. Avgjørelsen venter på linjen `#datakilde`
-  i den publiserte artifacten (se over); så lenge den ikke er lest, beholdes
-  rutinen som den er. Championens evalueringsprotokoll er
+  mulige p 0,125. Primært utfall er 12 måneder og ikke 24, fordi Frode mener
+  laksesyklusen er kortere. Signalet sto AV ved registreringen, og laks har
+  fortsatt ingen flagg på bordet; Challengeren logges bare i Shadow-OOS. Den
+  vises ikke på dashbordet; det er ikke gjort og er Frodes valg.
+- **Ukeflyt:** `ukentlig.yml` har én cron fra 25.11.2026, `48 0-11 * * 3`,
+  altså tolv forsøk onsdag 01:48 til 12:48 norsk vintertid (en time senere
+  om sommeren). Vakthunden `trig_01NsfjGaHztBo9zs7JxZs6fJ` ser kl. 08:45 om
+  index.json er fra i dag og sender e-post hvis ikke. Onsdagsrutinen 10:15
+  og 13:15. Neste planlagte kjøring 02.12.2026. Historikken: GitHub har
+  kommet 6,6 til 8,8 timer for sent, og 25.11 fyrte ingen av de fire
+  nattetidene i det hele tatt, fjerde uke på rad der tallene måtte startes
+  for hånd. Vakta stopper de overflødige kjøringene etter 10 til 14 sekunder,
+  så tolv forsøk koster rundt to minutter maskintid i uka. `GH_DISPATCH_TOKEN`
+  er IKKE satt på vakthunden, så den varsler, men starter ikke.
+- **Tester:** `python test_shadow_oos.py`, 23 av 23 består. Før publisering:
+  `py -X utf8 dashbord/kontroller.py`.
+- **Åpne avgjørelser for Frode:** om laksechallengeren skal vises på
+  dashbordet, slik gass og gull gjør i sine paneler. Om `GH_DISPATCH_TOKEN`
+  skal settes på vakthunden, slik at den kan starte innhentingen selv.
+  Avgjort 18.11: onsdagsrutinen er en kopi fra repoet og er eneste vei inn. Championens evalueringsprotokoll er
   skrevet (`notater/champion_evaluering.md`, 12.11.2026). Se `notater/2026-11-11_prompt_forbedringer.md`.
 - **Eldre innslag:** `notater/logg/<år>-<mnd>.md`, en fil per måned.
 
