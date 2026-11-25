@@ -1,0 +1,10 @@
+{
+ "run_id": "challenger_bred_nedgang_v1|2026-W48|2026-11-25 07:38:51",
+ "filer_git_blob_sha": {
+  "serier/priser_mnd.csv": "ca05c5b73ced3d4274313afc5529d18c07ec70de",
+  "shadow/snapshots/champion_v1_1/2026-W48.csv": "7970aeb95c827cbce2fbbccdd780a236b2071141"
+ },
+ "kodefiler_sha256": {
+  "challengers/bred_nedgang.py": "5194c9c8b32b445046f8789cff27b3744304b524f4715f152a720f9c5de1b2fc"
+ }
+}
