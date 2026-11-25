@@ -15,7 +15,7 @@ ord for ord, og blokken «Status nå» oppdateres. Eldre innslag ligger der.
 
 Oppdateres i SAMME commit som endringen, med samme regel som innslagene
 under. Er den eldre enn det nyeste innslaget, er den ikke til å stole på.
-Sist oppdatert 25.11.2026 09:27.
+Sist oppdatert 25.11.2026 09:32.
 
 - **Dashbord:** versjon 88, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
 - **PASS PÅ:** kilden til dashbordet er `dashbord/index.html` i repoet, IKKE
@@ -76,18 +76,60 @@ Sist oppdatert 25.11.2026 09:27.
   er IKKE satt på vakthunden, så den varsler, men starter ikke.
 - **Tester:** `python test_shadow_oos.py`, 23 av 23 består. Før publisering:
   `py -X utf8 dashbord/kontroller.py`.
-- **Åpne avgjørelser for Frode:** om laksechallengeren skal få en NY utgave
-  med en annen utgang (sonden 25.11 viste at «A faller 30 poeng, to måneder
-  på rad» holder posisjonen gjennom 2020 i stedet for å selge på én støyete
-  måned, og at familien «endring i A» er langt mindre følsom for terskelen
-  enn et fast nivå). En endret utgang er en NY Challenger fra en ny dato.
-  Om `GH_DISPATCH_TOKEN`
+- **To utganger for laks er forhåndsregistrert** i
+  `notater/laks_utgang_forhandsregistrert.md` (25.11.2026): U1, dagens
+  registrerte (rå A 50 eller lavere), og U2 (samme krav to måneder på rad).
+  De sammenlignes på de SAMME inngangene, fordi rammeverket ikke kan skille
+  to utganger: en Challenger setter bare `bottom_zone`, utfall modnes på
+  faste horisonter, og `finn_hendelser` blokkerer uansett ny inngang innen
+  365 dager. To Challengere med samme inngang ville gitt identiske data.
+- **Åpne avgjørelser for Frode:** om `GH_DISPATCH_TOKEN`
   skal settes på vakthunden, slik at den kan starte innhentingen selv.
   Avgjort 18.11: onsdagsrutinen er en kopi fra repoet og er eneste vei inn. Championens evalueringsprotokoll er
   skrevet (`notater/champion_evaluering.md`, 12.11.2026). Se `notater/2026-11-11_prompt_forbedringer.md`.
 - **Eldre innslag:** `notater/logg/<år>-<mnd>.md`, en fil per måned.
 
 ---
+
+### 25.11.2026 09:32, Claude Code
+
+Frode ba om en ny Challenger med utgangen som holder i to måneder. Jeg gikk
+for å lage den og **stoppet**, fordi rammeverket ikke kan skille to utganger
+med samme inngang. Det er verdt å skrive ned, for det er ikke åpenbart:
+
+1. En Challenger-modul setter bare `bottom_zone` i snapshotet. Utgangen
+   finnes ikke som felt, og `shadow_utfall` modner på faste horisonter
+   (3, 6, 12 og 24 måneder) uansett hva spesifikasjonen sier om salg.
+2. Selv med egen `ny_innslag` blokkerer `finn_hendelser` i `shadow_oos.py`
+   en ny inngang når modellens egen skyggelogg har `bottom_zone_enter`,
+   `_continue` eller `_active_at_start` siste 365 dager. En utgang som
+   frigjør posisjonen tidligere kan altså ikke gi en tidligere ny inngang
+   heller. Det er Championens maskineri og skal ikke røres.
+
+To Challengere med samme inngang ville derfor skrevet identiske snapshots,
+identiske hendelser og identiske utfall. Det ville sett ut som to målinger
+og vært én.
+
+**Det som er gjort i stedet**, og som gir nøyaktig det samme svaret uten
+falsk presisjon: begge utgangene er forhåndsregistrert i
+`notater/laks_utgang_forhandsregistrert.md`, med regelteksten låst og
+git-tiden som tidsstempel. U1 er dagens registrerte (rå A 50 eller lavere),
+U2 er samme krav to måneder på rad. Begge er deterministiske funksjoner av
+A-banen, og A-banen ligger i snapshotene uke for uke, så begge kan regnes i
+ettertid på de SAMME registrerte inngangene. Notatet sier også hvordan de
+regnes, at tallene 50 og to måneder ikke skal flyttes etterpå, og at
+utgangene ikke avgjør noe om signalet: Challengerens primærutfall er
+uendret, 12 måneder og minst tre nye episoder.
+
+Begrunnelsen for at U2 er med er ikke at den ga høyest tall, men at den
+retter en feil vi kan peke på uten å se på avkastningen: U1 selger på én
+støyete måned midt i episoden (april 2020: A til 49 i måned 2, så opp igjen
+til 89).
+
+`challenger_laks_adar_v1` er urørt og starter 2. desember som planlagt.
+
+Filer: `notater/laks_utgang_forhandsregistrert.md` (ny), `notater/LOGG.md`.
+For Cowork: ingen endring i rutinen, bordet, databasen eller Shadow-OOS.
 
 ### 25.11.2026 09:27, Claude Code
 
