@@ -15,9 +15,9 @@ ord for ord, og blokken «Status nå» oppdateres. Eldre innslag ligger der.
 
 Oppdateres i SAMME commit som endringen, med samme regel som innslagene
 under. Er den eldre enn det nyeste innslaget, er den ikke til å stole på.
-Sist oppdatert 25.11.2026 09:19.
+Sist oppdatert 25.11.2026 09:22.
 
-- **Dashbord:** versjon 87, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
+- **Dashbord:** versjon 88, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
 - **PASS PÅ:** kilden til dashbordet er `dashbord/index.html` i repoet, IKKE
   artifacten. Kjør `git pull` før du endrer eller publiserer, og
   `py -X utf8 dashbord/kontroller.py` før hver publisering. Publiserer du
@@ -60,8 +60,10 @@ Sist oppdatert 25.11.2026 09:19.
   mulige p 0,125. Primært utfall er 12 måneder og ikke 24, fordi Frode mener
   laksesyklusen er kortere. Signalet sto AV ved registreringen, og laks har
   fortsatt ingen flagg på bordet; Challengeren logges bare i Shadow-OOS. Den
-  vises i lakspanelet fra v87: trekanter for kjøp og salg, i egne farger, med
-  teksten som sier at den ikke er testet.
+  vises i lakspanelet fra v87: grønn trekant opp for kjøp, rød ned for salg
+  (v88, Frodes ønske), med teksten som sier at den ikke er testet. Det er
+  FORMEN som skiller Challengeren fra Championen: prikker er Championens
+  bunnsone og oppsikt, trekanter er Challengerens.
 - **Ukeflyt:** `ukentlig.yml` har én cron fra 25.11.2026, `48 0-11 * * 3`,
   altså tolv forsøk onsdag 01:48 til 12:48 norsk vintertid (en time senere
   om sommeren). Vakthunden `trig_01NsfjGaHztBo9zs7JxZs6fJ` ser kl. 08:45 om
@@ -81,6 +83,25 @@ Sist oppdatert 25.11.2026 09:19.
 - **Eldre innslag:** `notater/logg/<år>-<mnd>.md`, en fil per måned.
 
 ---
+
+### 25.11.2026 09:22, Claude Code
+
+Merkene i laksgrafen er grønne for kjøp og røde for salg (Frodes ønske).
+Dashbordet **versjon 88**. Før sto de i lilla og oransje, valgt for å holde
+dem unna Championens grønne prikker.
+
+Da er det formen som skiller dem, og bare den: **prikker er Championens**
+bunnsone og oppsikt, **trekanter er Challengerens** kjøp og salg. Det står
+nå i kommentaren over `buildChart`, i kommentaren ved merkene og i teksten
+over grafen, så ingen kommer til å gjenopprette fargene uten å vite hvorfor
+de ble byttet. Laks har uansett ingen prikker, siden Championen ikke har
+flagg der, så de to kan ikke stå i samme graf i dag.
+
+Prøvd lokalt mot ekte data: fire grønne kjøpsmerker og fire røde
+salgsmerker i lakspanelet, ingen igjen i de gamle fargene, ingen feil i
+konsollen.
+
+Filer: `dashbord/index.html` (v88), `notater/LOGG.md`.
 
 ### 25.11.2026 09:19, Claude Code
 
