@@ -1,0 +1,10 @@
+{
+ "run_id": "challenger_gull_begge_v1|2026-W48|2026-11-25 07:38:51",
+ "filer_git_blob_sha": {
+  "serier/priser_mnd.csv": "ca05c5b73ced3d4274313afc5529d18c07ec70de",
+  "shadow/snapshots/champion_v1_1/2026-W48.csv": "7970aeb95c827cbce2fbbccdd780a236b2071141"
+ },
+ "kodefiler_sha256": {
+  "challengers/gull_begge.py": "eab461c58ae75f931f857ca4dcb4c910fbf284ec6deb93eb1ec9f71dbb6bb6ec"
+ }
+}
