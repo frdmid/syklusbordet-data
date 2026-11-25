@@ -697,13 +697,25 @@ const SH = 56; // signalstripe
 
 /* Challenger for laks: challenger_laks_adar_v1, Frodes beslutning
    25.11.2026, virksom i Shadow-OOS fra 02.12.2026.
-     kjoep  detrendet A > 80 OG rullende A > 85, ny episode etter 12 maaneder
-            uten signal (Championens episoderegel)
+     kjoep  detrendet A > 80 OG rullende A > 85, og ingen aapen posisjon:
+            et nytt kjoep krever bare at det har vaert et SALG siden forrige
+            kjoep (Frodes beslutning 25.11.2026). Championens regel om tolv
+            maaneders pause gjelder altsaa IKKE for laks her. Grunnen: den
+            stengte for desember 2020 og januar 2021, der signalet sto paa
+            igjen etter at posisjonen var solgt i juni 2020.
      salg   foerste maaned der raa A er 50 eller lavere, tak 24 maaneder
    Begge regnes HER, av feltene som alt ligger i serien (A, Ad, Ar), og ikke
    av databasen. Championen har ingen flagg for laks, saa databasen kan ikke
    si noe om dette, og Shadow-OOS skriver bare til seg selv.
-   IKKE EN TESTET REGEL. Fire episoder paa femten aar, tre med kjent utfall,
+   MERK at Shadow-OOS logger FAERRE innganger enn grafen viser. Regelen om
+   tolv maaneders pause ligger i finn_hendelser i shadow_oos.py, som er en av
+   Championens seksten frosne kodefiler, og en Challenger kan ikke komme
+   rundt den: blokkeringen gjelder uansett hva modulens ny_innslag sier. De
+   inngangene som faller bort der (desember 2020 og mai 2026) kan regnes i
+   ettertid av A-banen i snapshotene, og begge inngangsreglene er
+   forhaandsregistrert i notater/laks_utgang_forhandsregistrert.md.
+
+   IKKE EN TESTET REGEL. Seks episoder paa femten aar, fire med kjent utfall,
    og beste mulige p er 0,125 i en ensidig fortegnstest. Terskelene er
    Frodes, valgt etter aa ha sett serien. Merkene er derfor TREKANTER og
    aldri prikker: prikkene er Championens bunnsone og oppsikt. Fargene er
@@ -713,25 +725,30 @@ const SH = 56; // signalstripe
    horisonter (3, 6, 12 og 24 maaneder), og utgangen staar i
    spesifikasjonen, ikke i rammeverket. Se sonde_kjor_laks_signal.py og
    notater/LOGG.md 25.11.2026. */
-const LAKS_AD = 80, LAKS_AR = 85, LAKS_UT_A = 50, LAKS_TAK = 24, LAKS_PAUSE = 12;
+const LAKS_AD = 80, LAKS_AR = 85, LAKS_UT_A = 50, LAKS_TAK = 24;
 const laksMnd = tt => { const [y, m] = String(tt).split("-"); return (+y) * 12 + (+m); };
 
 function laksEpisoder(rows){
-  const inn = [];
-  rows.forEach((r, i) => {
-    if (r.Ad == null || r.Ar == null || !(r.Ad > LAKS_AD && r.Ar > LAKS_AR)) return;
-    const siste = inn.length ? inn[inn.length - 1].sist : null;
-    if (!inn.length || laksMnd(r.t) - laksMnd(siste) > LAKS_PAUSE)
-      inn.push({i, t: r.t, sist: r.t, mnd: 1, Ad: r.Ad, Ar: r.Ar});
-    else { inn[inn.length - 1].sist = r.t; inn[inn.length - 1].mnd++; }
-  });
-  return inn.map(e => {
-    let ut = null;
-    for (let j = e.i + 1; j < rows.length && laksMnd(rows[j].t) - laksMnd(e.t) <= LAKS_TAK; j++){
-      if (rows[j].A != null && rows[j].A <= LAKS_UT_A){ ut = {i: j, t: rows[j].t}; break; }
+  // Kjoep naar signalet staar og ingen posisjon er aapen. Posisjonen lukkes av
+  // salgsregelen, og foerst da kan et nytt kjoep komme. Ingen pauseregel.
+  const ep = [];
+  let i = 0, etterSalg = -1;
+  while (i < rows.length){
+    const r = rows[i];
+    if (i > etterSalg && r.Ad != null && r.Ar != null && r.Ad > LAKS_AD && r.Ar > LAKS_AR){
+      let ut = null, tak = false;
+      for (let j = i + 1; j < rows.length; j++){
+        if (laksMnd(rows[j].t) - laksMnd(r.t) > LAKS_TAK) break;
+        if (rows[j].A != null && rows[j].A <= LAKS_UT_A){ ut = {i: j, t: rows[j].t}; break; }
+        if (laksMnd(rows[j].t) - laksMnd(r.t) === LAKS_TAK){ ut = {i: j, t: rows[j].t}; tak = true; break; }
+      }
+      ep.push({i, t: r.t, Ad: r.Ad, Ar: r.Ar, ut, tak});
+      if (!ut) break;                       // posisjonen staar aapen ut serien
+      etterSalg = ut.i; i = ut.i + 1; continue;
     }
-    return {...e, ut};
-  });
+    i++;
+  }
+  return ep;
 }
 
 // Linjen over grafen i lakspanelet. Sier hva merkene er, hvor regelen staar
@@ -740,16 +757,22 @@ function laksAdarTekst(seg){
   const sc = seg.scores || {}, rows = seg.series || [];
   if (sc.Ad == null || sc.Ar == null) return "";
   const ep = laksEpisoder(rows), paa = sc.Ad > LAKS_AD && sc.Ar > LAKS_AR;
-  const siste = ep.length ? ep[ep.length - 1] : null;
-  return `<b>Challenger, ikke testet:</b> kjøp når detrendet A er over ${LAKS_AD} og rullende A over ${LAKS_AR},`
-    + ` salg når rå A er tilbake på ${LAKS_UT_A} (tak ${LAKS_TAK} måneder). Trekantene i grafen viser`
+  const sisteSignal = rows.filter(r => r.Ad != null && r.Ar != null
+                                   && r.Ad > LAKS_AD && r.Ar > LAKS_AR).map(r => r.t).pop();
+  return `<b>Challenger, ikke testet:</b> kjøp når detrendet A er over ${LAKS_AD} og rullende A over ${LAKS_AR}`
+    + ` og ingen posisjon er åpen, salg når rå A er tilbake på ${LAKS_UT_A} (tak ${LAKS_TAK} måneder).`
+    + ` Et nytt kjøp krever bare at det har vært et salg siden forrige kjøp; Championens pause på tolv`
+    + ` måneder gjelder ikke her (Frodes beslutning 25. november 2026). Trekantene i grafen viser`
     + ` ${ep.length === 1 ? "én episode" : `de ${ep.length} episodene`} siden ${monthLbl(rows[0] ? rows[0].t : seg.hist_start)}:`
     + ` ${ep.map(e => `${monthLbl(e.t)} til ${e.ut ? monthLbl(e.ut.t) : "ingen utgang ennå"}`).join(", ")}.`
     + ` Regelen står <b>${paa ? "på" : "av"}</b> nå (detrendet ${fmt(sc.Ad, 0)}, rullende ${fmt(sc.Ar, 0)})`
-    + `${!paa && siste ? `, sist på i ${monthLbl(siste.sist)}` : ""}.`
+    + `${!paa && sisteSignal ? `, sist på i ${monthLbl(sisteSignal)}` : ""}.`
     + ` Den logges i Shadow-OOS som challenger_laks_adar_v1 fra 2. desember 2026, med tolv måneder som`
-    + ` primært utfall fordi laksesyklusen er kortere enn bordets to år. Fire episoder er ikke et bevis:`
-    + ` tre av dem har kjent utfall, og beste mulige p er 0,125. Championen har ingen flagg for laks, så`
+    + ` primært utfall fordi laksesyklusen er kortere enn bordets to år. Shadow-OOS logger likevel FÆRRE`
+    + ` innganger enn grafen viser: pausen på tolv måneder ligger i en av Championens frosne kodefiler og`
+    + ` kan ikke slås av for en Challenger, så desember 2020 og mai 2026 mangler der. De regnes i ettertid`
+    + ` av A-banen, og begge inngangsreglene er forhåndsregistrert. Episodene er ikke et bevis:`
+    + ` beste mulige p er 0,125. Championen har ingen flagg for laks, så`
     + ` prikkene, som er Championens bunnsone, står tomme her; trekantene er`
     + ` Challengerens.`;
 }

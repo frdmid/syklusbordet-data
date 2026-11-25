@@ -1,8 +1,12 @@
-# Forhåndsregistrert: to utganger for laksesignalet
+# Forhåndsregistrert: inn- og utganger for laksesignalet
 
 Skrevet 25.11.2026, før noen ny episode har oppstått. Frodes bestilling etter
 `sonde_kjor_laks_salg.py` samme dag. Dette dokumentet låser teksten; git-tiden
 er tidsstempelet.
+
+Utvidet samme dag kl. 09:36 med inngangsreglene, etter at Frode tok
+bort pausen på tolv måneder for laks. Utvidelsen er skrevet før noen ny
+episode har oppstått, som resten av dokumentet.
 
 ## Hvorfor dette ikke er en ny Challenger
 
@@ -27,6 +31,32 @@ sammenlignes i stedet på de SAMME registrerte inngangene.
 Det koster ingenting i presisjon: begge utgangene er deterministiske funksjoner
 av A-banen, og A-banen ligger i snapshotene uke for uke. Det eneste som må
 være låst på forhånd er regelteksten, og det er det dette dokumentet gjør.
+
+## De to inngangsreglene
+
+Begge bruker samme signal: detrendet A over 80 og rullende A over 85.
+
+**E1, den registrerte.** Championens regel om ny episode: første signalmåned
+etter mer enn tolv måneder uten signal. Dette er regelen
+`challenger_laks_adar_v1` logger etter i Shadow-OOS, og den kan ikke endres.
+
+**E2, Frodes regel (25.11.2026).** Ingen pause. Et nytt kjøp krever bare at
+det har vært et salg siden forrige kjøp. Bakgrunnen er desember 2020 og
+januar 2021: signalet sto på igjen etter at posisjonen var solgt i juni 2020,
+men E1 stengte for inngang til april 2021.
+
+**Hvorfor E2 ikke kan være en Challenger.** Pausen ligger ikke bare i
+`flagglogg.ny_innslag`, som en Challenger kan erstatte, men også som en hard
+sperre i `finn_hendelser` i `shadow_oos.py`: en ny inngang blokkeres når
+modellens egen skyggelogg har `bottom_zone_enter`, `_continue` eller
+`_active_at_start` siste 365 dager, uansett hva modulen sier. `shadow_oos.py`
+er en av Championens seksten frosne kodefiler, og spesifikasjonen sier at
+endret regelkode gir en ny Champion fra en ny dato. Derfor logger Shadow-OOS
+E1, mens bordet viser E2, og forskjellen er skrevet ned her.
+
+Med E1 og utgang U1 gir historikken fire episoder. Med E2 og U1 gir den seks:
+de samme fire pluss desember 2020 (solgt mars 2021) og mai 2026 (solgt
+september 2026). Med E2 og U2 gir den fem.
 
 ## De to utgangene
 
@@ -64,8 +94,10 @@ begge.
 
 ## Slik regnes de når episodene modnes
 
-For hver `hypothetical_entry` i `shadow_events.csv` med
-`model_version = challenger_laks_adar_v1`:
+Inngangene etter E1 ligger som `hypothetical_entry` i `shadow_events.csv`
+med `model_version = challenger_laks_adar_v1`. Inngangene etter E2 regnes av
+A-banen i de samme snapshotene, med regelen over. For hver inngang, uansett
+regel:
 
 1. Les `A_raw` for laks fra `shadow/snapshots/challenger_laks_adar_v1/<uke>.csv`
    for ukene etter inngangen. Det er månedstall, så én verdi per måned; bruk
@@ -84,7 +116,9 @@ tre med positiv median. **Utgangene avgjør ingenting om signalet.** De er et
 eget og mindre spørsmål: gitt at signalet holder, hvilken utgang tar mest av
 oppgangen.
 
-Sammenligningen av U1 og U2 er beskrivende til minst tre nye episoder har
-modnet, og den skal rapporteres med begge tallene uansett hvilken som er best.
-Blir U2 valgt senere, er det en ny Challenger med ny startdato, ikke en
-retting av den som går.
+Sammenligningen av U1 og U2, og av E1 og E2, er beskrivende til minst tre nye
+episoder har modnet, og den skal rapporteres med begge tallene uansett hvilken
+som er best. Blir U2 eller E2 valgt senere, er det en ny Challenger med ny
+startdato, ikke en retting av den som går. E2 kan dessuten ikke bli en
+Challenger uten at Championens frosne kode endres, og det ville kreve en ny
+Champion fra en ny dato. Det er Frodes avgjørelse og er ikke gjort.

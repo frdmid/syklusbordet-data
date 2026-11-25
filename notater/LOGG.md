@@ -15,9 +15,9 @@ ord for ord, og blokken «Status nå» oppdateres. Eldre innslag ligger der.
 
 Oppdateres i SAMME commit som endringen, med samme regel som innslagene
 under. Er den eldre enn det nyeste innslaget, er den ikke til å stole på.
-Sist oppdatert 25.11.2026 09:32.
+Sist oppdatert 25.11.2026 09:36.
 
-- **Dashbord:** versjon 88, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
+- **Dashbord:** versjon 89, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
 - **PASS PÅ:** kilden til dashbordet er `dashbord/index.html` i repoet, IKKE
   artifacten. Kjør `git pull` før du endrer eller publiserer, og
   `py -X utf8 dashbord/kontroller.py` før hver publisering. Publiserer du
@@ -61,7 +61,12 @@ Sist oppdatert 25.11.2026 09:32.
   laksesyklusen er kortere. Signalet sto AV ved registreringen, og laks har
   fortsatt ingen flagg på bordet; Challengeren logges bare i Shadow-OOS. Den
   vises i lakspanelet fra v87: grønn trekant opp for kjøp, rød ned for salg
-  (v88, Frodes ønske), med teksten som sier at den ikke er testet. Det er
+  (v88), med teksten som sier at den ikke er testet. Fra v89 gjelder IKKE
+  Championens pause på tolv måneder for laks på bordet: et nytt kjøp krever
+  bare at det har vært et salg siden forrige kjøp (Frodes beslutning
+  25.11.2026). Det gir seks episoder i stedet for fire. Shadow-OOS logger
+  fortsatt bare fire, fordi pausen er en hard sperre i frossen kode; se
+  `notater/laks_utgang_forhandsregistrert.md`. Det er
   FORMEN som skiller Challengeren fra Championen: prikker er Championens
   bunnsone og oppsikt, trekanter er Challengerens.
 - **Ukeflyt:** `ukentlig.yml` har én cron fra 25.11.2026, `48 0-11 * * 3`,
@@ -90,6 +95,44 @@ Sist oppdatert 25.11.2026 09:32.
 - **Eldre innslag:** `notater/logg/<år>-<mnd>.md`, en fil per måned.
 
 ---
+
+### 25.11.2026 09:36, Claude Code
+
+Frode tok bort pauseregelen for laks: «Eneste krav til signal er at det har
+vært salgssignal siden forrige kjøpssignal.» Bordet følger den nå,
+**versjon 89**.
+
+Det gir **seks episoder** i stedet for fire. De to nye er desember 2020
+(solgt mars 2021) og mai 2026 (solgt september 2026). Merk at merket lander
+på desember 2020 og ikke januar 2021: desember er den første måneden
+signalet sto på etter salget i juni 2020, og januar ligger inne i den samme
+posisjonen.
+
+**Shadow-OOS kan ikke følge etter, og det er viktig å vite hvorfor.** Pausen
+ligger ikke bare i `flagglogg.ny_innslag`, som en Challenger kan erstatte med
+sin egen, men også som en hard sperre i `finn_hendelser` i `shadow_oos.py`:
+en ny inngang blokkeres når modellens egen skyggelogg har `bottom_zone_enter`,
+`_continue` eller `_active_at_start` siste 365 dager, uansett hva modulen
+sier. `shadow_oos.py` er en av Championens seksten frosne kodefiler, og
+spesifikasjonen sier at endret regelkode gir en ny Champion fra en ny dato.
+Jeg har derfor ikke rørt den.
+
+Konsekvensen er at bordet viser seks episoder og Shadow-OOS logger fire.
+Det er ikke et avvik som får stå ubeskrevet: begge inngangsreglene er nå
+forhåndsregistrert i `notater/laks_utgang_forhandsregistrert.md` sammen med
+de to utgangene, og inngangene etter Frodes regel kan regnes av A-banen i de
+samme snapshotene. Notatet sier også at Frodes regel ikke kan bli en
+Challenger uten en ny Champion, og at det er hans avgjørelse.
+
+En feil ble funnet i den lokale testen før publisering: teksten over grafen
+leste feltet `sist` fra den gamle klyngelogikken, som ikke finnes lenger.
+Det kastet en TypeError inne i `render`, og hele bordet ville falt tilbake
+til de innbakte dataene. Siste signalmåned regnes nå av serien selv. Prøvd
+etterpå: seks grønne og seks røde merker, 23 paneler, ingen feil i konsollen.
+
+Filer: `dashbord/index.html` (v89),
+`notater/laks_utgang_forhandsregistrert.md`, `notater/LOGG.md`.
+For Cowork: ingen endring i rutinen, databasen eller Shadow-OOS.
 
 ### 25.11.2026 09:32, Claude Code
 
