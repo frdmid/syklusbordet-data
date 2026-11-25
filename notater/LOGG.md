@@ -15,9 +15,9 @@ ord for ord, og blokken «Status nå» oppdateres. Eldre innslag ligger der.
 
 Oppdateres i SAMME commit som endringen, med samme regel som innslagene
 under. Er den eldre enn det nyeste innslaget, er den ikke til å stole på.
-Sist oppdatert 25.11.2026 09:12.
+Sist oppdatert 25.11.2026 09:19.
 
-- **Dashbord:** versjon 86, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
+- **Dashbord:** versjon 87, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
 - **PASS PÅ:** kilden til dashbordet er `dashbord/index.html` i repoet, IKKE
   artifacten. Kjør `git pull` før du endrer eller publiserer, og
   `py -X utf8 dashbord/kontroller.py` før hver publisering. Publiserer du
@@ -60,7 +60,8 @@ Sist oppdatert 25.11.2026 09:12.
   mulige p 0,125. Primært utfall er 12 måneder og ikke 24, fordi Frode mener
   laksesyklusen er kortere. Signalet sto AV ved registreringen, og laks har
   fortsatt ingen flagg på bordet; Challengeren logges bare i Shadow-OOS. Den
-  vises ikke på dashbordet; det er ikke gjort og er Frodes valg.
+  vises i lakspanelet fra v87: trekanter for kjøp og salg, i egne farger, med
+  teksten som sier at den ikke er testet.
 - **Ukeflyt:** `ukentlig.yml` har én cron fra 25.11.2026, `48 0-11 * * 3`,
   altså tolv forsøk onsdag 01:48 til 12:48 norsk vintertid (en time senere
   om sommeren). Vakthunden `trig_01NsfjGaHztBo9zs7JxZs6fJ` ser kl. 08:45 om
@@ -73,14 +74,53 @@ Sist oppdatert 25.11.2026 09:12.
   er IKKE satt på vakthunden, så den varsler, men starter ikke.
 - **Tester:** `python test_shadow_oos.py`, 23 av 23 består. Før publisering:
   `py -X utf8 dashbord/kontroller.py`.
-- **Åpne avgjørelser for Frode:** om laksechallengeren skal vises på
-  dashbordet, slik gass og gull gjør i sine paneler. Om `GH_DISPATCH_TOKEN`
+- **Åpne avgjørelser for Frode:** om `GH_DISPATCH_TOKEN`
   skal settes på vakthunden, slik at den kan starte innhentingen selv.
   Avgjort 18.11: onsdagsrutinen er en kopi fra repoet og er eneste vei inn. Championens evalueringsprotokoll er
   skrevet (`notater/champion_evaluering.md`, 12.11.2026). Se `notater/2026-11-11_prompt_forbedringer.md`.
 - **Eldre innslag:** `notater/logg/<år>-<mnd>.md`, en fil per måned.
 
 ---
+
+### 25.11.2026 09:19, Claude Code
+
+Laksechallengeren vises nå i lakspanelet (Frodes bestilling: «Vil signalet
+vises i graf nå? For kjøp og salg?»). Svaret var nei, og nå er det ja.
+Dashbordet **versjon 87**.
+
+Hvorfor det ikke viste seg av seg selv: Challengeren skriver bare til
+Shadow-OOS, dashbordet leser databasen, og Championen har ingen flagg for
+laks. Laksserien har null punkter med `flagg` eller `oppsikt`, så de grønne
+prikkene og de skraverte sonene har alltid stått tomme der.
+
+Løsningen er den samme som for ordet til volvariasjonen 18.11: siden regner
+det selv, av felt som alt ligger i serien. A, Ad og Ar står per måned, så
+både inngangen (Ad > 80 og Ar > 85, ny episode etter 12 måneder) og utgangen
+(første måned med rå A 50 eller lavere, tak 24 måneder) kan regnes i
+`laksEpisoder()` i `index.html`. Ingen nye data, ingen avhengighet av
+ukekjeden, og merkene virker med en gang.
+
+Merkene er **trekanter**, ikke prikker: lilla trekant opp under prislinjen
+for kjøp, oransje trekant ned over linjen for salg, begge med tittel på
+hover. Det er med vilje at de ikke ligner Championens grønne prikker, for
+dette er fire episoder og ingen testet regel. Forklaringen under grafen har
+fått to linjer, og panelhodet en setning som sier hva regelen er, hvilke
+episoder som vises, om den står på eller av nå, og at beste mulige p er
+0,125. Teksten sier også at salgsmerket er en illustrasjon: Shadow-OOS
+modner utfall på faste horisonter, og utgangen står i spesifikasjonen.
+
+Episodene som vises, de samme fire som sonden fant: jan 2012 til des 2012,
+apr 2015 til okt 2015, apr 2020 til jun 2020, apr 2025 til sep 2025.
+Regelen står av nå (detrendet 60, rullende 57).
+
+Prøvd lokalt mot ekte data: fire kjøpsmerker og fire salgsmerker i
+lakspanelet, pluss de to i forklaringen, ingen feil i konsollen, ingen
+sidevis rulling. Merk at en lokal server ikke legger på `<meta charset>`,
+så norske tegn ser rare ut i en lokal test; i den publiserte artifacten
+legger verten omslaget på, og teksten er riktig.
+
+Filer: `dashbord/index.html` (v87), `notater/LOGG.md`.
+For Cowork: ingen endring i rutinen, databasen eller Shadow-OOS.
 
 ### 25.11.2026 09:12, Claude Code
 

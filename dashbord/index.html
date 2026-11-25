@@ -695,6 +695,62 @@ function statusChip(A, s){
 const W = 900, H = 260, M = {t:14, r:58, b:26, l:8};
 const SH = 56; // signalstripe
 
+/* Challenger for laks: challenger_laks_adar_v1, Frodes beslutning
+   25.11.2026, virksom i Shadow-OOS fra 02.12.2026.
+     kjoep  detrendet A > 80 OG rullende A > 85, ny episode etter 12 maaneder
+            uten signal (Championens episoderegel)
+     salg   foerste maaned der raa A er 50 eller lavere, tak 24 maaneder
+   Begge regnes HER, av feltene som alt ligger i serien (A, Ad, Ar), og ikke
+   av databasen. Championen har ingen flagg for laks, saa databasen kan ikke
+   si noe om dette, og Shadow-OOS skriver bare til seg selv.
+   IKKE EN TESTET REGEL. Fire episoder paa femten aar, tre med kjent utfall,
+   og beste mulige p er 0,125 i en ensidig fortegnstest. Terskelene er
+   Frodes, valgt etter aa ha sett serien. Merkene er derfor trekanter i egne
+   farger og aldri de groenne prikkene, som er Championens bunnsone.
+   Salgsmerket er en illustrasjon: Shadow-OOS modner utfall paa faste
+   horisonter (3, 6, 12 og 24 maaneder), og utgangen staar i
+   spesifikasjonen, ikke i rammeverket. Se sonde_kjor_laks_signal.py og
+   notater/LOGG.md 25.11.2026. */
+const LAKS_AD = 80, LAKS_AR = 85, LAKS_UT_A = 50, LAKS_TAK = 24, LAKS_PAUSE = 12;
+const laksMnd = tt => { const [y, m] = String(tt).split("-"); return (+y) * 12 + (+m); };
+
+function laksEpisoder(rows){
+  const inn = [];
+  rows.forEach((r, i) => {
+    if (r.Ad == null || r.Ar == null || !(r.Ad > LAKS_AD && r.Ar > LAKS_AR)) return;
+    const siste = inn.length ? inn[inn.length - 1].sist : null;
+    if (!inn.length || laksMnd(r.t) - laksMnd(siste) > LAKS_PAUSE)
+      inn.push({i, t: r.t, sist: r.t, mnd: 1, Ad: r.Ad, Ar: r.Ar});
+    else { inn[inn.length - 1].sist = r.t; inn[inn.length - 1].mnd++; }
+  });
+  return inn.map(e => {
+    let ut = null;
+    for (let j = e.i + 1; j < rows.length && laksMnd(rows[j].t) - laksMnd(e.t) <= LAKS_TAK; j++){
+      if (rows[j].A != null && rows[j].A <= LAKS_UT_A){ ut = {i: j, t: rows[j].t}; break; }
+    }
+    return {...e, ut};
+  });
+}
+
+// Linjen over grafen i lakspanelet. Sier hva merkene er, hvor regelen staar
+// naa, og at den ikke er testet.
+function laksAdarTekst(seg){
+  const sc = seg.scores || {}, rows = seg.series || [];
+  if (sc.Ad == null || sc.Ar == null) return "";
+  const ep = laksEpisoder(rows), paa = sc.Ad > LAKS_AD && sc.Ar > LAKS_AR;
+  const siste = ep.length ? ep[ep.length - 1] : null;
+  return `<b>Challenger, ikke testet:</b> kjøp når detrendet A er over ${LAKS_AD} og rullende A over ${LAKS_AR},`
+    + ` salg når rå A er tilbake på ${LAKS_UT_A} (tak ${LAKS_TAK} måneder). Trekantene i grafen viser`
+    + ` ${ep.length === 1 ? "én episode" : `de ${ep.length} episodene`} siden ${monthLbl(rows[0] ? rows[0].t : seg.hist_start)}:`
+    + ` ${ep.map(e => `${monthLbl(e.t)} til ${e.ut ? monthLbl(e.ut.t) : "ingen utgang ennå"}`).join(", ")}.`
+    + ` Regelen står <b>${paa ? "på" : "av"}</b> nå (detrendet ${fmt(sc.Ad, 0)}, rullende ${fmt(sc.Ar, 0)})`
+    + `${!paa && siste ? `, sist på i ${monthLbl(siste.sist)}` : ""}.`
+    + ` Den logges i Shadow-OOS som challenger_laks_adar_v1 fra 2. desember 2026, med tolv måneder som`
+    + ` primært utfall fordi laksesyklusen er kortere enn bordets to år. Fire episoder er ikke et bevis:`
+    + ` tre av dem har kjent utfall, og beste mulige p er 0,125. Championen har ingen flagg for laks,`
+    + ` så de grønne prikkene står tomme her.`;
+}
+
 function buildChart(seg, mode){
   const key = mode === "real" ? "real" : "nom";
   // Ankeret (nybyggpris) maa deflateres sammen med hovedserien, ellers
@@ -780,6 +836,25 @@ function buildChart(seg, mode){
     if (r.sig2) t += `<circle cx="${X(i).toFixed(1)}" cy="${(y+5).toFixed(1)}" r="2.3" fill="var(--sig2)"/>`;
     return t;
   }).join("");
+  // Laksechallengeren: kjoep som trekant opp under linjen, salg som trekant
+  // ned over linjen, i egne farger slik at de ikke kan forveksles med
+  // Championens groenne prikker. Se kommentaren over buildChart.
+  const marksLaks = seg.id !== "laks" ? "" : laksEpisoder(rows).map(e => {
+    const vi = rows[e.i] ? rows[e.i][key] : null;
+    let s = "";
+    if (vi != null){
+      const y = Y(vi);
+      s += `<path d="M${X(e.i).toFixed(1)},${(y + 5).toFixed(1)} l4.6,7 l-9.2,0z" fill="var(--sig1)"`
+         + ` stroke="var(--surface)" stroke-width="0.8"><title>Kjøp ${e.t}: detrendet A ${fmt(e.Ad,0)}, rullende A ${fmt(e.Ar,0)}</title></path>`;
+    }
+    const vu = e.ut && rows[e.ut.i] ? rows[e.ut.i][key] : null;
+    if (vu != null){
+      const y = Y(vu);
+      s += `<path d="M${X(e.ut.i).toFixed(1)},${(y - 5).toFixed(1)} l4.6,-7 l-9.2,0z" fill="var(--sig2)"`
+         + ` stroke="var(--surface)" stroke-width="0.8"><title>Salg ${e.ut.t}: rå A tilbake på ${LAKS_UT_A}</title></path>`;
+    }
+    return s;
+  }).join("");
   const marks = rows.map((r,i) => {
     if (r.A == null || !(r.flagg || r.oppsikt)) return "";
     return r.flagg
@@ -797,7 +872,7 @@ function buildChart(seg, mode){
       ${bands}
       ${anker}
       <path d="${line(key)}" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-      ${marksSig}
+      ${marksSig}${marksLaks}
       <circle cx="${X(rows.length-1).toFixed(1)}" cy="${Y(last[key]).toFixed(1)}" r="4.5" fill="var(--accent)" stroke="var(--surface)" stroke-width="2"/>
       <line x1="${M.l}" y1="${H-M.b}" x2="${W-M.r}" y2="${H-M.b}" stroke="var(--rule-strong)" stroke-width="1"/>
     </g>
@@ -831,6 +906,8 @@ function buildChart(seg, mode){
     ${rows.some(r => "sig1" in r) ? '<span><svg width="11" height="11" viewBox="0 0 12 12" style="vertical-align:-1px"><circle cx="6" cy="6" r="2.6" fill="var(--sig1)"/></svg> S1: gull mot olje 3 mnd, øverste tredjedel</span>' : ''}
     ${rows.some(r => "sig2" in r) ? '<span><svg width="11" height="11" viewBox="0 0 12 12" style="vertical-align:-1px"><circle cx="6" cy="6" r="2.6" fill="var(--sig2)"/></svg> S2: olje-A 6 mnd, øverste tredjedel</span>' : ''}
     ${rows.some(r => "flagg_d95" in r) ? '<span><svg width="11" height="11" viewBox="0 0 12 12" style="vertical-align:-1px"><path d="M6 2.4 9.6 6 6 9.6 2.4 6z" fill="var(--warn)" stroke="var(--ink-2)" stroke-width="0.7"/></svg> detrendet ekstrem (parallelt, ikke testet)</span>' : ''}
+    ${seg.id !== "laks" ? '' : '<span><svg width="11" height="11" viewBox="0 0 12 12" style="vertical-align:-1px"><path d="M6 3 10.6 10 1.4 10z" fill="var(--sig1)"/></svg> Challenger: kjøp (detrendet A over 80 og rullende over 85)</span>'
+      + '<span><svg width="11" height="11" viewBox="0 0 12 12" style="vertical-align:-1px"><path d="M6 9 10.6 2 1.4 2z" fill="var(--sig2)"/></svg> Challenger: salg (rå A tilbake på 50), ikke testet</span>'}
   </div>`;
 }
 
@@ -1666,6 +1743,7 @@ function renderPanel(seg){
       ${riggBTekst(seg) ? `<div class="b-tekst"><b>Tilbud B, rigger:</b> ${riggBTekst(seg)}</div>` : ""}
       ${seg.id === "kull" && kullAr95Tekst(seg) ? `<div class="b-tekst">${kullAr95Tekst(seg)}</div>` : ""}
       ${seg.id === "miners" && minersTekst(seg) ? `<div class="b-tekst">${minersTekst(seg)}</div>` : ""}
+      ${seg.id === "laks" && laksAdarTekst(seg) ? `<div class="b-tekst">${laksAdarTekst(seg)}</div>` : ""}
       ${seg.id === "uran" ? `<div class="b-tekst" data-uran-k ${uranKTekst(URAN_K) ? "" : "hidden"}>${uranKTekst(URAN_K)}</div>` : ""}
       ${seg.id === "henryhub" ? `<div class="b-tekst" data-gass-b ${gassBTekst(GASS_B) ? "" : "hidden"}>${gassBTekst(GASS_B)}</div>` : ""}
       ${dKlartekst(seg) ? `<div class="b-tekst"><b>Kapitulasjon D:</b> ${dKlartekst(seg)}</div>` : ""}
