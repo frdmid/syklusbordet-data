@@ -1,5 +1,5 @@
 {
- "oppdatert": "2026-11-18 09:42:07",
+ "oppdatert": "2026-11-25 07:36:23",
  "segmenter": [
   "brent",
   "wti",
@@ -79,7 +79,7 @@
   {
    "kilde": "laks",
    "status": "OK",
-   "detalj": "margin 1.363 (A 92.8), kostnad 2025 56.96 kr/kg, uke 2026-11-12 73.41 kr/kg"
+   "detalj": "margin 1.381 (A 90.4), kostnad 2025 56.96 kr/kg, uke 2026-11-19 76.15 kr/kg"
   },
   {
    "kilde": "segment oljeservice",
@@ -89,7 +89,7 @@
   {
    "kilde": "oljeservice",
    "status": "OK",
-   "detalj": "observasjon, A 47.3 detr 98.8, aktivitet 108.4 per 2026-10 (persentil 43.6)"
+   "detalj": "observasjon, A 47.3 detr 98.8, aktivitet 111.1 per 2026-10 (persentil 61.7)"
   },
   {
    "kilde": "Verdensbanken Pink Sheet",
@@ -224,37 +224,37 @@
   {
    "kilde": "COT brent",
    "status": "OK",
-   "detalj": "2026-11-10, forvaltere +2.2 % av OI, persentil 26.3 (3 aar) / 64.4 (fra 2011), 776 uker"
+   "detalj": "2026-11-17, forvaltere +2.0 % av OI, persentil 23.7 (3 aar) / 63.2 (fra 2011), 777 uker"
   },
   {
    "kilde": "COT wti",
    "status": "OK",
-   "detalj": "2026-11-10, forvaltere +1.3 % av OI, persentil 12.2 (3 aar) / 4.2 (fra 2006), 1066 uker"
+   "detalj": "2026-11-17, forvaltere +0.8 % av OI, persentil 10.3 (3 aar) / 3.4 (fra 2006), 1067 uker"
   },
   {
    "kilde": "COT henryhub",
    "status": "OK",
-   "detalj": "2026-11-10, forvaltere -13.7 % av OI, persentil 0.6 (3 aar) / 16.9 (fra 2006), 1066 uker"
+   "detalj": "2026-11-17, forvaltere -13.0 % av OI, persentil 1.9 (3 aar) / 18.7 (fra 2006), 1067 uker"
   },
   {
    "kilde": "COT gold",
    "status": "OK",
-   "detalj": "2026-11-10, forvaltere +27.8 % av OI, persentil 42.9 (3 aar) / 60.5 (fra 2006), 1066 uker"
+   "detalj": "2026-11-17, forvaltere +25.2 % av OI, persentil 25.0 (3 aar) / 52.8 (fra 2006), 1067 uker"
   },
   {
    "kilde": "COT kobber",
    "status": "OK",
-   "detalj": "2026-11-10, forvaltere +11.2 % av OI, persentil 38.5 (3 aar) / 64.8 (fra 2006), 1066 uker"
+   "detalj": "2026-11-17, forvaltere +9.1 % av OI, persentil 30.8 (3 aar) / 59.1 (fra 2006), 1067 uker"
   },
   {
    "kilde": "COT kakao",
    "status": "OK",
-   "detalj": "2026-11-10, forvaltere -10.3 % av OI, persentil 2.6 (3 aar) / 6.4 (fra 2006), 1066 uker"
+   "detalj": "2026-11-17, forvaltere -11.3 % av OI, persentil 1.3 (3 aar) / 5.2 (fra 2006), 1067 uker"
   },
   {
    "kilde": "COT palmeolje",
    "status": "OK",
-   "detalj": "2026-11-10, forvaltere -3.3 % av OI, persentil 41.7 (3 aar) / 25.8 (fra 2021), 252 uker"
+   "detalj": "2026-11-17, forvaltere -4.0 % av OI, persentil 34.6 (3 aar) / 21.3 (fra 2021), 253 uker"
   },
   {
    "kilde": "COT totalt",
@@ -264,32 +264,32 @@
   {
    "kilde": "fersk pris jernmalm",
    "status": "OK",
-   "detalj": "90.58 per 2026-11-17"
+   "detalj": "90.67 per 2026-11-24"
   },
   {
    "kilde": "kurveform",
    "status": "OK",
-   "detalj": "6 segmenter, rente 4.138000011444092, historikk brent 3 mnd, wti 3 mnd, henryhub 3 mnd, gold 3 mnd, kobber 3 mnd, kakao 3 mnd"
+   "detalj": "6 segmenter, rente 4.168000221252441, historikk brent 3 mnd, wti 3 mnd, henryhub 3 mnd, gold 3 mnd, kobber 3 mnd, kakao 3 mnd"
   },
   {
    "kilde": "VIX",
    "status": "OK",
-   "detalj": "23.66 per 2026-11-18, persentil 76.7 (fra 1990-01) / 80.8 (10 aar)"
+   "detalj": "26.36 per 2026-11-24, persentil 86.9 (fra 1990-01) / 87.5 (10 aar)"
   },
   {
    "kilde": "DXY",
    "status": "OK",
-   "detalj": "103.793 per 2026-11-18, persentil 84.1 (fra 1985-01), 12 mnd 4.4 %"
+   "detalj": "104.034 per 2026-11-25, persentil 84.3 (fra 1985-01), 12 mnd 4.6 %"
   },
   {
    "kilde": "USD/NOK",
    "status": "OK",
-   "detalj": "9.6237 per 2026-11-17, persentil 92.7 (fra 1971-01), 12 mnd -5.2 %"
+   "detalj": "9.792 per 2026-11-24, persentil 93.3 (fra 1971-01), 12 mnd -3.6 %"
   },
   {
    "kilde": "flagglogg",
    "status": "OK",
-   "detalj": "uke 2026-W47: 18 segmenter, 51 kurser, 0 hendelser, hypotese 3 mnd: 0 ferdige av 0, 60/40: 0 ferdige av 0; dom hypotese_3mnd venter, regel_6040 venter"
+   "detalj": "uke 2026-W48: 18 segmenter, 51 kurser, 0 hendelser, hypotese 3 mnd: 0 ferdige av 0, 60/40: 0 ferdige av 0; dom hypotese_3mnd venter, regel_6040 venter"
   }
  ]
 }
