@@ -97,3 +97,4 @@ sonde_kjor_usdnok_samtidig
 sonde_kjor_vvix_sjokk
 sonde_kjor_vvix_regime
 sonde_kjor_uten_2020
+sonde_kjor_laks_signal

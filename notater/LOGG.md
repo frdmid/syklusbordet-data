@@ -15,7 +15,7 @@ ord for ord, og blokken «Status nå» oppdateres. Eldre innslag ligger der.
 
 Oppdateres i SAMME commit som endringen, med samme regel som innslagene
 under. Er den eldre enn det nyeste innslaget, er den ikke til å stole på.
-Sist oppdatert 25.11.2026 08:46.
+Sist oppdatert 25.11.2026 09:03.
 
 - **Dashbord:** versjon 86, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
 - **PASS PÅ:** kilden til dashbordet er `dashbord/index.html` i repoet, IKKE
@@ -70,6 +70,14 @@ Sist oppdatert 25.11.2026 08:46.
   planlagte kjøring 25.11.2026.
 - **Tester:** `python test_shadow_oos.py`, 23 av 23 består. Før publisering:
   `py -X utf8 dashbord/kontroller.py`.
+- **Laksesignal, venter på Frode (25.11.2026):** forslaget Ad > 80 og
+  Ar > 85 er målt beskrivende i `sonde_kjor_laks_signal.py`. Det slår inn 17
+  måneder i 4 klynger på 15 år, og kan ikke etableres statistisk: tre
+  klynger med kjent utfall gir best mulig p 0,125. Tre av tre lukkede
+  klynger er positive mot MSCI World på 9 til 24 måneder, men den fjerde,
+  som fortsatt står åpen fra april 2025, er negativ på alle horisonter.
+  Signalet står AV nå. Neste steg er Frodes: Challenger i Shadow-OOS med
+  startdato, eller legge forslaget bort. Ingen flagg på bordet.
 - **Åpne avgjørelser for Frode:** om onsdagsrutinen skal reduseres nå at
   dashbordet leser repoet direkte. Avgjørelsen venter på linjen `#datakilde`
   i den publiserte artifacten (se over); så lenge den ikke er lest, beholdes
@@ -78,6 +86,75 @@ Sist oppdatert 25.11.2026 08:46.
 - **Eldre innslag:** `notater/logg/<år>-<mnd>.md`, en fil per måned.
 
 ---
+
+### 25.11.2026 09:03, Claude Code
+
+Frodes forslag til bunnsignal for laks er målt: **Ad > 80 og Ar > 85**, med
+tillegget hans om at 24 måneders holdetid er for lenge for laks og at
+holdetid eller salgsregel skulle undersøkes. Ny sonde
+`sonde_kjor_laks_signal.py`, rapport i `sonder/sonde_kjor_laks_signal.txt`
+og tall i `sonder/laks_signal.json`. **Ingenting er endret på bordet, og
+ingen regel er satt i drift.**
+
+**Tellingen kom først, og den er avgjørende.** Serien på bordet har 180
+måneder (2011-11 til 2026-10). Kriteriet slår inn 17 av dem, i fire klynger
+med 12 måneders pause: 2012-01, 2015-04, 2020-04 og 2025-04. Bare tre har
+kjent utfall 24 måneder fram. Derfor står det i kriteriene, skrevet FØR
+måling, at sonden ikke kan etablere regelen: med tre klynger gir en ensidig
+fortegnstest best mulig p 0,125, og prosjektet har brukt 0,05 og i noen
+tilfeller 0,10. Bunnsonen på bordet ble godkjent på 7 av 7 klynger med
+p 0,014. Dette er et annet kaliber, og sonden er merket beskrivende.
+
+**Utfallet, meravkastning mot MSCI World i prosentpoeng, fra klyngens
+første måned:**
+
+| klynge | 3 mnd | 6 mnd | 9 mnd | 12 mnd | 18 mnd | 24 mnd |
+|---|---|---|---|---|---|---|
+| 2012-01 | -8,4 | +9,9 | +21,1 | +57,0 | +56,9 | +89,8 |
+| 2015-04 | +12,4 | +22,5 | +43,7 | +59,2 | +92,4 | +51,0 |
+| 2020-04 | +3,8 | -4,4 | +11,6 | +19,6 | +24,6 | +38,6 |
+| 2025-04 | -17,6 | -8,6 | -7,5 | -11,0 | -12,6 | åpen |
+
+Terskelen som var satt før måling (minst 2 av 3 klynger positive mot world
+på både 6 og 12 måneder, og signalmedianen høyere enn de øvrige månedene på
+begge) er oppfylt. Men den er oppfylt på bokstaven, og det skal sies klart:
+på 6 måneder er 2 av 4 klynger positive, altså kronekast. Jeg satte den
+terskelen for lavt.
+
+**Mot Frodes premiss:** tallene peker motsatt vei. Medianen mot world vokser
+med holdetiden, -2,3 pp på 3 måneder, +2,8 på 6, +16,4 på 9, +38,3 på 12,
++40,8 på 18 og +51,0 på 24. Kortere holdetid er altså ikke bedre i dette
+utvalget. Men to forbehold: nesten hele fordelen på lang horisont kommer fra
+2012 og 2015, og den ENESTE klyngen som ligner et utvalg utenfor
+hypotesedannelsen, april 2025, er negativ på alle horisonter til nå.
+
+**Salgsreglene, begge valgt før måling:**
+- R2, selg når signalet slukkes (Ad ned til 80 eller Ar ned til 85): død.
+  Median holdetid 1 måned, median +0,3 pp. Signalet blafrer av og på.
+- R3, selg når rå A er tilbake på 50, altså når prisen er tilbake på sin
+  egen median: median holdetid 5 måneder (11, 6, 2 og 5), median +16,9 pp
+  (+43,1, +22,5, +11,3 og -7,8). Den tar altså tre fjerdedeler av
+  tolvmånedersgevinsten i 2012 på under halve tiden, men bare en tredjedel i
+  2015.
+
+R3 er det nærmeste sonden kommer et svar på Frodes spørsmål om salgsregel,
+og den er kort nok til å passe hans syn på syklusen. Fire observasjoner er
+likevel fire observasjoner.
+
+**Hva som IKKE er gjort, med vilje:** terskelene 80 og 85 er ikke justert,
+og den beste av seks horisonter er ikke plukket ut som «optimal holdetid».
+Begge ville vært å velge regel på de samme tre episodene.
+
+**Neste steg er Frodes avgjørelse:** Challenger i Shadow-OOS med inngang
+Ad > 80 og Ar > 85, utgang R3 med tak på 24 måneder, startdato den dagen
+den registreres og uten tilbakevirkende kraft, slik prosjektet har gjort med
+nye regler siden Championen ble fryst 07.10.2026. Alternativet er å legge
+forslaget bort. Signalet står AV nå (oktober: Ad 60,0 og Ar 56,7), så ingen
+av valgene endrer bordet i dag.
+
+Filer: `sonde_kjor_laks_signal.py` (ny), `sonder/sonde_kjor_laks_signal.txt`,
+`sonder/laks_signal.json`, `sonder_ferdige.txt`, `notater/LOGG.md`.
+For Cowork: ingen endring i rutinen, bordet eller databasen.
 
 ### 25.11.2026 08:46, Claude Code
 

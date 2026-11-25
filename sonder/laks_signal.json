@@ -1,0 +1,344 @@
+{
+ "regel": {
+  "Ad": 80,
+  "Ar": 85,
+  "pause_mnd": 12
+ },
+ "signalmaaneder": [
+  "2012-01",
+  "2012-05",
+  "2012-06",
+  "2012-07",
+  "2015-04",
+  "2015-05",
+  "2020-04",
+  "2020-12",
+  "2021-01",
+  "2025-04",
+  "2025-05",
+  "2025-06",
+  "2025-07",
+  "2025-08",
+  "2026-05",
+  "2026-06",
+  "2026-07"
+ ],
+ "klynger": [
+  [
+   "2012-01",
+   "2012-05",
+   "2012-06",
+   "2012-07"
+  ],
+  [
+   "2015-04",
+   "2015-05"
+  ],
+  [
+   "2020-04",
+   "2020-12",
+   "2021-01"
+  ],
+  [
+   "2025-04",
+   "2025-05",
+   "2025-06",
+   "2025-07",
+   "2025-08",
+   "2026-05",
+   "2026-06",
+   "2026-07"
+  ]
+ ],
+ "klyngeutfall": [
+  {
+   "klynge": "2012-01",
+   "h": 3,
+   "kurv_pst": -6.2,
+   "mot_world_pp": -8.4,
+   "mot_osebx_pp": null,
+   "papirer": 4
+  },
+  {
+   "klynge": "2012-01",
+   "h": 6,
+   "kurv_pst": 12.2,
+   "mot_world_pp": 9.9,
+   "mot_osebx_pp": null,
+   "papirer": 4
+  },
+  {
+   "klynge": "2012-01",
+   "h": 9,
+   "kurv_pst": 25.9,
+   "mot_world_pp": 21.1,
+   "mot_osebx_pp": null,
+   "papirer": 4
+  },
+  {
+   "klynge": "2012-01",
+   "h": 12,
+   "kurv_pst": 65.9,
+   "mot_world_pp": 57.0,
+   "mot_osebx_pp": null,
+   "papirer": 4
+  },
+  {
+   "klynge": "2012-01",
+   "h": 18,
+   "kurv_pst": 85.4,
+   "mot_world_pp": 56.9,
+   "mot_osebx_pp": null,
+   "papirer": 4
+  },
+  {
+   "klynge": "2012-01",
+   "h": 24,
+   "kurv_pst": 134.0,
+   "mot_world_pp": 89.8,
+   "mot_osebx_pp": null,
+   "papirer": 4
+  },
+  {
+   "klynge": "2015-04",
+   "h": 3,
+   "kurv_pst": 20.5,
+   "mot_world_pp": 12.4,
+   "mot_osebx_pp": 20.6,
+   "papirer": 4
+  },
+  {
+   "klynge": "2015-04",
+   "h": 6,
+   "kurv_pst": 31.6,
+   "mot_world_pp": 22.5,
+   "mot_osebx_pp": 35.3,
+   "papirer": 4
+  },
+  {
+   "klynge": "2015-04",
+   "h": 9,
+   "kurv_pst": 45.3,
+   "mot_world_pp": 43.7,
+   "mot_osebx_pp": 57.6,
+   "papirer": 4
+  },
+  {
+   "klynge": "2015-04",
+   "h": 12,
+   "kurv_pst": 60.9,
+   "mot_world_pp": 59.2,
+   "mot_osebx_pp": 66.1,
+   "papirer": 4
+  },
+  {
+   "klynge": "2015-04",
+   "h": 18,
+   "kurv_pst": 100.0,
+   "mot_world_pp": 92.4,
+   "mot_osebx_pp": 100.2,
+   "papirer": 4
+  },
+  {
+   "klynge": "2015-04",
+   "h": 24,
+   "kurv_pst": 75.9,
+   "mot_world_pp": 51.0,
+   "mot_osebx_pp": 66.8,
+   "papirer": 4
+  },
+  {
+   "klynge": "2020-04",
+   "h": 3,
+   "kurv_pst": 2.4,
+   "mot_world_pp": 3.8,
+   "mot_osebx_pp": -4.2,
+   "papirer": 4
+  },
+  {
+   "klynge": "2020-04",
+   "h": 6,
+   "kurv_pst": -0.4,
+   "mot_world_pp": -4.4,
+   "mot_osebx_pp": -5.1,
+   "papirer": 4
+  },
+  {
+   "klynge": "2020-04",
+   "h": 9,
+   "kurv_pst": 18.5,
+   "mot_world_pp": 11.6,
+   "mot_osebx_pp": -6.3,
+   "papirer": 4
+  },
+  {
+   "klynge": "2020-04",
+   "h": 12,
+   "kurv_pst": 35.3,
+   "mot_world_pp": 19.6,
+   "mot_osebx_pp": -3.5,
+   "papirer": 4
+  },
+  {
+   "klynge": "2020-04",
+   "h": 18,
+   "kurv_pst": 54.0,
+   "mot_world_pp": 24.6,
+   "mot_osebx_pp": 0.1,
+   "papirer": 4
+  },
+  {
+   "klynge": "2020-04",
+   "h": 24,
+   "kurv_pst": 65.4,
+   "mot_world_pp": 38.6,
+   "mot_osebx_pp": 5.5,
+   "papirer": 4
+  },
+  {
+   "klynge": "2025-04",
+   "h": 3,
+   "kurv_pst": -4.9,
+   "mot_world_pp": -17.6,
+   "mot_osebx_pp": -14.2,
+   "papirer": 4
+  },
+  {
+   "klynge": "2025-04",
+   "h": 6,
+   "kurv_pst": 9.6,
+   "mot_world_pp": -8.6,
+   "mot_osebx_pp": 1.2,
+   "papirer": 4
+  },
+  {
+   "klynge": "2025-04",
+   "h": 9,
+   "kurv_pst": 9.7,
+   "mot_world_pp": -7.5,
+   "mot_osebx_pp": -8.7,
+   "papirer": 4
+  },
+  {
+   "klynge": "2025-04",
+   "h": 12,
+   "kurv_pst": 5.7,
+   "mot_world_pp": -11.0,
+   "mot_osebx_pp": -30.1,
+   "papirer": 4
+  },
+  {
+   "klynge": "2025-04",
+   "h": 18,
+   "kurv_pst": 8.8,
+   "mot_world_pp": -12.6,
+   "mot_osebx_pp": -35.4,
+   "papirer": 4
+  }
+ ],
+ "signal_mot_andre": [
+  {
+   "h": 3,
+   "signal_median_pp": 6.1,
+   "andre_median_pp": 0.8,
+   "n_signal": 17,
+   "n_andre": 161
+  },
+  {
+   "h": 6,
+   "signal_median_pp": 9.9,
+   "andre_median_pp": 0.1,
+   "n_signal": 15,
+   "n_andre": 160
+  },
+  {
+   "h": 9,
+   "signal_median_pp": 10.6,
+   "andre_median_pp": -1.8,
+   "n_signal": 14,
+   "n_andre": 158
+  },
+  {
+   "h": 12,
+   "signal_median_pp": 9.3,
+   "andre_median_pp": -1.4,
+   "n_signal": 14,
+   "n_andre": 155
+  },
+  {
+   "h": 18,
+   "signal_median_pp": 56.9,
+   "andre_median_pp": 3.3,
+   "n_signal": 11,
+   "n_andre": 152
+  },
+  {
+   "h": 24,
+   "signal_median_pp": 58.7,
+   "andre_median_pp": 5.5,
+   "n_signal": 9,
+   "n_andre": 148
+  }
+ ],
+ "salgsregler": [
+  {
+   "klynge": "2012-01",
+   "regel": "R2 signalet slukkes",
+   "holdetid_mnd": 1,
+   "kurv_pst": -2.5,
+   "mot_world_pp": -3.5
+  },
+  {
+   "klynge": "2012-01",
+   "regel": "R3 raa A tilbake til 50",
+   "holdetid_mnd": 11,
+   "kurv_pst": 49.1,
+   "mot_world_pp": 43.1
+  },
+  {
+   "klynge": "2015-04",
+   "regel": "R2 signalet slukkes",
+   "holdetid_mnd": 2,
+   "kurv_pst": 6.3,
+   "mot_world_pp": 4.1
+  },
+  {
+   "klynge": "2015-04",
+   "regel": "R3 raa A tilbake til 50",
+   "holdetid_mnd": 6,
+   "kurv_pst": 31.6,
+   "mot_world_pp": 22.5
+  },
+  {
+   "klynge": "2020-04",
+   "regel": "R2 signalet slukkes",
+   "holdetid_mnd": 1,
+   "kurv_pst": 9.0,
+   "mot_world_pp": 11.6
+  },
+  {
+   "klynge": "2020-04",
+   "regel": "R3 raa A tilbake til 50",
+   "holdetid_mnd": 2,
+   "kurv_pst": 11.8,
+   "mot_world_pp": 11.3
+  },
+  {
+   "klynge": "2025-04",
+   "regel": "R2 signalet slukkes",
+   "holdetid_mnd": 5,
+   "kurv_pst": 6.7,
+   "mot_world_pp": -7.8
+  },
+  {
+   "klynge": "2025-04",
+   "regel": "R3 raa A tilbake til 50",
+   "holdetid_mnd": 5,
+   "kurv_pst": 6.7,
+   "mot_world_pp": -7.8
+  }
+ ],
+ "krav1_2av3": true,
+ "krav2_median": true,
+ "merknad": "Beskrivende sonde. Tre klynger med kjent utfall gir best mulig p 0,125 i en ensidig fortegnstest, saa regelen kan ikke etableres her, og den beste av seks horisonter er stoey og ikke et funn. Se toppen av sonde_kjor_laks_signal.py."
+}
