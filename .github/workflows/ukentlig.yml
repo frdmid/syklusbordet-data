@@ -5,22 +5,37 @@
 # .github/workflows/; den sperren ble loftet 12.11.2026, og forslagsfila er
 # dermed pensjonert. Historikken ligger i git og i notater/LOGG.md.
 #
-# TIDENE (flyttet til natt til onsdag 18.11.2026, Frodes beslutning). GitHub
-# starter planlagte kjoringer for gratis, offentlige repoer naar det er plass,
-# ikke paa klokkeslettet. 28.10, 04.11 og 11.11 kom de 6,5 til 9 timer for
-# sent (15:31 til 17:39 norsk tid), og bare to av tidene kom hver gang. Ukens
-# tall kom de ukene fra kjoringer Frode startet for haand. Med tidene om
-# natta kommer en forsinket kjoring normalt for onsdagsrutinen 13:15.
-# Alle fire tidene er onsdag baade i UTC og norsk tid, slik at Shadow-OOS
-# (som regner dato i UTC, uken fra onsdag) og vakta (norsk dato) er enige.
-# GitHub regner cron i UTC. Norsk tid:
-#     vinter   01:48, 02:48, 02:56, 03:56
-#     sommer   02:48, 03:48, 03:56, 04:56
-# Vakta gjor de overflodige til ingenting: den forste kjoringen skriver
-# index.json, og de neste stopper etter vaktjobben. Kildene er forrige dags
-# sluttkurser, maanedstall og Fearnleys-rapporten fra uken foer, saa tallene
-# blir de samme som ved kjoring om morgenen. Tidligere tider: 08:48 og 09:56
-# (21.10 til 11.11), 07:48 vinter og 08:48 sommer (12.11 til 17.11).
+# TIDENE: TOLV FORSOEK, EN HVER TIME (25.11.2026, Frodes bestilling om at det
+# skal gaa av seg selv). GitHub starter planlagte kjoringer for gratis,
+# offentlige repoer naar det er plass, ikke paa klokkeslettet, og de kan droppes
+# helt. 28.10, 04.11 og 11.11 kom de 6,5 til 9 timer for sent (15:31 til 17:39
+# norsk tid) og bare to av tidene hver gang. 25.11, med fire tider natt til
+# onsdag, kom INGEN: kl. 08:32 var det ikke laget noen kjoring i det hele tatt,
+# og ukens tall maatte startes for haand, som de tre ukene for.
+#
+# Derfor er faa, presise tider byttet ut med mange. Cron "48 0-11 * * 3" fyrer
+# tolv ganger onsdag, 00:48 til 11:48 UTC, altsaa 01:48 til 12:48 norsk
+# vintertid (en time senere om sommeren). Alle tolv er onsdag baade i UTC og
+# norsk tid, slik at Shadow-OOS (som regner dato i UTC, uken fra onsdag) og
+# vakta (norsk dato) er enige. Poenget er ikke at en bestemt time treffer, men
+# at EN av tolv kommer igjennom: et droppet eller forsinket klokkeslett koster
+# ingenting naar det er elleve andre.
+#
+# Prisen er null. Vakta gjor de overflodige til ingenting: den forste
+# kjoringen skriver index.json, de neste stopper etter vaktjobben i 10 til 14
+# sekunder. Tolv forsoek er altsaa en full kjoring pluss rundt to minutter
+# maskintid i uka, godt innenfor det gratis for offentlige repoer.
+#
+# Kildene er forrige dags sluttkurser, maanedstall og Fearnleys-rapporten fra
+# uken foer, saa tallene blir de samme uansett hvilken av de tolv som kommer
+# forst. Tidligere tider: 08:48 og 09:56 (21.10 til 11.11), 07:48 vinter og
+# 08:48 sommer (12.11 til 17.11), fire tider natt til onsdag (18.11 til 25.11).
+#
+# I TILLEGG er det en vakthund utenfor GitHub: rutinen «Syklusbordet: vakthund
+# for ukentlig innhenting» ser onsdag kl. 08:45 norsk tid om index.json er fra
+# i dag, og sier fra per e-post hvis den ikke er det. Den kan ogsaa starte
+# kjoringen selv hvis miljovariabelen GH_DISPATCH_TOKEN er satt. Se
+# notater/LOGG.md 25.11.2026.
 #
 # AVHENGIGHETENE. Hvert installasjonssteg har en reserve, fordi en manglende
 # hjulfil ellers stopper hele onsdagen. Reserven leser pakkenavnene UT AV
@@ -49,11 +64,12 @@ name: Ukentlig innhenting
 
 on:
   schedule:
-    # Fire tider natt til onsdag. Vakta slipper bare den foerste gjennom.
-    - cron: "48 0 * * 3"       # 01:48 norsk vintertid (02:48 sommertid)
-    - cron: "48 1 * * 3"       # 02:48 norsk vintertid (03:48 sommertid)
-    - cron: "56 1 * * 3"       # 02:56 norsk vintertid (03:56 sommertid)
-    - cron: "56 2 * * 3"       # 03:56 norsk vintertid (04:56 sommertid)
+    # Tolv forsoek onsdag, ett hver time: 00:48 til 11:48 UTC, altsaa 01:48 til
+    # 12:48 norsk vintertid (02:48 til 13:48 sommertid). Alle er onsdag i baade
+    # UTC og norsk tid. Vakta slipper bare den foerste gjennom; de elleve andre
+    # stopper etter vaktjobben. Mange forsoek, fordi GitHub dropper og
+    # forsinker planlagte kjoringer: se toppen av fila.
+    - cron: "48 0-11 * * 3"
   workflow_dispatch:            # og naar du trykker paa knappen selv
 
 permissions:

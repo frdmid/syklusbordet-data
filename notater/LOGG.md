@@ -15,7 +15,7 @@ ord for ord, og blokken «Status nå» oppdateres. Eldre innslag ligger der.
 
 Oppdateres i SAMME commit som endringen, med samme regel som innslagene
 under. Er den eldre enn det nyeste innslaget, er den ikke til å stole på.
-Sist oppdatert 18.11.2026 12:22.
+Sist oppdatert 25.11.2026 08:46.
 
 - **Dashbord:** versjon 86, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
 - **PASS PÅ:** kilden til dashbordet er `dashbord/index.html` i repoet, IKKE
@@ -41,11 +41,19 @@ Sist oppdatert 18.11.2026 12:22.
   prompten står i `notater/onsdagsrutine_prompt_2026-11-11.txt` som reserve.
   `dashbord/bygg.py` og `dashbord/data.json` står som før, men dashbordet
   kan ikke lese dem.
-- **Databasen står på uke 47** fra 18.11 kl. 11:40: ukens tall er kopiert
+- **Databasen står på uke 48** fra 25.11 kl. 08:45: ukens tall er kopiert
   fra `dashbord/data.json` inn i databasen med Artifact-databasen, 26
-  segmenter og ni markedsdokumenter, `alu_tilbud` urørt. Det viser at en
-  Claude-økt kan fylle databasen fra repoet, så rutinen KAN reduseres til en
-  kopi. Ikke gjort; rutinen er uendret.
+  segmenter og ni markedsdokumenter, `alu_tilbud` urørt. Ingen segmenter i
+  bunnsone; Henry Hub og jernmalm under oppsikt.
+- **UKEFLYTEN, to sikringer fra 25.11.2026.** `ukentlig.yml` har én cron,
+  `48 0-11 * * 3`, altså tolv forsøk onsdag 01:48 til 12:48 norsk vintertid;
+  vakta stopper de overflødige etter 10 til 14 sekunder. I tillegg ser
+  rutinen `trig_01NsfjGaHztBo9zs7JxZs6fJ` («vakthund for ukentlig
+  innhenting») kl. 08:45 om index.json er fra i dag, og sender e-post hvis
+  ikke. Grunnen: 25.11 fyrte ingen av de fire nattetidene, fjerde uke på rad
+  der tallene måtte startes for hånd. Vakthunden kan starte kjøringen selv
+  hvis `GH_DISPATCH_TOKEN` settes på rutinen; det er Frodes valg, og den er
+  ikke satt.
 - **Alt som skal vises på bordet må skrives til databasen,** ikke bare til
   fila i repoet. `portefolje.uten_2020` lå bare i fila fra 16.11 og har
   derfor aldri vært synlig før kopien 18.11.
@@ -70,6 +78,80 @@ Sist oppdatert 18.11.2026 12:22.
 - **Eldre innslag:** `notater/logg/<år>-<mnd>.md`, en fil per måned.
 
 ---
+
+### 25.11.2026 08:46, Claude Code
+
+Uke 48 er på bordet, og GitHub fikk to nye sikringer. Frodes bestilling:
+«Oppdater dashbord», og deretter «hva kan vi gjøre for å sørge for at Github
+kjører automatisk».
+
+**Først dagens tilstand.** Kl. 08:32 sto `dashbord/data.json` fortsatt på
+18.11, og Actions hadde ikke laget NOEN kjøring i dag. Ingen av de fire
+tidene natt til onsdag, som Cowork satte inn 18.11, hadde fyrt. Det er
+fjerde uke på rad at ukens tall må startes for hånd. Jeg startet
+`ukentlig.yml` med `gh workflow run` kl. 08:32, og den gikk gjennom på ni
+minutter: vakt, kapitulasjon, priser og shipping alle grønne, ferdig 08:42.
+`data.json` ble skrevet 08:41 med 26 segmenter, ni markedsdokumenter, ingen
+avviste og ingen bevarte felter.
+
+Merk for ettertiden: `gh workflow run` skrev ut en kjørings-id som ikke
+fantes (404 etterpå). Det fikk meg til å tro at to kjøringer gikk samtidig.
+Det var bare én. Stol på `gh run list` og ikke på id-en `gh workflow run`
+skriver ut.
+
+**Kopien til databasen.** 26 segmenter og ni markedsposter, i to batcher,
+hvert dokument festet til versjonen som ble lest. Formen var kontrollert
+først: alle 35 dokumentene hadde samme felter på toppnivå som fila, ingen
+felter bare i databasen. `marked/alu_tilbud` er urørt. Kontrollert etterpå:
+`marked/endringer` står nå på 2026-W48 med `ny_dato 2026-11-25 07:38`, lik
+fila.
+
+Ukens tall: ingen segmenter i bunnsone. Henry Hub (A 94,7, Ad 76,5) og
+jernmalm (A 84,7, Ad 70,8) står under oppsikt, som forrige uke. Ingen
+skifter. De tre største endringene er gulls COT-persentil 42,9 til 25,0,
+VIX 23,7 til 26,4 og palmeoljes D 15,2 til 23,2. Brent og WTI er langt fra
+det parallelle signalet (detrendet A 39,7 og 40,2). VIX spot 26,4 ligger på
+persentil 87, men regimeordet er fortsatt «rolig», fordi det leser
+månedssnittene: nivå 16,9 og volvariasjon 95,0 for oktober. Dollaren 104,03
+(p 84) og USD/NOK 9,79 (p 93). Handlingslisten har 18 rader og ingen åpne
+posisjoner.
+
+**Sikring 1: tolv forsøk i timen.** `.github/workflows/ukentlig.yml` har nå
+én cron, `48 0-11 * * 3`, altså tolv planlagte kjøringer onsdag mellom 01:48
+og 12:48 norsk vintertid (en time senere om sommeren). Alle tolv er onsdag i
+både UTC og norsk tid, så Shadow-OOS (UTC) og vakta (norsk dato) er enige.
+Poenget er ikke å treffe en bestemt time, men at én av tolv kommer gjennom:
+GitHub kjører planlagte arbeidsflyter i gratis, offentlige repoer når det er
+plass, og dropper dem av og til helt. Prisen er null, fordi vakta stopper de
+overflødige etter 10 til 14 sekunder: tolv forsøk er en full kjøring pluss
+rundt to minutter maskintid i uka. Tidene er regnet om med zoneinfo for
+25.11.2026 og 02.06.2027 og kontrollert mot begge.
+
+**Sikring 2: en vakthund utenfor GitHub.** Ny rutine
+`trig_01NsfjGaHztBo9zs7JxZs6fJ`, «Syklusbordet: vakthund for ukentlig
+innhenting», onsdag kl. 08:45 norsk tid (`CRON_TZ=Europe/Oslo 45 8 * * 3`),
+i prosjektet «Handelsalgoritme», med e-postvarsel. Den henter index.json og
+data.json, og sier fra hvis `oppdatert` ikke er fra i dag. Da får Frode en
+e-post med lenken til «Run workflow» før onsdagsrutinen 10:15. Den skriver
+ingenting til databasen og fører ingenting i ukeloggen.
+
+Vakthunden kan også starte kjøringen selv, men bare hvis miljøvariabelen
+`GH_DISPATCH_TOKEN` er satt på rutinen. Den er IKKE satt: et kall til
+`workflow_dispatch` krever en token, og en token skal ikke gå gjennom en
+Claude-økt. Vil Frode ha den helt automatisk, lager han selv en fine-grained
+PAT på frdmid/syklusbordet-data med «Actions: read and write» og ingenting
+annet, og legger den inn som miljøvariabel på rutinen. Uten den er
+vakthunden et varsel, ikke en starter.
+
+Rutinen ble opprettet med alle kontoens konnektorer påhengt, fordi
+serveren legger dem på når ingen er oppgitt. De er fjernet igjen med
+`clear_mcp_connections`; den trenger bare `curl`.
+
+Filer: `.github/workflows/ukentlig.yml`, `notater/OVERLEVERING.md`,
+`notater/LOGG.md`. Databasen står på uke 48. Rutinen er opprettet utenfor
+repoet.
+For Cowork: onsdagsrutinen 10:15 og 13:15 er uendret og vil se at uken
+allerede er skrevet.
 
 ### 18.11.2026 12:22, Claude Code
 

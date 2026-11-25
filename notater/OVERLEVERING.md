@@ -111,6 +111,17 @@ sikkerhetskopi tas når stegene der er gjort.
    permission_mode, varsling, prosjekt og konnektorer kontrollert mot verdiene
    før). Den prøver ikke på nytt hvis den feiler; det skjedde 30.09, og den
    ble kjørt på nytt for hånd.
+2b. **Vakthunden `trig_01NsfjGaHztBo9zs7JxZs6fJ`** («Syklusbordet: vakthund
+   for ukentlig innhenting»), onsdag kl. 08:45 norsk tid, opprettet
+   25.11.2026 fordi GitHub droppet alle fire nattetidene den uken, fjerde uke
+   på rad der tallene måtte startes for hånd. Den henter index.json og
+   data.json og sier fra per e-post hvis `oppdatert` ikke er fra i dag, slik
+   at knappen «Run workflow» kan trykkes før rutinen 10:15. Den skriver
+   ingenting til databasen og fører ingenting i ukeloggen. Kan også starte
+   kjøringen selv, men bare hvis miljøvariabelen `GH_DISPATCH_TOKEN` settes
+   på rutinen (en fine-grained PAT på repoet med «Actions: read and write»).
+   Den er ikke satt: en token skal ikke gå gjennom en Claude-økt, så det er
+   Frodes valg. Konnektorene er fjernet fra rutinen; den trenger bare curl.
 3. **Dashbordet** leser databasen når det åpnes, med de innbakte dataene som
    siste utvei. Det trenger ikke publiseres for at nye tall skal vises.
    Rutinen er ENESTE vei inn: en publisert artifact får ikke hente fra noe
