@@ -1,0 +1,24 @@
+{
+ "id": "challenger_laks_adar_v1",
+ "effective_from": "2026-12-02",
+ "hypothesis": "For laks er detrendet A over 80 sammen med rullende A (siste ti år) over 85 et bunnflagg: laksepapirene (Mowi, SalMar, Lerøy, Bakkafrost) gir høyere avkastning de neste 12 månedene enn ellers. Championen har ingen flagg for laks, fordi laksesonden 25.09.2026 fant at verken marginen (p 0,35) eller prisnivået sa noe om papirene 24 måneder fram. Dette kriteriet er et annet: ikke marginen, men prisnivået målt både mot trenden og mot siste ti år.",
+ "changed_variables": [
+  "bottom_zone for laks: A_detrended > 80 og A_rolling > 85 (Champion: laks har aldri flagg)",
+  "observation_only for laks: false (Champion: true)"
+ ],
+ "unchanged_variables": [
+  "alle andre segmenter",
+  "watch, B, C, D, d95 og papirene for laks (MOWI.OL, SALM.OL, LSG.OL, BAKKA.OL)",
+  "regel for ny episode (12 mnd)",
+  "modningshorisontene i rammeverket (3, 6, 12 og 24 mnd)",
+  "referanser OSEBX og MSCI World (IWDA.L)",
+  "måling i NOK"
+ ],
+ "primary_endpoint": "Avkastning i NOK for de fire laksepapirene, likt vektet, 12 måneder etter hypothetical_entry, mot MSCI World (IWDA.L) og mot OSEBX. Tolv måneder og ikke 24, fordi Frode mener laksesyklusen er kortere enn bordets to år; 3, 6 og 24 måneder modnes av rammeverket og står som kontekst.",
+ "expected_direction": "høyere",
+ "decision_rule": "Ingen konklusjon før minst tre nye episoder har modnet på 12 måneder. Støttet hvis papirene slår MSCI World i minst to av tre (eller tilsvarende andel ved flere) og medianen er positiv. Ellers forkastet. Vurderes også uten beste episode, og uten episoder som faller i samme makroklynge som en annen. Bommer flagget på en bunn som en senere vurdering fanger, noteres det.",
+ "modul": "challengers/laks_adar.py",
+ "data": "Ingen egne data. Championens A_detrended og A_rolling for laks, regnet på SSBs eksportpris for fersk oppalen laks, sesongjustert, slik de står i segments/laks.json.",
+ "evidence_type_before_start": "IN_SAMPLE: sonde_kjor_laks_signal (25.11.2026). 17 signalmåneder i fire klynger på 180 måneder; tre klynger har kjent utfall og alle tre er positive mot MSCI World fra 9 måneder og ut, den fjerde (åpen fra 2025-04) er negativ på alle horisonter. Beste mulige p er 0,125 med tre klynger, så regelen er IKKE etablert. Terskelene 80 og 85 er Frodes, valgt etter å ha sett serien.",
+ "notes": "Frodes beslutning 25.11.2026. Den tenkte utgangen er rå A tilbake på 50 med tak på 24 måneder (sonden: median holdetid 5 måneder, median +16,9 pp over fire klynger). Den ligger ikke i koden, fordi rammeverket modner utfall på faste horisonter; den kan regnes i ettertid av A-banen i snapshotene. Signalet sto av da Challengeren ble registrert (oktober 2026: Ad 60,0 og Ar 56,7)."
+}
