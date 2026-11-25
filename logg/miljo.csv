@@ -1,2 +1,3 @@
 uke,dato,plattform,python,pandas,numpy,requests,openpyxl,pdfplumber,lxml,avvik
 2026-W47,2026-11-18 10:48,linux,3.12.16,3.1.1,2.5.5,2.34.2,3.1.5,0.11.10,6.1.3,numpy: 2.5.4 -> 2.5.5
+2026-W48,2026-11-25 08:41,linux,3.12.16,3.1.1,2.5.5,2.34.2,3.1.5,0.11.11,6.1.3,numpy: 2.5.4 -> 2.5.5; pdfplumber: 0.11.10 -> 0.11.11
