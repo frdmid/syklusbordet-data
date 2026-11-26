@@ -15,7 +15,7 @@ ord for ord, og blokken «Status nå» oppdateres. Eldre innslag ligger der.
 
 Oppdateres i SAMME commit som endringen, med samme regel som innslagene
 under. Er den eldre enn det nyeste innslaget, er den ikke til å stole på.
-Sist oppdatert 25.11.2026 09:36.
+Sist oppdatert 26.11.2026 11:59.
 
 - **Dashbord:** versjon 89, https://claude.ai/artifact/5fSPzKWdZhhV1vWB6DNZbF
 - **PASS PÅ:** kilden til dashbordet er `dashbord/index.html` i repoet, IKKE
@@ -88,6 +88,12 @@ Sist oppdatert 25.11.2026 09:36.
   to utganger: en Challenger setter bare `bottom_zone`, utfall modnes på
   faste horisonter, og `finn_hendelser` blokkerer uansett ny inngang innen
   365 dager. To Challengere med samme inngang ville gitt identiske data.
+- **Testflagget B2 og D utløste for aluminium 25.11.2026** (D for papirene
+  59,7 til 60,4, terskel 60; B2 63,0 siden september). Det er flaggets
+  FØRSTE tilfelle av tre før det vurderes. Aluminium er ikke i bunnsone:
+  avstanden er 91,3. Hydro etter de ni historiske utløsningene slo
+  verdensindeksen i 3 av 9 på tolv måneder, median −1,1 pp, mot en
+  grunnlinje på 4 av 13 og −7,2 pp. Se `sonde_kjor_hydro_b_og_d.py`.
 - **Åpne avgjørelser for Frode:** om `GH_DISPATCH_TOKEN`
   skal settes på vakthunden, slik at den kan starte innhentingen selv.
   Avgjort 18.11: onsdagsrutinen er en kopi fra repoet og er eneste vei inn. Championens evalueringsprotokoll er
@@ -95,6 +101,53 @@ Sist oppdatert 25.11.2026 09:36.
 - **Eldre innslag:** `notater/logg/<år>-<mnd>.md`, en fil per måned.
 
 ---
+
+### 26.11.2026 11:59, Claude Code
+
+Bordet varslet at testflagget «høy tilbudsskår og kapitulerte papirer»
+utløste for aluminium, og Frode spurte om det er et godt tidspunkt å kjøpe
+Norsk Hydro etter tekniske indikatorer og historikk. Jeg er ikke rådgiver og
+svarte med tallgrunnlaget. Det er ført som sonde:
+`sonde_kjor_hydro_b_og_d.py`, rapport i
+`sonder/sonde_kjor_hydro_b_og_d.txt`.
+
+**Sonden er merket beskrivende, og fila sier rett ut at den ble kjørt FØR
+kriteriene ble skrevet**, fordi tallene kom av spørsmålet samme dag. Det som
+gjør den forsvarlig er at ingenting i regelen er valgt der: flagget og
+tersklene er testflagget fra 29.09.2026, utløsningsårene leses av
+`sonder/b_signal.csv`, horisontene er bordets vanlige, og referansen er MSCI
+World i kroner. Det eneste valget var å se på Hydro alene i stedet for
+kurven, og det var spørsmålet.
+
+**Hva som utløste:** D for papirene gikk fra 59,7 til 60,4 i uke 48, mot
+terskelen 60. B2 har ligget på 63,0 siden uke 40. Flagget er altså sju dager
+gammelt og 0,4 poeng over streken. Dette er det første av de tre tilfellene
+kriteriet krever.
+
+**Bordets egen kjøpsregel sier ikke kjøp:** aluminium har rå A 51,6 (mangler
+28,4) og detrendet A 17,1 (mangler 62,9), avstand 91,3 i handlingslisten.
+
+**Hydro etter de ni historiske utløsningene:** median +4,9 % over tolv
+måneder absolutt, men −1,1 prosentpoeng mot verdensindeksen, og bare 3 av 9
+slo den. Over 24 måneder +38,7 % absolutt og −21,9 pp relativt, 4 av 9. Uten
+2020 faller snittet sammen. Grunnlinjen, alle år i samme periode, er 4 av 13
+og median −7,2 pp, så utløsningsårene er litt mindre dårlige enn normalen,
+men medianen er fortsatt negativ.
+
+**Viktig forskjell som er lett å blande:** «9 av 13 år» i varselteksten er
+hvilket SEGMENT som slo de andre segmentene, ikke om Hydro slo markedet. De
+to peker ikke samme vei, og det står nå i toppen av sonden.
+
+**Teknisk i dag:** 11 % under 50-dagers snitt, 27 % under 200-dagers, ingen
+gyllent kryss, RSI 38,4, 45,3 % under femårstoppen og 2,5 % over siste års
+bunn.
+
+Ingen regel er endret, ingenting er lagt på bordet, og testflaggets eget
+kriterium står urokket.
+
+Filer: `sonde_kjor_hydro_b_og_d.py` (ny),
+`sonder/sonde_kjor_hydro_b_og_d.txt`, `sonder_ferdige.txt`,
+`notater/LOGG.md`.
 
 ### 25.11.2026 09:36, Claude Code
 

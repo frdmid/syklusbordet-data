@@ -1,0 +1,47 @@
+==============================================================================
+sonde_kjor_hydro_b_og_d: Norsk Hydro etter testflagget B2 og D
+BESKRIVENDE OPPSLAG. Avgjoer ingenting. Se toppen av fila.
+==============================================================================
+
+TEKNISK BILDE 2026-11-26
+   kurs, utbyttejustert           65.14
+   50 dagers snitt                73.39   avvik  -11.2 %
+   200 dagers snitt               89.50   avvik  -27.2 %
+   50 over 200                      nei
+   RSI 14 dager                    37.8
+   fall fra femaarstopp           -45.5 %
+   over siste aars bunn            +2.3 %
+   under siste aars topp          -45.5 %
+   avkastning 12 mnd               -7.4 %
+   avkastning 24 mnd               +2.2 %
+   avkastning 5 aar               +49.6 %
+
+UTLOESTE AAR FOR ALUMINIUM (B2 over 50 og D for papirene 60+): 9
+   2012, 2013, 2014, 2015, 2016, 2017, 2019, 2020, 2023
+
+HYDRO ETTER HVER UTLOESNING (inngang 30. april)
+   aar      B2  D_pap    12 mnd  mot world    24 mnd  mot world
+    2012    89   95.9      -0.1      -19.3     +21.0      -23.1
+    2013    88   77.9     +21.1       +0.3     +38.7      -25.0
+    2014    75   67.2     +14.5      -21.0     +15.9      -21.9
+    2015    83   78.3      +1.2       -0.5     +45.8      +20.8
+    2016    84   76.1     +44.1      +21.2     +51.1      +20.8
+    2017    84   64.3      +4.9       -1.1     -19.8      -41.5
+    2019   100   80.4     -26.6      -41.0     +55.0      +22.6
+    2020   100   82.4    +111.0      +95.3    +224.7     +197.9
+    2023    93   75.4      -4.1      -29.1     -21.1      -51.4
+
+   12 mnd, avkastning     n  9  median    +4.9  positive 6 av 9
+   12 mnd, mot world      n  9  median    -1.1  positive 3 av 9
+   24 mnd, avkastning     n  9  median   +38.7  positive 7 av 9
+   24 mnd, mot world      n  9  median   -21.9  positive 4 av 9
+
+GRUNNLINJEN: alle aar i samme periode, uansett utloesning
+   12 mnd mot world: n 13, median -7.2 pp, positive 4 av 13
+
+LES DETTE SAMMEN MED TALLENE:
+   Utloesningsaarene er litt mindre daarlige enn grunnlinjen, men
+   medianen mot verdensindeksen er fortsatt negativ, og 2020 baerer
+   snittet alene. Ni aar for ett papir etablerer ingenting.
+   Testflaggets eget kriterium staar urokket: tre utloeste tilfeller,
+   papirene likt vektet mot ACWI over tolv maaneder.
